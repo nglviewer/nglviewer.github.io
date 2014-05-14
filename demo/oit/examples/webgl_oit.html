@@ -85,7 +85,7 @@
                 z = z4.z;
                 // z = gl_Position.z;
                 // z = position.z;
-                z = ( viewMatrix * vec4( position, 1.0 ) ).z;
+                // z = ( viewMatrix * vec4( position, 1.0 ) ).z;
 
             }
 
@@ -176,7 +176,7 @@
                 //z2 = gl_FragCoord.z;
 
                 // eq. 7
-                return pow( a, 1.0 ) * clamp( 10.0 / ( 1e-5 + pow( abs( z2 ) / 5.0, 2.0 ) + pow( abs( z2 ) / 200.0, 6.0 ) ), 1e-2, 3e3 );
+                return pow( a, 1.0 ) * clamp( 10.0 / ( 1e-5 + pow( abs( z2 ) / 5.0, 1.0 ) + pow( abs( z2 ) / 200.0, 1.0 ) ), 1e-2, 3e3 );
                 
             }
 
@@ -230,7 +230,7 @@
                 //z2 = gl_FragCoord.z;
 
                 // eq. 7
-                return pow( a, 1.0 ) * clamp( 10.0 / ( 1e-5 + pow( abs( z2 ) / 5.0, 2.0 ) + pow( abs( z2 ) / 200.0, 6.0 ) ), 1e-2, 3e3 );
+                return pow( a, 1.0 ) * clamp( 10.0 / ( 1e-5 + pow( abs( z2 ) / 5.0, 1.0 ) + pow( abs( z2 ) / 200.0, 1.0 ) ), 1e-2, 3e3 );
 
             }
 
@@ -258,7 +258,7 @@
                 vec4 accum = texture2D( tAccumulation, vUv );
                 float r = texture2D( tRevealage, vUv ).r;
 
-                gl_FragColor = vec4( accum.rgb / clamp( accum.a, 1e-4, 5e4 ), r );
+                gl_FragColor = vec4( accum.rgb / clamp( accum.a, 1e-9, 5e9 ), r );
 
             }
 
@@ -407,7 +407,7 @@
 
                 container = document.getElementById( 'container' );
 
-                renderer = new THREE.WebGLRenderer();
+                renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: true });
                 container.appendChild( renderer.domElement );
 
                 gl = renderer.getContext();
@@ -505,6 +505,8 @@
 
                 window.addEventListener( 'resize', onWindowResize, false );
 
+                controls.addEventListener( 'change', render );
+
                 renderer.domElement.addEventListener( 'mousemove', onMouseMove );
 
                 var bgColor = new THREE.Color( "white" );
@@ -520,6 +522,7 @@
 
                 btnOit.addEventListener( 'click', render, false );
                 btnOpaque.addEventListener( 'click', render, false );
+                btnTransparent.addEventListener( 'click', render, false );
 
                 onWindowResize();
 
@@ -549,9 +552,20 @@
                 
                 controls.update();
 
-                render();
-
                 stats.update();
+
+                gl.readPixels( 
+                    mouse.x, window.innerHeight - mouse.y, 1, 1, 
+                    gl.RGBA, gl.UNSIGNED_BYTE, pixelBuffer
+                );
+
+                var rgba = Array.apply( [], pixelBuffer );
+                document.getElementById( 'color' ).innerHTML = [ 
+                    ( rgba[0]/255 ).toPrecision(2),
+                    ( rgba[1]/255 ).toPrecision(2),
+                    ( rgba[2]/255 ).toPrecision(2),
+                    ( rgba[3]/255 ).toPrecision(2)
+                ].join( ", " );
 
             }
 
@@ -576,18 +590,18 @@
 
                 }
 
-                gl.readPixels( 
-                    mouse.x, window.innerHeight - mouse.y, 1, 1, 
-                    gl.RGBA, gl.UNSIGNED_BYTE, pixelBuffer
-                );
+                // var i, o, u;
+                // var matrix = new THREE.Matrix4();
+                // var objects = scene.children;
+                // var nObjects = objects.length;
+                
+                // camera.updateMatrix();
+                // camera.updateMatrixWorld( true );
+                // camera.matrixWorldInverse.getInverse( camera.matrixWorld );
+                // camera.updateProjectionMatrix();
 
-                var rgba = Array.apply( [], pixelBuffer );
-                document.getElementById( 'color' ).innerHTML = [ 
-                    ( rgba[0]/255 ).toPrecision(2),
-                    ( rgba[1]/255 ).toPrecision(2),
-                    ( rgba[2]/255 ).toPrecision(2),
-                    ( rgba[3]/255 ).toPrecision(2)
-                ].join( ", " );
+                // console.log( camera );
+                // console.log( camera.matrixWorld.elements );
 
             }
 
