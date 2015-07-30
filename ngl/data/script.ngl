@@ -1,0 +1,93 @@
+
+load( "data://1LVZ.pdb", {
+    onLoad: function( o ){
+
+        o.addRepresentation( "cartoon" );
+        o.centerView();
+    },
+    firstModelOnly: true
+} );
+
+
+load( "data://1u19.pdb", function( o ){
+
+    o.addRepresentation( "cartoon" );
+    o.centerView();
+
+    o.setName( "1U19" );
+
+} );
+
+
+load( "data://3dqb.pdb", {
+
+    onLoad: function( o ){
+
+        o.addRepresentation( "cartoon" );
+        o.addRepresentation( "hyperball", { sele: "1-100", name: "resno 1-100" } );
+        o.centerView();
+
+    },
+
+    name: "PDB entry 3DQB"
+
+} );
+
+
+then( function(){
+
+    structures( "1U19" ).list[ 0 ].superpose( structures( "3DQB" ).list[ 0 ], true );
+    structures( "3DQB" ).centerView();
+
+} );
+
+
+load( "data://1blu.pdb", function( o ){
+
+    o.addRepresentation( "cartoon" );
+    o.addRepresentation( "licorice", {
+        sele: "sidechainAttached and not( SF4 or CYS )", visible: false
+    } );
+    o.addRepresentation( "hyperball", {
+        sele: "( sidechainAttached and CYS ) or SF4"
+    } );
+    // o.centerView();
+
+    o.setName( "1BLU" );
+
+    // o.eachRepresentation( function( repr ){
+    //     repr.requestGuiVisibility( false );
+    // } );
+
+    stage.getRepresentationsByName( { comp: "1BLU" } )
+        .requestGuiVisibility( false );
+
+} );
+
+
+then( function(){
+
+    structures( "1U19" ).addRepresentation( "licorice", {
+        sele: "RET or 296", visible: false
+    } );
+
+    uiText( "moin", 1 );
+
+    uiToggleButton(
+        "hide retinal",
+        "show retinal",
+        function(){
+            hide( representations( { comp: "1U19", repr: "licorice" } ) );
+        },
+        function(){
+            show( structures( "1U19" ) );
+            show( representations( { comp: "1U19", repr: "licorice" } ) );
+            structures( "1U19" ).centerView( true, "RET and :A" );
+        }
+    );
+
+    stage.centerView();
+
+    representations().requestGuiVisibility( false );
+
+} );

@@ -98,9 +98,10 @@ var properties = [
     'display', 'overflow', 'margin', 'marginLeft', 'marginTop', 'marginRight',
     'marginBottom', 'padding', 'paddingLeft', 'paddingTop', 'paddingRight',
     'paddingBottom', 'color', 'backgroundColor', 'opacity', 'fontSize',
-    'fontWeight', 'textTransform', 'cursor', 'verticalAlign', 'clear', 'float',
-    'zIndex', 'minHeight', 'maxHeight', 'minWidth', 'maxWidth', 'wordBreak',
-    'wordWrap', 'spellcheck', 'lineHeight'
+    'fontWeight', 'fontStyle', 'fontFamily', 'textTransform', 'cursor',
+    'verticalAlign', 'clear', 'float', 'zIndex', 'minHeight', 'maxHeight',
+    'minWidth', 'maxWidth', 'wordBreak', 'wordWrap', 'spellcheck',
+    'lineHeight', 'whiteSpace', 'textOverflow'
 ];
 
 properties.forEach( function ( property ) {
@@ -800,8 +801,8 @@ UI.Number = function ( number ) {
     var distance = 0;
     var onMouseDownValue = 0;
 
-    var pointer = new THREE.Vector2();
-    var prevPointer = new THREE.Vector2();
+    var pointer = [ 0, 0 ];
+    var prevPointer = [ 0, 0 ];
 
     var onMouseDown = function ( event ) {
 
@@ -811,7 +812,7 @@ UI.Number = function ( number ) {
 
         onMouseDownValue = parseFloat( dom.value );
 
-        prevPointer.set( event.clientX, event.clientY );
+        prevPointer = [ event.clientX, event.clientY ];
 
         document.addEventListener( 'mousemove', onMouseMove, false );
         document.addEventListener( 'mouseup', onMouseUp, false );
@@ -822,9 +823,9 @@ UI.Number = function ( number ) {
 
         var currentValue = dom.value;
 
-        pointer.set( event.clientX, event.clientY );
+        pointer = [ event.clientX, event.clientY ];
 
-        distance += ( pointer.x - prevPointer.x ) - ( pointer.y - prevPointer.y );
+        distance += ( pointer[ 0 ] - prevPointer[ 0 ] ) - ( pointer[ 1 ] - prevPointer[ 1 ] );
 
         var modifier = 50;
         if( event.shiftKey ) modifier = 5;
@@ -836,7 +837,7 @@ UI.Number = function ( number ) {
 
         if ( currentValue !== dom.value ) dom.dispatchEvent( changeEvent );
 
-        prevPointer.set( event.clientX, event.clientY );
+        prevPointer = [ event.clientX, event.clientY ];
 
     };
 
@@ -957,8 +958,8 @@ UI.Integer = function ( number ) {
     var distance = 0;
     var onMouseDownValue = 0;
 
-    var pointer = new THREE.Vector2();
-    var prevPointer = new THREE.Vector2();
+    var pointer = [ 0, 0 ];
+    var prevPointer = [ 0, 0 ];
 
     var onMouseDown = function ( event ) {
 
@@ -968,7 +969,7 @@ UI.Integer = function ( number ) {
 
         onMouseDownValue = parseFloat( dom.value );
 
-        prevPointer.set( event.clientX, event.clientY );
+        prevPointer = [ event.clientX, event.clientY ];
 
         document.addEventListener( 'mousemove', onMouseMove, false );
         document.addEventListener( 'mouseup', onMouseUp, false );
@@ -979,9 +980,9 @@ UI.Integer = function ( number ) {
 
         var currentValue = dom.value;
 
-        pointer.set( event.clientX, event.clientY );
+        pointer = [ event.clientX, event.clientY ];
 
-        distance += ( pointer.x - prevPointer.x ) - ( pointer.y - prevPointer.y );
+        distance += ( pointer[ 0 ] - prevPointer[ 0 ] ) - ( pointer[ 1 ] - prevPointer[ 1 ] );
 
         var modifier = 50;
         if( event.shiftKey ) modifier = 5;
@@ -993,7 +994,7 @@ UI.Integer = function ( number ) {
 
         if ( currentValue !== dom.value ) dom.dispatchEvent( changeEvent );
 
-        prevPointer.set( event.clientX, event.clientY );
+        prevPointer = [ event.clientX, event.clientY ];
 
     };
 
@@ -1289,6 +1290,78 @@ UI.Html.prototype.setValue = function ( value ) {
 };
 
 
+// Ellipsis Text
+
+UI.EllipsisText = function ( text ) {
+
+    UI.Text.call( this, text );
+
+    this.setWhiteSpace( "nowrap" );
+    this.setOverflow( "hidden" );
+    this.setTextOverflow( "ellipsis" );
+
+    return this;
+
+};
+
+UI.EllipsisText.prototype = Object.create( UI.Text.prototype );
+
+UI.EllipsisText.prototype.setValue = function ( value ) {
+
+    if ( value !== undefined ) {
+
+        this.dom.textContent = value;
+        this.setTitle( value );
+
+    }
+
+    return this;
+
+};
+
+
+// Ellipsis Multiline Text
+
+UI.EllipsisMultilineText = function ( text ) {
+
+    // http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
+
+    UI.Element.call( this );
+
+    var dom = document.createElement( 'span' );
+    dom.className = 'EllipsisMultilineText';
+    dom.style.cursor = 'default';
+    dom.style.display = 'inline-block';
+    dom.style.verticalAlign = 'middle';
+
+    var content = document.createElement( 'p' );
+    dom.appendChild( content );
+
+    this.dom = dom;
+    this.content = content;
+
+    this.setValue( text );
+
+    return this;
+
+};
+
+UI.EllipsisMultilineText.prototype = Object.create( UI.Element.prototype );
+
+UI.EllipsisMultilineText.prototype.setValue = function ( value ) {
+
+    if ( value !== undefined ) {
+
+        this.content.textContent = value;
+        this.setTitle( value );
+
+    }
+
+    return this;
+
+};
+
+
 // Overlay Panel
 
 UI.OverlayPanel = function(){
@@ -1296,6 +1369,7 @@ UI.OverlayPanel = function(){
     UI.Panel.call( this );
 
     this.dom.className = 'Panel OverlayPanel';
+    this.dom.tabIndex = 0;
 
     return this;
 
@@ -1433,6 +1507,7 @@ UI.DisposeIcon = function(){
     var scope = this;
 
     this.setTitle( "delete" );
+    this.setCursor( "pointer" )
 
     this.onClick( function(){
 
@@ -1447,14 +1522,16 @@ UI.DisposeIcon = function(){
         }else{
 
             scope.setColor( "rgb(178, 34, 34)" );
+            scope.dom.classList.add( "deleteInfo" );
             flag = true;
 
             setTimeout( function(){
 
                 scope.setColor( "#888" );
+                scope.dom.classList.remove( "deleteInfo" );
                 flag = false;
 
-            }, 1000);
+            }, 1500);
 
         }
 
@@ -1706,7 +1783,9 @@ UI.VirtualList = function( items ){
 
 // Popup Menu (requires Tether)
 
-UI.PopupMenu = function( iconClass, heading ){
+UI.PopupMenu = function( iconClass, heading, constraintTo ){
+
+    constraintTo = constraintTo || 'scrollParent';
 
     UI.Panel.call( this );
 
@@ -1727,11 +1806,12 @@ UI.PopupMenu = function( iconClass, heading ){
         .add(
             new UI.Icon( "times" )
                 .setFloat( "right" )
+                .setCursor( "pointer" )
                 .onClick( function(){
 
-                    panel.setDisplay( "none" );
+                    this.setMenuDisplay( "none" );
 
-                } )
+                }.bind( this ) )
         )
         .add(
             new UI.Text( heading )
@@ -1739,19 +1819,23 @@ UI.PopupMenu = function( iconClass, heading ){
 
     panel.add( headingPanel );
 
+    var tether;
+
     icon.setTitle( "menu" );
+    icon.setCursor( "pointer" )
     icon.onClick( function( e ){
 
         if( panel.getDisplay() === "block" ){
 
-            panel.setDisplay( "none" );
+            this.setMenuDisplay( "none" );
+            tether.destroy();
             return;
 
         }
 
-        panel.setDisplay( "block" );
+        this.setMenuDisplay( "block" );
 
-        var tether = new Tether( {
+        tether = new Tether( {
             element: panel.dom,
             target: icon.dom,
             attachment: 'top right',
@@ -1759,15 +1843,16 @@ UI.PopupMenu = function( iconClass, heading ){
             offset: '0px 5px',
             constraints: [
                 {
-                    to: 'window',
-                    attachment: 'element'
+                    to: constraintTo,
+                    attachment: 'element',
+                    pin: [ 'top', 'bottom' ]
                 }
             ]
         } );
 
         tether.position();
 
-    } );
+    }.bind( this ) );
 
     this.add( icon );
 
@@ -1787,7 +1872,9 @@ UI.PopupMenu.prototype = Object.create( UI.Panel.prototype );
 UI.PopupMenu.prototype.addEntry = function( label, entry ){
 
     this.panel
-        .add( new UI.Text( label ).setWidth( this.entryLabelWidth ) )
+        .add( new UI.Text( label )
+                // .setWhiteSpace( "nowrap" )
+                .setWidth( this.entryLabelWidth ) )
         .add( entry || new UI.Panel() )
         .add( new UI.Break() );
 
@@ -1806,6 +1893,16 @@ UI.PopupMenu.prototype.setEntryLabelWidth = function( value ){
 UI.PopupMenu.prototype.setMenuDisplay = function( value ){
 
     this.panel.setDisplay( value );
+
+    if( value !== "none" ) this.panel.dom.focus();
+
+    return this;
+
+}
+
+UI.PopupMenu.prototype.setIconTitle = function( value ){
+
+    this.icon.setTitle( value );
 
     return this;
 
@@ -1839,7 +1936,10 @@ UI.CollapsibleIconPanel = function( iconClass1, iconClass2 ){
     }
 
     this.button = new UI.Icon( iconClass1 )
-        .setWidth( "12px" ).setMarginRight( "6px" );
+        .setTitle( "expand/collapse" )
+        .setCursor( "pointer" )
+        .setWidth( "12px" )
+        .setMarginRight( "6px" );
     this.addStatic( this.button );
 
     var scope = this;
@@ -1903,6 +2003,7 @@ UI.CollapsibleIconPanel.prototype.setCollapsed = function( setCollapsed ) {
 
 // Color picker (requires FlexiColorPicker)
 // https://github.com/DavidDurman/FlexiColorPicker
+// https://github.com/zvin/FlexiColorPicker
 
 UI.ColorPicker = function(){
 
@@ -1948,8 +2049,8 @@ UI.ColorPicker = function(){
 
     // event
 
-    var changeEvent = document.createEvent('Event');
-    changeEvent.initEvent('change', true, true);
+    var changeEvent = document.createEvent( 'Event' );
+    changeEvent.initEvent( 'change', true, true );
 
     // finalize
 
@@ -1958,19 +2059,22 @@ UI.ColorPicker = function(){
         this.slideWrapper
     );
 
-    ColorPicker.fixIndicators(
-
-        this.sliderIndicator.dom,
-        this.pickerIndicator.dom
-
-    );
-
     this.colorPicker = ColorPicker(
 
         this.slider.dom,
         this.picker.dom,
 
         function( hex, hsv, rgb, pickerCoordinate, sliderCoordinate ){
+
+            if( !pickerCoordinate && sliderCoordinate && hsv.s < 0.05 ){
+
+                hsv.s = 0.5;
+                hsv.v = 0.7;
+                scope.colorPicker.setHsv( hsv );
+
+                return;
+
+            }
 
             ColorPicker.positionIndicators(
                 scope.sliderIndicator.dom, scope.pickerIndicator.dom,
@@ -1983,11 +2087,18 @@ UI.ColorPicker = function(){
 
             if( !scope._settingValue ){
 
-                scope.dom.dispatchEvent( changeEvent, hex, hsv, rgb );
+                scope.dom.dispatchEvent( changeEvent );
 
             }
 
         }
+
+    );
+
+    this.colorPicker.fixIndicators(
+
+        this.sliderIndicator.dom,
+        this.pickerIndicator.dom
 
     );
 
@@ -1999,9 +2110,13 @@ UI.ColorPicker.prototype = Object.create( UI.Panel.prototype );
 
 UI.ColorPicker.prototype.setValue = function( value ){
 
-    this._settingValue = true;
-    this.colorPicker.setHex( value );
-    this._settingValue = false;
+    if( value !== this.hex ){
+
+        this._settingValue = true;
+        this.colorPicker.setHex( value );
+        this._settingValue = false;
+
+    }
 
     return this;
 
@@ -2029,7 +2144,9 @@ UI.ColorPopupMenu = function(){
     UI.Panel.call( this );
 
     this.iconText = new UI.Text( "" )
+        .setCursor( "pointer" )
         .setClass( "fa-stack-1x" )
+        .setFontFamily( "Arial, sans-serif" )
         .setColor( "#111" );
 
     this.iconSquare = new UI.Icon( "square", "stack-1x" )
@@ -2043,13 +2160,19 @@ UI.ColorPopupMenu = function(){
         .add( this.iconSquare )
         .add( this.iconText )
 
-    var changeEvent = document.createEvent('Event');
-    changeEvent.initEvent('change', true, true);
+    var changeEvent = document.createEvent( 'Event' );
+    changeEvent.initEvent( 'change', true, true );
+
+    NGL.ColorFactory.signals.typesChanged.add( function(){
+
+        this.schemeSelector.setOptions( NGL.ColorFactory.getTypes() );
+
+    }, this );
 
     this.schemeSelector = new UI.Select()
         .setColor( '#444' )
         .setWidth( "" )
-        .setOptions( NGL.ColorFactory.types )
+        .setOptions( NGL.ColorFactory.getTypes() )
         .onChange( function(){
 
             scope.setScheme( scope.schemeSelector.getValue() );
@@ -2063,6 +2186,7 @@ UI.ColorPopupMenu = function(){
     this.colorInput = new UI.Input()
         .onChange( function(){
 
+            scope.setScheme( "color" );
             scope.setColor( scope.colorInput.getValue() );
             scope.dom.dispatchEvent( changeEvent );
 
@@ -2070,8 +2194,9 @@ UI.ColorPopupMenu = function(){
 
     this.colorPicker = new UI.ColorPicker()
         .setDisplay( "inline-block" )
-        .onChange( function( e, hex, hsv, rgb ){
+        .onChange( function( e ){
 
+            scope.setScheme( "color" );
             scope.setColor( scope.colorPicker.getValue() );
             scope.dom.dispatchEvent( changeEvent );
 
@@ -2095,12 +2220,14 @@ UI.ColorPopupMenu.prototype = Object.create( UI.Panel.prototype );
 
 UI.ColorPopupMenu.prototype.setScheme = function( value ){
 
-    if( value !== "color" ){
-        this.setColor( "#888" );
-    }
+    value = value || "";
 
     this.iconText.setValue( value.charAt( 0 ).toUpperCase() );
     this.schemeSelector.setValue( value );
+
+    if( value !== "color" ){
+        this.setColor( "#888888" );
+    }
 
     return this;
 
@@ -2118,7 +2245,8 @@ UI.ColorPopupMenu.prototype.setColor = function(){
 
     return function( value ){
 
-        this.setScheme( "color" );
+        c.set( value );
+        value = "#" + c.getHexString();
 
         this.colorInput
             .setBackgroundColor( value )
@@ -2128,11 +2256,19 @@ UI.ColorPopupMenu.prototype.setColor = function(){
 
         this.iconSquare.setColor( value );
 
-        c.setStyle( value );
-        if( ( c.r + c.g + c.b ) > 1.5 ){
-            this.iconText.setColor( "#000" );
+        // perceived brightness (http://alienryderflex.com/hsp.html)
+        var brightness = Math.sqrt(
+              c.r*255 * c.r*255 * 0.241 +
+              c.g*255 * c.g*255 * 0.691 +
+              c.b*255 * c.b*255 * 0.068
+        );
+
+        if( brightness > 130 ){
+            this.iconText.setColor( "#000000" );
+            this.colorInput.setColor( "#000000" );
         }else{
-            this.iconText.setColor( "#FFF" );
+            this.iconText.setColor( "#FFFFFF" );
+            this.colorInput.setColor( "#FFFFFF" );
         }
 
         return this;
@@ -2147,12 +2283,17 @@ UI.ColorPopupMenu.prototype.getColor = function(){
 
 };
 
+UI.ColorPopupMenu.prototype.getValue = function(){
+
+    return this.colorInput.getValue();
+
+};
+
 UI.ColorPopupMenu.prototype.setValue = function( value ){
 
     if( parseInt( value ) === value ){
-        this.setColor(
-            "#" + ( new THREE.Color( value ).getHexString() )
-        );
+        this.setColor( value );
+        this.setScheme( "color" );
     }else{
         this.setScheme( value );
     }
@@ -2180,7 +2321,7 @@ UI.SelectionInput = function( selection ){
 
     if( ! ( selection instanceof NGL.Selection ) ){
 
-        console.error( "UI.SelectionInput: not a selection", selection );
+        NGL.error( "UI.SelectionInput: not a selection", selection );
 
         return this;
 
@@ -2353,14 +2494,14 @@ UI.ComponentPanel = function( component ){
 
     // Name
 
-    var name = new UI.Text( NGL.unicodeHelper( component.name ) )
-        .setWidth( "100px" )
-        .setWordWrap( "break-word" );
+    var name = new UI.EllipsisText( NGL.unicodeHelper( component.name ) )
+        .setWidth( "100px" );
 
     // Actions
 
     var toggle = new UI.ToggleIcon( component.visible, "eye", "eye-slash" )
         .setTitle( "hide/show" )
+        .setCursor( "pointer" )
         .setMarginLeft( "25px" )
         .onClick( function(){
 
@@ -2370,10 +2511,11 @@ UI.ComponentPanel = function( component ){
 
     var center = new UI.Icon( "bullseye" )
         .setTitle( "center" )
+        .setCursor( "pointer" )
         .setMarginLeft( "10px" )
         .onClick( function(){
 
-            component.centerView( undefined, true );
+            component.centerView( true );
 
         } );
 
@@ -2434,6 +2576,8 @@ NGL.Widget = function(){
 };
 
 NGL.Widget.prototype = {
+
+    constructor: NGL.Widget,
 
 };
 
@@ -2536,7 +2680,8 @@ NGL.ToolbarWidget = function( stage ){
     var signals = stage.signals;
     var container = new UI.Panel();
 
-    var messagePanel = new UI.Panel();
+    var messagePanel = new UI.Panel().setDisplay( "inline" ).setFloat( "left" );
+    var statsPanel = new UI.Panel().setDisplay( "inline" ).setFloat( "right" );
 
     signals.atomPicked.add( function( atom ){
 
@@ -2553,7 +2698,21 @@ NGL.ToolbarWidget = function( stage ){
 
     } );
 
+    stage.viewer.stats.signals.updated.add( function(){
+
+        statsPanel
+            .clear()
+            .add(
+                new UI.Text(
+                    stage.viewer.stats.lastDuration + " ms | " +
+                    stage.viewer.stats.lastFps + " fps"
+                )
+            );
+
+    } );
+
     container.add( messagePanel );
+    // container.add( statsPanel );
 
     return container;
 
@@ -2571,6 +2730,12 @@ NGL.MenubarWidget = function( stage ){
     container.add( new NGL.MenubarExamplesWidget( stage ) );
     container.add( new NGL.MenubarHelpWidget( stage ) );
 
+    container.add(
+        new UI.Panel().setClass( "menu" ).setFloat( "right" ).add(
+            new UI.Text( "NGL Viewer " + NGL.REVISION ).setClass( "title" )
+        )
+    );
+
     return container;
 
 };
@@ -2579,7 +2744,10 @@ NGL.MenubarWidget = function( stage ){
 NGL.MenubarFileWidget = function( stage ){
 
     var fileTypesOpen = [
-        "pdb", "gro", "cif", "obj", "ply", "ngz",
+        "pdb", "ent", "gro", "cif", "mcif", "mmcif", "sdf", "mol2",
+        "mrc", "ccp4", "map", "cube",
+        "obj", "ply",
+        "ngl", "ngz",
         "gz", "lzma", "bz2", "zip"
     ];
     var fileTypesImport = fileTypesOpen + [ "ngl" ];
@@ -2587,7 +2755,8 @@ NGL.MenubarFileWidget = function( stage ){
     var fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.multiple = true;
-    fileInput.style = "visibility:hidden";
+    fileInput.style.display = "hidden";
+    document.body.appendChild( fileInput );
     fileInput.accept = "." + fileTypesOpen.join( ",." );
     fileInput.addEventListener( 'change', function( e ){
 
@@ -2596,14 +2765,11 @@ NGL.MenubarFileWidget = function( stage ){
 
         for( var i=0; i<n; ++i ){
 
-            stage.loadFile(
-                fileList[ i ], undefined, undefined, undefined,
-                {
-                    asTrajectory: asTrajectory,
-                    firstModelOnly: firstModelOnly,
-                    cAlphaOnly: cAlphaOnly
-                }
-            );
+            stage.loadFile( fileList[ i ], {
+                asTrajectory: asTrajectory,
+                firstModelOnly: firstModelOnly,
+                cAlphaOnly: cAlphaOnly
+            } );
 
         }
 
@@ -2619,11 +2785,7 @@ NGL.MenubarFileWidget = function( stage ){
 
     function onOpenOptionClick () {
 
-        fileInput.dispatchEvent( new MouseEvent('click', {
-            'view': window,
-            'bubbles': true,
-            'cancelable': true
-        }));
+        fileInput.click();
 
     }
 
@@ -2639,18 +2801,15 @@ NGL.MenubarFileWidget = function( stage ){
 
                 if( fileTypesImport.indexOf( ext ) !== -1 ){
 
-                    stage.loadFile(
-                        path.path, undefined, undefined, undefined,
-                        {
-                            asTrajectory: asTrajectory,
-                            firstModelOnly: firstModelOnly,
-                            cAlphaOnly: cAlphaOnly
-                        }
-                    );
+                    stage.loadFile( path.path, {
+                        asTrajectory: asTrajectory,
+                        firstModelOnly: firstModelOnly,
+                        cAlphaOnly: cAlphaOnly
+                    } );
 
                 }else{
 
-                    console.log( "unknown filetype: " + ext );
+                    NGL.log( "unknown filetype: " + ext );
 
                 }
 
@@ -2661,7 +2820,7 @@ NGL.MenubarFileWidget = function( stage ){
         );
 
         dirWidget
-            .setOpacity( "0.8" )
+            .setOpacity( "0.9" )
             .setLeft( "50px" )
             .setTop( "80px" )
             .attach();
@@ -2671,18 +2830,23 @@ NGL.MenubarFileWidget = function( stage ){
     function onExportImageOptionClick () {
 
         exportImageWidget
-            .setOpacity( "0.8" )
+            .setOpacity( "0.9" )
             .setLeft( "50px" )
             .setTop( "80px" )
             .setDisplay( "block" );
-
-        return;
 
     }
 
     function onScreenshotOptionClick () {
 
-        stage.viewer.screenshot( 1, "image/png", 1.0, true, false, false );
+        stage.viewer.screenshot( {
+            factor: 1,
+            type: "image/png",
+            quality: 1.0,
+            antialias: true,
+            transparent: false,
+            trim: false
+        } );
 
     }
 
@@ -2690,14 +2854,11 @@ NGL.MenubarFileWidget = function( stage ){
 
         if( e.keyCode === 13 ){
 
-            stage.loadFile(
-                e.target.value, undefined, undefined, undefined,
-                {
-                    asTrajectory: asTrajectory,
-                    firstModelOnly: firstModelOnly,
-                    cAlphaOnly: cAlphaOnly
-                }
-            );
+            stage.loadFile( "rcsb://" + e.target.value, {
+                asTrajectory: asTrajectory,
+                firstModelOnly: firstModelOnly,
+                cAlphaOnly: cAlphaOnly
+            } );
             e.target.value = "";
 
         }
@@ -2887,7 +3048,19 @@ NGL.MenubarHelpWidget = function( stage ){
     function onPreferencesOptionClick () {
 
         preferencesWidget
-            .setOpacity( "0.8" )
+            .setOpacity( "0.9" )
+            .setLeft( "50px" )
+            .setTop( "80px" )
+            .setDisplay( "block" );
+
+        return;
+
+    }
+
+    function onOverviewOptionClick () {
+
+        overviewWidget
+            .setOpacity( "0.9" )
             .setLeft( "50px" )
             .setTop( "80px" )
             .setDisplay( "block" );
@@ -2902,12 +3075,23 @@ NGL.MenubarHelpWidget = function( stage ){
         .setDisplay( "none" )
         .attach();
 
+    // overview
+
+    var overviewWidget = new NGL.OverviewWidget( stage )
+        .setDisplay( "none" )
+        .attach();
+
+    if( stage.preferences.getKey( "overview" ) ){
+        onOverviewOptionClick();
+    }
+
     // configure menu contents
 
     var createOption = UI.MenubarHelper.createOption;
     var createDivider = UI.MenubarHelper.createDivider;
 
     var menuConfig = [
+        createOption( 'Overview', onOverviewOptionClick ),
         createOption( 'Documentation', onDocOptionClick ),
         createDivider(),
         createOption( 'Unittests', onUnittestsOptionClick ),
@@ -2919,6 +3103,127 @@ NGL.MenubarHelpWidget = function( stage ){
     var optionsPanel = UI.MenubarHelper.createOptionsPanel( menuConfig );
 
     return UI.MenubarHelper.createMenuContainer( 'Help', optionsPanel );
+
+};
+
+
+// Overview
+
+NGL.OverviewWidget = function( stage ){
+
+    var container = new UI.OverlayPanel();
+
+    var headingPanel = new UI.Panel()
+        .setBorderBottom( "1px solid #555" )
+        .setHeight( "25px" );
+
+    var listingPanel = new UI.Panel()
+        .setMarginTop( "10px" )
+        .setMinHeight( "100px" )
+        .setMaxHeight( "500px" )
+        .setMaxWidth( "600px" )
+        .setOverflow( "auto" );
+
+    headingPanel.add(
+        new UI.Text( "NGL Viewer" ).setFontStyle( "italic" ),
+        new UI.Html( "&nbsp;&mdash;&nbsp;Overview" )
+    );
+    headingPanel.add(
+        new UI.Icon( "times" )
+            .setCursor( "pointer" )
+            .setMarginLeft( "20px" )
+            .setFloat( "right" )
+            .onClick( function(){
+
+                container.setDisplay( "none" );
+
+            } )
+    );
+
+    container.add( headingPanel );
+    container.add( listingPanel );
+
+    //
+
+    function addIcon( name, text ){
+
+        var panel = new UI.Panel();
+
+        var icon = new UI.Icon( name )
+            .setWidth( "20px" )
+            .setFloat( "left" );
+
+        var label = new UI.Text( text )
+            .setDisplay( "inline" )
+            .setMarginLeft( "5px" );
+
+        panel
+            .setMarginLeft( "20px" )
+            .add( icon, label );
+        listingPanel.add( panel );
+
+    }
+
+    listingPanel
+        .add( new UI.Panel().add( new UI.Html( "To load a new structure use the <i>File</i> menu in the top left via drag'n'drop." ) ) )
+        .add( new UI.Break() );
+
+    listingPanel
+        .add( new UI.Panel().add( new UI.Text( "A number of clickable icons provide common actions. Most icons can be clicked on, just try it or hover the mouse pointer over it to see a tooltip." ) ) )
+        .add( new UI.Break() );
+
+    addIcon( "eye", "Controls the visibility of a component." );
+    addIcon( "trash-o", "Deletes a component. Note that a second click is required to confirm the action." );
+    addIcon( "bullseye", "Centers a component." );
+    addIcon( "bars", "Opens a menu with further options." );
+    addIcon( "square", "Opens a menu with coloring options." );
+    addIcon( "filter", "Indicates atom-selection input fields." );
+
+    listingPanel
+        .add( new UI.Text( "Mouse controls" ) )
+        .add( new UI.Html(
+            "<ul>" +
+                "<li>Left button hold and move to rotate camera around center.</li>" +
+                "<li>Left button click to pick atom.</li>" +
+                "<li>Middle button hold and move to zoom camera in and out.</li>" +
+                "<li>Middle button click to center camera on atom.</li>" +
+                "<li>Right button hold and move to translate camera in the screen plane.</li>" +
+            "</ul>"
+        ) );
+
+    listingPanel
+        .add( new UI.Panel().add( new UI.Html(
+            "For more information please visit the <a href='../doc/index.html' target='_blank'>documentation pages</a>."
+        ) ) );
+
+    var overview = stage.preferences.getKey( "overview" );
+    var showOverviewCheckbox = new UI.Checkbox( overview )
+        .onClick( function(){
+            stage.preferences.setKey(
+                "overview",
+                showOverviewCheckbox.getValue()
+            );
+        } );
+
+    listingPanel
+        .add( new UI.HorizontalRule()
+                    .setBorderTop( "1px solid #555" )
+                    .setMarginTop( "15px" )
+        )
+        .add( new UI.Panel().add(
+                showOverviewCheckbox,
+                new UI.Text(
+                    "Show on startup. Always available from Menu > Help > Overview."
+                ).setMarginLeft( "5px" )
+        ) );
+
+    // addIcon( "file", "In front of atom-selection input fields." );
+
+    // addIcon( "bookmark", "In front of atom-selection input fields." );
+
+    // addIcon( "database", "In front of atom-selection input fields." );
+
+    return container;
 
 };
 
@@ -2944,6 +3249,7 @@ NGL.PreferencesWidget = function( stage ){
     headingPanel.add( new UI.Text( "Preferences" ) );
     headingPanel.add(
         new UI.Icon( "times" )
+            .setCursor( "pointer" )
             .setMarginLeft( "20px" )
             .setFloat( "right" )
             .onClick( function(){
@@ -3031,6 +3337,7 @@ NGL.ExportImageWidget = function( stage ){
     headingPanel.add( new UI.Text( "Image export" ) );
     headingPanel.add(
         new UI.Icon( "times" )
+            .setCursor( "pointer" )
             .setMarginLeft( "20px" )
             .setFloat( "right" )
             .onClick( function(){
@@ -3086,14 +3393,31 @@ NGL.ExportImageWidget = function( stage ){
             progress.setDisplay( "inline-block" );
 
             setTimeout( function(){
-                exportImage(
+
+                stage.exportImage(
+
                     parseInt( factorSelect.getValue() ),
-                    typeSelect.getValue(),
-                    parseFloat( qualitySelect.getValue() ),
                     antialiasCheckbox.getValue(),
                     transparentCheckbox.getValue(),
-                    trimCheckbox.getValue()
-                )
+                    trimCheckbox.getValue(),
+
+                    function( i, n, finished ){
+                        if( i === 1 ){
+                            progress.setMax( n );
+                        }
+                        if( i >= n ){
+                            progress.setIndeterminate();
+                        }else{
+                            progress.setValue( i );
+                        }
+                        if( finished ){
+                            progress.setDisplay( "none" );
+                            exportButton.setDisplay( "inline-block" );
+                        }
+                    }
+
+                );
+
             }, 50 );
 
         } );
@@ -3108,72 +3432,16 @@ NGL.ExportImageWidget = function( stage ){
     }
 
     addEntry( "scale", factorSelect );
-    addEntry( "type", typeSelect );
-    addEntry( "quality", qualitySelect );
+    // addEntry( "type", typeSelect ); // commented out to always use png
+    // addEntry( "quality", qualitySelect ); // not available for png
     addEntry( "antialias", antialiasCheckbox );
-    addEntry( "transparent", transparentCheckbox );
+    addEntry( "transparent", transparentCheckbox ); // not available for jpeg
     addEntry( "trim", trimCheckbox );
 
     listingPanel.add(
         new UI.Break(),
         exportButton, progress
     );
-
-    function exportImage( factor, type, quality, antialias, transparent, trim ){
-
-        var paramsList = [];
-
-        stage.eachRepresentation( function( repr ){
-
-            paramsList.push( repr.getParameters() );
-
-            var p = repr.getParameters();
-
-            if( p.subdiv !== undefined ){
-                p.subdiv = Math.max( 25, p.subdiv );
-            }
-
-            if( p.radialSegments !== undefined ){
-                p.radialSegments = Math.max( 25, p.radialSegments );
-            }
-
-            // prevent automatic quality settings
-            p.quality = null;
-
-            repr.rebuild( p );
-
-        }, NGL.StructureComponent );
-
-        stage.viewer.screenshot(
-            factor, type, quality, antialias, transparent, trim,
-            function( i, n, finished ){
-                if( i === 1 ){
-                    progress.setMax( n );
-                }
-                // FIXME "i + 1" case should not be needed but
-                // without it the progress element is updated too late
-                if( i === n || i + 1 === n ){
-                    progress.setIndeterminate();
-                }else{
-                    progress.setValue( i );
-                }
-                if( finished ){
-                    progress.setDisplay( "none" );
-                    exportButton.setDisplay( "inline-block" );
-
-                    var j = 0;
-
-                    stage.eachRepresentation( function( repr ){
-
-                        repr.rebuild( paramsList[ j ] );
-                        j += 1;
-
-                    }, NGL.StructureComponent );
-                }
-            }
-        );
-
-    }
 
     return container;
 
@@ -3215,7 +3483,7 @@ NGL.SidebarWidget = function( stage ){
 
         }else{
 
-            console.warn( "NGL.SidebarWidget: component type unknown", component );
+            NGL.warn( "NGL.SidebarWidget: component type unknown", component );
             return;
 
         }
@@ -3245,6 +3513,8 @@ NGL.SidebarWidget = function( stage ){
     // actions
 
     var expandAll = new UI.Icon( "plus-square" )
+        .setTitle( "expand all" )
+        .setCursor( "pointer" )
         .onClick( function(){
 
             widgetList.forEach( function( widget ){
@@ -3254,6 +3524,8 @@ NGL.SidebarWidget = function( stage ){
         } );
 
     var collapseAll = new UI.Icon( "minus-square" )
+        .setTitle( "collapse all" )
+        .setCursor( "pointer" )
         .setMarginLeft( "10px" )
         .onClick( function(){
 
@@ -3264,6 +3536,8 @@ NGL.SidebarWidget = function( stage ){
         } );
 
     var centerAll = new UI.Icon( "bullseye" )
+        .setTitle( "center all" )
+        .setCursor( "pointer" )
         .setMarginLeft( "10px" )
         .onClick( function(){
 
@@ -3271,8 +3545,49 @@ NGL.SidebarWidget = function( stage ){
 
         } );
 
-    var settingsMenu = new UI.PopupMenu( "cogs", "Settings" )
+    var disposeAll = new UI.DisposeIcon()
+        .setMarginLeft( "10px" )
+        .setDisposeFunction( function(){
+
+            stage.removeAllComponents()
+
+        } );
+
+    var settingsMenu = new UI.PopupMenu( "cogs", "Settings", "window" )
+        .setIconTitle( "settings" )
         .setMarginLeft( "10px" );
+
+    // Busy indicator
+
+    var busy = new UI.Panel()
+        .setDisplay( "inline" )
+        .add(
+             new UI.Icon( "spinner" )
+                .addClass( "spin" )
+                .setMarginLeft( "45px" )
+        );
+
+    stage.tasks.signals.countChanged.add( function( delta, count ){
+
+        if( count > 0 ){
+
+            actions.add( busy );
+
+        }else{
+
+            try{
+
+                actions.remove( busy );
+
+            }catch( e ){
+
+                // already removed
+
+            }
+
+        }
+
+    } );
 
     // clipping
 
@@ -3334,6 +3649,7 @@ NGL.SidebarWidget = function( stage ){
             expandAll,
             collapseAll,
             centerAll,
+            disposeAll,
             settingsMenu
         );
 
@@ -3386,9 +3702,8 @@ NGL.ComponentWidget = function( component, stage ){
 
     // Name
 
-    var name = new UI.Text( NGL.unicodeHelper( component.name ) )
-        .setWidth( "100px" )
-        .setWordWrap( "break-word" );
+    var name = new UI.EllipsisText( NGL.unicodeHelper( component.name ) )
+        .setWidth( "100px" );
 
     // Loading indicator
 
@@ -3491,6 +3806,32 @@ NGL.StructureComponentWidget = function( component, stage ){
 
         } );
 
+    // Assembly
+
+    var assembly = new UI.Select()
+        .setColor( '#444' )
+        .setOptions( (function(){
+
+            var biomolDict = component.structure.biomolDict;
+            var assemblyOptions = { "__AU": "AU" };
+            Object.keys( biomolDict ).forEach( function( k ){
+                assemblyOptions[ k ] = k;
+            } );
+            return assemblyOptions;
+
+        })() )
+        .setValue(
+            component.structure.defaultAssembly
+        )
+        .onChange( function(){
+
+            component.structure.setDefaultAssembly( assembly.getValue() );
+            component.rebuildRepresentations();
+            // component.centerView();
+            componentPanel.setMenuDisplay( "none" );
+
+        } );
+
     // Import trajectory
 
     var traj = new UI.Button( "import" ).onClick( function(){
@@ -3509,7 +3850,7 @@ NGL.StructureComponentWidget = function( component, stage ){
 
                 if( trajExt.indexOf( ext ) !== -1 ){
 
-                    console.log( path );
+                    NGL.log( path );
 
                     component.addTrajectory( path.path );
 
@@ -3517,7 +3858,7 @@ NGL.StructureComponentWidget = function( component, stage ){
 
                 }else{
 
-                    console.log( "unknown trajectory type: " + ext );
+                    NGL.log( "unknown trajectory type: " + ext );
 
                 }
 
@@ -3526,7 +3867,7 @@ NGL.StructureComponentWidget = function( component, stage ){
         );
 
         dirWidget
-            .setOpacity( "0.8" )
+            .setOpacity( "0.9" )
             .setLeft( "50px" )
             .setTop( "80px" )
             .attach();
@@ -3583,6 +3924,22 @@ NGL.StructureComponentWidget = function( component, stage ){
 
     } );
 
+    // duplicate structure
+
+    var duplicateButton = new UI.Button( "duplicate" ).onClick( function(){
+
+        stage.addComponent(
+            new NGL.StructureComponent(
+                stage,
+                component.structure.clone(),
+                {}
+            )
+        );
+
+        componentPanel.setMenuDisplay( "none" );
+
+    } );
+
     // Component panel
 
     var componentPanel = new UI.ComponentPanel( component )
@@ -3590,9 +3947,11 @@ NGL.StructureComponentWidget = function( component, stage ){
         .setMargin( "0px" )
         .addMenuEntry( "PDB file", pdb )
         .addMenuEntry( "Representation", repr )
+        .addMenuEntry( "Assembly", assembly )
         .addMenuEntry( "Trajectory", traj )
         .addMenuEntry( "Superpose", superpose )
         .addMenuEntry( "SS", ssButton )
+        .addMenuEntry( "Structure", duplicateButton )
         .addMenuEntry(
             "File", new UI.Text( component.structure.path )
                         .setMaxWidth( "100px" )
@@ -3633,10 +3992,22 @@ NGL.SurfaceComponentWidget = function( component, stage ){
 
     // Add representation
 
-    var repr = new UI.Button( "add" )
-        .onClick( function(){
+    var repr = new UI.Select()
+        .setColor( '#444' )
+        .setOptions( (function(){
 
-            component.addRepresentation();
+            var reprOptions = {
+                "": "[ add ]",
+                "surface": "surface",
+                "dot": "dot"
+            };
+            return reprOptions;
+
+        })() )
+        .onChange( function(){
+
+            component.addRepresentation( repr.getValue() );
+            repr.setValue( "" );
             componentPanel.setMenuDisplay( "none" );
 
         } );
@@ -3711,9 +4082,8 @@ NGL.ScriptComponentWidget = function( component, stage ){
 
     // Name
 
-    var name = new UI.Text( NGL.unicodeHelper( component.name ) )
-        .setWidth( "100px" )
-        .setWordWrap( "break-word" );
+    var name = new UI.EllipsisText( NGL.unicodeHelper( component.name ) )
+        .setWidth( "100px" );
 
     // Status
 
@@ -3742,6 +4112,12 @@ NGL.RepresentationComponentWidget = function( component, stage ){
     var container = new UI.CollapsibleIconPanel( "bookmark" )
         .setMarginLeft( "20px" );
 
+    signals.requestGuiVisibility.add( function( value ){
+
+        container.setCollapsed( !value );
+
+    } );
+
     signals.visibilityChanged.add( function( value ){
 
         toggle.setValue( value );
@@ -3754,6 +4130,12 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
     } );
 
+    signals.nameChanged.add( function( value ){
+
+        name.setValue( NGL.unicodeHelper( value ) );
+
+    } );
+
     signals.disposed.add( function(){
 
         menu.dispose();
@@ -3762,10 +4144,16 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
     } );
 
+    // Name
+
+    var name = new UI.EllipsisText( NGL.unicodeHelper( component.name ) )
+        .setWidth( "80px" );
+
     // Actions
 
     var toggle = new UI.ToggleIcon( component.visible, "eye", "eye-slash" )
         .setTitle( "hide/show" )
+        .setCursor( "pointer" )
         .setMarginLeft( "25px" )
         .onClick( function(){
 
@@ -3802,16 +4190,28 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
         })() );
 
+    if( component.parent instanceof NGL.SurfaceComponent ){
+
+        colorWidget.schemeSelector.setOptions( {
+            "": "",
+            "value": "value",
+            "color": "color",
+        } );
+
+    }
+
     container
-        .addStatic( new UI.Text( component.repr.type ).setWidth( "80px" ) )
+        .addStatic( name )
         .addStatic( toggle )
         .addStatic( disposeIcon )
         .addStatic( colorWidget );
 
     // Selection
 
-    if( component.parent instanceof NGL.StructureComponent ||
-            component.parent instanceof NGL.TrajectoryComponent ){
+    if( ( component.parent instanceof NGL.StructureComponent ||
+            component.parent instanceof NGL.TrajectoryComponent ) &&
+        component.repr.selection instanceof NGL.Selection
+    ){
 
         container.add(
             new UI.SelectionPanel( component.repr.selection )
@@ -3826,6 +4226,8 @@ NGL.RepresentationComponentWidget = function( component, stage ){
     var menu = new UI.PopupMenu( "bars", "Representation" )
         .setMarginLeft( "45px" )
         .setEntryLabelWidth( "110px" );
+
+    menu.addEntry( "type", new UI.Text( component.repr.type ) );
 
     // Parameters
 
@@ -3854,6 +4256,10 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
             input = new UI.Checkbox( repr[ name ] );
 
+        }else if( p.type === "text" ){
+
+            input = new UI.Input( repr[ name ] );
+
         }else if( p.type === "select" ){
 
             input = new UI.Select()
@@ -3870,24 +4276,66 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
                 } );
 
+        }else if( p.type === "color" ){
+
+            input = new UI.ColorPopupMenu( name )
+                .setValue( repr[ name ] );
+
+        }else if( p.type === "hidden" ){
+
+            // nothing to display
+
+        }else{
+
+            NGL.warn(
+                "NGL.RepresentationComponentWidget: unknown parameter type " +
+                "'" + p.type + "'"
+            );
+
         }
 
         if( input ){
 
-            signals.parametersChanged.add( function( value ){
+            signals.parametersChanged.add( function( params ){
 
-                input.setValue( repr[ name ] );
-
-            } );
-
-            input.onChange( function(){
-
-                var po = {};
-                po[ name ] = input.getValue();
-                repr.setParameters( po );
-                repr.viewer.render();
+                input.setValue( params[ name ] );
 
             } );
+
+            if( p.type === "color" ){
+
+                input.onChange( (function(){
+
+                    var c = new THREE.Color();
+                    return function( e ){
+
+                        var po = {};
+                        var scheme = input.getScheme();
+                        if( scheme === "color" ){
+                            c.setStyle( input.getColor() );
+                            po[ name ] = c.getHex();
+                        }else{
+                            po[ name ] = scheme;
+                        }
+                        component.setParameters( po );
+                        repr.viewer.requestRender();
+
+                    }
+
+                })() );
+
+            }else{
+
+                input.onChange( function(){
+
+                    var po = {};
+                    po[ name ] = input.getValue();
+                    component.setParameters( po );
+                    repr.viewer.requestRender();
+
+                } );
+
+            }
 
             menu.addEntry( name, input );
 
@@ -3929,6 +4377,13 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
 
     } );
 
+    signals.disposed.add( function(){
+
+        menu.dispose();
+        container.dispose();
+
+    } );
+
     var numframes = new UI.Panel()
         .setMarginLeft( "10px" )
         .setDisplay( "inline" )
@@ -3964,9 +4419,8 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
 
     // Name
 
-    var name = new UI.Text( traj.name )
-        .setWidth( "108px" )
-        .setWordWrap( "break-word" );
+    var name = new UI.EllipsisText( traj.name )
+        .setWidth( "108px" );
 
     container.addStatic( name );
     container.addStatic( numframes );
@@ -4019,6 +4473,26 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
 
         } );
 
+    var interpolateType = new UI.Select()
+        .setColor( '#444' )
+        .setOptions( {
+            "": "none",
+            "linear": "linear",
+            "spline": "spline",
+        } )
+        .onChange( function(){
+
+            player.interpolateType = interpolateType.getValue();
+
+        } );
+
+    var interpolateStep = new UI.Integer( 5 )
+        .setWidth( "30px" )
+        .setRange( 1, 50 )
+        .onChange( function(){
+            player.interpolateStep = interpolateStep.getValue();
+        } );
+
     // player
 
     var timeout = new UI.Integer( 50 )
@@ -4035,6 +4509,7 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
     var playerButton = new UI.ToggleIcon( true, "play", "pause" )
         .setMarginRight( "10px" )
         .setMarginLeft( "20px" )
+        .setCursor( "pointer" )
         .setWidth( "12px" )
         .setTitle( "play" )
         .onClick( function(){
@@ -4056,6 +4531,30 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
     frameRow.add( playerButton );
     frameRow.add( frameRange );
 
+    var playDirection = new UI.Select()
+        .setColor( '#444' )
+        .setOptions( {
+            "forward": "forward",
+            "backward": "backward",
+        } )
+        .onChange( function(){
+
+            player.direction = playDirection.getValue();
+
+        } );
+
+    var playMode = new UI.Select()
+        .setColor( '#444' )
+        .setOptions( {
+            "loop": "loop",
+            "once": "once",
+        } )
+        .onChange( function(){
+
+            player.mode = playMode.getValue();
+
+        } );
+
     // Selection
 
     container.add(
@@ -4071,7 +4570,6 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
             component.setParameters( {
                 "centerPbc": setCenterPbc.getValue()
             } );
-            menu.setMenuDisplay( "none" );
         } );
 
     var setRemovePbc = new UI.Checkbox( traj.params.removePbc )
@@ -4079,7 +4577,6 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
             component.setParameters( {
                 "removePbc": setRemovePbc.getValue()
             } );
-            menu.setMenuDisplay( "none" );
         } );
 
     var setSuperpose = new UI.Checkbox( traj.params.superpose )
@@ -4087,7 +4584,6 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
             component.setParameters( {
                 "superpose": setSuperpose.getValue()
             } );
-            menu.setMenuDisplay( "none" );
         } );
 
     signals.parametersChanged.add( function( params ){
@@ -4107,7 +4603,15 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
         .onClick( function(){
 
             component.addRepresentation();
-            menu.setMenuDisplay( "none" );
+
+        } );
+
+    // Dispose
+
+    var dispose = new UI.DisposeIcon()
+        .setDisposeFunction( function(){
+
+            component.parent.removeTrajectory( component );
 
         } );
 
@@ -4121,18 +4625,23 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
 
     var menu = new UI.PopupMenu( "bars", "Trajectory" )
         .setMarginLeft( "10px" )
-        .setEntryLabelWidth( "110px" )
+        .setEntryLabelWidth( "130px" )
         .addEntry( "Path", repr )
         .addEntry( "Center", setCenterPbc )
         .addEntry( "Remove PBC", setRemovePbc )
         .addEntry( "Superpose", setSuperpose )
-        .addEntry( "Step", step )
-        .addEntry( "Timeout", timeout )
+        .addEntry( "Step size", step )
+        .addEntry( "Interpolation type", interpolateType )
+        .addEntry( "Interpolation steps", interpolateStep )
+        .addEntry( "Play timeout", timeout )
+        .addEntry( "Play direction", playDirection )
+        .addEntry( "Play mode", playMode )
         // .addEntry( "Download", download )
         .addEntry(
             "File", new UI.Text( traj.trajPath )
                         .setMaxWidth( "100px" )
-                        .setWordWrap( "break-word" ) );
+                        .setWordWrap( "break-word" ) )
+        .addEntry( "Dispose", dispose );
 
     container
         .addStatic( menu );
@@ -4166,6 +4675,8 @@ NGL.DirectoryListing = function(){
 
 NGL.DirectoryListing.prototype = {
 
+    constructor: NGL.DirectoryListing,
+
     getListing: function( path ){
 
         var scope = this;
@@ -4175,11 +4686,14 @@ NGL.DirectoryListing.prototype = {
         var loader = new THREE.XHRLoader();
         var url = "../dir/" + path;
 
+        // force reload
+        THREE.Cache.remove( url );
+
         loader.load( url, function( responseText ){
 
             var json = JSON.parse( responseText );
 
-            // console.log( json );
+            // NGL.log( json );
 
             scope.signals.listingLoaded.dispatch( path, json );
 
@@ -4216,7 +4730,6 @@ NGL.DirectoryListingWidget = function( stage, heading, filter, callback ){
     }
 
     var dirListing = new NGL.DirectoryListing();
-    dirListing.getListing( NGL.lastUsedDirectory );
 
     var signals = dirListing.signals;
     var container = new UI.OverlayPanel();
@@ -4249,6 +4762,7 @@ NGL.DirectoryListingWidget = function( stage, heading, filter, callback ){
     headingPanel.add( folderSelect );
     headingPanel.add(
         new UI.Icon( "times" )
+            .setCursor( "pointer" )
             .setMarginLeft( "20px" )
             .setFloat( "right" )
             .onClick( function(){
@@ -4318,6 +4832,8 @@ NGL.DirectoryListingWidget = function( stage, heading, filter, callback ){
         } )
 
     } );
+
+    dirListing.getListing( NGL.lastUsedDirectory );
 
     return container;
 

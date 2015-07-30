@@ -14,10 +14,32 @@
 		</div>
 
 
+		<h2>Constructor</h2>
+
+		<h3>[name]( eid )</h3>
+
+		<div>The *eid* is the id of an html element where the viewer canvas should reside (optional).</div>
+
+
+		<h2>Signals</h2>
+
+		<h3>themeChanged</h3>
+		<div></div>
+
+		<h3>componentAdded</h3>
+		<div></div>
+
+		<h3>componentRemoved</h3>
+		<div></div>
+
+		<h3>atomPicked</h3>
+		<div></div>
+
+
 		<h2>Methods</h2>
 
-		<h3>.loadFile( path, onLoad )</h3>
-		<div>Loads the file from *path*, creates a corresponding [page:Component component] and executes *onLoad*( [page:Component] ).</div>
+		<h3>.loadFile( path, params )</h3>
+		<div>Loads the file from *path*, creates a corresponding [page:Component component] and executes *params.onLoad*( [page:Component] ). TODO document all properties of the params object.</div>
 
 
 		<h3>.addComponent( [page:Component] )</h3>
@@ -28,7 +50,42 @@
 		<div></div>
 
 
+		<h3>.removeAllComponents( type )</h3>
+		<div></div>
+
+
+		<h3>.eachComponents( callback, type )</h3>
+		<div></div>
+
+
+		<h3>.eachRepresentation( callback, componentType )</h3>
+		<div></div>
+
+
+		<h3>.exportImage( factor, antialias, transparent, trim, onProgress )</h3>
+		<div></div>
+
+
 		<h3>.centerView()</h3>
+		<div></div>
+
+
+		<h3>.getOrientation()</h3>
+		<div>Returns the current orientation of the scene including rotation, translation and zoom. To restore the orientation, pass it to .*setOrientation*. Note that, for convenience, the current orientation is also available through the GUI via <i>Menubar > View > Orientation</i>.</div>
+
+
+		<h3>.setOrientation( orientation )</h3>
+		<div>Restores the passed orientation of a scene. In contrast to [page:Viewer viewer].*setOrientation*, this method waits for all pending representations to be added.</div>
+
+		<code>
+		// get orientation
+		var orientation = stage.getOrientation();
+		// restore orientation
+		stage.setOrientation( orientation );
+		</code>
+
+
+		<h3>.setTheme( value )</h3>
 		<div></div>
 
 
