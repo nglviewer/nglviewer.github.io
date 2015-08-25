@@ -19,6 +19,10 @@ NGL.Stage = function( eid ){
         componentRemoved: new SIGNALS.Signal(),
 
         atomPicked: new SIGNALS.Signal(),
+        bondPicked: new SIGNALS.Signal(),
+        volumePicked: new SIGNALS.Signal(),
+        nothingPicked: new SIGNALS.Signal(),
+        onPicking: new SIGNALS.Signal(),
 
         requestTheme: new SIGNALS.Signal(),
 
@@ -475,7 +479,7 @@ NGL.Stage.prototype = {
 
 NGL.PickingControls = function( viewer, stage ){
 
-    var v3 = new THREE.Vector3();
+    var position = new THREE.Vector3();
 
     var mouse = {
 
@@ -526,42 +530,99 @@ NGL.PickingControls = function( viewer, stage ){
             offsetX,
             box.height - offsetY
         );
-        var id = pickingData.id;
+        var gid = pickingData.gid;
         var instance = pickingData.instance;
 
-        // TODO early exit, binary search
         var pickedAtom = undefined;
-        stage.eachComponent( function( o ){
+        var pickedBond = undefined;
+        var pickedVolume = undefined;
 
-            o.structure.eachAtom( function( a ){
+        var picked = NGL.GidPool.getByGid( gid );
 
-                if( a.globalindex === ( id - 1 ) ){
-                    pickedAtom = a;
-                }
+        if( picked instanceof NGL.Atom || picked instanceof NGL.ProxyAtom ){
 
-            } );
+            pickedAtom = picked;
 
-        }, NGL.StructureComponent );
+        }else if( picked instanceof NGL.Bond ){
 
-        if( pickedAtom && e.which === NGL.MiddleMouseButton ){
+            pickedBond = picked;
 
-            v3.copy( pickedAtom );
+        }else if( picked && picked.volume instanceof NGL.Volume ){
 
-            if( instance ){
-
-                // var structure = pickedAtom.residue.chain.model.structure;
-                // var biomol = structure.biomolDict[ instance.assembly ];
-                // var matrix = biomol.matrixDict[ instance.name ];
-
-                v3.applyProjection( instance.matrix );
-
-            }
-
-            viewer.centerView( false, v3 );
+            pickedVolume = picked;
 
         }
 
-        stage.signals.atomPicked.dispatch( pickedAtom );
+        //
+
+        if( ( pickedAtom || pickedBond || pickedVolume ) &&
+                e.which === NGL.MiddleMouseButton
+        ){
+
+            if( pickedAtom ){
+
+                position.copy( pickedAtom );
+
+            }else if( pickedBond ){
+
+                position.set( 0, 0, 0 )
+                    .addVectors( pickedBond.atom1, pickedBond.atom2 )
+                    .multiplyScalar( 0.5 );
+
+            }else if( pickedVolume ){
+
+                position.copy( pickedVolume );
+
+            }
+
+            if( instance ){
+
+                position.applyProjection( instance.matrix );
+
+            }
+
+            viewer.centerView( false, position );
+
+        }
+
+        //
+
+        if( pickedAtom ){
+
+            stage.signals.atomPicked.dispatch( pickedAtom );
+
+        }else if( pickedBond ){
+
+            stage.signals.bondPicked.dispatch( pickedBond );
+
+        }else if( pickedVolume ){
+
+            stage.signals.volumePicked.dispatch( pickedVolume );
+
+        }else{
+
+            stage.signals.nothingPicked.dispatch();
+
+        }
+
+        stage.signals.onPicking.dispatch( {
+
+            "atom": pickedAtom,
+            "bond": pickedBond,
+            "volume": pickedVolume,
+            "instance": instance
+
+        } );
+
+        //
+
+        if( NGL.debug ){
+
+            NGL.log( "picked atom", pickedAtom );
+            NGL.log( "picked bond", pickedBond );
+            NGL.log( "picked volume", pickedVolume );
+
+        }
 
     } );
 
@@ -1424,7 +1485,6 @@ NGL.RepresentationComponent.prototype = NGL.createObject(
 
     signals: Object.assign( {
 
-        colorChanged: null,
         parametersChanged: null,
 
     }, NGL.Component.prototype.signals ),
@@ -1544,7 +1604,6 @@ NGL.RepresentationComponent.prototype = NGL.createObject(
     setColor: function( value ){
 
         this.repr.setColor( value );
-        this.signals.colorChanged.dispatch( this.repr.color );
 
         return this;
 

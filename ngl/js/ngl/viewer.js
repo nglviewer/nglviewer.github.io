@@ -1013,7 +1013,9 @@ NGL.Viewer.prototype = {
 
             scope.updateObjectUniforms( object, material, camera );
 
-            scope.renderer.loadUniformsGeneric( material.uniformsList );
+            scope.renderer.loadUniformsGeneric(
+                scope.renderer.properties.get( material ).uniformsList
+            );
 
             return program;
 
@@ -1332,13 +1334,11 @@ NGL.Viewer.prototype = {
         if( NGL.debug ){
 
             var bbSize = bb.size();
-            var material = new THREE.MeshBasicMaterial( {
-                color: Math.random() * 0xFFFFFF, wireframe: true
-            } );
             var boxGeometry = new THREE.BoxGeometry(
                 bbSize.x, bbSize.y, bbSize.z
             );
-            this.boundingBoxMesh = new THREE.Mesh( boxGeometry, material );
+            var wireframeBox = new THREE.WireframeGeometry( boxGeometry );
+            this.boundingBoxMesh = new THREE.LineSegments( wireframeBox );
             bb.center( this.boundingBoxMesh.position );
             this.modelGroup.add( this.boundingBoxMesh );
 
@@ -1531,7 +1531,7 @@ NGL.Viewer.prototype = {
 
         return function( x, y ){
 
-            var id, object, instance;
+            var gid, object, instance, bondId;
 
             var pixelBuffer = this.supportsReadPixelsFloat() ? pixelBufferFloat : pixelBufferUint;
 
@@ -1555,15 +1555,14 @@ NGL.Viewer.prototype = {
 
             if( this.supportsReadPixelsFloat() ){
 
-                // TODO simplify ...
-                id =
+                gid =
                     ( ( Math.round( pixelBuffer[0] * 255 ) << 16 ) & 0xFF0000 ) |
                     ( ( Math.round( pixelBuffer[1] * 255 ) << 8 ) & 0x00FF00 ) |
                     ( ( Math.round( pixelBuffer[2] * 255 ) ) & 0x0000FF );
 
             }else{
 
-                id =
+                gid =
                     ( pixelBuffer[0] << 16 ) |
                     ( pixelBuffer[1] << 8 ) |
                     ( pixelBuffer[2] );
@@ -1595,7 +1594,7 @@ NGL.Viewer.prototype = {
                         ( rgba[3] ).toPrecision(2)
                     ]
                 );
-                NGL.log( "picked id", id );
+                NGL.log( "picked gid", gid );
                 NGL.log( "picked instance", instance );
                 NGL.log( "picked position", x, y );
                 NGL.log( "devicePixelRatio", window.devicePixelRatio );
@@ -1603,7 +1602,7 @@ NGL.Viewer.prototype = {
             }
 
             return {
-                "id": id,
+                "gid": gid,
                 "instance": instance
             };
 
@@ -1864,7 +1863,7 @@ NGL.Viewer.prototype = {
                 )
 
                 var attributes = o.geometry.attributes;
-                var n = attributes.position.length / 3;
+                var n = attributes.position.count;
 
                 if( !o.userData.sortData ){
                     o.userData.sortData = {};

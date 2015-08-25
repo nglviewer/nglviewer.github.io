@@ -37,7 +37,7 @@ NGL.Spline.prototype = {
 
     },
 
-    getSubdividedColor: function( m, type ){
+    getSubdividedColor: function( m, params ){
 
         var n = this.size;
         var n1 = n - 1;
@@ -45,7 +45,11 @@ NGL.Spline.prototype = {
         var col = new Float32Array( n1 * m * 3 + 3 );
         var pcol = new Float32Array( n1 * m * 3 + 3 );
 
-        var colorFactory = new NGL.ColorFactory( type, this.fiber.structure );
+        var p = params || {};
+        p.structure = this.fiber.structure;
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( p );
+        var pickingColorMaker = NGL.ColorMakerRegistry.getPickingScheme( p );
 
         var k = 0;
         var j, l, mh, a2, c2, pc2, a3, c3, pc3;
@@ -56,39 +60,23 @@ NGL.Spline.prototype = {
 
             a2 = r2.getTraceAtom();
 
-            c2 = colorFactory.atomColor( a2 );
-            pc2 = a2.globalindex + 1;
-
             for( j = 0; j < mh; ++j ){
 
                 l = k + j * 3;
 
-                col[ l + 0 ] = ( c2 >> 16 & 255 ) / 255;
-                col[ l + 1 ] = ( c2 >> 8 & 255 ) / 255;
-                col[ l + 2 ] = ( c2 & 255 ) / 255;
-
-                pcol[ l + 0 ] = ( pc2 >> 16 & 255 ) / 255;
-                pcol[ l + 1 ] = ( pc2 >> 8 & 255 ) / 255;
-                pcol[ l + 2 ] = ( pc2 & 255 ) / 255;
+                colorMaker.atomColorToArray( a2, col, l );
+                pickingColorMaker.atomColorToArray( a2, pcol, l );
 
             }
 
             a3 = r3.getTraceAtom();
 
-            c3 = colorFactory.atomColor( a3 );
-            pc3 = a3.globalindex + 1;
-
             for( j = mh; j < m; ++j ){
 
                 l = k + j * 3;
 
-                col[ l + 0 ] = ( c3 >> 16 & 255 ) / 255;
-                col[ l + 1 ] = ( c3 >> 8 & 255 ) / 255;
-                col[ l + 2 ] = ( c3 & 255 ) / 255;
-
-                pcol[ l + 0 ] = ( pc3 >> 16 & 255 ) / 255;
-                pcol[ l + 1 ] = ( pc3 >> 8 & 255 ) / 255;
-                pcol[ l + 2 ] = ( pc3 & 255 ) / 255;
+                colorMaker.atomColorToArray( a3, col, l );
+                pickingColorMaker.atomColorToArray( a3, pcol, l );
 
             }
 
@@ -534,7 +522,7 @@ NGL.Helixorient.prototype = {
             fa = fr.getTraceAtom();
 
             r = new NGL.Residue();
-            a = new NGL.Atom( r, fa.globalindex );
+            a = new NGL.Atom( r, fa.globalindex );  // FIXME get rid of globalindex
 
             r.atoms.push( a );
             r.atomCount += 1;
@@ -577,7 +565,7 @@ NGL.Helixorient.prototype = {
 
             residues.push( r );
 
-            if( padded && ( i === 0 || i === n-1 ) ){
+            if( padded && ( i === 0 || i === n - 1 ) ){
                 residues.push( r );
             }
 
@@ -589,14 +577,18 @@ NGL.Helixorient.prototype = {
 
     },
 
-    getColor: function( type ){
+    getColor: function( params ){
 
         var n = this.size;
 
         var col = new Float32Array( n * 3 );
         var pcol = new Float32Array( n * 3 );
 
-        var colorFactory = new NGL.ColorFactory( type );
+        var p = params || {};
+        p.structure = this.fiber.structure;
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( p );
+        var pickingColorMaker = NGL.ColorMakerRegistry.getPickingScheme( p );
 
         var i = 0;
         var a, c, pc;
@@ -605,13 +597,8 @@ NGL.Helixorient.prototype = {
 
             a = r.getTraceAtom();
 
-            c = colorFactory.atomColor( a );
-            colorFactory.atomColorToArray( a, col, i );
-
-            pc = a.globalindex + 1;
-            pcol[ i + 0 ] = ( pc >> 16 & 255 ) / 255;
-            pcol[ i + 1 ] = ( pc >> 8 & 255 ) / 255;
-            pcol[ i + 2 ] = ( pc & 255 ) / 255;
+            colorMaker.atomColorToArray( a, col, i );
+            pickingColorMaker.atomColorToArray( a, pcol, i );
 
             i += 3;
 
@@ -1172,7 +1159,7 @@ NGL.Helixbundle.prototype = {
 
     },
 
-    getAxis: function( localAngle, centerDist, ssBorder, color, radius, scale ){
+    getAxis: function( localAngle, centerDist, ssBorder, colorParams, radius, scale ){
 
         localAngle = localAngle || 30;
         centerDist = centerDist || 2.5;
@@ -1180,7 +1167,12 @@ NGL.Helixbundle.prototype = {
 
         var pos = this.position;
 
-        var colorFactory = new NGL.ColorFactory( color, this.fiber.structure );
+        var cp = colorParams || {};
+        cp.structure = this.fiber.structure;
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( cp );
+        var pickingColorMaker = NGL.ColorMakerRegistry.getPickingScheme( cp );
+
         var radiusFactory = new NGL.RadiusFactory( radius, scale );
 
         var i, r, r2, a;
@@ -1265,12 +1257,8 @@ NGL.Helixbundle.prototype = {
                 _beg.toArray( beg, k );
                 _end.toArray( end, k );
 
-                colorFactory.atomColorToArray( a, col, k );
-
-                var pc = a.globalindex + 1;
-                pcol[ k + 0 ] = ( pc >> 16 & 255 ) / 255;
-                pcol[ k + 1 ] = ( pc >> 8 & 255 ) / 255;
-                pcol[ k + 2 ] = ( pc & 255 ) / 255;
+                colorMaker.atomColorToArray( a, col, k );
+                pickingColorMaker.atomColorToArray( a, pcol, k );
 
                 size.push( radiusFactory.atomRadius( a ) );
 
@@ -1685,9 +1673,15 @@ NGL.polarContacts = function( structure, maxDistance, maxAngle ){
     } );
 
     bondSet.structure = structure;
-    data.bondSet = bondSet;
 
-    return data;
+    data.bondSet.dispose();
+    donAtomSet.dispose();
+    accAtomSet.dispose();
+
+    return {
+        atomSet: data.atomSet,
+        bondSet: bondSet
+    };
 
 }
 
@@ -1756,8 +1750,14 @@ NGL.polarBackboneContacts = function( structure, maxDistance, maxAngle ){
     } );
 
     bondSet.structure = structure;
-    data.bondSet = bondSet;
 
-    return data;
+    data.bondSet.dispose();
+    donAtomSet.dispose();
+    accAtomSet.dispose();
+
+    return {
+        atomSet: data.atomSet,
+        bondSet: bondSet
+    };
 
 }

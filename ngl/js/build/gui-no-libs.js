@@ -401,6 +401,14 @@ UI.Input.prototype.setValue = function ( value ) {
 
 };
 
+UI.Input.prototype.setName = function ( value ) {
+
+    this.dom.name = value;
+
+    return this;
+
+};
+
 
 // TextArea
 
@@ -1290,6 +1298,83 @@ UI.Html.prototype.setValue = function ( value ) {
 };
 
 
+// Form
+
+UI.Form = function () {
+
+    UI.Element.call( this );
+
+    var dom = document.createElement( 'form' );
+    dom.className = 'Form';
+    dom.method = "post";
+    dom.action = "";
+    dom.target = "_blank";
+    dom.enctype = "multipart/form-data";
+
+    this.dom = dom;
+
+    return this;
+};
+
+UI.Form.prototype = Object.create( UI.Panel.prototype );
+
+UI.Form.prototype.setMethod= function ( value ) {
+
+    this.dom.method = value;
+
+    return this;
+
+};
+
+UI.Form.prototype.setAction = function ( value ) {
+
+    this.dom.action = value
+
+    return this;
+
+};
+
+UI.Form.prototype.setTarget= function ( value ) {
+
+    this.dom.target = value;
+
+    return this;
+
+};
+
+UI.Form.prototype.setEnctype = function ( value ) {
+
+    this.dom.enctype = value
+
+    return this;
+
+};
+
+
+// File
+
+UI.File = function () {
+
+    UI.Input.call( this );
+
+    this.dom.type = "file";
+    this.dom.multiple = false;
+
+    return this;
+
+};
+
+UI.File.prototype = Object.create( UI.Input.prototype );
+
+UI.File.prototype.setMultiple = function ( value ) {
+
+    this.dom.multiple = value
+
+    return this;
+
+};
+
+
 // Ellipsis Text
 
 UI.EllipsisText = function ( text ) {
@@ -1930,8 +2015,8 @@ UI.CollapsibleIconPanel = function( iconClass1, iconClass2 ){
         // iconClass1 = iconClass1 || "plus-square";
         // iconClass2 = iconClass2 || "minus-square";
 
-        iconClass1 = iconClass1 || "chevron-right";
-        iconClass2 = iconClass2 || "chevron-down";
+        iconClass1 = iconClass1 || "chevron-down";
+        iconClass2 = iconClass2 || "chevron-right";
 
     }
 
@@ -2163,30 +2248,9 @@ UI.ColorPopupMenu = function(){
     var changeEvent = document.createEvent( 'Event' );
     changeEvent.initEvent( 'change', true, true );
 
-    NGL.ColorFactory.signals.typesChanged.add( function(){
-
-        this.schemeSelector.setOptions( NGL.ColorFactory.getTypes() );
-
-    }, this );
-
-    this.schemeSelector = new UI.Select()
-        .setColor( '#444' )
-        .setWidth( "" )
-        .setOptions( NGL.ColorFactory.getTypes() )
-        .onChange( function(){
-
-            scope.setScheme( scope.schemeSelector.getValue() );
-            if( scope.schemeSelector.getValue() !== "color" ){
-                scope.menu.setMenuDisplay( "none" );
-            }
-            scope.dom.dispatchEvent( changeEvent );
-
-        } );
-
     this.colorInput = new UI.Input()
         .onChange( function(){
 
-            scope.setScheme( "color" );
             scope.setColor( scope.colorInput.getValue() );
             scope.dom.dispatchEvent( changeEvent );
 
@@ -2196,14 +2260,12 @@ UI.ColorPopupMenu = function(){
         .setDisplay( "inline-block" )
         .onChange( function( e ){
 
-            scope.setScheme( "color" );
             scope.setColor( scope.colorPicker.getValue() );
             scope.dom.dispatchEvent( changeEvent );
 
         } );
 
     this.menu
-        .addEntry( "Scheme", this.schemeSelector )
         .addEntry( "Input", this.colorInput )
         .addEntry( "Picker", this.colorPicker );
 
@@ -2217,27 +2279,6 @@ UI.ColorPopupMenu = function(){
 };
 
 UI.ColorPopupMenu.prototype = Object.create( UI.Panel.prototype );
-
-UI.ColorPopupMenu.prototype.setScheme = function( value ){
-
-    value = value || "";
-
-    this.iconText.setValue( value.charAt( 0 ).toUpperCase() );
-    this.schemeSelector.setValue( value );
-
-    if( value !== "color" ){
-        this.setColor( "#888888" );
-    }
-
-    return this;
-
-};
-
-UI.ColorPopupMenu.prototype.getScheme = function(){
-
-    return this.schemeSelector.getValue();
-
-};
 
 UI.ColorPopupMenu.prototype.setColor = function(){
 
@@ -2285,18 +2326,13 @@ UI.ColorPopupMenu.prototype.getColor = function(){
 
 UI.ColorPopupMenu.prototype.getValue = function(){
 
-    return this.colorInput.getValue();
+    return this.getColor();
 
 };
 
 UI.ColorPopupMenu.prototype.setValue = function( value ){
 
-    if( parseInt( value ) === value ){
-        this.setColor( value );
-        this.setScheme( "color" );
-    }else{
-        this.setScheme( value );
-    }
+    this.setColor( value );
 
     return this;
 
@@ -2683,18 +2719,37 @@ NGL.ToolbarWidget = function( stage ){
     var messagePanel = new UI.Panel().setDisplay( "inline" ).setFloat( "left" );
     var statsPanel = new UI.Panel().setDisplay( "inline" ).setFloat( "right" );
 
-    signals.atomPicked.add( function( atom ){
+    signals.onPicking.add( function( d ){
 
-        var name = "none";
+        var msg;
 
-        if( atom ){
-            name = atom.qualifiedName() +
-                " (" + atom.residue.chain.model.structure.name + ")";
+        if( d.atom ){
+
+            msg = "Picked atom: " +
+                d.atom.qualifiedName() +
+                " (" + d.atom.residue.chain.model.structure.name + ")";
+
+        }else if( d.bond ){
+
+            msg = "Picked bond: " +
+                d.bond.atom1.qualifiedName() + " - " + d.bond.atom2.qualifiedName() +
+                " (" + d.bond.atom1.residue.chain.model.structure.name + ")";
+
+        }else if( d.volume ){
+
+            msg = "Picked volume: " +
+                d.volume.value.toPrecision( 3 ) +
+                " (" + d.volume.volume.name + ")";
+
+        }else{
+
+            msg = "Nothing to pick";
+
         }
 
         messagePanel
             .clear()
-            .add( new UI.Text( "Picked: " + name ) );
+            .add( new UI.Text( msg ) );
 
     } );
 
@@ -2744,8 +2799,8 @@ NGL.MenubarWidget = function( stage ){
 NGL.MenubarFileWidget = function( stage ){
 
     var fileTypesOpen = [
-        "pdb", "ent", "gro", "cif", "mcif", "mmcif", "sdf", "mol2",
-        "mrc", "ccp4", "map", "cube",
+        "pdb", "ent", "pqr", "gro", "cif", "mcif", "mmcif", "sdf", "mol2",
+        "mrc", "ccp4", "map", "cube", "dx",
         "obj", "ply",
         "ngl", "ngz",
         "gz", "lzma", "bz2", "zip"
@@ -4124,12 +4179,6 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
     } );
 
-    signals.colorChanged.add( function( value ){
-
-        colorWidget.setValue( value );
-
-    } );
-
     signals.nameChanged.add( function( value ){
 
         name.setValue( NGL.unicodeHelper( value ) );
@@ -4139,7 +4188,6 @@ NGL.RepresentationComponentWidget = function( component, stage ){
     signals.disposed.add( function(){
 
         menu.dispose();
-        colorWidget.dispose();
         container.dispose();
 
     } );
@@ -4147,7 +4195,7 @@ NGL.RepresentationComponentWidget = function( component, stage ){
     // Name
 
     var name = new UI.EllipsisText( NGL.unicodeHelper( component.name ) )
-        .setWidth( "80px" );
+        .setWidth( "103px" );
 
     // Actions
 
@@ -4169,42 +4217,10 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
         } );
 
-    var colorWidget = new UI.ColorPopupMenu()
-        .setMarginLeft( "10px" )
-        .setValue( component.repr.color )
-        .onChange( (function(){
-
-            var c = new THREE.Color();
-            return function( e ){
-
-                var scheme = colorWidget.getScheme();
-                if( scheme === "color" ){
-                    c.setStyle( colorWidget.getColor() );
-                    component.setColor( c.getHex() );
-                }else{
-                    component.setColor( scheme );
-                }
-                component.viewer.requestRender();
-
-            }
-
-        })() );
-
-    if( component.parent instanceof NGL.SurfaceComponent ){
-
-        colorWidget.schemeSelector.setOptions( {
-            "": "",
-            "value": "value",
-            "color": "color",
-        } );
-
-    }
-
     container
         .addStatic( name )
         .addStatic( toggle )
-        .addStatic( disposeIcon )
-        .addStatic( colorWidget );
+        .addStatic( disposeIcon );
 
     // Selection
 
@@ -4250,7 +4266,6 @@ NGL.RepresentationComponentWidget = function( component, stage ){
             }
 
             input.setRange( p.min, p.max )
-
 
         }else if( p.type === "boolean" ){
 
@@ -4302,40 +4317,14 @@ NGL.RepresentationComponentWidget = function( component, stage ){
 
             } );
 
-            if( p.type === "color" ){
+            input.onChange( function(){
 
-                input.onChange( (function(){
+                var po = {};
+                po[ name ] = input.getValue();
+                component.setParameters( po );
+                repr.viewer.requestRender();
 
-                    var c = new THREE.Color();
-                    return function( e ){
-
-                        var po = {};
-                        var scheme = input.getScheme();
-                        if( scheme === "color" ){
-                            c.setStyle( input.getColor() );
-                            po[ name ] = c.getHex();
-                        }else{
-                            po[ name ] = scheme;
-                        }
-                        component.setParameters( po );
-                        repr.viewer.requestRender();
-
-                    }
-
-                })() );
-
-            }else{
-
-                input.onChange( function(){
-
-                    var po = {};
-                    po[ name ] = input.getValue();
-                    component.setParameters( po );
-                    repr.viewer.requestRender();
-
-                } );
-
-            }
+            } );
 
             menu.addEntry( name, input );
 
@@ -4661,7 +4650,9 @@ NGL.TrajectoryComponentWidget = function( component, stage ){
 
 NGL.lastUsedDirectory = "";
 
-NGL.DirectoryListing = function(){
+NGL.DirectoryListing = function( baseUrl ){
+
+    this.baseUrl = baseUrl !== undefined ? baseUrl : "../dir/";
 
     var SIGNALS = signals;
 
@@ -4684,7 +4675,7 @@ NGL.DirectoryListing.prototype = {
         path = path || "";
 
         var loader = new THREE.XHRLoader();
-        var url = "../dir/" + path;
+        var url = this.baseUrl + path;
 
         // force reload
         THREE.Cache.remove( url );
@@ -4721,7 +4712,7 @@ NGL.DirectoryListing.prototype = {
 };
 
 
-NGL.DirectoryListingWidget = function( stage, heading, filter, callback ){
+NGL.DirectoryListingWidget = function( stage, heading, filter, callback, baseUrl ){
 
     // from http://stackoverflow.com/a/20463021/1435042
     function fileSizeSI(a,b,c,d,e){
@@ -4729,7 +4720,7 @@ NGL.DirectoryListingWidget = function( stage, heading, filter, callback ){
             +String.fromCharCode(160)+(e?'kMGTPEZY'[--e]+'B':'Bytes')
     }
 
-    var dirListing = new NGL.DirectoryListing();
+    var dirListing = new NGL.DirectoryListing( baseUrl );
 
     var signals = dirListing.signals;
     var container = new UI.OverlayPanel();

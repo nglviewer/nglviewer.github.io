@@ -406,7 +406,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "cartoon", {
 
-                    color: new THREE.Color().setRGB( 0.5, 0.75, 1 ).getHex(),
+                    color: "rgb( 127, 191, 255 )",
                     sele: ":A or :AA or :I or :N or :CA or :F or :V or :DA or :J or :SA or :U or :JA or :S or :GA or :H or :O or :G or :OP or :K or :Q or :C or :E or :OA or :TA or :M or :L or :B or :HA or :R or :W or :MA or :NA or :QA or :P or :KA or :Z or :LA or :KA or :X or :FA or :T or :IA or :BA or :IA or :Y or :D or :RA or :EA",
                     name: "60S"
 
@@ -414,7 +414,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "cartoon", {
 
-                    color: new THREE.Color().setRGB( 1, 1, 0.5 ).getHex(),
+                    color: "rgb( 255, 255, 127 )",
                     sele: ":XA or :QB or :XB or :RB or :BB or :HB or :DB or :EC or :NB or :BC or :VB or :WB or :EB or :OB or :KB or :IB or :AB or :TB or :FB or :SB or :PB or :YA or :UB or :LB or :MB or :ZA or :CC or :CB or :JB or :GB or :ZB or :PA or :DC or :YB or :AC",
                     name: "40S"
 
@@ -422,7 +422,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "spacefill", {
 
-                    color: new THREE.Color().setRGB( 1, 0.5, 1 ).getHex(),
+                    color: "rgb( 255, 127, 255 )",
                     sele: ":WA",
                     name: "IRES"
 
@@ -430,7 +430,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "spacefill", {
 
-                    color: new THREE.Color().setRGB( 0.2, 1, 0.2 ).getHex(),
+                    color: "rgb( 51, 255, 51 )",
                     sele: ":UA",
                     name: "tRNA"
 
@@ -438,7 +438,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "spacefill", {
 
-                    color: new THREE.Color().setRGB( 1, 0, 0 ).getHex(),
+                    color: "rgb( 255, 0, 0 )",
                     sele: ":VA",
                     name: "EIF5B"
 
@@ -645,6 +645,34 @@ NGL.Examples = {
 
         },
 
+        "largeCapsid": function( stage ){
+
+            stage.loadFile( "data://1M4X.cif", function( o ){
+
+                o.addRepresentation( "ribbon", {
+                    quality: "custom",
+                    subdiv: 4,
+                    colorScheme: "chainindex",
+                    flatShaded: true,
+                    scale: 4
+                } );
+
+                o.addRepresentation( "spacefill", {
+                    scale: 1.5,
+                    sele: "CYS"
+                } );
+
+                stage.setOrientation( [
+                    [106.13855387207457,168.29837433056917,39.41757017002202],
+                    [-0.08524916187307008,-0.1476908817966636,0.9853527205189371],
+                    [-370.2980687321651,-677.1146027986514,-106.14535249654159],
+                    [5.201234901226486,-3.7482553715267244,4.897403343961378]
+                ] );
+
+            } );
+
+        },
+
         "surface": function( stage ){
 
             stage.loadFile( "data://1crn.pdb", function( o ){
@@ -818,14 +846,16 @@ NGL.Examples = {
             stage.loadFile( "data://3j3y.cif.gz", {
                 onLoad: function( o ){
 
-                    o.addRepresentation( "point", {
-                        color: "chainindex", pointSize: 7, sizeAttenuation: true,
-                        sort: false
+                    o.addRepresentation( "surface", {
+                        surfaceType: "ms",
+                        smooth: 2,
+                        probeRadius: 4,
+                        scaleFactor: 0.3,
+                        lowResolution: true,
+                        colorScheme: "chainindex"
                     } );
-                    // o.addRepresentation( "ribbon", {
-                    //     color: "chainindex"
-                    // } );
-                    o.centerView();
+
+                    stage.centerView();
 
                 },
                 cAlphaOnly: true
@@ -924,7 +954,14 @@ NGL.Examples = {
 
             stage.loadFile( "data://3pqr.ccp4.gz", function( o ){
 
-                o.addRepresentation( "surface", { wireframe: true } );
+                o.addRepresentation( "surface", {
+                    wireframe: true,
+                    visible: false
+                } );
+                o.addRepresentation( "dot", {
+                    dotType: "sphere",
+                    radius: 0.3
+                } );
                 o.centerView();
 
             } );
@@ -962,13 +999,25 @@ NGL.Examples = {
 
         "molsurf": function( stage ){
 
-            stage.loadFile( "data://3dqb.pdb", function( o ){
+            // stage.loadFile( "data://acrolein.pdb", function( o ){
+            // stage.loadFile( "data://1crn.pdb", function( o ){
+            stage.loadFile( "data://3pqr.pdb", function( o ){
             // stage.loadFile( "data://3sn6.pdb", function( o ){
             // stage.loadFile( "data://3l5q.pdb", function( o ){
 
                 o.addRepresentation( "licorice", {} );
                 o.addRepresentation( "spacefill" );
-                o.addRepresentation( "surface" );
+                o.addRepresentation( "surface", {
+                    surfaceType: "ms",
+                    smooth: 2,
+                    probeRadius: 1.4,
+                    scaleFactor: 2.0,
+                    flatShaded: false,
+                    transparent: true,
+                    opacity: 0.8,
+                    lowResolution: false,
+                    colorScheme: "element"
+                } );
                 stage.centerView();
 
             } );
@@ -1095,7 +1144,7 @@ NGL.Examples = {
 
         "selectionColoring": function( stage ){
 
-            var schemeId = NGL.ColorFactory.addSelectionScheme( [
+            var schemeId = NGL.ColorMakerRegistry.addSelectionScheme( [
                 [ "red", "64-74 or 134-154 or 222-254 or 310-310 or 322-326" ],
                 [ "green", "311-322" ],
                 [ "yellow", "40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309" ],
@@ -1205,6 +1254,68 @@ NGL.Examples = {
                 } );
 
                 o.centerView();
+
+            } );
+
+        },
+
+        "apbs": function( stage ){
+
+            stage.loadFile( "data://1crn_apbs.pqr", function( o ){
+
+                o.addRepresentation( "cartoon", {
+                    colorScheme: "bfactor",
+                    colorScale: "rwb",
+                    colorDomain: [ -1, 0, 1 ]
+                } );
+                o.addRepresentation( "licorice", {
+                    colorScheme: "bfactor",
+                    colorScale: "rwb",
+                    colorDomain: [ -1, 0, 1 ]
+                } );
+
+                o.centerView();
+
+            } );
+
+            stage.loadFile( "data://1crn_apbs_pot.dx.gz", function( o ){
+
+                o.addRepresentation( "dot", {
+                    thresholdType: "value",
+                    thresholdMin: -5,
+                    thresholdMax: 5,
+                    thresholdOut: true,
+                    dotType: "sphere",
+                    radius: "abs-value",
+                    scale: 0.001,
+                    visible: true,
+                    colorScheme: "value",
+                    colorScale: "rwb"
+                } );
+
+                o.addRepresentation( "surface", {
+                    isolevelType: "value",
+                    isolevel: -0.4,
+                    smooth: 1,
+                    color: "red",
+                    transparent: true,
+                    opacity: 0.6,
+                    side: THREE.BackSide,
+                    opaqueBack: false
+                } );
+
+                o.addRepresentation( "surface", {
+                    isolevelType: "value",
+                    isolevel: 0.4,
+                    smooth: 1,
+                    color: "blue",
+                    transparent: true,
+                    opacity: 0.6,
+                    side: THREE.FrontSide,
+                    opaqueBack: false
+                } );
+
+                stage.centerView();
 
             } );
 

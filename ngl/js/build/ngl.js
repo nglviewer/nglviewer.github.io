@@ -158,6 +158,67 @@ if( !Object.assign ){
 
 }
 
+
+if (!String.prototype.startsWith) {
+
+    /*! https://mths.be/startswith v0.2.0 by @mathias */
+
+    (function() {
+        'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
+        var defineProperty = (function() {
+            // IE 8 only supports `Object.defineProperty` on DOM elements
+            try {
+                var object = {};
+                var $defineProperty = Object.defineProperty;
+                var result = $defineProperty(object, object, object) && $defineProperty;
+            } catch(error) {}
+            return result;
+        }());
+        var toString = {}.toString;
+        var startsWith = function(search) {
+            if (this == null) {
+                throw TypeError();
+            }
+            var string = String(this);
+            if (search && toString.call(search) == '[object RegExp]') {
+                throw TypeError();
+            }
+            var stringLength = string.length;
+            var searchString = String(search);
+            var searchLength = searchString.length;
+            var position = arguments.length > 1 ? arguments[1] : undefined;
+            // `ToInteger`
+            var pos = position ? Number(position) : 0;
+            if (pos != pos) { // better `isNaN`
+                pos = 0;
+            }
+            var start = Math.min(Math.max(pos, 0), stringLength);
+            // Avoid the `indexOf` call if no match is possible
+            if (searchLength + start > stringLength) {
+                return false;
+            }
+            var index = -1;
+            while (++index < searchLength) {
+                if (string.charCodeAt(start + index) != searchString.charCodeAt(index)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+        if (defineProperty) {
+            defineProperty(String.prototype, 'startsWith', {
+                'value': startsWith,
+                'configurable': true,
+                'writable': true
+            });
+        } else {
+            String.prototype.startsWith = startsWith;
+        }
+    }());
+
+}
+
+
 if( typeof importScripts !== 'function' ){
 
     ( function() {
@@ -215,6 +276,24 @@ if( typeof importScripts !== 'function' ){
         }
 
     }() );
+
+}
+
+
+if ( Function.prototype.name === undefined && Object.defineProperty !== undefined ) {
+
+    // Missing in IE9-11.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
+
+    Object.defineProperty( Function.prototype, 'name', {
+
+        get: function () {
+
+            return this.toString().match( /^\s*function\s*(\S*)\s*\(/ )[ 1 ];
+
+        }
+
+    } );
 
 }
 
@@ -297,9 +376,9 @@ if( typeof importScripts !== 'function' && WebGLRenderingContext ){
 
         var _getProgramParameter = WebGLRenderingContext.prototype.getProgramParameter;
 
-        return function(){
+        return function( program, pname ){
 
-            if( NGL.debug ){
+            if( NGL.debug || pname !== WebGLRenderingContext.prototype.LINK_STATUS ){
 
                 return _getProgramParameter.apply( this, arguments );
 
@@ -483,7 +562,7 @@ NGL.deepCopy = function( src ){
 NGL.download = function( data, downloadName ){
 
     if( !data ){
-        NGL.warn( "NGL.download: no data given" );
+        NGL.warn( "NGL.download: no data given." );
         return;
     }
 
@@ -504,6 +583,42 @@ NGL.download = function( data, downloadName ){
     document.body.removeChild( a );
     if( data instanceof Blob ){
         URL.revokeObjectURL( data );
+    }
+
+};
+
+
+NGL.submit = function( url, data, callback, onerror ){
+
+    if( data instanceof FormData ){
+
+        var xhr = new XMLHttpRequest();
+        xhr.open( "POST", url );
+
+        xhr.addEventListener( 'load', function ( event ) {
+
+            if ( xhr.status === 200 || xhr.status === 304 ) {
+
+                callback( xhr.response );
+
+            } else {
+
+                if( typeof onerror === "function" ){
+
+                    onerror( xhr.status );
+
+                }
+
+            }
+
+        }, false );
+
+        xhr.send( data );
+
+    }else{
+
+        NGL.warn( "NGL.submit: type not supported.", data  );
+
     }
 
 };
@@ -755,49 +870,125 @@ NGL.Uint8ToLines = function( u8a, chunkSize, newline ){
 
 // Worker
 
-NGL.Worker = {
+NGL.WorkerRegistry = {
+
+    activeWorkerCount: 0,
 
     funcDict: {},
 
     add: function( name, func ){
 
-        NGL.Worker.funcDict[ name ] = func;
+        NGL.WorkerRegistry.funcDict[ name ] = func;
 
     },
 
-    make: function( name, params ){
+};
 
-        params = params || {};
 
-        var worker;
+NGL.Worker = function( name, params ){
 
-        if( NGL.develop ){
-            worker = new Worker( "../js/ngl/core.js" );
+    params = params || {};
+
+    this.name = name;
+
+    if( NGL.develop ){
+        this.worker = new Worker( "../js/ngl/core.js" );
+    }else{
+        this.worker = new Worker( NGL.mainScriptFilePath );
+    }
+
+    this.worker.onmessage = function( event ){
+
+        NGL.timeEnd( "NGL.Worker.postMessage " + this.name + " #" + event.data.__postId );
+
+        if( typeof params.onmessage === "function" ){
+            params.onmessage.apply( this.worker, arguments );
+        };
+        if( this.__onmessageDict[ event.data.__postId ] ){
+            this.__onmessageDict[ event.data.__postId ].apply( this.worker, arguments );
+        }
+
+        return this.onmessage.call( this.worker, event );
+
+    }.bind( this );
+
+    this.worker.onerror = function( event ){
+
+        if( typeof params.onerror === "function" ){
+            params.onerror.apply( this.worker, arguments );
+        };
+        if( this.__onerrorDict[ event.data.__postId ] ){
+            this.__onerrorDict[ event.data.__postId ].apply( this.worker, arguments );
+        }
+
+        return this.onerror.call( this.worker, event );
+
+    }.bind( this );
+
+    NGL.WorkerRegistry.activeWorkerCount += 1;
+
+    if( params.messageData !== undefined ){
+
+        this.postMessage.apply( this, params.messageData );
+
+    }
+
+};
+
+NGL.Worker.prototype = {
+
+    constructor: NGL.Worker,
+
+    __postCount: 0,
+
+    __onmessageDict: {},
+
+    __onerrorDict: {},
+
+    onmessage: function( event ){
+
+    },
+
+    onerror: function( event ){
+
+    },
+
+    postMessage: function( aMessage, transferList ){
+
+        aMessage = aMessage || {};
+        aMessage.__name = this.name;
+        aMessage.__postId = this.__postCount;
+
+        NGL.time( "NGL.Worker.postMessage " + this.name + " #" + this.__postCount );
+
+        this.worker.postMessage.call( this.worker, aMessage, transferList );
+
+        this.__postCount += 1;
+
+    },
+
+    terminate: function(){
+
+        if( this.worker ){
+
+            this.worker.terminate();
+            delete this.worker;
+            NGL.WorkerRegistry.activeWorkerCount -= 1;
+
         }else{
-            worker = new Worker( NGL.mainScriptFilePath );
-        }
 
-        worker.onerror = params.onerror;
-
-        worker.onmessage = params.onmessage;
-
-        var _postMessage = worker.postMessage;
-
-        worker.postMessage = function( aMessage, transferList ){
-
-            if( aMessage !== undefined ) aMessage.__name__ = name;
-
-            _postMessage.call( worker, aMessage, transferList );
+            console.log( "no worker to terminate" );
 
         }
 
-        if( params.messageData !== undefined ){
+    },
 
-            worker.postMessage.apply( worker, params.messageData );
+    post: function( aMessage, transferList, onmessage, onerror ){
 
-        }
+        this.__onmessageDict[ this.__postCount ] = onmessage;
+        this.__onerrorDict[ this.__postCount ] = onerror;
 
-        return worker;
+        this.postMessage( aMessage, transferList );
 
     }
 
@@ -847,19 +1038,31 @@ if( typeof importScripts === 'function' ){
 
     }
 
-    onmessage = function( e ){
+    self.onmessage = function( e ){
 
-        if( e.data.__name__ === undefined ){
+        var name = e.data.__name;
+        var postId = e.data.__postId;
 
-            NGL.error( "message __name__ undefined" );
+        if( name === undefined ){
 
-        }else if( NGL.Worker.funcDict[ e.data.__name__ ] === undefined ){
+            NGL.error( "message __name undefined" );
 
-            NGL.error( "funcDict __name__ undefined" );
+        }else if( NGL.WorkerRegistry.funcDict[ name ] === undefined ){
+
+            NGL.error( "funcDict[ __name ] undefined", name );
 
         }else{
 
-            NGL.Worker.funcDict[ e.data.__name__ ]( e );
+            var callback = function( aMessage, transferList ){
+
+                aMessage = aMessage || {};
+                if( postId !== undefined ) aMessage.__postId = postId;
+
+                self.postMessage( aMessage, transferList );
+
+            };
+
+            NGL.WorkerRegistry.funcDict[ name ]( e, callback );
 
         }
 
@@ -948,7 +1151,7 @@ NGL.decompress = function( data, file, asBinary, callback ){
 };
 
 
-NGL.Worker.add( "decompress", function( e ){
+NGL.WorkerRegistry.add( "decompress", function( e, callback ){
 
     var d = e.data;
 
@@ -959,7 +1162,7 @@ NGL.Worker.add( "decompress", function( e ){
         transferable.push( value.buffer );
     }
 
-    self.postMessage( value, transferable );
+    callback( value, transferable );
 
 } );
 
@@ -970,9 +1173,14 @@ NGL.decompressWorker = function( data, file, asBinary, callback ){
         typeof importScripts !== 'function'
     ){
 
-        NGL.time( "NGL.decompressWorker" );
+        var worker = new NGL.Worker( "decompress", {
 
-        var worker = NGL.Worker.make( "decompress", {
+            onmessage: function( e ){
+
+                worker.terminate();
+                callback( e.data );
+
+            },
 
             onerror: function( e ){
 
@@ -982,14 +1190,6 @@ NGL.decompressWorker = function( data, file, asBinary, callback ){
                 worker.terminate();
 
                 NGL.decompress( data, file, asBinary, callback );
-
-            },
-
-            onmessage: function( e ){
-
-                NGL.timeEnd( "NGL.decompressWorker" );
-                worker.terminate();
-                callback( e.data );
 
             },
 
@@ -6560,7 +6760,7 @@ NGL.Spline.prototype = {
 
     },
 
-    getSubdividedColor: function( m, type ){
+    getSubdividedColor: function( m, params ){
 
         var n = this.size;
         var n1 = n - 1;
@@ -6568,7 +6768,11 @@ NGL.Spline.prototype = {
         var col = new Float32Array( n1 * m * 3 + 3 );
         var pcol = new Float32Array( n1 * m * 3 + 3 );
 
-        var colorFactory = new NGL.ColorFactory( type, this.fiber.structure );
+        var p = params || {};
+        p.structure = this.fiber.structure;
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( p );
+        var pickingColorMaker = NGL.ColorMakerRegistry.getPickingScheme( p );
 
         var k = 0;
         var j, l, mh, a2, c2, pc2, a3, c3, pc3;
@@ -6579,39 +6783,23 @@ NGL.Spline.prototype = {
 
             a2 = r2.getTraceAtom();
 
-            c2 = colorFactory.atomColor( a2 );
-            pc2 = a2.globalindex + 1;
-
             for( j = 0; j < mh; ++j ){
 
                 l = k + j * 3;
 
-                col[ l + 0 ] = ( c2 >> 16 & 255 ) / 255;
-                col[ l + 1 ] = ( c2 >> 8 & 255 ) / 255;
-                col[ l + 2 ] = ( c2 & 255 ) / 255;
-
-                pcol[ l + 0 ] = ( pc2 >> 16 & 255 ) / 255;
-                pcol[ l + 1 ] = ( pc2 >> 8 & 255 ) / 255;
-                pcol[ l + 2 ] = ( pc2 & 255 ) / 255;
+                colorMaker.atomColorToArray( a2, col, l );
+                pickingColorMaker.atomColorToArray( a2, pcol, l );
 
             }
 
             a3 = r3.getTraceAtom();
 
-            c3 = colorFactory.atomColor( a3 );
-            pc3 = a3.globalindex + 1;
-
             for( j = mh; j < m; ++j ){
 
                 l = k + j * 3;
 
-                col[ l + 0 ] = ( c3 >> 16 & 255 ) / 255;
-                col[ l + 1 ] = ( c3 >> 8 & 255 ) / 255;
-                col[ l + 2 ] = ( c3 & 255 ) / 255;
-
-                pcol[ l + 0 ] = ( pc3 >> 16 & 255 ) / 255;
-                pcol[ l + 1 ] = ( pc3 >> 8 & 255 ) / 255;
-                pcol[ l + 2 ] = ( pc3 & 255 ) / 255;
+                colorMaker.atomColorToArray( a3, col, l );
+                pickingColorMaker.atomColorToArray( a3, pcol, l );
 
             }
 
@@ -7057,7 +7245,7 @@ NGL.Helixorient.prototype = {
             fa = fr.getTraceAtom();
 
             r = new NGL.Residue();
-            a = new NGL.Atom( r, fa.globalindex );
+            a = new NGL.Atom( r, fa.globalindex );  // FIXME get rid of globalindex
 
             r.atoms.push( a );
             r.atomCount += 1;
@@ -7100,7 +7288,7 @@ NGL.Helixorient.prototype = {
 
             residues.push( r );
 
-            if( padded && ( i === 0 || i === n-1 ) ){
+            if( padded && ( i === 0 || i === n - 1 ) ){
                 residues.push( r );
             }
 
@@ -7112,14 +7300,18 @@ NGL.Helixorient.prototype = {
 
     },
 
-    getColor: function( type ){
+    getColor: function( params ){
 
         var n = this.size;
 
         var col = new Float32Array( n * 3 );
         var pcol = new Float32Array( n * 3 );
 
-        var colorFactory = new NGL.ColorFactory( type );
+        var p = params || {};
+        p.structure = this.fiber.structure;
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( p );
+        var pickingColorMaker = NGL.ColorMakerRegistry.getPickingScheme( p );
 
         var i = 0;
         var a, c, pc;
@@ -7128,13 +7320,8 @@ NGL.Helixorient.prototype = {
 
             a = r.getTraceAtom();
 
-            c = colorFactory.atomColor( a );
-            colorFactory.atomColorToArray( a, col, i );
-
-            pc = a.globalindex + 1;
-            pcol[ i + 0 ] = ( pc >> 16 & 255 ) / 255;
-            pcol[ i + 1 ] = ( pc >> 8 & 255 ) / 255;
-            pcol[ i + 2 ] = ( pc & 255 ) / 255;
+            colorMaker.atomColorToArray( a, col, i );
+            pickingColorMaker.atomColorToArray( a, pcol, i );
 
             i += 3;
 
@@ -7695,7 +7882,7 @@ NGL.Helixbundle.prototype = {
 
     },
 
-    getAxis: function( localAngle, centerDist, ssBorder, color, radius, scale ){
+    getAxis: function( localAngle, centerDist, ssBorder, colorParams, radius, scale ){
 
         localAngle = localAngle || 30;
         centerDist = centerDist || 2.5;
@@ -7703,7 +7890,12 @@ NGL.Helixbundle.prototype = {
 
         var pos = this.position;
 
-        var colorFactory = new NGL.ColorFactory( color, this.fiber.structure );
+        var cp = colorParams || {};
+        cp.structure = this.fiber.structure;
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( cp );
+        var pickingColorMaker = NGL.ColorMakerRegistry.getPickingScheme( cp );
+
         var radiusFactory = new NGL.RadiusFactory( radius, scale );
 
         var i, r, r2, a;
@@ -7788,12 +7980,8 @@ NGL.Helixbundle.prototype = {
                 _beg.toArray( beg, k );
                 _end.toArray( end, k );
 
-                colorFactory.atomColorToArray( a, col, k );
-
-                var pc = a.globalindex + 1;
-                pcol[ k + 0 ] = ( pc >> 16 & 255 ) / 255;
-                pcol[ k + 1 ] = ( pc >> 8 & 255 ) / 255;
-                pcol[ k + 2 ] = ( pc & 255 ) / 255;
+                colorMaker.atomColorToArray( a, col, k );
+                pickingColorMaker.atomColorToArray( a, pcol, k );
 
                 size.push( radiusFactory.atomRadius( a ) );
 
@@ -8208,9 +8396,15 @@ NGL.polarContacts = function( structure, maxDistance, maxAngle ){
     } );
 
     bondSet.structure = structure;
-    data.bondSet = bondSet;
 
-    return data;
+    data.bondSet.dispose();
+    donAtomSet.dispose();
+    accAtomSet.dispose();
+
+    return {
+        atomSet: data.atomSet,
+        bondSet: bondSet
+    };
 
 }
 
@@ -8279,9 +8473,15 @@ NGL.polarBackboneContacts = function( structure, maxDistance, maxAngle ){
     } );
 
     bondSet.structure = structure;
-    data.bondSet = bondSet;
 
-    return data;
+    data.bondSet.dispose();
+    donAtomSet.dispose();
+    accAtomSet.dispose();
+
+    return {
+        atomSet: data.atomSet,
+        bondSet: bondSet
+    };
 
 }
 
@@ -8596,6 +8796,37 @@ NGL.ResidueRadii = {
 };
 
 
+// http://blanco.biomol.uci.edu/Whole_residue_HFscales.txt
+NGL.ResidueHydrophobicity = {
+    // AA  DGwif   DGwoct  Oct-IF
+    "ALA": [  0.17,  0.50,  0.33 ],
+    "ARG": [  0.81,  1.81,  1.00 ],
+    "ASN": [  0.42,  0.85,  0.43 ],
+    "ASP": [  1.23,  3.64,  2.41 ],
+    "ASH": [ -0.07,  0.43,  0.50 ],
+    "CYS": [ -0.24, -0.02,  0.22 ],
+    "GLN": [  0.58,  0.77,  0.19 ],
+    "GLU": [  2.02,  3.63,  1.61 ],
+    "GLH": [ -0.01,  0.11,  0.12 ],
+    "GLY": [  0.01,  1.15,  1.14 ],
+    // "His+": [  0.96,  2.33,  1.37 ],
+    "HIS": [  0.17,  0.11, -0.06 ],
+    "ILE": [ -0.31, -1.12, -0.81 ],
+    "LEU": [ -0.56, -1.25, -0.69 ],
+    "LYS": [  0.99,  2.80,  1.81 ],
+    "MET": [ -0.23, -0.67, -0.44 ],
+    "PHE": [ -1.13, -1.71, -0.58 ],
+    "PRO": [  0.45,  0.14, -0.31 ],
+    "SER": [  0.13,  0.46,  0.33 ],
+    "THR": [  0.14,  0.25,  0.11 ],
+    "TRP": [ -1.85, -2.09, -0.24 ],
+    "TYR": [ -0.94, -0.71,  0.23 ],
+    "VAL": [  0.07, -0.46, -0.53 ],
+
+    "": [ 0.00, 0.00, 0.00 ]
+};
+
+
 NGL.guessElement = function(){
 
     var elm1 = [ "H", "C", "O", "N", "S", "P" ];
@@ -8672,268 +8903,479 @@ NGL.AA1 = {
 };
 
 
-// REMEMBER not synced with worker
-NGL.nextGlobalAtomindex = 0;
-
-
 ////////////
-// Factory
+// GidPool
 
-NGL.ColorFactory = function( type, structure ){
+NGL.GidPool = {
 
-    this.type = type;
-    this.structure = structure;
+    // REMEMBER not synced with worker
 
-    if( structure ){
+    nextGid: 1,
 
-        this.atomindexScale = chroma
-            //.scale( 'Spectral' )
-            //.scale( 'RdYlGn' )
-            .scale([ "red", "orange", "yellow", "green", "blue" ])
-            .mode('lch')
-            .domain( [ 0, this.structure.atomCount ]);
+    objectList: [],
 
-        this.residueindexScale = chroma
-            //.scale( 'Spectral' )
-            //.scale( 'RdYlGn' )
-            .scale([ "red", "orange", "yellow", "green", "blue" ])
-            .mode('lch')
-            .domain( [ 0, this.structure.residueCount ]);
+    rangeList: [],
 
-        this.chainindexScale = chroma
-            .scale( 'Spectral' )
-            //.scale( 'RdYlGn' )
-            //.scale([ "red", "orange", "yellow", "green", "blue" ])
-            .mode('lch')
-            .domain( [ 0, this.structure.chainCount ]);
+    addObject: function( object ){
 
-        this.modelindexScale = chroma
-            //.scale( 'Spectral' )
-            //.scale( 'RdYlGn' )
-            .scale([ "red", "orange", "yellow", "green", "blue" ])
-            .mode('lch')
-            .domain( [ 0, this.structure.modelCount ]);
+        NGL.GidPool.objectList.push( object );
 
-    }
+        NGL.GidPool.rangeList.push( NGL.GidPool.allocateGidRange( object ) );
 
-    this.chainNames = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-                      "abcdefghijklmnopqrstuvwxyz" +
-                      "0123456789";
+        return NGL.GidPool;
 
-    this.chainnameScale = chroma
-        .scale( 'Spectral' )
-        //.scale( 'RdYlGn' )
-        //.scale([ "red", "orange", "yellow", "green", "blue" ])
-        .mode('lch')
-        .domain( [ 0, 26 ]);
+    },
 
-};
+    removeObject: function( object ){
 
-NGL.ColorFactory.types = {
+        var idx = NGL.GidPool.objectList.indexOf( object );
 
-    "": "",
-    "element": "by element",
-    "resname": "by residue name",
-    "ss": "by secondary structure",
-    "atomindex": "by atom index",
-    "residueindex": "by residue index",
-    "chainindex": "by chain index",
-    "modelindex": "by model index",
-    "picking": "by picking id",
-    "random": "random",
-    "color": "color"
+        if( idx !== -1 ){
 
-};
+            NGL.GidPool.objectList.splice( idx, 1 );
+            NGL.GidPool.rangeList.splice( idx, 1 );
 
-NGL.ColorFactory.getTypes = function(){
+            if( NGL.GidPool.objectList.length === 0 ){
+                NGL.GidPool.nextGid = 1;
+            }
 
-    var types = {};
+        }
 
-    Object.keys( NGL.ColorFactory.types ).forEach( function( k ){
-        types[ k ] = NGL.ColorFactory.types[ k ];
-    } );
+        return NGL.GidPool;
 
-    Object.keys( NGL.ColorFactory.userSchemes ).forEach( function( k ){
-        types[ k ] = k.split( "|" )[ 1 ];
-    } );
+    },
 
-    return types;
+    updateObject: function( object, silent ){
 
-};
+        var idx = NGL.GidPool.objectList.indexOf( object );
 
-NGL.ColorFactory.signals = {
+        if( idx !== -1 ){
 
-    typesChanged: new signals.Signal(),
+            var range = NGL.GidPool.rangeList[ idx ];
 
-};
+            if( range[1] === NGL.GidPool.nextGid ){
 
-NGL.ColorFactory.userSchemes = {};
+                var count = NGL.GidPool.getGidCount( object );
+                NGL.GidPool.nextGid += count - ( range[1] - range[0] );
+                range[ 1 ] = NGL.GidPool.nextGid;
 
-NGL.ColorFactory.addScheme = function( fn, label ){
+            }else{
 
-    label = label || "";
-    var id = " " + THREE.Math.generateUUID() + "|" + label;
+                NGL.GidPool.rangeList[ idx ] = NGL.GidPool.allocateGidRange( object );
 
-    NGL.ColorFactory.userSchemes[ id ] = fn;
-    NGL.ColorFactory.signals.typesChanged.dispatch();
+            }
 
-    return id;
+        }else{
 
-};
+            if( !silent ){
 
-NGL.ColorFactory.removeScheme = function( id ){
-
-    delete NGL.ColorFactory.userSchemes[ id ];
-    NGL.ColorFactory.signals.typesChanged.dispatch();
-
-};
-
-NGL.ColorFactory.addSelectionScheme = function( pairList, label ){
-
-    var colorList = [];
-    var selectionList = [];
-
-    pairList.forEach( function( pair ){
-
-        colorList.push( new THREE.Color( pair[ 0 ] ).getHex() );
-        selectionList.push( new NGL.Selection( pair[ 1 ] ) );
-
-    } );
-
-    var n = pairList.length;
-
-    var fn = function( atom ){
-
-        for( var i = 0; i < n; ++i ){
-
-            if( selectionList[ i ].test( atom ) ){
-
-                return colorList[ i ];
+                NGL.warn( "NGL.GidPool.updateObject: object not found." );
 
             }
 
         }
 
-        return 0xFFFFFF;
+        return NGL.GidPool;
 
-    };
+    },
 
-    return NGL.ColorFactory.addScheme( fn, label );
+    getGidCount: function( object ){
+
+        var count = 0;
+
+        if( object instanceof NGL.Structure ){
+
+            count = object.atomCount;
+
+        }else if( object instanceof NGL.BondSet ){
+
+            count = object.bondCount;
+
+        }else if( object instanceof NGL.Volume ){
+
+            count = object.__data.length;
+
+        }
+
+        return count;
+
+    },
+
+    allocateGidRange: function( object ){
+
+        var firstGid = NGL.GidPool.nextGid;
+
+        NGL.GidPool.nextGid += NGL.GidPool.getGidCount( object );
+
+        return [ firstGid, NGL.GidPool.nextGid ];
+
+    },
+
+    freeGidRange: function( object ){
+
+        // TODO
+
+    },
+
+    getNextGid: function(){
+
+        return NGL.GidPool.nextGid++;
+
+    },
+
+    getGid: function( object, offset ){
+
+        offset = offset || 0;
+
+        var gid = 0;
+        var idx = NGL.GidPool.objectList.indexOf( object );
+
+        if( idx !== -1 ){
+
+            var range = NGL.GidPool.rangeList[ idx ];
+            var first = range[ 0 ];
+
+            gid = first + offset;
+
+        }else{
+
+            NGL.warn( "NGL.GidPool.getGid: object not found." );
+
+        }
+
+        return gid;
+
+    },
+
+    getByGid: function( gid ){
+
+        // TODO
+        // - early exit
+        // - binary search
+
+        var entity;
+
+        NGL.GidPool.objectList.forEach( function( o, i ){
+
+            if( o instanceof NGL.Structure ){
+
+                o.eachAtom( function( a ){
+
+                    if( NGL.GidPool.getGid( o, a.index ) === gid ){
+                        entity = a;
+                    }
+
+                } );
+
+            }else if( o instanceof NGL.BondSet ){
+
+                o.eachBond( function( b ){
+
+                    if( NGL.GidPool.getGid( o, b.index ) === gid ){
+                        entity = b;
+                    }
+
+                } );
+
+            }else if( o instanceof NGL.Volume ){
+
+                var range = NGL.GidPool.rangeList[ i ];
+
+                if( gid >= range[ 0 ] && gid < range[ 1 ] ){
+
+                    var offset = gid - range[ 0 ];
+
+                    entity = {
+                        volume: o,
+                        index: offset,
+                        value: o.data[ offset ],
+                        x: o.dataPosition[ offset * 3 ],
+                        y: o.dataPosition[ offset * 3 + 1 ],
+                        z: o.dataPosition[ offset * 3 + 2 ],
+                    };
+
+                }
+
+            }
+
+        } );
+
+        return entity;
+
+    }
+
+}
+
+
+///////////////
+// ColorMaker
+
+NGL.ColorMakerRegistry = {
+
+    signals: {
+
+        typesChanged: new signals.Signal(),
+
+    },
+
+    scales: {
+
+        "": "",
+
+        // Sequential
+        "OrRd": "[S] Orange-Red",
+        "PuBu": "[S] Purple-Blue",
+        "BuPu": "[S] Blue-Purple",
+        "Oranges": "[S] Oranges",
+        "BuGn": "[S] Blue-Green",
+        "YlOrBr": "[S] Yellow-Orange-Brown",
+        "YlGn": "[S] Yellow-Green",
+        "Reds": "[S] Reds",
+        "RdPu": "[S] Red-Purple",
+        "Greens": "[S] Greens",
+        "YlGnBu": "[S] Yellow-Green-Blue",
+        "Purples": "[S] Purples",
+        "GnBu": "[S] Green-Blue",
+        "Greys": "[S] Greys",
+        "YlOrRd": "[S] Yellow-Orange-Red",
+        "PuRd": "[S] Purple-Red",
+        "Blues": "[S] Blues",
+        "PuBuGn": "[S] Purple-Blue-Green",
+
+        // Diverging
+        "Spectral": "[D] Spectral",
+        "RdYlGn": "[D] Red-Yellow-Green",
+        "RdBu": "[D] Red-Blue",
+        "PiYG": "[D] Pink-Yellowgreen",
+        "PRGn": "[D] Purplered-Green",
+        "RdYlBu": "[D] Red-Yellow-Blue",
+        "BrBG": "[D] Brown-Bluegreen",
+        "RdGy": "[D] Red-Grey",
+        "PuOr": "[D] Purple-Orange",
+
+        // Qualitative
+        "Set1": "[Q] Set1",
+        "Set2": "[Q] Set2",
+        "Set3": "[Q] Set3",
+        "Dark2": "[Q] Dark2",
+        "Paired": "[Q] Paired",
+        "Pastel1": "[Q] Pastel1",
+        "Pastel2": "[Q] Pastel2",
+        "Accent": "[Q] Accent",
+
+        // Other
+        "roygb": "[?] Rainbow",
+        "rwb": "[?] Red-White-Blue",
+
+    },
+
+    modes: {
+
+        "": "",
+
+        "rgb": "Red Green Blue",
+        "hsv": "Hue Saturation Value",
+        "hsl": "Hue Saturation Lightness",
+        "hsi": "Hue Saturation Intensity",
+        "lab": "CIE L*a*b*",
+        "hcl": "Hue Chroma Lightness"
+
+    },
+
+    types: {},
+
+    userSchemes: {},
+
+    getScheme: function( params ){
+
+        var p = params || {};
+
+        var id = p.scheme || "";
+
+        var schemeClass;
+
+        if( id in NGL.ColorMakerRegistry.types ){
+
+            schemeClass = NGL.ColorMakerRegistry.types[ id ];
+
+        }else if( id in NGL.ColorMakerRegistry.userSchemes ){
+
+            schemeClass = NGL.ColorMakerRegistry.userSchemes[ id ];
+
+        }else{
+
+            schemeClass = NGL.ColorMaker;
+
+        }
+
+        return new schemeClass( params );
+
+    },
+
+    getPickingScheme: function( params ){
+
+        var p = Object.assign( params || {} );
+        p.scheme = "picking";
+
+        return NGL.ColorMakerRegistry.getScheme( p );
+
+    },
+
+    getTypes: function(){
+
+        var types = {};
+
+        Object.keys( NGL.ColorMakerRegistry.types ).forEach( function( k ){
+            // NGL.ColorMakerRegistry.types[ k ]
+            types[ k ] = k;
+        } );
+
+        Object.keys( NGL.ColorMakerRegistry.userSchemes ).forEach( function( k ){
+            types[ k ] = k.split( "|" )[ 1 ];
+        } );
+
+        return types;
+
+    },
+
+    getScales: function(){
+
+        return NGL.ColorMakerRegistry.scales;
+
+    },
+
+    getModes: function(){
+
+        return NGL.ColorMakerRegistry.modes;
+
+    },
+
+    addScheme: function( scheme, label ){
+
+        if( !( scheme instanceof NGL.ColorMaker ) ){
+
+            scheme = NGL.ColorMakerRegistry.createScheme( scheme, label );
+
+        }
+
+        label = label || "";
+        var id = "" + THREE.Math.generateUUID() + "|" + label;
+
+        NGL.ColorMakerRegistry.userSchemes[ id ] = scheme;
+        NGL.ColorMakerRegistry.signals.typesChanged.dispatch();
+
+        return id;
+
+    },
+
+    removeScheme: function( id ){
+
+        delete NGL.ColorMakerRegistry.userSchemes[ id ];
+        NGL.ColorMakerRegistry.signals.typesChanged.dispatch();
+
+    },
+
+    createScheme: function( constructor, label ){
+
+        var ColorMaker = function( params ){
+
+            NGL.ColorMaker.call( this, params );
+
+            this.label = label || "";
+
+            constructor.call( this, params );
+
+        }
+
+        ColorMaker.prototype = NGL.ColorMaker.prototype;
+
+        ColorMaker.prototype.constructor = ColorMaker;
+
+        return ColorMaker;
+
+    },
+
+    addSelectionScheme: function( pairList, label ){
+
+        return NGL.ColorMakerRegistry.addScheme( function( params ){
+
+            var colorList = [];
+            var selectionList = [];
+
+            pairList.forEach( function( pair ){
+
+                colorList.push( new THREE.Color( pair[ 0 ] ).getHex() );
+                selectionList.push( new NGL.Selection( pair[ 1 ] ) );
+
+            } );
+
+            var n = pairList.length;
+
+            this.atomColor = function( a ){
+
+                for( var i = 0; i < n; ++i ){
+
+                    if( selectionList[ i ].test( a ) ){
+
+                        return colorList[ i ];
+
+                    }
+
+                }
+
+                return 0xFFFFFF;
+
+            };
+
+        }, label );
+
+    }
+
+}
+
+
+NGL.ColorMaker = function( params ){
+
+    var p = params || {};
+
+    this.scale = p.scale || "uniform";
+    this.mode = p.mode || "hcl";
+    this.domain = p.domain || [ 0, 1 ];
+    this.value = new THREE.Color( p.value || 0xFFFFFF ).getHex();
+
+    this.structure = p.structure;
+    this.bondSet = p.bondSet;
+    this.volume = p.volume;
+    this.surface = p.surface;
 
 };
 
-NGL.ColorFactory.prototype = {
+NGL.ColorMaker.prototype = {
 
-    constructor: NGL.ColorFactory,
+    constructor: NGL.ColorMaker,
+
+    getScale: function( params ){
+
+        var p = params || {};
+
+        var scale = p.scale || this.scale;
+        if( scale === "rainbow" || scale === "roygb" ){
+            scale = [ "red", "orange", "yellow", "green", "blue" ];
+        }else if( scale === "rwb" ){
+            scale = [ "red", "white", "blue" ];
+        }
+
+        return chroma
+            .scale( scale )
+            .mode( p.mode || this.mode )
+            .domain( p.domain || this.domain )
+            .out( "num" );
+
+    },
 
     atomColor: function( a ){
 
-        var type = this.type;
-        var elemColors = NGL.ElementColors;
-        var resColors = NGL.ResidueColors;
-        var strucColors = NGL.StructureColors;
-
-        var defaultElemColor = NGL.ElementColors[""];
-        var defaultResColor = NGL.ResidueColors[""];
-        var defaultStrucColor = NGL.StructureColors[""];
-
-        var atomindexScale = this.atomindexScale;
-        var residueindexScale = this.residueindexScale;
-        var chainindexScale = this.chainindexScale;
-        var modelindexScale = this.modelindexScale;
-
-        var c, _c;
-
-        if( NGL.ColorFactory.userSchemes[ type ] ){
-
-            return NGL.ColorFactory.userSchemes[ type ]( a );
-
-        }
-
-        switch( type ){
-
-            case "picking":
-
-                c = a.globalindex + 1;
-                break;
-
-            case "element":
-
-                c = elemColors[ a.element ] || defaultElemColor;
-                break;
-
-            case "resname":
-
-                c = resColors[ a.resname ] || defaultResColor;
-                break;
-
-            case "atomindex":
-
-                _c = atomindexScale( a.index )._rgb;
-                c = _c[0] << 16 | _c[1] << 8 | _c[2];
-                break;
-
-            case "residueindex":
-
-                _c = residueindexScale( a.residue.index )._rgb;
-                c = _c[0] << 16 | _c[1] << 8 | _c[2];
-                break;
-
-            case "chainindex":
-
-                if( a.residue.chain.chainname === "" ){
-                    _c = this.chainnameScale(
-                        this.chainNames.indexOf( a.chainname ) * 10
-                    )._rgb;
-                }else{
-                    _c = chainindexScale( a.residue.chain.index )._rgb;
-                }
-                c = _c[0] << 16 | _c[1] << 8 | _c[2];
-                break;
-
-            case "modelindex":
-
-                _c = modelindexScale( a.residue.chain.model.index )._rgb;
-                c = _c[0] << 16 | _c[1] << 8 | _c[2];
-                break;
-
-            case "random":
-
-                c = Math.random() * 0xFFFFFF;
-                break;
-
-            case "ss":
-
-                if( a.ss === "h" ){
-                    c = strucColors[ "alphaHelix" ];
-                }else if( a.ss === "g" ){
-                    c = strucColors[ "3_10Helix" ];
-                }else if( a.ss === "i" ){
-                    c = strucColors[ "piHelix" ];
-                }else if( a.ss === "s" ){
-                    c = strucColors[ "betaStrand" ];
-                }else if( a.residue.isNucleic() ){
-                    c = strucColors[ "dna" ];
-                }else if( a.residue.isProtein() || a.ss === "c" ){
-                    c = strucColors[ "coil" ];
-                }else{
-                    c = defaultStrucColor;
-                }
-                break;
-
-            case undefined:
-
-                c = 0xFFFFFF;
-                break;
-
-            default:
-
-                c = type;
-                break;
-
-        }
-
-        return c;
+        return 0xFFFFFF;
 
     },
 
@@ -8950,10 +9392,474 @@ NGL.ColorFactory.prototype = {
 
         return array;
 
+    },
+
+    bondColor: function( b, fromTo ){
+
+        return this.atomColor( fromTo ? b.atom1 : b.atom2 );
+
+    },
+
+    bondColorToArray: function( b, fromTo, array, offset ){
+
+        var c = this.bondColor( b, fromTo );
+
+        if( array === undefined ) array = [];
+        if( offset === undefined ) offset = 0;
+
+        array[ offset + 0 ] = ( c >> 16 & 255 ) / 255;
+        array[ offset + 1 ] = ( c >> 8 & 255 ) / 255;
+        array[ offset + 2 ] = ( c & 255 ) / 255;
+
+        return array;
+
+    },
+
+    volumeColor: function( i ){
+
+        return 0xFFFFFF;
+
+    },
+
+    volumeColorToArray: function( i, array, offset ){
+
+        var c = this.volumeColor( i );
+
+        if( array === undefined ) array = [];
+        if( offset === undefined ) offset = 0;
+
+        array[ offset + 0 ] = ( c >> 16 & 255 ) / 255;
+        array[ offset + 1 ] = ( c >> 8 & 255 ) / 255;
+        array[ offset + 2 ] = ( c & 255 ) / 255;
+
+        return array;
+
     }
 
 };
 
+
+NGL.ValueColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    var valueScale = this.getScale();
+
+    this.volumeColor = function( i ){
+
+        return valueScale( this.volume.data[ i ] );
+
+    };
+
+};
+
+NGL.ValueColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.ValueColorMaker.prototype.constructor = NGL.ValueColorMaker;
+
+
+NGL.PickingColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    this.atomColor = function( a ){
+
+        return NGL.GidPool.getGid( this.structure, a.index );
+
+    };
+
+    this.bondColor = function( b, fromTo ){
+
+        return NGL.GidPool.getGid( this.bondSet, b.index );
+
+    };
+
+    this.volumeColor = function( i ){
+
+        return NGL.GidPool.getGid( this.volume, i );
+
+    };
+
+};
+
+NGL.PickingColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.PickingColorMaker.prototype.constructor = NGL.PickingColorMaker;
+
+
+NGL.RandomColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    this.atomColor = function( a ){
+
+        return Math.random() * 0xFFFFFF;
+
+    };
+
+};
+
+NGL.RandomColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.RandomColorMaker.prototype.constructor = NGL.RandomColorMaker;
+
+
+NGL.UniformColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    var color = this.value;
+
+    this.atomColor = function(){
+
+        return color;
+
+    };
+
+    this.bondColor = function(){
+
+        return color;
+
+    };
+
+    this.valueColor = function(){
+
+        return color;
+
+    };
+
+};
+
+NGL.UniformColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.UniformColorMaker.prototype.constructor = NGL.UniformColorMaker;
+
+
+NGL.AtomindexColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    if( !params.scale ){
+        this.scale = "roygb";
+    }
+
+    if( !params.domain ){
+        this.domain = [ 0, this.structure.atomCount ];
+    }
+
+    var atomindexScale = this.getScale();
+
+    this.atomColor = function( a ){
+
+        return atomindexScale( a.index );
+
+    };
+
+};
+
+NGL.AtomindexColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.AtomindexColorMaker.prototype.constructor = NGL.AtomindexColorMaker;
+
+
+NGL.ResidueindexColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    if( !params.scale ){
+        this.scale = "roygb";
+    }
+
+    if( !params.domain ){
+        this.domain = [ 0, this.structure.residueCount ];
+    }
+
+    var residueindexScale = this.getScale();
+
+    this.atomColor = function( a ){
+
+        return residueindexScale( a.residue.index );
+
+    };
+
+};
+
+NGL.ResidueindexColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.ResidueindexColorMaker.prototype.constructor = NGL.ResidueindexColorMaker;
+
+
+NGL.ChainindexColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    if( !params.scale ){
+        this.scale = "Spectral";
+    }
+
+    if( !params.domain ){
+        this.domain = [ 0, this.structure.chainCount ];
+    }
+
+    var chainindexScale = this.getScale();
+
+    var chainNames = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                      "abcdefghijklmnopqrstuvwxyz" +
+                      "0123456789";
+
+    var chainnameScale = this.getScale( { domain: [ 0, 26 ] } );
+
+    this.atomColor = function( a ){
+
+        if( a.residue.chain.chainname === "" ){
+            return chainnameScale(
+                chainNames.indexOf( a.chainname ) * 10
+            );
+        }else{
+            return chainindexScale( a.residue.chain.index );
+        }
+
+    };
+
+};
+
+NGL.ChainindexColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.ChainindexColorMaker.prototype.constructor = NGL.ChainindexColorMaker;
+
+
+NGL.ModelindexColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    if( !params.scale ){
+        this.scale = "roygb";
+    }
+
+    if( !params.domain ){
+        this.domain = [ 0, this.structure.modelCount ];
+    }
+
+    var modelindexScale = this.getScale();
+
+    this.atomColor = function( a ){
+
+        return modelindexScale( a.residue.chain.model.index );
+
+    };
+
+};
+
+NGL.ModelindexColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.ModelindexColorMaker.prototype.constructor = NGL.ModelindexColorMaker;
+
+
+NGL.SstrucColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    var strucColors = NGL.StructureColors;
+    var defaultStrucColor = NGL.StructureColors[""];
+
+    this.atomColor = function( a ){
+
+        if( a.ss === "h" ){
+            return strucColors[ "alphaHelix" ];
+        }else if( a.ss === "g" ){
+            return strucColors[ "3_10Helix" ];
+        }else if( a.ss === "i" ){
+            return strucColors[ "piHelix" ];
+        }else if( a.ss === "s" ){
+            return strucColors[ "betaStrand" ];
+        }else if( a.residue.isNucleic() ){
+            return strucColors[ "dna" ];
+        }else if( a.residue.isProtein() || a.ss === "c" ){
+            return strucColors[ "coil" ];
+        }else{
+            return defaultStrucColor;
+        }
+
+    };
+
+};
+
+NGL.SstrucColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.SstrucColorMaker.prototype.constructor = NGL.SstrucColorMaker;
+
+
+NGL.ElementColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    var elemColors = NGL.ElementColors;
+    var defaultElemColor = NGL.ElementColors[""];
+
+    this.atomColor = function( a ){
+
+        return elemColors[ a.element ] || defaultElemColor;
+
+    };
+
+};
+
+NGL.ElementColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.ElementColorMaker.prototype.constructor = NGL.ElementColorMaker;
+
+
+NGL.ResnameColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    var resColors = NGL.ResidueColors;
+    var defaultResColor = NGL.ResidueColors[""];
+
+    this.atomColor = function( a ){
+
+        return resColors[ a.resname ] || defaultResColor;
+
+    };
+
+};
+
+NGL.ResnameColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.ResnameColorMaker.prototype.constructor = NGL.ResnameColorMaker;
+
+
+NGL.BfactorColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    if( !params.scale ){
+        this.scale = "OrRd";
+    }
+
+    if( !params.domain ){
+
+        var bfactor;
+        var min = Infinity;
+        var max = -Infinity;
+
+        if( params.sele ){
+
+            var selection = new NGL.Selection( params.sele );
+
+            this.structure.eachAtom( function( a ){
+
+                bfactor = a.bfactor;
+                min = Math.min( min, bfactor );
+                max = Math.max( max, bfactor );
+
+            }, selection );
+
+        }else{
+
+            var atoms = this.structure.atoms;
+            var n = atoms.length;
+
+            for( var i = 0; i < n; ++i ){
+
+                bfactor = atoms[ i ].bfactor;
+                min = Math.min( min, bfactor );
+                max = Math.max( max, bfactor );
+
+            }
+
+        }
+
+        this.domain = [ min, max ];
+
+    }
+
+    var bfactorScale = this.getScale();
+
+    this.atomColor = function( a ){
+
+        return bfactorScale( a.bfactor );
+
+    };
+
+};
+
+NGL.BfactorColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.BfactorColorMaker.prototype.constructor = NGL.BfactorColorMaker;
+
+
+NGL.HydrophobicityColorMaker = function( params ){
+
+    NGL.ColorMaker.call( this, params );
+
+    if( !params.scale ){
+        this.scale = "RdYlGn";
+    }
+
+    var idx = 0;  // 0: DGwif, 1: DGwoct, 2: Oct-IF
+
+    var resHF = {};
+    for( var name in NGL.ResidueHydrophobicity ){
+        resHF[ name ] = NGL.ResidueHydrophobicity[ name ][ idx ];
+    }
+    var defaultResHF = resHF[""];
+
+    if( !params.domain ){
+
+        var val;
+        var min = Infinity;
+        var max = -Infinity;
+
+        for( var name in resHF ){
+
+            val = resHF[ name ];
+            min = Math.min( min, val );
+            max = Math.max( max, val );
+
+        }
+
+        this.domain = [ min, 0, max ];
+
+    }
+
+    var hfScale = this.getScale();
+
+    this.atomColor = function( a ){
+
+        return hfScale( resHF[ a.resname ] || defaultResHF );
+
+    };
+
+};
+
+NGL.HydrophobicityColorMaker.prototype = NGL.ColorMaker.prototype;
+
+NGL.HydrophobicityColorMaker.prototype.constructor = NGL.HydrophobicityColorMaker;
+
+
+NGL.ColorMakerRegistry.types = {
+
+    "": NGL.ColorMaker,
+    "picking": NGL.PickingColorMaker,
+    "random": NGL.RandomColorMaker,
+    "uniform": NGL.UniformColorMaker,
+    "atomindex": NGL.AtomindexColorMaker,
+    "residueindex": NGL.ResidueindexColorMaker,
+    "chainindex": NGL.ChainindexColorMaker,
+    "modelindex": NGL.ModelindexColorMaker,
+    "sstruc": NGL.SstrucColorMaker,
+    "element": NGL.ElementColorMaker,
+    "resname": NGL.ResnameColorMaker,
+    "bfactor": NGL.BfactorColorMaker,
+    "hydrophobicity": NGL.HydrophobicityColorMaker,
+    "value": NGL.ValueColorMaker,
+
+};
+
+
+////////////
+// Factory
 
 NGL.RadiusFactory = function( type, scale ){
 
@@ -9107,6 +10013,7 @@ NGL.LabelFactory.prototype = {
 
             case "text":
 
+                // TODO
                 l = this.text[ a.globalindex ];
                 break;
 
@@ -9415,13 +10322,23 @@ NGL.AtomSet.prototype = {
 
     },
 
-    atomColor: function( selection, type ){
+    getColorMaker: function( params ){
+
+        var p = params || {};
+        p.structure = this.structure;
+        p.bondSet = this.structure.bondSet;
+
+        return NGL.ColorMakerRegistry.getScheme( p );
+
+    },
+
+    atomColor: function( selection, params ){
 
         // NGL.time( "atomColor" );
 
         // TODO cache
         var c, color;
-        var colorFactory = new NGL.ColorFactory( type, this.structure );
+        var colorMaker = this.getColorMaker( params );
 
         if( selection ){
             color = [];
@@ -9433,12 +10350,7 @@ NGL.AtomSet.prototype = {
 
         this.eachAtom( function( a ){
 
-            c = colorFactory.atomColor( a );
-
-            color[ i + 0 ] = ( c >> 16 & 255 ) / 255;
-            color[ i + 1 ] = ( c >> 8 & 255 ) / 255;
-            color[ i + 2 ] = ( c & 255 ) / 255;
-
+            colorMaker.atomColorToArray( a, color, i );
             i += 3;
 
         }, selection );
@@ -9448,6 +10360,15 @@ NGL.AtomSet.prototype = {
         // NGL.timeEnd( "atomColor" );
 
         return color;
+
+    },
+
+    atomPickingColor: function( selection, params ){
+
+        var p = Object.assign( params || {} );
+        p.scheme = "picking";
+
+        return this.atomColor( selection, p );
 
     },
 
@@ -9726,7 +10647,7 @@ NGL.AtomSet.prototype = {
 
     },
 
-    bondColor: function( selection, fromTo, type ){
+    bondColor: function( selection, fromTo, params ){
 
         // NGL.time( "NGL.AtomSet.bondColor" );
 
@@ -9734,18 +10655,13 @@ NGL.AtomSet.prototype = {
         var color = [];
 
         var c;
-        var colorFactory = new NGL.ColorFactory( type, this.structure );
+        var colorMaker = this.getColorMaker( params );
 
         if( selection ){
 
             this.eachBond( function( b ){
 
-                c = colorFactory.atomColor( fromTo ? b.atom1 : b.atom2 );
-
-                color[ i + 0 ] = ( c >> 16 & 255 ) / 255;
-                color[ i + 1 ] = ( c >> 8 & 255 ) / 255;
-                color[ i + 2 ] = ( c & 255 ) / 255;
-
+                colorMaker.bondColorToArray( b, fromTo, color, i );
                 i += 3;
 
             }, selection );
@@ -9757,14 +10673,7 @@ NGL.AtomSet.prototype = {
 
             for( var j = 0; j < n; ++j ){
 
-                var b = bonds[ j ];
-
-                c = colorFactory.atomColor( fromTo ? b.atom1 : b.atom2 );
-
-                color[ i + 0 ] = ( c >> 16 & 255 ) / 255;
-                color[ i + 1 ] = ( c >> 8 & 255 ) / 255;
-                color[ i + 2 ] = ( c & 255 ) / 255;
-
+                colorMaker.bondColorToArray( bonds[ j ], fromTo, color, i );
                 i += 3;
 
             }
@@ -9774,6 +10683,15 @@ NGL.AtomSet.prototype = {
         // NGL.timeEnd( "NGL.AtomSet.bondColor" );
 
         return new Float32Array( color );
+
+    },
+
+    bondPickingColor: function( selection, fromTo, params ){
+
+        var p = Object.assign( {}, params );
+        p.scheme = "picking";
+
+        return this.bondColor( selection, fromTo, p );
 
     },
 
@@ -9888,6 +10806,8 @@ NGL.BondSet = function(){
     this.bonds = [];
     this.bondCount = 0;
 
+    NGL.GidPool.addObject( this );
+
 };
 
 NGL.BondSet.prototype = {
@@ -9897,6 +10817,7 @@ NGL.BondSet.prototype = {
     addBond: function( atom1, atom2, notToAtoms, bondOrder ){
 
         var b = new NGL.Bond( atom1, atom2, bondOrder );
+        b.index = this.bondCount;
 
         if( !notToAtoms ){
             atom1.bonds.push( b );
@@ -9905,6 +10826,8 @@ NGL.BondSet.prototype = {
         this.bonds.push( b );
 
         this.bondCount += 1;
+
+        NGL.GidPool.updateObject( this );
 
     },
 
@@ -9965,9 +10888,21 @@ NGL.BondSet.prototype = {
 
     },
 
+    getColorMaker: function( params ){
+
+        var p = params || {};
+        p.structure = this.structure;
+        p.bondSet = this;
+
+        return NGL.ColorMakerRegistry.getScheme( p );
+
+    },
+
     bondPosition: NGL.AtomSet.prototype.bondPosition,
 
     bondColor: NGL.AtomSet.prototype.bondColor,
+
+    bondPickingColor: NGL.AtomSet.prototype.bondPickingColor,
 
     bondRadius: NGL.AtomSet.prototype.bondRadius,
 
@@ -10017,15 +10952,19 @@ NGL.BondSet.prototype = {
 
         for( var i = 0; i < n; i += 3 ){
 
-            bonds.push(
-                new NGL.Bond(
-                    atoms[ bondArray[ i ] ],
-                    atoms[ bondArray[ i + 1 ] ],
-                    bondArray[ i + 2 ]
-                )
+            var b = new NGL.Bond(
+                atoms[ bondArray[ i ] ],
+                atoms[ bondArray[ i + 1 ] ],
+                bondArray[ i + 2 ]
             );
 
+            b.index = i / 3;
+
+            bonds.push( b );
+
         }
+
+        NGL.GidPool.updateObject( this );
 
         return this;
 
@@ -10036,11 +10975,19 @@ NGL.BondSet.prototype = {
         this.bonds.length = 0;
         this.bondCount = 0;
 
+        if( !this.__disposed ){
+            NGL.GidPool.updateObject( this );
+        }
+
     },
 
     dispose: function(){
 
+        this.__disposed = true;
+
         this.clear();
+
+        NGL.GidPool.removeObject( this );
 
     }
 
@@ -10071,6 +11018,8 @@ NGL.Bond.prototype = {
     atom1: undefined,
     atom2: undefined,
     bondOrder: undefined,
+
+    index: undefined,
 
     qualifiedName: function(){
 
@@ -10281,6 +11230,8 @@ NGL.Structure = function( name, path ){
 
     this.reset();
 
+    NGL.GidPool.addObject( this );
+
 };
 
 NGL.Structure.prototype = {
@@ -10298,7 +11249,12 @@ NGL.Structure.prototype = {
 
         this.atoms.length = 0;
         this.models.length = 0;
-        this.bondSet = new NGL.BondSet();
+
+        if( this.bondSet ){
+            this.bondSet.clear();
+        }else{
+             this.bondSet = new NGL.BondSet();
+        }
 
         this.biomolDict = {};
         this.helices.length = 0;
@@ -10310,6 +11266,8 @@ NGL.Structure.prototype = {
 
         this.center = new THREE.Vector3();
         this.boundingBox = new THREE.Box3();
+
+        NGL.GidPool.updateObject( this, true );
 
     },
 
@@ -10361,6 +11319,8 @@ NGL.Structure.prototype = {
             }
 
         ], function(){
+
+            NGL.GidPool.updateObject( self );
 
             callback();
 
@@ -11273,6 +12233,8 @@ NGL.Structure.prototype = {
 
         } );
 
+        NGL.GidPool.updateObject( this );
+
         NGL.timeEnd( "NGL.Structure.fromJSON" );
 
         return this;
@@ -11337,6 +12299,8 @@ NGL.Structure.prototype = {
         this.bondSet.dispose();
 
         if( this.atomArray ) this.atomArray.dispose();
+
+        NGL.GidPool.removeObject( this );
 
     }
 
@@ -12642,14 +13606,9 @@ NGL.Residue.prototype = {
 NGL.AtomSet.prototype.apply( NGL.Residue.prototype );
 
 
-NGL.Atom = function( residue, globalindex ){
+NGL.Atom = function( residue ){
 
     this.residue = residue;
-
-    if( globalindex === undefined ){
-        globalindex = NGL.nextGlobalAtomindex++;
-    }
-    this.globalindex = globalindex;
 
     this.bonds = [];
 
@@ -12679,7 +13638,6 @@ NGL.Atom.prototype = {
     modelindex: undefined,
 
     residue: undefined,
-    globalindex: undefined,
     bonds: undefined,
 
     distanceTo: function( atom ){
@@ -12803,7 +13761,6 @@ NGL.Atom.prototype = {
         this.altloc = atom.altloc;
         this.atomname = atom.atomname;
         this.modelindex = atom.modelindex;
-        // this.globalindex = atom.globalindex;
 
         this.residue = atom.residue;
 
@@ -12948,7 +13905,6 @@ NGL.AtomArray.prototype = {
             this.altloc = new Uint8Array( size );
             this.atomname = new Uint8Array( 4 * size );
             this.modelindex = new Int32Array( size );
-            this.globalindex = new Int32Array( size );
 
         }
 
@@ -12982,8 +13938,7 @@ NGL.AtomArray.prototype = {
                 this.bfactor.buffer,
                 this.altloc.buffer,
                 this.atomname.buffer,
-                this.modelindex.buffer,
-                this.globalindex.buffer
+                this.modelindex.buffer
             ];
 
         }
@@ -13011,12 +13966,9 @@ NGL.AtomArray.prototype = {
         this.modelindexOffset = this.serialOffset + this.serialSize;
         this.modelindexSize = 4 * size;
 
-        this.globalindexOffset = this.modelindexOffset + this.modelindexSize;
-        this.globalindexSize = 4 * size;
-
         // Float32
 
-        this.xOffset = this.globalindexOffset + this.globalindexSize;
+        this.xOffset = this.modelindexOffset + this.modelindexSize;
         this.xSize = 4 * size;
 
         this.yOffset = this.xOffset + this.xSize;
@@ -13082,7 +14034,6 @@ NGL.AtomArray.prototype = {
         this.altloc = new Uint8Array( this.buffer, this.altlocOffset, this.altlocSize );
         this.atomname = new Uint8Array( this.buffer, this.atomnameOffset, this.atomnameSize );
         this.modelindex = new Int32Array( this.buffer, this.modelindexOffset, this.modelindexSize / 4 );
-        this.globalindex = new Int32Array( this.buffer, this.globalindexOffset, this.globalindexSize / 4 );
 
     },
 
@@ -13261,7 +14212,6 @@ NGL.AtomArray.prototype = {
         aa.altloc.set( this.altloc );
         aa.atomname.set( this.atomname );
         aa.modelindex.set( this.modelindex );
-        aa.globalindex.set( this.globalindex );
 
         aa.usedLength = this.usedLength;
 
@@ -13306,7 +14256,6 @@ NGL.AtomArray.prototype = {
                 altloc: this.altloc,
                 atomname: this.atomname,
                 modelindex: this.modelindex,
-                globalindex: this.globalindex,
 
                 // bonds: this.bonds,
                 // residue: this.residue
@@ -13346,7 +14295,6 @@ NGL.AtomArray.prototype = {
             this.altloc = input.altloc;
             this.atomname = input.atomname;
             this.modelindex = input.modelindex;
-            this.globalindex = input.globalindex;
 
         }
 
@@ -13389,7 +14337,6 @@ NGL.AtomArray.prototype = {
         delete this.altloc;
         delete this.atomname;
         delete this.modelindex;
-        delete this.globalindex;
 
         delete this.bonds;
         delete this.residue;
@@ -13406,8 +14353,6 @@ NGL.ProxyAtom = function( atomArray, index ){
 
     this.atomArray = atomArray;
     this.index = index;
-
-    this.globalindex = NGL.nextGlobalAtomindex++;
 
 };
 
@@ -13551,13 +14496,6 @@ NGL.ProxyAtom.prototype = {
         this.atomArray.modelindex[ this.index ] = value;
     },
 
-    get globalindex () {
-        return this.atomArray.globalindex[ this.index ];
-    },
-    set globalindex ( value ) {
-        this.atomArray.globalindex[ this.index ] = value;
-    },
-
     // distanceTo: NGL.Atom.prototype.distanceTo,
 
     distanceTo: function( atom ){
@@ -13643,7 +14581,6 @@ NGL.ProxyAtom.prototype = {
         this.altloc = atom.altloc;
         this.atomname = atom.atomname;
         this.modelindex = atom.modelindex;
-        // this.globalindex = atom.globalindex;
 
         this.residue = atom.residue;
 
@@ -13751,7 +14688,6 @@ NGL.StructureSubset.prototype._build = function(){
                     _a.altloc = a.altloc;
                     _a.atomname = a.atomname;
                     _a.modelindex = a.modelindex;
-                    _a.globalindex = a.globalindex;
 
                     atomIndexDict[ a.index ] = _a;
                     atoms.push( _a );
@@ -13804,6 +14740,8 @@ NGL.StructureSubset.prototype._build = function(){
 
     _s.biomolDict = structure.biomolDict;
     _s.defaultAssembly = structure.defaultAssembly;
+
+    NGL.GidPool.updateObject( this );
 
     NGL.timeEnd( "NGL.StructureSubset._build" );
 
@@ -14331,11 +15269,12 @@ NGL.Selection.prototype = {
 
             // handle atom expressions
 
-            if( c.charAt( 0 ) === "@" ){
-                sele.globalindex = parseInt( c.substr( 1 ) );
-                pushRule( sele );
-                continue;
-            }
+            // TODO make replacement
+            // if( c.charAt( 0 ) === "@" ){
+            //     sele.globalindex = parseInt( c.substr( 1 ) );
+            //     pushRule( sele );
+            //     continue;
+            // }
 
             if( c.charAt( 0 ) === "#" ){
                 sele.element = c.substr( 1 ).toUpperCase();
@@ -14683,7 +15622,8 @@ NGL.Selection.prototype = {
 
             }
 
-            if( s.globalindex!==undefined && s.globalindex!==a.globalindex ) return false;
+            // TODO make replacement
+            // if( s.globalindex!==undefined && s.globalindex!==a.globalindex ) return false;
             if( s.resname!==undefined && s.resname!==a.resname ) return false;
             if( s.chainname!==undefined && s.chainname!==a.chainname ) return false;
             if( s.atomname!==undefined && s.atomname!==a.atomname ) return false;
@@ -14720,7 +15660,8 @@ NGL.Selection.prototype = {
             selection = this._filter( function( s ){
 
                 if( s.model!==undefined ) return true;
-                if( s.globalindex!==undefined ) return true;
+                // TODO make replacement
+                // if( s.globalindex!==undefined ) return true;
                 if( s.chainname!==undefined ) return true;
                 if( s.atomname!==undefined ) return true;
                 if( s.element!==undefined ) return true;
@@ -14797,7 +15738,8 @@ NGL.Selection.prototype = {
                 if( s.model!==undefined ) return true;
                 if( s.resname!==undefined ) return true;
                 if( s.resno!==undefined ) return true;
-                if( s.globalindex!==undefined ) return true;
+                // TODO make replacement
+                // if( s.globalindex!==undefined ) return true;
                 if( s.atomname!==undefined ) return true;
                 if( s.element!==undefined ) return true;
                 if( s.altloc!==undefined ) return true;
@@ -14846,7 +15788,8 @@ NGL.Selection.prototype = {
                 if( s.chainname!==undefined ) return true;
                 if( s.resname!==undefined ) return true;
                 if( s.resno!==undefined ) return true;
-                if( s.globalindex!==undefined ) return true;
+                // TODO make replacement
+                // if( s.globalindex!==undefined ) return true;
                 if( s.atomname!==undefined ) return true;
                 if( s.element!==undefined ) return true;
                 if( s.altloc!==undefined ) return true;
@@ -16596,21 +17539,51 @@ NGL.TrajectoryPlayer.prototype = {
 ////////////
 // Surface
 
-NGL.Surface = function( name, path, geometry ){
+NGL.Surface = function( name, path, data ){
 
     this.name = name;
     this.path = path;
+    this.info = {};
 
     this.center = new THREE.Vector3();
     this.boundingBox = new THREE.Box3();
 
-    if( geometry ) this.fromGeometry( geometry );
+    if( data instanceof THREE.Geometry ||
+        data instanceof THREE.BufferGeometry ||
+        data instanceof THREE.Group
+    ){
+
+        this.fromGeometry( data );
+
+    }else if( data ){
+
+        this.set(
+            data.position,
+            data.index,
+            data.normal,
+            data.color,
+            data.atomindex
+        );
+
+    }
 
 };
 
 NGL.Surface.prototype = {
 
     constructor: NGL.Surface,
+
+    set: function( position, index, normal, color, atomindex ){
+
+        this.position = position;
+        this.index = index;
+        this.normal = normal;
+        this.color = color;
+        this.atomindex = atomindex;
+
+        this.size = position.length / 3;
+
+    },
 
     fromGeometry: function( geometry ){
 
@@ -16670,11 +17643,7 @@ NGL.Surface.prototype = {
 
         }
 
-        this.position = position;
-        this.index = index;
-        this.normal = normal;
-
-        this.size = position.length / 3;
+        this.set( position, index, normal, color, undefined );
 
         NGL.timeEnd( "NGL.GeometrySurface.setGeometry" );
 
@@ -16686,14 +17655,49 @@ NGL.Surface.prototype = {
 
     },
 
-    getColor: function( color ){
+    getColor: function( params ){
 
-        var tc = new THREE.Color( color );
-        var col = NGL.Utils.uniformArray3(
-            this.size, tc.r, tc.g, tc.b
-        );
+        var p = params || {};
 
-        return col;
+        var n = this.size;
+        var array;
+
+        if( this.atomindex ){
+
+            p.volume = this;
+
+            var colorMaker = NGL.ColorMakerRegistry.getScheme( p );
+
+            array = new Float32Array( n * 3 );
+
+            var atoms = p.structure.atoms;
+            var atomindex = this.atomindex;
+
+            for( var i = 0, a; i < n; ++i ){
+
+                a = atoms[ atomindex[ i ] ];
+                colorMaker.atomColorToArray( a, array, i * 3 );
+
+            }
+
+        }else{
+
+            var tc = new THREE.Color( p.value );
+
+            array = NGL.Utils.uniformArray3( n, tc.r, tc.g, tc.b );
+
+        }
+
+        return array;
+
+    },
+
+    getPickingColor: function( params ){
+
+        var p = Object.assign( params || {} );
+        p.scheme = "picking";
+
+        return this.getColor( p );
 
     },
 
@@ -16703,33 +17707,63 @@ NGL.Surface.prototype = {
 
     },
 
+    getSize: function( size ){
+
+        return NGL.Utils.uniformArray( this.size, size );
+
+    },
+
     getIndex: function(){
 
         return this.index;
 
     },
 
-    filterData: function( minValue, maxValue ){
+    getFilteredIndex: function( sele, atoms ){
 
-        // nothing to do
+        if( sele && this.atomindex ){
+
+            var selection = new NGL.Selection( sele );
+            var filteredIndex = [];
+
+            var atomindex = this.atomindex;
+            var index = this.index;
+            var n = index.length;
+            var test = selection.test;
+
+            for( var i = 0; i < n; i+=3 ){
+
+                var idx1 = index[ i     ];
+                var idx2 = index[ i + 1 ];
+                var idx3 = index[ i + 2 ];
+
+                var a1 = atoms[ atomindex[ idx1 ] ];
+                var a2 = atoms[ atomindex[ idx2 ] ];
+                var a3 = atoms[ atomindex[ idx3 ] ];
+
+                if( test( a1 ) && test( a2 ) && test( a3 ) ){
+
+                    filteredIndex.push( idx1 );
+                    filteredIndex.push( idx2 );
+                    filteredIndex.push( idx3 );
+
+                }
+
+            }
+
+            return new Uint32Array( filteredIndex );
+
+        }else{
+
+            return this.index;
+
+        }
 
     },
 
-    getDataPosition: function(){
+    getAtomindex: function(){
 
-        return this.getPosition.apply( this, arguments );
-
-    },
-
-    getDataColor: function(){
-
-        return this.getColor.apply( this, arguments );
-
-    },
-
-    getDataSize: function( size ){
-
-        return NGL.Utils.uniformArray( this.size, size );
+        return this.atomindex;
 
     },
 
@@ -16745,10 +17779,13 @@ NGL.Surface.prototype = {
 
             name: this.name,
             path: this.path,
+            info: this.info,
 
             position: this.position,
             index: this.index,
             normal: this.normal,
+            color: this.color,
+            atomindex: this.atomindex,
 
             size: this.size,
 
@@ -16768,10 +17805,13 @@ NGL.Surface.prototype = {
 
         this.name = input.name;
         this.path = input.path;
+        this.info = input.info;
 
         this.position = input.position;
         this.index = input.index;
         this.normal = input.normal;
+        this.color = input.color;
+        this.atomindex = input.atomindex;
 
         this.size = input.size;
 
@@ -16792,10 +17832,94 @@ NGL.Surface.prototype = {
         if( this.position ) transferable.push( this.position.buffer );
         if( this.index ) transferable.push( this.index.buffer );
         if( this.normal ) transferable.push( this.normal.buffer );
+        if( this.color ) transferable.push( this.color.buffer );
+        if( this.atomindex ) transferable.push( this.atomindex.buffer );
 
         return transferable;
 
+    },
+
+    dispose: function(){
+
+        //
+
     }
+
+};
+
+
+/////////
+// Grid
+
+NGL.Grid = function( length, width, height, dataCtor, elemSize ){
+
+    dataCtor = dataCtor || Int32Array;
+    elemSize = elemSize || 1;
+
+    var j;
+
+    var data = new dataCtor( length * width * height * elemSize );
+
+    function index( x, y, z ){
+
+        return ( ( ( ( x * width ) + y ) * height ) + z ) * elemSize;
+
+    }
+
+    this.data = data;
+
+    this.index = index;
+
+    this.set = function( x, y, z ){
+
+        var i = index( x, y, z );
+
+        for( j = 0; j < elemSize; ++j ){
+            data[ i + j ] = arguments[ 3 + j ];
+        }
+
+    };
+
+    this.toArray = function( x, y, z, array, offset ){
+
+        var i = index( x, y, z );
+
+        if ( array === undefined ) array = [];
+        if ( offset === undefined ) offset = 0;
+
+        for( j = 0; j < elemSize; ++j ){
+            array[ j ] = data[ i + j ];
+        }
+
+    };
+
+    this.fromArray = function( x, y, z, array, offset ){
+
+        var i = index( x, y, z );
+
+        if ( offset === undefined ) offset = 0;
+
+        for( j = 0; j < elemSize; ++j ){
+            data[ i + j ] = array[ offset + j ];
+        }
+
+    };
+
+    this.copy = function( grid ){
+
+        this.data.set( grid.data );
+
+    };
+
+    this.clone = function(){
+
+        return new NGL.Grid(
+
+            length, width, height, dataCtor, elemSize
+
+        ).copy( this );
+
+    };
 
 };
 
@@ -16803,7 +17927,7 @@ NGL.Surface.prototype = {
 ///////////
 // Volume
 
-NGL.Worker.add( "surf", function( e ){
+NGL.WorkerRegistry.add( "surf", function( e, callback ){
 
     NGL.time( "WORKER surf" );
 
@@ -16815,38 +17939,28 @@ NGL.Worker.add( "surf", function( e ){
 
     if( d.vol ) vol.fromJSON( d.vol );
 
-    vol.generateSurface( p.isolevel, p.smooth );
+    var surface = vol.getSurface( p.isolevel, p.smooth );
 
     NGL.timeEnd( "WORKER surf" );
 
-    var meshData = {
-        position: vol.position,
-        index: vol.index,
-        normal: vol.normal
-    };
-
-    var transferable = [
-        vol.position.buffer,
-        vol.index.buffer
-    ];
-
-    if( vol.normal ) transferable.push( vol.normal.buffer );
-
-    self.postMessage( meshData, transferable );
+    callback( surface.toJSON(), surface.getTransferable() );
 
 } );
 
 
-NGL.Volume = function( name, path, data, nx, ny, nz ){
+NGL.Volume = function( name, path, data, nx, ny, nz, dataAtomindex ){
 
     this.name = name;
     this.path = path;
 
     this.matrix = new THREE.Matrix4();
+    this.normalMatrix = new THREE.Matrix3();
     this.center = new THREE.Vector3();
     this.boundingBox = new THREE.Box3();
 
-    this.setData( data, nx, ny, nz );
+    this.setData( data, nx, ny, nz, dataAtomindex );
+
+    NGL.GidPool.addObject( this );
 
 };
 
@@ -16854,7 +17968,7 @@ NGL.Volume.prototype = {
 
     constructor: NGL.Volume,
 
-    setData: function( data, nx, ny, nz ){
+    setData: function( data, nx, ny, nz, dataAtomindex ){
 
         this.nx = nx || 1;
         this.ny = ny || 1;
@@ -16862,6 +17976,8 @@ NGL.Volume.prototype = {
 
         this.data = data || new Float32Array( 1 );
         this.__data = this.data;
+
+        this.setDataAtomindex( dataAtomindex );
 
         delete this.mc;
 
@@ -16880,6 +17996,8 @@ NGL.Volume.prototype = {
         delete this.__dataRms;
 
         if( this.worker ) this.worker.terminate();
+
+        NGL.GidPool.updateObject( this, true );
 
     },
 
@@ -16908,26 +18026,52 @@ NGL.Volume.prototype = {
         bb.applyMatrix4( this.matrix );
         bb.center( this.center );
 
+        // make normal matrix
+
+        var me = this.matrix.elements;
+        var r0 = new THREE.Vector3( me[0], me[1], me[2] );
+        var r1 = new THREE.Vector3( me[4], me[5], me[6] );
+        var r2 = new THREE.Vector3( me[8], me[9], me[10] );
+        var cp = new THREE.Vector3();
+        //        [ r0 ]       [ r1 x r2 ]
+        // M3x3 = [ r1 ]   N = [ r2 x r0 ]
+        //        [ r2 ]       [ r0 x r1 ]
+        var ne = this.normalMatrix.elements;
+        cp.crossVectors( r1, r2 );
+        ne[ 0 ] = cp.x;
+        ne[ 1 ] = cp.y;
+        ne[ 2 ] = cp.z;
+        cp.crossVectors( r2, r0 );
+        ne[ 3 ] = cp.x;
+        ne[ 4 ] = cp.y;
+        ne[ 5 ] = cp.z;
+        cp.crossVectors( r0, r1 );
+        ne[ 6 ] = cp.x;
+        ne[ 7 ] = cp.y;
+        ne[ 8 ] = cp.z;
+
     },
 
-    generateSurface: function( isolevel, smooth ){
+    setDataAtomindex: function( dataAtomindex ){
 
-        isolevel = isNaN( isolevel ) ? this.getIsolevelForSigma( 2 ) : isolevel;
+        this.dataAtomindex = dataAtomindex;
+        this.__dataAtomindex = this.dataAtomindex;
+
+        delete this.__dataAtomindexBuffer;
+
+    },
+
+    getSurface: function( isolevel, smooth ){
+
+        isolevel = isNaN( isolevel ) ? this.getValueForSigma( 2 ) : isolevel;
         smooth = smooth || 0;
-
-        if( isolevel === this.__isolevel && smooth === this.__smooth ){
-
-            // already generated
-            return;
-
-        }
 
         //
 
         if( this.mc === undefined ){
 
             this.mc = new NGL.MarchingCubes2(
-                this.__data, this.nx, this.ny, this.nz
+                this.__data, this.nx, this.ny, this.nz, this.__dataAtomindex
             );
 
         }
@@ -16945,125 +18089,86 @@ NGL.Volume.prototype = {
 
         }
 
-        this.position = sd.position;
-        this.normal = sd.normal;
-        this.index = sd.index;
+        this.matrix.applyToVector3Array( sd.position );
 
-        this.size = this.position.length / 3;
+        if( sd.normal ){
 
-        this.matrix.applyToVector3Array( this.position );
-
-        if( this.normal ){
-
-            var me = this.matrix.elements;
-            var r0 = new THREE.Vector3( me[0], me[1], me[2] );
-            var r1 = new THREE.Vector3( me[4], me[5], me[6] );
-            var r2 = new THREE.Vector3( me[8], me[9], me[10] );
-            var cp = new THREE.Vector3();
-            //        [ r0 ]       [ r1 x r2 ]
-            // M3x3 = [ r1 ]   N = [ r2 x r0 ]
-            //        [ r2 ]       [ r0 x r1 ]
-            var normalMatrix = new THREE.Matrix3();
-            var ne = normalMatrix.elements;
-            cp.crossVectors( r1, r2 );
-            ne[ 0 ] = cp.x;
-            ne[ 1 ] = cp.y;
-            ne[ 2 ] = cp.z;
-            cp.crossVectors( r2, r0 );
-            ne[ 3 ] = cp.x;
-            ne[ 4 ] = cp.y;
-            ne[ 5 ] = cp.z;
-            cp.crossVectors( r0, r1 );
-            ne[ 6 ] = cp.x;
-            ne[ 7 ] = cp.y;
-            ne[ 8 ] = cp.z;
-            normalMatrix.applyToVector3Array( this.normal );
+            this.normalMatrix.applyToVector3Array( sd.normal );
 
         }
 
-        this.__isolevel = isolevel;
-        this.__smooth = smooth;
+        var surface = new NGL.Surface( "", "", sd );
+        surface.info[ "isolevel" ] = isolevel;
+        surface.info[ "smooth" ] = smooth;
+
+        return surface;
 
     },
 
-    generateSurfaceWorker: function( isolevel, smooth, callback ){
+    getSurfaceWorker: function( isolevel, smooth, callback ){
 
-        isolevel = isNaN( isolevel ) ? this.getIsolevelForSigma( 2 ) : isolevel;
+        isolevel = isNaN( isolevel ) ? this.getValueForSigma( 2 ) : isolevel;
         smooth = smooth || 0;
 
         //
 
-        if( isolevel === this.__isolevel && smooth === this.__smooth ){
-
-            // already generated
-            callback();
-
-        }else if( NGL.useWorker && typeof Worker !== "undefined" &&
+        if( NGL.useWorker && typeof Worker !== "undefined" &&
             typeof importScripts !== 'function'
         ){
-
-            var __timeName = "NGL.Volume.generateSurfaceWorker " + this.name;
-            NGL.time( __timeName );
 
             var vol = undefined;
 
             if( this.worker === undefined ){
 
                 vol = this.toJSON();
-                this.worker = NGL.Worker.make( "surf" );
+                this.worker = new NGL.Worker( "surf" );
 
             }
 
-            this.worker.onerror = function( e ){
+            this.worker.post(
 
-                console.warn(
-                    "NGL.Volume.generateSurfaceWorker error - trying without worker", e
-                );
-                this.worker.terminate();
-                this.worker = undefined;
+                {
+                    vol: vol,
+                    params: {
+                        isolevel: isolevel,
+                        smooth: smooth
+                    }
+                },
 
-                this.generateSurface( isolevel, smooth );
-                callback();
+                undefined,
 
-            }.bind( this );
+                function( e ){
 
-            this.worker.onmessage = function( e ){
+                    var surface = NGL.fromJSON( e.data );
+                    callback( surface );
 
-                NGL.timeEnd( __timeName );
+                }.bind( this ),
 
-                // if( NGL.debug ) console.log( e.data );
+                function( e ){
 
-                this.position = e.data.position;
-                this.normal = e.data.normal;
-                this.index = e.data.index;
+                    console.warn(
+                        "NGL.Volume.generateSurfaceWorker error - trying without worker", e
+                    );
+                    this.worker.terminate();
+                    this.worker = undefined;
 
-                this.size = this.position.length / 3;
+                    var surface = this.getSurface( isolevel, smooth );
+                    callback( surface );
 
-                this.__isolevel = isolevel;
-                this.__smooth = smooth;
+                }.bind( this )
 
-                callback();
-
-            }.bind( this );
-
-            this.worker.postMessage( {
-                vol: vol,
-                params: {
-                    isolevel: isolevel,
-                    smooth: smooth
-                }
-            } );
+            );
 
         }else{
 
-            this.generateSurface( isolevel, smooth );
-            callback();
+            var surface = this.getSurface( isolevel, smooth );
+            callback( surface );
 
         }
 
     },
 
-    getIsolevelForSigma: function( sigma ){
+    getValueForSigma: function( sigma ){
 
         sigma = sigma !== undefined ? sigma : 2;
 
@@ -17071,46 +18176,15 @@ NGL.Volume.prototype = {
 
     },
 
-    getSigmaForIsolevel: function( isolevel ){
+    getSigmaForValue: function( value ){
 
-        isolevel = isolevel !== undefined ? isolevel : 0;
+        value = value !== undefined ? value : 0;
 
-        return ( isolevel - this.getDataMean() ) / this.getDataRms();
-
-    },
-
-    getPosition: function(){
-
-        return this.position;
+        return ( value - this.getDataMean() ) / this.getDataRms();
 
     },
 
-    getColor: function( color ){
-
-        // re-use array
-
-        var tc = new THREE.Color( color );
-        var col = NGL.Utils.uniformArray3(
-            this.size, tc.r, tc.g, tc.b
-        );
-
-        return col;
-
-    },
-
-    getNormal: function(){
-
-        return this.normal;
-
-    },
-
-    getIndex: function(){
-
-        return this.index;
-
-    },
-
-    filterData: function( minValue, maxValue ){
+    filterData: function( minValue, maxValue, outside ){
 
         if( isNaN( minValue ) && this.header ){
             minValue = this.header.DMEAN + 2.0 * this.header.ARMS;
@@ -17118,6 +18192,7 @@ NGL.Volume.prototype = {
 
         minValue = ( minValue !== undefined && !isNaN( minValue ) ) ? minValue : -Infinity;
         maxValue = maxValue !== undefined ? maxValue : Infinity;
+        outside = outside || false;
 
         if( !this.dataPosition ){
 
@@ -17128,7 +18203,9 @@ NGL.Volume.prototype = {
         var dataPosition = this.__dataPosition;
         var data = this.__data;
 
-        if( minValue === this.__minValue && maxValue == this.__maxValue ){
+        if( minValue === this.__minValue && maxValue == this.__maxValue &&
+            outside === this.__outside
+        ){
 
             // already filtered
             return;
@@ -17161,7 +18238,9 @@ NGL.Volume.prototype = {
                 var i3 = i * 3;
                 var v = data[ i ];
 
-                if( v >= minValue && v <= maxValue ){
+                if( ( !outside && v >= minValue && v <= maxValue ) ||
+                    ( outside && ( v < minValue || v > maxValue ) )
+                ){
 
                     var j3 = j * 3;
 
@@ -17186,6 +18265,7 @@ NGL.Volume.prototype = {
 
         this.__minValue = minValue;
         this.__maxValue = maxValue;
+        this.__outside = outside;
 
     },
 
@@ -17224,48 +18304,52 @@ NGL.Volume.prototype = {
 
     },
 
+    getDataAtomindex: function(){
+
+        return this.dataAtomindex;
+
+    },
+
     getDataPosition: function(){
 
         return this.dataPosition;
 
     },
 
-    getDataColor: function( color ){
+    getDataColor: function( params ){
 
-        var spectralScale = chroma
-            .scale( 'Spectral' )
-            .mode('lch')
-            .domain( [ this.getDataMin(), this.getDataMax() ]);
+        var p = params || {};
+        p.volume = this;
+        p.scale = p.scale || 'Spectral';
+        p.domain = p.domain || [ this.getDataMin(), this.getDataMax() ];
+
+        var colorMaker = NGL.ColorMakerRegistry.getScheme( p );
 
         var n = this.dataPosition.length / 3;
-        var data = this.data;
-        var array;
+        var array = new Float32Array( n * 3 );
 
-        switch( color ){
+        // var atoms = p.structure.atoms;
+        // var atomindex = this.dataAtomindex;
 
-            case "value":
+        for( var i = 0; i < n; ++i ){
 
-                array = new Float32Array( n * 3 );
-                for( var i = 0; i < n; ++i ){
-                    var i3 = i * 3;
-                    var c = spectralScale( data[ i ] )._rgb
-                    array[ i3 + 0 ] = c[ 0 ] / 255;
-                    array[ i3 + 1 ] = c[ 1 ] / 255;
-                    array[ i3 + 2 ] = c[ 2 ] / 255;
-                }
-                break;
+            colorMaker.volumeColorToArray( i, array, i * 3 );
 
-            default:
-
-                var tc = new THREE.Color( color );
-                array = NGL.Utils.uniformArray3(
-                    n, tc.r, tc.g, tc.b
-                );
-                break;
+            // a = atoms[ atomindex[ i ] ];
+            // if( a ) colorMaker.atomColorToArray( a, array, i * 3 );
 
         }
 
         return array;
+
+    },
+
+    getPickingDataColor: function( params ){
+
+        var p = Object.assign( params || {} );
+        p.scheme = "picking";
+
+        return this.getDataColor( p );
 
     },
 
@@ -17279,6 +18363,14 @@ NGL.Volume.prototype = {
             case "value":
 
                 array = new Float32Array( this.data );
+                break;
+
+            case "abs-value":
+
+                array = new Float32Array( this.data );
+                for( var i = 0; i < n; ++i ){
+                    array[ i ] = Math.abs( array[ i ] );
+                }
                 break;
 
             case "value-min":
@@ -17403,11 +18495,13 @@ NGL.Volume.prototype = {
             this.name,
             this.path,
 
-            this.data,
+            this.__data,
 
             this.nx,
             this.ny,
-            this.nz
+            this.nz,
+
+            this.__dataAtomindex
 
         );
 
@@ -17436,13 +18530,16 @@ NGL.Volume.prototype = {
             name: this.name,
             path: this.path,
 
-            data: this.data,
+            data: this.__data,
 
             nx: this.nx,
             ny: this.ny,
             nz: this.nz,
 
+            dataAtomindex: this.__dataAtomindex,
+
             matrix: this.matrix.toArray(),
+            normalMatrix: this.normalMatrix.toArray(),
 
             center: this.center.toArray(),
             boundingBox: {
@@ -17470,13 +18567,17 @@ NGL.Volume.prototype = {
         this.setData(
 
             input.data,
+
             input.nx,
             input.ny,
-            input.nz
+            input.nz,
+
+            input.dataAtomindex
 
         );
 
         this.matrix.fromArray( input.matrix );
+        this.normalMatrix.fromArray( input.normalMatrix );
 
         if( input.header ){
 
@@ -17498,9 +18599,13 @@ NGL.Volume.prototype = {
 
         var transferable = [
 
-            this.data.buffer
+            this.__data.buffer
 
         ];
+
+        if( this.__dataAtomindex ){
+            transferable.push( this.__dataAtomindex.buffer );
+        }
 
         return transferable;
 
@@ -17509,6 +18614,8 @@ NGL.Volume.prototype = {
     dispose: function(){
 
         if( this.worker ) this.worker.terminate();
+
+        NGL.GidPool.removeObject( this );
 
     }
 
@@ -17637,7 +18744,7 @@ NGL.MarchingCubes = function( data, nx, ny, nz, isolevel ){
 
 };
 
-NGL.MarchingCubes2 = function( field, nx, ny, nz ){
+NGL.MarchingCubes2 = function( field, nx, ny, nz, atomindex ){
 
     // Based on alteredq / http://alteredqualia.com/
     // port of greggman's ThreeD version of marching cubes to Three.js
@@ -17665,6 +18772,7 @@ NGL.MarchingCubes2 = function( field, nx, ny, nz ){
     var positionArray = [];
     var normalArray = [];
     var indexArray = [];
+    var atomindexArray = [];
 
     //
 
@@ -17695,13 +18803,15 @@ NGL.MarchingCubes2 = function( field, nx, ny, nz ){
         positionArray.length = count * 3;
         if( !noNormals ) normalArray.length = count * 3;
         indexArray.length = icount;
+        if( atomindex ) atomindexArray.length = count;
 
         NGL.timeEnd( "NGL.MarchingCubes2.triangulate" );
 
         return {
             position: new Float32Array( positionArray ),
             normal: noNormals ? undefined : new Float32Array( normalArray ),
-            index: new Uint32Array( indexArray )
+            index: new Uint32Array( indexArray ),
+            atomindex: atomindex ? new Int32Array( atomindexArray ) : undefined,
         };
 
     }
@@ -17732,6 +18842,8 @@ NGL.MarchingCubes2 = function( field, nx, ny, nz ){
                 normalArray[ c + 2 ] = -lerp( nc[ q3 + 2 ], nc[ q3 + 5 ], mu );
 
             }
+
+            if( atomindex ) atomindexArray[ count ] = atomindex[ q + mu ];
 
             vertexIndex[ q ] = count;
             ilist[ offset ] = count;
@@ -17770,6 +18882,8 @@ NGL.MarchingCubes2 = function( field, nx, ny, nz ){
 
             }
 
+            if( atomindex ) atomindexArray[ count ] = atomindex[ q + mu * yd ];
+
             vertexIndex[ q ] = count;
             ilist[ offset ] = count;
 
@@ -17806,6 +18920,8 @@ NGL.MarchingCubes2 = function( field, nx, ny, nz ){
                 normalArray[ c + 2 ] = -lerp( nc[ q3 + 2 ], nc[ q6 + 2 ], mu );
 
             }
+
+            if( atomindex ) atomindexArray[ count ] = atomindex[ q + mu * zd ];
 
             vertexIndex[ q ] = count;
             ilist[ offset ] = count;
@@ -18888,7 +20004,7 @@ NGL.laplacianSmooth = function( verts, faces, numiter, inflate ){
 //////////////////////
 // Molecular surface
 
-NGL.Worker.add( "molsurf", function( e ){
+NGL.WorkerRegistry.add( "molsurf", function( e, callback ){
 
     NGL.time( "WORKER molsurf" );
 
@@ -18905,26 +20021,13 @@ NGL.Worker.add( "molsurf", function( e ){
 
     var molsurf = self.molsurf;
 
-    molsurf.generateSurface(
-        p.type, p.probeRadius, p.scaleFactor, p.smooth, p.lowRes
+    var surface = molsurf.getSurface(
+        p.type, p.probeRadius, p.scaleFactor, p.smooth, p.lowRes, p.cutoff
     );
 
     NGL.timeEnd( "WORKER molsurf" );
 
-    var meshData = {
-        position: molsurf.position,
-        index: molsurf.index,
-        normal: molsurf.normal
-    };
-
-    var transferable = [
-        molsurf.position.buffer,
-        molsurf.index.buffer
-    ];
-
-    if( molsurf.normal ) transferable.push( molsurf.normal.buffer );
-
-    self.postMessage( meshData, transferable );
+    callback( surface.toJSON(), surface.getTransferable() );
 
 } );
 
@@ -18937,148 +20040,90 @@ NGL.MolecularSurface = function( atomSet ){
 
 NGL.MolecularSurface.prototype = {
 
-    generateSurface: function( type, probeRadius, scaleFactor, smooth, lowRes ){
-
-        if( type === this.__type && probeRadius === this.__probeRadius &&
-            scaleFactor === this.__scaleFactor && smooth === this.__smooth &&
-            lowRes === this.lowRes
-        ){
-
-            // already generated
-            return;
-
-        }
+    getSurface: function( type, probeRadius, scaleFactor, smooth, lowRes, cutoff ){
 
         var edtsurf = new NGL.EDTSurface( this.atomSet );
         var vol = edtsurf.getVolume(
-            type, probeRadius, scaleFactor, lowRes
+            type, probeRadius, scaleFactor, lowRes, cutoff
         );
-        vol.generateSurface( 1, smooth );
+        var surface = vol.getSurface( 1, smooth );
 
-        this.position = vol.getPosition();
-        this.normal = vol.getNormal();
-        this.index = vol.getIndex();
+        surface.info[ "type" ] = type;
+        surface.info[ "probeRadius" ] = probeRadius;
+        surface.info[ "scaleFactor" ] = scaleFactor;
+        surface.info[ "smooth" ] = smooth;
+        surface.info[ "lowRes" ] = lowRes;
+        surface.info[ "cutoff" ] = cutoff;
 
-        this.size = this.position.length / 3;
+        vol.dispose();
 
-        this.__type = type;
-        this.__probeRadius = probeRadius;
-        this.__scaleFactor = scaleFactor;
-        this.__smooth = smooth;
-        this.__lowRes = lowRes;
+        return surface;
 
     },
 
-    generateSurfaceWorker: function( type, probeRadius, scaleFactor, smooth, lowRes, callback ){
+    getSurfaceWorker: function( type, probeRadius, scaleFactor, smooth, lowRes, cutoff, callback ){
 
-        if( type === this.__type && probeRadius === this.__probeRadius &&
-            scaleFactor === this.__scaleFactor && smooth === this.__smooth &&
-            lowRes === this.__lowRes
-        ){
-
-            // already generated
-            callback();
-
-        }else if( NGL.useWorker && typeof Worker !== "undefined" &&
+        if( NGL.useWorker && typeof Worker !== "undefined" &&
             typeof importScripts !== 'function'
         ){
-
-            var __timeName = "NGL.MolecularSurface.generateSurfaceWorker " + type;
-
-            NGL.time( __timeName );
 
             var atomSet = undefined;
 
             if( this.worker === undefined ){
 
                 atomSet = this.atomSet.toJSON();
-                this.worker = NGL.Worker.make( "molsurf" );
+                this.worker = new NGL.Worker( "molsurf" );
 
             }
 
-            this.worker.onerror = function( e ){
+            this.worker.post(
 
-                console.warn(
-                    "NGL.MolecularSurface.generateSurfaceWorker error - trying without worker", e
-                );
-                this.worker.terminate();
-                this.worker = undefined;
+                {
+                    atomSet: atomSet,
+                    params: {
+                        type: type,
+                        probeRadius: probeRadius,
+                        scaleFactor: scaleFactor,
+                        smooth: smooth,
+                        lowRes: lowRes,
+                        cutoff: cutoff
+                    }
+                },
 
-                this.generateSurface( type, probeRadius, scaleFactor, smooth, lowRes );
-                callback();
+                undefined,
 
-            }.bind( this );
+                function( e ){
 
-            this.worker.onmessage = function( e ){
+                    var surface = NGL.fromJSON( e.data );
+                    callback( surface );
 
-                NGL.timeEnd( __timeName );
+                }.bind( this ),
 
-                // if( NGL.debug ) console.log( e.data );
+                function( e ){
 
-                this.position = e.data.position;
-                this.normal = e.data.normal;
-                this.index = e.data.index;
+                    console.warn(
+                        "NGL.MolecularSurface.generateSurfaceWorker error - trying without worker", e
+                    );
+                    this.worker.terminate();
+                    this.worker = undefined;
 
-                this.size = this.position.length / 3;
+                    var surface = this.getSurface(
+                        type, probeRadius, scaleFactor, smooth, lowRes, cutoff
+                    );
+                    callback( surface );
 
-                this.__type = type;
-                this.__probeRadius = probeRadius;
-                this.__scaleFactor = scaleFactor;
-                this.__smooth = smooth;
-                this.__lowRes = lowRes;
+                }.bind( this )
 
-                callback();
-
-            }.bind( this );
-
-            this.worker.postMessage( {
-                atomSet: atomSet,
-                params: {
-                    type: type,
-                    probeRadius: probeRadius,
-                    scaleFactor: scaleFactor,
-                    smooth: smooth,
-                    lowRes: lowRes
-                }
-            } );
+            );
 
         }else{
 
-            this.generateSurface( type, probeRadius, scaleFactor, smooth, lowRes );
-            callback();
+            var surface = this.getSurface(
+                type, probeRadius, scaleFactor, smooth, lowRes, cutoff
+            );
+            callback( surface );
 
         }
-
-    },
-
-    getPosition: function(){
-
-        return this.position;
-
-    },
-
-    getColor: function( color ){
-
-        // re-use array
-
-        var tc = new THREE.Color( color );
-        var col = NGL.Utils.uniformArray3(
-            this.size, tc.r, tc.g, tc.b
-        );
-
-        return col;
-
-    },
-
-    getNormal: function(){
-
-        return this.normal;
-
-    },
-
-    getIndex: function(){
-
-        return this.index;
 
     },
 
@@ -19111,63 +20156,65 @@ NGL.EDTSurface = function( atomSet ){
     var atoms = atomSet.atoms;
     var bbox = atomSet.getBoundingBox();
 
-    var probeRadius, scaleFactor, cutoff;
+    var probeRadius, scaleFactor, cutoff, lowRes;
     var margin;
     var pmin, pmax, ptran, pbox, pLength, pWidth, pHeight;
     var matrix;
     var depty, widxz;
     var cutRadius;
+    var setAtomID;
     var vpBits, vpDistance, vpAtomID;
 
     var radiusProperty;
     var radiusDict;
+    var selection;
 
-    function init( btype, _probeRadius, _scaleFactor, _cutoff, lowRes ){
+    function init( btype, _probeRadius, _scaleFactor, _cutoff, _lowRes, _setAtomID ){
+
+        probeRadius = _probeRadius || 1.4;
+        scaleFactor = _scaleFactor || 2.0;
+        lowRes = _lowRes || false;
+        setAtomID = _setAtomID || true;
 
         if( lowRes ){
 
             radiusProperty = "resname";
             radiusDict = NGL.ResidueRadii;
 
-            atoms = atomSet.getAtoms( new NGL.Selection( ".CA" ) );
+            selection = new NGL.Selection( ".CA" );
 
         }else{
 
             radiusProperty = "element";
             radiusDict = NGL.VdwRadii;
 
-            atoms = atomSet.atoms;
+            selection = undefined;
 
         }
 
-        // 2 is .5A grid; if this is made user configurable and
-        // also have to adjust offset used to find non-shown atoms
-        // FIXME scaleFactor = 0.5;
-
-        probeRadius = _probeRadius || 1.4;
-        scaleFactor = _scaleFactor || 2.0;
-        cutoff = _cutoff || 2.0;
+        var maxRadius = 0;
+        for( var name in radiusDict ){
+            maxRadius = Math.max( maxRadius, radiusDict[ name ] );
+        }
 
         // need margin to avoid boundary/round off effects
-        margin = ( 1 / scaleFactor ) * 5.5;
-        if( lowRes ) margin += 10.0;
+        margin = ( 1 / scaleFactor ) * 3;
+        margin += maxRadius;
 
         pmin = new THREE.Vector3().copy( bbox.min );
         pmax = new THREE.Vector3().copy( bbox.max );
 
         if( !btype ){
 
-            pmin.addScalar( -margin );  // TODO need to update THREE for subScalar
+            pmin.subScalar( margin );
             pmax.addScalar( margin );
 
         }else{
 
-            pmin.addScalar( -( probeRadius + margin ) );  // TODO need to update THREE for subScalar
+            pmin.subScalar( probeRadius + margin );
             pmax.addScalar( probeRadius + margin );
 
         }
-
-        ptran = new THREE.Vector3().copy( pmin ).negate();
 
         pmin.multiplyScalar( scaleFactor ).floor().divideScalar( scaleFactor );
         pmax.multiplyScalar( scaleFactor ).ceil().divideScalar( scaleFactor );
@@ -19204,6 +20251,8 @@ NGL.EDTSurface = function( atomSet ){
 
         }
 
+        ptran = new THREE.Vector3().copy( pmin ).negate();
+
         // coordinate transformation matrix
         matrix = new THREE.Matrix4();
         matrix.multiply(
@@ -19227,15 +20276,21 @@ NGL.EDTSurface = function( atomSet ){
         widxz = {};
         boundingatom( btype );
 
-        // console.log( depty );
-        // console.log( widxz );
-
         cutRadius = probeRadius * scaleFactor;
 
+        if( _cutoff ){
+            cutoff = _cutoff;
+        }else{
+            cutoff = Math.max( 0.1, -1.2 + scaleFactor * probeRadius );
+        }
+
         vpBits = new Uint8Array( pLength * pWidth * pHeight );
-        // float32 doesn't play nicely with native floats (which are 64)
-        vpDistance = new Float64Array( pLength * pWidth * pHeight );
-        vpAtomID = new Int32Array( pLength * pWidth * pHeight );
+        if( btype ){
+            vpDistance = new Float64Array( pLength * pWidth * pHeight );
+        }
+        if( setAtomID ){
+            vpAtomID = new Int32Array( pLength * pWidth * pHeight );
+        }
 
     }
 
@@ -19262,13 +20317,16 @@ NGL.EDTSurface = function( atomSet ){
 
     //
 
-    this.getVolume = function( type, probeRadius, scaleFactor, lowRes ){
+    this.getVolume = function( type, probeRadius, scaleFactor, lowRes, cutoff, setAtomID ){
 
         NGL.time( "NGL.EDTSurface.getVolume" );
 
-        init( type !== "vws", probeRadius, scaleFactor, undefined, lowRes );
+        var btype = type !== "vws";
+        setAtomID = true;
 
-        fillvoxels();
+        init( btype, probeRadius, scaleFactor, cutoff, lowRes, setAtomID );
+
+        fillvoxels( btype );
         buildboundary();
 
         if( type === "ms" || type === "ses" ){
@@ -19287,7 +20345,7 @@ NGL.EDTSurface = function( atomSet ){
         marchingcubeinit( type );
 
         var vol = new NGL.Volume(
-            type, "", vpBits, pHeight, pWidth, pLength
+            type, "", vpBits, pHeight, pWidth, pLength, vpAtomID
         );
 
         vol.matrix.copy( matrix );
@@ -19298,15 +20356,16 @@ NGL.EDTSurface = function( atomSet ){
 
     };
 
+
     function boundingatom( btype ){
 
-        var j, k;
+        var r, j, k;
         var txz, tdept, sradius, tradius, widxz_r;
-        var indx;
+        var depty_name, indx;
 
         for( var name in radiusDict ){
 
-            var r = radiusDict[ name ];
+            r = radiusDict[ name ];
 
             if( depty[ name ] ) continue;
 
@@ -19317,9 +20376,8 @@ NGL.EDTSurface = function( atomSet ){
             }
 
             sradius = tradius * tradius;
-            widxz[ name ] = Math.floor( tradius ) + 1;
-            widxz_r = widxz[ name ];
-            depty[ name ] = new Int32Array( widxz_r * widxz_r );
+            widxz_r = Math.floor( tradius ) + 1;
+            depty_name = new Int32Array( widxz_r * widxz_r );
             indx = 0;
 
             for( j = 0; j < widxz_r; ++j ){
@@ -19330,12 +20388,12 @@ NGL.EDTSurface = function( atomSet ){
 
                     if( txz > sradius ){
 
-                        depty[ name ][ indx ] = -1;
+                        depty_name[ indx ] = -1;
 
                     }else{
 
                         tdept = Math.sqrt( sradius - txz );
-                        depty[ name ][ indx ] = Math.floor( tdept );
+                        depty_name[ indx ] = Math.floor( tdept );
 
                     }
 
@@ -19345,6 +20403,9 @@ NGL.EDTSurface = function( atomSet ){
 
             }
 
+            widxz[ name ] = widxz_r;
+            depty[ name ] = depty_name;
+
         }
 
     }
@@ -19352,9 +20413,11 @@ NGL.EDTSurface = function( atomSet ){
     function fillatom( atomIndex ){
 
         var cx, cy, cz, ox, oy, oz, mi, mj, mk, i, j, k, si, sj, sk;
-        var ii, jj, kk, n;
+        var ii, jj, kk;
 
         var atom = atoms[ atomIndex ];
+
+        if( selection && !selection.test( atom ) ) return;
 
         cx = Math.floor( 0.5 + scaleFactor * ( atom.x + ptran.x ) );
         cy = Math.floor( 0.5 + scaleFactor * ( atom.y + ptran.y ) );
@@ -19365,11 +20428,16 @@ NGL.EDTSurface = function( atomSet ){
         var nind = 0;
         var cnt = 0;
         var pWH = pWidth * pHeight;
+        var n = widxz[ at ];
 
-        for( i = 0, n = widxz[ at ]; i < n; ++i ){
+        var depty_at_nind;
+
+        for( i = 0; i < n; ++i ){
         for( j = 0; j < n; ++j ) {
 
-            if( depty_at[ nind ] != -1 ){
+            depty_at_nind = depty_at[ nind ];
+
+            if( depty_at_nind != -1 ){
 
                 for( ii = -1; ii < 2; ++ii ){
                 for( jj = -1; jj < 2; ++jj ){
@@ -19380,7 +20448,7 @@ NGL.EDTSurface = function( atomSet ){
                         mi = ii * i;
                         mk = kk * j;
 
-                        for( k = 0; k <= depty_at[ nind ]; ++k ){
+                        for( k = 0; k <= depty_at_nind; ++k ){
 
                             mj = k * jj;
                             si = cx + mi;
@@ -19395,22 +20463,36 @@ NGL.EDTSurface = function( atomSet ){
 
                             var index = si * pWH + sj * pHeight + sk;
 
-                            if( !( vpBits[ index ] & INOUT ) ){
+                            if( !setAtomID ){
 
                                 vpBits[ index ] |= INOUT;
-                                vpAtomID[ index ] = atomIndex;
 
                             }else{
 
-                                var atom2 = atoms[ vpAtomID[ index ] ];
-                                ox = Math.floor( 0.5 + scaleFactor * ( atom2.x + ptran.x ) );
-                                oy = Math.floor( 0.5 + scaleFactor * ( atom2.y + ptran.y ) );
-                                oz = Math.floor( 0.5 + scaleFactor * ( atom2.z + ptran.z ) );
+                                if( !( vpBits[ index ] & INOUT ) ){
 
-                                if( mi * mi + mj * mj + mk * mk <
-                                    ox * ox + oy * oy + oz * oz
-                                ){
+                                    vpBits[ index ] |= INOUT;
                                     vpAtomID[ index ] = atomIndex;
+
+                                }else if( vpBits[ index ] & INOUT ){
+                                // }else{
+
+                                    var atom2 = atoms[ vpAtomID[ index ] ];
+
+                                    if( atom2 !== atom ){
+
+                                        ox = cx + mi - Math.floor( 0.5 + scaleFactor * ( atom2.x + ptran.x ) );
+                                        oy = cy + mj - Math.floor( 0.5 + scaleFactor * ( atom2.y + ptran.y ) );
+                                        oz = cz + mk - Math.floor( 0.5 + scaleFactor * ( atom2.z + ptran.z ) );
+
+                                        if( mi * mi + mj * mj + mk * mk <
+                                            ox * ox + oy * oy + oz * oz
+                                        ){
+                                            vpAtomID[ index ] = atomIndex;
+                                        }
+
+                                    }
+
                                 }
 
                             }
@@ -19432,14 +20514,16 @@ NGL.EDTSurface = function( atomSet ){
 
     }
 
-    function fillvoxels(){
+    function fillvoxels( btype ){
+
+        NGL.time( "NGL.EDTSurface fillvoxels" );
 
         var i, il;
 
         for( i = 0, il = vpBits.length; i < il; ++i ){
             vpBits[ i ] = 0;
-            vpDistance[ i ] = -1.0;
-            vpAtomID[ i ] = -1;
+            if( btype ) vpDistance[ i ] = -1.0;
+            if( setAtomID ) vpAtomID[ i ] = -1;
         }
 
         for( i = 0, il = atoms.length; i < il; ++i ){
@@ -19452,6 +20536,8 @@ NGL.EDTSurface = function( atomSet ){
             }
         }
 
+        NGL.timeEnd( "NGL.EDTSurface fillvoxels" );
+
     }
 
     function fillAtomWaals( atomIndex ){
@@ -19460,6 +20546,8 @@ NGL.EDTSurface = function( atomSet ){
         var mi, mj, mk, si, sj, sk, i, j, k, ii, jj, kk, n;
 
         var atom = atoms[ atomIndex ];
+
+        if( selection && !selection.test( atom ) ) return;
 
         cx = Math.floor( 0.5 + scaleFactor * ( atom.x + ptran.x ) );
         cy = Math.floor( 0.5 + scaleFactor * ( atom.y + ptran.y ) );
@@ -19497,12 +20585,12 @@ NGL.EDTSurface = function( atomSet ){
 
                             var index = si * pWH + sj * pHeight + sk;
 
-                            if ( !( vpBits[ index ] & ISDONE ) ){
+                            if( !( vpBits[ index ] & ISDONE ) ){
 
                                 vpBits[ index ] |= ISDONE;
-                                vpAtomID[ index ] = atom.index;
+                                if( setAtomID ) vpAtomID[ index ] = atom.index;
 
-                            } else {
+                            }else if( setAtomID ){
 
                                 var atom2 = atoms[ vpAtomID[ index ] ];
                                 ox = Math.floor( 0.5 + scaleFactor * ( atom2.x + ptran.x ) );
@@ -19534,7 +20622,7 @@ NGL.EDTSurface = function( atomSet ){
 
     }
 
-    function fillvoxelswaals() {
+    function fillvoxelswaals(){
 
         var i, il;
 
@@ -19561,9 +20649,10 @@ NGL.EDTSurface = function( atomSet ){
 
             if( vpBits[ index ] & INOUT ){
 
-                var flagbound = false;
+                // var flagbound = false;
                 var ii = 0;
 
+                // while( !flagbound && ii < 26 ){
                 while( ii < 26 ){
 
                     var ti = i + nb[ ii ][ 0 ];
@@ -19576,7 +20665,8 @@ NGL.EDTSurface = function( atomSet ){
                         !( vpBits[ ti * pWH + tk * pHeight + tj ] & INOUT )
                     ){
 
-                        vpBits[index] |= ISBOUND;
+                        vpBits[ index ] |= ISBOUND;
+                        // flagbound = true;
                         break;
 
                     }else{
@@ -19595,70 +20685,53 @@ NGL.EDTSurface = function( atomSet ){
 
     }
 
-    // a little class for 3d array, should really generalize this and
-    // use throughout...
-    var PointGrid = function( length, width, height ){
-
-        // the standard says this is zero initialized
-        var data = new Int32Array( length * width * height * 3 );
-
-        // set position x,y,z to pt, which has ix,iy,and iz
-        this.set = function( x, y, z, pt ){
-            var index = ( ( ( ( x * width ) + y ) * height ) + z ) * 3;
-            data[ index ] = pt.ix;
-            data[ index + 1] = pt.iy;
-            data[ index + 2] = pt.iz;
-        };
-
-        // return point at x,y,z
-        this.get = function( x, y, z ){
-            var index = ( ( ( ( x * width ) + y ) * height ) + z ) * 3;
-            return {
-                ix : data[ index ],
-                iy : data[ index + 1],
-                iz : data[ index + 2]
-            };
-        };
-
-    };
-
     function fastdistancemap(){
+
+        NGL.time( "NGL.EDTSurface fastdistancemap" );
 
         var eliminate = 0;
         var certificate;
         var i, j, k, n;
 
-        var boundPoint = new PointGrid( pLength, pWidth, pHeight );
+        var boundPoint = new NGL.Grid(
+            pLength, pWidth, pHeight, Uint16Array, 3
+        );
         var pWH = pWidth * pHeight;
         var cutRSq = cutRadius * cutRadius;
 
-        var inarray = [];
-        var outarray = [];
+        var totalsurfacevox = 0;
+        var totalinnervox = 0;
 
         var index;
+
+        // console.log( "lwh", pLength * pWidth * pHeight );
+        console.log( "l, w, h", pLength, pWidth, pHeight );
 
         for( i = 0; i < pLength; ++i ){
             for( j = 0; j < pWidth; ++j ){
                 for( k = 0; k < pHeight; ++k ){
 
                     index = i * pWH + j * pHeight + k;
-                    vpBits[ index ] &= ~ISDONE;  // isdone = false
+
+                    vpBits[ index ] &= ~ISDONE;
 
                     if( vpBits[ index ] & INOUT ){
 
                         if( vpBits[ index ] & ISBOUND ){
 
-                            var triple = {
-                                ix : i,
-                                iy : j,
-                                iz : k
-                            };
+                            boundPoint.set(
+                                i, j, k,
+                                i, j, k
+                            );
 
-                            boundPoint.set( i, j, k, triple );
-                            inarray.push( triple );
                             vpDistance[ index ] = 0;
                             vpBits[ index ] |= ISDONE;
-                            vpBits[ index ] &= ~ISBOUND;
+
+                            totalsurfacevox += 1;
+
+                        }else{
+
+                            totalinnervox += 1;
 
                         }
 
@@ -19668,39 +20741,67 @@ NGL.EDTSurface = function( atomSet ){
             }
         }
 
-        do {
+        console.log( "totalsurfacevox", totalsurfacevox );
+        console.log( "totalinnervox", totalinnervox );
 
-            outarray = fastoneshell( inarray, boundPoint );
-            inarray = [];
+        var inarray = new Int32Array( 3 * totalsurfacevox );
+        var positin = 0;
+        var outarray = new Int32Array( 3 * totalsurfacevox );
+        var positout = 0;
 
-            for( i = 0, n = outarray.length; i < n; ++i ){
+        for( i = 0; i < pLength; ++i ){
+            for( j = 0; j < pWidth; ++j ){
+                for( k = 0; k < pHeight; ++k ){
 
-                index = pWH * outarray[ i ].ix + pHeight *
-                            outarray[ i ].iy + outarray[ i ].iz;
-                vpBits[index] &= ~ISBOUND;
+                    index = i * pWH + j * pHeight + k;
+
+                    if( vpBits[ index ] & ISBOUND ){
+
+                        inarray[ positin     ] = i;
+                        inarray[ positin + 1 ] = j;
+                        inarray[ positin + 2 ] = k;
+                        positin += 3;
+
+                        vpBits[ index ] &= ~ISBOUND;
+
+                    }
+
+                }
+            }
+        }
+
+        do{
+
+            positout = fastoneshell( inarray, boundPoint, positin, outarray );
+            positin = 0;
+
+            console.log( "positout", positout / 3 );
+
+            for( i = 0, n = positout; i < n; i+=3 ){
+
+                index = pWH * outarray[ i ] + pHeight * outarray[ i + 1 ] + outarray[ i + 2 ];
+                vpBits[ index ] &= ~ISBOUND;
 
                 if( vpDistance[ index ] <= 1.0404 * cutRSq ){
+                //if( vpDistance[ index ] <= 1.02 * cutRadius ){
 
-                    inarray.push({
-                        ix : outarray[ i ].ix,
-                        iy : outarray[ i ].iy,
-                        iz : outarray[ i ].iz
-                    });
+                    inarray[ positin     ] = outarray[ i     ];
+                    inarray[ positin + 1 ] = outarray[ i + 1 ];
+                    inarray[ positin + 2 ] = outarray[ i + 2 ];
+                    positin += 3;
 
                 }
 
             }
 
-        }while( inarray.length !== 0 );
+        }while( positin > 0 );
 
-        inarray = [];
-        outarray = [];
-        boundPoint = null;
+        // var cutsf = Math.max( 0, scaleFactor - 0.5 );
+        // cutoff = cutRadius - 0.5 / ( 0.1 + cutsf );
+        var cutoffSq = cutoff * cutoff;
 
-        var cutsf = Math.max( 0, scaleFactor - 0.5 );
-        // FIXME why does this seem to work?
-        // TODO check for other probeRadius and scaleFactor values
-        var cutoff = probeRadius * probeRadius;  //1.4 * 1.4// cutRSq - 0.50 / ( 0.1 + cutsf );
+        var index2;
+        var bp = new Uint16Array( 3 );
 
         for( i = 0; i < pLength; ++i ){
             for( j = 0; j < pWidth; ++j ){
@@ -19714,9 +20815,20 @@ NGL.EDTSurface = function( atomSet ){
                     if( vpBits[ index ] & INOUT ) {
 
                         if( !( vpBits[ index ] & ISDONE ) ||
-                            ( ( vpBits[ index ] & ISDONE ) && vpDistance[ index ] >= cutoff )
+                            ( ( vpBits[ index ] & ISDONE ) && vpDistance[ index ] >= cutoffSq )
                         ){
+
                             vpBits[ index ] |= ISBOUND;
+
+                            if( setAtomID && ( vpBits[ index ] & ISDONE ) ){
+
+                                boundPoint.toArray( i, j, k, bp );
+                                index2 = bp[ 0 ] * pWH + bp[ 1 ] * pHeight + bp[ 2 ];
+
+                                vpAtomID[ index ] = vpAtomID[ index2 ];
+
+                            }
+
                         }
                     }
 
@@ -19724,9 +20836,13 @@ NGL.EDTSurface = function( atomSet ){
             }
         }
 
+        NGL.timeEnd( "NGL.EDTSurface fastdistancemap" );
+
     }
 
-    function fastoneshell( inarray, boundPoint ){
+    function fastoneshell( inarray, boundPoint, positin, outarray ){
+
+        console.log( "positin", positin / 3 );
 
         // *allocout,voxel2
         // ***boundPoint, int*
@@ -19735,79 +20851,81 @@ NGL.EDTSurface = function( atomSet ){
         var dx, dy, dz;
         var i, j, n;
         var square;
-        var bp, index;
-        var outarray = [];
+        var index;
+        var nb_j;
+        var bp = new Uint16Array( 3 );
+        var positout = 0;
 
-        if( inarray.length === 0 ){
-            return outarray;
+        if( positin === 0 ){
+            return positout;
         }
 
-        var tnv = {
-            ix : -1,
-            iy : -1,
-            iz : -1
-        };
+        var tnv_ix = -1;
+        var tnv_iy = -1;
+        var tnv_iz = -1;
 
-        var pWH = pWidth*pHeight;
+        var pWH = pWidth * pHeight;
 
-        for( i = 0, n = inarray.length; i < n; ++i ){
+        for( i = 0, n = positin; i < n; i+=3 ){
 
-            tx = inarray[ i ].ix;
-            ty = inarray[ i ].iy;
-            tz = inarray[ i ].iz;
-            bp = boundPoint.get( tx, ty, tz );
+            tx = inarray[ i     ];
+            ty = inarray[ i + 1 ];
+            tz = inarray[ i + 2 ];
+            boundPoint.toArray( tx, ty, tz, bp );
 
             for( j = 0; j < 6; ++j ){
 
-                tnv.ix = tx + nb[ j ][ 0 ];
-                tnv.iy = ty + nb[ j ][ 1 ];
-                tnv.iz = tz + nb[ j ][ 2 ];
+                nb_j = nb[ j ];
+                tnv_ix = tx + nb_j[ 0 ];
+                tnv_iy = ty + nb_j[ 1 ];
+                tnv_iz = tz + nb_j[ 2 ];
 
-                if( tnv.ix < pLength && tnv.ix > -1 && tnv.iy < pWidth &&
-                    tnv.iy > -1 && tnv.iz < pHeight && tnv.iz > -1
+                if( tnv_ix < pLength && tnv_ix > -1 &&
+                    tnv_iy < pWidth  && tnv_iy > -1 &&
+                    tnv_iz < pHeight && tnv_iz > -1
                 ){
 
-                    index = tnv.ix * pWH + pHeight * tnv.iy + tnv.iz;
+                    index = tnv_ix * pWH + pHeight * tnv_iy + tnv_iz;
 
                     if( ( vpBits[ index ] & INOUT ) && !( vpBits[ index ] & ISDONE ) ){
 
-                        boundPoint.set( tnv.ix, tnv.iy, tz + nb[ j ][ 2 ], bp );
-                        dx = tnv.ix - bp.ix;
-                        dy = tnv.iy - bp.iy;
-                        dz = tnv.iz - bp.iz;
+                        boundPoint.fromArray( tnv_ix, tnv_iy, tnv_iz, bp );
+                        dx = tnv_ix - bp[ 0 ];
+                        dy = tnv_iy - bp[ 1 ];
+                        dz = tnv_iz - bp[ 2 ];
                         square = dx * dx + dy * dy + dz * dz;
+                        //square = Math.sqrt( square );
 
                         vpDistance[ index ] = square;
                         vpBits[ index ] |= ISDONE;
                         vpBits[ index ] |= ISBOUND;
 
-                        outarray.push({
-                            ix : tnv.ix,
-                            iy : tnv.iy,
-                            iz : tnv.iz
-                        });
+                        outarray[ positout     ] = tnv_ix;
+                        outarray[ positout + 1 ] = tnv_iy;
+                        outarray[ positout + 2 ] = tnv_iz;
+                        positout += 3;
 
                     }else if( ( vpBits[ index ] & INOUT ) && ( vpBits[ index ] & ISDONE ) ){
 
-                        dx = tnv.ix - bp.ix;
-                        dy = tnv.iy - bp.iy;
-                        dz = tnv.iz - bp.iz;
+                        dx = tnv_ix - bp[ 0 ];
+                        dy = tnv_iy - bp[ 1 ];
+                        dz = tnv_iz - bp[ 2 ];
                         square = dx * dx + dy * dy + dz * dz;
+                        //square = Math.sqrt( square );
 
                         if( square < vpDistance[ index ] ){
 
-                            boundPoint.set( tnv.ix, tnv.iy, tnv.iz, bp );
+                            boundPoint.fromArray( tnv_ix, tnv_iy, tnv_iz, bp );
                             vpDistance[ index ] = square;
 
                             if( !( vpBits[ index ] & ISBOUND ) ){
 
                                 vpBits[ index ] |= ISBOUND;
 
-                                outarray.push({
-                                    ix : tnv.ix,
-                                    iy : tnv.iy,
-                                    iz : tnv.iz
-                                });
+                                outarray[ positout     ] = tnv_ix;
+                                outarray[ positout + 1 ] = tnv_iy;
+                                outarray[ positout + 2 ] = tnv_iz;
+                                positout += 3;
 
                             }
 
@@ -19821,117 +20939,153 @@ NGL.EDTSurface = function( atomSet ){
 
         // console.log("part1", positout);
 
-        for (i = 0, n = inarray.length; i < n; i++) {
-            tx = inarray[i].ix;
-            ty = inarray[i].iy;
-            tz = inarray[i].iz;
-            bp = boundPoint.get(tx, ty, tz);
+        for( i = 0, n = positin; i < n; i+=3 ){
+
+            tx = inarray[ i     ];
+            ty = inarray[ i + 1 ];
+            tz = inarray[ i + 2 ];
+            boundPoint.toArray( tx, ty, tz, bp );
 
             for (j = 6; j < 18; j++) {
-                tnv.ix = tx + nb[j][0];
-                tnv.iy = ty + nb[j][1];
-                tnv.iz = tz + nb[j][2];
 
-                if(tnv.ix < pLength && tnv.ix > -1 && tnv.iy < pWidth &&
-                        tnv.iy > -1 && tnv.iz < pHeight && tnv.iz > -1) {
-                    index = tnv.ix * pWH + pHeight * tnv.iy + tnv.iz;
+                nb_j = nb[ j ];
+                tnv_ix = tx + nb_j[ 0 ];
+                tnv_iy = ty + nb_j[ 1 ];
+                tnv_iz = tz + nb_j[ 2 ];
+
+                if( tnv_ix < pLength && tnv_ix > -1 &&
+                    tnv_iy < pWidth  && tnv_iy > -1 &&
+                    tnv_iz < pHeight && tnv_iz > -1
+                ) {
+
+                    index = tnv_ix * pWH + pHeight * tnv_iy + tnv_iz;
 
                     if ((vpBits[index] & INOUT) && !(vpBits[index] & ISDONE)) {
-                        boundPoint.set(tnv.ix, tnv.iy, tz + nb[j][2], bp);
 
-                        dx = tnv.ix - bp.ix;
-                        dy = tnv.iy - bp.iy;
-                        dz = tnv.iz - bp.iz;
+                        boundPoint.fromArray( tnv_ix, tnv_iy, tnv_iz, bp );
+                        dx = tnv_ix - bp[ 0 ];
+                        dy = tnv_iy - bp[ 1 ];
+                        dz = tnv_iz - bp[ 2 ];
                         square = dx * dx + dy * dy + dz * dz;
+                        //square = Math.sqrt( square );
+
                         vpDistance[index] = square;
                         vpBits[index] |= ISDONE;
                         vpBits[index] |= ISBOUND;
 
-                        outarray.push({
-                            ix : tnv.ix,
-                            iy : tnv.iy,
-                            iz : tnv.iz
-                        });
+                        outarray[ positout     ] = tnv_ix;
+                        outarray[ positout + 1 ] = tnv_iy;
+                        outarray[ positout + 2 ] = tnv_iz;
+                        positout += 3;
+
                     } else if ((vpBits[index] & INOUT) && (vpBits[index] & ISDONE)) {
-                        dx = tnv.ix - bp.ix;
-                        dy = tnv.iy - bp.iy;
-                        dz = tnv.iz - bp.iz;
+
+                        dx = tnv_ix - bp[ 0 ];
+                        dy = tnv_iy - bp[ 1 ];
+                        dz = tnv_iz - bp[ 2 ];
                         square = dx * dx + dy * dy + dz * dz;
+                        //square = Math.sqrt( square );
+
                         if (square < vpDistance[index]) {
-                            boundPoint.set(tnv.ix, tnv.iy, tnv.iz, bp);
+
+                            boundPoint.fromArray( tnv_ix, tnv_iy, tnv_iz, bp );
                             vpDistance[index] = square;
+
                             if (!(vpBits[index] & ISBOUND)) {
+
                                 vpBits[index] |= ISBOUND;
-                                outarray.push({
-                                    ix : tnv.ix,
-                                    iy : tnv.iy,
-                                    iz : tnv.iz
-                                });
+
+                                outarray[ positout     ] = tnv_ix;
+                                outarray[ positout + 1 ] = tnv_iy;
+                                outarray[ positout + 2 ] = tnv_iz;
+                                positout += 3;
+
                             }
+
                         }
+
                     }
+
                 }
             }
         }
 
         // console.log("part2", positout);
 
-        for (i = 0, n = inarray.length; i < n; i++) {
-            tx = inarray[i].ix;
-            ty = inarray[i].iy;
-            tz = inarray[i].iz;
-            bp = boundPoint.get(tx, ty, tz);
+        for( i = 0, n = positin; i < n; i+=3 ){
+
+            tx = inarray[ i     ];
+            ty = inarray[ i + 1 ];
+            tz = inarray[ i + 2 ];
+            boundPoint.toArray( tx, ty, tz, bp );
 
             for (j = 18; j < 26; j++) {
-                tnv.ix = tx + nb[j][0];
-                tnv.iy = ty + nb[j][1];
-                tnv.iz = tz + nb[j][2];
 
-                if (tnv.ix < pLength && tnv.ix > -1 && tnv.iy < pWidth &&
-                        tnv.iy > -1 && tnv.iz < pHeight && tnv.iz > -1) {
-                    index = tnv.ix * pWH + pHeight * tnv.iy + tnv.iz;
+                nb_j = nb[ j ];
+                tnv_ix = tx + nb_j[ 0 ];
+                tnv_iy = ty + nb_j[ 1 ];
+                tnv_iz = tz + nb_j[ 2 ];
+
+                if( tnv_ix < pLength && tnv_ix > -1 &&
+                    tnv_iy < pWidth  && tnv_iy > -1 &&
+                    tnv_iz < pHeight && tnv_iz > -1
+                ){
+
+                    index = tnv_ix * pWH + pHeight * tnv_iy + tnv_iz;
 
                     if ((vpBits[index] & INOUT) && !(vpBits[index] & ISDONE)) {
-                        boundPoint.set(tnv.ix, tnv.iy, tz + nb[j][2], bp);
 
-                        dx = tnv.ix - bp.ix;
-                        dy = tnv.iy - bp.iy;
-                        dz = tnv.iz - bp.iz;
+                        boundPoint.fromArray( tnv_ix, tnv_iy, tnv_iz, bp );
+                        dx = tnv_ix - bp[ 0 ];
+                        dy = tnv_iy - bp[ 1 ];
+                        dz = tnv_iz - bp[ 2 ];
                         square = dx * dx + dy * dy + dz * dz;
+                        //square = Math.sqrt( square );
+
                         vpDistance[index] = square;
                         vpBits[index] |= ISDONE;
                         vpBits[index] |= ISBOUND;
 
-                        outarray.push({
-                            ix : tnv.ix,
-                            iy : tnv.iy,
-                            iz : tnv.iz
-                        });
-                    } else if ((vpBits[index] & INOUT)  && (vpBits[index] & ISDONE)) {
-                        dx = tnv.ix - bp.ix;
-                        dy = tnv.iy - bp.iy;
-                        dz = tnv.iz - bp.iz;
-                        square = dx * dx + dy * dy + dz * dz;
-                        if (square < vpDistance[index]) {
-                            boundPoint.set(tnv.ix, tnv.iy, tnv.iz, bp);
+                        outarray[ positout     ] = tnv_ix;
+                        outarray[ positout + 1 ] = tnv_iy;
+                        outarray[ positout + 2 ] = tnv_iz;
+                        positout += 3;
 
+                    } else if ((vpBits[index] & INOUT)  && (vpBits[index] & ISDONE)) {
+
+                        dx = tnv_ix - bp[ 0 ];
+                        dy = tnv_iy - bp[ 1 ];
+                        dz = tnv_iz - bp[ 2 ];
+                        square = dx * dx + dy * dy + dz * dz;
+                        //square = Math.sqrt( square );
+
+                        if (square < vpDistance[index]) {
+
+                            boundPoint.fromArray( tnv_ix, tnv_iy, tnv_iz, bp );
                             vpDistance[index] = square;
+
                             if (!(vpBits[index] & ISBOUND)) {
+
                                 vpBits[index] |= ISBOUND;
-                                outarray.push({
-                                    ix : tnv.ix,
-                                    iy : tnv.iy,
-                                    iz : tnv.iz
-                                });
+
+                                outarray[ positout     ] = tnv_ix;
+                                outarray[ positout + 1 ] = tnv_iy;
+                                outarray[ positout + 2 ] = tnv_iz;
+                                positout += 3;
+
                             }
+
                         }
+
                     }
+
                 }
             }
         }
 
         // console.log("part3", positout);
-        return outarray;
+
+        return positout;
 
     }
 
@@ -20348,7 +21502,9 @@ NGL.makeScriptHelper = function( stage, queue, panel ){
 
         var select = new UI.Select()
             .setOptions( options )
-            .onChange( callback );
+            .onChange( function(){
+                callback( select );
+            } );
 
         panel.add( select );
 
@@ -20974,6 +22130,7 @@ NGL.NetworkStreamer.prototype = NGL.createObject(
 
         if( typeof importScripts === 'function' ){
 
+            // FIXME
             // adjust relative path when inside a web worker
             if( url.substr( 0, 3 ) === "../" ) url = "../" + url;
 
@@ -21258,6 +22415,8 @@ NGL.buildStructure = function( structure, callback ){
         _chunked,
 
         function(){
+
+            NGL.GidPool.updateObject( structure );
 
             NGL.timeEnd( "NGL.buildStructure" );
 
@@ -21641,7 +22800,7 @@ NGL.buildUnitcellAssembly = function( structure, callback ){
 ///////////
 // Parser
 
-NGL.Worker.add( "parse", function( e ){
+NGL.WorkerRegistry.add( "parse", function( e, callback ){
 
     NGL.time( "WORKER parse" );
 
@@ -21654,7 +22813,7 @@ NGL.Worker.add( "parse", function( e ){
         // no need to return the streamer data
         parser.streamer.dispose();
 
-        self.postMessage( parser.toJSON(), parser.getTransferable() );
+        callback( parser.toJSON(), parser.getTransferable() );
 
     } );
 
@@ -21726,10 +22885,16 @@ NGL.Parser.prototype = {
             typeof importScripts !== 'function'
         ){
 
-            var __timeName = "NGL.Parser.parseWorker " + this.name;
-            NGL.time( __timeName );
+            var worker = new NGL.Worker( "parse", {
 
-            var worker = NGL.Worker.make( "parse", {
+                onmessage: function( e ){
+
+                    worker.terminate();
+
+                    this.fromJSON( e.data );
+                    this._afterWorker( callback );
+
+                }.bind( this ),
 
                 onerror: function( e ){
 
@@ -21739,18 +22904,6 @@ NGL.Parser.prototype = {
                     worker.terminate();
 
                     this.parse( callback );
-
-                }.bind( this ),
-
-                onmessage: function( e ){
-
-                    NGL.timeEnd( __timeName );
-                    if( NGL.debug ) NGL.log( e.data );
-
-                    worker.terminate();
-
-                    this.fromJSON( e.data );
-                    this._afterWorker( callback );
 
                 }.bind( this ),
 
@@ -22038,6 +23191,9 @@ NGL.PdbParser.prototype = NGL.createObject(
 
         // http://www.wwpdb.org/documentation/file-format.php
 
+        var isPqr = this.type === "pqr";
+        var reWhitespace = /\s+/;
+
         var __timeName = "NGL.PdbParser._parse " + this.name;
 
         NGL.time( __timeName );
@@ -22099,12 +23255,28 @@ NGL.PdbParser.prototype = NGL.createObject(
 
                     if( firstModelOnly && modelIdx > 0 ) continue;
 
-                    atomname = line.substr( 12, 4 ).trim();
-                    if( cAlphaOnly && atomname !== 'CA' ) continue;
+                    if( isPqr ){
 
-                    var x = parseFloat( line.substr( 30, 8 ) );
-                    var y = parseFloat( line.substr( 38, 8 ) );
-                    var z = parseFloat( line.substr( 46, 8 ) );
+                        var ls = line.split( reWhitespace );
+                        var dd = ls.length === 10 ? 1 : 0;
+
+                        atomname = ls[ 2 ];
+                        if( cAlphaOnly && atomname !== 'CA' ) continue;
+
+                        var x = parseFloat( ls[ 6 - dd ] );
+                        var y = parseFloat( ls[ 7 - dd ] );
+                        var z = parseFloat( ls[ 8 - dd ] );
+
+                    }else{
+
+                        atomname = line.substr( 12, 4 ).trim();
+                        if( cAlphaOnly && atomname !== 'CA' ) continue;
+
+                        var x = parseFloat( line.substr( 30, 8 ) );
+                        var y = parseFloat( line.substr( 38, 8 ) );
+                        var z = parseFloat( line.substr( 46, 8 ) );
+
+                    }
 
                     if( asTrajectory ){
 
@@ -22120,14 +23292,29 @@ NGL.PdbParser.prototype = NGL.createObject(
 
                     }
 
-                    serial = parseInt( line.substr( 6, 5 ) );
-                    element = line.substr( 76, 2 ).trim();
-                    hetero = ( line[ 0 ] === 'H' ) ? 1 : 0;
-                    chainname = line[ 21 ].trim();
-                    resno = parseInt( line.substr( 22, 5 ) );
-                    resname = line.substr( 17, 4 ).trim();
-                    bfactor = parseFloat( line.substr( 60, 8 ) );
-                    altloc = line[ 16 ].trim();
+                    if( isPqr ){
+
+                        serial = parseInt( ls[ 1 ] );
+                        element = "";
+                        hetero = ( line[ 0 ] === 'H' ) ? 1 : 0;
+                        chainname = dd ? "" : ls[ 4 ];
+                        resno = parseInt( ls[ 5 - dd ] );
+                        resname = ls[ 3 ];
+                        bfactor = parseFloat( ls[ 9 - dd ] );  // charge
+                        altloc = "";
+
+                    }else{
+
+                        serial = parseInt( line.substr( 6, 5 ) );
+                        element = line.substr( 76, 2 ).trim();
+                        hetero = ( line[ 0 ] === 'H' ) ? 1 : 0;
+                        chainname = line[ 21 ].trim();
+                        resno = parseInt( line.substr( 22, 5 ) );
+                        resname = line.substr( 17, 4 ).trim();
+                        bfactor = parseFloat( line.substr( 60, 8 ) );
+                        altloc = line[ 16 ].trim();
+
+                    }
 
                     if( !element ) element = guessElem( atomname );
 
@@ -22478,6 +23665,23 @@ NGL.PdbParser.prototype = NGL.createObject(
         );
 
     }
+
+} );
+
+
+NGL.PqrParser = function( streamer, params ){
+
+    NGL.StructureParser.call( this, streamer, params );
+
+};
+
+NGL.PqrParser.prototype = NGL.createObject(
+
+    NGL.PdbParser.prototype, {
+
+    constructor: NGL.PqrParser,
+
+    type: "pqr",
 
 } );
 
@@ -23603,7 +24807,27 @@ NGL.CifParser.prototype = NGL.createObject(
 
                         for( var i = _i; i < _n; ++i ){
 
-                            if( sc.conn_type_id[ i ] === "hydrog" ) continue;
+                            // ignore:
+                            // hydrog - hydrogen bond
+                            // mismat - mismatched base pairs
+                            // saltbr - ionic interaction
+
+                            var conn_type_id = sc.conn_type_id[ i ]
+                            if( conn_type_id === "hydrog" ||
+                                conn_type_id === "mismat" ||
+                                conn_type_id === "saltbr" ) continue;
+
+                            // process:
+                            // covale - covalent bond
+                            // covale_base -
+                            //      covalent modification of a nucleotide base
+                            // covale_phosphate -
+                            //      covalent modification of a nucleotide phosphate
+                            // covale_sugar -
+                            //      covalent modification of a nucleotide sugar
+                            // disulf - disulfide bridge
+                            // metalc - metal coordination
+                            // modres - covalent residue modification
 
                             var sele1 = (
                                 sc.ptnr1_auth_seq_id[ i ] + ":" +
@@ -24535,6 +25759,155 @@ NGL.CubeParser.prototype = NGL.createObject(
 } );
 
 
+NGL.DxParser = function( streamer, params ){
+
+    NGL.VolumeParser.call( this, streamer, params );
+
+};
+
+NGL.DxParser.prototype = NGL.createObject(
+
+    NGL.VolumeParser.prototype, {
+
+    constructor: NGL.DxParser,
+
+    type: "dx",
+
+    _parse: function( callback ){
+
+        // http://www.poissonboltzmann.org/docs/file-format-info/
+
+        var __timeName = "NGL.DxParser._parse " + this.name;
+
+        NGL.time( __timeName );
+
+        var v = this.volume;
+        var headerLines = this.streamer.peekLines( 30 );
+        var header = {};
+        var reWhitespace = /\s+/;
+
+        var dataLineStart = 0;
+        var deltaLineCount = 0;
+
+        for( var i = 0; i < 30; ++i ){
+
+            var line = headerLines[ i ];
+
+            if( line.startsWith( "object 1" ) ){
+
+                var ls = line.split( reWhitespace );
+
+                header.nx = parseInt( ls[ 5 ] );
+                header.ny = parseInt( ls[ 6 ] );
+                header.nz = parseInt( ls[ 7 ] );
+
+            }else if( line.startsWith( "origin" ) ){
+
+                var ls = line.split( reWhitespace );
+
+                header.xmin = parseFloat( ls[ 1 ] );
+                header.ymin = parseFloat( ls[ 2 ] );
+                header.zmin = parseFloat( ls[ 3 ] );
+
+            }else if( line.startsWith( "delta" ) ){
+
+                var ls = line.split( reWhitespace );
+
+                if( deltaLineCount === 0 ){
+                    header.hx = parseFloat( ls[ 1 ] );
+                }else if( deltaLineCount === 1 ){
+                    header.hy = parseFloat( ls[ 2 ] );
+                }else if( deltaLineCount === 2 ){
+                    header.hz = parseFloat( ls[ 3 ] );
+                }
+
+                deltaLineCount += 1;
+
+            }else if( line.startsWith( "object 3" ) ){
+
+                dataLineStart = i;
+
+            }
+
+        }
+
+        var size = header.nx * header.ny * header.nz;
+        var data = new Float32Array( size );
+        var count = 0;
+        var lineNo = 0;
+
+        function _parseChunkOfLines( _i, _n, lines ){
+
+            for( var i = _i; i < _n; ++i ){
+
+                if( count < size && lineNo > dataLineStart ){
+
+                    var line = lines[ i ].trim();
+
+                    if( line !== "" ){
+
+                        var ls = line.split( reWhitespace );
+
+                        for( var j = 0, lj = ls.length; j < lj; ++j ){
+                            data[ count ] = parseFloat( ls[ j ] );
+                            ++count;
+                        };
+
+                    }
+
+                }
+
+                ++lineNo;
+
+            };
+
+        };
+
+        this.streamer.eachChunkOfLinesAsync(
+
+            _parseChunkOfLines,
+
+            function(){
+
+                v.header = header;
+                v.setData( data, header.nz, header.ny, header.nx );
+                NGL.timeEnd( __timeName );
+                callback();
+
+            }
+
+        );
+
+    },
+
+    getMatrix: function(){
+
+        var h = this.volume.header;
+        var matrix = new THREE.Matrix4();
+
+        matrix.multiply(
+            new THREE.Matrix4().makeRotationY( THREE.Math.degToRad( 90 ) )
+        );
+
+        matrix.multiply(
+            new THREE.Matrix4().makeTranslation(
+                -h.zmin, h.ymin, h.xmin
+            )
+        );
+
+        matrix.multiply(
+            new THREE.Matrix4().makeScale(
+                -h.hz, h.hy, h.hx
+            )
+        );
+
+        return matrix;
+
+    }
+
+} );
+
+
 ///////////////////
 // Surface parser
 
@@ -24863,6 +26236,7 @@ NGL.ParserLoader.prototype = NGL.createObject(
             "gro": NGL.GroParser,
             "pdb": NGL.PdbParser,
             "ent": NGL.PdbParser,
+            "pqr": NGL.PqrParser,
             "cif": NGL.CifParser,
             "mcif": NGL.CifParser,
             "mmcif": NGL.CifParser,
@@ -24874,6 +26248,7 @@ NGL.ParserLoader.prototype = NGL.createObject(
             "map": NGL.MrcParser,
 
             "cube": NGL.CubeParser,
+            "dx": NGL.DxParser,
 
             "ply": NGL.PlyParser,
             "obj": NGL.ObjParser,
@@ -24931,6 +26306,7 @@ NGL.autoLoad = function(){
         "gro": NGL.ParserLoader,
         "pdb": NGL.ParserLoader,
         "ent": NGL.ParserLoader,
+        "pqr": NGL.ParserLoader,
         "cif": NGL.ParserLoader,
         "mcif": NGL.ParserLoader,
         "mmcif": NGL.ParserLoader,
@@ -24941,6 +26317,7 @@ NGL.autoLoad = function(){
         "ccp4": NGL.ParserLoader,
         "map": NGL.ParserLoader,
         "cube": NGL.ParserLoader,
+        "dx": NGL.ParserLoader,
 
         "obj": NGL.ParserLoader,
         "ply": NGL.ParserLoader,
@@ -26073,7 +27450,9 @@ NGL.Viewer.prototype = {
 
             scope.updateObjectUniforms( object, material, camera );
 
-            scope.renderer.loadUniformsGeneric( material.uniformsList );
+            scope.renderer.loadUniformsGeneric(
+                scope.renderer.properties.get( material ).uniformsList
+            );
 
             return program;
 
@@ -26392,13 +27771,11 @@ NGL.Viewer.prototype = {
         if( NGL.debug ){
 
             var bbSize = bb.size();
-            var material = new THREE.MeshBasicMaterial( {
-                color: Math.random() * 0xFFFFFF, wireframe: true
-            } );
             var boxGeometry = new THREE.BoxGeometry(
                 bbSize.x, bbSize.y, bbSize.z
             );
-            this.boundingBoxMesh = new THREE.Mesh( boxGeometry, material );
+            var wireframeBox = new THREE.WireframeGeometry( boxGeometry );
+            this.boundingBoxMesh = new THREE.LineSegments( wireframeBox );
             bb.center( this.boundingBoxMesh.position );
             this.modelGroup.add( this.boundingBoxMesh );
 
@@ -26591,7 +27968,7 @@ NGL.Viewer.prototype = {
 
         return function( x, y ){
 
-            var id, object, instance;
+            var gid, object, instance, bondId;
 
             var pixelBuffer = this.supportsReadPixelsFloat() ? pixelBufferFloat : pixelBufferUint;
 
@@ -26615,15 +27992,14 @@ NGL.Viewer.prototype = {
 
             if( this.supportsReadPixelsFloat() ){
 
-                // TODO simplify ...
-                id =
+                gid =
                     ( ( Math.round( pixelBuffer[0] * 255 ) << 16 ) & 0xFF0000 ) |
                     ( ( Math.round( pixelBuffer[1] * 255 ) << 8 ) & 0x00FF00 ) |
                     ( ( Math.round( pixelBuffer[2] * 255 ) ) & 0x0000FF );
 
             }else{
 
-                id =
+                gid =
                     ( pixelBuffer[0] << 16 ) |
                     ( pixelBuffer[1] << 8 ) |
                     ( pixelBuffer[2] );
@@ -26655,7 +28031,7 @@ NGL.Viewer.prototype = {
                         ( rgba[3] ).toPrecision(2)
                     ]
                 );
-                NGL.log( "picked id", id );
+                NGL.log( "picked gid", gid );
                 NGL.log( "picked instance", instance );
                 NGL.log( "picked position", x, y );
                 NGL.log( "devicePixelRatio", window.devicePixelRatio );
@@ -26663,7 +28039,7 @@ NGL.Viewer.prototype = {
             }
 
             return {
-                "id": id,
+                "gid": gid,
                 "instance": instance
             };
 
@@ -26924,7 +28300,7 @@ NGL.Viewer.prototype = {
                 )
 
                 var attributes = o.geometry.attributes;
-                var n = attributes.position.length / 3;
+                var n = attributes.position.count;
 
                 if( !o.userData.sortData ){
                     o.userData.sortData = {};
@@ -27428,13 +28804,14 @@ NGL.Buffer = function( position, color, pickingColor, params ){
 
     this.transparent = p.transparent !== undefined ? p.transparent : false;
     this.opaqueBack = p.opaqueBack !== undefined ? p.opaqueBack : false;
+    this.dullInterior = p.dullInterior !== undefined ? p.dullInterior : false;
     this.side = p.side !== undefined ? p.side : THREE.DoubleSide;
     this.opacity = p.opacity !== undefined ? p.opacity : 1.0;
     this.nearClip = p.nearClip !== undefined ? p.nearClip : true;
     this.background = p.background !== undefined ? p.background : false;
     this.lineWidth = p.lineWidth !== undefined ? p.lineWidth : 1;
 
-    this.attributes = {};
+    this.attributes = [];
     this.geometry = new THREE.BufferGeometry();
 
     this.addAttributes({
@@ -27482,7 +28859,7 @@ NGL.Buffer.prototype = {
 
         if( NGL.indexUint16 ){
 
-            this.geometry.drawcalls = this.geometry.computeOffsets();
+            this.geometry.computeOffsets();
 
         }
 
@@ -27520,7 +28897,7 @@ NGL.Buffer.prototype = {
 
                 var index = this.geometry.attributes.index.array;
                 var n = index.length;
-                var wireframeIndex = new Uint32Array( n * 6 );
+                var wireframeIndex = new Uint32Array( n * 2 );
 
                 for( var i = 0, j = 0; i < n; i+=3, j+=6 ){
 
@@ -27540,11 +28917,15 @@ NGL.Buffer.prototype = {
                 this.wireframeGeometry = this.geometry.clone();
                 this.wireframeGeometry.attributes.index.array = wireframeIndex;
 
+                if( NGL.indexUint16 ){
+                    this.wireframeGeometry.computeOffsets();
+                }else{
+                    this.wireframeGeometry.clearDrawCalls();
+                }
+
             }
 
-            return new THREE.Line(
-                this.wireframeGeometry, material, THREE.LinePieces
-            );
+            return new THREE.LineSegments( this.wireframeGeometry, material );
 
         }else{
 
@@ -27629,6 +29010,12 @@ NGL.Buffer.prototype = {
 
             }
 
+            if( this.dullInterior ){
+
+                material.defines[ "DULL_INTERIOR" ] = 1;
+
+            }
+
         }
 
         if( this.nearClip ){
@@ -27664,9 +29051,7 @@ NGL.Buffer.prototype = {
             var buf;
             var a = attributes[ name ];
 
-            this.attributes[ name ] = {
-                "type": a.type, "value": null
-            };
+            this.attributes.push( name );
 
             if( a.value ){
 
@@ -27869,7 +29254,6 @@ NGL.MappedBuffer.prototype.setAttributes = function( data ){
         }
 
         a.needsUpdate = true;
-        this.attributes[ name ].needsUpdate = true;
 
     }, this );
 
@@ -28783,10 +30167,7 @@ NGL.LineBuffer = function( from, to, color, color2, params ){
     var n6 = n * 6;
     var nX = n * 2 * 2;
 
-    this.attributes = {
-        "position": { type: "v3", value: null },
-        "color": { type: "c", value: null },
-    };
+    this.attributes = [ "position", "color" ];
 
     this.geometry = new THREE.BufferGeometry();
 
@@ -28832,7 +30213,6 @@ NGL.LineBuffer.prototype = {
             to = data[ "to" ];
             aPosition = attributes[ "position" ].array;
             attributes[ "position" ].needsUpdate = true;
-            this.attributes[ "position" ].needsUpdate = true;
         }
 
         if( data[ "color" ] && data[ "color2" ] ){
@@ -28840,7 +30220,6 @@ NGL.LineBuffer.prototype = {
             color2 = data[ "color2" ];
             aColor = attributes[ "color" ].array;
             attributes[ "color" ].needsUpdate = true;
-            this.attributes[ "color" ].needsUpdate = true;
         }
 
         var n = this.size;
@@ -28923,9 +30302,7 @@ NGL.LineBuffer.prototype = {
 
         material = material || this.getMaterial( type );
 
-        return new THREE.Line(
-            this.geometry, material, THREE.LinePieces
-        );
+        return new THREE.LineSegments( this.geometry, material );
 
     },
 
@@ -29163,14 +30540,13 @@ NGL.RibbonBuffer = function( position, normal, dir, color, size, pickingColor, p
     var n = this.size;
     var n4 = n * 4;
 
-    this.attributes = {
-        "inputDir": { type: 'v3', value: null },
-        "inputSize": { type: 'f', value: null },
-        "inputNormal": { type: 'v3', value: null },
-        "inputColor": { type: 'v3', value: null }
-    };
+    this.attributes = [
+        "position", "normal",
+        "inputDir", "inputSize", "inputNormal", "inputColor"
+    ];
+
     if( pickingColor ){
-        this.attributes[ "pickingColor" ] = { type: 'v3', value: null };
+        this.attributes.push( "pickingColor" );
     }
 
     this.uniforms = THREE.UniformsUtils.merge( [
@@ -30333,7 +31709,7 @@ NGL.BufferVectorHelper.prototype = {
 
         material = material || this.getMaterial( type );
 
-        return new THREE.Line( this.geometry, material, THREE.LinePieces );;
+        return new THREE.LineSegments( this.geometry, material );
 
     },
 
@@ -30461,7 +31837,26 @@ NGL.Representation.prototype = {
         },
         flatShaded: {
             type: "boolean", define: "FLAT_SHADED"
-        }
+        },
+
+        colorScheme: {
+            type: "select", update: "color",
+            options: NGL.ColorMakerRegistry.getTypes()
+        },
+        colorScale: {
+            type: "select", update: "color",
+            options: NGL.ColorMakerRegistry.getScales()
+        },
+        colorValue: {
+            type: "color", update: "color"
+        },
+        colorDomain: {
+            type: "hidden", update: "color"
+        },
+        colorMode: {
+            type: "select", update: "color",
+            options: NGL.ColorMakerRegistry.getModes()
+        },
 
     },
 
@@ -30472,18 +31867,56 @@ NGL.Representation.prototype = {
         this.nearClip = p.nearClip !== undefined ? p.nearClip : true;
         this.flatShaded = p.flatShaded || false;
 
+        this.setColor( p.color, p );
+
+        this.colorScheme = p.colorScheme || "uniform";
+        this.colorScale = p.colorScale || "";
+        this.colorValue = p.colorValue || 0xFFFFFF;
+        this.colorDomain = p.colorDomain || "";
+        this.colorMode = p.colorMode || "hcl";
+
         this.visible = p.visible !== undefined ? p.visible : true;
         this.quality = p.quality;
 
     },
 
-    setColor: function( type ){
+    getColorParams: function(){
 
-        if( type && type !== this.color ){
+        return {
 
-            this.color = type;
+            scheme: this.colorScheme,
+            scale: this.colorScale,
+            value: this.colorValue,
+            domain: this.colorDomain,
+            mode: this.colorMode,
 
-            this.update( { "color": true } );
+        };
+
+    },
+
+    setColor: function( value, p ){
+
+        var types = Object.keys( NGL.ColorMakerRegistry.getTypes() );
+
+        if( types.indexOf( value ) !== -1 ){
+
+            if( p ){
+                p.colorScheme = value;
+            }else{
+                this.setParameters( { colorScheme: value } );
+            }
+
+        }else if( value !== undefined ){
+
+            value = new THREE.Color( value ).getHex();
+            if( p ){
+                p.colorScheme = "uniform";
+                p.colorValue = value;
+            }else{
+                this.setParameters( {
+                    colorScheme: "uniform", colorValue: value
+                } );
+            }
 
         }
 
@@ -30603,6 +32036,7 @@ NGL.Representation.prototype = {
         var p = params;
         var tp = this.parameters;
 
+        what = what || {};
         rebuild = rebuild || false;
 
         Object.keys( tp ).forEach( function( name ){
@@ -30734,6 +32168,14 @@ NGL.Representation.prototype = {
 
             }
 
+            // mark for update
+
+            if( tp[ name ].update ){
+
+                what[ tp[ name ].update ] = true;
+
+            }
+
             // mark for rebuild
 
             if( tp[ name ].rebuild &&
@@ -30757,6 +32199,8 @@ NGL.Representation.prototype = {
 
             this.update( what );
 
+            this.viewer.requestRender();
+
         }
 
         return this;
@@ -30768,7 +32212,6 @@ NGL.Representation.prototype = {
         // FIXME move specific parts to subclasses
         var params = {
 
-            color: this.color,
             visible: this.visible,
             sele: this.selection ? this.selection.string : undefined,
             disableImpostor: this.disableImpostor,
@@ -30782,12 +32225,12 @@ NGL.Representation.prototype = {
 
         }, this );
 
-        if( typeof this.radius === "string" ){
+        // if( typeof this.radius === "string" ){
 
-            params[ "radiusType" ] = this.radius;
-            delete params[ "radius" ];
+        //     params[ "radiusType" ] = this.radius;
+        //     delete params[ "radius" ];
 
-        }
+        // }
 
         return params;
 
@@ -30957,8 +32400,8 @@ NGL.StructureRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
+        p.colorScheme = p.colorScheme || "element";
 
-        this.color = p.color !== undefined ? p.color : "element";
         this.radius = p.radius || "vdw";
         this.scale = p.scale || 1.0;
         this.transparent = p.transparent !== undefined ? p.transparent : false;
@@ -31002,6 +32445,17 @@ NGL.StructureRepresentation.prototype = NGL.createObject(
         // console.log( "getAssemblySele", extraString );
 
         return extraString;
+
+    },
+
+    getColorParams: function(){
+
+        var p = NGL.Representation.prototype.getColorParams.call( this );
+
+        p.structure = this.structure;
+        p.atomSet = this.atomSet;
+
+        return p;
 
     },
 
@@ -31203,16 +32657,17 @@ NGL.SpacefillRepresentation.prototype = NGL.createObject(
 
         this.sphereBuffer = new NGL.SphereBuffer(
             this.atomSet.atomPosition(),
-            this.atomSet.atomColor( null, this.color ),
+            this.atomSet.atomColor( null, this.getColorParams() ),
             this.atomSet.atomRadius( null, this.radius, this.scale ),
-            this.atomSet.atomColor( null, "picking" ),
+            this.atomSet.atomPickingColor(),
             {
                 sphereDetail: this.sphereDetail,
                 transparent: this.transparent,
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -31237,7 +32692,9 @@ NGL.SpacefillRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            sphereData[ "color" ] = this.atomSet.atomColor( null, this.color );
+            sphereData[ "color" ] = this.atomSet.atomColor(
+                null, this.getColorParams()
+            );
 
         }
 
@@ -31318,7 +32775,7 @@ NGL.PointRepresentation.prototype = NGL.createObject(
 
         this.pointBuffer = new NGL.PointBuffer(
             this.atomSet.atomPosition(),
-            this.atomSet.atomColor( null, this.color ),
+            this.atomSet.atomColor( null, this.getColorParams() ),
             {
                 pointSize: this.pointSize,
                 sizeAttenuation: this.sizeAttenuation,
@@ -31349,7 +32806,9 @@ NGL.PointRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            pointData[ "color" ] = this.atomSet.atomColor( null, this.color );
+            pointData[ "color" ] = this.atomSet.atomColor(
+                null, this.colorScheme, this.getColorParams()
+            );
 
         }
 
@@ -31433,7 +32892,7 @@ NGL.LabelRepresentation.prototype = NGL.createObject(
         this.textBuffer = new NGL.TextBuffer(
             this.atomSet.atomPosition(),
             this.atomSet.atomRadius( null, this.radius, this.scale ),
-            this.atomSet.atomColor( null, this.color ),
+            this.atomSet.atomColor( null, this.getColorParams() ),
             text,
             {
                 font: this.font,
@@ -31472,7 +32931,7 @@ NGL.LabelRepresentation.prototype = NGL.createObject(
         if( what[ "color" ] ){
 
             textData[ "color" ] = this.atomSet.atomColor(
-                null, this.color
+                null, this.getColorParams()
             );
 
         }
@@ -31550,16 +33009,17 @@ NGL.BallAndStickRepresentation.prototype = NGL.createObject(
 
         this.sphereBuffer = new NGL.SphereBuffer(
             this.atomSet.atomPosition(),
-            this.atomSet.atomColor( null, this.color ),
+            this.atomSet.atomColor( null, this.getColorParams() ),
             this.atomSet.atomRadius( null, this.radius, atomScale ),
-            this.atomSet.atomColor( null, "picking" ),
+            this.atomSet.atomPickingColor( null ),
             {
                 sphereDetail: this.sphereDetail,
                 transparent: this.transparent,
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -31569,11 +33029,11 @@ NGL.BallAndStickRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.CylinderBuffer(
             this.atomSet.bondPosition( null, 0 ),
             this.atomSet.bondPosition( null, 1 ),
-            this.atomSet.bondColor( null, 0, this.color ),
-            this.atomSet.bondColor( null, 1, this.color ),
+            this.atomSet.bondColor( null, 0, this.getColorParams() ),
+            this.atomSet.bondColor( null, 1, this.getColorParams() ),
             this.atomSet.bondRadius( null, null, this.radius, this.scale ),
-            this.atomSet.bondColor( null, 0, "picking" ),
-            this.atomSet.bondColor( null, 1, "picking" ),
+            this.atomSet.bondPickingColor( null, 0 ),
+            this.atomSet.bondPickingColor( null, 1 ),
             {
                 shift: 0,
                 cap: true,
@@ -31582,7 +33042,8 @@ NGL.BallAndStickRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -31617,10 +33078,16 @@ NGL.BallAndStickRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            sphereData[ "color" ] = this.atomSet.atomColor( null, this.color );
+            sphereData[ "color" ] = this.atomSet.atomColor(
+                null, this.getColorParams()
+            );
 
-            cylinderData[ "color" ] = this.atomSet.bondColor( null, 0, this.color );
-            cylinderData[ "color2" ] = this.atomSet.bondColor( null, 1, this.color );
+            cylinderData[ "color" ] = this.atomSet.bondColor(
+                null, 0, this.getColorParams()
+            );
+            cylinderData[ "color2" ] = this.atomSet.bondColor(
+                null, 1, this.getColorParams()
+            );
 
         }
 
@@ -31727,16 +33194,17 @@ NGL.LicoriceRepresentation.prototype = NGL.createObject(
 
         this.sphereBuffer = new NGL.SphereBuffer(
             this.atomSet.atomPosition(),
-            this.atomSet.atomColor( null, this.color ),
+            this.atomSet.atomColor( null, this.getColorParams() ),
             this.atomSet.atomRadius( null, this.radius, this.scale ),
-            this.atomSet.atomColor( null, "picking" ),
+            this.atomSet.atomPickingColor(),
             {
                 sphereDetail: this.sphereDetail,
                 transparent: this.transparent,
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -31744,11 +33212,11 @@ NGL.LicoriceRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.CylinderBuffer(
             this.atomSet.bondPosition( null, 0 ),
             this.atomSet.bondPosition( null, 1 ),
-            this.atomSet.bondColor( null, 0, this.color ),
-            this.atomSet.bondColor( null, 1, this.color ),
+            this.atomSet.bondColor( null, 0, this.getColorParams() ),
+            this.atomSet.bondColor( null, 1, this.getColorParams() ),
             this.atomSet.bondRadius( null, null, this.radius, this.scale ),
-            this.atomSet.bondColor( null, 0, "picking" ),
-            this.atomSet.bondColor( null, 1, "picking" ),
+            this.atomSet.bondPickingColor( null, 0 ),
+            this.atomSet.bondPickingColor( null, 1 ),
             {
                 shift: 0,
                 cap: true,
@@ -31757,7 +33225,8 @@ NGL.LicoriceRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -31831,8 +33300,8 @@ NGL.LineRepresentation.prototype = NGL.createObject(
         this.lineBuffer = new NGL.LineBuffer(
             this.atomSet.bondPosition( null, 0 ),
             this.atomSet.bondPosition( null, 1 ),
-            this.atomSet.bondColor( null, 0, this.color ),
-            this.atomSet.bondColor( null, 1, this.color ),
+            this.atomSet.bondColor( null, 0, this.getColorParams() ),
+            this.atomSet.bondColor( null, 1, this.getColorParams() ),
             {
                 lineWidth: this.lineWidth,
                 transparent: this.transparent,
@@ -31862,8 +33331,12 @@ NGL.LineRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            lineData[ "color" ] = this.atomSet.bondColor( null, 0, this.color );
-            lineData[ "color2" ] = this.atomSet.bondColor( null, 1, this.color );
+            lineData[ "color" ] = this.atomSet.bondColor(
+                null, 0, this.getColorParams()
+            );
+            lineData[ "color2" ] = this.atomSet.bondColor(
+                null, 1, this.getColorParams()
+            );
 
         }
 
@@ -31939,16 +33412,17 @@ NGL.HyperballRepresentation.prototype = NGL.createObject(
 
         this.sphereBuffer = new NGL.SphereBuffer(
             this.atomSet.atomPosition(),
-            this.atomSet.atomColor( null, this.color ),
+            this.atomSet.atomColor( null, this.getColorParams() ),
             this.atomSet.atomRadius( null, this.radius, this.scale ),
-            this.atomSet.atomColor( null, "picking" ),
+            this.atomSet.atomPickingColor(),
             {
                 sphereDetail: this.sphereDetail,
                 transparent: this.transparent,
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -31958,12 +33432,12 @@ NGL.HyperballRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.HyperballStickBuffer(
             this.atomSet.bondPosition( null, 0 ),
             this.atomSet.bondPosition( null, 1 ),
-            this.atomSet.bondColor( null, 0, this.color ),
-            this.atomSet.bondColor( null, 1, this.color ),
+            this.atomSet.bondColor( null, 0, this.getColorParams() ),
+            this.atomSet.bondColor( null, 1, this.getColorParams() ),
             this.atomSet.bondRadius( null, 0, this.radius, this.scale ),
             this.atomSet.bondRadius( null, 1, this.radius, this.scale ),
-            this.atomSet.bondColor( null, 0, "picking" ),
-            this.atomSet.bondColor( null, 1, "picking" ),
+            this.atomSet.bondPickingColor( null, 0 ),
+            this.atomSet.bondPickingColor( null, 1 ),
             {
                 shrink: this.shrink,
                 radiusSegments: this.radiusSegments,
@@ -31971,7 +33445,8 @@ NGL.HyperballRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -32008,14 +33483,14 @@ NGL.HyperballRepresentation.prototype = NGL.createObject(
         if( what[ "color" ] ){
 
             sphereData[ "color" ] = this.atomSet.atomColor(
-                null, this.color
+                null, this.getColorParams()
             );
 
             cylinderData[ "color" ] = this.atomSet.bondColor(
-                null, 0, this.color
+                null, 0, this.getColorParams()
             );
             cylinderData[ "color2" ] = this.atomSet.bondColor(
-                null, 1, this.color
+                null, 1, this.getColorParams()
             );
 
         }
@@ -32151,16 +33626,17 @@ NGL.BackboneRepresentation.prototype = NGL.createObject(
 
         this.sphereBuffer = new NGL.SphereBuffer(
             baSet.atomPosition(),
-            baSet.atomColor( null, this.color ),
+            baSet.atomColor( null, this.getColorParams() ),
             baSet.atomRadius( null, this.radius, sphereScale ),
-            baSet.atomColor( null, "picking" ),
+            baSet.atomPickingColor(),
             {
                 sphereDetail: this.sphereDetail,
                 transparent: this.transparent,
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -32168,11 +33644,11 @@ NGL.BackboneRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.CylinderBuffer(
             bbSet.bondPosition( null, 0 ),
             bbSet.bondPosition( null, 1 ),
-            bbSet.bondColor( null, 0, this.color ),
-            bbSet.bondColor( null, 1, this.color ),
+            bbSet.bondColor( null, 0, this.getColorParams() ),
+            bbSet.bondColor( null, 1, this.getColorParams() ),
             bbSet.bondRadius( null, 0, this.radius, this.scale ),
-            bbSet.bondColor( null, 0, "picking" ),
-            bbSet.bondColor( null, 1, "picking" ),
+            bbSet.bondPickingColor( null, 0 ),
+            bbSet.bondPickingColor( null, 1 ),
             {
                 shift: 0,
                 cap: true,
@@ -32181,7 +33657,8 @@ NGL.BackboneRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -32221,10 +33698,16 @@ NGL.BackboneRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            sphereData[ "color" ] = baSet.atomColor( null, this.color );
+            sphereData[ "color" ] = baSet.atomColor(
+                null, this.getColorParams()
+            );
 
-            cylinderData[ "color" ] = bbSet.bondColor( null, 0, this.color );
-            cylinderData[ "color2" ] = bbSet.bondColor( null, 1, this.color );
+            cylinderData[ "color" ] = bbSet.bondColor(
+                null, 0, this.getColorParams()
+            );
+            cylinderData[ "color2" ] = bbSet.bondColor(
+                null, 1, this.getColorParams()
+            );
 
         }
 
@@ -32389,16 +33872,17 @@ NGL.BaseRepresentation.prototype = NGL.createObject(
 
         this.sphereBuffer = new NGL.SphereBuffer(
             baSet.atomPosition(),
-            baSet.atomColor( null, this.color ),
+            baSet.atomColor( null, this.getColorParams() ),
             baSet.atomRadius( null, this.radius, sphereScale ),
-            baSet.atomColor( null, "picking" ),
+            baSet.atomPickingColor(),
             {
                 sphereDetail: this.sphereDetail,
                 transparent: this.transparent,
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -32406,11 +33890,11 @@ NGL.BaseRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.CylinderBuffer(
             bbSet.bondPosition( null, 0 ),
             bbSet.bondPosition( null, 1 ),
-            bbSet.bondColor( null, 0, this.color ),
-            bbSet.bondColor( null, 1, this.color ),
+            bbSet.bondColor( null, 0, this.getColorParams() ),
+            bbSet.bondColor( null, 1, this.getColorParams() ),
             bbSet.bondRadius( null, 0, this.radius, this.scale ),
-            bbSet.bondColor( null, 0, "picking" ),
-            bbSet.bondColor( null, 1, "picking" ),
+            bbSet.bondPickingColor( null, 0 ),
+            bbSet.bondPickingColor( null, 1 ),
             {
                 shift: 0,
                 cap: true,
@@ -32419,7 +33903,8 @@ NGL.BaseRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -32459,10 +33944,16 @@ NGL.BaseRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            sphereData[ "color" ] = baSet.atomColor( null, this.color );
+            sphereData[ "color" ] = baSet.atomColor(
+                null, this.getColorParams()
+            );
 
-            cylinderData[ "color" ] = bbSet.bondColor( null, 0, this.color );
-            cylinderData[ "color2" ] = bbSet.bondColor( null, 1, this.color );
+            cylinderData[ "color" ] = bbSet.bondColor(
+                null, 0, this.getColorParams()
+            );
+            cylinderData[ "color2" ] = bbSet.bondColor(
+                null, 1, this.getColorParams()
+            );
 
         }
 
@@ -32560,7 +34051,7 @@ NGL.TubeRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-        p.color = p.color || "ss";
+        p.colorScheme = p.colorScheme || "sstruc";
         p.radius = p.radius || this.defaultSize;
 
         if( p.quality === "low" ){
@@ -32626,9 +34117,15 @@ NGL.TubeRepresentation.prototype = NGL.createObject(
                     var fiber = fiberList[ i ];
 
                     var spline = new NGL.Spline( fiber );
-                    var subPos = spline.getSubdividedPosition( scope.subdiv, scope.tension );
-                    var subOri = spline.getSubdividedOrientation( scope.subdiv, scope.tension );
-                    var subCol = spline.getSubdividedColor( scope.subdiv, scope.color );
+                    var subPos = spline.getSubdividedPosition(
+                        scope.subdiv, scope.tension
+                    );
+                    var subOri = spline.getSubdividedOrientation(
+                        scope.subdiv, scope.tension
+                    );
+                    var subCol = spline.getSubdividedColor(
+                        scope.subdiv, scope.getColorParams()
+                    );
                     var subSize = spline.getSubdividedSize(
                         scope.subdiv, scope.radius, scope.scale
                     );
@@ -32657,7 +34154,8 @@ NGL.TubeRepresentation.prototype = NGL.createObject(
                                 transparent: scope.transparent,
                                 side: scope.side,
                                 opacity: opacity,
-                                nearClip: scope.nearClip
+                                nearClip: scope.nearClip,
+                                dullInterior: true
                             }
                         )
 
@@ -32731,7 +34229,7 @@ NGL.TubeRepresentation.prototype = NGL.createObject(
             if( what[ "color" ] ){
 
                 var subCol = spline.getSubdividedColor(
-                    this.subdiv, this.color
+                    this.subdiv, this.getColorParams()
                 );
 
                 bufferData[ "color" ] = subCol.color;
@@ -32815,7 +34313,7 @@ NGL.CartoonRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-        p.color = p.color || "ss";
+        p.colorScheme = p.colorScheme || "sstruc";
         p.radius = p.radius || "ss";
 
         if( p.quality === "low" ){
@@ -32881,11 +34379,17 @@ NGL.CartoonRepresentation.prototype = NGL.createObject(
                 for( var i = _i; i < _n; ++i ){
 
                     var fiber = fiberList[ i ];
-
                     var spline = new NGL.Spline( fiber, scope.arrows );
-                    var subPos = spline.getSubdividedPosition( scope.subdiv, scope.tension );
-                    var subOri = spline.getSubdividedOrientation( scope.subdiv, scope.tension );
-                    var subCol = spline.getSubdividedColor( scope.subdiv, scope.color );
+
+                    var subPos = spline.getSubdividedPosition(
+                        scope.subdiv, scope.tension
+                    );
+                    var subOri = spline.getSubdividedOrientation(
+                        scope.subdiv, scope.tension
+                    );
+                    var subCol = spline.getSubdividedColor(
+                        scope.subdiv, scope.getColorParams()
+                    );
                     var subSize = spline.getSubdividedSize(
                         scope.subdiv, scope.radius, scope.scale
                     );
@@ -32918,7 +34422,8 @@ NGL.CartoonRepresentation.prototype = NGL.createObject(
                                 transparent: scope.transparent,
                                 side: scope.side,
                                 opacity: opacity,
-                                nearClip: scope.nearClip
+                                nearClip: scope.nearClip,
+                                dullInterior: true
                             }
                         )
 
@@ -32989,7 +34494,9 @@ NGL.CartoonRepresentation.prototype = NGL.createObject(
 
             if( what[ "color" ] ){
 
-                var subCol = spline.getSubdividedColor( this.subdiv, this.color );
+                var subCol = spline.getSubdividedColor(
+                    this.subdiv, this.getColorParams()
+                );
 
                 bufferData[ "color" ] = subCol.color;
                 bufferData[ "pickingColor" ] = subCol.pickingColor;
@@ -33070,7 +34577,7 @@ NGL.RibbonRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-        p.color = p.color || "ss";
+        p.colorScheme = p.colorScheme || "sstruc";
         p.radius = p.radius || "ss";
         p.scale = p.scale || 3.0;
 
@@ -33130,9 +34637,15 @@ NGL.RibbonRepresentation.prototype = NGL.createObject(
                     var fiber = fiberList[ i ];
 
                     var spline = new NGL.Spline( fiber );
-                    var subPos = spline.getSubdividedPosition( scope.subdiv, scope.tension );
-                    var subOri = spline.getSubdividedOrientation( scope.subdiv, scope.tension );
-                    var subCol = spline.getSubdividedColor( scope.subdiv, scope.color );
+                    var subPos = spline.getSubdividedPosition(
+                        scope.subdiv, scope.tension
+                    );
+                    var subOri = spline.getSubdividedOrientation(
+                        scope.subdiv, scope.tension
+                    );
+                    var subCol = spline.getSubdividedColor(
+                        scope.subdiv, scope.getColorParams()
+                    );
                     var subSize = spline.getSubdividedSize(
                         scope.subdiv, scope.radius, scope.scale
                     );
@@ -33202,8 +34715,12 @@ NGL.RibbonRepresentation.prototype = NGL.createObject(
 
             if( what[ "position" ] ){
 
-                var subPos = spline.getSubdividedPosition( this.subdiv, this.tension );
-                var subOri = spline.getSubdividedOrientation( this.subdiv, this.tension );
+                var subPos = spline.getSubdividedPosition(
+                    this.subdiv, this.tension
+                );
+                var subOri = spline.getSubdividedOrientation(
+                    this.subdiv, this.tension
+                );
 
                 bufferData[ "position" ] = subPos.position;
                 bufferData[ "normal" ] = subOri.binormal;
@@ -33223,7 +34740,9 @@ NGL.RibbonRepresentation.prototype = NGL.createObject(
 
             if( what[ "color" ] ){
 
-                var subCol = spline.getSubdividedColor( this.subdiv, this.color );
+                var subCol = spline.getSubdividedColor(
+                    this.subdiv, this.getColorParams()
+                );
 
                 bufferData[ "color" ] = subCol.color;
                 bufferData[ "pickingColor" ] = subCol.pickingColor;
@@ -33300,7 +34819,7 @@ NGL.TraceRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-        p.color = p.color || "ss";
+        p.colorScheme = p.colorScheme || "sstruc";
 
         if( p.quality === "low" ){
             this.subdiv = 3;
@@ -33361,8 +34880,12 @@ NGL.TraceRepresentation.prototype = NGL.createObject(
                     var fiber = fiberList[ i ];
 
                     var spline = new NGL.Spline( fiber );
-                    var subPos = spline.getSubdividedPosition( scope.subdiv, scope.tension );
-                    var subCol = spline.getSubdividedColor( scope.subdiv, scope.color );
+                    var subPos = spline.getSubdividedPosition(
+                        scope.subdiv, scope.tension
+                    );
+                    var subCol = spline.getSubdividedColor(
+                        scope.subdiv, scope.getColorParams()
+                    );
 
                     scope.__bufferList.push(
 
@@ -33424,7 +34947,9 @@ NGL.TraceRepresentation.prototype = NGL.createObject(
 
             if( what[ "position" ] ){
 
-                var subPos = spline.getSubdividedPosition( this.subdiv, this.tension );
+                var subPos = spline.getSubdividedPosition(
+                    this.subdiv, this.tension
+                );
 
                 bufferData[ "position" ] = subPos.position;
 
@@ -33432,7 +34957,9 @@ NGL.TraceRepresentation.prototype = NGL.createObject(
 
             if( what[ "color" ] ){
 
-                var subCol = spline.getSubdividedColor( this.subdiv, this.color );
+                var subCol = spline.getSubdividedColor(
+                    this.subdiv, this.getColorParams()
+                );
 
                 bufferData[ "color" ] = subCol.color;
 
@@ -33487,7 +35014,7 @@ NGL.HelixorientRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         params = params || {};
-        params.color = params.color || "ss";
+        params.colorScheme = params.colorScheme || "sstruc";
         params.radius = params.radius || 0.15;
         params.scale = params.scale || 1.0;
 
@@ -33511,7 +35038,7 @@ NGL.HelixorientRepresentation.prototype = NGL.createObject(
 
             var helixorient = new NGL.Helixorient( fiber );
             var position = helixorient.getPosition();
-            var color = helixorient.getColor( scope.color );
+            var color = helixorient.getColor( scope.getColorParams() );
             var size = helixorient.getSize( scope.radius, scope.scale );
 
             scope.bufferList.push(
@@ -33527,7 +35054,8 @@ NGL.HelixorientRepresentation.prototype = NGL.createObject(
                         side: scope.side,
                         opacity: opacity,
                         nearClip: scope.nearClip,
-                        flatShaded: scope.flatShaded
+                        flatShaded: scope.flatShaded,
+                        dullInterior: true
                     },
                     scope.disableImpostor
                 )
@@ -33645,7 +35173,7 @@ NGL.RocketRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         params = params || {};
-        params.color = params.color || "ss";
+        params.colorScheme = params.colorScheme || "sstruc";
         params.radius = params.radius || 1.5;
         params.scale = params.scale || 1.0;
 
@@ -33687,7 +35215,7 @@ NGL.RocketRepresentation.prototype = NGL.createObject(
             var helixbundle = new NGL.Helixbundle( fiber );
             var axis = helixbundle.getAxis(
                 scope.localAngle, scope.centerDist, scope.ssBorder,
-                scope.color, scope.radius, scope.scale
+                scope.getColorParams(), scope.radius, scope.scale
             );
 
             length += axis.size.length;
@@ -33735,7 +35263,8 @@ NGL.RocketRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -33770,7 +35299,7 @@ NGL.RocketRepresentation.prototype = NGL.createObject(
 
                 var axis = helixbundle.getAxis(
                     scope.localAngle, scope.centerDist, scope.ssBorder,
-                    scope.color, scope.radius, scope.scale
+                    scope.getColorParams(), scope.radius, scope.scale
                 );
 
                 if( what[ "color" ] ){
@@ -33854,7 +35383,7 @@ NGL.RopeRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-        p.color = p.color || "ss";
+        p.colorScheme = p.colorScheme || "sstruc";
         p.radius = p.radius || this.defaultSize;
 
         if( p.quality === "low" ){
@@ -33922,10 +35451,18 @@ NGL.RopeRepresentation.prototype = NGL.createObject(
 
                     var helixorient = new NGL.Helixorient( fiber );
 
-                    var spline = new NGL.Spline( helixorient.getFiber( scope.smooth, true ) );
-                    var subPos = spline.getSubdividedPosition( scope.subdiv, scope.tension );
-                    var subOri = spline.getSubdividedOrientation( scope.subdiv, scope.tension );
-                    var subCol = spline.getSubdividedColor( scope.subdiv, scope.color );
+                    var spline = new NGL.Spline(
+                        helixorient.getFiber( scope.smooth, true )
+                    );
+                    var subPos = spline.getSubdividedPosition(
+                        scope.subdiv, scope.tension
+                    );
+                    var subOri = spline.getSubdividedOrientation(
+                        scope.subdiv, scope.tension
+                    );
+                    var subCol = spline.getSubdividedColor(
+                        scope.subdiv, scope.getColorParams()
+                    );
                     var subSize = spline.getSubdividedSize(
                         scope.subdiv, scope.radius, scope.scale
                     );
@@ -33954,7 +35491,8 @@ NGL.RopeRepresentation.prototype = NGL.createObject(
                                 transparent: scope.transparent,
                                 side: scope.side,
                                 opacity: opacity,
-                                nearClip: scope.nearClip
+                                nearClip: scope.nearClip,
+                                dullInterior: true
                             }
                         )
 
@@ -34027,7 +35565,7 @@ NGL.RopeRepresentation.prototype = NGL.createObject(
             if( what[ "color" ] ){
 
                 var subCol = spline.getSubdividedColor(
-                    this.subdiv, this.color
+                    this.subdiv, this.getColorParams()
                 );
 
                 bufferData[ "color" ] = subCol.color;
@@ -34106,7 +35644,7 @@ NGL.CrossingRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         params = params || {};
-        params.color = params.color || "ss";
+        params.colorScheme = params.colorScheme || "sstruc";
         params.radius = params.radius || 0.7;
         params.scale = params.scale || 1.0;
 
@@ -34151,7 +35689,7 @@ NGL.CrossingRepresentation.prototype = NGL.createObject(
             var helixbundle = new NGL.Helixbundle( fiber );
             var axis = helixbundle.getAxis(
                 scope.localAngle, scope.centerDist, scope.ssBorder,
-                scope.color, scope.radius, scope.scale
+                scope.getColorParams(), scope.radius, scope.scale
             );
 
             scope.bufferList.push(
@@ -34172,7 +35710,8 @@ NGL.CrossingRepresentation.prototype = NGL.createObject(
                         side: scope.side,
                         opacity: opacity,
                         nearClip: scope.nearClip,
-                        flatShaded: scope.flatShaded
+                        flatShaded: scope.flatShaded,
+                        dullInterior: true
                     },
                     scope.disableImpostor
                 )
@@ -34218,7 +35757,8 @@ NGL.CrossingRepresentation.prototype = NGL.createObject(
                     side: this.side,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: true
                 },
                 this.disableImpostor
             )
@@ -34356,11 +35896,11 @@ NGL.ContactRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.CylinderBuffer(
             bondSet.bondPosition( null, 0 ),
             bondSet.bondPosition( null, 1 ),
-            bondSet.bondColor( null, 0, this.color ),
-            bondSet.bondColor( null, 1, this.color ),
+            bondSet.bondColor( null, 0, this.getColorParams() ),
+            bondSet.bondColor( null, 1, this.getColorParams() ),
             bondSet.bondRadius( null, 0, this.radius, this.scale ),
-            bondSet.bondColor( null, 0, "picking" ),
-            bondSet.bondColor( null, 1, "picking" ),
+            bondSet.bondPickingColor( null, 0 ),
+            bondSet.bondPickingColor( null, 1 ),
             {
                 shift: 0,
                 cap: true,
@@ -34369,12 +35909,15 @@ NGL.ContactRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
 
         this.bufferList.push( this.cylinderBuffer );
+
+        structureSubset.dispose();
 
     },
 
@@ -34417,8 +35960,12 @@ NGL.ContactRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            cylinderData[ "color" ] = bondSet.bondColor( null, 0, this.color );
-            cylinderData[ "color2" ] = bondSet.bondColor( null, 1, this.color );
+            cylinderData[ "color" ] = bondSet.bondColor(
+                null, 0, this.getColorParams()
+            );
+            cylinderData[ "color2" ] = bondSet.bondColor(
+                null, 1, this.getColorParams()
+            );
 
         }
 
@@ -34483,6 +36030,10 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
             type: "number", precision: 1, max: 5, min: 0,
             rebuild: true
         },
+        cutoff: {
+            type: "number", precision: 2, max: 50, min: 0,
+            rebuild: true
+        },
         wireframe: {
             type: "boolean", rebuild: true
         },
@@ -34497,6 +36048,9 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
         },
         lowResolution: {
             type: "boolean", rebuild: true
+        },
+        filterSele: {
+            type: "text", rebuild: true
         },
 
     }, NGL.StructureRepresentation.prototype.parameters, {
@@ -34518,13 +36072,14 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-
-        p.color = p.color !== undefined ? p.color : 0xDDDDDD;
+        p.colorScheme = p.colorScheme || "uniform";
+        p.colorValue = p.colorValue !== undefined ? p.colorValue : 0xDDDDDD;
 
         this.surfaceType = p.surfaceType !== undefined ? p.surfaceType : "ms";
         this.probeRadius = p.probeRadius !== undefined ? p.probeRadius : 1.4;
         this.smooth = p.smooth !== undefined ? p.smooth : 2;
         this.scaleFactor = p.scaleFactor !== undefined ? p.scaleFactor : 2.0;
+        this.cutoff = p.cutoff || 0.0;
         this.background = p.background || false;
         this.wireframe = p.wireframe || false;
         this.lineWidth = p.lineWidth || 1;
@@ -34533,6 +36088,7 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
         this.side = p.side !== undefined ? p.side : THREE.DoubleSide;
         this.opacity = p.opacity !== undefined ? p.opacity : 1.0;
         this.lowResolution = p.lowResolution !== undefined ? p.lowResolution : false;
+        this.filterSele = p.filterSele !== undefined ? p.filterSele : "";
 
         NGL.StructureRepresentation.prototype.init.call( this, params );
 
@@ -34550,13 +36106,21 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
             this.__forceNewMolsurf = false;
             this.__sele = this.selection.combinedString;
 
-        }
+            this.molsurf.getSurfaceWorker(
+                this.surfaceType, this.probeRadius,
+                this.scaleFactor, this.smooth,
+                this.lowResolution, this.cutoff,
+                function( surface ){
+                    this.surface = surface;
+                    callback();
+                }.bind( this )
+            );
 
-        this.molsurf.generateSurfaceWorker(
-            this.surfaceType, this.probeRadius,
-            this.scaleFactor, this.smooth,
-            this.lowResolution, callback
-        );
+        }else{
+
+            callback();
+
+        }
 
     },
 
@@ -34564,17 +36128,18 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
 
         if( this.atomSet.atomCount === 0 ) return;
 
-        var position = this.molsurf.getPosition();
-        var color = this.molsurf.getColor( this.color );
-        var normal = this.molsurf.getNormal();
-        var index = this.molsurf.getIndex();
+        var position = this.surface.getPosition();
+        var color = this.surface.getColor( this.getColorParams() );
+        var pickingColor = this.surface.getPickingColor( this.getColorParams() );
+        var normal = this.surface.getNormal();
+        var index = this.surface.getFilteredIndex( this.filterSele, this.atomSet.atoms );
 
         var opacity = this.transparent ? this.opacity : 1.0;
 
         if( this.transparent && this.side === THREE.DoubleSide ){
 
             var frontBuffer = new NGL.SurfaceBuffer(
-                position, color, index, normal, undefined,
+                position, color, index, normal, pickingColor,
                 {
                     background: this.background,
                     wireframe: this.wireframe,
@@ -34584,12 +36149,13 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
                     side: THREE.FrontSide,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 }
             );
 
             var backBuffer = new NGL.SurfaceBuffer(
-                position, color, index, normal, undefined,
+                position, color, index, normal, pickingColor,
                 {
                     background: this.background,
                     wireframe: this.wireframe,
@@ -34599,7 +36165,8 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
                     side: THREE.BackSide,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 }
             );
 
@@ -34608,7 +36175,7 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
         }else{
 
             var surfaceBuffer = new NGL.SurfaceBuffer(
-                position, color, index, normal, undefined,
+                position, color, index, normal, pickingColor,
                 {
                     background: this.background,
                     wireframe: this.wireframe,
@@ -34618,7 +36185,8 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
                     side: this.side,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 }
             );
 
@@ -34644,7 +36212,7 @@ NGL.MolecularSurfaceRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            surfaceData[ "color" ] = this.molsurf.getColor( this.color );
+            surfaceData[ "color" ] = this.surface.getColor( this.getColorParams() );
 
         }
 
@@ -34732,7 +36300,6 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-
         p.radius = p.radius || this.defaultSize;
 
         this.disableImpostor = p.disableImpostor || false;
@@ -34775,7 +36342,11 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
         this.bondSet.structure = this.structure;
         var bSet = this.bondSet;
 
+        var j = 0;
+
         this.atomPair.forEach( function( pair, i ){
+
+            i -= j;
 
             var i3 = i * 3;
 
@@ -34785,15 +36356,30 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
             var a1 = this.atomSet.getAtoms( sele1, true );
             var a2 = this.atomSet.getAtoms( sele2, true );
 
-            bSet.addBond( a1, a2, true );
+            if( a1 && a2 ){
 
-            text[ i ] = a1.distanceTo( a2 ).toFixed( 2 );
+                bSet.addBond( a1, a2, true );
 
-            position[ i3 + 0 ] = ( a1.x + a2.x ) / 2;
-            position[ i3 + 1 ] = ( a1.y + a2.y ) / 2;
-            position[ i3 + 2 ] = ( a1.z + a2.z ) / 2;
+                text[ i ] = a1.distanceTo( a2 ).toFixed( 2 );
+
+                position[ i3 + 0 ] = ( a1.x + a2.x ) / 2;
+                position[ i3 + 1 ] = ( a1.y + a2.y ) / 2;
+                position[ i3 + 2 ] = ( a1.z + a2.z ) / 2;
+
+            }else{
+
+                j += 1;
+
+            }
 
         }, this );
+
+        if( j > 0 ){
+
+            n -= j;
+            position = position.subarray( 0, n * 3 );
+
+        }
 
         var c = new THREE.Color( this.labelColor );
 
@@ -34815,11 +36401,11 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
         this.cylinderBuffer = new NGL.CylinderBuffer(
             bSet.bondPosition( null, 0 ),
             bSet.bondPosition( null, 1 ),
-            bSet.bondColor( null, 0, this.color ),
-            bSet.bondColor( null, 1, this.color ),
+            bSet.bondColor( null, 0, this.getColorParams() ),
+            bSet.bondColor( null, 1, this.getColorParams() ),
             bSet.bondRadius( null, null, this.radius, this.scale ),
-            bSet.bondColor( null, 0, "picking" ),
-            bSet.bondColor( null, 1, "picking" ),
+            bSet.bondPickingColor( null, 0 ),
+            bSet.bondPickingColor( null, 1 ),
             {
                 shift: 0,
                 cap: true,
@@ -34828,7 +36414,8 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
                 side: this.side,
                 opacity: opacity,
                 nearClip: this.nearClip,
-                flatShaded: this.flatShaded
+                flatShaded: this.flatShaded,
+                dullInterior: true
             },
             this.disableImpostor
         );
@@ -34907,8 +36494,12 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            cylinderData[ "color" ] = bSet.bondColor( null, 0, this.color );
-            cylinderData[ "color2" ] = bSet.bondColor( null, 1, this.color );
+            cylinderData[ "color" ] = bSet.bondColor(
+                null, 0, this.getColorParams()
+            );
+            cylinderData[ "color2" ] = bSet.bondColor(
+                null, 1, this.getColorParams()
+            );
 
         }
 
@@ -34947,6 +36538,14 @@ NGL.DistanceRepresentation.prototype = NGL.createObject(
         );
 
         return this;
+
+    },
+
+    clear: function(){
+
+        if( this.bondSet ) this.bondSet.dispose();
+
+        NGL.StructureRepresentation.prototype.clear.call( this );
 
     }
 
@@ -35022,8 +36621,8 @@ NGL.TrajectoryRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
-
-        p.color = p.color || 0xDDDDDD;
+        p.colorScheme = p.colorScheme || "uniform";
+        p.colorValue = p.colorValue || 0xDDDDDD;
 
         this.drawLine = p.drawLine || true;
         this.drawCylinder = p.drawCylinder || false;
@@ -35079,7 +36678,7 @@ NGL.TrajectoryRepresentation.prototype = NGL.createObject(
         this.trajectory.getPath( index, function( path ){
 
             var n = path.length / 3;
-            var tc = new THREE.Color( scope.color );
+            var tc = new THREE.Color( scope.colorValue );
 
             if( scope.drawSphere ){
 
@@ -35094,7 +36693,8 @@ NGL.TrajectoryRepresentation.prototype = NGL.createObject(
                         side: scope.side,
                         opacity: opacity,
                         nearClip: scope.nearClip,
-                        flatShaded: scope.flatShaded
+                        flatShaded: scope.flatShaded,
+                        dullInterior: true
                     },
                     scope.disableImpostor
                 );
@@ -35121,7 +36721,8 @@ NGL.TrajectoryRepresentation.prototype = NGL.createObject(
                         side: this.side,
                         opacity: opacity,
                         nearClip: scope.nearClip,
-                        flatShaded: scope.flatShaded
+                        flatShaded: scope.flatShaded,
+                        dullInterior: true
                     },
                     this.disableImpostor
 
@@ -35187,7 +36788,13 @@ NGL.SurfaceRepresentation = function( surface, viewer, params ){
 
     NGL.Representation.call( this, surface, viewer, params );
 
-    this.surface = surface;
+    if( surface instanceof NGL.Volume ){
+        this.surface = undefined;
+        this.volume = surface;
+    }else{
+        this.surface = surface;
+        this.volume = undefined;
+    }
 
     this.build();
 
@@ -35244,8 +36851,9 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
     init: function( params ){
 
         var p = params || {};
+        p.colorScheme = p.colorScheme || "uniform";
+        p.colorValue = p.colorValue !== undefined ? p.colorValue : 0xDDDDDD;
 
-        this.color = p.color || 0xDDDDDD;
         this.isolevelType  = p.isolevelType !== undefined ? p.isolevelType : "sigma";
         this.isolevel = p.isolevel !== undefined ? p.isolevel : 2.0;
         this.smooth = p.smooth !== undefined ? p.smooth : 0;
@@ -35277,23 +36885,36 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
 
     prepare: function( callback ){
 
-        if( this.surface instanceof NGL.Volume ){
+        if( this.volume ){
 
             var isolevel;
 
             if( this.isolevelType === "sigma" ){
+                isolevel = this.volume.getValueForSigma( this.isolevel );
+            }else{
+                isolevel = this.isolevel;
+            }
 
-                isolevel = this.surface.getIsolevelForSigma( this.isolevel );
+            if( !this.surface ||
+                this.__isolevel !== isolevel ||
+                this.__smooth !== this.smooth
+            ){
+
+                this.__isolevel = isolevel;
+                this.__smooth = this.smooth;
+
+                this.volume.getSurfaceWorker(
+                    isolevel, this.smooth, function( surface ){
+                        this.surface = surface;
+                        callback();
+                    }.bind( this )
+                );
 
             }else{
 
-                isolevel = this.isolevel;
+                callback();
 
             }
-
-            this.surface.generateSurfaceWorker(
-                isolevel, this.smooth, callback
-            );
 
         }else{
 
@@ -35306,7 +36927,8 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
     create: function(){
 
         var position = this.surface.getPosition();
-        var color = this.surface.getColor( this.color );
+        var color = this.surface.getColor( this.getColorParams() );
+        var pickingColor = undefined;  // this.surface.getPickingColor( this.getColorParams() );
         var normal = this.surface.getNormal();
         var index = this.surface.getIndex();
 
@@ -35315,7 +36937,7 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
         if( this.transparent && this.side === THREE.DoubleSide ){
 
             var frontBuffer = new NGL.SurfaceBuffer(
-                position, color, index, normal, undefined,
+                position, color, index, normal, pickingColor,
                 {
                     background: this.background,
                     wireframe: this.wireframe,
@@ -35325,12 +36947,13 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
                     side: THREE.FrontSide,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 }
             );
 
             var backBuffer = new NGL.SurfaceBuffer(
-                position, color, index, normal, undefined,
+                position, color, index, normal, pickingColor,
                 {
                     background: this.background,
                     wireframe: this.wireframe,
@@ -35340,7 +36963,8 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
                     side: THREE.BackSide,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 }
             );
 
@@ -35349,7 +36973,7 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
         }else{
 
             var surfaceBuffer = new NGL.SurfaceBuffer(
-                position, color, index, normal, undefined,
+                position, color, index, normal, pickingColor,
                 {
                     background: this.background,
                     wireframe: this.wireframe,
@@ -35359,7 +36983,8 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
                     side: this.side,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 }
             );
 
@@ -35377,7 +37002,9 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            surfaceData[ "color" ] = this.surface.getColor( this.color );
+            surfaceData[ "color" ] = this.surface.getColor(
+                this.getColorParams()
+            );
 
         }
 
@@ -35392,14 +37019,14 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
     setParameters: function( params, what, rebuild ){
 
         if( params && params[ "isolevelType" ] !== undefined &&
-            this.surface instanceof NGL.Volume
+            this.volume
         ){
 
             if( this.isolevelType === "value" &&
                 params[ "isolevelType" ] === "sigma"
             ){
 
-                this.isolevel = this.surface.getSigmaForIsolevel(
+                this.isolevel = this.volume.getSigmaForValue(
                     this.isolevel
                 );
 
@@ -35407,7 +37034,7 @@ NGL.SurfaceRepresentation.prototype = NGL.createObject(
                 params[ "isolevelType" ] === "value"
             ){
 
-                this.isolevel = this.surface.getIsolevelForSigma(
+                this.isolevel = this.volume.getValueForSigma(
                     this.isolevel
                 );
 
@@ -35432,7 +37059,13 @@ NGL.DotRepresentation = function( surface, viewer, params ){
 
     NGL.Representation.call( this, surface, viewer, params );
 
-    this.surface = surface;
+    if( surface instanceof NGL.Volume ){
+        this.surface = undefined;
+        this.volume = surface;
+    }else{
+        this.surface = surface;
+        this.volume = undefined;
+    }
 
     this.build();
 
@@ -35448,11 +37081,19 @@ NGL.DotRepresentation.prototype = NGL.createObject(
 
     parameters: Object.assign( {
 
-        minValue: {
+        thresholdType: {
+            type: "select", rebuild: true, options: {
+                "value": "value", "sigma": "sigma"
+            }
+        },
+        thresholdMin: {
             type: "number", precision: 3, max: 1000, min: -1000, rebuild: true
         },
-        maxValue: {
+        thresholdMax: {
             type: "number", precision: 3, max: 1000, min: -1000, rebuild: true
+        },
+        thresholdOut: {
+            type: "boolean", rebuild: true
         },
         dotType: {
             type: "select", rebuild: true, options: {
@@ -35465,6 +37106,7 @@ NGL.DotRepresentation.prototype = NGL.createObject(
             type: "select", options: {
                 "": "",
                 "value": "value",
+                "abs-value": "abs-value",
                 "value-min": "value-min",
                 "deviation": "deviation",
                 "size": "size"
@@ -35475,6 +37117,9 @@ NGL.DotRepresentation.prototype = NGL.createObject(
         },
         scale: {
             type: "number", precision: 3, max: 10.0, min: 0.001
+        },
+        sort: {
+            type: "boolean", rebuild: true
         },
         sphereDetail: {
             type: "integer", max: 3, min: 0, rebuild: "impostor"
@@ -35490,13 +37135,28 @@ NGL.DotRepresentation.prototype = NGL.createObject(
             type: "number", precision: 1, max: 1, min: 0, uniform: true
         }
 
-    }, NGL.Representation.prototype.parameters ),
+    }, NGL.Representation.prototype.parameters, {
+
+        colorScheme: {
+            type: "select", update: "color", options: {
+                "": "",
+                "value": "value",
+                "uniform": "uniform",
+                // "value-min": "value-min",
+                // "deviation": "deviation",
+                // "size": "size"
+            }
+        },
+
+    } ),
 
     defaultSize: 0.1,
 
     init: function( params ){
 
         var p = params || {};
+        p.colorScheme = p.colorScheme || "uniform";
+        p.colorValue = p.colorValue || 0xDDDDDD;
 
         this.disableImpostor = p.disableImpostor || false;
 
@@ -35510,13 +37170,14 @@ NGL.DotRepresentation.prototype = NGL.createObject(
             this.sphereDetail = p.sphereDetail || 1;
         }
 
-        this.color = p.color || 0xDDDDDD;
-        // this.minValue = p.minValue !== undefined ? p.minValue : -Infinity;
-        this.minValue = p.minValue !== undefined ? p.minValue : NaN;
-        this.maxValue = p.maxValue !== undefined ? p.maxValue : Infinity;
+        this.thresholdType  = p.thresholdType !== undefined ? p.thresholdType : "sigma";
+        this.thresholdMin = p.thresholdMin !== undefined ? p.thresholdMin : 2.0;
+        this.thresholdMax = p.thresholdMax !== undefined ? p.thresholdMax : Infinity;
+        this.thresholdOut = p.thresholdOut !== undefined ? p.thresholdOut : false;
         this.dotType = p.dotType !== undefined ? p.dotType : "point";
         this.radius = p.radius !== undefined ? p.radius : 0.1;
         this.scale = p.scale !== undefined ? p.scale : 1.0;
+        this.sort = p.sort !== undefined ? p.sort : false;
         this.transparent = p.transparent !== undefined ? p.transparent : false;
         this.side = p.side !== undefined ? p.side : THREE.DoubleSide;
         this.opacity = p.opacity !== undefined ? p.opacity : 1.0;
@@ -35541,24 +37202,54 @@ NGL.DotRepresentation.prototype = NGL.createObject(
 
     create: function(){
 
-        this.surface.filterData( this.minValue, this.maxValue );
+        var position, color, size, pickingColor;
+
+        if( this.volume ){
+
+            var thresholdMin, thresholdMax;
+
+            if( this.thresholdType === "sigma" ){
+                thresholdMin = this.volume.getValueForSigma( this.thresholdMin );
+                thresholdMax = this.volume.getValueForSigma( this.thresholdMax );
+            }else{
+                thresholdMin = this.thresholdMin;
+                thresholdMax = this.thresholdMax;
+            }
+            this.volume.filterData( thresholdMin, thresholdMax, this.thresholdOut );
+
+            position = this.volume.getDataPosition();
+            color = this.volume.getDataColor( this.getColorParams() );
+            size = this.volume.getDataSize( this.radius, this.scale );
+            pickingColor = this.volume.getPickingDataColor( this.getColorParams() );
+
+        }else{
+
+            position = this.surface.getPosition();
+            color = this.surface.getColor( this.getColorParams() );
+            size = this.surface.getSize( this.radius, this.scale );
+            pickingColor = this.surface.getPickingColor( this.getColorParams() );
+
+        }
+
+
 
         var opacity = this.transparent ? this.opacity : 1.0;
 
         if( this.dotType === "sphere" ){
 
             this.dotBuffer = new NGL.SphereBuffer(
-                this.surface.getDataPosition(),
-                this.surface.getDataColor( this.color ),
-                this.surface.getDataSize( this.radius, this.scale ),
-                undefined,
+                position,
+                color,
+                size,
+                pickingColor,
                 {
                     sphereDetail: this.sphereDetail,
                     transparent: this.transparent,
                     side: this.side,
                     opacity: opacity,
                     nearClip: this.nearClip,
-                    flatShaded: this.flatShaded
+                    flatShaded: this.flatShaded,
+                    dullInterior: false
                 },
                 this.disableImpostor
             );
@@ -35566,12 +37257,12 @@ NGL.DotRepresentation.prototype = NGL.createObject(
         }else{
 
             this.dotBuffer = new NGL.PointBuffer(
-                this.surface.getDataPosition(),
-                this.surface.getDataColor( this.color ),
+                position,
+                color,
                 {
                     pointSize: this.radius,
                     sizeAttenuation: true,  // this.sizeAttenuation,
-                    sort: false,  // this.sort,
+                    sort: this.sort,
                     transparent: true,  // this.transparent,
                     opacity: opacity,
                     nearClip: this.nearClip
@@ -35592,15 +37283,37 @@ NGL.DotRepresentation.prototype = NGL.createObject(
 
         if( what[ "color" ] ){
 
-            dotData[ "color" ] = this.surface.getDataColor( this.color );
+            if( this.volume ){
+
+                dotData[ "color" ] = this.volume.getDataColor(
+                    this.getColorParams()
+                );
+
+            }else{
+
+                dotData[ "color" ] = this.surface.getColor(
+                    this.getColorParams()
+                );
+
+            }
 
         }
 
         if( this.dotType === "sphere" && ( what[ "radius" ] || what[ "scale" ] ) ){
 
-            dotData[ "radius" ] = this.surface.getDataSize(
-                this.radius, this.scale
-            );
+            if( this.volume ){
+
+                dotData[ "radius" ] = this.volume.getDataSize(
+                    this.radius, this.scale
+                );
+
+            }else{
+
+                dotData[ "radius" ] = this.surface.getSize(
+                    this.radius, this.scale
+                );
+
+            }
 
         }
 
@@ -35611,6 +37324,38 @@ NGL.DotRepresentation.prototype = NGL.createObject(
     setParameters: function( params, what, rebuild ){
 
         what = what || {};
+
+        if( params && params[ "thresholdType" ] !== undefined &&
+            this.volume instanceof NGL.Volume
+        ){
+
+            if( this.thresholdType === "value" &&
+                params[ "thresholdType" ] === "sigma"
+            ){
+
+                this.thresholdMin = this.volume.getSigmaForValue(
+                    this.thresholdMin
+                );
+                this.thresholdMax = this.volume.getSigmaForValue(
+                    this.thresholdMax
+                );
+
+            }else if( this.thresholdType === "sigma" &&
+                params[ "thresholdType" ] === "value"
+            ){
+
+                this.thresholdMin = this.volume.getValueForSigma(
+                    this.thresholdMin
+                );
+                this.thresholdMax = this.volume.getValueForSigma(
+                    this.thresholdMax
+                );
+
+            }
+
+            this.thresholdType = params[ "thresholdType" ];
+
+        }
 
         if( params && params[ "radiusType" ] !== undefined ){
 
@@ -35722,6 +37467,10 @@ NGL.Stage = function( eid ){
         componentRemoved: new SIGNALS.Signal(),
 
         atomPicked: new SIGNALS.Signal(),
+        bondPicked: new SIGNALS.Signal(),
+        volumePicked: new SIGNALS.Signal(),
+        nothingPicked: new SIGNALS.Signal(),
+        onPicking: new SIGNALS.Signal(),
 
         requestTheme: new SIGNALS.Signal(),
 
@@ -36178,7 +37927,7 @@ NGL.Stage.prototype = {
 
 NGL.PickingControls = function( viewer, stage ){
 
-    var v3 = new THREE.Vector3();
+    var position = new THREE.Vector3();
 
     var mouse = {
 
@@ -36229,42 +37978,99 @@ NGL.PickingControls = function( viewer, stage ){
             offsetX,
             box.height - offsetY
         );
-        var id = pickingData.id;
+        var gid = pickingData.gid;
         var instance = pickingData.instance;
 
-        // TODO early exit, binary search
         var pickedAtom = undefined;
-        stage.eachComponent( function( o ){
+        var pickedBond = undefined;
+        var pickedVolume = undefined;
 
-            o.structure.eachAtom( function( a ){
+        var picked = NGL.GidPool.getByGid( gid );
 
-                if( a.globalindex === ( id - 1 ) ){
-                    pickedAtom = a;
-                }
+        if( picked instanceof NGL.Atom || picked instanceof NGL.ProxyAtom ){
 
-            } );
+            pickedAtom = picked;
 
-        }, NGL.StructureComponent );
+        }else if( picked instanceof NGL.Bond ){
 
-        if( pickedAtom && e.which === NGL.MiddleMouseButton ){
+            pickedBond = picked;
 
-            v3.copy( pickedAtom );
+        }else if( picked && picked.volume instanceof NGL.Volume ){
 
-            if( instance ){
-
-                // var structure = pickedAtom.residue.chain.model.structure;
-                // var biomol = structure.biomolDict[ instance.assembly ];
-                // var matrix = biomol.matrixDict[ instance.name ];
-
-                v3.applyProjection( instance.matrix );
-
-            }
-
-            viewer.centerView( false, v3 );
+            pickedVolume = picked;
 
         }
 
-        stage.signals.atomPicked.dispatch( pickedAtom );
+        //
+
+        if( ( pickedAtom || pickedBond || pickedVolume ) &&
+                e.which === NGL.MiddleMouseButton
+        ){
+
+            if( pickedAtom ){
+
+                position.copy( pickedAtom );
+
+            }else if( pickedBond ){
+
+                position.set( 0, 0, 0 )
+                    .addVectors( pickedBond.atom1, pickedBond.atom2 )
+                    .multiplyScalar( 0.5 );
+
+            }else if( pickedVolume ){
+
+                position.copy( pickedVolume );
+
+            }
+
+            if( instance ){
+
+                position.applyProjection( instance.matrix );
+
+            }
+
+            viewer.centerView( false, position );
+
+        }
+
+        //
+
+        if( pickedAtom ){
+
+            stage.signals.atomPicked.dispatch( pickedAtom );
+
+        }else if( pickedBond ){
+
+            stage.signals.bondPicked.dispatch( pickedBond );
+
+        }else if( pickedVolume ){
+
+            stage.signals.volumePicked.dispatch( pickedVolume );
+
+        }else{
+
+            stage.signals.nothingPicked.dispatch();
+
+        }
+
+        stage.signals.onPicking.dispatch( {
+
+            "atom": pickedAtom,
+            "bond": pickedBond,
+            "volume": pickedVolume,
+            "instance": instance
+
+        } );
+
+        //
+
+        if( NGL.debug ){
+
+            NGL.log( "picked atom", pickedAtom );
+            NGL.log( "picked bond", pickedBond );
+            NGL.log( "picked volume", pickedVolume );
+
+        }
 
     } );
 
@@ -37127,7 +38933,6 @@ NGL.RepresentationComponent.prototype = NGL.createObject(
 
     signals: Object.assign( {
 
-        colorChanged: null,
         parametersChanged: null,
 
     }, NGL.Component.prototype.signals ),
@@ -37247,7 +39052,6 @@ NGL.RepresentationComponent.prototype = NGL.createObject(
     setColor: function( value ){
 
         this.repr.setColor( value );
-        this.signals.colorChanged.dispatch( this.repr.color );
 
         return this;
 
@@ -37810,7 +39614,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "cartoon", {
 
-                    color: new THREE.Color().setRGB( 0.5, 0.75, 1 ).getHex(),
+                    color: "rgb( 127, 191, 255 )",
                     sele: ":A or :AA or :I or :N or :CA or :F or :V or :DA or :J or :SA or :U or :JA or :S or :GA or :H or :O or :G or :OP or :K or :Q or :C or :E or :OA or :TA or :M or :L or :B or :HA or :R or :W or :MA or :NA or :QA or :P or :KA or :Z or :LA or :KA or :X or :FA or :T or :IA or :BA or :IA or :Y or :D or :RA or :EA",
                     name: "60S"
 
@@ -37818,7 +39622,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "cartoon", {
 
-                    color: new THREE.Color().setRGB( 1, 1, 0.5 ).getHex(),
+                    color: "rgb( 255, 255, 127 )",
                     sele: ":XA or :QB or :XB or :RB or :BB or :HB or :DB or :EC or :NB or :BC or :VB or :WB or :EB or :OB or :KB or :IB or :AB or :TB or :FB or :SB or :PB or :YA or :UB or :LB or :MB or :ZA or :CC or :CB or :JB or :GB or :ZB or :PA or :DC or :YB or :AC",
                     name: "40S"
 
@@ -37826,7 +39630,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "spacefill", {
 
-                    color: new THREE.Color().setRGB( 1, 0.5, 1 ).getHex(),
+                    color: "rgb( 255, 127, 255 )",
                     sele: ":WA",
                     name: "IRES"
 
@@ -37834,7 +39638,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "spacefill", {
 
-                    color: new THREE.Color().setRGB( 0.2, 1, 0.2 ).getHex(),
+                    color: "rgb( 51, 255, 51 )",
                     sele: ":UA",
                     name: "tRNA"
 
@@ -37842,7 +39646,7 @@ NGL.Examples = {
 
                 o.addRepresentation( "spacefill", {
 
-                    color: new THREE.Color().setRGB( 1, 0, 0 ).getHex(),
+                    color: "rgb( 255, 0, 0 )",
                     sele: ":VA",
                     name: "EIF5B"
 
@@ -38049,6 +39853,34 @@ NGL.Examples = {
 
         },
 
+        "largeCapsid": function( stage ){
+
+            stage.loadFile( "data://1M4X.cif", function( o ){
+
+                o.addRepresentation( "ribbon", {
+                    quality: "custom",
+                    subdiv: 4,
+                    colorScheme: "chainindex",
+                    flatShaded: true,
+                    scale: 4
+                } );
+
+                o.addRepresentation( "spacefill", {
+                    scale: 1.5,
+                    sele: "CYS"
+                } );
+
+                stage.setOrientation( [
+                    [106.13855387207457,168.29837433056917,39.41757017002202],
+                    [-0.08524916187307008,-0.1476908817966636,0.9853527205189371],
+                    [-370.2980687321651,-677.1146027986514,-106.14535249654159],
+                    [5.201234901226486,-3.7482553715267244,4.897403343961378]
+                ] );
+
+            } );
+
+        },
+
         "surface": function( stage ){
 
             stage.loadFile( "data://1crn.pdb", function( o ){
@@ -38222,14 +40054,16 @@ NGL.Examples = {
             stage.loadFile( "data://3j3y.cif.gz", {
                 onLoad: function( o ){
 
-                    o.addRepresentation( "point", {
-                        color: "chainindex", pointSize: 7, sizeAttenuation: true,
-                        sort: false
+                    o.addRepresentation( "surface", {
+                        surfaceType: "ms",
+                        smooth: 2,
+                        probeRadius: 4,
+                        scaleFactor: 0.3,
+                        lowResolution: true,
+                        colorScheme: "chainindex"
                     } );
-                    // o.addRepresentation( "ribbon", {
-                    //     color: "chainindex"
-                    // } );
-                    o.centerView();
+
+                    stage.centerView();
 
                 },
                 cAlphaOnly: true
@@ -38328,7 +40162,14 @@ NGL.Examples = {
 
             stage.loadFile( "data://3pqr.ccp4.gz", function( o ){
 
-                o.addRepresentation( "surface", { wireframe: true } );
+                o.addRepresentation( "surface", {
+                    wireframe: true,
+                    visible: false
+                } );
+                o.addRepresentation( "dot", {
+                    dotType: "sphere",
+                    radius: 0.3
+                } );
                 o.centerView();
 
             } );
@@ -38366,13 +40207,25 @@ NGL.Examples = {
 
         "molsurf": function( stage ){
 
-            stage.loadFile( "data://3dqb.pdb", function( o ){
+            // stage.loadFile( "data://acrolein.pdb", function( o ){
+            // stage.loadFile( "data://1crn.pdb", function( o ){
+            stage.loadFile( "data://3pqr.pdb", function( o ){
             // stage.loadFile( "data://3sn6.pdb", function( o ){
             // stage.loadFile( "data://3l5q.pdb", function( o ){
 
                 o.addRepresentation( "licorice", {} );
                 o.addRepresentation( "spacefill" );
-                o.addRepresentation( "surface" );
+                o.addRepresentation( "surface", {
+                    surfaceType: "ms",
+                    smooth: 2,
+                    probeRadius: 1.4,
+                    scaleFactor: 2.0,
+                    flatShaded: false,
+                    transparent: true,
+                    opacity: 0.8,
+                    lowResolution: false,
+                    colorScheme: "element"
+                } );
                 stage.centerView();
 
             } );
@@ -38499,7 +40352,7 @@ NGL.Examples = {
 
         "selectionColoring": function( stage ){
 
-            var schemeId = NGL.ColorFactory.addSelectionScheme( [
+            var schemeId = NGL.ColorMakerRegistry.addSelectionScheme( [
                 [ "red", "64-74 or 134-154 or 222-254 or 310-310 or 322-326" ],
                 [ "green", "311-322" ],
                 [ "yellow", "40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309" ],
@@ -38612,6 +40465,68 @@ NGL.Examples = {
 
             } );
 
+        },
+
+        "apbs": function( stage ){
+
+            stage.loadFile( "data://1crn_apbs.pqr", function( o ){
+
+                o.addRepresentation( "cartoon", {
+                    colorScheme: "bfactor",
+                    colorScale: "rwb",
+                    colorDomain: [ -1, 0, 1 ]
+                } );
+                o.addRepresentation( "licorice", {
+                    colorScheme: "bfactor",
+                    colorScale: "rwb",
+                    colorDomain: [ -1, 0, 1 ]
+                } );
+
+                o.centerView();
+
+            } );
+
+            stage.loadFile( "data://1crn_apbs_pot.dx.gz", function( o ){
+
+                o.addRepresentation( "dot", {
+                    thresholdType: "value",
+                    thresholdMin: -5,
+                    thresholdMax: 5,
+                    thresholdOut: true,
+                    dotType: "sphere",
+                    radius: "abs-value",
+                    scale: 0.001,
+                    visible: true,
+                    colorScheme: "value",
+                    colorScale: "rwb"
+                } );
+
+                o.addRepresentation( "surface", {
+                    isolevelType: "value",
+                    isolevel: -0.4,
+                    smooth: 1,
+                    color: "red",
+                    transparent: true,
+                    opacity: 0.6,
+                    side: THREE.BackSide,
+                    opaqueBack: false
+                } );
+
+                o.addRepresentation( "surface", {
+                    isolevelType: "value",
+                    isolevel: 0.4,
+                    smooth: 1,
+                    color: "blue",
+                    transparent: true,
+                    opacity: 0.6,
+                    side: THREE.FrontSide,
+                    opaqueBack: false
+                } );
+
+                stage.centerView();
+
+            } );
+
         }
 
     }
@@ -38656,7 +40571,7 @@ NGL.Resources[ '../shader/Mesh.vert'] = "\nvarying vec4 cameraPos;\n\n#ifdef PIC
 
 // File:shader/Mesh.frag
 
-NGL.Resources[ '../shader/Mesh.frag'] = "\n#ifdef FLAT_SHADED\n    #extension GL_OES_standard_derivatives : enable\n#endif\n\nuniform float opacity;\nuniform float nearClip;\n\nvarying vec4 cameraPos;\n\n#ifdef PICKING\n    uniform float objectId;\n    varying vec3 vPickingColor;\n#else\n    varying vec3 vColor;\n    varying vec3 vNormal;\n#endif\n\n#include light_params\n\n#include fog_params\n\n\nvoid main()\n{\n\n    #ifdef NEAR_CLIP\n        if( dot( cameraPos, vec4( 0.0, 0.0, 1.0, nearClip ) ) > 0.0 )\n            discard;\n    #endif\n\n    #ifdef PICKING\n\n        gl_FragColor = vec4( vPickingColor, objectId );\n\n    #else\n\n        #ifdef FLAT_SHADED\n            vec3 fdx = dFdx( cameraPos.xyz );\n            vec3 fdy = dFdy( cameraPos.xyz );\n            vec3 normal = normalize( cross( fdx, fdy ) );\n        #else\n            vec3 normal = normalize( vNormal );\n        #endif\n\n        vec3 transformedNormal = normalize( normal );\n        #ifndef FLAT_SHADED\n            #ifdef DOUBLE_SIDED\n                transformedNormal = transformedNormal * ( -1.0 + 2.0 * float( gl_FrontFacing ) );\n            #endif\n            #ifdef FLIP_SIDED\n                transformedNormal = -transformedNormal;\n            #endif\n        #endif\n\n        vec3 vLightFront = vec3( 0.0, 0.0, 0.0 );\n\n        #ifndef NOLIGHT\n            #include light\n        #endif\n\n        #ifdef OPAQUE_BACK\n            #ifdef FLIP_SIDED\n                if( float( gl_FrontFacing ) == 1.0 ){\n                    gl_FragColor = vec4( vColor, 1.0 );\n                }else{\n                    gl_FragColor = vec4( vColor, opacity );\n                }\n            #else\n                if( float( gl_FrontFacing ) == 1.0 ){\n                    gl_FragColor = vec4( vColor, opacity );\n                }else{\n                    gl_FragColor = vec4( vColor, 1.0 );\n                }\n            #endif\n        #else\n            gl_FragColor = vec4( vColor, opacity );\n        #endif\n\n        #ifndef NOLIGHT\n            gl_FragColor.rgb *= vLightFront;\n        #endif\n\n    #endif\n\n    #include fog\n\n}\n";
+NGL.Resources[ '../shader/Mesh.frag'] = "\n#ifdef FLAT_SHADED\n    #extension GL_OES_standard_derivatives : enable\n#endif\n\nuniform float opacity;\nuniform float nearClip;\n\nvarying vec4 cameraPos;\n\n#ifdef PICKING\n    uniform float objectId;\n    varying vec3 vPickingColor;\n#else\n    varying vec3 vColor;\n    varying vec3 vNormal;\n#endif\n\n#include light_params\n\n#include fog_params\n\n\nvoid main()\n{\n\n    #ifdef NEAR_CLIP\n        if( dot( cameraPos, vec4( 0.0, 0.0, 1.0, nearClip ) ) > 0.0 )\n            discard;\n    #endif\n\n    #ifdef PICKING\n\n        gl_FragColor = vec4( vPickingColor, objectId );\n\n    #else\n\n        #ifdef FLAT_SHADED\n            vec3 fdx = dFdx( cameraPos.xyz );\n            vec3 fdy = dFdy( cameraPos.xyz );\n            vec3 normal = normalize( cross( fdx, fdy ) );\n        #else\n            vec3 normal = normalize( vNormal );\n        #endif\n\n        vec3 transformedNormal = normalize( normal );\n        #ifndef FLAT_SHADED\n            #ifdef DOUBLE_SIDED\n                transformedNormal = transformedNormal * ( -1.0 + 2.0 * float( gl_FrontFacing ) );\n            #endif\n            #ifdef FLIP_SIDED\n                transformedNormal = -transformedNormal;\n            #endif\n        #endif\n\n        #ifdef DULL_INTERIOR\n            if( !gl_FrontFacing ){\n                transformedNormal = vec3( 0.0, 0.0, 0.4 );\n            }\n        #endif\n\n        vec3 vLightFront = vec3( 0.0, 0.0, 0.0 );\n\n        #ifndef NOLIGHT\n            #include light\n        #endif\n\n        #ifdef OPAQUE_BACK\n            #ifdef FLIP_SIDED\n                if( float( gl_FrontFacing ) == 1.0 ){\n                    gl_FragColor = vec4( vColor, 1.0 );\n                }else{\n                    gl_FragColor = vec4( vColor, opacity );\n                }\n            #else\n                if( float( gl_FrontFacing ) == 1.0 ){\n                    gl_FragColor = vec4( vColor, opacity );\n                }else{\n                    gl_FragColor = vec4( vColor, 1.0 );\n                }\n            #endif\n        #else\n            gl_FragColor = vec4( vColor, opacity );\n        #endif\n\n        #ifndef NOLIGHT\n            gl_FragColor.rgb *= vLightFront;\n        #endif\n\n    #endif\n\n    #include fog\n\n}\n";
 
 // File:shader/ParticleSprite.vert
 
