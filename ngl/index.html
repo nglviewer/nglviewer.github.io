@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>NGL @ arose.github.io</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/dark.css" id="theme" />
+
+</head>
+
+<body>
+
+    <script src="js/build/ngl.full.min.js"></script>
+
+    <!-- EXTRA -->
+    <script src="js/extra/examples.js"></script>
+
+    <script>
+
+        if( !Detector.webgl ) Detector.addGetWebGLMessage();
+
+        NGL.mainScriptFilePath = "js/build/ngl.full.min.js";
+        NGL.cssDirectory = "css/";
+        NGL.assetsDirectory = "";
+
+        // Datasources
+
+        NGL.DatasourceRegistry.add(
+            "data", new NGL.StaticDatasource( "data/" )
+        );
+
+        // Plugins
+
+        NGL.PluginRegistry.add(
+            "apbs", "plugins/apbs.plugin"
+        );
+
+        //
+
+        function onInit(){
+            var stage = new NGL.Stage();
+            NGL.StageWidget( stage );
+
+            var example = NGL.GET( "example" );
+            if( example ) NGL.ExampleRegistry.load( example, stage );
+
+            var load = NGL.GET( "load" );
+            if( load ) stage.loadFile( load, { defaultRepresentation: true } );
+
+            var plugin = NGL.GET( "plugin" );
+            if( plugin ) NGL.PluginRegistry.load( plugin, stage );
+        }
+
+        document.addEventListener( "DOMContentLoaded", function(){
+            NGL.init( onInit );
+        } );
+
+    </script>
+
+</body>
+
+</html>
