@@ -10,27 +10,13 @@ var list = {
             [ "File formats", "manual/usage/File-formats" ],
             [ "Molecular representations", "manual/usage/Molecular-representations" ],
             [ "User interface", "manual/usage/User-interface" ],
-            // [ "Trajectory access", "manual/usage/Trajectory-access" ],
             // [ "Scripting", "manual/usage/Scripting" ],
             [ "Embedding", "manual/usage/Embedding" ]
-        ],
-        "Deployment": [
-            [ "Browser", "manual/deployment/Browser" ],
-            [ "Installation", "manual/deployment/Installation" ],
-            [ "Webserver", "manual/deployment/Webserver" ],
-            [ "Filesystem", "manual/deployment/Filesystem" ]
         ],
         // "Methods": [
         //     [ "Processing", "manual/methods/Processing" ],
         //     [ "Rendering", "manual/methods/Rendering" ]
-        // ],
-        "Development": [
-            [ "Repository", "manual/development/Repository" ],
-            [ "Unittest", "manual/development/Unittest" ],
-            [ "Benchmark", "manual/development/Benchmark" ],
-            [ "Font", "manual/development/Font" ],
-            [ "Acknowledgment", "manual/development/Acknowledgment" ]
-        ]
+        // ]
     },
 
     "API reference": {
