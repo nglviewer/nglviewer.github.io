@@ -1144,6 +1144,51 @@ NGL.ExampleRegistry.addDict( {
 
         } );
 
+    },
+
+    "dcd": function( stage ){
+
+        stage.loadFile( "data://ala3.pdb" ).then( function( o ){
+
+            o.addRepresentation( "licorice" );
+            o.addRepresentation( "cartoon", { sele: "protein" } );
+            o.centerView();
+
+            NGL.autoLoad( "data://ala3.dcd" ).then( function( frames ){
+
+                o.addTrajectory( frames )
+                    .setParameters( {
+                        "centerPbc": false,
+                        "removePbc": false,
+                        "superpose": true
+                    } );
+
+            } );
+
+        } );
+
+    },
+
+    "dcd2": function( stage ){
+
+        stage.loadFile( "data://md_1u19.gro" ).then( function( o ){
+
+            o.addRepresentation( "cartoon" );
+            o.centerView();
+
+            NGL.autoLoad( "data://md_1u19.dcd.gz" ).then( function( frames ){
+
+                o.addTrajectory( frames )
+                    .setParameters( {
+                        "centerPbc": false,
+                        "removePbc": false,
+                        "superpose": true
+                    } );
+
+            } );
+
+        } );
+
     }
 
 } );
