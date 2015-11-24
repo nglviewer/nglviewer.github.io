@@ -563,7 +563,7 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://1crn.pdb" ).then( function( o ){
 
-            o.addRepresentation( "tube", { radius: "ss" } );
+            o.addRepresentation( "tube", { radius: "sstruc" } );
             o.addRepresentation( "ball+stick", { sele: "sidechainAttached" } );
             o.addRepresentation( "label", {
                 sele: ".CA", color: "element"
@@ -587,7 +587,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://3SN6.cif" ).then( function( o ){
         // stage.loadFile( "data://1CRN.cif", function( o ){
 
-            o.addRepresentation( "cartoon", { radius: "ss" } );
+            o.addRepresentation( "cartoon", { radius: "sstruc" } );
             // o.addRepresentation( "ball+stick", { sele: "sidechainAttached" } );
             o.centerView();
 
@@ -1143,6 +1143,60 @@ NGL.ExampleRegistry.addDict( {
             stage.centerView();
 
         } );
+
+    },
+
+    "dcd": function( stage ){
+
+        stage.loadFile( "data://ala3.pdb" ).then( function( o ){
+
+            o.addRepresentation( "licorice" );
+            o.addRepresentation( "cartoon", { sele: "protein" } );
+            o.centerView();
+
+            var framesPromise = NGL.autoLoad( "data://ala3.dcd" );
+            o.addTrajectory( framesPromise );
+
+            // FIXME
+            // .setParameters( {
+            //     "centerPbc": false,
+            //     "removePbc": false,
+            //     "superpose": true
+            // } );
+
+        } );
+
+    },
+
+    "dcd2": function( stage ){
+
+        stage.loadFile( "data://md_1u19.gro" ).then( function( o ){
+
+            o.addRepresentation( "cartoon" );
+            o.centerView();
+
+            var framesPromise = NGL.autoLoad( "data://md_1u19.dcd.gz" );
+            o.addTrajectory( framesPromise );
+
+            // var framesPromise = NGL.autoLoad( "data://md_1u19.dcd.gz" )
+            //     .then( function( frames ){
+            //         o.addTrajectory( frames );
+            //     } )
+
+            // FIXME
+            // .setParameters( {
+            //     "centerPbc": false,
+            //     "removePbc": false,
+            //     "superpose": true
+            // } );
+
+        } );
+
+    },
+
+    "ferritin": function( stage ){
+
+        stage.loadFile( "data://ferritin/ferritin.ngl" );
 
     }
 
