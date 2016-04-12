@@ -25,8 +25,6 @@
 
     <script>
 
-        if( !Detector.webgl ) Detector.addGetWebGLMessage();
-
         NGL.mainScriptFilePath = "js/build/ngl.full.min.js";
         NGL.cssDirectory = "css/";
         NGL.assetsDirectory = "";
@@ -46,7 +44,7 @@
 
         //
 
-        function onInit(){
+        document.addEventListener( "DOMContentLoaded", function(){
             var stage = new NGL.Stage();
             NGL.StageWidget( stage );
 
@@ -58,10 +56,6 @@
 
             var plugin = NGL.GET( "plugin" );
             if( plugin ) NGL.PluginRegistry.load( plugin, stage );
-        }
-
-        document.addEventListener( "DOMContentLoaded", function(){
-            NGL.init( onInit );
         } );
 
     </script>

@@ -8,12 +8,13 @@ NGL.ExampleRegistry.addDict( {
     "gro_trajectory": function( stage ){
 
         stage.loadFile( "data://md_1u19_trj.gro", {
-            asTrajectory: true
+            asTrajectory: true,
+            sele: "50-100"
         } ).then( function( o ){
             o.addTrajectory();
             o.addRepresentation( "cartoon" );
-            o.addRepresentation( "helixorient" );
-            o.addRepresentation( "rope" );
+            // o.addRepresentation( "helixorient" );
+            // o.addRepresentation( "rope" );
             o.addRepresentation( "line", {
                 sele: "not hydrogen and sidechainAttached"
             } );
@@ -242,16 +243,9 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://1crn.pdb" ).then( function( o ){
 
-            var _disableImpostor = NGL.disableImpostor;
-
-            NGL.disableImpostor = true;
-            //o.addRepresentation( "spacefill", { sele: ":A" } );
-            o.addRepresentation( "ball+stick", { sele: "16" } );
-            // NGL.disableImpostor = _disableImpostor;
-            // o.addRepresentation( "spacefill", { sele: ":B" } );
-            // o.addRepresentation( "ball+stick", { sele: ":B" } );
-
-            o.centerView();
+            o.addRepresentation( "ball+stick", { sele: "16", disableImpostor: true } );
+            o.addRepresentation( "ball+stick", { sele: "not 16" } );
+            o.centerView( true, "16" );
 
         } );
 
@@ -277,7 +271,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", {
 
                 color: "rgb( 127, 191, 255 )",
-                sele: ":A2 or :A3 or :A4 or :AA or :AB or :AC or :AD or :AF or :AG or :AH or :AI or :AJ or :AK or :AL or :AM or :AN or :AO or :AP or :AQ or :AR or :AS or :AT or :AU or :AV or :AW or :AX or :AY or :AZ or :Aa or :Ab or :Ac or :Ad or :Ae or :Af or :Ag or :Ah or :Ai or :Aj or :Ak or :Al or :Am or :An or :Ao or :Ap or :Aq or :Ar or :As or :At or :Au",
+                sele: ":A2 or :A3 or :A4 or :AA or :AB or :AC or :AD or :AE or :AF or :AG or :AH or :AI or :AJ or :AK or :AL or :AM or :AN or :AO or :AP or :AQ or :AR or :AS or :AT or :AU or :AV or :AW or :AX or :AY or :AZ or :Aa or :Ab or :Ac or :Ad or :Ae or :Af or :Ag or :Ah or :Ai or :Aj or :Ak or :Al or :Am or :An or :Ao or :Ap or :Aq or :Ar or :As or :At or :Au",
                 name: "60S"
 
             } );
@@ -532,12 +526,14 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://3dqb.pdb" ).then( function( o ){
 
-            o.addRepresentation( "crossing", {
-                ssBorder: true, radius: 0.6
-            } );
-            o.addRepresentation( "rope", {
-                radius: 0.2
-            } );
+            // o.addRepresentation( "crossing", {
+            //     ssBorder: true, radius: 0.6
+            // } );
+            // o.addRepresentation( "rope", {
+            //     radius: 0.2
+            // } );
+            o.addRepresentation( "cartoon" );
+            o.addRepresentation( "helixorient" );
 
             o.centerView();
 
@@ -618,25 +614,14 @@ NGL.ExampleRegistry.addDict( {
 
         } );
 
-        stage.loadFile( "data://1CRN.cif.zip" ).then( function( o ){
+    },
 
-            o.addRepresentation( "licorice" );
-            o.centerView();
+    "rocket": function( stage ){
 
-        } );
+        stage.loadFile( "data://1crn.pdb" ).then( function( o ){
 
-        stage.loadFile( "data://1CRN.cif.lzma" ).then( function( o ){
-
-            o.addRepresentation( "rocket", {
-                opacity: 0.5
-            } );
-            o.centerView();
-
-        } );
-
-        stage.loadFile( "data://1CRN.cif.bz2" ).then( function( o ){
-
-            o.addRepresentation( "rope", { scale: 0.3 } );
+            o.addRepresentation( "cartoon" );
+            o.addRepresentation( "rocket" );
             o.centerView();
 
         } );
@@ -664,49 +649,6 @@ NGL.ExampleRegistry.addDict( {
 
     },
 
-    "kdtree": function( stage ){
-
-        // stage.loadFile( "data://3SN6.cif" ).then( function( o ){
-        // stage.loadFile( "data://4UJD.cif.gz" ).then( function( o ){
-        // stage.loadFile( "data://3l5q.pdb" ).then( function( o ){
-        stage.loadFile( "data://1crn.pdb" ).then( function( o ){
-
-            var centerSele = "@10";
-            var centerSelection = new NGL.Selection( centerSele );
-
-            o.addRepresentation( "cartoon", {
-                color: "chainindex"
-            } );
-            o.addRepresentation( "line" );
-            o.centerView( true, centerSele );
-
-            var kdtree = new NGL.Kdtree( o.structure );
-            var nearest = kdtree.nearest(
-                o.structure.getAtoms( centerSelection, true ), Infinity, 4
-            )
-
-            // NGL.log( kdtree );
-            // NGL.log( nearest );
-
-            var names = [];
-            nearest.forEach( function( atomDist ){
-                // names.push( atomDist.atom.qualifiedName( true ) );
-                names.push( "@" + atomDist.atom.globalindex );
-            } );
-
-            var contactSele = names.join( " OR " );
-            o.addRepresentation( "licorice", {
-                sele: contactSele
-            } );
-
-            o.addRepresentation( "spacefill", {
-                sele: centerSele, opacity: 0.5
-            } );
-
-        } );
-
-    },
-
     "contact": function( stage ){
 
         // stage.loadFile( "data://3SN6.cif" ).then( function( o ){
@@ -719,11 +661,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", {
                 colorScheme: "sstruc", flatShaded: true
             } );
-            o.addRepresentation( "ribbon", {
-                colorScheme: "sstruc", flatShaded: true
-            } );
             o.addRepresentation( "contact", { contactType: "polarBackbone" } );
-            o.addRepresentation( "trace" );
             o.addRepresentation( "line" );
             o.centerView();
 
@@ -767,27 +705,31 @@ NGL.ExampleRegistry.addDict( {
             } );
             o.centerView();
 
-            // var sphereBuffer = new NGL.SphereBuffer(
-            //     new Float32Array( [ 0, 0, 0 ] ),
-            //     new Float32Array( [ 1, 0, 0 ] ),
-            //     new Float32Array( [ 1 ] ),
-            //     undefined,
-            //     { flatShaded: true },
-            //     true
-            // );
-            // o.addBufferRepresentation( sphereBuffer );
+            var position = new THREE.Vector3();
+            function getCenterArray(){
+                var target = stage.viewer.controls.target;
+                var group = stage.viewer.rotationGroup.position;
+                position.copy( group ).negate().add( target );
+                return position.toArray()
+            }
 
-            // var position = new THREE.Vector3();
-            // stage.viewer.controls.addEventListener(
-            //     'change', function(){
-            //         var target = stage.viewer.controls.target;
-            //         var group = stage.viewer.rotationGroup.position;
-            //         position.copy( group ).negate().add( target );
-            //         sphereBuffer.setAttributes( {
-            //             "position": position.toArray(),
-            //         } );
-            //     }
-            // );
+            var sphereBuffer = new NGL.SphereBuffer(
+                new Float32Array( getCenterArray() ),
+                new Float32Array( [ 1, 0, 0 ] ),
+                new Float32Array( [ 1 ] ),
+                undefined,
+                { flatShaded: true },
+                true
+            );
+            o.addBufferRepresentation( sphereBuffer );
+
+            stage.viewer.controls.addEventListener(
+                'change', function(){
+                    sphereBuffer.setAttributes( {
+                        "position": getCenterArray(),
+                    } );
+                }
+            );
 
         } );
 
@@ -852,7 +794,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://acrolein1gs.cube.gz" ).then( function( o ){
 
             o.addRepresentation( "surface", {
-                visible: false, isolevel: 0.1, wireframe: true
+                visible: true, isolevel: 0.1, wireframe: true
             } );
             o.addRepresentation( "dot", {
                 visible: true, minValue: 0.1
@@ -929,7 +871,7 @@ NGL.ExampleRegistry.addDict( {
 
     },
 
-    "biomol": function( stage ){
+    "biomolSimple": function( stage ){
 
         stage.loadFile( "data://1U19.cif" ).then( function( o ){
 
@@ -1031,6 +973,19 @@ NGL.ExampleRegistry.addDict( {
 
     },
 
+    "cyclic": function( stage ){
+
+        stage.loadFile( "data://1sfi.cif" ).then( function( o ){
+
+            o.addRepresentation( "cartoon", { color: "chainindex" } );
+            o.addRepresentation( "backbone" );
+            o.addRepresentation( "trace", { linewidth: 3 } );
+            o.centerView();
+
+        } );
+
+    },
+
     "orient": function( stage ){
 
         stage.loadFile( "data://1blu.pdb" ).then( function( o ){
@@ -1101,6 +1056,7 @@ NGL.ExampleRegistry.addDict( {
         } );
 
         stage.loadFile( "data://1crn_apbs_pot.dx.gz" ).then( function( o ){
+        // stage.loadFile( "data://1crn_apbs_pot.dxbin" ).then( function( o ){
 
             o.addRepresentation( "dot", {
                 thresholdType: "value",
@@ -1251,5 +1207,221 @@ NGL.ExampleRegistry.addDict( {
         } );
 
     },
+
+    "tiny": function( stage ){
+
+        console.time( "load-to-render" );
+        stage.loadFile( "data://1CRN.cif" ).then( function( o ){
+            o.addRepresentation( "line", { sele: "backbone", color: "sstruc" } );
+            // o.addRepresentation( "trace", { color: "sstruc" } );
+            // o.addRepresentation( "ball+stick", { color: "atomindex" } );
+            // o.addRepresentation( "cartoon" );
+            // o.addRepresentation( "ball+stick" );
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+                stage.viewer.holdRendering = false;
+                stage.centerView();
+            } );
+        } );
+
+    },
+
+    "small": function( stage ){
+
+        console.time( "load-to-render" );
+        stage.loadFile( "data://perf/4CUP.cif.gz" ).then( function( o ){
+            o.addRepresentation( "line", { color: "sstruc" } );
+            o.addRepresentation( "trace", { color: "sstruc" } );
+            // o.addRepresentation( "ball+stick", { color: "atomindex" } );
+            // o.addRepresentation( "cartoon" );
+            // o.addRepresentation( "ball+stick" );
+            stage.centerView();
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+            } );
+        } );
+
+    },
+
+    "large": function( stage ){
+
+        console.time( "load-to-render" );
+        // stage.loadFile( "data://perf/4V5A.cif.gz" ).then( function( o ){
+        stage.loadFile( "data://perf/4V5A.cif" ).then( function( o ){
+            // o.addRepresentation( "point" );
+            // o.addRepresentation( "line" );
+            o.addRepresentation( "cartoon", { wireframe: false } );
+            // o.addRepresentation( "cartoon", { sele: "polymer" } );
+            // o.addRepresentation( "ball+stick", { sele: "hetero" } );
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+                stage.viewer.holdRendering = false;
+                stage.centerView();
+            } );
+        } );
+
+    },
+
+    "nuc": function( stage ){
+
+        console.time( "load-to-render" );
+        stage.loadFile( "data://perf/1D66.cif.gz" ).then( function( o ){
+            // o.addRepresentation( "point" );
+            // o.addRepresentation( "line" );
+            o.addRepresentation( "cartoon" );
+            // o.addRepresentation( "cartoon", { sele: "polymer" } );
+            // o.addRepresentation( "ball+stick", { sele: "hetero" } );
+            stage.centerView();
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+            } );
+        } );
+
+    },
+
+    "huge": function( stage ){
+
+        console.time( "load-to-render" );
+        stage.loadFile( "data://perf/4V99.cif.gz", {
+            cAlphaOnly: false
+        } ).then( function( o ){
+            // o.addRepresentation( "point" );
+            o.addRepresentation( "line" );
+            // o.addRepresentation( "ribbon", { sele: "polymer" } );
+            // o.addRepresentation( "ball+stick", { sele: "hetero" } );
+            stage.centerView();
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+            } );
+        } );
+
+    },
+
+    "nmr": function( stage ){
+
+        console.time( "load-to-render" );
+        // stage.loadFile( "data://perf/2L6N.cif.gz" ).then( function( o ){
+        stage.loadFile( "rcsb://2L6N.mmtf" ).then( function( o ){
+            o.addRepresentation( "cartoon", { sele: "polymer" } );
+            o.addRepresentation( "ball+stick", { sele: "hetero" } );
+            stage.centerView();
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+            } );
+        } );
+
+    },
+
+    "medium": function( stage ){
+
+        console.time( "load-to-render" );
+        // stage.loadFile( "data://perf/3SN6.cif.gz" ).then( function( o ){
+        // stage.loadFile( "data://perf/3sn6.cif" ).then( function( o ){
+        // stage.loadFile( "data://1d66.pdb" ).then( function( o ){
+        stage.loadFile( "data://3sn6.pdb" ).then( function( o ){
+        // stage.loadFile( "data://3PQR.cif" ).then( function( o ){
+            // o.addRepresentation( "line" );
+            // o.addRepresentation( "backbone" );
+            // o.addRepresentation( "spacefill" );
+            // o.addRepresentation( "hyperball" );
+            // o.addRepresentation( "ball+stick", { color: "sstruc", sele: "backbone and 230-250:A" } );
+            // o.addRepresentation( "cartoon", { sele: ":A and sheet", color: "sstruc" } );
+            // o.addRepresentation( "ribbon", { color: "sstruc" } );
+            // o.addRepresentation( "cartoon", { color: "sstruc", linewidth: 5, sele: "230-240:A" } );
+            // o.addRepresentation( "cartoon", { color: "sstruc", linewidth: 5, sele: "240-250:A" } );
+            o.addRepresentation( "cartoon", { color: "sstruc" } );
+            // o.addRepresentation( "tube", { color: "sstruc" } );
+            // o.addRepresentation( "cartoon", { sele: "polymer" } );
+            // o.addRepresentation( "ball+stick", { sele: "30-341:R or 384-394:A" } );
+            // o.centerView( true, "330-341:R" );
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+                stage.viewer.holdRendering = false;
+                stage.centerView();
+            } );
+        } );
+
+    },
+
+    "biomol": function( stage ){
+
+        console.time( "load-to-render" );
+        // stage.loadFile( "data://4opj.pdb" ).then( function( o ){
+        stage.loadFile( "rcsb://4opj.mmtf" ).then( function( o ){
+        // stage.loadFile( "data://4opj.cif" ).then( function( o ){
+            o.addRepresentation( "cartoon", { assembly: "BU1", opacity: 0.5, side: THREE.BackSide } );
+            o.addRepresentation( "ribbon", { assembly: "SUPERCELL", color: "grey", scale: 1.0, visible: false } );
+            // o.addRepresentation( "hyperball", { sele: "sidechainAttached", assembly: "BU1" } );
+            o.addRepresentation( "backbone", { assembly: "AU" } );
+            o.addRepresentation( "surface", { assembly: "BU2" } );
+            // o.addRepresentation( "spacefill" );
+            // o.addRepresentation( "label" );
+            // o.addRepresentation( "ball+stick", { sele: "hetero" } );
+            stage.centerView();
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+            } );
+        } );
+
+    },
+
+    "quality": function( stage ){
+
+        console.time( "load-to-render" );
+        stage.loadFile( "data://perf/3SN6.cif.gz" ).then( function( o ){
+            // o.addRepresentation( "cartoon" );
+            // o.addRepresentation( "ball+stick" );
+            // o.addRepresentation( "spacefill" );
+            // o.addRepresentation( "line" );
+            o.addRepresentation( "surface" );
+            stage.centerView();
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+            } );
+        } );
+
+    },
+
+    "mmtf": function( stage ){
+
+        console.time( "load-to-render" );
+        // stage.loadFile( "http://mmtf.rcsb.org/full/4V99", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/1CRN", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/3SN6", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/4POH", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/4CUP", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/2L6N", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/4V5A", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/3J3Q", {
+        // stage.loadFile( "http://mmtf.rcsb.org/full/1D66", {
+        // stage.loadFile( "http://mmtf.rcsb.org/backbone/3SN6", {
+        // stage.loadFile( "http://mmtf.rcsb.org/backbone/4CUP", {
+        stage.loadFile( "http://mmtf.rcsb.org/backbone/3J3Q", {
+        // stage.loadFile( "http://mmtf.rcsb.org/backbone/4V5A", {
+        // stage.loadFile( "http://mmtf.rcsb.org/backbone/1D66", {
+            ext: "mmtf"
+        } ).then( function( o ){
+            // o.addRepresentation( "ribbon", { color: "chainindex", quality: "custom", subdiv: 1 } );
+            o.addRepresentation( "backbone", { color: "lightgreen", scale: 1.0, lineOnly: true } );
+            // o.addRepresentation( "tube" );
+            // o.addRepresentation( "cartoon", { color: "chainindex" } );
+            // o.addRepresentation( "ball+stick", { sele: "hetero" } );
+            // o.addRepresentation( "spacefill" );
+            // o.addRepresentation( "line", { sele: "backbone", color: "chainindex" } );
+            // o.addRepresentation( "trace", { color: "chainindex" } );
+            // o.addRepresentation( "licorice" );
+            // o.addRepresentation( "ball+stick" );
+            // o.addRepresentation( "hyperball" );
+            // o.addRepresentation( "point" );
+            // o.addRepresentation( "label" );
+            // o.addRepresentation( "surface" );
+            stage.tasks.onZeroOnce( function(){
+                console.timeEnd( "load-to-render" );
+                stage.viewer.holdRendering = false;
+                stage.centerView();
+            } );
+        } );
+
+    }
 
 } );

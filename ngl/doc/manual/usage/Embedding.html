@@ -12,17 +12,11 @@
 
 		<script>
 
-			if( !Detector.webgl ) Detector.addGetWebGLMessage();
-
 			NGL.mainScriptFilePath = "../../../js/build/ngl.embedded.min.js";
 
-			function onInit(){
+			document.addEventListener( "DOMContentLoaded", function() {
 				var stage = new NGL.Stage( "viewport" );
 				stage.loadFile( "rcsb://1crn", { defaultRepresentation: true } );
-			}
-
-			document.addEventListener( "DOMContentLoaded", function() {
-				NGL.init( onInit );
 			} );
 
 		</script>
@@ -52,17 +46,11 @@
 
 			&lt;script&gt;
 
-				if( !Detector.webgl ) Detector.addGetWebGLMessage();
-
 				NGL.mainScriptFilePath = "path/to/ngl.embedded.min.js";
 
-				function onInit(){
+				document.addEventListener( "DOMContentLoaded", function() {
 					var stage = new NGL.Stage( "viewport" );
 					stage.loadFile( "rcsb://1crn", { defaultRepresentation: true } );
-				}
-
-				document.addEventListener( "DOMContentLoaded", function() {
-					NGL.init( onInit );
 				} );
 
 			&lt;/script&gt;
