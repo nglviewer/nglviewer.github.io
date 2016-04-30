@@ -12,8 +12,6 @@
 
     <script>
 
-        if( !Detector.webgl ) Detector.addGetWebGLMessage();
-
         NGL.mainScriptFilePath = "../../../js/build/ngl.embedded.min.js";
 
         document.addEventListener( "DOMContentLoaded", function() {
@@ -22,30 +20,29 @@
             var input = document.getElementById( "input" );
             var button = document.getElementById( "btn" );
 
-            NGL.init( function(){
+            var stage = new NGL.Stage( "viewport" );
+            stage.viewer.container.addEventListener( "dblclick", function(){
+                stage.toggleFullscreen();
+            } );
+            stage.setTheme( "light" );
+            stage.viewer.setBackground( 0xfff7ed );
+            stage.loadFile( "../../files/1d66.pdb.gz" ).then( function( o ){
+                licorice = o.addRepresentation( "licorice" );
+                cartoon = o.addRepresentation( "cartoon" );
+                o.centerView();
+            } );
 
-                var stage = new NGL.Stage( "viewport" );
-                stage.setTheme( "light" );
-                stage.viewer.setBackground( 0xfff7ed );
-                stage.loadFile( "../doc/files/1d66.pdb" ).then( function( o ){
-                    licorice = o.addRepresentation( "licorice" );
-                    cartoon = o.addRepresentation( "cartoon" );
-                    o.centerView();
-                } );
-
-                input.addEventListener( "keypress", function( e ){
-                    if( e.keyCode === 13 ){
-                        e.preventDefault();
-                        licorice.setSelection( input.value );
-                        cartoon.setSelection( input.value );
-                    }
-                } );
-
-                button.addEventListener( "click", function( e ){
+            input.addEventListener( "keypress", function( e ){
+                if( e.keyCode === 13 ){
+                    e.preventDefault();
                     licorice.setSelection( input.value );
                     cartoon.setSelection( input.value );
-                } );
+                }
+            } );
 
+            button.addEventListener( "click", function( e ){
+                licorice.setSelection( input.value );
+                cartoon.setSelection( input.value );
             } );
 
         } );
@@ -69,9 +66,9 @@
     <h2>Language</h2>
 
     <div style="float:right; margin-left:30px">
-        <div id="viewport" style="width:500px; height:350px;"></div>
+        <div id="viewport" style="width:500px; height:400px;"></div>
         <div>
-            <input id="input" style="width:400px;" type="text" />
+            <input id="input" style="width:440px;" type="text" />
             <button id="btn">filter</button>
         </div>
     </div>
@@ -88,6 +85,7 @@
         <li>*rna*</li>
         <li>*dna*</li>
         <li>*hetero*</li>
+        <li>*ion*</li>
         <li>*polymer* (protein or nucleic)</li>
         <li>*water*</li>
         <li>*hydrogen*</li>
@@ -117,17 +115,19 @@
         <li>atom name: <strong>.CA</strong>, <strong>.C</strong>, <strong>.N</strong>, ...</li>
         <li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
         <li>residue name: *ALA*, *GLU*, *SOL*, *DMPC*, ...</li>
+        <li>numeric residue name: *[032]*, *[1AB]*, ...</li>
         <li>element name: <strong>#H</strong>, <strong>#C</strong>, <strong>#O</strong>, ...</li>
-        <li>alternate location: <strong>~A</strong>, <strong>~B</strong>, ... or <strong>~</strong> for non-alternate location atoms</li>
+        <li>alternate location: <strong>%A</strong>, <strong>%B</strong>, ... or <strong>%</strong> for non-alternate location atoms</li>
+        <li>insertion code: <strong>^A</strong>, <strong>^B</strong>, ... or <strong>^</strong> for residues with no insertion code</li>
     </ul>
 
-    Some of these expressions can be combined (in this order) - residue numer (range), chain name, atom name, model - like this
+    Some of these expressions can be combined (in this order) - residue numer (range), insertion code, chain name, atom name, alternate location, model - like this
 
-    <code>10-20:A.CA/0 # select C-alpha atoms of residues 10 to 20 from chain A in model 0</code>
+    <code>10^A:F.CA%C/0 # select C-alpha atoms of residue 10 with insertion code A from chain F in model 0 at alternate location C</code>
 
     which is the same as
 
-    <code>10-20 and :A and .CA and /0</code>
+    <code>10 and ^A and :F and .CA and %C and /0</code>
 
     Single expressions may be left out as long as the order (see above) is kept, e.g.
 

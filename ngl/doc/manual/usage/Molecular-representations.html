@@ -12,23 +12,14 @@
 
     <script>
 
-        if( !Detector.webgl ) Detector.addGetWebGLMessage();
-
         NGL.mainScriptFilePath = "../../../js/build/ngl.embedded.min.js";
         var types = Object.keys( NGL.representationTypes );
         var reprDict = {};
 
-        function onInit(){
-            var stage = new NGL.Stage( "viewport" );
-            stage.setTheme( "light" );
-            stage.viewer.setBackground( 0xfff7ed );
-            stage.loadFile( "../doc/files/1crn.pdb" )
-                .then( initStructure );
-        }
-
         function initStructure( o ){
             types.forEach( function( name ){
                 if( !name ) return;
+                if( [ "distance" ].indexOf( name ) !== -1 ) return;
                 if( name === "label" ){
                     reprDict[ name ] = o.addRepresentation(
                         name, { visible: false, colorScheme: "element", sele: ".C" }
@@ -59,12 +50,20 @@
             var buttons = document.getElementById( "buttons" );
             types.forEach( function( name ){
                 if( !name ) return;
+                if( [ "distance" ].indexOf( name ) !== -1 ) return;
                 var button = document.createElement( "button" );
                 button.id = "btn_" + name;
                 button.textContent = name;
                 buttons.appendChild( button );
             } );
-            NGL.init( onInit );
+            var stage = new NGL.Stage( "viewport" );
+            stage.setTheme( "light" );
+            stage.viewer.setBackground( 0xfff7ed );
+            stage.viewer.container.addEventListener( "dblclick", function(){
+                stage.toggleFullscreen();
+            } );
+            stage.loadFile( "../../files/1wto.pdb.gz" )
+                .then( initStructure );
         } );
 
     </script>
@@ -72,8 +71,8 @@
     <h1>[name]</h1>
 
     <div style="float:right; margin-left:30px">
-        <div id="viewport" style="width:400px; height:300px;"></div>
-        <div id="buttons" style="width:400px;"></div>
+        <div id="viewport" style="width:450px; height:350px;"></div>
+        <div id="buttons" style="width:450px;"></div>
     </div>
 
     <p>Each loaded structure can be displayed using a variety of representations that can be combined to create complex molecular views. Multiple representation types are supported, including space-filling spheres for atoms (spacefill), cylinders and spheres for bonds and atoms (ball+stick), simple lines for bonds (line), secondary structure abstraction (cartoon), backbone atom trace (backbone). The appearance of the representations can be fine-tuned by parameters, for example, to change the quality. Most representations have a color and a radius parameter that can use data from the underlying structure. For instance, a representation can be colored uniformly or according to the element, residue or secondary structure type of the atoms from which the representation is derived. The size of representation objects, for example sphere and cylinder radii in a ball+stick representation, can be set similarly.</p>
@@ -90,7 +89,6 @@
             <li><a href="#base">base</a></li>
             <li><a href="#cartoon">cartoon</a></li>
             <li><a href="#contact">contact</a></li>
-            <li><a href="#crossing">crossing</a></li>
             <li><a href="#helixorient">helixorient</a></li>
             <li><a href="#hyperball">hyperball</a></li>
             <li><a href="#label">label</a></li>
@@ -192,15 +190,6 @@
         <li>*maxDistance*: &hellip;</li>
         <li>*maxAngle*: &hellip;</li>
     </ul>
-
-
-    <h2 id="crossing">crossing</h2>
-
-    <p>
-        *CAUTION* This feature is only for preview. It is still under development and has not been thoroughly tested. Bugs and other surprises are likely.
-    </p>
-
-    &hellip;
 
 
     <h2 id="helixorient">helixorient</h2>
