@@ -38,7 +38,9 @@ NGL.ExampleRegistry.addDict( {
                 sele: "296 or RET", scale: 3, aspectRatio: 1.5
             } );
             o.addRepresentation( "surface", {
-                sele: "RET", opacity: 0.4
+                sele: "RET",
+                opacity: 0.4,
+                useWorker: false
             } );
             o.addRepresentation( "licorice", {
                 sele: "( ( 135 or 223 ) and sidechainAttached ) or ( 347 )",
@@ -46,6 +48,7 @@ NGL.ExampleRegistry.addDict( {
             } );
             o.addRepresentation( "contact", {
                 sele: "135 or 223 or 347",
+                contactType: "polar",
                 scale: 0.7
             } );
             o.addRepresentation( "label", {
@@ -218,18 +221,6 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://pbc.gro" ).then( function( o ){
 
             // FIXME pbc centering and removal for files other then trajectories
-
-            /*var maxX = o.structure.box[ 0 ];
-            var maxY = o.structure.box[ 1 ];
-            var maxZ = o.structure.box[ 2 ];
-
-            o.structure.eachAtom( function( a ){
-
-                a.x = ( a.x + maxX ) % maxX;
-                a.y = ( a.y + maxY ) % maxY;
-                a.z = ( a.z + maxZ ) % maxZ;
-
-            } );*/
 
             o.addRepresentation( "cartoon", { sele: "backbone" } );
             o.addRepresentation( "spacefill", { sele: "backbone" } );
@@ -432,10 +423,17 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://1RB8.pdb" ).then( function( o ){
 
-            o.addRepresentation( "cartoon", { subdiv: 3, radialSegments: 6 } );
-            o.addRepresentation( "licorice" );
-            // o.addRepresentation( "hyperball" );
-            o.centerView();
+            o.addRepresentation( "surface", {
+                sele: "polymer",
+                assembly: "BU1",
+                surfaceType: "sas",
+                probeRadius: 0.1,
+                scaleFactor: 0.2,
+                colorScheme: "atomindex",
+                colorScale: "RdYlBu",
+                useWorker: false
+            } );
+            stage.centerView();
 
         } );
 
@@ -445,25 +443,17 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://1M4X.cif" ).then( function( o ){
 
-            o.addRepresentation( "ribbon", {
-                quality: "custom",
-                subdiv: 4,
-                colorScheme: "chainindex",
-                flatShaded: true,
-                scale: 4
+            o.addRepresentation( "surface", {
+                sele: "polymer",
+                assembly: "BU1",
+                surfaceType: "sas",
+                probeRadius: 0.1,
+                scaleFactor: 0.05,
+                colorScheme: "atomindex",
+                colorScale: "PiYG",
+                useWorker: false
             } );
-
-            o.addRepresentation( "spacefill", {
-                scale: 1.5,
-                sele: "CYS"
-            } );
-
-            stage.setOrientation( [
-                [106.13855387207457,168.29837433056917,39.41757017002202],
-                [-0.08524916187307008,-0.1476908817966636,0.9853527205189371],
-                [-370.2980687321651,-677.1146027986514,-106.14535249654159],
-                [5.201234901226486,-3.7482553715267244,4.897403343961378]
-            ] );
+            stage.centerView();
 
         } );
 
@@ -820,39 +810,14 @@ NGL.ExampleRegistry.addDict( {
 
     "unitcell": function( stage ){
 
-        // stage.loadFile( "data://3pqr.ccp4.gz" ).then( function( o ){
-
-        //     o.addRepresentation( "surface", { wireframe: true } );
-        //     o.addRepresentation( "dot", { visible: false } );
-        //     o.centerView();
-
-        // } );
-
         stage.loadFile( "data://3pqr.pdb" ).then( function( o ){
 
-            // var uc = o.structure.unitcell;
-            // var cellPosition = new Float32Array( 3 * 8 );
-            // var v = new THREE.Vector3();
-            // v.set( 0, 0, 0 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 0 );
-            // v.set( 1, 0, 0 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 3 );
-            // v.set( 0, 1, 0 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 6 );
-            // v.set( 0, 0, 1 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 9 );
-            // v.set( 1, 1, 0 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 12 );
-            // v.set( 1, 0, 1 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 15 );
-            // v.set( 0, 1, 1 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 18 );
-            // v.set( 1, 1, 1 ).applyMatrix4( uc.fracToCart ).toArray( cellPosition, 21 );
-            // var cellColor = NGL.Utils.uniformArray3( 8, 1, 0, 0 );
-            // var cellRadius = NGL.Utils.uniformArray( 8, 2 );
-            // var sphereBuffer = new NGL.SphereBuffer(
-            //     cellPosition, cellColor, cellRadius
-            // );
-            // o.addBufferRepresentation( sphereBuffer );
-
             o.addRepresentation( "cartoon" );
+            o.addRepresentation( "unitcell" );
             o.addRepresentation( "ribbon", {
                 assembly: "UNITCELL", color: 0x00DD11, scale: 0.9
             } );
-            o.centerView();
+            stage.centerView();
 
         } );
 
