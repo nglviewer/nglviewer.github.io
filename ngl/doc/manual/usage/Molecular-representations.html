@@ -56,9 +56,7 @@
                 button.textContent = name;
                 buttons.appendChild( button );
             } );
-            var stage = new NGL.Stage( "viewport" );
-            stage.setTheme( "light" );
-            stage.viewer.setBackground( 0xfff7ed );
+            var stage = new NGL.Stage( "viewport", { backgroundColor: 0xfff7ed } );
             stage.viewer.container.addEventListener( "dblclick", function(){
                 stage.toggleFullscreen();
             } );
