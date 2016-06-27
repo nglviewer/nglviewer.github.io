@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Structure</title>
+	<title>Documentation Class: ScriptComponent</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -91,13 +91,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Structure</h1>
+	<h1 class="page-title">Class: ScriptComponent</h1>
 <section>
 
 <header>
     
         <h2>
-        Structure
+        ScriptComponent
         </h2>
         
     
@@ -110,7 +110,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Structure"><span class="type-signature"></span>new Structure(name, path)</h4>
+    <h4 class="name" id="ScriptComponent"><span class="type-signature"></span>new ScriptComponent(stage, script, params)</h4>
     
     
 </dt>
@@ -118,7 +118,7 @@
 
     
     <div class="description">
-        Structure
+        Component wrapping a Script object
     </div>
     
 
@@ -153,13 +153,13 @@
 
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>stage</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="Stage.html">Stage</a></span>
 
 
 
@@ -170,20 +170,20 @@
 
             
 
-            <td class="description last">structure name</td>
+            <td class="description last">stage object the component belongs to</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>path</code></td>
+                <td class="name"><code>script</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Script</span>
 
 
 
@@ -194,7 +194,31 @@
 
             
 
-            <td class="description last">source path</td>
+            <td class="description last">script object to wrap</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ComponentParameters">ComponentParameters</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">component parameters</td>
         </tr>
 
     
@@ -262,6 +286,15 @@
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Component.html">Component</a></li>
+    </ul>
+
 
     
 
@@ -273,6 +306,222 @@
 
     
 
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="addRepresentation"><span class="type-signature"></span>addRepresentation(type, object, params)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a new representation to the component
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the name of the representation</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the object on which the representation should be based</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#RepresentationParameters">RepresentationParameters</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">representation parameters</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#addRepresentation">Component#addRepresentation</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the created representation wrapped into
+                                  a representation component object
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">RepresentationComponent</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
     
 
     
