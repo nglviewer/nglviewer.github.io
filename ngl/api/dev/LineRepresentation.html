@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Representation</title>
+	<title>Documentation Class: LineRepresentation</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -91,13 +91,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Representation</h1>
+	<h1 class="page-title">Class: LineRepresentation</h1>
 <section>
 
 <header>
     
         <h2>
-        Representation
+        LineRepresentation
         </h2>
         
     
@@ -110,7 +110,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Representation"><span class="type-signature"></span>new Representation(object, viewer, params)</h4>
+    <h4 class="name" id="LineRepresentation"><span class="type-signature"></span>new LineRepresentation(structure, viewer, params)</h4>
     
     
 </dt>
@@ -118,7 +118,7 @@
 
     
     <div class="description">
-        Representation object
+        Line representation object
     </div>
     
 
@@ -153,13 +153,13 @@
 
         <tr>
             
-                <td class="name"><code>object</code></td>
+                <td class="name"><code>structure</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="Structure.html">Structure</a></span>
 
 
 
@@ -170,7 +170,7 @@
 
             
 
-            <td class="description last">the object to be represented</td>
+            <td class="description last">the structure to be represented</td>
         </tr>
 
     
@@ -218,7 +218,225 @@
 
             
 
-            <td class="description last">representation parameters</td>
+            <td class="description last">representation parameters, plus the properties listed below
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>multipleBond</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">whether or not to render multiple bonds</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bondSpacing</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">spacing for multiple bond rendering</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flatShaded</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">not available</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>side</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">not available</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wireframe</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">not available</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roughness</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">not available</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>matelness</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">not available</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>diffuse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">not available</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -286,6 +504,17 @@
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="StructureRepresentation.html">StructureRepresentation</a></li>
+    </ul>
+
+
+    
 
     
 
@@ -299,6 +528,158 @@
         <h3 class="subsection-title">Members</h3>
 
         <dl>
+            
+<hr>
+<dt class="name" id="structure">
+    <h4><span class="type-signature"></span>structure<span class="type-signature"> :<a href="Structure.html">Structure</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Structure.html">Structure</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="StructureRepresentation.html#structure">StructureRepresentation#structure</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="structureView">
+    <h4><span class="type-signature"></span>structureView<span class="type-signature"> :StructureView</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">StructureView</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="StructureRepresentation.html#structureView">StructureRepresentation#structureView</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
             
 <hr>
 <dt class="name" id="tasks">
@@ -335,6 +716,15 @@ the representation, including surface calculations.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Representation.html#tasks">Representation#tasks</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -402,6 +792,15 @@ the representation, including surface calculations.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Representation.html#viewer">Representation#viewer</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -681,6 +1080,15 @@ the representation, including surface calculations.
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Representation.html#setParameters">Representation#setParameters</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -876,6 +1284,15 @@ the representation, including surface calculations.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Representation.html#setVisibility">Representation#setVisibility</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
