@@ -35,8 +35,8 @@
 <small id="busy" style="display:none; position:absolute; top:0px; right:0px;">Loading...</small>
 <div id="viewport" style="width:960px; height:700px;"></div>
 
-<img style="width:79px; height:76px; position:absolute; left:0px; bottom:0px;" src="img/UCSDlogo.jpeg" />
-<img style="width:185px; height:44px; position:absolute; right:0px; bottom:0px;" src="img/SDSClogo-plusname-red.jpg" />
+<img style="z-index:100; width:79px; height:76px; position:absolute; left:0px; bottom:0px;" src="img/UCSDlogo.jpeg" />
+<img style="z-index:100; width:185px; height:44px; position:absolute; right:0px; bottom:0px;" src="img/SDSClogo-plusname-red.jpg" />
 
 
 
@@ -46,7 +46,12 @@
     <h2>Scalable<br/>3D molecular graphics<br/>on the web</h2>
     <div>NGL &amp; MMTF</div>
     <br/>
-    <div><small>Alexander Rose @ 3Dsig 2016</small></div>
+    <div><small>
+        <u>Alexander Rose</u>, Anthony Bradley, Yana Valasatava,<br/>
+        Jose Duarte, Andreas Prlic, Peter Rose
+        <br/><br/>
+        3Dsig 2016
+    </small></div>
 
     <aside class="notes">
         Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -153,13 +158,13 @@
 </section>
 
 <section>
-    <h3>MMTF compared to mmCIF</h3>
+    <h3>File size: mmCIF vs MMTF</h3>
     <img class="plain" style="width:50%;"  src="img/mmtf-file-size.png" />
     <p><small>File size of the whole archive when gzip compressed</small></p>
 </section>
 
 <section>
-    <h3>MMTF compared to mmCIF</h3>
+    <h3>Parsing time: mmCIF vs MMTF</h3>
     <img class="plain" style="width:50%;"  src="img/mmtf-parsing-time.png" />
     <p><small>Parsing time of the whole archive on a 2.6 GHz Intel Core i5 using Java</small></p>
 </section>
@@ -410,6 +415,10 @@
 <section data-state="slide-scale">
     <small>With all that in place</small>
     <h3>Does it scale?</h3>
+    <p class="fragment">
+        We can test it right now as<br/>
+        this presentation is running in a browser
+    </p>
 </section>
 
 <section data-state="slide-3j3q-1">
@@ -483,6 +492,12 @@
 <!-- APPENDIX -->
 
 <section>
+    <h3>Summary</h3>
+    <br/>
+    Take home message
+</section>
+
+<section>
     <h3>Acknowledgements</h3>
     <br/>
     <img class="plain" style="width:50%; float:right;"  src="img/rcsb-team.jpg" />
@@ -535,9 +550,9 @@ document.addEventListener( "DOMContentLoaded", function(){
     var notesFlag = true;
     function toggleNotes(){
         var elmList = document.querySelectorAll( ".reveal .speaker-notes.visible:not(:empty)" );
-        elmList.forEach( function( elm ){
-            elm.style.display = notesFlag ? "none" : "block";
-        } );
+        for( var i = 0, il = elmList.length; i < il; ++i ){
+            elmList[ i ].style.display = notesFlag ? "none" : "block";
+        }
         notesFlag = !notesFlag;
     }
     toggleNotes();
