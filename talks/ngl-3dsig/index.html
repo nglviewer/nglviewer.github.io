@@ -26,6 +26,32 @@
             width: 50%;
             left: 25%;
         }
+
+        .x {
+            position:relative;
+        }
+
+        .x:before, .x:after{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:10px;
+            background-color:tomato;
+            top:140px;
+        }
+
+        .x:before {
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            transform:rotate(45deg);
+            left:2px;
+        }
+        .x:after {
+            -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg);
+            transform:rotate(-45deg);
+            right:2px;
+        }
     </style>
 </head>
 <body>
@@ -42,9 +68,9 @@
 
 <!-- INTRO -->
 
-<section>
+<section data-state="slide-title">
     <h2>Scalable<br/>3D molecular graphics<br/>on the web</h2>
-    <div>NGL &amp; MMTF</div>
+    <div>MMTF &amp; NGL Viewer</div>
     <br/>
     <div><small>
         <u>Alexander Rose</u>, Anthony Bradley, Yana Valasatava,<br/>
@@ -60,7 +86,9 @@
 
 <section data-state="slide-billion">
     <img class="plain" src="img/1BillionAtomsHorizontal.png" />
-    <p>Atoms in the Protein Data Bank (Feb 2016)</p>
+    <p>Atoms in the Protein Data Bank</p>
+    <br/>
+    <small class="fragment">In over 120.000 structures (asymmetric units)</small>
 </section>
 
 <section data-state="slide-one" class="top">
@@ -85,7 +113,8 @@
 </section>
 
 <section data-state="slide-status">
-    <h3>Status Quo PDB archive</h3>
+    <h3>Growth of the PDB archive</h3>
+    <img class="plain" style="float:right; width:20%; margin-right:5%; margin-bottom:20%;" src="img/wwpdb-logo.png" />
     <ul>
         <li>Largest structure: HIV-1 Capsid</li>
         <ul>
@@ -104,14 +133,25 @@
 
 <section>
     <h3>Steps to display a structure</h3>
-    <img class="plain" style="float:right; width:15%; margin-right:5%" src="img/transmission.png" />
-    <ol>
-        <li class="inactive">Retrieve File</li>
-        <li class="inactive">Parse File</li>
-        <li class="inactive">Create Data Model</li>
+    <img class="plain" style="float:right; width:15%; margin-right:5%;" src="img/transmission.png" />
+    <br/>
+    <ol class="fragment">
+        <li class="inactive">Download File</li>
+        <li class="inactive">Decompress &amp; Parse</li>
+        <li class="inactive">Populate Data Model</li>
         <li class="inactive">Create Geometry</li>
         <li class="inactive">Render</li>
     </ol>
+
+    <aside class="notes">
+        Download: get data from server to various clients<br/>
+        Decompress/Parse: get data into a general usable state after transmission<br/>
+        Data Model: apply application specific changes to the data<br/>
+        Make Geometry: make spheres &amp; cylinders representing the molecules<br/>
+        Rendering: push geometry to graphics card for interactive display<br/>
+        <br/>
+        Let's have a look at those steps and how to speed them up.
+    </aside>
 </section>
 
 
@@ -121,9 +161,9 @@
 <section>
     <h3>Retrieval &amp; Parsing</h3>
     <ol>
-        <li class="warning">Retrieve File &#10144; ???</li>
-        <li class="warning">Parse File &#10144; ???</li>
-        <li class="inactive">Create Data Model</li>
+        <li class="warning">Download File &#10144; ???</li>
+        <li class="warning">Decompress &amp; Parse &#10144; ???</li>
+        <li class="inactive">Populate Data Model</li>
         <li class="inactive">Create Geometry</li>
         <li class="inactive">Render</li>
     </ol>
@@ -145,28 +185,45 @@
         <li class="fragment">Binary (MessagePack as a container)</li>
         <li class="fragment">Bespoke compression strategies:</li>
             <small>
-                <ul class="fragment">
-                    <li>Dictionary encoding</li>
-                    <li>Run-length encoding</li>
-                    <li>Integer encoding</li>
-                    <li>Delta encoding</li>
-                    <li>Integer packing (recursive indexing)</li>
+                <ul>
+                    <li class="fragment">Dictionary encoding &rarr; store once, reference repeatedly</li>
+                    <li class="fragment">Run-length encoding &rarr; store value + number of repeats</li>
+                    <li class="fragment">Integer encoding &rarr; store floats with reduced precision</li>
+                    <li class="fragment">Delta encoding &rarr; smaller numbers by storing differences</li>
+                    <li class="fragment">Integer packing &rarr; tightly pack small integers</li>
                 </ul>
             </small>
         </li>
     </ul>
+    <img class="fragment plain" style="width:80%;" src="img/delta-run.png" />
+
+    <aside class="notes">
+        Dictionary encoding: atom &amp; residue names, group bonds<br/>
+        Run-length encoding: occupancy mostly 1.0<br/>
+        Integer encoding: b-factor, coordinates<br/>
+        Delta encoding: coordinates, leveraging order/proximity of atoms<br/>
+        Integer packing: integer+delta encoded coordinates fit into 16-bit (recursive indexing)<br/>
+        Example combining delta+run-length encoding
+    </aside>
 </section>
 
 <section>
     <h3>File size: mmCIF vs MMTF</h3>
-    <img class="plain" style="width:50%;"  src="img/mmtf-file-size.png" />
-    <p><small>File size of the whole archive when gzip compressed</small></p>
+    <img class="plain" style="width:60%;"  src="img/mmtf-file-size2.png" />
+    <p><small>
+        File size of the whole archive<br/>
+        ~120.000 structures, gzip compressed
+    </small></p>
 </section>
 
 <section>
     <h3>Parsing time: mmCIF vs MMTF</h3>
-    <img class="plain" style="width:50%;"  src="img/mmtf-parsing-time.png" />
-    <p><small>Parsing time of the whole archive on a 2.6 GHz Intel Core i5 using Java</small></p>
+    <img class="plain" style="width:60%;"  src="img/mmtf-parsing-time2.png" />
+    <p><small>
+        Parsing time of the whole archive<br/>
+        ~120.000 structures, gzip compressed<br/>
+        on a 2.6 GHz Intel Core i5 using JavaScript
+    </small></p>
 </section>
 
 <section>
@@ -176,30 +233,34 @@
         <li>Coordinates &amp; B-factors</li>
         <li>Complete bonding data</li>
         <li>DSSP secondary structure</li>
-        <li>and more ...</li>
+        <li>and more, see <a target="_blank" href="http://mmtf.rcsb.org/">http://mmtf.rcsb.org/</a></li>
     </ul>
 </section>
 
 <section>
     <h3>MMTF - Flavors</h3>
+    <div class="fragment" data-fragment-index="2" style="float:right; width:35%; margin-right:5%;" src="img/precision-allatom.png">
+        <img class="plain" src="img/precision-allatom.png" />
+        <small>full (green), reduced (red)</small>
+    </div>
     <ul>
-        <li class="fragment">Full:
-            <ul>
+        <li class="fragment" data-fragment-index="1">Full:
+            <ul><small>
                 <li>All atoms</li>
                 <li>Three decimal place precision</li>
-            </ul>
+            </small></ul>
         </li>
-        <li class="fragment">Reduced:
-            <ul>
+        <li class="fragment" data-fragment-index="2">Reduced:
+            <ul><small>
                 <li>C-alpha/phosphate &amp; ligand atoms</li>
                 <li>One decimal place precision</li>
-            </ul>
+            </small></ul>
         </li>
-        <li class="fragment">Build your own:
-            <ul>
+        <li class="fragment" data-fragment-index="3">Build your own:
+            <ul><small>
                 <li>Specification: required &amp; optional fields</li>
                 <li>Planned: user data fields</li>
-            </ul>
+            </small></ul>
         </li>
     </ul>
 </section>
@@ -213,7 +274,7 @@
     </div>
     <ul>
         <li>
-            Open specification and libraries:<br/>
+            Open Source specification and libraries:<br/>
             Java, JavaScript, Python, (C/C++ planned)
         </li>
         <li class="fragment">
@@ -221,18 +282,19 @@
             full &amp; reduced flavor
         </li>
     </ul>
+    <br/><br/>
     <p class="fragment">
-        Details at http://mmtf.rcsb.org/ and<br/>
-        on posters ...
+        Website: <a target="_blank" href="http://mmtf.rcsb.org/">http://mmtf.rcsb.org/</a><br/>
+        Poster: #21 (Anthony Bradley)
     </p>
 </section>
 
 <section>
     <h3>Retrieval &amp; Parsing</h3>
     <ol>
-        <li class="success">Retrieve File &#10144; MMTF</li>
-        <li class="success">Parse File &#10144; MMTF</li>
-        <li class="inactive">Create Data Model</li>
+        <li class="success">Download File &#10144; MMTF</li>
+        <li class="success">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="inactive">Populate Data Model</li>
         <li class="inactive">Create Geometry</li>
         <li class="inactive">Render</li>
     </ol>
@@ -245,9 +307,9 @@
 <section>
     <h3>Efficient Storage &amp; Access</h3>
     <ol>
-        <li class="inactive">Retrieve File &#10144; MMTF</li>
-        <li class="inactive">Parse File &#10144; MMTF</li>
-        <li class="warning">Create Data Model &#10144; ???</li>
+        <li class="inactive">Download File &#10144; MMTF</li>
+        <li class="inactive">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="warning">Populate Data Model &#10144; ???</li>
         <li class="inactive">Create Geometry</li>
         <li class="inactive">Render</li>
     </ol>
@@ -266,26 +328,43 @@
 </section>
 
 <section>
-    <h3>NGL Data Model</h3>
+    <h3>Columnar Stores</h3>
+    <img class="plain" style="float:right; width:25%; margin-right:5%;" src="img/store-table.png" />
+    <p style="text-align:left; margin-left:15%;">
+        Row-based:<br/>
+        &nbsp;&nbsp;<small>
+            ASN, 1, C <span style="color:#97D077;">|</span>
+            GLY, 2, H <span style="color:#97D077;">|</span>
+            PRO, 3, H <span style="color:#97D077;">|</span>
+            VAL, 4, H
+        </small>
+        <br/>
+        Column-based:<br/>
+        &nbsp;&nbsp;<small>
+            ASN, GLY, PRO, VAL <span style="color:#97D077;">|</span>
+            1, 2, 3, 4 <span style="color:#97D077;">|</span>
+            C, H, H, H
+        </small>
+    </p>
+    <br/>
     <ul>
-        <li class="fragment">Columnar stores</li>
         <li class="fragment">Single TypedArray per property</li>
-        <li class="fragment">Parsed data can be copied in blocks</li>
-        <li class="fragment">Convenient access via proxy objects</li>
+        <li class="fragment">Parsed MMTF data can be copied in blocks</li>
+        <li class="fragment">Proxy objects for row-like access</li>
     </ul>
 </section>
 
 <section>
-    <h3>NGL Data Model</h3>
-    <img class="plain" style="width:60%;"  src="img/ngl-store-proxy.png" />
+    <h3>Columnar Stores</h3>
+    <img class="plain" style="width:70%;"  src="img/ngl-store-proxy.png" />
 </section>
 
 <section>
     <h3>Efficient Storage &amp; Access</h3>
     <ol>
-        <li class="inactive">Retrieve File &#10144; MMTF</li>
-        <li class="inactive">Parse File &#10144; MMTF</li>
-        <li class="success">Create Data Model &#10144; Columnar Stores</li>
+        <li class="inactive">Download File &#10144; MMTF</li>
+        <li class="inactive">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="success">Populate Data Model &#10144; Columnar Stores</li>
         <li class="inactive">Create Geometry</li>
         <li class="inactive">Render</li>
     </ol>
@@ -298,9 +377,9 @@
 <section>
     <h3>Geometry</h3>
     <ol>
-        <li class="inactive">Retrieve File &#10144; MMTF</li>
-        <li class="inactive">Parse File &#10144; MMTF</li>
-        <li class="inactive">Create Data Model &#10144; Columnar Stores</li>
+        <li class="inactive">Download File &#10144; MMTF</li>
+        <li class="inactive">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="inactive">Populate Data Model &#10144; Columnar Stores</li>
         <li class="warning">Create Geometry &#10144; ???</li>
         <li class="inactive">Render</li>
     </ol>
@@ -340,9 +419,9 @@
 <section>
     <h3>Geometry</h3>
     <ol>
-        <li class="inactive">Retrieve File &#10144; MMTF</li>
-        <li class="inactive">Parse File &#10144; MMTF</li>
-        <li class="inactive">Create Data Model &#10144; Columnar Stores</li>
+        <li class="inactive">Download File &#10144; MMTF</li>
+        <li class="inactive">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="inactive">Populate Data Model &#10144; Columnar Stores</li>
         <li class="success">Create Geometry &#10144; Impostors &amp; Instancing</li>
         <li class="inactive">Render</li>
     </ol>
@@ -355,9 +434,9 @@
 <section>
     <h3>3D Rendering</h3>
     <ol>
-        <li class="inactive">Retrieve File &#10144; MMTF</li>
-        <li class="inactive">Parse File &#10144; MMTF</li>
-        <li class="inactive">Create Data Model &#10144; Columnar Stores</li>
+        <li class="inactive">Download File &#10144; MMTF</li>
+        <li class="inactive">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="inactive">Populate Data Model &#10144; Columnar Stores</li>
         <li class="inactive">Create Geometry &#10144; Impostors &amp; Instancing</li>
         <li class="warning">Render &#10144; ???</li>
     </ol>
@@ -365,13 +444,16 @@
 
 <section>
     <h3>Java Applet Deprecation</h3>
-    <img class="plain" style="width:30%; float:right;" src="img/java-applet.png" />
+    <div style="width:30%; float:right;">
+        <div class="x fragment" data-fragment-index="1"></div>
+        <img class="plain" src="img/java-applet.png" />
+    </div>
     <ul>
         <li>
             Java Applets have provided<br/>
             fast execution and GPU access
         </li>
-        <div class="fragment">
+        <div class="fragment" data-fragment-index="1">
             <li>
                 Removed from Google Chrome<br/>
                 in version 45 (Sep 2015)
@@ -394,15 +476,16 @@
         <li>JavaScript approaches native speed</li>
         <li>WebGL offers plugin-free access<br/>to the graphics card</li>
     </ul>
-    <img src="img/webgl-support.png" />
+    <img src="img/webgl-support.png" /><br/>
+    <small>webglstats.com</small>
 </section>
 
 <section>
     <h3>3D Rendering</h3>
     <ol>
-        <li class="inactive">Retrieve File &#10144; MMTF</li>
-        <li class="inactive">Parse File &#10144; MMTF</li>
-        <li class="inactive">Create Data Model &#10144; Columnar Stores</li>
+        <li class="inactive">Download File &#10144; MMTF</li>
+        <li class="inactive">Decompress &amp; Parse &#10144; MMTF</li>
+        <li class="inactive">Populate Data Model &#10144; Columnar Stores</li>
         <li class="inactive">Create Geometry &#10144; Impostors &amp; Instancing</li>
         <li class="success">Render &#10144; WebGL</li>
     </ol>
@@ -459,33 +542,18 @@
 
 <section data-state="slide-ngl">
     <h3>NGL Viewer</h3>
+    <ul>
+        <li>Supports MMTF, uses columnar stores &amp; WebGL</li>
+        <li>Openly developed @ <a target="_blank" href="https://github.com/arose/ngl">https://github.com/arose/ngl</a></li>
+    </ul>
+    <br/><br/><br/>
     <small>
         AS Rose &amp; PW Hildebrand.
         <i>NGL Viewer: a web application for molecular visualization.</i><br/>
         Nucl. Acids Res. (1 July 2015) 43 (W1).
-        <a href="doi:10.1093/nar/gkv402">doi:10.1093/nar/gkv402</a>
+        <a target="_blank" href="doi:10.1093/nar/gkv402">doi:10.1093/nar/gkv402</a>
     </small>
-    <br/><br/>
-    <ul>
-        <li>Supports MMTF, uses columnar stores &amp; WebGL</li>
-        <li>Openly developed @ <a href="https://github.com/arose/ngl">https://github.com/arose/ngl</a></li>
-        <li>Features:
-            <ul>
-                <li>Electron density maps</li>
-            </ul>
-        </li>
-    </ul>
 </section>
-
-<!-- <section>
-    <pre><code data-trim data-noescape>
-    (def lazy-fib
-      (concat
-       [0 1]
-       <mark>((fn rfib [a b]</mark>
-            (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-        </code></pre>
-</section> -->
 
 
 
@@ -493,8 +561,25 @@
 
 <section>
     <h3>Summary</h3>
-    <br/>
-    Take home message
+    <ul>
+        <li class="fragment">MMTF
+            <ul><small>
+                <li>Small, compressed file-format</li>
+                <li>Fast to parse, libraries available</li>
+                <li>Useful data, like bonds, included</li>
+                <li>Enables routine analyses of the whole PDB archive</li>
+            </small></ul>
+        </li>
+        <br/>
+        <li class="fragment">NGL Viewer
+            <ul><small>
+                <li>Scalable 3D molecular graphics</li>
+                <li>Memory-efficient data model</li>
+                <li>Fast rendering through WebGL</li>
+                <li>Enables scalable 3D molecular graphics on the web</li>
+            </small></ul>
+        </li>
+    </ul>
 </section>
 
 <section>
@@ -520,9 +605,10 @@
     <h4>Questions?</h4>
     <br/>
     <ul class="inactive">
-        <li>Posters: ...</li>
-        <li>MMTF: <a href="http://mmtf.rcsb.org">http://mmtf.rcsb.org</a></li>
-        <li>NGL Viewer: <a href="https://github.com/arose/ngl">https://github.com/arose/ngl</a></li>
+        <li>Posters: #21 (MMTF) and #24 (NGL Viewer)</li>
+        <li>Talks@ISMB: TT18 and SST02-D (Peter Rose)</li>
+        <li>MMTF: <a target="_blank" href="http://mmtf.rcsb.org">http://mmtf.rcsb.org</a></li>
+        <li>NGL Viewer: <a target="_blank" href="https://github.com/arose/ngl">https://github.com/arose/ngl</a></li>
     </ul>
 </section>
 
@@ -563,7 +649,8 @@ document.addEventListener( "DOMContentLoaded", function(){
     }, false );
 
     stage = new NGL.Stage( "viewport", {
-        backgroundColor: "white"
+        backgroundColor: "white",
+        sampleLevel: -1
     } );
     function handleResize(){
         stage.handleResize();
@@ -574,7 +661,9 @@ document.addEventListener( "DOMContentLoaded", function(){
         document.getElementById( "busy" ).style.display = count > 0 ? "block" : "none";
     } );
 
+    var _3IYV;
     stage.loadFile( "./data/3IYV.mmtf.gz" ).then( function( o ){
+        _3IYV = o;
         o.addRepresentation( "surface", {
             scaleFactor: 0.1,
             surfaceType: "sas",
@@ -658,6 +747,11 @@ document.addEventListener( "DOMContentLoaded", function(){
     var _1M4X, _1M4Xsurface, _1M4Xcartoon;
     var _5J7V, _5J7Vsurface
 
+    Reveal.addEventListener( "slide-title", function(){
+        hideAll();
+        _3IYV.setVisibility( true );
+    }, false );
+
     Reveal.addEventListener( "slide-billion", function(){
         hideAll();
     }, false );
@@ -676,6 +770,8 @@ document.addEventListener( "DOMContentLoaded", function(){
     }, false );
 
     Reveal.addEventListener( "slide-group", function(){
+        hideAll();
+        _4HHB.setVisibility( true );
         _4HHBballnstick.setVisibility( true );
         _4HHBcartoon.setVisibility( false );
         _4HHBballnstick.setSelection( "142:A" );
@@ -687,6 +783,8 @@ document.addEventListener( "DOMContentLoaded", function(){
     }, false );
 
     Reveal.addEventListener( "slide-protein", function(){
+        hideAll();
+        _4HHB.setVisibility( true );
         _4HHBballnstick.setVisibility( false );
         _4HHBcartoon.setVisibility( true );
         _4HHB.centerView();
@@ -807,6 +905,7 @@ document.addEventListener( "DOMContentLoaded", function(){
     var targetN = new NGL.Vector3();
 
     Reveal.addEventListener( "slide-3j3q-1", function(){
+        stage.setParameters( { sampleLevel: -1 } );
         hideAll();
         _3J3Q.setVisibility( true );
         _3J3Qsurface.setVisibility( false );
@@ -957,6 +1056,10 @@ document.addEventListener( "DOMContentLoaded", function(){
         }
         animate();
 
+    }, false );
+
+    Reveal.addEventListener( "slide-ngl", function(){
+        hideAll();
     }, false );
 
 } );

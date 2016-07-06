@@ -50912,7 +50912,7 @@
 	            selection = new Selection( params.sele );
 	        }
 
-	        this.structure.eachSelectedAtom( function( a ){
+	        this.structure.eachAtom( function( a ){
 	            var bfactor = a.bfactor;
 	            min = Math.min( min, bfactor );
 	            max = Math.max( max, bfactor );
@@ -51391,59 +51391,6 @@
 	            callback( d.lines, chunkNo, chunkCount );
 
 	        }.bind( this ) );
-
-	    },
-
-	    toJSON: function(){
-
-	        var type = this.type.substr( 0, 1 ).toUpperCase() +
-	                    this.type.substr( 1 );
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: type + 'Streamer',
-	                generator: type + 'StreamerExporter'
-	            },
-
-	            src: this.src,
-	            compressed: this.compressed,
-	            binary: this.binary,
-	            chunkSize: this.chunkSize,
-	            newline: this.newline,
-
-	        };
-
-	        if( this.__srcName ){
-	            output[ this.__srcName ] = this[ this.__srcName ];
-	        }
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.src = input.src;
-	        this.compressed = input.compressed;
-	        this.binary = input.binary;
-	        this.chunkSize = input.chunkSize;
-	        this.newline = input.newline;
-
-	        if( this.__srcName ){
-	            this[ this.__srcName ] = input[ this.__srcName ];
-	        }
-
-	        return this;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [];
-
-	        return transferable;
 
 	    },
 
@@ -57028,57 +56975,10 @@
 
 	}
 
+
 	Unitcell.prototype = {
 
-	    toJSON: function(){
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: 'Unitcell',
-	                generator: 'UnitcellExporter'
-	            },
-
-	            a: this.a,
-	            b: this.b,
-	            c: this.c,
-
-	            alpha: this.alpha,
-	            beta: this.beta,
-	            gamma: this.gamma,
-
-	            spacegroup: this.spacegroup,
-	            volume: this.volume,
-
-	            cartToFrac: this.cartToFrac.toArray(),
-	            fracToCart: this.fracToCart.toArray(),
-
-	        };
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.a = input.a;
-	        this.b = input.b;
-	        this.c = input.c;
-
-	        this.alpha = input.alpha;
-	        this.beta = input.beta;
-	        this.gamma = input.gamma;
-
-	        this.spacegroup = input.spacegroup;
-	        this.volume = input.volume;
-
-	        this.cartToFrac.fromArray( input.cartToFrac );
-	        this.fracToCart.fromArray( input.fracToCart );
-
-	        return this;
-
-	    }
+	    constructor: Unitcell,
 
 	};
 
@@ -57189,34 +57089,6 @@
 
 	        return boundingBox;
 
-	    },
-
-	    toJSON: function(){
-
-	        var output = {
-	            name: this.name,
-	            partList: new Array( this.partList.length )
-	        };
-
-	        this.partList.forEach( function( part, i ){
-	            output.partList[ i ] = part.toJSON();
-	        } );
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.name = input.name;
-	        this.partList = input.partList;
-
-	        this.partList.forEach( function( part, i ){
-	            this.partList[ i ] = new AssemblyPart().fromJSON( part );
-	        }.bind( this ) );
-
-	        return this;
-
 	    }
 
 	};
@@ -57296,26 +57168,6 @@
 	            } );
 	        }
 	        return instanceList;
-	    },
-
-	    toJSON: function(){
-
-	        var output = {
-	            matrixList: this.matrixList,
-	            chainList: this.chainList
-	        };
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.matrixList = input.matrixList;
-	        this.chainList = input.chainList;
-
-	        return this;
-
 	    }
 
 	};
@@ -57517,63 +57369,6 @@
 	        quicksort( 0, this.count - 1 );
 
 	        Log$1.timeEnd( "Store.sort" );
-
-	    },
-
-	    toJSON: function(){
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: this.type,
-	                generator: this.type + "Exporter"
-	            },
-
-	            length: this.length,
-	            count: this.count,
-
-	        };
-
-	        for( var i = 0, il = this.__fields.length; i < il; ++i ){
-
-	            var name = this.__fields[ i ][ 0 ];
-	            output[ name ] = this[ name ];
-
-	        }
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.length = input.length;
-	        this.count = input.count;
-
-	        for( var i = 0, il = this.__fields.length; i < il; ++i ){
-
-	            var name = this.__fields[ i ][ 0 ];
-	            this[ name ] = input[ name ];
-
-	        }
-
-	        return this;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [];
-
-	        for( var i = 0, il = this.__fields.length; i < il; ++i ){
-
-	            var name = this.__fields[ i ][ 0 ];
-	            transferable.push( this[ name ].buffer );
-
-	        }
-
-	        return transferable;
 
 	    },
 
@@ -58741,9 +58536,7 @@
 	    var points = new Float32Array( entity.atomCount * 4 );
 	    var i = 0;
 
-	    var eachFnName = entity.eachSelectedAtom ? "eachSelectedAtom" : "eachAtom";
-
-	    entity[ eachFnName ]( function( ap ){
+	    entity.eachAtom( function( ap ){
 	        points[ i + 0 ] = ap.x;
 	        points[ i + 1 ] = ap.y;
 	        points[ i + 2 ] = ap.z;
@@ -60267,14 +60060,6 @@
 	    vdw: undefined,
 	    covalent: undefined,
 
-	    toJSON: function(){
-	        var output = {
-	            atomname: this.atomname,
-	            element: this.element,
-	        };
-	        return output;
-	    }
-
 	};
 
 	function AtomMap( structure ){
@@ -60814,15 +60599,6 @@
 	            this.assignBondReferenceAtomIndices();
 	        }
 	        return this.bondReferenceAtomIndices[ bondIndex ];
-	    },
-
-	    toJSON: function(){
-	        var output = {
-	            resname: this.resname,
-	            atomTypeIdList: this.atomTypeIdList,
-	            hetero: this.hetero
-	        };
-	        return output;
 	    }
 
 	};
@@ -60868,34 +60644,14 @@
 	    this.list = typeList;
 	    this.dict = idDict;
 
-	    this.toJSON = function(){
-	        var output = {
-	            metadata: {
-	                version: 0.1,
-	                type: 'ResidueMap',
-	                generator: 'ResidueMapExporter'
-	            },
-	            idDict: idDict,
-	            typeList: typeList.map( function( residueType ){
-	                return residueType.toJSON();
-	            } )
-	        };
-	        return output;
-	    };
-
-	    this.fromJSON = function( input ){
-	        idDict = input.idDict;
-	        typeList = input.typeList.map( function( input ){
-	            return new ResidueType(
-	                structure, input.resname, input.atomTypeIdList, input.hetero
-	            );
-	        } );
-	        this.list = typeList;
-	        this.dict = idDict;
-	    };
-
 	}
 
+	/**
+	 * Bond proxy
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Integer} index - the index
+	 */
 	function BondProxy( structure, index ){
 
 	    this.structure = structure;
@@ -61025,6 +60781,12 @@
 
 	};
 
+	/**
+	 * Atom proxy
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Integer} index - the index
+	 */
 	function AtomProxy( structure, index ){
 
 	    this.structure = structure;
@@ -61425,6 +61187,12 @@
 
 	};
 
+	/**
+	 * Residue proxy
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Integer} index - the index
+	 */
 	function ResidueProxy( structure, index ){
 
 	    this.structure = structure;
@@ -61757,6 +61525,13 @@
 
 	};
 
+	/**
+	 * Polymer
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Integer} residueIndexStart - the index of the first residue
+	 * @param {Integer} residueIndexEnd - the index of the last residue
+	 */
 	function Polymer( structure, residueIndexStart, residueIndexEnd ){
 
 	    this.structure = structure;
@@ -62012,6 +61787,12 @@
 
 	};
 
+	/**
+	 * Chain proxy
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Integer} index - the index
+	 */
 	function ChainProxy( structure, index ){
 
 	    this.structure = structure;
@@ -62253,6 +62034,12 @@
 	 */
 
 
+	/**
+	 * Model proxy
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Integer} index - the index
+	 */
 	function ModelProxy( structure, index ){
 
 	    this.structure = structure;
@@ -62456,6 +62243,56 @@
 	};
 
 	/**
+	 * {@link Signal}, dispatched when Structure.refresh() is called
+	 * @example
+	 * structure.signals.refreshed( function(){ ... } );
+	 * @event Structure#refreshed
+	 */
+
+	/**
+	 * Bond iterator callback
+	 * @callback bondCallback
+	 * @param {BondProxy} bondProxy - current bond proxy
+	 */
+
+	/**
+	 * Atom iterator callback
+	 * @callback atomCallback
+	 * @param {AtomProxy} atomProxy - current atom proxy
+	 */
+
+	/**
+	 * Residue iterator callback
+	 * @callback residueCallback
+	 * @param {ResidueProxy} residueProxy - current residue proxy
+	 */
+
+	/**
+	 * Residue-list iterator callback
+	 * @callback residueListCallback
+	 * @param {ResidueProxy[]} residueProxyList - list of current residue proxies
+	 */
+
+	/**
+	 * Polymer iterator callback
+	 * @callback polymerCallback
+	 * @param {Polymer} polymer - current polymer object
+	 */
+
+	/**
+	 * Chain iterator callback
+	 * @callback chainCallback
+	 * @param {ChainProxy} chainProxy - current chain proxy
+	 */
+
+	/**
+	 * Model iterator callback
+	 * @callback modelCallback
+	 * @param {ModelProxy} modelProxy - current model proxy
+	 */
+
+
+	/**
 	 * Structure
 	 * @class
 	 * @param {String} name - structure name
@@ -62478,7 +62315,6 @@
 	    this.helices = [];
 	    this.sheets = [];
 	    this.unitcell = undefined;
-	    this.selection = undefined;
 
 	    this.frames = [];
 	    this.boxes = [];
@@ -62513,18 +62349,22 @@
 	    constructor: Structure,
 	    type: "Structure",
 
+	    /**
+	     * Updates atomSets and bondSets. Updates GidPool entry.
+	     * @fires Structure#refreshed
+	     */
 	    refresh: function(){
 
 	        if( exports.Debug ) Log$1.time( "Structure.refresh" );
 
 	        this.atomSetCache = {};
 
-	        this.atomSet = this.getAtomSet2( this.selection );
+	        this.atomSet = this.getAtomSet( this.selection );
 	        this.bondSet = this.getBondSet();
 
 	        for( var name in this.atomSetDict ){
 	            var as = this.atomSetDict[ name ];
-	            var as2 = this.getAtomSet2( false );
+	            var as2 = this.getAtomSet( false );
 	            this.atomSetCache[ "__" + name ] = as2.intersection( as );
 	        }
 
@@ -62541,6 +62381,8 @@
 	        this.signals.refreshed.dispatch();
 
 	    },
+
+	    //
 
 	    getBondProxy: function( index ){
 
@@ -62585,6 +62427,8 @@
 	        return new ModelProxy( this, index );
 
 	    },
+
+	    //
 
 	    getBondSet: function( selection ){
 
@@ -62700,26 +62544,18 @@
 	        }else if( selection && selection.test ){
 
 	            var seleString = selection.string;
-	            as = this.atomSetCache[ seleString ];
 
-	            if( !seleString ) console.warn( "empty seleString" );
+	            if( seleString in this.atomSetCache ){
 
-	            if( as === undefined ){
-
-	                // TODO can be faster by setting ranges of atoms
-	                //      but for that must loop over hierarchy itself
-	                as = new Bitset( n );
-	                var ap = this.getAtomProxy();
-	                var test = selection.test;
-	                for( var i = 0; i < n; ++i ){
-	                    ap.index = i;
-	                    if( test( ap ) ) as.add_unsafe( ap.index );
-	                }
-	                this.atomSetCache[ seleString ] = as;
+	                as = this.atomSetCache[ seleString ];
 
 	            }else{
 
-	                // console.log( "getting atomSet from cache", seleString );
+	                as = new Bitset( n );
+	                this.eachAtom( function( ap ){
+	                    as.add_unsafe( ap.index );
+	                }, selection );
+	                this.atomSetCache[ seleString ] = as;
 
 	            }
 
@@ -62736,67 +62572,11 @@
 
 	    },
 
-	    getAtomSet2: function( selection ){
-
-	        if( exports.Debug ) Log$1.time( "Structure.getAtomSet2" );
-
-	        var as;
-	        var n = this.atomStore.count;
-
-	        if( selection === false ){
-
-	            as = new Bitset( n );
-
-	        }else if( selection === true ){
-
-	            as = new Bitset( n );
-	            as.set_all( true );
-
-	        }else if( selection && selection.test ){
-
-	            var seleString = selection.string;
-	            as = this.atomSetCache[ seleString ];
-
-	            if( !seleString ) console.warn( "empty seleString" );
-
-	            if( as === undefined ){
-
-	                as = new Bitset( n );
-	                this.eachAtom( function( ap ){
-	                    as.add_unsafe( ap.index );
-	                }, selection );
-	                this.atomSetCache[ seleString ] = as;
-
-	            }else{
-
-	                // console.log( "getting atomSet from cache", seleString );
-
-	            }
-
-	        }else{
-
-	            as = new Bitset( n );
-	            as.set_all( true );
-
-	        }
-
-	        if( exports.Debug ) Log$1.timeEnd( "Structure.getAtomSet2" );
-
-	        return as;
-
-	    },
-
-	    setSelection: function( selection ){
-
-	        this.selection = selection;
-
-	        this.refresh();
-
-	    },
+	    //
 
 	    getSelection: function(){
 
-	        return this.selection;
+	        return false;
 
 	    },
 
@@ -62806,8 +62586,11 @@
 
 	    },
 
-	    //
-
+	    /**
+	     * Bond iterator
+	     * @param  {bondCallback} callback - the callback
+	     * @param  {Selection} [selection] - the selection
+	     */
 	    eachBond: function( callback, selection ){
 
 	        var bp = this.getBondProxy();
@@ -62836,46 +62619,11 @@
 
 	    },
 
-	    getAtomSet3: function( selection ){
-
-	        if( exports.Debug ) Log$1.time( "Structure.getAtomSet3" );
-
-	        var as = this.atomSet;
-
-	        if( selection && selection.test ){
-	            if( as ){
-	                as = as.new_intersection( this.getAtomSet2( selection ) );
-	            }else{
-	                as = this.getAtomSet2( selection );
-	            }
-	        }
-
-	        if( exports.Debug ) Log$1.timeEnd( "Structure.getAtomSet3" );
-
-	        return as;
-
-	    },
-
-	    eachSelectedAtom: function( callback, selection ){
-
-	        var ap = this.getAtomProxy();
-	        var as = this.getAtomSet3( selection );
-	        var n = this.atomStore.count;
-
-	        if( as && as.size() < n ){
-	            as.forEach( function( index ){
-	                ap.index = index;
-	                callback( ap );
-	            } );
-	        }else{
-	            for( var i = 0; i < n; ++i ){
-	                ap.index = i;
-	                callback( ap );
-	            }
-	        }
-
-	    },
-
+	    /**
+	     * Atom iterator
+	     * @param  {atomCallback} callback - the callback
+	     * @param  {Selection} [selection] - the selection
+	     */
 	    eachAtom: function( callback, selection ){
 
 	        if( selection && selection.test ){
@@ -62893,6 +62641,11 @@
 
 	    },
 
+	    /**
+	     * Residue iterator
+	     * @param  {residueCallback} callback - the callback
+	     * @param  {Selection} [selection] - the selection
+	     */
 	    eachResidue: function( callback, selection ){
 
 	        var i;
@@ -62924,6 +62677,11 @@
 
 	    },
 
+	    /**
+	     * Multi-residue iterator
+	     * @param {Integer} n - window size
+	     * @param  {residueListCallback} callback - the callback
+	     */
 	    eachResidueN: function( n, callback ){
 
 	        var i, j;
@@ -62945,6 +62703,11 @@
 
 	    },
 
+	    /**
+	     * Polymer iterator
+	     * @param  {polymerCallback} callback - the callback
+	     * @param  {Selection} [selection] - the selection
+	     */
 	    eachPolymer: function( callback, selection ){
 
 	        if( selection && selection.modelOnlyTest ){
@@ -62967,6 +62730,11 @@
 
 	    },
 
+	    /**
+	     * Chain iterator
+	     * @param  {chainCallback} callback - the callback
+	     * @param  {Selection} [selection] - the selection
+	     */
 	    eachChain: function( callback, selection ){
 
 	        if( selection && selection.test ){
@@ -62984,6 +62752,11 @@
 
 	    },
 
+	    /**
+	     * Model iterator
+	     * @param  {modelCallback} callback - the callback
+	     * @param  {Selection} [selection] - the selection
+	     */
 	    eachModel: function( callback, selection ){
 
 	        var i;
@@ -63022,7 +62795,7 @@
 	        if( p.colorParams ) p.colorParams.structure = this.getStructure();
 
 	        var what = p.what;
-	        var atomSet = p.atomSet || this.atomSet;
+	        var atomSet = defaults( p.atomSet, this.atomSet );
 
 	        var radiusFactory, colorMaker, pickingColorMaker;
 	        var position, color, pickingColor, radius, index;
@@ -63290,7 +63063,7 @@
 	        var maxY = -Infinity;
 	        var maxZ = -Infinity;
 
-	        this.eachSelectedAtom( function( ap ){
+	        this.eachAtom( function( ap ){
 
 	            var x = ap.x;
 	            var y = ap.y;
@@ -63323,7 +63096,7 @@
 	        var coords = new Matrix( 3, this.atomCount );
 	        var cd = coords.data;
 
-	        this.eachSelectedAtom( function( a ){
+	        this.eachAtom( function( a ){
 	            cd[ i + 0 ] = a.x;
 	            cd[ i + 1 ] = a.y;
 	            cd[ i + 2 ] = a.z;
@@ -63346,17 +63119,17 @@
 
 	    },
 
-	    getSequence: function(){
+	    getSequence: function( selection ){
 
 	        var seq = [];
 	        var rp = this.getResidueProxy();
 
-	        this.eachSelectedAtom( function( ap ){
+	        this.eachAtom( function( ap ){
 	            rp.index = ap.residueIndex;
 	            if( ap.index === rp.traceAtomIndex ){
 	                seq.push( rp.getResname1() );
 	            }
-	        } );
+	        }, selection );
 
 	        return seq;
 
@@ -63364,28 +63137,23 @@
 
 	    getAtomIndices: function( selection ){
 
-	        // Best to use only when the selection resolves to just a few indices!!!
+	        var indices;
 
-	        var indices = [];
+	        if( selection && selection.string ){
 
-	        this.eachAtom( function( ap ){
-	            indices.push( ap.index );
-	        }, selection );
+	            indices = [];
+	            this.eachAtom( function( ap ){
+	                indices.push( ap.index );
+	            }, selection );
+
+	        }else{
+
+	            var p = { what: { index: true } };
+	            indices = this.getAtomData( p ).index;
+
+	        }
 
 	        return indices;
-
-	    },
-
-	    atomIndex: function(){
-
-	        var i = 0;
-	        var index = new Float32Array( this.atomCount );
-
-	        this.eachSelectedAtom( function( ap ){
-	            index[ i ] = ap.index;
-	        } );
-
-	        return index;
 
 	    },
 
@@ -63395,186 +63163,17 @@
 
 	        var i = 0;
 
-	        this.eachSelectedAtom( function( ap ){
+	        this.eachAtom( function( ap ){
 	            ap.positionFromArray( position, i );
 	            i += 3;
 	        } );
 
 	    },
 
-	    //
-
-	    toJSON: function(){
-
-	        if( exports.Debug ) Log$1.time( "Structure.toJSON" );
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: 'Structure',
-	                generator: 'StructureExporter'
-	            },
-
-	            name: this.name,
-	            path: this.path,
-	            title: this.title,
-	            id: this.id,
-
-	            biomolDict: {},
-	            helices: this.helices,
-	            sheets: this.sheets,
-	            unitcell: this.unitcell ? this.unitcell.toJSON() : undefined,
-
-	            frames: this.frames,
-	            boxes: this.boxes,
-
-	            center: this.center.toArray(),
-	            boundingBox: [
-	                this.boundingBox.min.toArray(),
-	                this.boundingBox.max.toArray()
-	            ],
-
-	            bondStore: this.bondStore.toJSON(),
-	            backboneBondStore: this.backboneBondStore.toJSON(),
-	            rungBondStore: this.rungBondStore.toJSON(),
-	            atomStore: this.atomStore.toJSON(),
-	            residueStore: this.residueStore.toJSON(),
-	            chainStore: this.chainStore.toJSON(),
-	            modelStore: this.modelStore.toJSON(),
-
-	            bondSet: this.bondSet.toJSON(),
-	            atomSet: this.atomSet.toJSON(),
-
-	            atomSetDict: {},
-	            atomSetCache: {},
-
-	            atomMap: this.atomMap.toJSON(),
-	            residueMap: this.residueMap.toJSON()
-
-	        };
-
-	        var name;
-	        for( name in this.biomolDict ){
-	            output.biomolDict[ name ] = this.biomolDict[ name ].toJSON();
-	        }
-	        for( name in this.atomSetDict ){
-	            output.atomSetDict[ name ] = this.atomSetDict[ name ].toJSON();
-	        }
-	        for( name in this.atomSetCache ){
-	            output.atomSetCache[ name ] = this.atomSetCache[ name ].toJSON();
-	        }
-
-	        if( exports.Debug ) Log$1.timeEnd( "Structure.toJSON" );
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        if( exports.Debug ) Log$1.time( "Structure.fromJSON" );
-
-	        this.name = input.name;
-	        this.path = input.path;
-	        this.title = input.title;
-	        this.id = input.id;
-
-	        this.biomolDict = input.biomolDict;
-	        this.helices = input.helices;
-	        this.sheets = input.sheets;
-	        if( input.unitcell ) this.unitcell = new Unitcell().fromJSON( input.unitcell );
-
-	        this.frames = input.frames;
-	        this.boxes = input.boxes;
-
-	        this.center = new Vector3().fromArray( input.center );
-	        this.boundingBox = new Box3(
-	            new Vector3().fromArray( input.boundingBox[ 0 ] ),
-	            new Vector3().fromArray( input.boundingBox[ 1 ] )
-	        );
-
-	        this.bondStore.fromJSON( input.bondStore );
-	        this.backboneBondStore.fromJSON( input.backboneBondStore );
-	        this.rungBondStore.fromJSON( input.rungBondStore );
-	        this.atomStore.fromJSON( input.atomStore );
-	        this.residueStore.fromJSON( input.residueStore );
-	        this.chainStore.fromJSON( input.chainStore );
-	        this.modelStore.fromJSON( input.modelStore );
-
-	        this.bondSet.fromJSON( input.bondSet );
-	        this.atomSet.fromJSON( input.atomSet );
-
-	        var name, as;
-	        this.biomolDict = {};
-	        for( name in input.biomolDict ){
-	            var assembly = new Assembly();
-	            this.biomolDict[ name ] = assembly.fromJSON( input.biomolDict[ name ] );
-	        }
-	        this.atomSetDict = {};
-	        for( name in input.atomSetDict ){
-	            as = new Bitset();
-	            this.atomSetDict[ name ] = as.fromJSON( input.atomSetDict[ name ] );
-	        }
-	        this.atomSetCache = {};
-	        for( name in input.atomSetCache ){
-	            as = new Bitset();
-	            this.atomSetCache[ name ] = as.fromJSON( input.atomSetCache[ name ] );
-	        }
-
-	        this.atomMap.fromJSON( input.atomMap );
-	        this.residueMap.fromJSON( input.residueMap );
-
-	        GidPool.updateObject( this );
-
-	        if( exports.Debug ) Log$1.timeEnd( "Structure.fromJSON" );
-
-	        return this;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [];
-
-	        transferable.concat( this.bondStore.getTransferable() );
-	        transferable.concat( this.backboneBondStore.getTransferable() );
-	        transferable.concat( this.rungBondStore.getTransferable() );
-	        transferable.concat( this.atomStore.getTransferable() );
-	        transferable.concat( this.residueStore.getTransferable() );
-	        transferable.concat( this.chainStore.getTransferable() );
-	        transferable.concat( this.modelStore.getTransferable() );
-
-	        var i, n, name;
-	        if( this.frames ){
-	            var frames = this.frames;
-	            n = this.frames.length;
-	            for( i = 0; i < n; ++i ){
-	                transferable.push( frames[ i ].buffer );
-	            }
-	        }
-	        if( this.boxes ){
-	            var boxes = this.boxes;
-	            n = this.boxes.length;
-	            for( i = 0; i < n; ++i ){
-	                transferable.push( boxes[ i ].buffer );
-	            }
-	        }
-
-	        transferable.concat( this.bondSet.getTransferable() );
-	        transferable.concat( this.atomSet.getTransferable() );
-
-	        for( name in this.atomSetDict ){
-	            transferable.concat( this.atomSetDict[ name ].getTransferable() );
-	        }
-	        for( name in this.atomSetCache ){
-	            transferable.concat( this.atomSetCache[ name ].getTransferable() );
-	        }
-
-	        return transferable;
-
-	    },
-
+	    /**
+	     * Removes structure from the GidPool. Calls dispose() method of property objects.
+	     * Unsets properties to help garbage collection.
+	     */
 	    dispose: function(){
 
 	        GidPool.removeObject( this );
@@ -63849,78 +63448,6 @@
 	    getAtomindex: function(){
 
 	        return this.atomindex;
-
-	    },
-
-	    toJSON: function(){
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: 'Surface',
-	                generator: 'SurfaceExporter'
-	            },
-
-	            name: this.name,
-	            path: this.path,
-	            info: this.info,
-
-	            position: this.position,
-	            index: this.index,
-	            normal: this.normal,
-	            color: this.color,
-	            atomindex: this.atomindex,
-
-	            size: this.size,
-
-	            center: this.center.toArray(),
-	            boundingBox: {
-	                min: this.boundingBox.min.toArray(),
-	                max: this.boundingBox.max.toArray()
-	            }
-
-	        };
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.name = input.name;
-	        this.path = input.path;
-	        this.info = input.info;
-
-	        this.position = input.position;
-	        this.index = input.index;
-	        this.normal = input.normal;
-	        this.color = input.color;
-	        this.atomindex = input.atomindex;
-
-	        this.size = input.size;
-
-	        this.center.fromArray( input.center );
-	        this.boundingBox.set(
-	            input.boundingBox.min,
-	            input.boundingBox.max
-	        );
-
-	        return this;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [];
-
-	        if( this.position ) transferable.push( this.position.buffer );
-	        if( this.index ) transferable.push( this.index.buffer );
-	        if( this.normal ) transferable.push( this.normal.buffer );
-	        if( this.color ) transferable.push( this.color.buffer );
-	        if( this.atomindex ) transferable.push( this.atomindex.buffer );
-
-	        return transferable;
 
 	    },
 
@@ -66001,102 +65528,6 @@
 
 	    },
 
-	    toJSON: function(){
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: 'Volume',
-	                generator: 'VolumeExporter'
-	            },
-
-	            name: this.name,
-	            path: this.path,
-
-	            data: this.__data,
-
-	            nx: this.nx,
-	            ny: this.ny,
-	            nz: this.nz,
-
-	            dataAtomindex: this.__dataAtomindex,
-
-	            matrix: this.matrix.toArray(),
-	            normalMatrix: this.normalMatrix.toArray(),
-	            inverseMatrix: this.inverseMatrix.toArray(),
-
-	            center: this.center.toArray(),
-	            boundingBox: {
-	                min: this.boundingBox.min.toArray(),
-	                max: this.boundingBox.max.toArray()
-	            }
-
-	        };
-
-	        if( this.header ){
-
-	            output.header = Object.assign( {}, this.header );
-
-	        }
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.name = input.name;
-	        this.path = input.path;
-
-	        this.setData(
-
-	            input.data,
-
-	            input.nx,
-	            input.ny,
-	            input.nz,
-
-	            input.dataAtomindex
-
-	        );
-
-	        this.matrix.fromArray( input.matrix );
-	        this.normalMatrix.fromArray( input.normalMatrix );
-	        this.inverseMatrix.fromArray( input.inverseMatrix );
-
-	        if( input.header ){
-
-	            this.header = Object.assign( {}, input.header );
-
-	        }
-
-	        this.center.fromArray( input.center );
-	        this.boundingBox.set(
-	            input.boundingBox.min,
-	            input.boundingBox.max
-	        );
-
-	        return this;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [
-
-	            this.__data.buffer
-
-	        ];
-
-	        if( this.__dataAtomindex ){
-	            transferable.push( this.__dataAtomindex.buffer );
-	        }
-
-	        return transferable;
-
-	    },
-
 	    dispose: function(){
 
 	        if( this.workerPool ) this.workerPool.terminate();
@@ -66803,10 +66234,6 @@
 	        "objectId": objectId
 	    };
 
-	    this.positionGroup = new Group();
-	    this.rotationGroup = new Group();
-	    this.originGroup = new Group();
-
 	    this.group = new Group();
 	    this.wireframeGroup = new Group();
 	    this.pickingGroup = new Group();
@@ -67496,30 +66923,6 @@
 	            }
 
 	        }
-
-	    },
-
-	    /**
-	     * Set position of all buffer groups
-	     * @param {Vector3} vector - vector that defines the position
-	     */
-	    setPosition: function( vector ){
-
-	    },
-
-	    /**
-	     * Set rotation of all buffer groups
-	     * @param {Quaternion} quaternion - quaternion that defines the rotation
-	     */
-	    setRotation: function( quaternion ){
-
-	    },
-
-	    /**
-	     * Set origin of all buffer groups, basically the rotation center
-	     * @param {Vector3} vector - vector that defines the origin
-	     */
-	    setOrigin: function( vector ){
 
 	    },
 
@@ -70086,6 +69489,14 @@
 	 * @property {Boolean} visible - component visibility
 	 */
 
+	/**
+	 * {@link Signal}, dispatched when a representation is added
+	 * @example
+	 * component.signals.representationAdded( function( representationComponent ){ ... } );
+	 * @event Component#representationAdded
+	 * @type {RepresentationComponent}
+	 */
+
 
 	/**
 	 * Component base class
@@ -70137,6 +69548,7 @@
 
 	    /**
 	     * Add a new representation to the component
+	     * @fires Component#representationAdded
 	     * @param {String} type - the name of the representation
 	     * @param {Object} object the object on which the representation should be based
 	     * @param {RepresentationParameters} params - representation parameters
@@ -70648,7 +70060,7 @@
 	    // allocate & init data structures
 
 	    var n;
-	    if( typeof atoms1.eachSelectedAtom === "function" ){
+	    if( typeof atoms1.eachAtom === "function" ){
 	        n = atoms1.atomCount;
 	    }else if( atoms1 instanceof Float32Array ){
 	        n = atoms1.length / 3;
@@ -70720,9 +70132,9 @@
 	        var i = 0;
 	        var cd = coords.data;
 
-	        if( typeof atoms.eachSelectedAtom === "function" ){
+	        if( typeof atoms.eachAtom === "function" ){
 
-	            atoms.eachSelectedAtom( function( a ){
+	            atoms.eachAtom( function( a ){
 
 	                cd[ i + 0 ] = a.x;
 	                cd[ i + 1 ] = a.y;
@@ -70749,7 +70161,7 @@
 	        // allocate data structures
 
 	        var n;
-	        if( typeof atoms.eachSelectedAtom === "function" ){
+	        if( typeof atoms.eachAtom === "function" ){
 	            n = atoms.atomCount;
 	        }else if( atoms instanceof Float32Array ){
 	            n = atoms.length / 3;
@@ -70772,9 +70184,9 @@
 	        var i = 0;
 	        var cd = coords.data;
 
-	        if( typeof atoms.eachSelectedAtom === "function" ){
+	        if( typeof atoms.eachtom === "function" ){
 
-	            atoms.eachSelectedAtom( function( a ){
+	            atoms.eachAtom( function( a ){
 
 	                a.x = cd[ i + 0 ];
 	                a.y = cd[ i + 1 ];
@@ -70849,7 +70261,7 @@
 
 	        this.saveInitialStructure();
 
-	        this.backboneIndices = this.structure.atomIndex(
+	        this.backboneIndices = this.structure.getAtomIndices(
 	            new Selection( "backbone and not hydrogen" )
 	        );
 	        this.makeIndices();
@@ -70867,7 +70279,7 @@
 	        var i = 0;
 	        var initialStructure = new Float32Array( 3 * this.atomCount );
 
-	        this.structure.eachSelectedAtom( function( a ){
+	        this.structure.eachAtom( function( a ){
 
 	            initialStructure[ i + 0 ] = a.x;
 	            initialStructure[ i + 1 ] = a.y;
@@ -70891,7 +70303,7 @@
 
 	    makeIndices: function(){
 
-	        this.indices = this.structure.atomIndex( this.selection );
+	        this.indices = this.structure.getAtomIndices( this.selection );
 
 	        var i, j;
 	        var n = this.indices.length * 3;
@@ -71162,15 +70574,13 @@
 
 	    getCircularMean: function( indices, coords, box ){
 
-	        var mean = [
+	        return [
 
 	            circularMean( coords, box[ 0 ], 3, 0, indices ),
 	            circularMean( coords, box[ 1 ], 3, 1, indices ),
 	            circularMean( coords, box[ 2 ], 3, 2, indices )
 
 	        ];
-
-	        return mean;
 
 	    },
 
@@ -71372,13 +70782,9 @@
 
 	    makeAtomIndices:  function(){
 
-	        var structure = this.structure;
+	        if( this.structure.type === "StructureView" ){
 
-	        if( structure.type === "StructureView" ){
-
-	            this.atomIndices = structure.structure.atomIndex(
-	                structure.selection
-	            );
+	            this.atomIndices = this.structure.getAtomIndices();
 
 	        }else{
 
@@ -71591,11 +70997,35 @@
 
 	    makeAtomIndices: function(){
 
-	        var structure = this.structure;
 	        var atomIndices = [];
 
-	        // TODO is now StructureView
-	        if( false ){}else{
+	        if( this.structure.type === "StructureView" ){
+
+	            var indices = this.structure.getAtomIndices();
+
+	            var i, r;
+	            var p = indices[ 0 ];
+	            var q = indices[ 0 ];
+	            var n = indices.length;
+
+	            for( i = 1; i < n; ++i ){
+
+	                r = indices[ i ];
+
+	                if( q + 1 < r ){
+
+	                    atomIndices.push( [ p, q + 1 ] );
+	                    p = r;
+
+	                }
+
+	                q = r;
+
+	            }
+
+	            atomIndices.push( [ p, q + 1 ] );
+
+	        }else{
 
 	            atomIndices.push( [ 0, this.atomCount ] );
 
@@ -71725,6 +71155,292 @@
 	    return traj;
 
 	}
+
+	/**
+	 * Get view on structure restricted to the selection
+	 * @param  {Selection} selection - the selection
+	 * @return {StructureView} the view on the structure
+	 */
+	Structure.prototype.getView = function( selection ){
+	    // added here to avoid cyclic import dependency
+	    return new StructureView( this, selection );
+	};
+
+
+	/**
+	 * View on the structure, restricted to the selection
+	 * @class
+	 * @param {Structure} structure - the structure
+	 * @param {Selection} selection - the selection
+	 */
+	function StructureView( structure, selection ){
+
+	    this.signals = {
+	        refreshed: new Signal(),
+	    };
+
+	    this.structure = structure;
+	    this.selection = selection;
+
+	    this.center = new Vector3();
+	    this.boundingBox = new Box3();
+
+	    // to allow creating an empty object to call .fromJSON onto
+	    if( !structure && !selection ) return;
+
+	    this.init();
+
+	    this.refresh();
+
+	}
+
+	StructureView.prototype = Object.assign( Object.create(
+
+	    Structure.prototype ), {
+
+	    constructor: StructureView,
+	    type: "StructureView",
+
+	    init: function(){
+
+	        Object.defineProperties( this, {
+	            name: {
+	                get: function(){ return this.structure.name; }
+	            },
+	            path: {
+	                get: function(){ return this.structure.path; }
+	            },
+	            title: {
+	                get: function(){ return this.structure.title; }
+	            },
+	            id: {
+	                get: function(){ return this.structure.id; }
+	            },
+
+	            atomSetDict: {
+	                get: function(){ return this.structure.atomSetDict; }
+	            },
+	            biomolDict: {
+	                get: function(){ return this.structure.biomolDict; }
+	            },
+	            unitcell: {
+	                get: function(){ return this.structure.unitcell; }
+	            },
+
+	            frames: {
+	                get: function(){ return this.structure.frames; }
+	            },
+	            boxes: {
+	                get: function(){ return this.structure.boxes; }
+	            },
+
+	            bondStore: {
+	                get: function(){ return this.structure.bondStore; }
+	            },
+	            backboneBondStore: {
+	                get: function(){ return this.structure.backboneBondStore; }
+	            },
+	            rungBondStore: {
+	                get: function(){ return this.structure.rungBondStore; }
+	            },
+	            atomStore: {
+	                get: function(){ return this.structure.atomStore; }
+	            },
+	            residueStore: {
+	                get: function(){ return this.structure.residueStore; }
+	            },
+	            chainStore: {
+	                get: function(){ return this.structure.chainStore; }
+	            },
+	            modelStore: {
+	                get: function(){ return this.structure.modelStore; }
+	            },
+
+	            atomMap: {
+	                get: function(){ return this.structure.atomMap; }
+	            },
+	            residueMap: {
+	                get: function(){ return this.structure.residueMap; }
+	            }
+	        } );
+
+	        this._ap = this.getAtomProxy();
+	        this._rp = this.getResidueProxy();
+	        this._cp = this.getChainProxy();
+
+	        // FIXME should selection be serializable?
+	        if( this.selection ){
+	            this.selection.signals.stringChanged.add( function( string ){
+	                this.refresh();
+	            }, this );
+	        }
+
+	        this.structure.signals.refreshed.add( this.refresh, this );
+
+	    },
+
+	    refresh: function(){
+
+	        if( exports.Debug ) Log$1.time( "StructureView.refresh" );
+
+	        this.atomSetCache = {};
+
+	        this.atomSet = this.getAtomSet( this.selection, true );
+	        if( this.structure.atomSet ){
+	            if( exports.Debug ) Log$1.time( "StructureView.refresh#atomSet.intersection" );
+	            this.atomSet = this.atomSet.intersection( this.structure.atomSet );
+	            if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh#atomSet.intersection" );
+	        }
+
+	        this.bondSet = this.getBondSet();
+
+	        if( exports.Debug ) Log$1.time( "StructureView.refresh#atomSetDict.new_intersection" );
+	        for( var name in this.atomSetDict ){
+	            var as = this.atomSetDict[ name ];
+	            this.atomSetCache[ "__" + name ] = as.new_intersection( this.atomSet );
+	        }
+	        if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh#atomSetDict.new_intersection" );
+
+	        if( exports.Debug ) Log$1.time( "StructureView.refresh#size" );
+	        this.atomCount = this.atomSet.size();
+	        this.bondCount = this.bondSet.size();
+	        if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh#size" );
+
+	        this.boundingBox = this.getBoundingBox();
+	        this.center = this.boundingBox.center();
+
+	        if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh" );
+
+	        this.signals.refreshed.dispatch();
+
+	    },
+
+	    //
+
+	    setSelection: function( selection ){
+
+	        this.selection = selection;
+
+	        this.refresh();
+
+	    },
+
+	    getSelection: function( selection ){
+
+	        var seleList = [];
+
+	        if( selection && selection.string ){
+	            seleList.push( selection.string );
+	        }
+
+	        var parentSelection = this.structure.getSelection();
+	        if( parentSelection && parentSelection.string ){
+	            seleList.push( parentSelection.string );
+	        }
+
+	        if( this.selection && this.selection.string ){
+	            seleList.push( this.selection.string );
+	        }
+
+	        var sele = "";
+	        if( seleList.length > 0 ){
+	            sele = "( " + seleList.join( " ) AND ( " ) + " )";
+	        }
+
+	        return new Selection( sele );
+
+	    },
+
+	    getStructure: function(){
+
+	        return this.structure.getStructure();
+
+	    },
+
+	    //
+
+	    eachBond: function( callback, selection ){
+
+	        this.structure.eachBond( callback, this.getSelection( selection ) );
+
+	    },
+
+	    eachAtom: function( callback, selection ){
+
+	        var ap = this.getAtomProxy();
+	        var as = this.getAtomSet( selection );
+	        var n = this.atomStore.count;
+
+	        if( as && as.size() < n ){
+	            as.forEach( function( index ){
+	                ap.index = index;
+	                callback( ap );
+	            } );
+	        }else{
+	            for( var i = 0; i < n; ++i ){
+	                ap.index = i;
+	                callback( ap );
+	            }
+	        }
+
+	    },
+
+	    eachResidue: function( callback, selection ){
+
+	        this.structure.eachResidue( callback, this.getSelection( selection ) );
+
+	    },
+
+	    eachResidueN: function( n, callback ){
+
+	        console.error( "StructureView.eachResidueN() not implemented" );
+
+	    },
+
+	    eachChain: function( callback, selection ){
+
+	        this.structure.eachChain( callback, this.getSelection( selection ) );
+
+	    },
+
+	    eachModel: function( callback, selection ){
+
+	        this.structure.eachModel( callback, this.getSelection( selection ) );
+
+	    },
+
+	    //
+
+	    getAtomSet: function( selection, ignoreView ){
+
+	        if( exports.Debug ) Log$1.time( "StructureView.getAtomSet" );
+
+	        var as = this.structure.getAtomSet( selection );
+	        if( !ignoreView && this.atomSet ){
+	            as = as.new_intersection( this.atomSet );
+	        }
+
+	        if( exports.Debug ) Log$1.timeEnd( "StructureView.getAtomSet" );
+
+	        return as;
+
+	    },
+
+	    //
+
+	    dispose: function(){
+
+	        delete this.structure;
+
+	        delete this.atomSet;
+	        delete this.bondSet;
+
+	        delete this.atomCount;
+	        delete this.bondCount;
+
+	    }
+
+	} );
 
 	var SubstitutionMatrices = function(){
 
@@ -72273,6 +71989,15 @@
 	}
 
 	/**
+	 * {@link Signal}, dispatched when the default assembly is changed
+	 * @example
+	 * structureComponent.signals.defaultAssemblyChanged( function( value ){ ... } );
+	 * @event StructureComponent#defaultAssemblyChanged
+	 * @type {String}
+	 */
+
+
+	/**
 	 * Component wrapping a Structure object
 	 * @class
 	 * @extends Component
@@ -72287,7 +72012,13 @@
 
 	    Component.call( this, stage, p );
 
+	    /**
+	     * The wrapped structure
+	     * @alias StructureComponent#structure
+	     * @member {Structure}
+	     */
 	    this.structure = structure;
+
 	    this.trajList = [];
 	    this.initSelection( p.sele );
 	    this.setDefaultAssembly( p.assembly || "" );
@@ -72300,6 +72031,13 @@
 
 	    constructor: StructureComponent,
 
+	    /**
+	     * Component type
+	     * @alias StructureComponent#type
+	     * @constant
+	     * @type {String}
+	     * @default
+	     */
 	    type: "structure",
 
 	    signals: Object.assign( {
@@ -72313,31 +72051,44 @@
 	    /**
 	     * Initialize selection
 	     * @private
-	     * @param  {String} string - selection string
+	     * @param {String} string - selection string
 	     */
-	    initSelection: function( string ){
+	    initSelection: function( sele ){
 
-	        this.selection = new Selection( string );
+	        /**
+	         * Selection for {@link StructureComponent#structureView}
+	         * @alias StructureComponent#selection
+	         * @private
+	         * @member {Selection}
+	         */
+	        this.selection = new Selection( sele );
+
+	        /**
+	         * View on {@link StructureComponent#structure}.
+	         * Change its selection via {@link StructureComponent#setSelection}.
+	         * @alias StructureComponent#structureView
+	         * @member {StructureView}
+	         */
+	        this.structureView = new StructureView(
+	            this.structure, this.selection
+	        );
 
 	        this.selection.signals.stringChanged.add( function( string ){
 
-	            this.applySelection();
+	            this.structureView.setSelection( this.selection );
 
 	            this.rebuildRepresentations();
 	            this.rebuildTrajectories();
 
 	        }, this );
 
-	        this.applySelection();
-
 	    },
 
-	    applySelection: function(){
-
-	        this.structure.setSelection( this.selection );
-
-	    },
-
+	    /**
+	     * Set selection of {@link StructureComponent#structureView}
+	     * @alias StructureComponent#setSelection
+	     * @param {String} string - selection string
+	     */
 	    setSelection: function( string ){
 
 	        this.selection.setString( string );
@@ -72346,6 +72097,12 @@
 
 	    },
 
+	    /**
+	     * Set the default assembly
+	     * @alias StructureComponent#setDefaultAssembly
+	     * @fires StructureComponent#defaultAssemblyChanged
+	     * @param {String} value - assembly name
+	     */
 	    setDefaultAssembly: function( value ){
 
 	        this.defaultAssembly = value;
@@ -72354,6 +72111,10 @@
 
 	    },
 
+	    /**
+	     * Rebuild all representations
+	     * @alias StructureComponent#rebuildRepresentations
+	     */
 	    rebuildRepresentations: function(){
 
 	        this.reprList.forEach( function( repr ){
@@ -72367,12 +72128,14 @@
 
 	    },
 
+	    /**
+	     * Rebuild all trajectories
+	     * @alias StructureComponent#rebuildTrajectories
+	     */
 	    rebuildTrajectories: function(){
 
-	        this.trajList.slice( 0 ).forEach( function( trajComp ){
-
-	            trajComp.trajectory.setStructure( this.structure );
-
+	        this.trajList.slice().forEach( function( trajComp ){
+	            trajComp.trajectory.setStructure( this.structureView );
 	        }, this );
 
 	    },
@@ -72380,6 +72143,7 @@
 	    /**
 	     * Add a new structure representation to the component
 	     * @alias StructureComponent#addRepresentation
+	     * @fires Component#representationAdded
 	     * @param {String} type - the name of the representation, one of:
 	     *                        axes, backbone, ball+stick, base, cartoon, contact,
 	     *                        distance, helixorient, hyperball, label, licorice, line
@@ -72395,7 +72159,7 @@
 	        p.defaultAssembly = this.defaultAssembly;
 
 	        return Component.prototype.addRepresentation.call(
-	            this, type, this.structure, p
+	            this, type, this.structureView, p
 	        );
 
 	    },
@@ -72405,19 +72169,15 @@
 	        var params = { "i": i };
 
 	        var traj = makeTrajectory(
-	            trajPath, this.structure, sele
+	            trajPath, this.structureView, sele
 	        );
 
 	        traj.signals.frameChanged.add( function( value ){
-
 	            this.updateRepresentations( { "position": true } );
-
 	        }, this );
 
 	        var trajComp = new TrajectoryComponent( this.stage, traj, params, this );
-
 	        this.trajList.push( trajComp );
-
 	        this.signals.trajectoryAdded.dispatch( trajComp );
 
 	        return trajComp;
@@ -72427,11 +72187,8 @@
 	    removeTrajectory: function( traj ){
 
 	        var idx = this.trajList.indexOf( traj );
-
 	        if( idx !== -1 ){
-
 	            this.trajList.splice( idx, 1 );
-
 	        }
 
 	        traj.dispose();
@@ -72444,12 +72201,10 @@
 
 	        // copy via .slice because side effects may change trajList
 	        this.trajList.slice().forEach( function( traj ){
-
 	            traj.dispose();
-
 	        } );
 
-	        this.trajList = [];
+	        this.trajList.length = 0;
 	        this.structure.dispose();
 
 	        Component.prototype.dispose.call( this );
@@ -72467,16 +72222,16 @@
 	            var bb;
 
 	            if( sele ){
-	                bb = this.structure.getBoundingBox( new Selection( sele ) );
+	                bb = this.structureView.getBoundingBox( new Selection( sele ) );
 	            }else{
-	                bb = this.structure.boundingBox;
+	                bb = this.structureView.boundingBox;
 	            }
 
 	            var bbSize = bb.size();
 	            var maxSize = Math.max( bbSize.x, bbSize.y, bbSize.z );
 	            var minSize = Math.min( bbSize.x, bbSize.y, bbSize.z );
 	            // var avgSize = ( bbSize.x + bbSize.y + bbSize.z ) / 3;
-	            zoom = Math.max( 5, maxSize + ( minSize / 2 ) );  // object size
+	            zoom = Math.max( 1, maxSize + ( minSize / 2 ) );  // object size
 
 	            // zoom = bb.size().length();
 
@@ -72504,10 +72259,10 @@
 
 	    superpose: function( component, align, sele1, sele2, xsele1, xsele2 ){
 
-	        // FIXME does not account for structure.atomBitSet
+	        // FIXME does not account for structure.atomSet
 
 	        superpose(
-	            this.structure, component.structure,
+	            this.structureView, component.structureView,
 	            align, sele1, sele2, xsele1, xsele2
 	        );
 
@@ -72559,8 +72314,24 @@
 
 	    constructor: SurfaceComponent,
 
+	    /**
+	     * Component type
+	     * @alias SurfaceComponent#type
+	     * @constant
+	     * @type {String}
+	     * @default
+	     */
 	    type: "surface",
 
+	    /**
+	     * Add a new surface representation to the component
+	     * @alias SurfaceComponent#addRepresentation
+	     * @param {String} type - the name of the representation, one of:
+	     *                        surface, dot.
+	     * @param {SurfaceRepresentationParameters} params - representation parameters
+	     * @return {RepresentationComponent} the created representation wrapped into
+	     *                                   a representation component object
+	     */
 	    addRepresentation: function( type, params ){
 
 	        return Component.prototype.addRepresentation.call(
@@ -73006,12 +72777,6 @@
 	                    )
 	                );
 	                if( backboneOnly ) scaleFactor = Math.min( scaleFactor, 0.15 );
-
-	                // object.addRepresentation( "backbone", {
-	                //     lineOnly: true,
-	                //     colorScheme: "atomindex",
-	                //     colorScale: "RdYlBu"
-	                // } );
 
 	                object.addRepresentation( "surface", {
 	                    sele: "polymer",
@@ -75560,7 +75325,7 @@
 	        var atomSet = this.sview1.getAtomSet( false );
 	        var bondStore = new BondStore();
 
-	        this.sview1.eachSelectedAtom( function( ap1 ){
+	        this.sview1.eachAtom( function( ap1 ){
 
 	            var found = false;
 	            var contacts = kdtree2.nearest(
@@ -76503,6 +76268,37 @@
 
 	} );
 
+	/**
+	 * Distance representation parameter object.
+	 * @typedef {Object} DistanceRepresentationParameters - distance representation parameters
+	 * @mixes RepresentationParameters
+	 * @mixes StructureRepresentationParameters
+	 *
+	 * @property {Float} labelSize - size of the distance label
+	 * @property {Color} labelColor - color of the distance label
+	 * @property {Boolean} labelVisible - visibility of the distance label
+	 * @property {Array[]} atomPair - list of pairs of selection strings, see {@link Selection}
+	 * @property {Integer} radiusSegments - cylinder quality (number of segments)
+	 * @property {Boolean} disableImpostor - disable use of raycasted impostors for rendering
+	 */
+
+
+	/**
+	 * Distance representation object
+	 * @class
+	 * @extends StructureRepresentation
+	 * @example
+	 * stage.loadFile( "rcsb://1crn" ).then( function( o ){
+	 *     o.addRepresentation( "cartoon" );
+	 *     // any selection allowed, always takes the first atom a selection evaluates to
+	 *     var atomPair = [ [ "1.CA", "4.CA" ], [ "7.CA", "13.CA" ] ];
+	 *     o.addRepresentation( "distance", { atomPair: atomPair } );
+	 *     stage.centerView();
+	 * } );
+	 * @param {Structure} structure - the structure to be represented
+	 * @param {Viewer} viewer - a viewer object
+	 * @param {DistanceRepresentationParameters} params - distance representation parameters
+	 */
 	function DistanceRepresentation( structure, viewer, params ){
 
 	    StructureRepresentation.call( this, structure, viewer, params );
@@ -77440,6 +77236,22 @@
 	                l = "" + a.index;
 	                break;
 
+	            case "occupancy":
+	                l = a.occupancy.toFixed( 2 );
+	                break;
+
+	            case "bfactor":
+	                l = a.bfactor.toFixed( 2 );
+	                break;
+
+	            case "serial":
+	                l = "" + a.serial;
+	                break;
+
+	            case "element":
+	                l = a.element;
+	                break;
+
 	            case "atom":
 	                l = a.atomname + "|" + a.index;
 	                break;
@@ -77460,6 +77272,7 @@
 	                l = this.text[ a.index ];
 	                break;
 
+	            case "qualified":
 	            default:
 	                l = a.qualifiedName();
 	                break;
@@ -77477,11 +77290,16 @@
 	    "": "",
 	    "atomname": "atom name",
 	    "atomindex": "atom index",
+	    "occupancy": "occupancy",
+	    "bfactor": "b-factor",
+	    "serial": "serial",
+	    "element": "element",
 	    "atom": "atom name + index",
 	    "resname": "residue name",
 	    "resno": "residue no",
 	    "res": "residue name + no",
-	    "text": "text"
+	    "text": "text",
+	    "qualified": "qualified name"
 
 	};
 
@@ -77582,7 +77400,7 @@
 	        var labelFactory = new LabelFactory(
 	            this.labelType, this.labelText
 	        );
-	        sview.eachSelectedAtom( function( ap ){
+	        sview.eachAtom( function( ap ){
 	            text.push( labelFactory.atomLabel( ap ) );
 	        } );
 
@@ -77769,242 +77587,6 @@
 
 
 	RepresentationRegistry.add( "line", LineRepresentation );
-
-	// add here to avoid cyclic import dependency
-	Structure.prototype.getView = function( selection ){
-	    return new StructureView( this, selection );
-	};
-
-
-	function StructureView( structure, selection ){
-
-	    this.signals = {
-	        refreshed: new Signal(),
-	    };
-
-	    this.structure = structure;
-	    this.selection = selection;
-
-	    this.center = new Vector3();
-	    this.boundingBox = new Box3();
-
-	    // to allow creating an empty object to call .fromJSON onto
-	    if( !structure && !selection ) return;
-
-	    this.init();
-
-	    this.refresh();
-
-	}
-
-	StructureView.prototype = Object.assign( Object.create(
-
-	    Structure.prototype ), {
-
-	    constructor: StructureView,
-	    type: "StructureView",
-
-	    init: function(){
-
-	        Object.defineProperties( this, {
-	            atomSetDict: {
-	                get: function(){ return this.structure.atomSetDict; }
-	            },
-	            bondStore: {
-	                get: function(){ return this.structure.bondStore; }
-	            },
-	            backboneBondStore: {
-	                get: function(){ return this.structure.backboneBondStore; }
-	            },
-	            rungBondStore: {
-	                get: function(){ return this.structure.rungBondStore; }
-	            },
-	            atomStore: {
-	                get: function(){ return this.structure.atomStore; }
-	            },
-	            residueStore: {
-	                get: function(){ return this.structure.residueStore; }
-	            },
-	            chainStore: {
-	                get: function(){ return this.structure.chainStore; }
-	            },
-	            modelStore: {
-	                get: function(){ return this.structure.modelStore; }
-	            },
-	            atomMap: {
-	                get: function(){ return this.structure.atomMap; }
-	            },
-	            residueMap: {
-	                get: function(){ return this.structure.residueMap; }
-	            }
-	        } );
-
-	        this._ap = this.getAtomProxy();
-	        this._rp = this.getResidueProxy();
-	        this._cp = this.getChainProxy();
-
-	        // FIXME should selection be serializable?
-	        if( this.selection ){
-	            this.selection.signals.stringChanged.add( function( string ){
-	                this.refresh();
-	            }, this );
-	        }
-
-	        this.structure.signals.refreshed.add( this.refresh, this );
-
-	    },
-
-	    refresh: function(){
-
-	        if( exports.Debug ) Log$1.time( "StructureView.refresh" );
-
-	        this.atomSetCache = {};
-
-	        this.atomSet = this.getAtomSet2( this.selection );
-	        if( this.structure.atomSet ){
-	            if( exports.Debug ) Log$1.time( "StructureView.refresh#atomSet.intersection" );
-	            this.atomSet = this.atomSet.intersection( this.structure.atomSet );
-	            if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh#atomSet.intersection" );
-	        }
-
-	        this.bondSet = this.getBondSet();
-
-	        if( exports.Debug ) Log$1.time( "StructureView.refresh#atomSetDict.new_intersection" );
-	        for( var name in this.atomSetDict ){
-	            var as = this.atomSetDict[ name ];
-	            this.atomSetCache[ "__" + name ] = as.new_intersection( this.atomSet );
-	        }
-	        if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh#atomSetDict.new_intersection" );
-
-	        if( exports.Debug ) Log$1.time( "StructureView.refresh#size" );
-	        this.atomCount = this.atomSet.size();
-	        this.bondCount = this.bondSet.size();
-	        if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh#size" );
-
-	        this.boundingBox = this.getBoundingBox();
-	        this.center = this.boundingBox.center();
-
-	        if( exports.Debug ) Log$1.timeEnd( "StructureView.refresh" );
-
-	        this.signals.refreshed.dispatch();
-
-	    },
-
-	    getSelection: function(){
-
-	        var parentSelection = this.structure.getSelection();
-	        if( parentSelection ){
-	            if( parentSelection.string && this.selection.string ){
-	                return new Selection(
-	                    "( " + parentSelection.string + " ) AND " +
-	                    "( " + this.selection.string + " )"
-	                );
-	            }else if( parentSelection.string ){
-	                return new Selection( parentSelection.string );
-	            }else if( this.selection.string ){
-	                return new Selection( this.selection.string );
-	            }else{
-	                return new Selection( "" );
-	            }
-	        }else{
-	            return this.selection;
-	        }
-
-	    },
-
-	    getStructure: function(){
-
-	        return this.structure.getStructure();
-
-	    },
-
-	    toJSON: function(){
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: 'StructureView',
-	                generator: 'StructureViewExporter'
-	            },
-
-	            structure: this.structure.toJSON(),
-	            // selection: this.selection.toJSON(),
-
-	            atomSet: this.atomSet.toJSON(),
-	            bondSet: this.bondSet.toJSON(),
-
-	            atomCount: this.atomCount,
-	            bondCount: this.bondCount,
-
-	            atomSetCache: {}
-
-	        };
-
-	        for( var name in this.atomSetCache ){
-	            output.atomSetCache[ name ] = this.atomSetCache[ name ].toJSON();
-	        }
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        if( input.structure.metadata.type === "Structure" ){
-	            this.structure = new Structure().fromJSON( input.structure );
-	        }else if( input.structure.metadata.type === "StructureView" ){
-	            this.structure = new StructureView().fromJSON( input.structure );
-	        }
-
-	        this.atomSet = new Bitset().fromJSON( input.atomSet );
-	        this.bondSet = new Bitset().fromJSON( input.bondSet );
-
-	        this.atomCount = input.atomCount;
-	        this.bondCount = input.bondCount;
-
-	        this.atomSetCache = {};
-	        for( var name in input.atomSetCache ){
-	            var as = new Bitset();
-	            this.atomSetCache[ name ] = as.fromJSON( input.atomSetCache[ name ] );
-	        }
-
-	        this.init();
-
-	        return this;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [];
-
-	        transferable.concat( this.structure.getTransferable() );
-
-	        transferable.concat( this.bondSet.getTransferable() );
-	        transferable.concat( this.atomSet.getTransferable() );
-
-	        for( var name in this.atomSetCache ){
-	            transferable.concat( this.atomSetCache[ name ].getTransferable() );
-	        }
-
-	        return transferable;
-
-	    },
-
-	    dispose: function(){
-
-	        delete this.structure;
-
-	        delete this.atomSet;
-	        delete this.bondSet;
-
-	        delete this.atomCount;
-	        delete this.bondCount;
-
-	    }
-
-	} );
 
 	/**
 	 * @file Grid
@@ -84438,55 +84020,6 @@
 	Frames.prototype = {
 
 	    constructor: Frames,
-
-	    toJSON: function(){
-
-	        var output = {
-
-	            metadata: {
-	                version: 0.1,
-	                type: 'Frames',
-	                generator: 'FramesExporter'
-	            },
-
-	            name: this.name,
-	            path: this.path,
-
-	            coordinates: this.coordinates,
-	            boxes: this.boxes
-
-	        };
-
-	        return output;
-
-	    },
-
-	    fromJSON: function( input ){
-
-	        this.name = input.name;
-	        this.path = input.path;
-
-	        this.coordinates = input.coordinates;
-	        this.boxes = input.boxes;
-
-	    },
-
-	    getTransferable: function(){
-
-	        var transferable = [];
-
-	        var coordinates = this.coordinates;
-	        var n = coordinates.length;
-
-	        for( var i = 0; i < n; ++i ){
-
-	            transferable.push( coordinates[ i ].buffer );
-
-	        }
-
-	        return transferable;
-
-	    }
 
 	};
 
