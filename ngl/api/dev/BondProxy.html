@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: SurfaceComponent</title>
+	<title>Documentation Class: BondProxy</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -91,13 +91,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: SurfaceComponent</h1>
+	<h1 class="page-title">Class: BondProxy</h1>
 <section>
 
 <header>
     
         <h2>
-        SurfaceComponent
+        BondProxy
         </h2>
         
     
@@ -110,7 +110,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="SurfaceComponent"><span class="type-signature"></span>new SurfaceComponent(stage, surface, params)</h4>
+    <h4 class="name" id="BondProxy"><span class="type-signature"></span>new BondProxy(structure, index)</h4>
     
     
 </dt>
@@ -118,7 +118,7 @@
 
     
     <div class="description">
-        Component wrapping a Surface or Volume object
+        Bond proxy
     </div>
     
 
@@ -153,13 +153,13 @@
 
         <tr>
             
-                <td class="name"><code>stage</code></td>
+                <td class="name"><code>structure</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Stage.html">Stage</a></span>
+<span class="param-type"><a href="Structure.html">Structure</a></span>
 
 
 
@@ -170,23 +170,20 @@
 
             
 
-            <td class="description last">stage object the component belongs to</td>
+            <td class="description last">the structure</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>surface</code></td>
+                <td class="name"><code>index</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Surface.html">Surface</a></span>
-|
-
-<span class="param-type"><a href="Volume.html">Volume</a></span>
+<span class="param-type">Integer</span>
 
 
 
@@ -197,31 +194,7 @@
 
             
 
-            <td class="description last">surface or volume object to wrap</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#ComponentParameters">ComponentParameters</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">component parameters</td>
+            <td class="description last">the index</td>
         </tr>
 
     
@@ -289,15 +262,6 @@
     </div>
 
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="Component.html">Component</a></li>
-    </ul>
-
 
     
 
@@ -307,90 +271,6 @@
 
     
 
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<hr>
-<dt class="name" id="type">
-    <h4><span class="type-signature">&lt;constant> </span>type<span class="type-signature"> :String</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Component type
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">String</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
-	<dd class="tag-default">
-		<ul class="dummy">
-			<li>surface</li>
-		</ul>
-	</dd>
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -400,7 +280,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="addRepresentation"><span class="type-signature"></span>addRepresentation(type, params)</h4>
+    <h4 class="name" id="calculateShiftDir"><span class="type-signature"></span>calculateShiftDir(<span class="optional">v</span>)</h4>
     
     
 </dt>
@@ -408,7 +288,7 @@
 
     
     <div class="description">
-        Add a new surface representation to the component
+        calculate shift direction for displaying double/triple bonds
     </div>
     
 
@@ -431,6 +311,8 @@
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
         
 
@@ -443,13 +325,13 @@
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>v</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
 
 
 
@@ -457,35 +339,20 @@
             </td>
 
             
-
-            
-
-            <td class="description last">the name of the representation, one of:
-                       surface, dot.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">SurfaceRepresentationParameters</span>
+                    &lt;optional><br>
+                
 
+                
 
-
-            
-            </td>
-
-            
-
+                
+                </td>
             
 
-            <td class="description last">representation parameters</td>
+            
+
+            <td class="description last">pre-allocated output vector</td>
         </tr>
 
     
@@ -504,11 +371,6 @@
 
 	
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Component.html#addRepresentation">Component#addRepresentation</a>
-    </li></ul></dd>
     
 
     
@@ -554,8 +416,7 @@
     
             
 <div class="param-desc">
-    the created representation wrapped into
-                                  a representation component object
+    the shift direction vector
 </div>
 
 
@@ -566,7 +427,112 @@
     </dt>
     <dd>
         
-<span class="param-type">RepresentationComponent</span>
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getReferenceAtomIndex"><span class="type-signature"></span>getReferenceAtomIndex()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get reference atom index for the bond
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    atom index, or `undefined` if unavailable
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Integer</span>
+|
+
+<span class="param-type">undefined</span>
 
 
 
@@ -584,109 +550,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Events</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:representationAdded">representationAdded</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when a representation is added
-    </div>
-    
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type">RepresentationComponent</span>
-
-
-</h5>
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Component.html#event:representationAdded">Component#event:representationAdded</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
-
-
-    
-</dd>
-
-        </dl>
     
 </article>
 

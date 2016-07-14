@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: SurfaceComponent</title>
+	<title>Documentation Class: EllipsoidBuffer</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -91,13 +91,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: SurfaceComponent</h1>
+	<h1 class="page-title">Class: EllipsoidBuffer</h1>
 <section>
 
 <header>
     
         <h2>
-        SurfaceComponent
+        EllipsoidBuffer
         </h2>
         
     
@@ -110,7 +110,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="SurfaceComponent"><span class="type-signature"></span>new SurfaceComponent(stage, surface, params)</h4>
+    <h4 class="name" id="EllipsoidBuffer"><span class="type-signature"></span>new EllipsoidBuffer(position, color, radius, majorAxis, minorAxis, <span class="optional">pickingColor</span>, <span class="optional">params</span>)</h4>
     
     
 </dt>
@@ -118,7 +118,7 @@
 
     
     <div class="description">
-        Component wrapping a Surface or Volume object
+        Ellipsoid buffer
     </div>
     
 
@@ -141,6 +141,8 @@
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
         
 
@@ -153,13 +155,13 @@
 
         <tr>
             
-                <td class="name"><code>stage</code></td>
+                <td class="name"><code>position</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Stage.html">Stage</a></span>
+<span class="param-type">Float32Array</span>
 
 
 
@@ -167,26 +169,32 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">stage object the component belongs to</td>
+            <td class="description last">center positions
+                                 [x1,y1,z1, x2,y2,z2, ..., xN,yN,zN]</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>surface</code></td>
+                <td class="name"><code>color</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Surface.html">Surface</a></span>
-|
-
-<span class="param-type"><a href="Volume.html">Volume</a></span>
+<span class="param-type">Float32Array</span>
 
 
 
@@ -194,10 +202,153 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">surface or volume object to wrap</td>
+            <td class="description last">colors
+                              [r1,g1,b1, r2,g2,b2, ..., rN,gN,bN]</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float32Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">radii
+                              [r1, r2, ..., rN]</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>majorAxis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float32Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">major axis vectors, length defines radius in major direction
+                                 [x1,y1,z1, x2,y2,z2, ..., xN,yN,zN]</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minorAxis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float32Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">minor axis vectors, length defines radius in minor direction
+                                 [x1,y1,z1, x2,y2,z2, ..., xN,yN,zN]</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pickingColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float32Array</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">picking colors
+                                     [r1,g1,b1, r2,g2,b2, ..., rN,gN,bN]</td>
         </tr>
 
     
@@ -210,7 +361,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#ComponentParameters">ComponentParameters</a></span>
+<span class="param-type">BufferParams</span>
 
 
 
@@ -218,10 +369,20 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">component parameters</td>
+            <td class="description last">parameters object</td>
         </tr>
 
     
@@ -295,7 +456,7 @@
 
 
     <ul>
-        <li><a href="Component.html">Component</a></li>
+        <li><a href="Buffer.html">Buffer</a></li>
     </ul>
 
 
@@ -310,88 +471,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<hr>
-<dt class="name" id="type">
-    <h4><span class="type-signature">&lt;constant> </span>type<span class="type-signature"> :String</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Component type
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">String</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
-	<dd class="tag-default">
-		<ul class="dummy">
-			<li>surface</li>
-		</ul>
-	</dd>
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -400,7 +479,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="addRepresentation"><span class="type-signature"></span>addRepresentation(type, params)</h4>
+    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose()</h4>
     
     
 </dt>
@@ -408,209 +487,12 @@
 
     
     <div class="description">
-        Add a new surface representation to the component
+        Free buffer resources
     </div>
     
 
     
 
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the name of the representation, one of:
-                       surface, dot.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">SurfaceRepresentationParameters</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">representation parameters</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Component.html#addRepresentation">Component#addRepresentation</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    the created representation wrapped into
-                                  a representation component object
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">RepresentationComponent</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-        <h3 class="subsection-title">Events</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:representationAdded">representationAdded</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when a representation is added
-    </div>
-    
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type">RepresentationComponent</span>
-
-
-</h5>
     
 
     
@@ -629,7 +511,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Component.html#event:representationAdded">Component#event:representationAdded</a>
+				<a href="Buffer.html#dispose">Buffer#dispose</a>
 			</li>
 		</ul>
 	</dd>
@@ -678,15 +560,287 @@
     
 
     
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
+</dd>
 
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setParameters"><span class="type-signature"></span>setParameters(params)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set buffer parameters
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#BufferParameters">BufferParameters</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">buffer parameters object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Buffer.html#setParameters">Buffer#setParameters</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setVisibility"><span class="type-signature"></span>setVisibility(value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set buffer visibility
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">visibility value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Buffer.html#setVisibility">Buffer#setVisibility</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 </dd>
 
         </dl>
+    
+
+    
+
     
 </article>
 
