@@ -47,7 +47,7 @@
 			<li class="dropdown">
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
+					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="StructureView.html#event:refreshed">StructureView#event:refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
 				</ul>
 			</li>
 			
@@ -61,7 +61,7 @@
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li>
+					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#superpose">superpose</a></li>
 				</ul>
 			</li>
 			
@@ -262,6 +262,15 @@
     </div>
 
     
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Structure.html">Structure</a></li>
+    </ul>
+
 
     
 
@@ -276,7 +285,1620 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
 
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Removes structure from the GidPool. Calls dispose() method of property objects.
+Unsets properties to help garbage collection.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#dispose">Structure#dispose</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachAtom"><span class="type-signature"></span>eachAtom(callback, <span class="optional">selection</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Atom iterator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#atomCallback">atomCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#eachAtom">Structure#eachAtom</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachBond"><span class="type-signature"></span>eachBond(callback, <span class="optional">selection</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Bond iterator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#bondCallback">bondCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#eachBond">Structure#eachBond</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachChain"><span class="type-signature"></span>eachChain(callback, <span class="optional">selection</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Chain iterator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#chainCallback">chainCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#eachChain">Structure#eachChain</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachModel"><span class="type-signature"></span>eachModel(callback, <span class="optional">selection</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Model iterator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#modelCallback">modelCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#eachModel">Structure#eachModel</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachPolymer"><span class="type-signature"></span>eachPolymer(callback, <span class="optional">selection</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Polymer iterator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#polymerCallback">polymerCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#eachPolymer">Structure#eachPolymer</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachResidue"><span class="type-signature"></span>eachResidue(callback, <span class="optional">selection</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Residue iterator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#residueCallback">residueCallback</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#eachResidue">Structure#eachResidue</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="eachResidueN"><span class="type-signature"></span>eachResidueN()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Not implemented
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Structure.html#eachResidueN">Structure#eachResidueN</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getView"><span class="type-signature"></span>getView(selection)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get view on structure restricted to the selection
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selection</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Selection.html">Selection</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the selection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#getView">Structure#getView</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the view on the structure
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="StructureView.html">StructureView</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="refresh"><span class="type-signature"></span>refresh()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Updates atomSets and bondSets. Updates GidPool entry.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#refresh">Structure#refresh</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+    <h5>Fires:</h5>
+    <ul>
+        <li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li>
+    </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:refreshed">refreshed</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when Structure.refresh() is called
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Structure.html#event:refreshed">Structure#event:refreshed</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">structure.signals.refreshed( function(){ ... } );</pre>
+
+
+    
+</dd>
+
+        </dl>
     
 </article>
 
@@ -320,7 +1942,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 13th 2016, 9:23:28 pm
+		on July 18th 2016, 9:51:47 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

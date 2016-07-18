@@ -47,7 +47,7 @@
 			<li class="dropdown">
 				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
+					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="StructureView.html#event:refreshed">StructureView#event:refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
 				</ul>
 			</li>
 			
@@ -61,7 +61,7 @@
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li>
+					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#superpose">superpose</a></li>
 				</ul>
 			</li>
 			
@@ -932,6 +932,285 @@ Complexity: http://bigocheatsheet.com/ see Quicksort
 eleSize: 3 //because of (x, y, z)
 orderElement: 0 //order according to x</pre>
 
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="superpose"><span class="type-signature"></span>superpose(s1, s2, <span class="optional">align</span>, <span class="optional">sele1</span>, <span class="optional">sele2</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Perform structural superposition of two structures,
+optionally guided by a sequence alignment
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>s1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Structure.html">Structure</a></span>
+|
+
+<span class="param-type"><a href="StructureView.html">StructureView</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">structure 1 which is superposed onto structure 2</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>s2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Structure.html">Structure</a></span>
+|
+
+<span class="param-type"><a href="StructureView.html">StructureView</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">structure 2 onto which structure 1 is superposed</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>align</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">guide the superposition by a sequence alignment</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sele1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">selection string for structure 1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sele2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">selection string for structure 2</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 </dd>
@@ -5348,7 +5627,7 @@ orderElement: 0 //order according to x</pre>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on July 13th 2016, 9:23:27 pm
+		on July 18th 2016, 9:51:46 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
