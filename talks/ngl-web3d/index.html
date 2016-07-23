@@ -1,0 +1,461 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+    <style>
+        .reveal .slides > section {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .inactive {
+            color: #999;
+        }
+        .warning {
+            color: #eea236;
+        }
+        .success {
+            color: #4cae4c;
+        }
+        .top {
+            top: 100px !important;
+        }
+        .bottom {
+            top: unset !important;
+            bottom: 100px !important;
+        }
+        .reveal .speaker-notes {
+            width: 50%;
+            left: 25%;
+        }
+
+        .x {
+            position:relative;
+        }
+
+        .x:before, .x:after{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:10px;
+            background-color:tomato;
+            top:140px;
+        }
+
+        .x:before {
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            transform:rotate(45deg);
+            left:2px;
+        }
+        .x:after {
+            -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg);
+            transform:rotate(-45deg);
+            right:2px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<small id="busy" style="display:none; position:absolute; top:0px; right:0px;">Loading...</small>
+<div id="viewport" style="width:960px; height:700px;"></div>
+
+<img style="z-index:100; width:79px; height:76px; position:absolute; left:0px; bottom:0px;" src="img/UCSDlogo.jpeg" />
+<img style="z-index:100; width:185px; height:44px; position:absolute; right:0px; bottom:0px;" src="img/SDSClogo-plusname-red.jpg" />
+
+
+
+<!-- INTRO -->
+
+<section data-state="slide-title">
+    <h2>Web-based<br/>molecular graphics<br/>for large complexes</h2>
+    <div>MMTF &amp; NGL Viewer</div>
+    <br/>
+    <div><small>
+        <u>Alexander Rose</u>, Anthony Bradley, Yana Valasatava,<br/>
+        Jose Duarte, Andreas Prlic, Peter Rose
+        <br/><br/>
+        Poster Fast Forward @ Web3D 2016
+    </small></div>
+
+    <aside class="notes">
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+    </aside>
+</section>
+
+<section>
+    <p>This is the molecular structure of the Zika virus capsid...</p>
+</section>
+
+<section>
+    <p>... it helps to understand how the virus infects cells...</p>
+</section>
+
+<section>
+    <p>... and aid in drug development.</p>
+</section>
+
+<section data-state="slide-first">
+    <h3>Protein Data Bank</h3>
+    <img class="plain" style="float:right; width:20%; margin-right:5%;" src="img/wwpdb-logo.png" />
+    <p>Gathering, annotating &amp; serving macromolecular structures since 1971</p>
+    <br/>
+    <ul class="fragment">
+        <li>Structures can have millions of atoms</li>
+        <li>Whole archive has over 1 billion</li>
+        <li>Standard format is text-based, verbose</li>
+    </ul>
+</section>
+
+<section>
+    <h3>Speeding-up structure display</h3>
+    <img class="plain" style="float:right; width:15%; margin-right:5%;" src="img/transmission.png" />
+    <br/><br/>
+    <ul>
+        <li>Binary, compressed format: MMTF</li>
+        <li>Memory efficient data model</li>
+        <li>WebGL (based on three.js)</li>
+    </ul>
+</section>
+
+<section>
+    <h3>MacroMolecular<br/>Transmission Format (MMTF)</h3>
+    <small>Atomic coordinates, molecular topologies, metadata (no meshes)</small>
+    <br/>
+    <img class="plain" style="float:right; width:40%; margin-right:5%;" src="img/protein-delta-encoding.png" />
+    <p>Compression strategies:</p>
+    <ul>
+        <li>Dictionary encoding</li>
+        <li>Run-length encoding</li>
+        <li>Integer encoding</li>
+        <li>Delta encoding &#10144;</li>
+        <li>Integer packing</li>
+    </ul>
+</section>
+
+<section>
+    <h3>Improvement over mmCIF</h3>
+    <div style="display:inline-block; width:45%;">
+        <p><small>File size</small></p>
+        <img class="plain" src="img/mmtf-file-size2.png" />
+    </div>
+    <div style="display:inline-block; width:45%; margin-left:7%;">
+        <p><small>Parsing time</small></p>
+        <img class="plain" src="img/mmtf-parsing-time2.png" />
+    </div>
+    <p><small>
+        ~120.000 structures/files, gzip compressed<br/>
+        on a 2.6 GHz Intel Core i5 using JavaScript
+    </small></p>
+</section>
+
+<section>
+    <h3>Memory efficient data model</h3>
+    <img class="plain" style="float:right; width:25%; margin-right:5%;" src="img/store-table.png" />
+    <p style="text-align:left; margin-left:15%;">
+        Row-based:<br/>
+        &nbsp;&nbsp;<small>
+            ASN, 1, C <span style="color:#97D077;">|</span>
+            GLY, 2, H <span style="color:#97D077;">|</span>
+            PRO, 3, H <span style="color:#97D077;">|</span>
+            VAL, 4, H
+        </small>
+        <br/>
+        Column-based:<br/>
+        &nbsp;&nbsp;<small>
+            ASN, GLY, PRO, VAL <span style="color:#97D077;">|</span>
+            1, 2, 3, 4 <span style="color:#97D077;">|</span>
+            C, H, H, H
+        </small>
+    </p>
+    <br/>
+    <ul class="fragment">
+        <li>Single TypedArray per property</li>
+        <li>Parsed MMTF data can be copied in blocks</li>
+        <li>Proxy objects for row-like access</li>
+    </ul>
+</section>
+
+<section data-state="slide-3j3q-1">
+    <p>
+        HIV-1 capsid<br/>
+        <small>hexameric subunit, 10800 atoms</small>
+    </p>
+</section>
+
+<section data-state="slide-3j3q-2">
+    <p>
+        HIV-1 capsid<br/>
+        <small>216 hexameric and 12 pentameric subunit, ~2.4M unique atoms</small>
+    </p>
+</section>
+
+<section data-state="slide-ngl">
+    <h3>Acknowledgements</h3>
+    <br/>
+    <img class="plain" style="width:50%; float:right;"  src="img/rcsb-team.jpg" />
+    <ul style="width:45%; float:left;">
+        <li>
+            RCSB PDB Team<br/>
+            <img class="plain" style="width:60%;" src="img/rcsb_logo.png" />
+        </li>
+        <li>
+            NCI/NIH<br/>
+            (U01 CA198942)<br/>
+            <img class="plain" src="img/nih-bd2k.png" />
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h3>Thank you for your attention!</h3>
+    <br/>
+    <ul class="inactive">
+        <li>MMTF: <a target="_blank" href="http://mmtf.rcsb.org">http://mmtf.rcsb.org</a></li>
+        <li>NGL Viewer: <a target="_blank" href="https://github.com/arose/ngl">https://github.com/arose/ngl</a></li>
+        <li>Twitter: <a target="_blank" href="https://twitter.com/asrmoin">@asrmoin</a></li>
+    </ul>
+</section>
+
+
+
+</div>
+</div>
+
+<script src="js/reveal.js"></script>
+<script src="js/ngl.js"></script>
+
+<script>
+var stage;
+document.addEventListener( "DOMContentLoaded", function(){
+
+    Reveal.initialize({
+        controls: false,
+        showNotes: true,
+        width: 960,
+        height: 700,
+        // width: 1280,
+        // height: 933,
+    });
+
+    var notesFlag = true;
+    function toggleNotes(){
+        var elmList = document.querySelectorAll( ".reveal .speaker-notes.visible:not(:empty)" );
+        for( var i = 0, il = elmList.length; i < il; ++i ){
+            elmList[ i ].style.display = notesFlag ? "none" : "block";
+        }
+        notesFlag = !notesFlag;
+    }
+    toggleNotes();
+    window.addEventListener( "keyup", function( e ){
+        if( e.which === 83 ){
+            toggleNotes( notesFlag );
+        }
+    }, false );
+
+    stage = new NGL.Stage( "viewport", {
+        backgroundColor: "white",
+        sampleLevel: -1
+    } );
+    function handleResize(){
+        stage.handleResize();
+    }
+    window.addEventListener( "resize", handleResize, false );
+
+    stage.tasks.signals.countChanged.add( function( delta, count ){
+        document.getElementById( "busy" ).style.display = count > 0 ? "block" : "none";
+    } );
+
+    var _5IRE;
+    stage.loadFile( "./data/5IRE.mmtf.gz" ).then( function( o ){
+        _5IRE = o;
+        o.addRepresentation( "surface", {
+            scaleFactor: 0.2,
+            surfaceType: "sas",
+            probeRadius: 1.5,
+            colorScheme: "chainindex",
+            colorScale: "RdYlBu",
+            assembly: "BU1",
+            useWorker: true,
+            visible: true,
+            side: "front"
+        } );
+        var bb = o.structure.biomolDict[ "BU1" ].getBoundingBox( o.structure );
+        console.log(bb.size().length(), bb.center())
+        stage.viewer.center( bb.center() );
+        stage.viewer.zoom( bb.size().length(), true );
+    } );
+
+    function centerGroup( group, center ){
+        group.children.forEach( function( child ){
+            child.position.copy( center );
+        } );
+    }
+    function centerBuffer( buffer, center ){
+        centerGroup( buffer.group, center );
+        centerGroup( buffer.wireframeGroup, center );
+        centerGroup( buffer.pickingGroup, center );
+    }
+    function centerRepr( reprComp, center ){
+        reprComp.repr.bufferList.forEach( function( buffer ){
+            centerBuffer( buffer, center );
+        } );
+    }
+    function hideAll(){
+        stage.eachComponent( function( comp ){
+            comp.setVisibility( false );
+        } );
+    }
+
+    var _3J3QsubunitSele = ":f0 or :f1 or :f2 or :f3 or :f4 or :f5";
+    var _3J3QchainSele = ":f0";
+
+    var _3J3Q, _3J3Qsurface, _3J3Qcartoon, _3J3Qballnstick
+
+    Reveal.addEventListener( "slide-title", function(){
+        hideAll();
+        _5IRE.setVisibility( true );
+    }, false );
+
+    Reveal.addEventListener( "slide-first", function(){
+        hideAll();
+    }, false );
+
+    function prepareScale(){
+        stage.loadFile( "./data/3J3Q.mmtf.gz" ).then( function( o ){
+            _3J3Q = o;
+            _3J3Qsurface = o.addRepresentation( "surface", {
+                scaleFactor: 0.1,
+                surfaceType: "sas",
+                probeRadius: 0.1,
+                colorScheme: "atomindex",
+                colorScale: "RdYlBu",
+                assembly: "BU1",
+                useWorker: true,
+                visible: false,
+                side: "front"
+            } );
+            _3J3Qcartoon = o.addRepresentation( "cartoon", {
+                sele: _3J3QsubunitSele,
+                colorScheme: "chainindex",
+                visible: false
+            } );
+            _3J3Qballnstick = o.addRepresentation( "ball+stick", {
+                sele: _3J3QsubunitSele + " and ( sidechainAttached )",
+                colorScheme: "element",
+                visible: false
+            } );
+            _3J3Qpoint = o.addRepresentation( "point", {
+                visible: false
+            } );
+            var center = o.structure.center.clone().negate();
+            centerRepr( _3J3Qcartoon, center );
+            centerRepr( _3J3Qballnstick, center );
+            centerRepr( _3J3Qpoint, center );
+            _3J3Qsurface.repr.tasks.onZeroOnce( function(){
+                centerRepr( _3J3Qsurface, center );
+            } );
+            console.log(
+                "3J3Q",
+                _3J3Qcartoon.repr.structureView.atomCount,
+                _3J3Q.structure.atomCount,
+                _3J3Q.structure.biomolDict[ "BU1" ].getAtomCount( _3J3Q.structure ),
+                _3J3Q.structure.biomolDict[ "BU1" ].getInstanceCount()
+            );
+        } );
+    }
+
+    prepareScale();
+    Reveal.addEventListener( "slide-scale", function(){
+        stage.setSpin( null );
+        stage.setParameters( { clipNear: 0 } );
+        hideAll();
+    }, false );
+
+    var viewer = stage.viewer;
+    var controls = viewer.controls;
+    var camera = viewer.camera;
+
+    var target = new NGL.Vector3();
+    var target0 = new NGL.Vector3();
+    var targetN = new NGL.Vector3();
+
+    Reveal.addEventListener( "slide-3j3q-1", function(){
+        stage.setParameters( { sampleLevel: -1 } );
+        hideAll();
+        _3J3Q.setVisibility( true );
+        _3J3Qsurface.setVisibility( false );
+        _3J3Qcartoon.setVisibility( true );
+        _3J3Qballnstick.setVisibility( true );
+        _3J3Qpoint.setVisibility( false );
+
+        var selection = new NGL.Selection( _3J3QsubunitSele );
+        var bb = _3J3Q.structure.getBoundingBox( selection );
+
+        target.copy( _3J3Q.structure.atomCenter( selection ) );
+        viewer.center( target.sub( _3J3Q.structure.center ) );
+        viewer.zoom( _3J3Q.structure.getBoundingBox( selection ).size().length(), true );
+        stage.setSpin( [ 0, 1, 0 ], 0.005 );
+
+    }, false );
+
+    Reveal.addEventListener( "slide-3j3q-2", function(){
+        _3J3Qsurface.setVisibility( false );
+        _3J3Qcartoon.setVisibility( true );
+        _3J3Qballnstick.setVisibility( true );
+        _3J3Qpoint.setVisibility( true );
+        _3J3Q.setVisibility( true );
+        stage.setSpin( null );
+
+        var selection = new NGL.Selection( _3J3QsubunitSele );
+        target0.copy( controls.target );
+
+        var zoom0 = _3J3Q.structure.getBoundingBox( selection ).size().length();
+        var zoomN = _3J3Q.structure.getBoundingBox().size().length();
+
+        var t0 = performance.now();
+        function animate(){
+            var delta = performance.now() - t0;
+            var alpha = Math.min( 1.0, delta / 5000 );
+            // _3J3Qsurface.setParameters( { opacity: alpha } );
+            target.lerpVectors( target0, targetN, alpha );
+            viewer.center( target );
+            viewer.zoom( zoom0 + ( zoomN - zoom0 ) * alpha, true );
+            viewer.requestRender();
+            if( alpha < 1.0 ){
+                requestAnimationFrame( animate );
+            }else{
+                // stage.setSpin( [ 0, 1, 0 ], 0.005 );
+                stage.setSpin( null );
+                _3J3Qsurface.setVisibility( true );
+                t0 = performance.now();
+                animate2();
+            }
+        }
+        function animate2(){
+            var delta = performance.now() - t0;
+            var alpha = Math.min( 1.0, delta / 5000 );
+            _3J3Qsurface.setParameters( { opacity: alpha } );
+            viewer.requestRender();
+            if( alpha < 1.0 ){
+                requestAnimationFrame( animate2 );
+            }else{
+                stage.setSpin( [ 0, 1, 0 ], 0.005 );
+            }
+        }
+        animate();
+
+    }, false );
+
+    Reveal.addEventListener( "slide-ngl", function(){
+        stage.setSpin( null );
+        stage.setParameters( { clipNear: 0 } );
+        hideAll();
+    }, false );
+
+} );
+</script>
+
+</body>
+</html>
