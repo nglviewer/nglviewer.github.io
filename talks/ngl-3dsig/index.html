@@ -68,6 +68,10 @@
 
 <!-- INTRO -->
 
+<section data-state="slide-loading">
+    <h2 id="status">Loading...</h2>
+</section>
+
 <section data-state="slide-title">
     <h2>Scalable<br/>3D molecular graphics<br/>on the web</h2>
     <div>MMTF &amp; NGL Viewer</div>
@@ -80,7 +84,7 @@
     </small></div>
 
     <aside class="notes">
-        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you hit 's' on your keyboard.
     </aside>
 </section>
 
@@ -159,7 +163,7 @@
 <!-- RETRIEVAL & PARSING -->
 
 <section>
-    <h3>Retrieval &amp; Parsing</h3>
+    <h3>Download &amp; Parsing</h3>
     <ol>
         <li class="warning">Download File &#10144; ???</li>
         <li class="warning">Decompress &amp; Parse &#10144; ???</li>
@@ -170,9 +174,9 @@
 </section>
 
 <section>
-    <h3>Speeding-up<br/>Retrieval &amp; Parsing</h3>
+    <h3>Speeding-up<br/>Download &amp; Parsing</h3>
     <ul>
-        <li class="fragment">Retrieval: Smaller file-size</li>
+        <li class="fragment">Download: Smaller file-size</li>
         <li class="fragment">Parsing: Binary encoding</li>
         <li class="fragment">Consistent &amp; complete data</li>
     </ul>
@@ -267,10 +271,11 @@
 
 <section>
     <h3>MMTF - Availability</h3>
-    <div style="width:8%; right:0px; position:absolute;">
+    <div style="width:10%; right:2px; position:absolute;">
         <img class="plain" style="margin:0px" src="img/java.png" />
         <img class="plain" style="margin:15px 0px 15px 0px" src="img/javascript.png" />
         <img class="plain" style="margin:0px" src="img/python.png" />
+        <img class="plain" style="margin:15px 0px 15px 0px" src="img/rcsb_logo.png" />
     </div>
     <ul>
         <li>
@@ -290,7 +295,7 @@
 </section>
 
 <section>
-    <h3>Retrieval &amp; Parsing</h3>
+    <h3>Download &amp; Parsing</h3>
     <ol>
         <li class="success">Download File &#10144; MMTF</li>
         <li class="success">Decompress &amp; Parse &#10144; MMTF</li>
@@ -573,9 +578,9 @@
         <br/>
         <li class="fragment">NGL Viewer
             <ul><small>
-                <li>Scalable 3D molecular graphics</li>
-                <li>Memory-efficient data model</li>
+                <li>Memory-efficient data model, MMTF support</li>
                 <li>Fast rendering through WebGL</li>
+                <li>Embeddable library, API</li>
                 <li>Enables scalable 3D molecular graphics on the web</li>
             </small></ul>
         </li>
@@ -659,6 +664,7 @@ document.addEventListener( "DOMContentLoaded", function(){
 
     stage.tasks.signals.countChanged.add( function( delta, count ){
         document.getElementById( "busy" ).style.display = count > 0 ? "block" : "none";
+        document.getElementById( "status" ).innerHTML = count > 0 ? "Loading..." : "Ready!";
     } );
 
     var _3IYV;
@@ -753,6 +759,8 @@ document.addEventListener( "DOMContentLoaded", function(){
     }, false );
 
     Reveal.addEventListener( "slide-billion", function(){
+        stage.setSpin( null );
+        stage.setParameters( { clipNear: 0 } );
         hideAll();
     }, false );
 
@@ -804,6 +812,8 @@ document.addEventListener( "DOMContentLoaded", function(){
     }, false );
 
     Reveal.addEventListener( "slide-status", function(){
+        stage.setSpin( null );
+        stage.setParameters( { clipNear: 0 } );
         hideAll();
     }, false );
 
@@ -893,6 +903,8 @@ document.addEventListener( "DOMContentLoaded", function(){
 
     prepareScale();
     Reveal.addEventListener( "slide-scale", function(){
+        stage.setSpin( null );
+        stage.setParameters( { clipNear: 0 } );
         hideAll();
     }, false );
 
@@ -1059,6 +1071,8 @@ document.addEventListener( "DOMContentLoaded", function(){
     }, false );
 
     Reveal.addEventListener( "slide-ngl", function(){
+        stage.setSpin( null );
+        stage.setParameters( { clipNear: 0 } );
         hideAll();
     }, false );
 

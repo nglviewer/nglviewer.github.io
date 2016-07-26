@@ -68,6 +68,10 @@
 
 <!-- INTRO -->
 
+<section data-state="slide-loading">
+    <h2 id="status">Loading...</h2>
+</section>
+
 <section data-state="slide-title">
     <h2>Web-based<br/>molecular graphics<br/>for large complexes</h2>
     <div>MMTF &amp; NGL Viewer</div>
@@ -265,6 +269,7 @@ document.addEventListener( "DOMContentLoaded", function(){
 
     stage.tasks.signals.countChanged.add( function( delta, count ){
         document.getElementById( "busy" ).style.display = count > 0 ? "block" : "none";
+        document.getElementById( "status" ).innerHTML = count > 0 ? "Loading..." : "Ready!";
     } );
 
     var _5IRE;
