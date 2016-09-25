@@ -1092,7 +1092,8 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://ala3.pdb" ).then( function( o ){
 
             var atomPair = [
-                [ "1.CA", "3.CA" ]
+                // [ "1.CA", "3.CA" ]
+                [ 8, 28 ]
             ];
 
             o.addRepresentation( "licorice" );
@@ -1226,7 +1227,7 @@ NGL.ExampleRegistry.addDict( {
     "bondOrders": function( stage ) {
 
         stage.loadFile( "data://4umt_47w.sdf" ).then( function ( o ) {
-            o.addRepresentation( "licorice", { multipleBond: true } );
+            o.addRepresentation( "licorice", { multipleBond: "symmetric" } );
             stage.centerView();
         } );
 
@@ -1235,7 +1236,7 @@ NGL.ExampleRegistry.addDict( {
     "chemCompCif": function( stage ){
 
         stage.loadFile( "data://PRDCC_000001.cif" ).then( function( o ){
-            o.addRepresentation( "licorice", { sele: "/0", multipleBond: true } );
+            o.addRepresentation( "licorice", { sele: "/0", multipleBond: "symmetric" } );
             stage.centerView();
         } );
 
@@ -1270,9 +1271,6 @@ NGL.ExampleRegistry.addDict( {
             stage.centerView();
 
             var radius = 8;
-            var s = o.structure;
-            var spatialHash = new NGL.SpatialHash( s.atomStore, s.boundingBox );
-
             var spacefillRepr = o.addRepresentation( "ball+stick", { sele: "NONE"/*, radius: 0.5*/ } );
 
             function getCenterArray(){
@@ -1281,11 +1279,6 @@ NGL.ExampleRegistry.addDict( {
                 var group = stage.viewer.rotationGroup.position;
                 position.copy( group ).negate().add( target );
                 return position;
-            }
-
-            function getSele( pos ){
-                var within = spatialHash.within( pos.x, pos.y, pos.z, radius );
-                return within.length ? "@" + within.join( "," ) : "NONE";
             }
 
             var sphereBuffer = new NGL.SphereBuffer(
@@ -1303,7 +1296,7 @@ NGL.ExampleRegistry.addDict( {
                     if( pos.distanceTo( prevPos ) > 0.1 ){
                         sphereBuffer.setAttributes( { "position": pos.toArray() } );
                         prevPos = pos;
-                        var sele = getSele( pos );
+                        var sele = s.getAtomSetWithinPoint( pos, radius ).toSeleString();
                         if( sele !== prevSele ){
                             spacefillRepr.setSelection( sele );
                             prevSele = sele;
@@ -1335,6 +1328,31 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "surface", { visible: false, lazy: true } );
             stage.centerView();
         } );
+
+    },
+
+    ringFlags: function( stage ) {
+
+        stage.loadFile( "rcsb://4w93.mmtf" ).then( function( o ){
+
+            o.addRepresentation( "licorice", { sele: "[3L9]" } );
+
+            // Get ring atoms for residue with name 3L9
+            var ringAtomNames = [];
+            o.structure.eachAtom( function( ap ) {
+                if( ap.isRing() ){
+                    ringAtomNames.push( "." + ap.atomname );
+                }
+            }, new NGL.Selection( "[3L9]" ));
+
+            o.addRepresentation("spacefill", {
+                sele: "[3L9] and ( " + ringAtomNames.join(" ") + ")",
+                scale: 0.25
+            });
+
+            stage.centerView();
+
+        })
 
     },
 
@@ -1526,6 +1544,6 @@ NGL.ExampleRegistry.addDict( {
             stage.centerView();
         });
 
-    },
+    }
 
 } );

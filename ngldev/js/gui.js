@@ -94,7 +94,7 @@ NGL.Preferences = function( id, defaultParams ){
 
     this.storage = {
         impostor: true,
-        quality: "medium",
+        quality: "auto",
         sampleLevel: 0,
         theme: "dark",
         backgroundColor: "black",
@@ -471,14 +471,7 @@ NGL.MenubarWidget = function( stage, preferences ){
 
 NGL.MenubarFileWidget = function( stage ){
 
-    var fileTypesOpen = [
-        "pdb", "pdb1", "ent", "pqr", "gro", "cif", "mcif", "mmcif", "sdf", "mol2",
-        "mmtf",
-        "mrc", "ccp4", "map", "cube", "dx", "dxbin",
-        "obj", "ply",
-        "ngl",
-        "gz"
-    ];
+    var fileTypesOpen = NGL.ParserRegistry.names.concat( [ "ngl", "gz" ] );
     var fileTypesImport = fileTypesOpen;
 
     function fileInputOnChange( e ){
