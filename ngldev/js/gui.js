@@ -4,6 +4,28 @@
  */
 
 
+HTMLElement.prototype.getBoundingClientRect = function(){
+
+    // workaround for ie11 behavior with disconnected dom nodes
+
+    var _getBoundingClientRect = HTMLElement.prototype.getBoundingClientRect;
+
+    return function getBoundingClientRect(){
+        try{
+            return _getBoundingClientRect.apply( this, arguments );
+        }catch( e ){
+            return {
+                top: 0,
+                left: 0,
+                width: this.width,
+                height: this.height
+            };
+        }
+    };
+
+}();
+
+
 NGL.Widget = function(){
 
 };
@@ -61,6 +83,11 @@ NGL.createParameterInput = function( p ){
 
         input = new UI.ColorPopupMenu( p.label )
             .setValue( p.value );
+
+    }else if( p.type === "vector3" ){
+
+        input = new UI.Vector3( p.value )
+            .setPrecision( p.precision );
 
     }else if( p.type === "hidden" ){
 
@@ -450,10 +477,10 @@ NGL.MenubarWidget = function( stage, preferences ){
 
     container.add( new NGL.MenubarFileWidget( stage ) );
     container.add( new NGL.MenubarViewWidget( stage, preferences ) );
-    if( NGL.ExampleRegistry.count > 0 ){
+    if( NGL.ExampleRegistry && NGL.ExampleRegistry.count > 0 ){
         container.add( new NGL.MenubarExamplesWidget( stage ) );
     }
-    if( NGL.PluginRegistry.count > 0 ){
+    if( NGL.PluginRegistry && NGL.PluginRegistry.count > 0 ){
         container.add( new NGL.MenubarPluginsWidget( stage ) );
     }
     container.add( new NGL.MenubarHelpWidget( stage, preferences ) );

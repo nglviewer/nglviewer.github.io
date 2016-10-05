@@ -1,137 +1,67 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Structure</title>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Structure</title>
 
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
-
-	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
-
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top ">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Documentation</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="module-NGL.html">NGL</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="Color.html">Color</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="File.html">File</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Representation.html">Representation</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="StructureView.html#event:refreshed">StructureView#event:refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#superpose">superpose</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-		<div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-	</div>
+<div id="main">
 
-</div>
-</div>
+    <h1 class="page-title">Class: Structure</h1>
+
+    
 
 
-<div class="container" id="toc-content">
-<div class="row">
 
-	
-	<div class="col-md-8">
-	
-		<div id="main">
-			
 
-	<h1 class="page-title">Class: Structure</h1>
 <section>
 
 <header>
     
-        <h2>
-        Structure
-        </h2>
+        <h2>Structure</h2>
         
     
 </header>
-
 
 <article>
     <div class="container-overview">
     
         
-<hr>
-<dt>
-    <h4 class="name" id="Structure"><span class="type-signature"></span>new Structure(name, path)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Structure
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="Structure"><span class="type-signature"></span>new Structure<span class="signature">(name, path)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Structure
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -162,7 +92,6 @@
 <span class="param-type">String</span>
 
 
-
             
             </td>
 
@@ -186,7 +115,6 @@
 <span class="param-type">String</span>
 
 
-
             
             </td>
 
@@ -201,17 +129,12 @@
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -221,42 +144,45 @@
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
     
     </div>
@@ -267,7 +193,7 @@
 
     
 
-    
+     
 
     
 
@@ -276,39 +202,35 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        <dl>
+        
             
-<hr>
-<dt>
-    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose()</h4>
-    
-    
-</dt>
-<dd>
 
     
-    <div class="description">
-        Removes structure from the GidPool. Calls dispose() method of property objects.
+
+    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Calls dispose() method of property objects.
 Unsets properties to help garbage collection.
-    </div>
-    
+</div>
 
-    
 
-    
 
-    
-    
 
-    
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -318,69 +240,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachAtom"><span class="type-signature"></span>eachAtom(callback [, selection])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Atom iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachAtom"><span class="type-signature"></span>eachAtom<span class="signature">(callback, selection<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Atom iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -390,7 +316,7 @@ Unsets properties to help garbage collection.
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -413,7 +339,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#atomCallback">atomCallback</a></span>
 
 
-
             
             </td>
 
@@ -445,7 +370,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -470,17 +394,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -490,69 +409,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachBond"><span class="type-signature"></span>eachBond(callback [, selection])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Bond iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachBond"><span class="type-signature"></span>eachBond<span class="signature">(callback, selection<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Bond iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -562,7 +485,7 @@ Unsets properties to help garbage collection.
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -585,7 +508,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#bondCallback">bondCallback</a></span>
 
 
-
             
             </td>
 
@@ -617,7 +539,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -642,17 +563,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -662,69 +578,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachChain"><span class="type-signature"></span>eachChain(callback [, selection])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Chain iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachChain"><span class="type-signature"></span>eachChain<span class="signature">(callback, selection<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Chain iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -734,7 +654,7 @@ Unsets properties to help garbage collection.
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -757,7 +677,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#chainCallback">chainCallback</a></span>
 
 
-
             
             </td>
 
@@ -789,7 +708,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -814,17 +732,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -834,69 +747,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachModel"><span class="type-signature"></span>eachModel(callback [, selection])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Model iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachEntity"><span class="type-signature"></span>eachEntity<span class="signature">(callback, type)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Entity iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -906,7 +823,156 @@ Unsets properties to help garbage collection.
         <th>Type</th>
 
         
-        <th>Argument</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">entityCallback</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">EntityType</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">entity type</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="eachModel"><span class="type-signature"></span>eachModel<span class="signature">(callback, selection<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Model iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
         
 
         
@@ -929,7 +995,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#modelCallback">modelCallback</a></span>
 
 
-
             
             </td>
 
@@ -961,7 +1026,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -986,17 +1050,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1006,69 +1065,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachPolymer"><span class="type-signature"></span>eachPolymer(callback [, selection])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Polymer iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachPolymer"><span class="type-signature"></span>eachPolymer<span class="signature">(callback, selection<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Polymer iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1078,7 +1141,7 @@ Unsets properties to help garbage collection.
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -1101,7 +1164,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#polymerCallback">polymerCallback</a></span>
 
 
-
             
             </td>
 
@@ -1133,7 +1195,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -1158,17 +1219,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1178,69 +1234,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachResidue"><span class="type-signature"></span>eachResidue(callback [, selection])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Residue iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachResidue"><span class="type-signature"></span>eachResidue<span class="signature">(callback, selection<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Residue iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1250,7 +1310,7 @@ Unsets properties to help garbage collection.
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -1273,7 +1333,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#residueCallback">residueCallback</a></span>
 
 
-
             
             </td>
 
@@ -1305,7 +1364,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -1330,17 +1388,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1350,69 +1403,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="eachResidueN"><span class="type-signature"></span>eachResidueN(n, callback)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Multi-residue iterator
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="eachResidueN"><span class="type-signature"></span>eachResidueN<span class="signature">(n, callback)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Multi-residue iterator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1443,7 +1500,6 @@ Unsets properties to help garbage collection.
 <span class="param-type">Integer</span>
 
 
-
             
             </td>
 
@@ -1467,7 +1523,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="global.html#residueListCallback">residueListCallback</a></span>
 
 
-
             
             </td>
 
@@ -1482,17 +1537,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1502,69 +1552,73 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="getView"><span class="type-signature"></span>getView(selection)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get view on structure restricted to the selection
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="getView"><span class="type-signature"></span>getView<span class="signature">(selection)</span><span class="type-signature"> &rarr; {<a href="StructureView.html">StructureView</a>}</span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Get view on structure restricted to the selection
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1595,7 +1649,6 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="Selection.html">Selection</a></span>
 
 
-
             
             </td>
 
@@ -1610,17 +1663,12 @@ Unsets properties to help garbage collection.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1630,42 +1678,46 @@ Unsets properties to help garbage collection.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     the view on the structure
 </div>
@@ -1681,192 +1733,18 @@ Unsets properties to help garbage collection.
 <span class="param-type"><a href="StructureView.html">StructureView</a></span>
 
 
-
     </dd>
 </dl>
 
+    
+
+
 
         
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="refresh"><span class="type-signature"></span>refresh()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Updates atomSets and bondSets. Updates GidPool entry.
-    </div>
     
 
     
 
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-    <h5>Fires:</h5>
-    <ul>
-        <li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li>
-    </ul>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-        <h3 class="subsection-title">Events</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:refreshed">refreshed</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when Structure.refresh() is called
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">structure.signals.refreshed( function(){ ... } );</pre>
-
-
-    
-</dd>
-
-        </dl>
     
 </article>
 
@@ -1875,127 +1753,19 @@ Unsets properties to help garbage collection.
 
 
 
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
 </div>
 
-<div class="modal fade" id="searchResults">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Search results</h4>
-      </div>
-      <div class="modal-body"></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-NGL.html">NGL</a></li></ul><h3>Classes</h3><ul><li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="Color.html">Color</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="Entity.html">Entity</a></li><li><a href="File.html">File</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="Plane.html">Plane</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Representation.html">Representation</a></li><li><a href="RepresentationComponent.html">RepresentationComponent</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="SurfaceRepresentation.html">SurfaceRepresentation</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li></ul><h3>Events</h3><ul><li><a href="Component.html#event:representationAdded">representationAdded</a></li><li><a href="Component.html#event:representationRemoved">representationRemoved</a></li><li><a href="Component.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Counter.html#event:countChanged">countChanged</a></li><li><a href="RepresentationComponent.html#event:parametersChanged">parametersChanged</a></li><li><a href="RepresentationComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">representationAdded</a></li><li><a href="ScriptComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="ScriptComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="ShapeComponent.html#event:representationAdded">representationAdded</a></li><li><a href="ShapeComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="ShapeComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Stage.html#event:clicked">clicked</a></li><li><a href="Stage.html#event:componentAdded">componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">hovered</a></li><li><a href="Stage.html#event:parametersChanged">parametersChanged</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">representationAdded</a></li><li><a href="StructureComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="StructureComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="StructureView.html#event:refreshed">refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="SurfaceComponent.html#event:visibilityChanged">visibilityChanged</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li></ul><h3>Global</h3><ul><li><a href="global.html#assignResidueTypeBonds">assignResidueTypeBonds</a></li><li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#binarySearchIndexOf">binarySearchIndexOf</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#refresh">refresh</a></li><li><a href="global.html#superpose">superpose</a></li><li><a href="global.html#withinRadii">withinRadii</a></li></ul>
+</nav>
+
+<br class="clear">
 
 <footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
-	
-		on July 22nd 2016, 2:27:24 pm
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Wed Oct 05 2016 10:40:39 GMT-0700 (PDT)
 </footer>
 
-<script src="scripts/docstrap.lib.js"></script>
-<script src="scripts/toc.js"></script>
-<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
-
-<script>
-$( function () {
-	$( "[id*='$']" ).each( function () {
-		var $this = $( this );
-
-		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-	} );
-
-	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
-		var $this = $( this );
-
-		var example = $this.find( "code" );
-		exampleText = example.html();
-		var lang = /{@lang (.*?)}/.exec( exampleText );
-		if ( lang && lang[1] ) {
-			exampleText = exampleText.replace( lang[0], "" );
-			example.html( exampleText );
-			lang = lang[1];
-		} else {
-			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
-			lang = langClassMatch ? langClassMatch[1] : "javascript";
-		}
-
-		if ( lang ) {
-
-			$this
-			.addClass( "sunlight-highlight-" + lang )
-			.addClass( "linenums" )
-			.html( example.html() );
-
-		}
-	} );
-
-	Sunlight.highlightAll( {
-		lineNumbers : true,
-		showMenu : true,
-		enableDoclinks : true
-	} );
-
-	$.catchAnchorLinks( {
-        navbarOffset: 10
-	} );
-	$( "#toc" ).toc( {
-		anchorName  : function ( i, heading, prefix ) {
-			var id = $( heading ).attr( "id" );
-			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
-		},
-		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
-		showAndHide : false,
-		smoothScrolling: true
-	} );
-
-	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-	$( '.dropdown-toggle' ).dropdown();
-
-    $( "table" ).each( function () {
-      var $this = $( this );
-      $this.addClass('table');
-    } );
-
-} );
-</script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-<!--Google Analytics-->
-
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		SearcherDisplay.init();
-	});
-</script>
-
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>

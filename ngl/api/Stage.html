@@ -1,137 +1,67 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Stage</title>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Stage</title>
 
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
-
-	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
-
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top ">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Documentation</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="module-NGL.html">NGL</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="Color.html">Color</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="File.html">File</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Representation.html">Representation</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="StructureView.html#event:refreshed">StructureView#event:refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#superpose">superpose</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-		<div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-	</div>
+<div id="main">
 
-</div>
-</div>
+    <h1 class="page-title">Class: Stage</h1>
+
+    
 
 
-<div class="container" id="toc-content">
-<div class="row">
 
-	
-	<div class="col-md-8">
-	
-		<div id="main">
-			
 
-	<h1 class="page-title">Class: Stage</h1>
 <section>
 
 <header>
     
-        <h2>
-        Stage
-        </h2>
+        <h2>Stage</h2>
         
     
 </header>
-
 
 <article>
     <div class="container-overview">
     
         
-<hr>
-<dt>
-    <h4 class="name" id="Stage"><span class="type-signature"></span>new Stage(eid, params)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Stage objects are central for creating molecular scenes with NGL.
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="Stage"><span class="type-signature"></span>new Stage<span class="signature">(eid, params)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Stage objects are central for creating molecular scenes with NGL.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -162,7 +92,6 @@
 <span class="param-type">String</span>
 
 
-
             
             </td>
 
@@ -186,7 +115,6 @@
 <span class="param-type"><a href="global.html#StageParameters">StageParameters</a></span>
 
 
-
             
             </td>
 
@@ -201,17 +129,12 @@
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -221,48 +144,50 @@
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">var stage = new Stage( &quot;elementId&quot;, { backgroundColor: &quot;white&quot; } );</pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-</dd>
+    <pre class="prettyprint"><code>var stage = new Stage( "elementId", { backgroundColor: "white" } );</code></pre>
+
+
 
     
     </div>
@@ -273,51 +198,42 @@
 
     
 
-    
+     
 
     
 
     
         <h3 class="subsection-title">Members</h3>
 
-        <dl>
+        
             
-<hr>
-<dt class="name" id="tasks">
-    <h4><span class="type-signature"></span>tasks<span class="type-signature"> :<a href="Counter.html">Counter</a></span></h4>
+<h4 class="name" id="tasks"><span class="type-signature"></span>tasks<span class="type-signature"> :<a href="Counter.html">Counter</a></span></h4>
 
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Counter that keeps track of various potential long-running tasks,
+
+
+
+<div class="description">
+    Counter that keeps track of various potentially long-running tasks,
 including file loading and surface calculation.
-    </div>
-    
+</div>
 
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type"><a href="Counter.html">Counter</a></span>
 
 
+        </li>
+    </ul>
 
-            </li>
-        </ul>
-    
 
-    
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -327,63 +243,69 @@ including file loading and surface calculation.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-</dd>
 
-        </dl>
+
+
+
+        
     
 
     
         <h3 class="subsection-title">Methods</h3>
 
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="defaultFileRepresentation"><span class="type-signature"></span>defaultFileRepresentation(object)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Create default representations for the given component
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
         
+            
 
-<table class="params table table-striped">
+    
+
+    <h4 class="name" id="defaultFileRepresentation"><span class="type-signature"></span>defaultFileRepresentation<span class="signature">(object)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Create default representations for the given component
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -417,7 +339,6 @@ including file loading and surface calculation.
 <span class="param-type"><a href="SurfaceComponent.html">SurfaceComponent</a></span>
 
 
-
             
             </td>
 
@@ -432,17 +353,12 @@ including file loading and surface calculation.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -452,42 +368,46 @@ including file loading and surface calculation.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -499,48 +419,41 @@ including file loading and surface calculation.
 <span class="param-type">undefined</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="getParameters"><span class="type-signature"></span>getParameters()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get stage parameters
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="getParameters"><span class="type-signature"></span>getParameters<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="global.html#StageParameters">StageParameters</a>}</span></h4>
 
     
-    
 
-    
+
+
+<div class="description">
+    Get stage parameters
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -550,42 +463,46 @@ including file loading and surface calculation.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     parameter object
 </div>
@@ -601,48 +518,41 @@ including file loading and surface calculation.
 <span class="param-type"><a href="global.html#StageParameters">StageParameters</a></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="handleResize"><span class="type-signature"></span>handleResize()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Handle any size-changes of the container element
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="handleResize"><span class="type-signature"></span>handleResize<span class="signature">()</span><span class="type-signature"> &rarr; {undefined}</span></h4>
 
     
-    
 
-    
+
+
+<div class="description">
+    Handle any size-changes of the container element
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -652,42 +562,46 @@ including file loading and surface calculation.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -699,42 +613,40 @@ including file loading and surface calculation.
 <span class="param-type">undefined</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="loadFile"><span class="type-signature"></span>loadFile(path, params)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Load a file onto the stage
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="loadFile"><span class="type-signature"></span>loadFile<span class="signature">(path, params)</span><span class="type-signature"> &rarr; {<a href="Promise.html">Promise</a>}</span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Load a file onto the stage
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -771,7 +683,6 @@ including file loading and surface calculation.
 <span class="param-type"><a href="Blob.html">Blob</a></span>
 
 
-
             
             </td>
 
@@ -795,7 +706,6 @@ including file loading and surface calculation.
 <span class="param-type">Object</span>
 
 
-
             
             </td>
 
@@ -804,10 +714,10 @@ including file loading and surface calculation.
             
 
             <td class="description last">loading parameters
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                <h6>Properties</h6>
                 
 
-<table class="params table table-striped">
+<table class="params">
     <thead>
     <tr>
         
@@ -838,7 +748,6 @@ including file loading and surface calculation.
 <span class="param-type">String</span>
 
 
-
             
             </td>
 
@@ -862,7 +771,6 @@ including file loading and surface calculation.
 <span class="param-type">Boolean</span>
 
 
-
             
             </td>
 
@@ -884,17 +792,12 @@ including file loading and surface calculation.
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -904,47 +807,51 @@ including file loading and surface calculation.
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
-    <h5>Fires:</h5>
-    <ul>
-        <li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li>
-    </ul>
-    
 
-    
 
-    
+<h5>Fires:</h5>
+<ul>
+    <li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li>
+</ul>
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 <div class="param-desc">
     A Promise object that resolves to a <a href="StructureComponent.html">StructureComponent</a>,
                   a <a href="SurfaceComponent.html">SurfaceComponent</a> or a <a href="ScriptComponent.html">ScriptComponent</a> object,
@@ -962,65 +869,62 @@ including file loading and surface calculation.
 <span class="param-type"><a href="Promise.html">Promise</a></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-        <h5>Examples</h5>
-        
-    <pre class="sunlight-highlight-javascript">// load from URL
-stage.loadFile( &quot;http://files.rcsb.org/download/5IOS.cif&quot; );</pre>
-
-    <pre class="sunlight-highlight-javascript">// load binary data in CCP4 format via a Blob
-var binaryBlob = new Blob( [ ccp4Data ], { type: &#x27;application/octet-binary&#x27;} );
-stage.loadFile( binaryBlob, { ext: &quot;ccp4&quot; } );</pre>
-
-    <pre class="sunlight-highlight-javascript">// load string data in PDB format via a Blob
-var stringBlob = new Blob( [ pdbData ], { type: &#x27;text/plain&#x27;} );
-stage.loadFile( stringBlob, { ext: &quot;pdb&quot; } );</pre>
-
-    <pre class="sunlight-highlight-javascript">// load a File object
-stage.loadFile( file );</pre>
-
-    <pre class="sunlight-highlight-javascript">// load from URL and add a &#x27;ball+stick&#x27; representation with double/triple bonds
-stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( function( comp ){
-    comp.addRepresentation( &quot;ball+stick&quot;, { multipleBond: true } );
-} );</pre>
 
 
+    <h5>Examples</h5>
     
-</dd>
+    <pre class="prettyprint"><code>// load from URL
+stage.loadFile( "http://files.rcsb.org/download/5IOS.cif" );</code></pre>
+
+    <pre class="prettyprint"><code>// load binary data in CCP4 format via a Blob
+var binaryBlob = new Blob( [ ccp4Data ], { type: 'application/octet-binary'} );
+stage.loadFile( binaryBlob, { ext: "ccp4" } );</code></pre>
+
+    <pre class="prettyprint"><code>// load string data in PDB format via a Blob
+var stringBlob = new Blob( [ pdbData ], { type: 'text/plain'} );
+stage.loadFile( stringBlob, { ext: "pdb" } );</code></pre>
+
+    <pre class="prettyprint"><code>// load a File object
+stage.loadFile( file );</code></pre>
+
+    <pre class="prettyprint"><code>// load from URL and add a 'ball+stick' representation with double/triple bonds
+stage.loadFile( "http://files.rcsb.org/download/1crn.cif" ).then( function( comp ){
+    comp.addRepresentation( "ball+stick", { multipleBond: true } );
+} );</code></pre>
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="setParameters"><span class="type-signature"></span>setParameters(params)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set stage parameters
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="setParameters"><span class="type-signature"></span>setParameters<span class="signature">(params)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Set stage parameters
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1051,7 +955,6 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 <span class="param-type"><a href="global.html#StageParameters">StageParameters</a></span>
 
 
-
             
             </td>
 
@@ -1066,17 +969,12 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1086,74 +984,78 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
-    <h5>Fires:</h5>
-    <ul>
-        <li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li>
-    </ul>
-    
 
-    
 
-    
+<h5>Fires:</h5>
+<ul>
+    <li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li>
+</ul>
 
-    
 
-    
 
-    
-</dd>
+
+
+
+
+
+
+
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="toggleFullscreen"><span class="type-signature"></span>toggleFullscreen( [element])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Toggle fullscreen
-    </div>
-    
 
     
 
-    
+    <h4 class="name" id="setSpin"><span class="type-signature"></span>setSpin<span class="signature">(axis, angle)</span><span class="type-signature"></span></h4>
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+
+
+<div class="description">
+    Spin the whole scene around an axis at the center
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1163,7 +1065,164 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
         <th>Type</th>
 
         
-        <th>Argument</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>axis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Number></span>
+|
+
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the axis to spin around</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>angle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">amount to spin per render call</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>stage.setSpin( [ 0, 1, 0 ], 0.01 );</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="toggleFullscreen"><span class="type-signature"></span>toggleFullscreen<span class="signature">(element<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Toggle fullscreen
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
         
 
         
@@ -1184,7 +1243,6 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
             
                 
 <span class="param-type">Element</span>
-
 
 
             
@@ -1212,17 +1270,12 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     </tbody>
 </table>
 
-    
 
-    
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1232,47 +1285,51 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
-    <h5>Fires:</h5>
-    <ul>
-        <li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li>
-    </ul>
-    
 
-    
 
-    
+<h5>Fires:</h5>
+<ul>
+    <li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li>
+</ul>
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -1284,17 +1341,14 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 <span class="param-type">undefined</span>
 
 
-
     </dd>
 </dl>
 
+    
+
+
 
         
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -1302,44 +1356,44 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     
         <h3 class="subsection-title">Events</h3>
 
-        <dl>
+        
             
-<hr>
-<dt>
+
+    
+
     <h4 class="name" id="event:clicked">clicked</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched upon clicking in the viewer canvas
-    </div>
-    
 
     
 
-    
-        <h5>Type: 
+
+
+<div class="description">
+    <a href="Signal.html">Signal</a>, dispatched upon clicking in the viewer canvas
+</div>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type"><a href="global.html#PickingData">PickingData</a></span>
 
 
-</h5>
-    
+        </li>
+    </ul>
 
-    
-    
 
-    
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1349,87 +1403,89 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">stage.signals.clicked( function( pickingData ){ ... } );</pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-</dd>
+    <pre class="prettyprint"><code>stage.signals.clicked( function( pickingData ){ ... } );</code></pre>
+
+
 
         
             
-<hr>
-<dt>
+
+    
+
     <h4 class="name" id="event:componentAdded">componentAdded</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when a component is added to the stage
-    </div>
-    
 
     
 
-    
-        <h5>Type: 
+
+
+<div class="description">
+    <a href="Signal.html">Signal</a>, dispatched when a component is added to the stage
+</div>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type"><a href="Component.html">Component</a></span>
 
 
-</h5>
-    
+        </li>
+    </ul>
 
-    
-    
 
-    
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1439,87 +1495,89 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">stage.signals.componentAdded( function( component ){ ... } );</pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-</dd>
+    <pre class="prettyprint"><code>stage.signals.componentAdded( function( component ){ ... } );</code></pre>
+
+
 
         
             
-<hr>
-<dt>
+
+    
+
     <h4 class="name" id="event:componentRemoved">componentRemoved</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when a component is removed from the stage
-    </div>
-    
 
     
 
-    
-        <h5>Type: 
+
+
+<div class="description">
+    <a href="Signal.html">Signal</a>, dispatched when a component is removed from the stage
+</div>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type"><a href="Component.html">Component</a></span>
 
 
-</h5>
-    
+        </li>
+    </ul>
 
-    
-    
 
-    
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1529,87 +1587,89 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">stage.signals.componentRemoved( function( component ){ ... } );</pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-</dd>
+    <pre class="prettyprint"><code>stage.signals.componentRemoved( function( component ){ ... } );</code></pre>
+
+
 
         
             
-<hr>
-<dt>
+
+    
+
     <h4 class="name" id="event:fullscreenChanged">fullscreenChanged</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when the fullscreen is entered or left
-    </div>
-    
 
     
 
-    
-        <h5>Type: 
+
+
+<div class="description">
+    <a href="Signal.html">Signal</a>, dispatched when the fullscreen is entered or left
+</div>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type">Boolean</span>
 
 
-</h5>
-    
+        </li>
+    </ul>
 
-    
-    
 
-    
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1619,87 +1679,89 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">stage.signals.fullscreenChanged( function( isFullscreen ){ ... } );</pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-</dd>
+    <pre class="prettyprint"><code>stage.signals.fullscreenChanged( function( isFullscreen ){ ... } );</code></pre>
+
+
 
         
             
-<hr>
-<dt>
+
+    
+
     <h4 class="name" id="event:hovered">hovered</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched upon hovering over the viewer canvas
-    </div>
-    
 
     
 
-    
-        <h5>Type: 
+
+
+<div class="description">
+    <a href="Signal.html">Signal</a>, dispatched upon hovering over the viewer canvas
+</div>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type"><a href="global.html#PickingData">PickingData</a></span>
 
 
-</h5>
-    
+        </li>
+    </ul>
 
-    
-    
 
-    
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1709,87 +1771,89 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">stage.signals.hovered( function( pickingData ){ ... } );</pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-</dd>
+    <pre class="prettyprint"><code>stage.signals.hovered( function( pickingData ){ ... } );</code></pre>
+
+
 
         
             
-<hr>
-<dt>
+
+    
+
     <h4 class="name" id="event:parametersChanged">parametersChanged</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <a href="Signal.html">Signal</a>, dispatched when stage parameters change <a href="Signal.html">Signal</a>
-    </div>
-    
 
     
 
-    
-        <h5>Type: 
+
+
+<div class="description">
+    <a href="Signal.html">Signal</a>, dispatched when stage parameters change <a href="Signal.html">Signal</a>
+</div>
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
 <span class="param-type"><a href="global.html#StageParameters">StageParameters</a></span>
 
 
-</h5>
-    
+        </li>
+    </ul>
 
-    
-    
 
-    
+
+
+
+
+
+
+
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
 
@@ -1799,50 +1863,52 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-        <h5>Example</h5>
+    <pre class="prettyprint"><code>stage.signals.parametersChanged( function( stageParameters ){ ... } );</code></pre>
+
+
+
         
-    <pre class="sunlight-highlight-javascript">stage.signals.parametersChanged( function( stageParameters ){ ... } );</pre>
-
-
-    
-</dd>
-
-        </dl>
     
 </article>
 
@@ -1851,127 +1917,19 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
 
 
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
 </div>
 
-<div class="modal fade" id="searchResults">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Search results</h4>
-      </div>
-      <div class="modal-body"></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-NGL.html">NGL</a></li></ul><h3>Classes</h3><ul><li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="Color.html">Color</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="Entity.html">Entity</a></li><li><a href="File.html">File</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="Plane.html">Plane</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Representation.html">Representation</a></li><li><a href="RepresentationComponent.html">RepresentationComponent</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="SurfaceRepresentation.html">SurfaceRepresentation</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li></ul><h3>Events</h3><ul><li><a href="Component.html#event:representationAdded">representationAdded</a></li><li><a href="Component.html#event:representationRemoved">representationRemoved</a></li><li><a href="Component.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Counter.html#event:countChanged">countChanged</a></li><li><a href="RepresentationComponent.html#event:parametersChanged">parametersChanged</a></li><li><a href="RepresentationComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">representationAdded</a></li><li><a href="ScriptComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="ScriptComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="ShapeComponent.html#event:representationAdded">representationAdded</a></li><li><a href="ShapeComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="ShapeComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Stage.html#event:clicked">clicked</a></li><li><a href="Stage.html#event:componentAdded">componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">hovered</a></li><li><a href="Stage.html#event:parametersChanged">parametersChanged</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">representationAdded</a></li><li><a href="StructureComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="StructureComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="StructureView.html#event:refreshed">refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="SurfaceComponent.html#event:visibilityChanged">visibilityChanged</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li></ul><h3>Global</h3><ul><li><a href="global.html#assignResidueTypeBonds">assignResidueTypeBonds</a></li><li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#binarySearchIndexOf">binarySearchIndexOf</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#refresh">refresh</a></li><li><a href="global.html#superpose">superpose</a></li><li><a href="global.html#withinRadii">withinRadii</a></li></ul>
+</nav>
+
+<br class="clear">
 
 <footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
-	
-		on July 22nd 2016, 2:27:24 pm
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Wed Oct 05 2016 10:40:39 GMT-0700 (PDT)
 </footer>
 
-<script src="scripts/docstrap.lib.js"></script>
-<script src="scripts/toc.js"></script>
-<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
-
-<script>
-$( function () {
-	$( "[id*='$']" ).each( function () {
-		var $this = $( this );
-
-		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-	} );
-
-	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
-		var $this = $( this );
-
-		var example = $this.find( "code" );
-		exampleText = example.html();
-		var lang = /{@lang (.*?)}/.exec( exampleText );
-		if ( lang && lang[1] ) {
-			exampleText = exampleText.replace( lang[0], "" );
-			example.html( exampleText );
-			lang = lang[1];
-		} else {
-			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
-			lang = langClassMatch ? langClassMatch[1] : "javascript";
-		}
-
-		if ( lang ) {
-
-			$this
-			.addClass( "sunlight-highlight-" + lang )
-			.addClass( "linenums" )
-			.html( example.html() );
-
-		}
-	} );
-
-	Sunlight.highlightAll( {
-		lineNumbers : true,
-		showMenu : true,
-		enableDoclinks : true
-	} );
-
-	$.catchAnchorLinks( {
-        navbarOffset: 10
-	} );
-	$( "#toc" ).toc( {
-		anchorName  : function ( i, heading, prefix ) {
-			var id = $( heading ).attr( "id" );
-			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
-		},
-		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
-		showAndHide : false,
-		smoothScrolling: true
-	} );
-
-	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-	$( '.dropdown-toggle' ).dropdown();
-
-    $( "table" ).each( function () {
-      var $this = $( this );
-      $this.addClass('table');
-    } );
-
-} );
-</script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-<!--Google Analytics-->
-
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		SearcherDisplay.init();
-	});
-</script>
-
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>

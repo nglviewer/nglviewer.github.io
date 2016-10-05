@@ -4,6 +4,28 @@
  */
 
 
+HTMLElement.prototype.getBoundingClientRect = function(){
+
+    // workaround for ie11 behavior with disconnected dom nodes
+
+    var _getBoundingClientRect = HTMLElement.prototype.getBoundingClientRect;
+
+    return function getBoundingClientRect(){
+        try{
+            return _getBoundingClientRect.apply( this, arguments );
+        }catch( e ){
+            return {
+                top: 0,
+                left: 0,
+                width: this.width,
+                height: this.height
+            };
+        }
+    };
+
+}();
+
+
 NGL.Widget = function(){
 
 };
@@ -62,6 +84,11 @@ NGL.createParameterInput = function( p ){
         input = new UI.ColorPopupMenu( p.label )
             .setValue( p.value );
 
+    }else if( p.type === "vector3" ){
+
+        input = new UI.Vector3( p.value )
+            .setPrecision( p.precision );
+
     }else if( p.type === "hidden" ){
 
         // nothing to display
@@ -94,7 +121,7 @@ NGL.Preferences = function( id, defaultParams ){
 
     this.storage = {
         impostor: true,
-        quality: "medium",
+        quality: "auto",
         sampleLevel: 0,
         theme: "dark",
         backgroundColor: "black",
@@ -450,10 +477,10 @@ NGL.MenubarWidget = function( stage, preferences ){
 
     container.add( new NGL.MenubarFileWidget( stage ) );
     container.add( new NGL.MenubarViewWidget( stage, preferences ) );
-    if( NGL.ExampleRegistry.count > 0 ){
+    if( NGL.ExampleRegistry && NGL.ExampleRegistry.count > 0 ){
         container.add( new NGL.MenubarExamplesWidget( stage ) );
     }
-    if( NGL.PluginRegistry.count > 0 ){
+    if( NGL.PluginRegistry && NGL.PluginRegistry.count > 0 ){
         container.add( new NGL.MenubarPluginsWidget( stage ) );
     }
     container.add( new NGL.MenubarHelpWidget( stage, preferences ) );
@@ -471,14 +498,7 @@ NGL.MenubarWidget = function( stage, preferences ){
 
 NGL.MenubarFileWidget = function( stage ){
 
-    var fileTypesOpen = [
-        "pdb", "pdb1", "ent", "pqr", "gro", "cif", "mcif", "mmcif", "sdf", "mol2",
-        "mmtf",
-        "mrc", "ccp4", "map", "cube", "dx", "dxbin",
-        "obj", "ply",
-        "ngl",
-        "gz"
-    ];
+    var fileTypesOpen = NGL.ParserRegistry.names.concat( [ "ngl", "gz" ] );
     var fileTypesImport = fileTypesOpen;
 
     function fileInputOnChange( e ){
@@ -1565,14 +1585,6 @@ NGL.StructureComponentWidget = function( component, stage ){
 
     setSuperposeOptions();
 
-    // SS calculate
-
-    var ssButton = new UI.Button( "calculate" ).onClick( function(){
-        NGL.calculateSecondaryStructure( component.structure );
-        component.rebuildRepresentations();
-        componentPanel.setMenuDisplay( "none" );
-    } );
-
     // Component panel
 
     var componentPanel = new UI.ComponentPanel( component )
@@ -1582,7 +1594,6 @@ NGL.StructureComponentWidget = function( component, stage ){
         .addMenuEntry( "Representation", repr )
         .addMenuEntry( "Assembly", assembly )
         .addMenuEntry( "Superpose", superpose )
-        .addMenuEntry( "SS", ssButton )
         .addMenuEntry(
             "File", new UI.Text( component.structure.path )
                         .setMaxWidth( "100px" )
@@ -1887,14 +1898,16 @@ NGL.RepresentationComponentWidget = function( component, stage ){
         if( !input ) return;
 
         signals.parametersChanged.add( function( params ){
-            input.setValue( params[ name ] );
+            if( typeof input.setValue === "function" ){
+                input.setValue( params[ name ] );
+            }
         } );
 
         function setParam(){
             var po = {};
             po[ name ] = input.getValue();
             component.setParameters( po );
-            repr.viewer.requestRender();
+            component.viewer.requestRender();
         }
 
         var ua = navigator.userAgent;
