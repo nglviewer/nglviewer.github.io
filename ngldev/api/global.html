@@ -3110,6 +3110,9 @@ optionally guided by a sequence alignment
             
                 
 <span class="param-type">String</span>
+|
+
+<span class="param-type">Array</span>
 
 
             
@@ -3127,7 +3130,9 @@ optionally guided by a sequence alignment
 
             
 
-            <td class="description last">color scale</td>
+            <td class="description last">color scale, either a string for a
+                                   predefined scale or an array of
+                                   colors to be used as the scale</td>
         </tr>
 
     
@@ -3165,13 +3170,13 @@ optionally guided by a sequence alignment
 
         <tr>
             
-                <td class="name"><code>domain</code></td>
+                <td class="name"><code>colorDomain</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;Integer></span>
 
 
             
@@ -3189,7 +3194,78 @@ optionally guided by a sequence alignment
 
             
 
-            <td class="description last">color scale domain</td>
+            <td class="description last">scale value range
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">min value</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">max value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -5496,6 +5572,8 @@ optionally guided by a sequence alignment
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -5521,6 +5599,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5544,6 +5630,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5569,6 +5663,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5591,6 +5693,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5615,6 +5725,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5638,6 +5756,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5660,6 +5786,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5685,6 +5819,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5707,6 +5849,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5731,6 +5881,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5754,10 +5912,20 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">color scale</td>
+            <td class="description last">color scale, either a string for a
+                                predefined scale or an array of
+                                colors to be used as the scale</td>
         </tr>
 
     
@@ -5776,6 +5944,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5799,6 +5975,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5894,10 +6078,18 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">color mode</td>
+            <td class="description last">color mode, one of rgb, hsv, hsl, hsi, lab, hcl</td>
         </tr>
 
     
@@ -5916,6 +6108,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -5940,6 +6140,14 @@ optionally guided by a sequence alignment
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
 
             
 
@@ -5962,6 +6170,14 @@ optionally guided by a sequence alignment
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
             
 
             
@@ -8839,7 +9055,7 @@ optionally guided by a sequence alignment
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Feb 10 2017 16:49:05 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Feb 10 2017 17:53:27 GMT-0800 (PST)
 </footer>
 
 <script> prettyPrint(); </script>
