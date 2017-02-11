@@ -51,8 +51,7 @@ NGL.ExampleRegistry.addDict( {
             sele: "50-100"
         } ).then( function( o ){
             var trajComp = o.addTrajectory();
-            var player = new NGL.TrajectoryPlayer( trajComp.trajectory );
-            player.play();
+            trajComp.trajectory.player.play();
             o.addRepresentation( "cartoon" );
             // o.addRepresentation( "helixorient" );
             // o.addRepresentation( "rope" );
@@ -746,6 +745,18 @@ NGL.ExampleRegistry.addDict( {
 
         } );
 
+        // mode 0 data
+        stage.loadFile( "data://3pqr-mode0.ccp4" ).then( function( o ){
+
+            o.addRepresentation( "surface", {
+                wireframe: true,
+                color: "tomato",
+                boxSize: 10
+            } );
+            o.centerView();
+
+        } );
+
         stage.loadFile( "data://3pqr.pdb" ).then( function( o ){
 
             o.addRepresentation( "line", {
@@ -901,6 +912,31 @@ NGL.ExampleRegistry.addDict( {
 
     },
 
+    "cube-benzene": function( stage ){
+
+        stage.loadFile( "data://benzene-homo.cube" ).then( function( o ){
+
+            o.addRepresentation( "surface", {
+                visible: true, isolevelType: "value", isolevel: 0.01,
+                color: "blue", opacity: 0.7, opaqueBack: false
+            } );
+            o.addRepresentation( "surface", {
+                visible: true, isolevelType: "value", isolevel: -0.01,
+                color: "red", opacity: 0.7, opaqueBack: false
+            } );
+            o.centerView();
+
+        } );
+
+        stage.loadFile( "data://benzene.sdf" ).then( function( o ){
+
+            o.addRepresentation( "licorice" );
+            o.centerView();
+
+        } );
+
+    },
+
     "bigcube": function( stage ){
 
         Promise.all( [
@@ -980,7 +1016,7 @@ NGL.ExampleRegistry.addDict( {
 
     "selectionColoring": function( stage ){
 
-        var schemeId = NGL.ColorMakerRegistry.addSelectionScheme( [
+        var schemeId = NGL.ColormakerRegistry.addSelectionScheme( [
             [ "red", "64-74 or 134-154 or 222-254 or 310-310 or 322-326" ],
             [ "green", "311-322" ],
             [ "yellow", "40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309" ],
@@ -997,7 +1033,7 @@ NGL.ExampleRegistry.addDict( {
 
     "customColoring": function( stage ){
 
-        var schemeId = NGL.ColorMakerRegistry.addScheme( function( params ){
+        var schemeId = NGL.ColormakerRegistry.addScheme( function( params ){
             this.atomColor = function( atom ){
                 if( atom.serial < 1000 ){
                     return 0x0000FF;  // blue
@@ -1191,13 +1227,10 @@ NGL.ExampleRegistry.addDict( {
             } );
             o.centerView();
 
-            var framesPromise = NGL.autoLoad( "data://ala3.dcd" );
-            var trajComp = o.addTrajectory( framesPromise );
-
-            framesPromise.then( function(){
-                var player = new NGL.TrajectoryPlayer( trajComp.trajectory );
-                player.play();
-            } );
+            NGL.autoLoad( "data://ala3.dcd" ).then( function( frames ){
+                var trajComp = o.addTrajectory( frames );
+                trajComp.trajectory.player.play();
+            });
 
         } );
 
@@ -1211,20 +1244,19 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "surface", { visible: false, lazy: true } );
             o.centerView();
 
-            var framesPromise = NGL.autoLoad( "data://md_1u19.dcd.gz" );
-            o.addTrajectory( framesPromise );
-
-            // var framesPromise = NGL.autoLoad( "data://md_1u19.dcd.gz" )
-            //     .then( function( frames ){
-            //         o.addTrajectory( frames );
-            //     } )
-
-            // FIXME
-            // .setParameters( {
-            //     "centerPbc": false,
-            //     "removePbc": false,
-            //     "superpose": true
-            // } );
+            NGL.autoLoad( "data://md_1u19.dcd.gz" ).then( function( frames ){
+                o.addTrajectory( frames, {
+                    initialFrame: 100,
+                    defaultTimeout: 100,
+                    defaultStep: undefined,
+                    defaultInterpolateType: "spline",
+                    defaultDirection: "forward",
+                    centerPbc: false,
+                    removePbc: false,
+                    superpose: true,
+                    sele: "backbone and not hydrogen"
+                } );
+            } );
 
         } );
 
@@ -1259,7 +1291,7 @@ NGL.ExampleRegistry.addDict( {
                 colorDomain: [ -1, 0, 1 ]
             } );
             pqr.addRepresentation( "surface", {
-                volume: dxbin.volume,
+                colorVolume: dxbin.volume,
                 colorScheme: "volume",
                 colorScale: "rwb",
                 colorDomain: [ -5, 0, 5 ]
@@ -1459,19 +1491,24 @@ NGL.ExampleRegistry.addDict( {
             } );
             o.addRepresentation( "surface", {
                 sele: "hetero and (not water)",
-                useWorker: true,
-                wireframe: true,
                 surfaceType: "av",
-                linewidth: 1.0,
-                color: "green"
+                contour: true,
+                colorScheme: "element",
+                colorValue: "#0f0",
+                useWorker: false
             } );
             o.addRepresentation( "surface", {
                 sele: "not hetero",
-                useWorker: false,
                 surfaceType: "av",
-                color: "grey"
+                colorScheme: "bfactor",
+                contour: true,
+                filterSele: "10 OR 11 OR 12 OR 13 OR 14 OR 18 OR 31 OR 33 OR "
+                            + "64 OR 80 OR 81 OR 82 OR 83 OR 84 OR 85 OR 86 OR "
+                            + "129 OR 131 OR 132 OR 134 OR 144 OR 145"
             } );
-            stage.centerView();
+            stage.setOrientation([[ 28.4, 1.2, 60.2],
+                                  [ 53.9, 49.2, 81.1],
+                                  [-0.7, 0.064,0.71]]);
         } );
 
     },
@@ -1492,6 +1529,35 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon" );
             o.centerView();
 
+        } );
+
+    },
+
+    "localRes": function( stage ){
+
+        Promise.all([
+            stage.loadFile( "data://betaGal.mrc" ),
+            stage.loadFile( "data://localResolution.mrc", { voxelSize: 3.54 } )
+        ]).then( function( l ){
+            var betaGal = l[ 0 ];
+            var localResolution = l[ 1 ];
+            betaGal.addRepresentation( "surface", {
+                colorVolume: localResolution.volume,
+                colorScheme: "volume",
+                colorScale: "rwb",
+                colorDomain: [ 7, 14 ]
+            } );
+            localResolution.addRepresentation( "dot", {
+                thresholdMin: 0,
+                thresholdMax: 8,
+                thresholdType: "value",
+                dotType: "sphere",
+                radius: 0.6,
+                colorScheme: "value",
+                colorScale: "rwb",
+                colorDomain: [ 7, 14 ]
+            } );
+            stage.centerView();
         } );
 
     },
