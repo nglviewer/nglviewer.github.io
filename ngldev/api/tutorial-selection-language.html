@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Tutorial: Selection Language</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Tutorial: Selection Language</h1>
+
+    <section>
+
+<header>
+    
+
+    <h2>Selection Language</h2>
+</header>
+
+<article>
+    <p>Selections (or 'Sele' for short) strings can be input at various places in the user interface or when scripting. They are used to limit which atoms/residues are shown in a <a href="tutorial-molecular-representations.html">molecular representation</a> or what atoms are loaded from a trajectory.</p>
+<h2>Example</h2><p>Select the side-chain and C-alpha atoms plus the backbone nitrogen in case of proline. <code>not backbone or .CA or (PRO and .N)</code> This selection is useful to display the sidechains together with a backbone trace. Hence there is also the keyword <em>sidechainAttached</em> for it.</p>
+<h2>Language</h2><h3>Keywords</h3><ul>
+<li><em>all</em>, <strong>*</strong></li>
+<li><em>sidechain</em></li>
+<li><em>sidechainAttached</em></li>
+<li><em>backbone</em></li>
+<li><em>protein</em></li>
+<li><em>nucleic</em></li>
+<li><em>rna</em></li>
+<li><em>dna</em></li>
+<li><em>hetero</em></li>
+<li><em>ion</em></li>
+<li><em>saccharide</em>/<em>sugar</em></li>
+<li><em>polymer</em></li>
+<li><em>water</em></li>
+<li><em>hydrogen</em></li>
+<li><em>helix</em></li>
+<li><em>sheet</em></li>
+<li><em>turn</em> (not helix and not sheet)</li>
+<li><em>small</em> (Gly, Ala)</li>
+<li><em>nucleophilic</em> (Ser, Thr, Cys)</li>
+<li><em>hydrophobic</em> (Val, Leu, Ile, Met, Pro)</li>
+<li><em>aromatic</em> (Phe, Tyr, Trp)</li>
+<li><em>amid</em> (Asn, Gln)</li>
+<li><em>acidic</em> (Asp, Glu)</li>
+<li><em>basic</em> (His, Lys, Arg)</li>
+<li><em>charged</em> (Asp, Glu, His, Lys, Arg)</li>
+<li><em>polar</em> (Asp, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
+<li><em>nonpolar</em> (Ala, Cys, Gly, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
+</ul>
+<h3>Expressions</h3><ul>
+<li>residue number: <em>1</em>, <em>2</em>, <em>100</em></li>
+<li>residue number range: <em>3-40</em> (Note that around the dash <strong>-</strong> no spaces are allowed)</li>
+<li>chain name: <strong>:A</strong></li>
+<li>atom name: <strong>.CA</strong>, <strong>.C</strong>, <strong>.N</strong>, ...</li>
+<li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
+<li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
+<li>numeric residue name: <em>[032]</em>, <em>[1AB]</em>, ...</li>
+<li>element name: <strong>#H</strong>, <strong>#C</strong>, <strong>#O</strong>, ...</li>
+<li>alternate location: <strong>%A</strong>, <strong>%B</strong>, ... or <strong>%</strong> for non-alternate location atoms</li>
+<li>insertion code: <strong>^A</strong>, <strong>^B</strong>, ... or <strong>^</strong> for residues with no insertion code</li>
+</ul>
+<p>Some of these expressions can be combined (in this order) - residue numer (range), insertion code, chain name, atom name, alternate location, model - like this</p>
+<pre class="prettyprint source"><code>10^A:F.CA%C/0  // select C-alpha atoms of residue 10 with insertion code A from chain F in model 0 at alternate location C</code></pre><p>which is the same as</p>
+<pre class="prettyprint source"><code>10 and ^A and :F and .CA and %C and /0</code></pre><p>Single expressions may be left out as long as the order (see above) is kept, for example:</p>
+<pre class="prettyprint source"><code>:A/0 # select chain A from model 0</code></pre><h3>Atomindex</h3><p>A list of atom indices can be given as a comma seperated list (no spaces in between) prefixed with the <code>@</code> character.</p>
+<pre class="prettyprint source"><code>@0,1,4,5,11,23,42</code></pre><h3>Logical operators (in order of binding strength)</h3><ul>
+<li><em>NOT</em></li>
+<li><em>AND</em></li>
+<li><em>OR</em></li>
+</ul>
+<p>Additionally, parentheses <em>()</em> can be used for grouping: <code>:A and ( 1 or 10 or 100 ) # select residues 1, 10 and 100 from chain A</code></p>
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-NGL.html">NGL</a></li></ul><h3>Classes</h3><ul><li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="AtomStore.html">AtomStore</a></li><li><a href="AtomType.html">AtomType</a></li><li><a href="AVHash.html">AVHash</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="BondStore.html">BondStore</a></li><li><a href="Box3.html">Box3</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="ChainStore.html">ChainStore</a></li><li><a href="Color.html">Color</a></li><li><a href="Colormaker.html">Colormaker</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="Entity.html">Entity</a></li><li><a href="File.html">File</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="ModelStore.html">ModelStore</a></li><li><a href="ParserLoader.html">ParserLoader</a></li><li><a href="Plane.html">Plane</a></li><li><a href="PluginLoader.html">PluginLoader</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="RandomColormaker.html">RandomColormaker</a></li><li><a href="Representation.html">Representation</a></li><li><a href="RepresentationComponent.html">RepresentationComponent</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ResidueStore.html">ResidueStore</a></li><li><a href="ResidueType.html">ResidueType</a></li><li><a href="Script.html">Script</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="ScriptLoader.html">ScriptLoader</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Store.html">Store</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="SurfaceRepresentation.html">SurfaceRepresentation</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="Trajectory.html">Trajectory</a></li><li><a href="TrajectoryComponent.html">TrajectoryComponent</a></li><li><a href="TrajectoryPlayer.html">TrajectoryPlayer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector2.html">Vector2</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li><li><a href="VolumeComponent.html">VolumeComponent</a></li></ul><h3>Events</h3><ul><li><a href="Component.html#event:representationAdded">representationAdded</a></li><li><a href="Component.html#event:representationRemoved">representationRemoved</a></li><li><a href="Component.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Counter.html#event:countChanged">countChanged</a></li><li><a href="RepresentationComponent.html#event:parametersChanged">parametersChanged</a></li><li><a href="RepresentationComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">representationAdded</a></li><li><a href="ScriptComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="ScriptComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="ShapeComponent.html#event:representationAdded">representationAdded</a></li><li><a href="ShapeComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="ShapeComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Stage.html#event:clicked">clicked</a></li><li><a href="Stage.html#event:componentAdded">componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">hovered</a></li><li><a href="Stage.html#event:parametersChanged">parametersChanged</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">representationAdded</a></li><li><a href="StructureComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="StructureComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="StructureView.html#event:refreshed">refreshed</a></li><li><a href="SurfaceComponent.html#event:representationAdded">representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="SurfaceComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="TrajectoryComponent.html#event:representationAdded">representationAdded</a></li><li><a href="TrajectoryComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="TrajectoryComponent.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="VolumeComponent.html#event:representationAdded">representationAdded</a></li><li><a href="VolumeComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="VolumeComponent.html#event:visibilityChanged">visibilityChanged</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTrajectory">addTrajectory</a></li><li><a href="global.html#assignResidueTypeBonds">assignResidueTypeBonds</a></li><li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#binarySearchIndexOf">binarySearchIndexOf</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#makeImage">makeImage</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#refresh">refresh</a></li><li><a href="global.html#superpose">superpose</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Feb 10 2017 16:39:02 GMT-0800 (PST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
