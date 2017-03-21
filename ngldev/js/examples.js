@@ -1630,25 +1630,6 @@ NGL.ExampleRegistry.addDict( {
             stage.autoView();
         } );
 
-    },
-
-    "test": function( stage ){
-
-        Promise.all([
-            stage.loadFile( "rcsb://1crn" ),
-            stage.loadFile( "rcsb://3pqr" )
-        ]).then( function( ol ){
-            ol[0].addRepresentation( "cartoon" );
-            ol[1].addRepresentation( "cartoon" );
-            var box = new NGL.Box3();
-            box.union( ol[0].getBox( "1-10" ) );
-            box.union( ol[1].getBox( ":B" ) );
-            stage.animationControls.zoomMove(
-                box.center(),
-                stage.getZoomForBox( box )
-            );
-        } );
-
     }
 
 } );
