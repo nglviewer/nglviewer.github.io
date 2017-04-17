@@ -428,6 +428,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "licorice", {
                 sele: "nucleic", color: "element", visible: false
             } );
+            o.addRepresentation( "spacefill", { sele: "nucleic", color: "picking" } );
 
             o.autoView( "nucleic" );
 
@@ -715,7 +716,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://3pqr.ccp4.gz" ).then( function( o ){
 
             o.addRepresentation( "surface", {
-                wireframe: true,
+                contour: true,
                 color: "skyblue",
                 boxSize: 10
             } );
@@ -749,7 +750,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://3pqr-mode0.ccp4" ).then( function( o ){
 
             o.addRepresentation( "surface", {
-                wireframe: true,
+                contour: true,
                 color: "tomato",
                 boxSize: 10
             } );
@@ -772,8 +773,14 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://3pqr.ccp4.gz" ).then( function( o ){
 
-            o.addRepresentation( "slice", {
+            var coords = 53.164;
+            var p = new NGL.Vector3().setFromMatrixPosition( o.volume.matrix );
+            var s = new NGL.Vector3().setFromMatrixScale( o.volume.matrix );
+            var position = Math.round( ( ( ( coords - p.z ) / ( o.volume.nz / 100 ) ) + 1 ) / s.z );
 
+            o.addRepresentation( "slice", {
+                dimension: "z",
+                position: position
             } );
             o.addRepresentation( "surface" );
             stage.autoView();
@@ -1155,7 +1162,8 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "distance", {
                 atomPair: atomPair,
-                color: "skyblue"
+                color: "skyblue",
+                labelUnit: "nm"
             } );
 
             o.autoView();
@@ -1383,10 +1391,12 @@ NGL.ExampleRegistry.addDict( {
             [ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 ]
         );
         shape.addSphere( [ 0, 0, 9 ], [ 1, 0, 0 ], 1.5 );
+        shape.addSphere( [ 12, 5, 15 ], [ 1, 0.5, 0 ], 1 );
         shape.addEllipsoid( [ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ] );
         shape.addCylinder( [ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5 );
         shape.addCone( [ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5 );
         shape.addArrow( [ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0 );
+        shape.addArrow( [ 2, 2, 7 ], [ 30, -3, -3 ], [ 1, 0.5, 1 ], 1.0 );
         var shapeComp = stage.addComponentFromObject( shape );
         shapeComp.addRepresentation( "buffer" );
         stage.autoView();
@@ -1628,6 +1638,21 @@ NGL.ExampleRegistry.addDict( {
                 color: "geoquality"
             } );
             stage.autoView();
+        } );
+
+    },
+
+    "psf": function( stage ){
+
+        stage.loadFile( "data://ala3.psf" ).then( function( o ){
+            NGL.autoLoad( "data://ala3.dcd" ).then( function( frames ){
+                var trajComp = o.addTrajectory( frames, {
+                    initialFrame: 0,
+                    superpose: false
+                } );
+                o.addRepresentation( "ball+stick" );
+                stage.autoView();
+            });
         } );
 
     }

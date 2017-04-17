@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: ScriptComponent</title>
+    <title>JSDoc: Class: PdbParser</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: ScriptComponent</h1>
+    <h1 class="page-title">Class: PdbParser</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>ScriptComponent</h2>
+        <h2>PdbParser</h2>
         
     
 </header>
@@ -40,14 +40,14 @@
 
     
 
-    <h4 class="name" id="ScriptComponent"><span class="type-signature"></span>new ScriptComponent<span class="signature">(stage, script, params)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="PdbParser"><span class="type-signature"></span>new PdbParser<span class="signature">(streamer, params)</span><span class="type-signature"> &rarr; {undefined}</span></h4>
 
     
 
 
 
 <div class="description">
-    Create component wrapping a script object
+    Create a pdb parser
 </div>
 
 
@@ -83,13 +83,13 @@
 
         <tr>
             
-                <td class="name"><code>stage</code></td>
+                <td class="name"><code>streamer</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Stage.html">Stage</a></span>
+<span class="param-type">Streamer</span>
 
 
             
@@ -99,30 +99,7 @@
 
             
 
-            <td class="description last">stage object the component belongs to</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>script</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Script.html">Script</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">script object to wrap</td>
+            <td class="description last">streamer object</td>
         </tr>
 
     
@@ -135,7 +112,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#ComponentParameters">ComponentParameters</a></span>
+<span class="param-type">Object</span>
 
 
             
@@ -145,7 +122,58 @@
 
             
 
-            <td class="description last">component parameters</td>
+            <td class="description last">params object
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hex</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">hexadecimal parsing of
+                               atom numbers >99.999 and
+                               residue numbers >9.999</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -204,6 +232,24 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 

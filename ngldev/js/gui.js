@@ -365,21 +365,45 @@ NGL.StageWidget = function( stage ){
 
 
 NGL.getPickingMessage = function( d, prefix ){
-    var msg;
-    if( d.atom ){
-        msg = "atom: " +
-            d.atom.qualifiedName() +
-            " (" + d.atom.structure.name + ")";
-    }else if( d.bond ){
-        msg = "bond: " +
-            d.bond.atom1.qualifiedName() + " - " + d.bond.atom2.qualifiedName() +
-            " (" + d.bond.structure.name + ")";
-    }else if( d.volume ){
-        msg = "volume: " +
-            d.volume.value.toPrecision( 3 ) +
-            " (" + d.volume.volume.name + ")";
-    }else{
-        msg = "nothing";
+    var msg = "nothing";
+    if( d ){
+        if( d.arrow ){
+            msg = "arrow: " + d.pid + " (" + d.arrow.shape.name + ")";
+        }else if( d.atom ){
+            msg = "atom: " +
+                d.atom.qualifiedName() +
+                " (" + d.atom.structure.name + ")";
+        }else if( d.bond ){
+            msg = "bond: " +
+                d.bond.atom1.qualifiedName() + " - " + d.bond.atom2.qualifiedName() +
+                " (" + d.bond.structure.name + ")";
+        }else if( d.cone ){
+            msg = "cone: " + d.pid + " (" + d.cone.shape.name + ")";
+        }else if( d.clash ){
+            msg = "clash: " + d.clash.clash.sele1 + " - " + d.clash.clash.sele2;
+        }else if( d.contact ){
+            msg = "contact: " +
+                d.contact.atom1.qualifiedName() + " - " + d.contact.atom2.qualifiedName() +
+                " (" + d.contact.structure.name + ")";
+        }else if( d.cylinder ){
+            msg = "cylinder: " + d.pid + " (" + d.cylinder.shape.name + ")";
+        }else if( d.ellipsoid ){
+            msg = "ellipsoid: " + d.pid + " (" + d.ellipsoid.shape.name + ")";
+        }else if( d.mesh ){
+            msg = "mesh: " + d.mesh.serial + " (" + d.mesh.shape.name + ")";
+        }else if( d.slice ){
+            msg = "slice: " +
+                d.slice.value.toPrecision( 3 ) +
+                " (" + d.slice.volume.name + ")";
+        }else if( d.sphere ){
+            msg = "sphere: " + d.pid + " (" + d.sphere.shape.name + ")";
+        }else if( d.surface ){
+            msg = "surface: " + d.surface.surface.name;
+        }else if( d.volume ){
+            msg = "volume: " +
+                d.volume.value.toPrecision( 3 ) +
+                " (" + d.volume.volume.name + ")";
+        }
     }
     return prefix ? prefix + " " + msg : msg;
 };
@@ -428,16 +452,18 @@ NGL.ViewportWidget = function( stage ){
         .setPosition( "absolute" )
         .setDisplay( "none" )
         .setOpacity( "0.9" )
+        .setPointerEvents( "none" )
         .add( tooltipText );
 
+    var cp = new NGL.Vector2();
     stage.signals.hovered.add( function( d ){
         var text = NGL.getPickingMessage( d, "" );
         if( text !== "nothing" ){
-            d.canvasPosition.addScalar( 5 );
+            cp.copy( d.canvasPosition ).addScalar( 5 );
             tooltipText.setValue( text );
             tooltipPanel
-                .setBottom( d.canvasPosition.y  + "px" )
-                .setLeft( d.canvasPosition.x + "px" )
+                .setBottom( cp.y + "px" )
+                .setLeft( cp.x + "px" )
                 .setDisplay( "block" );
         }else{
             tooltipPanel.setDisplay( "none" );
@@ -634,18 +660,6 @@ NGL.MenubarFileWidget = function( stage ){
         stage.defaultFileParams.cAlphaOnly = e.target.checked;
     }
 
-    function onReorderAtomsChange( e ){
-        stage.defaultFileParams.reorderAtoms = e.target.checked;
-    }
-
-    function onDontAutoBondChange( e ){
-        stage.defaultFileParams.dontAutoBond = e.target.checked;
-    }
-
-    function onUseWorkerChange( e ){
-        stage.defaultFileParams.useWorker = e.target.checked;
-    }
-
     // configure menu contents
 
     var createOption = UI.MenubarHelper.createOption;
@@ -659,9 +673,6 @@ NGL.MenubarFileWidget = function( stage ){
         createCheckbox( 'asTrajectory', false, onAsTrajectoryChange ),
         createCheckbox( 'firstModelOnly', false, onFirstModelOnlyChange ),
         createCheckbox( 'cAlphaOnly', false, onCAlphaOnlyChange ),
-        createCheckbox( 'reorderAtoms', false, onReorderAtomsChange ),
-        createCheckbox( 'dontAutoBond', false, onDontAutoBondChange ),
-        createCheckbox( 'useWorker', false, onUseWorkerChange ),
         createDivider(),
         createOption( 'Screenshot', onScreenshotOptionClick, 'camera' ),
         createOption( 'Export image...', onExportImageOptionClick ),
@@ -1534,11 +1545,11 @@ NGL.StructureComponentWidget = function( component, stage ){
             componentPanel.setMenuDisplay( "none" );
         } );
 
-    // Import trajectory
+    // Open trajectory
 
     var trajExt = [ "dcd", "dcd.gz" ];
 
-    function fileInputOnChange( e ){
+    function framesInputOnChange( e ){
         var fn = function( file, callback ){
             NGL.autoLoad( file ).then( function( frames ){
                 component.addTrajectory( frames );
@@ -1548,15 +1559,15 @@ NGL.StructureComponentWidget = function( component, stage ){
         var queue = new NGL.Queue( fn, e.target.files );
     }
 
-    var fileInput = document.createElement( "input" );
-    fileInput.type = "file";
-    fileInput.multiple = true;
-    fileInput.style.display = "none";
-    fileInput.accept = "." + trajExt.join( ",." );
-    fileInput.addEventListener( 'change', fileInputOnChange, false );
+    var framesInput = document.createElement( "input" );
+    framesInput.type = "file";
+    framesInput.multiple = true;
+    framesInput.style.display = "none";
+    framesInput.accept = "." + trajExt.join( ",." );
+    framesInput.addEventListener( 'change', framesInputOnChange, false );
 
-    var traj = new UI.Button( "import" ).onClick( function(){
-        fileInput.click();
+    var traj = new UI.Button( "open" ).onClick( function(){
+        framesInput.click();
         componentPanel.setMenuDisplay( "none" );
     } );
 
@@ -1631,6 +1642,29 @@ NGL.StructureComponentWidget = function( component, stage ){
         stage.animationControls.rotate( pa.getRotationQuaternion() );
     } );
 
+    // Open validation
+
+    function validationInputOnChange( e ){
+        var fn = function( file, callback ){
+            NGL.autoLoad( file, { ext: "validation" } ).then( function( validation ){
+                component.structure.validation = validation;
+                callback();
+            } );
+        }
+        var queue = new NGL.Queue( fn, e.target.files );
+    }
+
+    var validationInput = document.createElement( "input" );
+    validationInput.type = "file";
+    validationInput.style.display = "none";
+    validationInput.accept = ".xml";
+    validationInput.addEventListener( 'change', validationInputOnChange, false );
+
+    var vali = new UI.Button( "open" ).onClick( function(){
+        validationInput.click();
+        componentPanel.setMenuDisplay( "none" );
+    } );
+
     // Component panel
 
     var componentPanel = new UI.ComponentPanel( component )
@@ -1647,7 +1681,8 @@ NGL.StructureComponentWidget = function( component, stage ){
                         //.setWordWrap( "break-word" )
         )
         .addMenuEntry( "Trajectory", traj )
-        .addMenuEntry( "Principal axes", alignAxes );
+        .addMenuEntry( "Principal axes", alignAxes )
+        .addMenuEntry( "Validation", vali );
 
     if( NGL.DatasourceRegistry.listing &&
         NGL.DatasourceRegistry.trajectory
