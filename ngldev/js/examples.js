@@ -771,26 +771,23 @@ NGL.ExampleRegistry.addDict( {
 
     "slice": function( stage ){
 
-        stage.loadFile( "data://3pqr.ccp4.gz" ).then( function( o ){
+        Promise.all( [
+            stage.loadFile( "data://3pqr.ccp4.gz" ),
+            stage.loadFile( "data://3pqr.pdb" )
+        ] ).then( function( ol ){
 
-            var coords = 53.164;
-            var p = new NGL.Vector3().setFromMatrixPosition( o.volume.matrix );
-            var s = new NGL.Vector3().setFromMatrixScale( o.volume.matrix );
-            var position = Math.round( ( ( ( coords - p.z ) / ( o.volume.nz / 100 ) ) + 1 ) / s.z );
+            var sele = new NGL.Selection( "245:A.NZ" );
 
-            o.addRepresentation( "slice", {
+            ol[ 0 ].addRepresentation( "slice", {
                 dimension: "z",
-                position: position
+                positionType: "coordinate",
+                position: ol[ 1 ].structure.getView( sele ).center.z
             } );
-            o.addRepresentation( "surface" );
-            stage.autoView();
+            ol[ 0 ].addRepresentation( "surface" );
 
-        } );
+            ol[ 1 ].addRepresentation( "licorice" );
+            ol[ 1 ].addRepresentation( "cartoon" );
 
-        stage.loadFile( "data://3pqr.pdb" ).then( function( o ){
-
-            o.addRepresentation( "licorice" );
-            o.addRepresentation( "cartoon" );
             stage.autoView();
 
         } );
@@ -875,7 +872,7 @@ NGL.ExampleRegistry.addDict( {
                 opaqueBack: false,
                 useWorker: false,
                 // clipNear: 50,
-                // clipRadius: sview.boundingBox.size().length() * 0.5 + 3.5,
+                // clipRadius: sview.boundingBox.getSize().length() * 0.5 + 3.5,
                 clipCenter: sview.center,
                 filterSele: filterSet.toSeleString()
                 // filterSele: groupSet.toSeleString()
@@ -887,7 +884,7 @@ NGL.ExampleRegistry.addDict( {
                 color: "lime",
                 opacity: 0.7,
                 wireframe: true,
-                clipRadius: sview.boundingBox.size().length() / 2 + 5,
+                clipRadius: sview.boundingBox.getSize().length() / 2 + 5,
                 clipCenter: sview.center
             } );
 
@@ -1397,6 +1394,7 @@ NGL.ExampleRegistry.addDict( {
         shape.addCone( [ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5 );
         shape.addArrow( [ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0 );
         shape.addArrow( [ 2, 2, 7 ], [ 30, -3, -3 ], [ 1, 0.5, 1 ], 1.0 );
+        shape.addLabel( [ 15, -4, 4 ], [ 0.2, 0.5, 0.8 ], 2.5, "Hello" );
         var shapeComp = stage.addComponentFromObject( shape );
         shapeComp.addRepresentation( "buffer" );
         stage.autoView();
