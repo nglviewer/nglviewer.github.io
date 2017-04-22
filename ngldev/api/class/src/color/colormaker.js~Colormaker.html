@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">Colormaker | NGL Viewer API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/arose/ngl.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/script.js~Script.html">Script</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/selection.js~Selection.html">Selection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-binarySearchIndexOf">binarySearchIndexOf</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">align</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">buffer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html">DoubleSidedBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ConeBuffer">ConeBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CylinderBuffer">CylinderBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-EllipsoidBuffer">EllipsoidBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-SphereBuffer">SphereBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BufferParameters">BufferParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TextBufferParameters">TextBufferParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">color</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html">Colormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/component.js~Component.html">Component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ComponentParameters">ComponentParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/script-loader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-autoLoad">autoLoad</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoaderParameters">LoaderParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">math</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-quicksortIP">quicksortIP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lineLineIntersect">lineLineIntersect</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">proxy</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainProxy">ChainProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelProxy">ModelProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Polymer">Polymer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueProxy">ResidueProxy</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">representation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">stage</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html">Stage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-StructureView">StructureView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Structure">Structure</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Kdtree">Kdtree</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">viewer</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-makeImage">makeImage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Colormaker from &apos;<span><a href="file/src/color/colormaker.js.html#lineNumber35">ngl/src/color/colormaker.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/color/colormaker.js.html#lineNumber35">source</a></span></span>
+</div>
+
+<div class="self-detail detail">
+  <h1 data-ice="name">Colormaker</h1>
+
+  
+
+  
+  
+  
+  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span>src/color/atomindex-colormaker.js~AtomindexColormaker</span>, <span>src/color/bfactor-colormaker.js~BfactorColormaker</span>, <span>src/color/chainid-colormaker.js~ChainidColormaker</span>, <span>src/color/chainindex-colormaker.js~ChainindexColormaker</span>, <span>src/color/chainname-colormaker.js~ChainnameColormaker</span>, <span>src/color/densityfit-colormaker.js~DensityfitColormaker</span>, <span>src/color/element-colormaker.js~ElementColormaker</span>, <span>src/color/entityindex-colormaker.js~EntityindexColormaker</span>, <span>src/color/entitytype-colormaker.js~EntitytypeColormaker</span>, <span>src/color/geoquality-colormaker.js~GeoqualityColormaker</span>, <span>src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker</span>, <span>src/color/modelindex-colormaker.js~ModelindexColormaker</span>, <span>src/color/moleculetype-colormaker.js~MoleculetypeColormaker</span>, <span>src/color/occupancy-colormaker.js~OccupancyColormaker</span>, <span>src/color/residueindex-colormaker.js~ResidueindexColormaker</span>, <span>src/color/resname-colormaker.js~ResnameColormaker</span>, <span>src/color/selection-colormaker.js~SelectionColormaker</span>, <span>src/color/sstruc-colormaker.js~SstrucColormaker</span>, <span>src/color/uniform-colormaker.js~UniformColormaker</span>, <span>src/color/value-colormaker.js~ValueColormaker</span>, <span>src/color/volume-colormaker.js~VolumeColormaker</span></div></div>
+  
+  
+  
+  
+  
+
+  
+  
+  <div class="description" data-ice="description"><p>Class for making colors</p>
+</div>
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+
+
+
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(params: <span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a colormaker instance</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      <span class="abstract" data-ice="abstract">abstract</span>
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-atomColor">atomColor</a></span></span><span data-ice="signature">(atom: <span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span>): <span>Integer</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>get color for an atom</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-atomColorToArray">atomColorToArray</a></span></span><span data-ice="signature">(atom: <span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>safe a atom color to an array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-bondColor">bondColor</a></span></span><span data-ice="signature">(bond: <span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span>, fromTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span>Integer</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>return the color for an bond</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-bondColorToArray">bondColorToArray</a></span></span><span data-ice="signature">(bond: <span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span>, fromTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>safe a bond color to an array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-colorToArray">colorToArray</a></span></span><span data-ice="signature">(color: <span>Integer</span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>safe a color to an array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      <span class="abstract" data-ice="abstract">abstract</span>
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-positionColor">positionColor</a></span></span><span data-ice="signature">(coords: <span>Vector3</span>): <span>Integer</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>return the color for coordinates in space</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-positionColorToArray">positionColorToArray</a></span></span><span data-ice="signature">(coords: <span>Vector3</span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>safe a color for coordinates in space to an array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      <span class="abstract" data-ice="abstract">abstract</span>
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-volumeColor">volumeColor</a></span></span><span data-ice="signature">(index: <span>Integer</span>): <span>Integer</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>return the color for a volume cell</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html#instance-method-volumeColorToArray">volumeColorToArray</a></span></span><span data-ice="signature">(index: <span>Integer</span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>safe a volume cell color to an array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">constructor</span><span data-ice="signature">(params: <span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber41">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create a colormaker instance</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">params</td>
+      <td data-ice="type"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>colormaker parameter</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-atomColor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    <span class="abstract" data-ice="abstract">abstract</span>
+    
+    
+    <span data-ice="name">atomColor</span><span data-ice="signature">(atom: <span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span>): <span>Integer</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber105">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>get color for an atom</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">atom</td>
+      <td data-ice="type"><span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>atom to get color for</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>Integer</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>hex atom color</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-atomColorToArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">atomColorToArray</span><span data-ice="signature">(atom: <span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber118">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>safe a atom color to an array</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">atom</td>
+      <td data-ice="type"><span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>atom to get color for</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">array</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>destination</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">offset</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>index into the array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the destination array</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-bondColor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">bondColor</span><span data-ice="signature">(bond: <span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span>, fromTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span>Integer</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber132">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>return the color for an bond</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">bond</td>
+      <td data-ice="type"><span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>bond to get color for</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">fromTo</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>whether to use the first or second atom of the bond</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>Integer</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>hex bond color</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-bondColorToArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">bondColorToArray</span><span data-ice="signature">(bond: <span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span>, fromTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber147">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>safe a bond color to an array</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">bond</td>
+      <td data-ice="type"><span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>bond to get color for</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">fromTo</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>whether to use the first or second atom of the bond</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">array</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>destination</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">offset</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>index into the array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the destination array</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-colorToArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">colorToArray</span><span data-ice="signature">(color: <span>Integer</span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber86">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>safe a color to an array</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">color</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>hex color value</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">array</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>destination</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">offset</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>index into the array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the destination array</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-positionColor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    <span class="abstract" data-ice="abstract">abstract</span>
+    
+    
+    <span data-ice="name">positionColor</span><span data-ice="signature">(coords: <span>Vector3</span>): <span>Integer</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber188">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>return the color for coordinates in space</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">coords</td>
+      <td data-ice="type"><span>Vector3</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>xyz coordinates</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>Integer</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>hex coords color</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-positionColorToArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">positionColorToArray</span><span data-ice="signature">(coords: <span>Vector3</span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber201">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>safe a color for coordinates in space to an array</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">coords</td>
+      <td data-ice="type"><span>Vector3</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>xyz coordinates</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">array</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>destination</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">offset</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>index into the array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the destination array</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-volumeColor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    <span class="abstract" data-ice="abstract">abstract</span>
+    
+    
+    <span data-ice="name">volumeColor</span><span data-ice="signature">(index: <span>Integer</span>): <span>Integer</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber161">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>return the color for a volume cell</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">index</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>volume cell index</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>Integer</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>hex cell color</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-volumeColorToArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">volumeColorToArray</span><span data-ice="signature">(index: <span>Integer</span>, array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span>, offset: <span>Integer</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/color/colormaker.js.html#lineNumber174">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>safe a volume cell color to an array</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">index</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>volume cell index</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">array</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span>TypedArray</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>destination</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">offset</td>
+      <td data-ice="type"><span>Integer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>index into the array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the destination array</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

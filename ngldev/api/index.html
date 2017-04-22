@@ -1,71 +1,2804 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Home</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="./">
+  <title data-ice="title">Manual</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
 </head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
-<body>
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/arose/ngl.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
 
-<div id="main">
-
-    <h1 class="page-title">Home</h1>
-
-    
-
-
-
-    
-
-
-    <h3>ngl 0.10.0-dev.11</h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <section>
-        <article><p>NGL is an on-line viewer for proteins and other molecular structures. It is intended for users of the web application including a graphical interface and for developers who want to use NGL in their own projects.</p>
-<h2>Users</h2><p>NGL provides a web application with an efficient graphical user interface (GUI) for performing common visualization tasks. A comprehensive set of molecular representations is available to create complex molecular views. Based on the WebGL technology, NGL requires only a modern web-browser.</p>
-<h2>Developers</h2><p>The NGL viewer can be <a href="tutorial-embedding.html">embedded</a> within other web-pages and controlled via a JavaScript API.</p></article>
-    </section>
-
-
-
-
-
-
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual" data-toc-name="overview">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h2" data-link="manual/overview/overview.html"><a href="manual/overview/overview.html#users" data-ice="link">Users</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/overview/overview.html"><a href="manual/overview/overview.html#developers" data-ice="link">Developers</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="example">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#implementing-custom-default-representations" data-ice="link">Implementing custom default representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#selection-based-coloring" data-ice="link">Selection-based coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#custom-coloring" data-ice="link">Custom coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#distance-based-selection" data-ice="link">Distance-based selection</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="reference">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="identifiers.html"><a href="identifiers.html" data-ice="link">Reference</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#class" data-ice="link">Class</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#function" data-ice="link">Function</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#typedef" data-ice="link">Typedef</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="changelog">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-changelog" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html" data-ice="link">Change Log</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-unreleased-" data-ice="link">Unreleased</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-3-2016-10-14" data-ice="link">v0.9.3 - 2016-10-14</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-2-2016-10-06" data-ice="link">v0.9.2 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-1-2016-10-06" data-ice="link">v0.9.1 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-0-2016-10-05" data-ice="link">v0.9.0 - 2016-10-05</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-8-2016-07-22" data-ice="link">v0.8 - 2016-07-22</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-1a-2016-06-02" data-ice="link">v0.7.1a - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-1-2016-06-02" data-ice="link">v0.7.1 - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-2016-05-08" data-ice="link">v0.7 - 2016-05-08</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-6-2015-10-12" data-ice="link">v0.6 - 2015-10-12</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#v0-5-2015-30-04" data-ice="link">v0.5 - 2015-30-04</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+</ul>
+  </div>
 </div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-NGL.html">NGL</a></li></ul><h3>Classes</h3><ul><li><a href="AnimationControls.html">AnimationControls</a></li><li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="AtomStore.html">AtomStore</a></li><li><a href="AtomType.html">AtomType</a></li><li><a href="AVHash.html">AVHash</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="BondStore.html">BondStore</a></li><li><a href="Box3.html">Box3</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="ChainStore.html">ChainStore</a></li><li><a href="Color.html">Color</a></li><li><a href="Colormaker.html">Colormaker</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="CylinderImpostorBuffer.html">CylinderImpostorBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="DoubleSidedBuffer.html">DoubleSidedBuffer</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="Entity.html">Entity</a></li><li><a href="File.html">File</a></li><li><a href="HyperballStickImpostorBuffer.html">HyperballStickImpostorBuffer</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineBuffer.html">LineBuffer</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="MeshBuffer.html">MeshBuffer</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="ModelStore.html">ModelStore</a></li><li><a href="MouseObserver.html">MouseObserver</a></li><li><a href="ParserLoader.html">ParserLoader</a></li><li><a href="PdbParser.html">PdbParser</a></li><li><a href="PickingProxy.html">PickingProxy</a></li><li><a href="Plane.html">Plane</a></li><li><a href="PluginLoader.html">PluginLoader</a></li><li><a href="PointBuffer.html">PointBuffer</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="RandomColormaker.html">RandomColormaker</a></li><li><a href="Representation.html">Representation</a></li><li><a href="RepresentationComponent.html">RepresentationComponent</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ResidueStore.html">ResidueStore</a></li><li><a href="ResidueType.html">ResidueType</a></li><li><a href="RibbonBuffer.html">RibbonBuffer</a></li><li><a href="Script.html">Script</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="ScriptLoader.html">ScriptLoader</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="SphereImpostorBuffer.html">SphereImpostorBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Store.html">Store</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="SurfaceRepresentation.html">SurfaceRepresentation</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TraceBuffer.html">TraceBuffer</a></li><li><a href="Trajectory.html">Trajectory</a></li><li><a href="TrajectoryComponent.html">TrajectoryComponent</a></li><li><a href="TrajectoryPlayer.html">TrajectoryPlayer</a></li><li><a href="TubeMeshBuffer.html">TubeMeshBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Unitcell.html">Unitcell</a></li><li><a href="ValidationRepresentation.html">ValidationRepresentation</a></li><li><a href="Vector2.html">Vector2</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="VectorBuffer.html">VectorBuffer</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="ViewerControls.html">ViewerControls</a></li><li><a href="Volume.html">Volume</a></li><li><a href="VolumeComponent.html">VolumeComponent</a></li></ul><h3>Events</h3><ul><li><a href="Component.html#event:representationAdded">representationAdded</a></li><li><a href="Component.html#event:representationRemoved">representationRemoved</a></li><li><a href="Component.html#event:visibilityChanged">visibilityChanged</a></li><li><a href="Counter.html#event:countChanged">countChanged</a></li><li><a href="MouseObserver.html#event:clicked">clicked</a></li><li><a href="MouseObserver.html#event:dragged">dragged</a></li><li><a href="MouseObserver.html#event:dropped">dropped</a></li><li><a href="MouseObserver.html#event:hovered">hovered</a></li><li><a href="MouseObserver.html#event:moved">moved</a></li><li><a href="MouseObserver.html#event:scrolled">scrolled</a></li><li><a href="RepresentationComponent.html#event:parametersChanged">parametersChanged</a></li><li><a href="Stage.html#event:clicked">clicked</a></li><li><a href="Stage.html#event:componentAdded">componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">hovered</a></li><li><a href="Stage.html#event:parametersChanged">parametersChanged</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">defaultAssemblyChanged</a></li><li><a href="StructureView.html#event:refreshed">refreshed</a></li><li><a href="ViewerControls.html#event:changed">changed</a></li><li><a href="VolumeComponent.html#event:representationAdded">representationAdded</a></li><li><a href="VolumeComponent.html#event:representationRemoved">representationRemoved</a></li><li><a href="VolumeComponent.html#event:visibilityChanged">visibilityChanged</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li></ul><h3>Global</h3><ul><li><a href="global.html#assignResidueTypeBonds">assignResidueTypeBonds</a></li><li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#binarySearchIndexOf">binarySearchIndexOf</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#makeImage">makeImage</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li><li><a href="global.html#refresh">refresh</a></li><li><a href="global.html#superpose">superpose</a></li></ul>
 </nav>
 
-<br class="clear">
+<div class="content" data-ice="content"><div class="github-markdown">
+  
 
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Apr 20 2017 16:33:13 GMT-0700 (PDT)
+  <p class="manual-badge" data-ice="manualBadge"><img src="./manual-badge.svg"></p>
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <h1 data-ice="label" class="manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;"><span data-ice="label-inner">References</span></h1>
+      <div class="manual-card">
+        <div data-ice="card"><h1>References</h1>
+<div data-ice="classSummary"><h2 id="class">Class Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Class Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Animation controls</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Assembly of transformed parts of a <span><a href="function/index.html#static-function-Structure">Structure</a></span></p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Ball And Stick representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Representation for showing buffer objects</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html">Colormaker</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Class for making colors</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/component/component.js~Component.html">Component</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p><span>Signal</span>, dispatched when the visibility changes</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Counter class for keeping track of counts</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Distance representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html">DoubleSidedBuffer</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>A double-sided mesh buffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Label representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Licorice representation object (<span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span> with <code>aspectRatio</code> fixed at 1.0)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Line representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Loader base class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Observer mouse event</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Parser loader class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Picking controls</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Picking proxy class.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Plugin loader class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Class for making random colors</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, viewer: <span><a href="function/index.html#static-function-Viewer">Viewer</a></span>, params: <span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Representation object</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span><span data-ice="signature">: <span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p><span>Signal</span>, dispatched when parameters change</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/script.js~Script.html">Script</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Script class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/loader/script-loader.js~ScriptLoader.html">ScriptLoader</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Script loader class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/selection.js~Selection.html">Selection</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Selection</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Class for building custom shapes.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html">Stage</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Stage class, central for creating molecular scenes with NGL.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p><span>Signal</span>, dispatched when the default assembly is changed</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Structure representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Surface representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trackball controls</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span><span data-ice="signature">(trajPath: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span>Frames</span>, structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, params: <span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trajectory object for tying frames and structure together</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trajectory player for animating coordinate frames</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Validation representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Viewer controls</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Volume</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div data-ice="functionSummary"><h2 id="function">Function Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Function Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span><span data-ice="signature">(atomsX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsZ: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsR: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, min: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, max: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, maxDistance: <span>Float</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Modifed from SpatialHash</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-AtomProxy">AtomProxy</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, index: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Atom proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Atom store class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, atomname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, element: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Atom type class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span><span data-ice="signature">(scoreFunction: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Binary heap implementation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-BondProxy">BondProxy</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, index: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Bond proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Bond store class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ChainProxy">ChainProxy</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, index: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Chain proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Chain store class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ConeBuffer">ConeBuffer</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, params: <span>BufferParams</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Cone buffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-CylinderBuffer">CylinderBuffer</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, params: <span>BufferParams</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Cylinder buffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-EllipsoidBuffer">EllipsoidBuffer</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, params: <span>BufferParams</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Ellipsoid buffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Kdtree">Kdtree</a></span></span><span data-ice="signature">(points: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, metric: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Kdtree</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ModelProxy">ModelProxy</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, index: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Model proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Model store class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Polymer">Polymer</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, residueIndexStart: <span>Integer</span>, residueIndexEnd: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Polymer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueProxy">ResidueProxy</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, index: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Residue proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Residue store class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, resname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, atomTypeIdList: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, hetero: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, chemCompType: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, bonds: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Residue type class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-SphereBuffer">SphereBuffer</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, params: <span><a href="typedef/index.html#static-typedef-BufferParameters">BufferParameters</a></span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Sphere buffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Store class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Structure">Structure</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Structure</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-StructureView">StructureView</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, selection: <span><a href="class/src/selection.js~Selection.html">Selection</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>View on the structure, restricted to the selection</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Surface</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span><span data-ice="signature">(idOrElement: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Viewer class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Assigns ResidueType bonds.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-autoLoad">autoLoad</a></span></span><span data-ice="signature">(file: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span>File</span> | <span>Blob</span>, params: <span><a href="typedef/index.html#static-typedef-LoaderParameters">LoaderParameters</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Load a file</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-binarySearchIndexOf">binarySearchIndexOf</a></span></span><span data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, element: <span>Anything</span>, compareFunction: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Does a binary search to get the index of an element in the input array</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-lineLineIntersect">lineLineIntersect</a></span></span><span data-ice="signature">(p1: <span>Vector3</span>, p2: <span>Vector3</span>, p3: <span>Vector3</span>, p4: <span>Vector3</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>&lt;<span>Vector3</span>, <span>Vector3</span>&gt; | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converted to JavaScript from
+<span><a href="http://paulbourke.net/geometry/pointlineplane/lineline.c">http://paulbourke.net/geometry/pointlineplane/lineline.c</a></span></p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-makeImage">makeImage</a></span></span><span data-ice="signature">(viewer: <span><a href="function/index.html#static-function-Viewer">Viewer</a></span>, params: <span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Make image from what is shown in a viewer canvas</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-quicksortIP">quicksortIP</a></span></span><span data-ice="signature">(arr: <span>TypedArray</span>, eleSize: <span>Integer</span>, orderElement: <span>Integer</span>, begin: <span>Integer</span>, end: <span>Integer</span>): <span>TypedArray</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>quicksortIP</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span><span data-ice="signature">(s1: <span><a href="function/index.html#static-function-Structure">Structure</a></span> | <span><a href="function/index.html#static-function-StructureView">StructureView</a></span>, s2: <span><a href="function/index.html#static-function-Structure">Structure</a></span> | <span><a href="function/index.html#static-function-StructureView">StructureView</a></span>, align: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, sele1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, sele2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Perform structural superposition of two structures,
+optionally guided by a sequence alignment</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div data-ice="typedefSummary"><h2 id="typedef">Typedef Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Typedef Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Ball And Stick representation parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-BufferParameters">BufferParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Buffer parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Colormaker parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-ComponentParameters">ComponentParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Component parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Distance representation parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Image parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Label representation parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoaderParameters">LoaderParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Loader parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span><span data-ice="signature">: <span>Matrix4</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Scene orientation matrix, a 4x4 transformation matrix with rotation part
+used for scene rotation, scale part for scene camera distance and
+position part for scene translation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Picking data object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Representation parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Stage parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Structure header object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Structure representation parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Surface representation parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-TextBufferParameters">TextBufferParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Text buffer parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trajectory component parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trajectory parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trajectory player parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+</div>
+        <a data-ice="link" href="identifiers.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <h1 data-ice="label" class="manual-color manual-color-changelog" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;"><span data-ice="label-inner">Change Log</span></h1>
+      <div class="manual-card">
+        <div data-ice="card"><h1>Change Log</h1><p>All notable changes to this project will be documented in this file, following the suggestions of <a href="http://keepachangelog.com/">Keep a CHANGELOG</a>. This project adheres to <a href="http://semver.org/">Semantic Versioning</a>.</p><h2><a href="https://github.com/arose/ngl/compare/v0.9.3...HEAD">Unreleased</a></h2><h3>Added</h3><ul>
+<li>contour option for volume surfaces (electron density maps)</li>
+<li>buble, for transpiling some ES2015 features (e.g. classes, arrow functions, ...)</li>
+<li>volume slice representation including interpolation support</li>
+<li>xplor/cns volume file parser</li>
+<li><code>colorVolume</code> parameter for surface representation of volume data</li>
+<li><code>voxelSize</code> parameter for volume file parser</li>
+<li>support for non orthogonal cell in cube file parser</li>
+<li>dsn6/brix volume file parser</li>
+<li>psf topology/structure file parser</li>
+<li>support for picking Shape objects, Volume slices, Contact bonds</li>
+<li>scroll mouse behavior to change far/near clipping and fog</li>
+<li>label primitive for Shape class</li>
+</ul><h3>Changed</h3><ul>
+<li>renamed <code>volume</code> parameter in molecular surface representation to <code>colorVolume</code></li>
+<li>renamed colormaker classes from colorMaker to colormaker, i.e. removed camel case</li>
+<li>renamed ColormakerRegistry.getTypes to .getSchemes</li>
+<li>colormaker subclasses now auto-register with ColormakerRegistry</li>
+<li>refactored buffer classes to use a data object as input</li>
+<li>refactored picking to be more general</li>
+<li>replaced PickingData with PickingProxy</li>
+</ul><h3>Removed</h3><ul>
+<li>stage/component.centerView method, use .autoView instead</li>
+<li>GidPool, picking handled by Picker objects</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.2...v0.9.3">v0.9.3</a> - 2016-10-14</h2><h3>Changed</h3><ul>
+<li>increased light distance from camera, to fix unlit rendering</li>
+<li>remove double quotes from atomnames in chemComp cif parser</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.1...v0.9.2">v0.9.2</a> - 2016-10-06</h2><h3>Changed</h3><ul>
+<li>fix, moved polyfills back inside the bundle</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.0...v0.9.1">v0.9.1</a> - 2016-10-06</h2><h3>Changed</h3><ul>
+<li>removed (wrongly added) ngl2.js from dist folder</li>
+<li>fixed chemComp cif parser not passing chainid</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.8...v0.9.0">v0.9.0</a> - 2016-10-05</h2><h3>Added</h3><ul>
+<li>lazy representation parameter that only builds &amp; updates the representation when visible</li>
+<li>chainname based color scheme</li>
+<li>BondHash class to quickly get atoms connected to an atom</li>
+<li>SpatialHash class to quickly get neighboring atoms/points</li>
+<li>XmlParser parameter to use the browser&apos;s DOMParser</li>
+<li>attachment (top, middle, bottom; left, center, right) for LabelRepresentation/TextBuffer</li>
+<li>border color and width for LabelRepresentation/TextBuffer</li>
+<li>colored background rectangle for LabelRepresentation/TextBuffer</li>
+<li>&quot;offset&quot; style rendering of double/triple bonds (@fredludlow)</li>
+<li>PubchemDatasource to load cid as sdf, pubchem://16490</li>
+<li>basic entity support (type, description, chain mapping; mmcif, mmtf)</li>
+<li>entitytype, moleculetype, chainid, polymer color schemes</li>
+<li>ShaderRegistry, DecompressorRegistry</li>
+<li>box display for &quot;axes&quot; representation</li>
+</ul><h3>Changed</h3><ul>
+<li>ResidueindexColorMaker colorscale domain on a per chain basis</li>
+<li>ChainindexColorMaker colorscale domain on a per model basis</li>
+<li>Fixed, initial parameters for a Buffer not taken into account</li>
+<li>ignore bonds that are defined multiple times in PDB parser</li>
+<li>updated mmtf lib to v1.0</li>
+<li>use npm as the build system</li>
+<li>complete list of ion and saccharide group names</li>
+</ul><h3>Removed</h3><ul>
+<li>gulp as the build system</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.7.1a...v0.8">v0.8</a> - 2016-07-22</h2><h3>Added</h3><ul>
+<li>gulp build scripts</li>
+<li>mmtf v0.2 support</li>
+<li>support for rendering double/triple bonds, enable via <code>multipleBond</code> Representation parameter (@fredludlow, @arose)</li>
+<li>stage.clicked signal (renamed from .onPicking)</li>
+<li>stage.hovered signal</li>
+<li>parsing of &quot;chem comp&quot; cif files</li>
+<li>experimental &quot;axes&quot; representation showing the principal axes of an atom selection</li>
+<li>added cone, arrow &amp; ellipsoid buffers</li>
+<li>added Shape class as a simple way to add custom shapes to the scene</li>
+</ul><h3>Changed</h3><ul>
+<li>reorganized everything to use es6 modules</li>
+<li>read bondOrder from &apos;pdbx_value_order&apos; in mmcif files</li>
+<li>interpret &apos;CONECT 1529 1528 1528&apos; as double bond in pdb files</li>
+<li><code>side</code> Buffer/Representation parameter changed: THREE.FrontSide =&gt; &quot;front&quot;, THREE.BackSide =&gt; &quot;back&quot;, THREE.DoubleSide =&gt; &quot;double&quot;</li>
+<li>support for negative resno values in selections: &quot;-5:A&quot;, &quot;-12--8&quot;, &quot;-12-0&quot;</li>
+<li>use chemical component type (available in mmtf) for determining molecule type</li>
+<li><code>.get/setOrientation</code> return/argument changed</li>
+<li>enable SDF font as the default TextBuffer class only on Chrome</li>
+<li>support for building using three-jsnext</li>
+<li>renamed <code>radiusSegments</code> parameter to <code>radialSegments</code></li>
+<li>WebWorkers (for building surfaces) no longer need to load the main script file</li>
+<li><code>NGL.GET</code> renamed to <code>NGL.getQuery</code></li>
+</ul><h3>Removed</h3><ul>
+<li>python-based build scripts</li>
+<li>closure-compiler</li>
+<li>stage.signals.onPicking (renamed to .clicked)</li>
+<li>stage.signals.atom/bond/volume/nothingPicked, use .clicked instead</li>
+<li><code>NGL.mainScriptFilePath</code> no longer needed</li>
+<li><code>NGL.useWorker</code>, use &quot;useWorker&quot; representation parameter</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.7.1...v0.7.1a">v0.7.1a</a> - 2016-06-02</h2><h3>Changed</h3><ul>
+<li>fixed version in builds</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.7...v0.7.1">v0.7.1</a> - 2016-06-02</h2><h3>Added</h3><ul>
+<li>orthographic camera mode</li>
+<li><code>backgroundColor</code> parameter for <code>Stage</code></li>
+<li>x/y/z offset parameters for labels (TextBuffer)</li>
+<li><code>OX1</code> atoms are recognized as part of the protein backbone</li>
+<li><code>stage.makeImage</code> now increments the task counter</li>
+<li>added <code>.isIdentity</code> method to test if an <code>Assembly</code> is an identity transformation over all chains</li>
+<li>embedded-dev build target (@sbliven)</li>
+<li>support for responseType = &quot;json&quot; to efficiently load json data</li>
+</ul><h3>Changed</h3><ul>
+<li>there is no longer a fake unitcell created when no space group information is available</li>
+<li>the query string is removed from urls before the determining file info (e.g. name, extension)</li>
+<li>fixed labelText param not working in LabelRepresentation</li>
+<li>enable SDF font as the default only on Chrome (fixes labels not shown on some OS/Browser)</li>
+<li>ignore &apos;given&apos; ncs operators</li>
+<li>ensure that resname is upper case</li>
+</ul><h3>Removed</h3><ul>
+<li><code>stage.setTheme</code> removed (use new <code>backgroundColor</code> parameter), themes now part of GUI code</li>
+<li><code>NGL.Preferences</code> is now part of the GUI code and removed from <code>NGL.Stage</code>. Setting <code>overwritePreferences: true</code> when instantiating an <code>NGL.Stage</code> object is not necessary anymore.</li>
+<li>removed .requestVisibility method and signal (too GUI specific, if needed, should be handled there)</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.6...v0.7">v0.7</a> - 2016-05-08</h2><h3>Added</h3><ul>
+<li>Store and Proxy classes for memory efficiency</li>
+<li>MMTF, DXBIN, DCD files format parsers</li>
+<li>&apos;unitcell&apos; representation</li>
+<li>stage.makeImage (returns Promise)</li>
+<li>take NCS operations into account when creating unitcell &amp; supercell assemblies</li>
+<li>added multi sample antialias rendering</li>
+<li>added support for spinning around an axis</li>
+<li>use bitsets for storing selections of atoms</li>
+<li>Assembly and AssemblyPart classes</li>
+<li>stage.toggleFullscreen method</li>
+<li>read occupancy data when available (mmCIF, pdb, mmtf)</li>
+<li>occupancy color scheme</li>
+<li>alternate location support in selections, e.g. %B</li>
+<li>read insertion codes when available (mmCIF, pdb, mmtf)</li>
+<li>insertion code support in selections, e.g. ^A</li>
+<li>numeric residue name support in selections, e.g. [032]</li>
+<li>Queue class to handle async tasks</li>
+</ul><h3>Changed</h3><ul>
+<li>fixed transformation matrix in mrc/ccp4 parser</li>
+<li>optimized near clipping</li>
+<li>Fiber class remanamed to Polymer</li>
+<li>more consistent fog</li>
+<li>use workers more sparsely due to the large overhead of creating them</li>
+<li>create font SDF on demand, remove asset dependency</li>
+<li>integrated three.js lighting into custom shaders</li>
+<li>MIGRATION: chainname read from <code>auth_asym_id</code> instead of from <code>label_asym_id</code> field</li>
+<li>DOC: clarified apache configuration for deployment</li>
+<li>FIX: cif parser, ignore non-displayable bonds between symmetry mates</li>
+<li>FIX: cif parser, struct_conn bonds not added for multiple altloc atoms</li>
+<li>LIB: updated signals.js</li>
+<li>LIB: updated promise.js</li>
+<li>LIB: updated three.js</li>
+<li>LIB: updated pako.js to pako_inflate.js (no deflation support needed)</li>
+<li>CODE: support loading of Blob objects in addition to File objects</li>
+<li>CODE: tweaked DistanceRepresentation visibility params</li>
+</ul><h3>Removed</h3><ul>
+<li>zip, lzma, bzip2 decompression</li>
+<li>removed async.js</li>
+<li>mdsrv related code and documentation</li>
+<li>stage.exportImage (makes image and triggers download), use stage.makeImage</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.5...v0.6">v0.6</a> - 2015-10-12</h2><h3>Added</h3><ul>
+<li>MIGRATION: <code>Stage.loadFile</code> signature changed, now returns a <code>Promise</code> and does not accept callbacks</li>
+<li>MIGRATION: moved trajectory server into its own repository: <a href="https://github.com/arose/mdsrv/">MDSrv</a></li>
+<li>ADD: Support for MOL2 and SDF files</li>
+<li>ADD: Support for DX files</li>
+<li>ADD: Support for PQR files</li>
+<li>ADD: <code>ExampleRegistry</code> singleton</li>
+<li>ADD: <code>PluginRegistry</code> singleton</li>
+<li>ADD: <code>Datasource</code> class to use instead of hard-coded paths</li>
+<li>ADD: <code>GidPool</code></li>
+<li>ADD: simple xml parser</li>
+<li>ADD: APBS plugin to load PQR and DX file, simple GUI</li>
+<li>ADD: bond and surface picking</li>
+<li>ADD: User-defined color schemes (API)</li>
+<li>GUI: <code>VirtualList</code> and <code>VirtualTable</code></li>
+<li>GUI: re-sizable sidebar (contents still need to be made responsive)</li>
+<li>WIP: scripting API</li>
+</ul><h3>Changed</h3><ul>
+<li>EXAMPLES: general fixes and enhancements</li>
+<li>DOC: moved installation and development information into the README</li>
+<li>GUI/DOC: Higher color contrast for GUI and documentation pages</li>
+<li>CODE: qunit updated</li>
+<li>CODE: moved logical units of code into their own files</li>
+<li>CODE: speeded up secondary structure assignment from PDB/mmCIF files; fixed bugs leading to wrong assignment</li>
+<li>CODE: element color scheme now uses colorValue parameter to color carbon elements</li>
+<li>CODE: script and assets paths are now configurable</li>
+<li>CODE: more forgiving pdb parsing wrt to model records</li>
+<li>CODE: helper function for re-ordering atoms</li>
+<li>CODE: enhancements to handling Web Workers (<code>WorkerPool</code>, lazy Worker creation)</li>
+<li>CODE: enhancements to volume triangulation (limit to given box, skip empty parts)</li>
+<li>CODE: all <code>*Buffer</code> classes now inherit from <code>Buffer</code> and share common code</li>
+<li>CODE: BufferAttributes can be re-used or grown</li>
+<li>CODE: moved Buffer-specific code out of Representation class</li>
+<li>CODE: molecular surface enhancements (color by atom, filter by atom)</li>
+<li>CODE: nicer clipping of meshes and impostors (unlit interior to make them appear solid)</li>
+<li>CODE: optimized kdtree building</li>
+<li>CODE: clearer atomnames handling for fiber creation</li>
+<li>CODE: Color handling code refactored exposing more parameters</li>
+<li>CODE: Basic support for async creation of representations (so far used for molecular surfaces and volume triangulation)</li>
+<li>CODE: chunked data loading and parsing via streamer class</li>
+<li>CODE: faster autobonding of large residues (e.g. hydrated lipids)</li>
+<li>CODE: WebWorker support while using development and build files</li>
+<li>CODE: WebWorker used for decompression, parsing and surface generation</li>
+<li>FIX: Issue #7</li>
+<li>FIX: residues at the end of fibers may not require all backbone atoms</li>
+<li>FIX: standard compatible atom names when writing pdb files</li>
+<li>FIX: origin coordinates not used/read from mrc header</li>
+</ul><h3>Removed</h3><ul>
+<li>DEL: removed FragFit plugins</li>
+</ul><h2>v0.5 - 2015-30-04</h2><h3>Added</h3><ul>
+<li>Initial release</li>
+</ul></div>
+        <a data-ice="link" href="manual/changelog/CHANGELOG.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
 </body>
 </html>

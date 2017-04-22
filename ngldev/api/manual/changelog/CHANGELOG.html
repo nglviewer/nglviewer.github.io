@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">Changelog</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/arose/ngl.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual" data-toc-name="overview">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h2" data-link="manual/overview/overview.html"><a href="manual/overview/overview.html#users" data-ice="link">Users</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/overview/overview.html"><a href="manual/overview/overview.html#developers" data-ice="link">Developers</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="example">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#implementing-custom-default-representations" data-ice="link">Implementing custom default representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#selection-based-coloring" data-ice="link">Selection-based coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#custom-coloring" data-ice="link">Custom coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#distance-based-selection" data-ice="link">Distance-based selection</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="reference">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="identifiers.html"><a href="identifiers.html" data-ice="link">Reference</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#class" data-ice="link">Class</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#function" data-ice="link">Function</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#typedef" data-ice="link">Typedef</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="changelog">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-changelog" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html" data-ice="link">Change Log</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-unreleased-" data-ice="link">Unreleased</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-3-2016-10-14" data-ice="link">v0.9.3 - 2016-10-14</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-2-2016-10-06" data-ice="link">v0.9.2 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-1-2016-10-06" data-ice="link">v0.9.1 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-0-2016-10-05" data-ice="link">v0.9.0 - 2016-10-05</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-8-2016-07-22" data-ice="link">v0.8 - 2016-07-22</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-1a-2016-06-02" data-ice="link">v0.7.1a - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-1-2016-06-02" data-ice="link">v0.7.1 - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-2016-05-08" data-ice="link">v0.7 - 2016-05-08</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-6-2015-10-12" data-ice="link">v0.6 - 2015-10-12</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#v0-5-2015-30-04" data-ice="link">v0.5 - 2015-30-04</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-breadcrumb-list">
+    <a href="./manual/./index.html">Manual</a>
+    <span>&#xBB;</span>
+    <span data-ice="title">Changelog</span>
+  </div>
+  <div data-ice="content"><h1 id="change-log">Change Log</h1>
+<p>All notable changes to this project will be documented in this file, following the suggestions of <a href="http://keepachangelog.com/">Keep a CHANGELOG</a>. This project adheres to <a href="http://semver.org/">Semantic Versioning</a>.</p>
+<h2 id="-unreleased-"><a href="https://github.com/arose/ngl/compare/v0.9.3...HEAD">Unreleased</a></h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>contour option for volume surfaces (electron density maps)</li>
+<li>buble, for transpiling some ES2015 features (e.g. classes, arrow functions, ...)</li>
+<li>volume slice representation including interpolation support</li>
+<li>xplor/cns volume file parser</li>
+<li><code>colorVolume</code> parameter for surface representation of volume data</li>
+<li><code>voxelSize</code> parameter for volume file parser</li>
+<li>support for non orthogonal cell in cube file parser</li>
+<li>dsn6/brix volume file parser</li>
+<li>psf topology/structure file parser</li>
+<li>support for picking Shape objects, Volume slices, Contact bonds</li>
+<li>scroll mouse behavior to change far/near clipping and fog</li>
+<li>label primitive for Shape class</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>renamed <code>volume</code> parameter in molecular surface representation to <code>colorVolume</code></li>
+<li>renamed colormaker classes from colorMaker to colormaker, i.e. removed camel case</li>
+<li>renamed ColormakerRegistry.getTypes to .getSchemes</li>
+<li>colormaker subclasses now auto-register with ColormakerRegistry</li>
+<li>refactored buffer classes to use a data object as input</li>
+<li>refactored picking to be more general</li>
+<li>replaced PickingData with PickingProxy</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>stage/component.centerView method, use .autoView instead</li>
+<li>GidPool, picking handled by Picker objects</li>
+</ul>
+<h2 id="-v0-9-3-2016-10-14"><a href="https://github.com/arose/ngl/compare/v0.9.2...v0.9.3">v0.9.3</a> - 2016-10-14</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>increased light distance from camera, to fix unlit rendering</li>
+<li>remove double quotes from atomnames in chemComp cif parser</li>
+</ul>
+<h2 id="-v0-9-2-2016-10-06"><a href="https://github.com/arose/ngl/compare/v0.9.1...v0.9.2">v0.9.2</a> - 2016-10-06</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>fix, moved polyfills back inside the bundle</li>
+</ul>
+<h2 id="-v0-9-1-2016-10-06"><a href="https://github.com/arose/ngl/compare/v0.9.0...v0.9.1">v0.9.1</a> - 2016-10-06</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>removed (wrongly added) ngl2.js from dist folder</li>
+<li>fixed chemComp cif parser not passing chainid</li>
+</ul>
+<h2 id="-v0-9-0-2016-10-05"><a href="https://github.com/arose/ngl/compare/v0.8...v0.9.0">v0.9.0</a> - 2016-10-05</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>lazy representation parameter that only builds &amp; updates the representation when visible</li>
+<li>chainname based color scheme</li>
+<li>BondHash class to quickly get atoms connected to an atom</li>
+<li>SpatialHash class to quickly get neighboring atoms/points</li>
+<li>XmlParser parameter to use the browser&apos;s DOMParser</li>
+<li>attachment (top, middle, bottom; left, center, right) for LabelRepresentation/TextBuffer</li>
+<li>border color and width for LabelRepresentation/TextBuffer</li>
+<li>colored background rectangle for LabelRepresentation/TextBuffer</li>
+<li>&quot;offset&quot; style rendering of double/triple bonds (@fredludlow)</li>
+<li>PubchemDatasource to load cid as sdf, pubchem://16490</li>
+<li>basic entity support (type, description, chain mapping; mmcif, mmtf)</li>
+<li>entitytype, moleculetype, chainid, polymer color schemes</li>
+<li>ShaderRegistry, DecompressorRegistry</li>
+<li>box display for &quot;axes&quot; representation</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>ResidueindexColorMaker colorscale domain on a per chain basis</li>
+<li>ChainindexColorMaker colorscale domain on a per model basis</li>
+<li>Fixed, initial parameters for a Buffer not taken into account</li>
+<li>ignore bonds that are defined multiple times in PDB parser</li>
+<li>updated mmtf lib to v1.0</li>
+<li>use npm as the build system</li>
+<li>complete list of ion and saccharide group names</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>gulp as the build system</li>
+</ul>
+<h2 id="-v0-8-2016-07-22"><a href="https://github.com/arose/ngl/compare/v0.7.1a...v0.8">v0.8</a> - 2016-07-22</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>gulp build scripts</li>
+<li>mmtf v0.2 support</li>
+<li>support for rendering double/triple bonds, enable via <code>multipleBond</code> Representation parameter (@fredludlow, @arose)</li>
+<li>stage.clicked signal (renamed from .onPicking)</li>
+<li>stage.hovered signal</li>
+<li>parsing of &quot;chem comp&quot; cif files</li>
+<li>experimental &quot;axes&quot; representation showing the principal axes of an atom selection</li>
+<li>added cone, arrow &amp; ellipsoid buffers</li>
+<li>added Shape class as a simple way to add custom shapes to the scene</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>reorganized everything to use es6 modules</li>
+<li>read bondOrder from &apos;pdbx_value_order&apos; in mmcif files</li>
+<li>interpret &apos;CONECT 1529 1528 1528&apos; as double bond in pdb files</li>
+<li><code>side</code> Buffer/Representation parameter changed: THREE.FrontSide =&gt; &quot;front&quot;, THREE.BackSide =&gt; &quot;back&quot;, THREE.DoubleSide =&gt; &quot;double&quot;</li>
+<li>support for negative resno values in selections: &quot;-5:A&quot;, &quot;-12--8&quot;, &quot;-12-0&quot;</li>
+<li>use chemical component type (available in mmtf) for determining molecule type</li>
+<li><code>.get/setOrientation</code> return/argument changed</li>
+<li>enable SDF font as the default TextBuffer class only on Chrome</li>
+<li>support for building using three-jsnext</li>
+<li>renamed <code>radiusSegments</code> parameter to <code>radialSegments</code></li>
+<li>WebWorkers (for building surfaces) no longer need to load the main script file</li>
+<li><code>NGL.GET</code> renamed to <code>NGL.getQuery</code></li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>python-based build scripts</li>
+<li>closure-compiler</li>
+<li>stage.signals.onPicking (renamed to .clicked)</li>
+<li>stage.signals.atom/bond/volume/nothingPicked, use .clicked instead</li>
+<li><code>NGL.mainScriptFilePath</code> no longer needed</li>
+<li><code>NGL.useWorker</code>, use &quot;useWorker&quot; representation parameter</li>
+</ul>
+<h2 id="-v0-7-1a-2016-06-02"><a href="https://github.com/arose/ngl/compare/v0.7.1...v0.7.1a">v0.7.1a</a> - 2016-06-02</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>fixed version in builds</li>
+</ul>
+<h2 id="-v0-7-1-2016-06-02"><a href="https://github.com/arose/ngl/compare/v0.7...v0.7.1">v0.7.1</a> - 2016-06-02</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>orthographic camera mode</li>
+<li><code>backgroundColor</code> parameter for <code>Stage</code></li>
+<li>x/y/z offset parameters for labels (TextBuffer)</li>
+<li><code>OX1</code> atoms are recognized as part of the protein backbone</li>
+<li><code>stage.makeImage</code> now increments the task counter</li>
+<li>added <code>.isIdentity</code> method to test if an <code>Assembly</code> is an identity transformation over all chains</li>
+<li>embedded-dev build target (@sbliven)</li>
+<li>support for responseType = &quot;json&quot; to efficiently load json data</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>there is no longer a fake unitcell created when no space group information is available</li>
+<li>the query string is removed from urls before the determining file info (e.g. name, extension)</li>
+<li>fixed labelText param not working in LabelRepresentation</li>
+<li>enable SDF font as the default only on Chrome (fixes labels not shown on some OS/Browser)</li>
+<li>ignore &apos;given&apos; ncs operators</li>
+<li>ensure that resname is upper case</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li><code>stage.setTheme</code> removed (use new <code>backgroundColor</code> parameter), themes now part of GUI code</li>
+<li><code>NGL.Preferences</code> is now part of the GUI code and removed from <code>NGL.Stage</code>. Setting <code>overwritePreferences: true</code> when instantiating an <code>NGL.Stage</code> object is not necessary anymore.</li>
+<li>removed .requestVisibility method and signal (too GUI specific, if needed, should be handled there)</li>
+</ul>
+<h2 id="-v0-7-2016-05-08"><a href="https://github.com/arose/ngl/compare/v0.6...v0.7">v0.7</a> - 2016-05-08</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Store and Proxy classes for memory efficiency</li>
+<li>MMTF, DXBIN, DCD files format parsers</li>
+<li>&apos;unitcell&apos; representation</li>
+<li>stage.makeImage (returns Promise)</li>
+<li>take NCS operations into account when creating unitcell &amp; supercell assemblies</li>
+<li>added multi sample antialias rendering</li>
+<li>added support for spinning around an axis</li>
+<li>use bitsets for storing selections of atoms</li>
+<li>Assembly and AssemblyPart classes</li>
+<li>stage.toggleFullscreen method</li>
+<li>read occupancy data when available (mmCIF, pdb, mmtf)</li>
+<li>occupancy color scheme</li>
+<li>alternate location support in selections, e.g. %B</li>
+<li>read insertion codes when available (mmCIF, pdb, mmtf)</li>
+<li>insertion code support in selections, e.g. ^A</li>
+<li>numeric residue name support in selections, e.g. [032]</li>
+<li>Queue class to handle async tasks</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>fixed transformation matrix in mrc/ccp4 parser</li>
+<li>optimized near clipping</li>
+<li>Fiber class remanamed to Polymer</li>
+<li>more consistent fog</li>
+<li>use workers more sparsely due to the large overhead of creating them</li>
+<li>create font SDF on demand, remove asset dependency</li>
+<li>integrated three.js lighting into custom shaders</li>
+<li>MIGRATION: chainname read from <code>auth_asym_id</code> instead of from <code>label_asym_id</code> field</li>
+<li>DOC: clarified apache configuration for deployment</li>
+<li>FIX: cif parser, ignore non-displayable bonds between symmetry mates</li>
+<li>FIX: cif parser, struct_conn bonds not added for multiple altloc atoms</li>
+<li>LIB: updated signals.js</li>
+<li>LIB: updated promise.js</li>
+<li>LIB: updated three.js</li>
+<li>LIB: updated pako.js to pako_inflate.js (no deflation support needed)</li>
+<li>CODE: support loading of Blob objects in addition to File objects</li>
+<li>CODE: tweaked DistanceRepresentation visibility params</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>zip, lzma, bzip2 decompression</li>
+<li>removed async.js</li>
+<li>mdsrv related code and documentation</li>
+<li>stage.exportImage (makes image and triggers download), use stage.makeImage</li>
+</ul>
+<h2 id="-v0-6-2015-10-12"><a href="https://github.com/arose/ngl/compare/v0.5...v0.6">v0.6</a> - 2015-10-12</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>MIGRATION: <code>Stage.loadFile</code> signature changed, now returns a <code>Promise</code> and does not accept callbacks</li>
+<li>MIGRATION: moved trajectory server into its own repository: <a href="https://github.com/arose/mdsrv/">MDSrv</a></li>
+<li>ADD: Support for MOL2 and SDF files</li>
+<li>ADD: Support for DX files</li>
+<li>ADD: Support for PQR files</li>
+<li>ADD: <code>ExampleRegistry</code> singleton</li>
+<li>ADD: <code>PluginRegistry</code> singleton</li>
+<li>ADD: <code>Datasource</code> class to use instead of hard-coded paths</li>
+<li>ADD: <code>GidPool</code></li>
+<li>ADD: simple xml parser</li>
+<li>ADD: APBS plugin to load PQR and DX file, simple GUI</li>
+<li>ADD: bond and surface picking</li>
+<li>ADD: User-defined color schemes (API)</li>
+<li>GUI: <code>VirtualList</code> and <code>VirtualTable</code></li>
+<li>GUI: re-sizable sidebar (contents still need to be made responsive)</li>
+<li>WIP: scripting API</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>EXAMPLES: general fixes and enhancements</li>
+<li>DOC: moved installation and development information into the README</li>
+<li>GUI/DOC: Higher color contrast for GUI and documentation pages</li>
+<li>CODE: qunit updated</li>
+<li>CODE: moved logical units of code into their own files</li>
+<li>CODE: speeded up secondary structure assignment from PDB/mmCIF files; fixed bugs leading to wrong assignment</li>
+<li>CODE: element color scheme now uses colorValue parameter to color carbon elements</li>
+<li>CODE: script and assets paths are now configurable</li>
+<li>CODE: more forgiving pdb parsing wrt to model records</li>
+<li>CODE: helper function for re-ordering atoms</li>
+<li>CODE: enhancements to handling Web Workers (<code>WorkerPool</code>, lazy Worker creation)</li>
+<li>CODE: enhancements to volume triangulation (limit to given box, skip empty parts)</li>
+<li>CODE: all <code>*Buffer</code> classes now inherit from <code>Buffer</code> and share common code</li>
+<li>CODE: BufferAttributes can be re-used or grown</li>
+<li>CODE: moved Buffer-specific code out of Representation class</li>
+<li>CODE: molecular surface enhancements (color by atom, filter by atom)</li>
+<li>CODE: nicer clipping of meshes and impostors (unlit interior to make them appear solid)</li>
+<li>CODE: optimized kdtree building</li>
+<li>CODE: clearer atomnames handling for fiber creation</li>
+<li>CODE: Color handling code refactored exposing more parameters</li>
+<li>CODE: Basic support for async creation of representations (so far used for molecular surfaces and volume triangulation)</li>
+<li>CODE: chunked data loading and parsing via streamer class</li>
+<li>CODE: faster autobonding of large residues (e.g. hydrated lipids)</li>
+<li>CODE: WebWorker support while using development and build files</li>
+<li>CODE: WebWorker used for decompression, parsing and surface generation</li>
+<li>FIX: Issue #7</li>
+<li>FIX: residues at the end of fibers may not require all backbone atoms</li>
+<li>FIX: standard compatible atom names when writing pdb files</li>
+<li>FIX: origin coordinates not used/read from mrc header</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>DEL: removed FragFit plugins</li>
+</ul>
+<h2 id="v0-5-2015-30-04">v0.5 - 2015-30-04</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Initial release</li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
