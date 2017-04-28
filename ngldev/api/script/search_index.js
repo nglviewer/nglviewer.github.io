@@ -6,9 +6,27 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/buffer/alignedbox-buffer.js~alignedboxbuffer",
+    "class/src/buffer/alignedbox-buffer.js~AlignedBoxBuffer.html",
+    "<span>AlignedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/alignedbox-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/animation/animation.js~animation",
+    "class/src/animation/animation.js~Animation.html",
+    "<span>Animation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/controls/animation-controls.js~animationcontrols",
     "class/src/controls/animation-controls.js~AnimationControls.html",
     "<span>AnimationControls</span> <span class=\"search-result-import-path\">ngl/src/controls/animation-controls.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/arrow-buffer.js~arrowbuffer",
+    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html",
+    "<span>ArrowBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/arrow-buffer.js</span>",
     "class"
   ],
   [
@@ -19,9 +37,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/proxy/atom-proxy.js~atomproxy",
-    "function/index.html#static-function-AtomProxy",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html",
     "<span>AtomProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/atom-proxy.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/atom-store.js~atomstore",
@@ -36,9 +54,39 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/color/atomindex-colormaker.js~atomindexcolormaker",
+    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html",
+    "<span>AtomindexColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/atomindex-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/axes-representation.js~axesrepresentation",
+    "class/src/representation/axes-representation.js~AxesRepresentation.html",
+    "<span>AxesRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/axes-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/backbone-representation.js~backbonerepresentation",
+    "class/src/representation/backbone-representation.js~BackboneRepresentation.html",
+    "<span>BackboneRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/backbone-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/ballandstick-representation.js~ballandstickrepresentation",
     "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html",
     "<span>BallAndStickRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/ballandstick-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/base-representation.js~baserepresentation",
+    "class/src/representation/base-representation.js~BaseRepresentation.html",
+    "<span>BaseRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/base-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/bfactor-colormaker.js~bfactorcolormaker",
+    "class/src/color/bfactor-colormaker.js~BfactorColormaker.html",
+    "<span>BfactorColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/bfactor-colormaker.js</span>",
     "class"
   ],
   [
@@ -49,9 +97,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/proxy/bond-proxy.js~bondproxy",
-    "function/index.html#static-function-BondProxy",
+    "class/src/proxy/bond-proxy.js~BondProxy.html",
     "<span>BondProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/bond-proxy.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/bond-store.js~bondstore",
@@ -60,16 +108,40 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/buffer/box-buffer.js~boxbuffer",
+    "class/src/buffer/box-buffer.js~BoxBuffer.html",
+    "<span>BoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/box-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/globals.js~browser",
+    "variable/index.html#static-variable-Browser",
+    "<span>Browser</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
+    "variable"
+  ],
+  [
+    "ngl/src/buffer/buffer.js~buffer",
+    "class/src/buffer/buffer.js~Buffer.html",
+    "<span>Buffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/buffer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/buffer-representation.js~bufferrepresentation",
     "class/src/representation/buffer-representation.js~BufferRepresentation.html",
     "<span>BufferRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/buffer-representation.js</span>",
     "class"
   ],
   [
+    "ngl/src/representation/cartoon-representation.js~cartoonrepresentation",
+    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html",
+    "<span>CartoonRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/cartoon-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/proxy/chain-proxy.js~chainproxy",
-    "function/index.html#static-function-ChainProxy",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html",
     "<span>ChainProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/chain-proxy.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/chain-store.js~chainstore",
@@ -78,10 +150,40 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/color/chainid-colormaker.js~chainidcolormaker",
+    "class/src/color/chainid-colormaker.js~ChainidColormaker.html",
+    "<span>ChainidColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/chainid-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/chainindex-colormaker.js~chainindexcolormaker",
+    "class/src/color/chainindex-colormaker.js~ChainindexColormaker.html",
+    "<span>ChainindexColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/chainindex-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/chainname-colormaker.js~chainnamecolormaker",
+    "class/src/color/chainname-colormaker.js~ChainnameColormaker.html",
+    "<span>ChainnameColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/chainname-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/colormaker.js~colormaker",
     "class/src/color/colormaker.js~Colormaker.html",
     "<span>Colormaker</span> <span class=\"search-result-import-path\">ngl/src/color/colormaker.js</span>",
     "class"
+  ],
+  [
+    "ngl/src/color/colormaker-registry.js~colormakerregistry",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html",
+    "<span>ColormakerRegistry</span> <span class=\"search-result-import-path\">ngl/src/color/colormaker-registry.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/globals.js~colormakerregistry",
+    "variable/index.html#static-variable-ColormakerRegistry",
+    "<span>ColormakerRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
+    "variable"
   ],
   [
     "ngl/src/component/component.js~component",
@@ -91,9 +193,21 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/buffer/cone-buffer.js~conebuffer",
-    "function/index.html#static-function-ConeBuffer",
+    "class/src/buffer/cone-buffer.js~ConeBuffer.html",
     "<span>ConeBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cone-buffer.js</span>",
-    "function"
+    "class"
+  ],
+  [
+    "ngl/src/buffer/conegeometry-buffer.js~conegeometrybuffer",
+    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html",
+    "<span>ConeGeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/conegeometry-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/contour-buffer.js~contourbuffer",
+    "class/src/buffer/contour-buffer.js~ContourBuffer.html",
+    "<span>ContourBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/contour-buffer.js</span>",
+    "class"
   ],
   [
     "ngl/src/utils/counter.js~counter",
@@ -103,9 +217,27 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/buffer/cylinder-buffer.js~cylinderbuffer",
-    "function/index.html#static-function-CylinderBuffer",
+    "class/src/buffer/cylinder-buffer.js~CylinderBuffer.html",
     "<span>CylinderBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cylinder-buffer.js</span>",
-    "function"
+    "class"
+  ],
+  [
+    "ngl/src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer",
+    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html",
+    "<span>CylinderGeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cylindergeometry-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer",
+    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html",
+    "<span>CylinderImpostorBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cylinderimpostor-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/densityfit-colormaker.js~densityfitcolormaker",
+    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html",
+    "<span>DensityfitColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/densityfit-colormaker.js</span>",
+    "class"
   ],
   [
     "ngl/src/representation/distance-representation.js~distancerepresentation",
@@ -120,10 +252,76 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/color/element-colormaker.js~elementcolormaker",
+    "class/src/color/element-colormaker.js~ElementColormaker.html",
+    "<span>ElementColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/element-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/ellipsoid-buffer.js~ellipsoidbuffer",
-    "function/index.html#static-function-EllipsoidBuffer",
+    "class/src/buffer/ellipsoid-buffer.js~EllipsoidBuffer.html",
     "<span>EllipsoidBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/ellipsoid-buffer.js</span>",
-    "function"
+    "class"
+  ],
+  [
+    "ngl/src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer",
+    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html",
+    "<span>EllipsoidGeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/ellipsoidgeometry-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/entityindex-colormaker.js~entityindexcolormaker",
+    "class/src/color/entityindex-colormaker.js~EntityindexColormaker.html",
+    "<span>EntityindexColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/entityindex-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/entitytype-colormaker.js~entitytypecolormaker",
+    "class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html",
+    "<span>EntitytypeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/entitytype-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/globals.js~extensionfragdepth",
+    "variable/index.html#static-variable-ExtensionFragDepth",
+    "<span>ExtensionFragDepth</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
+    "variable"
+  ],
+  [
+    "ngl/src/buffer/geometry-buffer.js~geometrybuffer",
+    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html",
+    "<span>GeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/geometry-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/geoquality-colormaker.js~geoqualitycolormaker",
+    "class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html",
+    "<span>GeoqualityColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/geoquality-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/hydrophobicity-colormaker.js~hydrophobicitycolormaker",
+    "class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html",
+    "<span>HydrophobicityColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/hydrophobicity-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/hyperballstick-buffer.js~hyperballstickbuffer",
+    "class/src/buffer/hyperballstick-buffer.js~HyperballStickBuffer.html",
+    "<span>HyperballStickBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/hyperballstick-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/hyperballstickimpostor-buffer.js~hyperballstickimpostorbuffer",
+    "class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html",
+    "<span>HyperballStickImpostorBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/hyperballstickimpostor-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/image-buffer.js~imagebuffer",
+    "class/src/buffer/image-buffer.js~ImageBuffer.html",
+    "<span>ImageBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/image-buffer.js</span>",
+    "class"
   ],
   [
     "ngl/src/utils/kdtree.js~kdtree",
@@ -144,6 +342,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/buffer/line-buffer.js~linebuffer",
+    "class/src/buffer/line-buffer.js~LineBuffer.html",
+    "<span>LineBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/line-buffer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/line-representation.js~linerepresentation",
     "class/src/representation/line-representation.js~LineRepresentation.html",
     "<span>LineRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/line-representation.js</span>",
@@ -156,10 +360,28 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/buffer/mapped-buffer.js~mappedbuffer",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html",
+    "<span>MappedBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mapped-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/mesh-buffer.js~meshbuffer",
+    "class/src/buffer/mesh-buffer.js~MeshBuffer.html",
+    "<span>MeshBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mesh-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/globals.js~mobile",
+    "variable/index.html#static-variable-Mobile",
+    "<span>Mobile</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
+    "variable"
+  ],
+  [
     "ngl/src/proxy/model-proxy.js~modelproxy",
-    "function/index.html#static-function-ModelProxy",
+    "class/src/proxy/model-proxy.js~ModelProxy.html",
     "<span>ModelProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/model-proxy.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/model-store.js~modelstore",
@@ -168,15 +390,45 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/color/modelindex-colormaker.js~modelindexcolormaker",
+    "class/src/color/modelindex-colormaker.js~ModelindexColormaker.html",
+    "<span>ModelindexColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/modelindex-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/moleculetype-colormaker.js~moleculetypecolormaker",
+    "class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html",
+    "<span>MoleculetypeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/moleculetype-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/stage/mouse-observer.js~mouseobserver",
     "class/src/stage/mouse-observer.js~MouseObserver.html",
     "<span>MouseObserver</span> <span class=\"search-result-import-path\">ngl/src/stage/mouse-observer.js</span>",
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~moveanimation",
+    "class/src/animation/animation.js~MoveAnimation.html",
+    "<span>MoveAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/occupancy-colormaker.js~occupancycolormaker",
+    "class/src/color/occupancy-colormaker.js~OccupancyColormaker.html",
+    "<span>OccupancyColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/occupancy-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/loader/parser-loader.js~parserloader",
     "class/src/loader/parser-loader.js~ParserLoader.html",
     "<span>ParserLoader</span> <span class=\"search-result-import-path\">ngl/src/loader/parser-loader.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/utils/picker.js~picker",
+    "class/src/utils/picker.js~Picker.html",
+    "<span>Picker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
     "class"
   ],
   [
@@ -198,10 +450,22 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/buffer/point-buffer.js~pointbuffer",
+    "class/src/buffer/point-buffer.js~PointBuffer.html",
+    "<span>PointBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/point-buffer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/proxy/polymer.js~polymer",
-    "function/index.html#static-function-Polymer",
+    "class/src/proxy/polymer.js~Polymer.html",
     "<span>Polymer</span> <span class=\"search-result-import-path\">ngl/src/proxy/polymer.js</span>",
-    "function"
+    "class"
+  ],
+  [
+    "ngl/src/buffer/quad-buffer.js~quadbuffer",
+    "class/src/buffer/quad-buffer.js~QuadBuffer.html",
+    "<span>QuadBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/quad-buffer.js</span>",
+    "class"
   ],
   [
     "ngl/src/color/random-colormaker.js~randomcolormaker",
@@ -223,9 +487,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/proxy/residue-proxy.js~residueproxy",
-    "function/index.html#static-function-ResidueProxy",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html",
     "<span>ResidueProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/residue-proxy.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/residue-store.js~residuestore",
@@ -240,9 +504,39 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/color/residueindex-colormaker.js~residueindexcolormaker",
+    "class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html",
+    "<span>ResidueindexColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/residueindex-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/resname-colormaker.js~resnamecolormaker",
+    "class/src/color/resname-colormaker.js~ResnameColormaker.html",
+    "<span>ResnameColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/resname-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/ribbon-buffer.js~ribbonbuffer",
+    "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html",
+    "<span>RibbonBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/ribbon-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/animation/animation.js~rotateanimation",
+    "class/src/animation/animation.js~RotateAnimation.html",
+    "<span>RotateAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/script.js~script",
     "class/src/script.js~Script.html",
     "<span>Script</span> <span class=\"search-result-import-path\">ngl/src/script.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/component/script-component.js~scriptcomponent",
+    "class/src/component/script-component.js~ScriptComponent.html",
+    "<span>ScriptComponent</span> <span class=\"search-result-import-path\">ngl/src/component/script-component.js</span>",
     "class"
   ],
   [
@@ -258,16 +552,52 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/color/selection-colormaker.js~selectioncolormaker",
+    "class/src/color/selection-colormaker.js~SelectionColormaker.html",
+    "<span>SelectionColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/selection-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/geometry/shape.js~shape",
     "class/src/geometry/shape.js~Shape.html",
     "<span>Shape</span> <span class=\"search-result-import-path\">ngl/src/geometry/shape.js</span>",
     "class"
   ],
   [
+    "ngl/src/component/shape-component.js~shapecomponent",
+    "class/src/component/shape-component.js~ShapeComponent.html",
+    "<span>ShapeComponent</span> <span class=\"search-result-import-path\">ngl/src/component/shape-component.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/sphere-buffer.js~spherebuffer",
-    "function/index.html#static-function-SphereBuffer",
+    "class/src/buffer/sphere-buffer.js~SphereBuffer.html",
     "<span>SphereBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/sphere-buffer.js</span>",
-    "function"
+    "class"
+  ],
+  [
+    "ngl/src/buffer/spheregeometry-buffer.js~spheregeometrybuffer",
+    "class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html",
+    "<span>SphereGeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/spheregeometry-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/sphereimpostor-buffer.js~sphereimpostorbuffer",
+    "class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html",
+    "<span>SphereImpostorBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/sphereimpostor-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/animation/animation.js~spinanimation",
+    "class/src/animation/animation.js~SpinAnimation.html",
+    "<span>SpinAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/sstruc-colormaker.js~sstruccolormaker",
+    "class/src/color/sstruc-colormaker.js~SstrucColormaker.html",
+    "<span>SstrucColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/sstruc-colormaker.js</span>",
+    "class"
   ],
   [
     "ngl/src/stage/stage.js~stage",
@@ -312,9 +642,33 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/buffer/surface-buffer.js~surfacebuffer",
+    "class/src/buffer/surface-buffer.js~SurfaceBuffer.html",
+    "<span>SurfaceBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/surface-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/component/surface-component.js~surfacecomponent",
+    "class/src/component/surface-component.js~SurfaceComponent.html",
+    "<span>SurfaceComponent</span> <span class=\"search-result-import-path\">ngl/src/component/surface-component.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/surface-representation.js~surfacerepresentation",
     "class/src/representation/surface-representation.js~SurfaceRepresentation.html",
     "<span>SurfaceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/surface-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/text-buffer.js~textbuffer",
+    "class/src/buffer/text-buffer.js~TextBuffer.html",
+    "<span>TextBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/text-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/trace-buffer.js~tracebuffer",
+    "class/src/buffer/trace-buffer.js~TraceBuffer.html",
+    "<span>TraceBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/trace-buffer.js</span>",
     "class"
   ],
   [
@@ -330,9 +684,33 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/component/trajectory-component.js~trajectorycomponent",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html",
+    "<span>TrajectoryComponent</span> <span class=\"search-result-import-path\">ngl/src/component/trajectory-component.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/trajectory/trajectory-player.js~trajectoryplayer",
     "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html",
     "<span>TrajectoryPlayer</span> <span class=\"search-result-import-path\">ngl/src/trajectory/trajectory-player.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/trajectory-representation.js~trajectoryrepresentation",
+    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html",
+    "<span>TrajectoryRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/trajectory-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/tubemesh-buffer.js~tubemeshbuffer",
+    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html",
+    "<span>TubeMeshBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/tubemesh-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/uniform-colormaker.js~uniformcolormaker",
+    "class/src/color/uniform-colormaker.js~UniformColormaker.html",
+    "<span>UniformColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/uniform-colormaker.js</span>",
     "class"
   ],
   [
@@ -340,6 +718,24 @@ window.esdocSearchIndex = [
     "class/src/representation/validation-representation.js~ValidationRepresentation.html",
     "<span>ValidationRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/validation-representation.js</span>",
     "class"
+  ],
+  [
+    "ngl/src/color/value-colormaker.js~valuecolormaker",
+    "class/src/color/value-colormaker.js~ValueColormaker.html",
+    "<span>ValueColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/value-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/vector-buffer.js~vectorbuffer",
+    "class/src/buffer/vector-buffer.js~VectorBuffer.html",
+    "<span>VectorBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/vector-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/version.js~version",
+    "variable/index.html#static-variable-Version",
+    "<span>Version</span> <span class=\"search-result-import-path\">ngl/src/version.js</span>",
+    "variable"
   ],
   [
     "ngl/src/viewer/viewer.js~viewer",
@@ -357,6 +753,24 @@ window.esdocSearchIndex = [
     "ngl/src/surface/volume.js~volume",
     "class/src/surface/volume.js~Volume.html",
     "<span>Volume</span> <span class=\"search-result-import-path\">ngl/src/surface/volume.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/volume-colormaker.js~volumecolormaker",
+    "class/src/color/volume-colormaker.js~VolumeColormaker.html",
+    "<span>VolumeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/volume-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/component/volume-component.js~volumecomponent",
+    "class/src/component/volume-component.js~VolumeComponent.html",
+    "<span>VolumeComponent</span> <span class=\"search-result-import-path\">ngl/src/component/volume-component.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/animation/animation.js~zoomanimation",
+    "class/src/animation/animation.js~ZoomAnimation.html",
+    "<span>ZoomAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
     "class"
   ],
   [
@@ -750,6 +1164,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/animation/animation.js",
+    "file/src/animation/animation.js.html",
+    "src/animation/animation.js",
+    "file"
+  ],
+  [
     "src/buffer/alignedbox-buffer.js",
     "file/src/buffer/alignedbox-buffer.js.html",
     "src/buffer/alignedbox-buffer.js",
@@ -760,6 +1180,18 @@ window.esdocSearchIndex = [
     "file/src/buffer/arrow-buffer.js.html",
     "src/buffer/arrow-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/arrow-buffer.js~arrowbuffer#constructor",
+    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-constructor-constructor",
+    "src/buffer/arrow-buffer.js~ArrowBuffer#constructor",
+    "method"
+  ],
+  [
+    "src/buffer/arrow-buffer.js~arrowbuffer#setparameters",
+    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-setParameters",
+    "src/buffer/arrow-buffer.js~ArrowBuffer#setParameters",
+    "method"
   ],
   [
     "src/buffer/box-buffer.js",
@@ -780,6 +1212,42 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/buffer.js~buffer#constructor",
+    "class/src/buffer/buffer.js~Buffer.html#instance-constructor-constructor",
+    "src/buffer/buffer.js~Buffer#constructor",
+    "method"
+  ],
+  [
+    "src/buffer/buffer.js~buffer#dispose",
+    "class/src/buffer/buffer.js~Buffer.html#instance-method-dispose",
+    "src/buffer/buffer.js~Buffer#dispose",
+    "method"
+  ],
+  [
+    "src/buffer/buffer.js~buffer#fragmentshader",
+    "class/src/buffer/buffer.js~Buffer.html#instance-get-fragmentShader",
+    "src/buffer/buffer.js~Buffer#fragmentShader",
+    "member"
+  ],
+  [
+    "src/buffer/buffer.js~buffer#setparameters",
+    "class/src/buffer/buffer.js~Buffer.html#instance-method-setParameters",
+    "src/buffer/buffer.js~Buffer#setParameters",
+    "method"
+  ],
+  [
+    "src/buffer/buffer.js~buffer#setvisibility",
+    "class/src/buffer/buffer.js~Buffer.html#instance-method-setVisibility",
+    "src/buffer/buffer.js~Buffer#setVisibility",
+    "method"
+  ],
+  [
+    "src/buffer/buffer.js~buffer#vertexshader",
+    "class/src/buffer/buffer.js~Buffer.html#instance-get-vertexShader",
+    "src/buffer/buffer.js~Buffer#vertexShader",
+    "member"
+  ],
+  [
     "src/buffer/buffer.js~bufferparameters",
     "typedef/index.html#static-typedef-BufferParameters",
     "src/buffer/buffer.js~BufferParameters",
@@ -792,10 +1260,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/cone-buffer.js~conebuffer#constructor",
+    "class/src/buffer/cone-buffer.js~ConeBuffer.html#instance-constructor-constructor",
+    "src/buffer/cone-buffer.js~ConeBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/conegeometry-buffer.js",
     "file/src/buffer/conegeometry-buffer.js.html",
     "src/buffer/conegeometry-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#constructor",
+    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-constructor-constructor",
+    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/contour-buffer.js",
@@ -810,16 +1290,34 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/cylinder-buffer.js~cylinderbuffer#constructor",
+    "class/src/buffer/cylinder-buffer.js~CylinderBuffer.html#instance-constructor-constructor",
+    "src/buffer/cylinder-buffer.js~CylinderBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/cylindergeometry-buffer.js",
     "file/src/buffer/cylindergeometry-buffer.js.html",
     "src/buffer/cylindergeometry-buffer.js",
     "file"
   ],
   [
+    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#constructor",
+    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-constructor-constructor",
+    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/cylinderimpostor-buffer.js",
     "file/src/buffer/cylinderimpostor-buffer.js.html",
     "src/buffer/cylinderimpostor-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#constructor",
+    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-constructor-constructor",
+    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/doublesided-buffer.js",
@@ -840,6 +1338,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/ellipsoid-buffer.js~ellipsoidbuffer#constructor",
+    "class/src/buffer/ellipsoid-buffer.js~EllipsoidBuffer.html#instance-constructor-constructor",
+    "src/buffer/ellipsoid-buffer.js~EllipsoidBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/ellipsoidgeometry-buffer.js",
     "file/src/buffer/ellipsoidgeometry-buffer.js.html",
     "src/buffer/ellipsoidgeometry-buffer.js",
@@ -852,10 +1356,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/geometry-buffer.js~geometrybuffer#constructor",
+    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-constructor-constructor",
+    "src/buffer/geometry-buffer.js~GeometryBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/hyperballstick-buffer.js",
     "file/src/buffer/hyperballstick-buffer.js.html",
     "src/buffer/hyperballstick-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/hyperballstick-buffer.js~hyperballstickbuffer#constructor",
+    "class/src/buffer/hyperballstick-buffer.js~HyperballStickBuffer.html#instance-constructor-constructor",
+    "src/buffer/hyperballstick-buffer.js~HyperballStickBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/hyperballstickimpostor-buffer.js",
@@ -864,10 +1380,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/hyperballstickimpostor-buffer.js~hyperballstickimpostorbuffer#constructor",
+    "class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html#instance-constructor-constructor",
+    "src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/image-buffer.js",
     "file/src/buffer/image-buffer.js.html",
     "src/buffer/image-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/image-buffer.js~imagebuffer#constructor",
+    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-constructor-constructor",
+    "src/buffer/image-buffer.js~ImageBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/line-buffer.js",
@@ -876,10 +1404,52 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/line-buffer.js~linebuffer#constructor",
+    "class/src/buffer/line-buffer.js~LineBuffer.html#instance-constructor-constructor",
+    "src/buffer/line-buffer.js~LineBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/mapped-buffer.js",
     "file/src/buffer/mapped-buffer.js.html",
     "src/buffer/mapped-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/mapped-buffer.js~mappedbuffer#mapping",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-mapping",
+    "src/buffer/mapped-buffer.js~MappedBuffer#mapping",
+    "member"
+  ],
+  [
+    "src/buffer/mapped-buffer.js~mappedbuffer#mappingindices",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-mappingIndices",
+    "src/buffer/mapped-buffer.js~MappedBuffer#mappingIndices",
+    "member"
+  ],
+  [
+    "src/buffer/mapped-buffer.js~mappedbuffer#mappingindicessize",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-mappingIndicesSize",
+    "src/buffer/mapped-buffer.js~MappedBuffer#mappingIndicesSize",
+    "member"
+  ],
+  [
+    "src/buffer/mapped-buffer.js~mappedbuffer#mappingitemsize",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-mappingItemSize",
+    "src/buffer/mapped-buffer.js~MappedBuffer#mappingItemSize",
+    "member"
+  ],
+  [
+    "src/buffer/mapped-buffer.js~mappedbuffer#mappingsize",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-mappingSize",
+    "src/buffer/mapped-buffer.js~MappedBuffer#mappingSize",
+    "member"
+  ],
+  [
+    "src/buffer/mapped-buffer.js~mappedbuffer#mappingtype",
+    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-mappingType",
+    "src/buffer/mapped-buffer.js~MappedBuffer#mappingType",
+    "member"
   ],
   [
     "src/buffer/mesh-buffer.js",
@@ -888,10 +1458,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/mesh-buffer.js~meshbuffer#constructor",
+    "class/src/buffer/mesh-buffer.js~MeshBuffer.html#instance-constructor-constructor",
+    "src/buffer/mesh-buffer.js~MeshBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/point-buffer.js",
     "file/src/buffer/point-buffer.js.html",
     "src/buffer/point-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/point-buffer.js~pointbuffer#constructor",
+    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-constructor-constructor",
+    "src/buffer/point-buffer.js~PointBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/quad-buffer.js",
@@ -906,10 +1488,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/ribbon-buffer.js~ribbonbuffer#constructor",
+    "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html#instance-constructor-constructor",
+    "src/buffer/ribbon-buffer.js~RibbonBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/sphere-buffer.js",
     "file/src/buffer/sphere-buffer.js.html",
     "src/buffer/sphere-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/sphere-buffer.js~spherebuffer#constructor",
+    "class/src/buffer/sphere-buffer.js~SphereBuffer.html#instance-constructor-constructor",
+    "src/buffer/sphere-buffer.js~SphereBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/spheregeometry-buffer.js",
@@ -918,10 +1512,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/spheregeometry-buffer.js~spheregeometrybuffer#constructor",
+    "class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html#instance-constructor-constructor",
+    "src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/sphereimpostor-buffer.js",
     "file/src/buffer/sphereimpostor-buffer.js.html",
     "src/buffer/sphereimpostor-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/sphereimpostor-buffer.js~sphereimpostorbuffer#constructor",
+    "class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html#instance-constructor-constructor",
+    "src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer#constructor",
+    "method"
   ],
   [
     "src/buffer/surface-buffer.js",
@@ -936,6 +1542,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/text-buffer.js~textbuffer#constructor",
+    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-constructor-constructor",
+    "src/buffer/text-buffer.js~TextBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/text-buffer.js~textbufferparameters",
     "typedef/index.html#static-typedef-TextBufferParameters",
     "src/buffer/text-buffer.js~TextBufferParameters",
@@ -948,16 +1560,34 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/trace-buffer.js~tracebuffer#constructor",
+    "class/src/buffer/trace-buffer.js~TraceBuffer.html#instance-constructor-constructor",
+    "src/buffer/trace-buffer.js~TraceBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/tubemesh-buffer.js",
     "file/src/buffer/tubemesh-buffer.js.html",
     "src/buffer/tubemesh-buffer.js",
     "file"
   ],
   [
+    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#constructor",
+    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-constructor-constructor",
+    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#constructor",
+    "method"
+  ],
+  [
     "src/buffer/vector-buffer.js",
     "file/src/buffer/vector-buffer.js.html",
     "src/buffer/vector-buffer.js",
     "file"
+  ],
+  [
+    "src/buffer/vector-buffer.js~vectorbuffer#constructor",
+    "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-constructor-constructor",
+    "src/buffer/vector-buffer.js~VectorBuffer#constructor",
+    "method"
   ],
   [
     "src/color/atomindex-colormaker.js",
@@ -994,6 +1624,48 @@ window.esdocSearchIndex = [
     "file/src/color/colormaker-registry.js.html",
     "src/color/colormaker-registry.js",
     "file"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#add",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-add",
+    "src/color/colormaker-registry.js~ColormakerRegistry#add",
+    "method"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#addscheme",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-addScheme",
+    "src/color/colormaker-registry.js~ColormakerRegistry#addScheme",
+    "method"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#addselectionscheme",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-addSelectionScheme",
+    "src/color/colormaker-registry.js~ColormakerRegistry#addSelectionScheme",
+    "method"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#getscales",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-getScales",
+    "src/color/colormaker-registry.js~ColormakerRegistry#getScales",
+    "method"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#getschemes",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-getSchemes",
+    "src/color/colormaker-registry.js~ColormakerRegistry#getSchemes",
+    "method"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#hasscheme",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-hasScheme",
+    "src/color/colormaker-registry.js~ColormakerRegistry#hasScheme",
+    "method"
+  ],
+  [
+    "src/color/colormaker-registry.js~colormakerregistry#removescheme",
+    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-removeScheme",
+    "src/color/colormaker-registry.js~ColormakerRegistry#removeScheme",
+    "method"
   ],
   [
     "src/color/colormaker.js",
@@ -1224,6 +1896,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#getbox",
+    "class/src/component/component.js~Component.html#instance-method-getBox",
+    "src/component/component.js~Component#getBox",
+    "method"
+  ],
+  [
     "src/component/component.js~component#removeallrepresentations",
     "class/src/component/component.js~Component.html#instance-method-removeAllRepresentations",
     "src/component/component.js~Component#removeAllRepresentations",
@@ -1242,9 +1920,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#signals",
+    "class/src/component/component.js~Component.html#instance-member-signals",
+    "src/component/component.js~Component#signals",
+    "member"
+  ],
+  [
     "src/component/component.js~componentparameters",
     "typedef/index.html#static-typedef-ComponentParameters",
     "src/component/component.js~ComponentParameters",
+    "typedef"
+  ],
+  [
+    "src/component/component.js~componentsignals",
+    "typedef/index.html#static-typedef-ComponentSignals",
+    "src/component/component.js~ComponentSignals",
     "typedef"
   ],
   [
@@ -1266,6 +1956,18 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/representation-component.js~representationcomponent#getparameters",
+    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-getParameters",
+    "src/component/representation-component.js~RepresentationComponent#getParameters",
+    "method"
+  ],
+  [
+    "src/component/representation-component.js~representationcomponent#setcolor",
+    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-setColor",
+    "src/component/representation-component.js~RepresentationComponent#setColor",
+    "method"
+  ],
+  [
     "src/component/representation-component.js~representationcomponent#setparameters",
     "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-setParameters",
     "src/component/representation-component.js~RepresentationComponent#setParameters",
@@ -1284,10 +1986,28 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/representation-component.js~representationcomponent#signals",
+    "class/src/component/representation-component.js~RepresentationComponent.html#instance-member-signals",
+    "src/component/representation-component.js~RepresentationComponent#signals",
+    "member"
+  ],
+  [
+    "src/component/representation-component.js~representationcomponent#type",
+    "class/src/component/representation-component.js~RepresentationComponent.html#instance-get-type",
+    "src/component/representation-component.js~RepresentationComponent#type",
+    "member"
+  ],
+  [
     "src/component/representation-component.js~representationcomponent#update",
     "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-update",
     "src/component/representation-component.js~RepresentationComponent#update",
     "method"
+  ],
+  [
+    "src/component/representation-component.js~representationcomponentsignals",
+    "typedef/index.html#static-typedef-RepresentationComponentSignals",
+    "src/component/representation-component.js~RepresentationComponentSignals",
+    "typedef"
   ],
   [
     "src/component/script-component.js",
@@ -1296,10 +2016,34 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/component/script-component.js~scriptcomponent#constructor",
+    "class/src/component/script-component.js~ScriptComponent.html#instance-constructor-constructor",
+    "src/component/script-component.js~ScriptComponent#constructor",
+    "method"
+  ],
+  [
     "src/component/shape-component.js",
     "file/src/component/shape-component.js.html",
     "src/component/shape-component.js",
     "file"
+  ],
+  [
+    "src/component/shape-component.js~shapecomponent#addrepresentation",
+    "class/src/component/shape-component.js~ShapeComponent.html#instance-method-addRepresentation",
+    "src/component/shape-component.js~ShapeComponent#addRepresentation",
+    "method"
+  ],
+  [
+    "src/component/shape-component.js~shapecomponent#constructor",
+    "class/src/component/shape-component.js~ShapeComponent.html#instance-constructor-constructor",
+    "src/component/shape-component.js~ShapeComponent#constructor",
+    "method"
+  ],
+  [
+    "src/component/shape-component.js~shapecomponent#type",
+    "class/src/component/shape-component.js~ShapeComponent.html#instance-get-type",
+    "src/component/shape-component.js~ShapeComponent#type",
+    "member"
   ],
   [
     "src/component/structure-component.js",
@@ -1356,6 +2100,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/structure-component.js~structurecomponent#signals",
+    "class/src/component/structure-component.js~StructureComponent.html#instance-member-signals",
+    "src/component/structure-component.js~StructureComponent#signals",
+    "member"
+  ],
+  [
     "src/component/structure-component.js~structurecomponent#structure",
     "class/src/component/structure-component.js~StructureComponent.html#instance-member-structure",
     "src/component/structure-component.js~StructureComponent#structure",
@@ -1374,10 +2124,34 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/component/structure-component.js~structurecomponentsignals",
+    "typedef/index.html#static-typedef-StructureComponentSignals",
+    "src/component/structure-component.js~StructureComponentSignals",
+    "typedef"
+  ],
+  [
     "src/component/surface-component.js",
     "file/src/component/surface-component.js.html",
     "src/component/surface-component.js",
     "file"
+  ],
+  [
+    "src/component/surface-component.js~surfacecomponent#addrepresentation",
+    "class/src/component/surface-component.js~SurfaceComponent.html#instance-method-addRepresentation",
+    "src/component/surface-component.js~SurfaceComponent#addRepresentation",
+    "method"
+  ],
+  [
+    "src/component/surface-component.js~surfacecomponent#constructor",
+    "class/src/component/surface-component.js~SurfaceComponent.html#instance-constructor-constructor",
+    "src/component/surface-component.js~SurfaceComponent#constructor",
+    "method"
+  ],
+  [
+    "src/component/surface-component.js~surfacecomponent#type",
+    "class/src/component/surface-component.js~SurfaceComponent.html#instance-get-type",
+    "src/component/surface-component.js~SurfaceComponent#type",
+    "member"
   ],
   [
     "src/component/trajectory-component.js",
@@ -1386,9 +2160,51 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/component/trajectory-component.js~trajectorycomponent#addrepresentation",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-method-addRepresentation",
+    "src/component/trajectory-component.js~TrajectoryComponent#addRepresentation",
+    "method"
+  ],
+  [
+    "src/component/trajectory-component.js~trajectorycomponent#constructor",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-constructor-constructor",
+    "src/component/trajectory-component.js~TrajectoryComponent#constructor",
+    "method"
+  ],
+  [
+    "src/component/trajectory-component.js~trajectorycomponent#setframe",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-method-setFrame",
+    "src/component/trajectory-component.js~TrajectoryComponent#setFrame",
+    "method"
+  ],
+  [
+    "src/component/trajectory-component.js~trajectorycomponent#setparameters",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-method-setParameters",
+    "src/component/trajectory-component.js~TrajectoryComponent#setParameters",
+    "method"
+  ],
+  [
+    "src/component/trajectory-component.js~trajectorycomponent#signals",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-signals",
+    "src/component/trajectory-component.js~TrajectoryComponent#signals",
+    "member"
+  ],
+  [
+    "src/component/trajectory-component.js~trajectorycomponent#type",
+    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-get-type",
+    "src/component/trajectory-component.js~TrajectoryComponent#type",
+    "member"
+  ],
+  [
     "src/component/trajectory-component.js~trajectorycomponentparameters",
     "typedef/index.html#static-typedef-TrajectoryComponentParameters",
     "src/component/trajectory-component.js~TrajectoryComponentParameters",
+    "typedef"
+  ],
+  [
+    "src/component/trajectory-component.js~trajectorycomponentsignals",
+    "typedef/index.html#static-typedef-TrajectoryComponentSignals",
+    "src/component/trajectory-component.js~TrajectoryComponentSignals",
     "typedef"
   ],
   [
@@ -1396,6 +2212,24 @@ window.esdocSearchIndex = [
     "file/src/component/volume-component.js.html",
     "src/component/volume-component.js",
     "file"
+  ],
+  [
+    "src/component/volume-component.js~volumecomponent#addrepresentation",
+    "class/src/component/volume-component.js~VolumeComponent.html#instance-method-addRepresentation",
+    "src/component/volume-component.js~VolumeComponent#addRepresentation",
+    "method"
+  ],
+  [
+    "src/component/volume-component.js~volumecomponent#constructor",
+    "class/src/component/volume-component.js~VolumeComponent.html#instance-constructor-constructor",
+    "src/component/volume-component.js~VolumeComponent#constructor",
+    "method"
+  ],
+  [
+    "src/component/volume-component.js~volumecomponent#type",
+    "class/src/component/volume-component.js~VolumeComponent.html#instance-get-type",
+    "src/component/volume-component.js~VolumeComponent#type",
+    "member"
   ],
   [
     "src/constants.js",
@@ -1786,6 +2620,66 @@ window.esdocSearchIndex = [
     "file/src/datasource/static-datasource.js.html",
     "src/datasource/static-datasource.js",
     "file"
+  ],
+  [
+    "src/externals.js",
+    "file/src/externals.js.html",
+    "src/externals.js",
+    "file"
+  ],
+  [
+    "src/externals.js~box3",
+    "https://threejs.org/docs/#api/math/Box3",
+    "src/externals.js~Box3",
+    "external"
+  ],
+  [
+    "src/externals.js~color",
+    "https://threejs.org/docs/#api/math/Color",
+    "src/externals.js~Color",
+    "external"
+  ],
+  [
+    "src/externals.js~matrix3",
+    "https://threejs.org/docs/#api/math/Matrix3",
+    "src/externals.js~Matrix3",
+    "external"
+  ],
+  [
+    "src/externals.js~matrix4",
+    "https://threejs.org/docs/#api/math/Matrix4",
+    "src/externals.js~Matrix4",
+    "external"
+  ],
+  [
+    "src/externals.js~plane",
+    "https://threejs.org/docs/#api/math/Plane",
+    "src/externals.js~Plane",
+    "external"
+  ],
+  [
+    "src/externals.js~quaternion",
+    "https://threejs.org/docs/#api/math/Quaternion",
+    "src/externals.js~Quaternion",
+    "external"
+  ],
+  [
+    "src/externals.js~signal",
+    "https://millermedeiros.github.io/js-signals/docs/symbols/Signal.html",
+    "src/externals.js~Signal",
+    "external"
+  ],
+  [
+    "src/externals.js~vector2",
+    "https://threejs.org/docs/#api/math/Vector2",
+    "src/externals.js~Vector2",
+    "external"
+  ],
+  [
+    "src/externals.js~vector3",
+    "https://threejs.org/docs/#api/math/Vector3",
+    "src/externals.js~Vector3",
+    "external"
   ],
   [
     "src/geometry/contact-utils.js",
@@ -2184,10 +3078,250 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/atom-proxy.js~atomproxy#altloc",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-altloc",
+    "src/proxy/atom-proxy.js~AtomProxy#altloc",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#atommap",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-atomMap",
+    "src/proxy/atom-proxy.js~AtomProxy#atomMap",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#atomstore",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-atomStore",
+    "src/proxy/atom-proxy.js~AtomProxy#atomStore",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#atomtype",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-atomType",
+    "src/proxy/atom-proxy.js~AtomProxy#atomType",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#atomname",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-atomname",
+    "src/proxy/atom-proxy.js~AtomProxy#atomname",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#bfactor",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bfactor",
+    "src/proxy/atom-proxy.js~AtomProxy#bfactor",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#bondhash",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-bondHash",
+    "src/proxy/atom-proxy.js~AtomProxy#bondHash",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#chainstore",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-chainStore",
+    "src/proxy/atom-proxy.js~AtomProxy#chainStore",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#chainid",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-chainid",
+    "src/proxy/atom-proxy.js~AtomProxy#chainid",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#chainname",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-chainname",
+    "src/proxy/atom-proxy.js~AtomProxy#chainname",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#constructor",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-constructor-constructor",
+    "src/proxy/atom-proxy.js~AtomProxy#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#covalent",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-covalent",
+    "src/proxy/atom-proxy.js~AtomProxy#covalent",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#eachbond",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-eachBond",
+    "src/proxy/atom-proxy.js~AtomProxy#eachBond",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#eachbondedatom",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-eachBondedAtom",
+    "src/proxy/atom-proxy.js~AtomProxy#eachBondedAtom",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#element",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-element",
+    "src/proxy/atom-proxy.js~AtomProxy#element",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#entity",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-entity",
+    "src/proxy/atom-proxy.js~AtomProxy#entity",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#getresiduebonds",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-getResidueBonds",
+    "src/proxy/atom-proxy.js~AtomProxy#getResidueBonds",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#hetero",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-hetero",
+    "src/proxy/atom-proxy.js~AtomProxy#hetero",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#index",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-index",
+    "src/proxy/atom-proxy.js~AtomProxy#index",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#inscode",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-inscode",
+    "src/proxy/atom-proxy.js~AtomProxy#inscode",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#occupancy",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-occupancy",
+    "src/proxy/atom-proxy.js~AtomProxy#occupancy",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#residue",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residue",
+    "src/proxy/atom-proxy.js~AtomProxy#residue",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#residuemap",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-residueMap",
+    "src/proxy/atom-proxy.js~AtomProxy#residueMap",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#residuestore",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-residueStore",
+    "src/proxy/atom-proxy.js~AtomProxy#residueStore",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#residuetype",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residueType",
+    "src/proxy/atom-proxy.js~AtomProxy#residueType",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#resname",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-resname",
+    "src/proxy/atom-proxy.js~AtomProxy#resname",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#resno",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-resno",
+    "src/proxy/atom-proxy.js~AtomProxy#resno",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
+    "src/proxy/atom-proxy.js~AtomProxy#serial",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#sstruc",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-sstruc",
+    "src/proxy/atom-proxy.js~AtomProxy#sstruc",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#structure",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-structure",
+    "src/proxy/atom-proxy.js~AtomProxy#structure",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#vdw",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-vdw",
+    "src/proxy/atom-proxy.js~AtomProxy#vdw",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#x",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-x",
+    "src/proxy/atom-proxy.js~AtomProxy#x",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#y",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-y",
+    "src/proxy/atom-proxy.js~AtomProxy#y",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#z",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-z",
+    "src/proxy/atom-proxy.js~AtomProxy#z",
+    "member"
+  ],
+  [
     "src/proxy/bond-proxy.js",
     "file/src/proxy/bond-proxy.js.html",
     "src/proxy/bond-proxy.js",
     "file"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#bondstore",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-bondStore",
+    "src/proxy/bond-proxy.js~BondProxy#bondStore",
+    "member"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#calculateshiftdir",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-method-calculateShiftDir",
+    "src/proxy/bond-proxy.js~BondProxy#calculateShiftDir",
+    "method"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#constructor",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-constructor-constructor",
+    "src/proxy/bond-proxy.js~BondProxy#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#getreferenceatomindex",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-method-getReferenceAtomIndex",
+    "src/proxy/bond-proxy.js~BondProxy#getReferenceAtomIndex",
+    "method"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#index",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-index",
+    "src/proxy/bond-proxy.js~BondProxy#index",
+    "member"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#structure",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-structure",
+    "src/proxy/bond-proxy.js~BondProxy#structure",
+    "member"
   ],
   [
     "src/proxy/chain-proxy.js",
@@ -2196,10 +3330,76 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/chain-proxy.js~chainproxy#chainstore",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-chainStore",
+    "src/proxy/chain-proxy.js~ChainProxy#chainStore",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#constructor",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-constructor-constructor",
+    "src/proxy/chain-proxy.js~ChainProxy#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#index",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-index",
+    "src/proxy/chain-proxy.js~ChainProxy#index",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#residuestore",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-residueStore",
+    "src/proxy/chain-proxy.js~ChainProxy#residueStore",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#structure",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-structure",
+    "src/proxy/chain-proxy.js~ChainProxy#structure",
+    "member"
+  ],
+  [
     "src/proxy/model-proxy.js",
     "file/src/proxy/model-proxy.js.html",
     "src/proxy/model-proxy.js",
     "file"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#chainstore",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-chainStore",
+    "src/proxy/model-proxy.js~ModelProxy#chainStore",
+    "member"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#constructor",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-constructor-constructor",
+    "src/proxy/model-proxy.js~ModelProxy#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#index",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-index",
+    "src/proxy/model-proxy.js~ModelProxy#index",
+    "member"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#modelstore",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-modelStore",
+    "src/proxy/model-proxy.js~ModelProxy#modelStore",
+    "member"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#residuestore",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-residueStore",
+    "src/proxy/model-proxy.js~ModelProxy#residueStore",
+    "member"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#structure",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-structure",
+    "src/proxy/model-proxy.js~ModelProxy#structure",
+    "member"
   ],
   [
     "src/proxy/polymer.js",
@@ -2208,10 +3408,106 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/polymer.js~polymer#atomstore",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-atomStore",
+    "src/proxy/polymer.js~Polymer#atomStore",
+    "member"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#chainstore",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-chainStore",
+    "src/proxy/polymer.js~Polymer#chainStore",
+    "member"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#constructor",
+    "class/src/proxy/polymer.js~Polymer.html#instance-constructor-constructor",
+    "src/proxy/polymer.js~Polymer#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#residuecount",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-residueCount",
+    "src/proxy/polymer.js~Polymer#residueCount",
+    "member"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#residueindexend",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-residueIndexEnd",
+    "src/proxy/polymer.js~Polymer#residueIndexEnd",
+    "member"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#residueindexstart",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-residueIndexStart",
+    "src/proxy/polymer.js~Polymer#residueIndexStart",
+    "member"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#residuestore",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-residueStore",
+    "src/proxy/polymer.js~Polymer#residueStore",
+    "member"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#structure",
+    "class/src/proxy/polymer.js~Polymer.html#instance-member-structure",
+    "src/proxy/polymer.js~Polymer#structure",
+    "member"
+  ],
+  [
     "src/proxy/residue-proxy.js",
     "file/src/proxy/residue-proxy.js.html",
     "src/proxy/residue-proxy.js",
     "file"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#atommap",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-atomMap",
+    "src/proxy/residue-proxy.js~ResidueProxy#atomMap",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#atomstore",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-atomStore",
+    "src/proxy/residue-proxy.js~ResidueProxy#atomStore",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#chainstore",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-chainStore",
+    "src/proxy/residue-proxy.js~ResidueProxy#chainStore",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#constructor",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-constructor-constructor",
+    "src/proxy/residue-proxy.js~ResidueProxy#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#index",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-index",
+    "src/proxy/residue-proxy.js~ResidueProxy#index",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#residuemap",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-residueMap",
+    "src/proxy/residue-proxy.js~ResidueProxy#residueMap",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#residuestore",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-residueStore",
+    "src/proxy/residue-proxy.js~ResidueProxy#residueStore",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#structure",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-structure",
+    "src/proxy/residue-proxy.js~ResidueProxy#structure",
+    "member"
   ],
   [
     "src/representation/axes-representation.js",
@@ -2220,10 +3516,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/representation/axes-representation.js~axesrepresentation#constructor",
+    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-constructor-constructor",
+    "src/representation/axes-representation.js~AxesRepresentation#constructor",
+    "method"
+  ],
+  [
     "src/representation/backbone-representation.js",
     "file/src/representation/backbone-representation.js.html",
     "src/representation/backbone-representation.js",
     "file"
+  ],
+  [
+    "src/representation/backbone-representation.js~backbonerepresentation#constructor",
+    "class/src/representation/backbone-representation.js~BackboneRepresentation.html#instance-constructor-constructor",
+    "src/representation/backbone-representation.js~BackboneRepresentation#constructor",
+    "method"
   ],
   [
     "src/representation/ballandstick-representation.js",
@@ -2250,6 +3558,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/representation/base-representation.js~baserepresentation#constructor",
+    "class/src/representation/base-representation.js~BaseRepresentation.html#instance-constructor-constructor",
+    "src/representation/base-representation.js~BaseRepresentation#constructor",
+    "method"
+  ],
+  [
     "src/representation/buffer-representation.js",
     "file/src/representation/buffer-representation.js.html",
     "src/representation/buffer-representation.js",
@@ -2266,6 +3580,12 @@ window.esdocSearchIndex = [
     "file/src/representation/cartoon-representation.js.html",
     "src/representation/cartoon-representation.js",
     "file"
+  ],
+  [
+    "src/representation/cartoon-representation.js~cartoonrepresentation#constructor",
+    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-constructor-constructor",
+    "src/representation/cartoon-representation.js~CartoonRepresentation#constructor",
+    "method"
   ],
   [
     "src/representation/contact-representation.js",
@@ -2514,6 +3834,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/representation/trajectory-representation.js~trajectoryrepresentation#constructor",
+    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-constructor-constructor",
+    "src/representation/trajectory-representation.js~TrajectoryRepresentation#constructor",
+    "method"
+  ],
+  [
+    "src/representation/trajectory-representation.js~trajectoryrepresentationparameters",
+    "typedef/index.html#static-typedef-TrajectoryRepresentationParameters",
+    "src/representation/trajectory-representation.js~TrajectoryRepresentationParameters",
+    "typedef"
+  ],
+  [
     "src/representation/tube-representation.js",
     "file/src/representation/tube-representation.js.html",
     "src/representation/tube-representation.js",
@@ -2592,34 +3924,106 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/stage/mouse-observer.js~mouseobserver#altkey",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-altKey",
+    "src/stage/mouse-observer.js~MouseObserver#altKey",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#canvasposition",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-canvasPosition",
+    "src/stage/mouse-observer.js~MouseObserver#canvasPosition",
+    "member"
+  ],
+  [
     "src/stage/mouse-observer.js~mouseobserver#constructor",
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-constructor-constructor",
     "src/stage/mouse-observer.js~MouseObserver#constructor",
     "method"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#listen",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-listen",
-    "src/stage/mouse-observer.js~MouseObserver#listen",
-    "method"
+    "src/stage/mouse-observer.js~mouseobserver#ctrlkey",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-ctrlKey",
+    "src/stage/mouse-observer.js~MouseObserver#ctrlKey",
+    "member"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#onmousemove",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-onMousemove",
-    "src/stage/mouse-observer.js~MouseObserver#onMousemove",
-    "method"
+    "src/stage/mouse-observer.js~mouseobserver#down",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-down",
+    "src/stage/mouse-observer.js~MouseObserver#down",
+    "member"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#onmouseup",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-onMouseup",
-    "src/stage/mouse-observer.js~MouseObserver#onMouseup",
-    "method"
+    "src/stage/mouse-observer.js~mouseobserver#hovering",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-hovering",
+    "src/stage/mouse-observer.js~MouseObserver#hovering",
+    "member"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#onmousewheel",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-onMousewheel",
-    "src/stage/mouse-observer.js~MouseObserver#onMousewheel",
-    "method"
+    "src/stage/mouse-observer.js~mouseobserver#lastmoved",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-lastMoved",
+    "src/stage/mouse-observer.js~MouseObserver#lastMoved",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#metakey",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-metaKey",
+    "src/stage/mouse-observer.js~MouseObserver#metaKey",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#moving",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-moving",
+    "src/stage/mouse-observer.js~MouseObserver#moving",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#position",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-position",
+    "src/stage/mouse-observer.js~MouseObserver#position",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#pressed",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-pressed",
+    "src/stage/mouse-observer.js~MouseObserver#pressed",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#prevposition",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-prevPosition",
+    "src/stage/mouse-observer.js~MouseObserver#prevPosition",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#scrolled",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-scrolled",
+    "src/stage/mouse-observer.js~MouseObserver#scrolled",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#shiftkey",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-shiftKey",
+    "src/stage/mouse-observer.js~MouseObserver#shiftKey",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#signals",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-signals",
+    "src/stage/mouse-observer.js~MouseObserver#signals",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mouseobserver#which",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-which",
+    "src/stage/mouse-observer.js~MouseObserver#which",
+    "member"
+  ],
+  [
+    "src/stage/mouse-observer.js~mousesignals",
+    "typedef/index.html#static-typedef-MouseSignals",
+    "src/stage/mouse-observer.js~MouseSignals",
+    "typedef"
   ],
   [
     "src/stage/picking-behavior.js",
@@ -3264,6 +4668,24 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/utils/picker.js~picker#constructor",
+    "class/src/utils/picker.js~Picker.html#instance-constructor-constructor",
+    "src/utils/picker.js~Picker#constructor",
+    "method"
+  ],
+  [
+    "src/utils/picker.js~picker#getindex",
+    "class/src/utils/picker.js~Picker.html#instance-method-getIndex",
+    "src/utils/picker.js~Picker#getIndex",
+    "method"
+  ],
+  [
+    "src/utils/picker.js~picker#getposition",
+    "class/src/utils/picker.js~Picker.html#instance-method-getPosition",
+    "src/utils/picker.js~Picker#getPosition",
+    "method"
+  ],
+  [
     "src/utils/queue.js",
     "file/src/utils/queue.js.html",
     "src/utils/queue.js",
@@ -3279,6 +4701,12 @@ window.esdocSearchIndex = [
     "src/utils/registry.js",
     "file/src/utils/registry.js.html",
     "src/utils/registry.js",
+    "file"
+  ],
+  [
+    "src/version.js",
+    "file/src/version.js.html",
+    "src/version.js",
     "file"
   ],
   [

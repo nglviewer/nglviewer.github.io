@@ -15,7 +15,7 @@
 
 <header>
   <a href="./">Home</a>
-  
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
   
@@ -31,19 +31,94 @@
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
-<div data-ice="manual" data-toc-name="overview">
+<div data-ice="manual" data-toc-name="usage">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h2" data-link="manual/overview/overview.html"><a href="manual/overview/overview.html#users" data-ice="link">Users</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/overview/overview.html"><a href="manual/overview/overview.html#developers" data-ice="link">Developers</a></li>
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html" data-ice="link">Coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#representations" data-ice="link">Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#available-schemes" data-ice="link">Available schemes</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#selection-based-coloring" data-ice="link">Selection-based coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#custom-coloring" data-ice="link">Custom coloring</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html" data-ice="link">Custom geometries</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html#shape" data-ice="link">Shape</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html#buffer" data-ice="link">Buffer</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html" data-ice="link">Embedding</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html" data-ice="link">File Formats</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#structures" data-ice="link">Structures</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mmcif" data-ice="link">mmCIF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#pdb-pqr" data-ice="link">PDB/PQR</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#gro" data-ice="link">GRO</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#sdf" data-ice="link">SDF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mol2" data-ice="link">MOL2</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mmtf" data-ice="link">MMTF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#psf" data-ice="link">PSF</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#trajectories" data-ice="link">Trajectories</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#dcd" data-ice="link">DCD</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#densities" data-ice="link">Densities</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mrc-map-ccp4" data-ice="link">MRC/MAP/CCP4</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#cube" data-ice="link">CUBE</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#dsn6-brix" data-ice="link">DSN6/BRIX</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#dx-dxbin" data-ice="link">DX/DXBIN</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#xplor-cns" data-ice="link">XPLOR/CNS</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#surfaces" data-ice="link">Surfaces</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#obj" data-ice="link">OBJ</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#ply" data-ice="link">PLY</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#annotation" data-ice="link">Annotation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#wwpdb-validation-report" data-ice="link">wwPDB Validation Report</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#general" data-ice="link">General</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#json" data-ice="link">JSON</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#csv" data-ice="link">CSV</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#txt" data-ice="link">TXT</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#xml" data-ice="link">XML</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html" data-ice="link">Interaction controls</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#camera" data-ice="link">Camera</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#viewer" data-ice="link">Viewer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#animation" data-ice="link">Animation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#automatic-view" data-ice="link">Automatic view</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#principal-axes" data-ice="link">Principal axes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#spin" data-ice="link">Spin</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#picking" data-ice="link">Picking</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#clicked" data-ice="link">Clicked</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#hovered" data-ice="link">Hovered</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#mouse" data-ice="link">Mouse</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html" data-ice="link">Molecular Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#index" data-ice="link">Index</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#backbone" data-ice="link">backbone</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#ball-stick" data-ice="link">ball+stick</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#base" data-ice="link">base</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#cartoon" data-ice="link">cartoon</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#contact" data-ice="link">contact</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#helixorient" data-ice="link">helixorient</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#hyperball" data-ice="link">hyperball</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#label" data-ice="link">label</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#licorice" data-ice="link">licorice</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#line" data-ice="link">line</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#point" data-ice="link">point</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#ribbon" data-ice="link">ribbon</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#rocket" data-ice="link">rocket</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#rope" data-ice="link">rope</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#spacefill" data-ice="link">spacefill</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#surface" data-ice="link">surface</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#trace" data-ice="link">trace</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#tube" data-ice="link">tube</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/scripting.html"><a href="manual/usage/scripting.html" data-ice="link">Scripting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/scripting.html"><a href="manual/usage/scripting.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/scripting.html"><a href="manual/usage/scripting.html#variables" data-ice="link">Variables</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html" data-ice="link">Selection Language</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#language" data-ice="link">Language</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#keywords" data-ice="link">Keywords</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#expressions" data-ice="link">Expressions</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#atomindex" data-ice="link">Atomindex</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#logical-operators-in-order-of-binding-strength-" data-ice="link">Logical operators (in order of binding strength)</a></li>
 </ul>
   </div>
 <div data-ice="manual" data-toc-name="example">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#implementing-custom-default-representations" data-ice="link">Implementing custom default representations</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#selection-based-coloring" data-ice="link">Selection-based coloring</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#custom-coloring" data-ice="link">Custom coloring</a></li>
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-example" data-section-count="&#x25A0;" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#implementing-custom-default-representations" data-ice="link">Implementing custom default representations</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#distance-based-selection" data-ice="link">Distance-based selection</a></li>
 </ul>
   </div>
@@ -52,8 +127,11 @@
       
     <li data-ice="manualNav" class="indent-h1 manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="identifiers.html"><a href="identifiers.html" data-ice="link">Reference</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#class" data-ice="link">Class</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#interface" data-ice="link">Interface</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#function" data-ice="link">Function</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#typedef" data-ice="link">Typedef</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#external" data-ice="link">External</a></li>
 </ul>
   </div>
 <div data-ice="manual" data-toc-name="changelog">
@@ -105,7 +183,8 @@
     <span>&#xBB;</span>
     <span data-ice="title">Example</span>
   </div>
-  <div data-ice="content"><p>A collection of NGL snippets</p>
+  <div data-ice="content"><h1 id="usage">Usage</h1>
+<p>A collection of NGL snippets</p>
 <h2 id="implementing-custom-default-representations">Implementing custom default representations</h2>
 <p>Start by creating a function that adds the wanted representations to a component. See also {@ StructureComponent.addRepresentation}.</p>
 <pre><code><code class="source-code prettyprint">function defaultStructureRepresentation( component ){
@@ -129,40 +208,7 @@
 <pre><code><code class="source-code prettyprint">stage.loadFile( &quot;rcsb://1crn&quot; ).then( defaultStructureRepresentation );
 stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation );</code>
 </code></pre><p>Note that the same strategy works for surface and volume files loaded into a {@link SurfaceComponent}.</p>
-<h2 id="selection-based-coloring">Selection-based coloring</h2>
-<p>Supply a list with pairs of colorname and selection for coloring by selections.
-Use the last entry as a default (catch all) coloring definition.</p>
-<pre><code><code class="source-code prettyprint">var schemeId = NGL.ColormakerRegistry.addSelectionScheme( [
-    [ &quot;red&quot;, &quot;64-74 or 134-154 or 222-254 or 310-310 or 322-326&quot; ],
-    [ &quot;green&quot;, &quot;311-322&quot; ],
-    [ &quot;yellow&quot;, &quot;40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309&quot; ],
-    [ &quot;blue&quot;, &quot;1-39 or 96-112 or 174-201 or 278-288&quot; ],
-    [ &quot;white&quot;, &quot;*&quot; ]
-], &quot;Transmembrane 3dqb&quot; );
-
-stage.loadFile( &quot;rcsb://3dqb.pdb&quot; ).then( function( o ){
-    o.addRepresentation( &quot;cartoon&quot;, { color: schemeId } );  // pass schemeId here
-    o.autoView();
-} );</code>
-</code></pre><h2 id="custom-coloring">Custom coloring</h2>
-<p>Create a class with a <code>atomColor</code> method that returns a hex color.</p>
-<pre><code><code class="source-code prettyprint">var schemeId = NGL.ColormakerRegistry.addScheme( function( params ){
-    this.atomColor = function( atom ){
-        if( atom.serial &lt; 1000 ){
-            return 0x0000FF;  // blue
-        }else if( atom.serial &gt; 2000 ){
-            return 0xFF0000;  // red
-        }else{
-            return 0x00FF00;  // green
-        }
-    };
-} );
-
-stage.loadFile( &quot;rcsb://3dqb.pdb&quot; ).then( function( o ){
-    o.addRepresentation( &quot;cartoon&quot;, { color: schemeId } );  // pass schemeId here
-    o.autoView();
-} );</code>
-</code></pre><h2 id="distance-based-selection">Distance-based selection</h2>
+<h2 id="distance-based-selection">Distance-based selection</h2>
 <p>Get a selection of atoms that are within a certain distance of another selection.</p>
 <pre><code><code class="source-code prettyprint">stage.loadFile( &quot;rcsb://3pqr&quot; ).then( function( o ){
     // get all atoms within 5 Angstrom of retinal

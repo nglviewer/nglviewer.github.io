@@ -710,6 +710,20 @@ NGL.ExampleRegistry.addDict( {
 
     },
 
+    "buffer": function( stage ){
+
+        var shape = new NGL.Shape( "shape" );
+        var sphereBuffer = new NGL.SphereBuffer( {
+            position: new Float32Array( [ 0, 0, 0 ] ),
+            color: new Float32Array( [ 1, 0, 0 ] ),
+            radius: new Float32Array( [ 1 ] )
+        } );
+        shape.addBuffer( sphereBuffer );
+        var shapeComp = stage.addComponentFromObject( shape );
+        shapeComp.addRepresentation( "buffer" );
+
+    },
+
     "ccp4": function( stage ){
 
         stage.loadFile( "data://3pqr.ccp4.gz" ).then( function( o ){
@@ -1394,9 +1408,38 @@ NGL.ExampleRegistry.addDict( {
         shape.addArrow( [ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0 );
         shape.addArrow( [ 2, 2, 7 ], [ 30, -3, -3 ], [ 1, 0.5, 1 ], 1.0 );
         shape.addLabel( [ 15, -4, 4 ], [ 0.2, 0.5, 0.8 ], 2.5, "Hello" );
+
         var shapeComp = stage.addComponentFromObject( shape );
         shapeComp.addRepresentation( "buffer" );
-        stage.autoView();
+        shapeComp.autoView();
+
+    },
+
+    "cat": function( stage ) {
+
+        var grey = [ 0.8, 0.8, 0.8 ];
+        var darkgrey = [ 0.6, 0.6, 0.6 ];
+
+        var shape = new NGL.Shape( "shape", { labelParams: { attachment: "middle-center" } } );
+        shape.addEllipsoid( [ 0, 0, 0 ], grey, 4, [ 0, 3, 0 ], [ 0, 0, 1 ] );
+        shape.addSphere( [ -2, 1, -1 ], darkgrey, 0.3 );
+        shape.addSphere( [  2, 1, -1 ], darkgrey, 0.3 );
+        shape.addSphere( [ 0, 0, -1 ], darkgrey, 0.5 );
+        shape.addEllipsoid( [ -1, -1, -1 ], darkgrey, 1.3, [ 0, 1, 0 ], [ 0, 0, 0.3 ] );
+        shape.addEllipsoid( [  1, -1, -1 ], darkgrey, 1.3, [ 0, 1, 0 ], [ 0, 0, 0.3 ] );
+        shape.addCone( [ 2.5, 1.7, 0 ], [ 4, 3, 0 ], darkgrey, 0.8 );
+        shape.addCone( [ -2.5, 1.7, 0 ], [ -4, 3, 0 ], darkgrey, 0.8 );
+        shape.addCylinder( [ -1, -1, -1 ], [ -4.3, -0.2, -1.2 ], darkgrey, 0.1 );
+        shape.addCylinder( [ -1, -1, -1 ], [ -4.3, -1.2, -1.2 ], darkgrey, 0.1 );
+        shape.addCylinder( [ -1, -1, -1 ], [ -4.3, -2.2, -1.2 ], darkgrey, 0.1 );
+        shape.addCylinder( [  1, -1, -1 ], [  4.3, -0.2, -1.2 ], darkgrey, 0.1 );
+        shape.addCylinder( [  1, -1, -1 ], [  4.3, -1.2, -1.2 ], darkgrey, 0.1 );
+        shape.addCylinder( [  1, -1, -1 ], [  4.3, -2.2, -1.2 ], darkgrey, 0.1 );
+        shape.addLabel( [ 0, 4, -1 ], [ 0.2, 0.5, 0.8 ], 2.5, "Meow" );
+
+        var shapeComp = stage.addComponentFromObject( shape );
+        shapeComp.addRepresentation( "buffer" );
+        shapeComp.autoView();
 
     },
 
@@ -1619,18 +1662,18 @@ NGL.ExampleRegistry.addDict( {
 
     "validation": function( stage ){
 
-        Promise.all([
+        Promise.all( [
             stage.loadFile( "data://3PQR.cif" ),
             NGL.autoLoad( "data://3pqr_validation.xml", { ext: "validation" } )
-        ]).then( function( ol ){
-            ol[0].structure.validation = ol[1];
-            ol[0].addRepresentation( "cartoon", { color: "geoquality" } );
-            ol[0].addRepresentation( "validation" );
-            ol[0].addRepresentation( "ball+stick", {
-                sele: ol[1].clashSele,
+        ] ).then( function( ol ){
+            ol[ 0 ].structure.validation = ol[ 1 ];
+            ol[ 0 ].addRepresentation( "cartoon", { color: "geoquality" } );
+            ol[ 0 ].addRepresentation( "validation" );
+            ol[ 0 ].addRepresentation( "ball+stick", {
+                sele: ol[ 1 ].clashSele,
                 color: "geoquality"
             } );
-            ol[0].addRepresentation( "licorice", {
+            ol[ 0 ].addRepresentation( "licorice", {
                 sele: "hetero",
                 color: "geoquality"
             } );

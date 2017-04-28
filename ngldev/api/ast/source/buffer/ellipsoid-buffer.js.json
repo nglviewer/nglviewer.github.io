@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 871,
+  "end": 1271,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 32,
+      "line": 45,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 871,
+    "end": 1271,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 32,
+        "line": 45,
         "column": 0
       }
     },
@@ -119,16 +119,16 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Ellipsoid buffer\n * @class\n * @augments {Buffer}\n * @param {Object} data - buffer data\n * @param {Float32Array} data.position - center positions\n * @param {Float32Array} data.color - colors\n * @param {Float32Array} data.radius - radii\n * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n * @param {Float32Array} [data.picking] - picking ids\n * @param {BufferParams} [params] - parameters object\n ",
+            "value": "*\n * Ellipsoid buffer. Returns an {@link EllipsoidGeometryBuffer}\n *\n * @example\n * var ellipsoidBuffer = new EllipsoidBuffer( {\n *     position: new Float32Array( [ 0, 0, 0 ] ),\n *     color: new Float32Array( [ 1, 0, 0 ] ),\n *     radius: new Float32Array( [ 1 ] ),\n *     majorAxis: new Float32Array( [ 1, 1, 0 ] ),\n *     minorAxis: new Float32Array( [ 0.5, 0, 0.5 ] ),\n * } );\n ",
             "start": 175,
-            "end": 734,
+            "end": 562,
             "loc": {
               "start": {
                 "line": 11,
                 "column": 0
               },
               "end": {
-                "line": 23,
+                "line": 22,
                 "column": 3
               }
             }
@@ -137,175 +137,248 @@
       },
       {
         "type": "Identifier",
-        "start": 735,
-        "end": 836,
+        "start": 563,
+        "end": 1236,
         "loc": {
           "start": {
-            "line": 24,
+            "line": 23,
             "column": 0
           },
           "end": {
-            "line": 28,
+            "line": 41,
             "column": 1
           }
         },
         "id": {
           "type": "Identifier",
-          "start": 744,
-          "end": 759,
+          "start": 569,
+          "end": 584,
           "loc": {
             "start": {
-              "line": 24,
-              "column": 9
+              "line": 23,
+              "column": 6
             },
             "end": {
-              "line": 24,
-              "column": 24
+              "line": 23,
+              "column": 21
             },
             "identifierName": "EllipsoidBuffer"
           },
           "name": "EllipsoidBuffer",
           "leadingComments": null
         },
-        "generator": false,
-        "expression": false,
-        "async": false,
-        "params": [
-          {
-            "type": "Identifier",
-            "start": 761,
-            "end": 765,
-            "loc": {
-              "start": {
-                "line": 24,
-                "column": 26
-              },
-              "end": {
-                "line": 24,
-                "column": 30
-              },
-              "identifierName": "data"
-            },
-            "name": "data"
-          },
-          {
-            "type": "Identifier",
-            "start": 767,
-            "end": 773,
-            "loc": {
-              "start": {
-                "line": 24,
-                "column": 32
-              },
-              "end": {
-                "line": 24,
-                "column": 38
-              },
-              "identifierName": "params"
-            },
-            "name": "params"
-          }
-        ],
+        "superClass": null,
         "body": {
-          "type": "BlockStatement",
-          "start": 775,
-          "end": 836,
+          "type": "ClassBody",
+          "start": 584,
+          "end": 1236,
           "loc": {
             "start": {
-              "line": 24,
-              "column": 40
+              "line": 23,
+              "column": 21
             },
             "end": {
-              "line": 28,
+              "line": 41,
               "column": 1
             }
           },
           "body": [
             {
-              "type": "ReturnStatement",
-              "start": 782,
-              "end": 833,
+              "type": "ClassMethod",
+              "start": 1137,
+              "end": 1233,
               "loc": {
                 "start": {
-                  "line": 26,
+                  "line": 35,
                   "column": 4
                 },
                 "end": {
-                  "line": 26,
-                  "column": 55
+                  "line": 39,
+                  "column": 5
                 }
               },
-              "argument": {
-                "type": "NewExpression",
-                "start": 789,
-                "end": 832,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 1137,
+                "end": 1148,
                 "loc": {
                   "start": {
-                    "line": 26,
-                    "column": 11
+                    "line": 35,
+                    "column": 4
                   },
                   "end": {
-                    "line": 26,
-                    "column": 54
-                  }
+                    "line": 35,
+                    "column": 15
+                  },
+                  "identifierName": "constructor"
                 },
-                "callee": {
+                "name": "constructor",
+                "leadingComments": null
+              },
+              "static": false,
+              "kind": "constructor",
+              "id": null,
+              "generator": false,
+              "expression": false,
+              "async": false,
+              "params": [
+                {
                   "type": "Identifier",
-                  "start": 793,
-                  "end": 816,
+                  "start": 1150,
+                  "end": 1154,
                   "loc": {
                     "start": {
-                      "line": 26,
-                      "column": 15
+                      "line": 35,
+                      "column": 17
                     },
                     "end": {
-                      "line": 26,
-                      "column": 38
+                      "line": 35,
+                      "column": 21
                     },
-                    "identifierName": "EllipsoidGeometryBuffer"
+                    "identifierName": "data"
                   },
-                  "name": "EllipsoidGeometryBuffer"
+                  "name": "data"
                 },
-                "arguments": [
-                  {
-                    "type": "Identifier",
-                    "start": 818,
-                    "end": 822,
-                    "loc": {
-                      "start": {
-                        "line": 26,
-                        "column": 40
-                      },
-                      "end": {
-                        "line": 26,
-                        "column": 44
-                      },
-                      "identifierName": "data"
+                {
+                  "type": "Identifier",
+                  "start": 1156,
+                  "end": 1162,
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 23
                     },
-                    "name": "data"
+                    "end": {
+                      "line": 35,
+                      "column": 29
+                    },
+                    "identifierName": "params"
                   },
+                  "name": "params"
+                }
+              ],
+              "body": {
+                "type": "BlockStatement",
+                "start": 1164,
+                "end": 1233,
+                "loc": {
+                  "start": {
+                    "line": 35,
+                    "column": 31
+                  },
+                  "end": {
+                    "line": 39,
+                    "column": 5
+                  }
+                },
+                "body": [
                   {
-                    "type": "Identifier",
-                    "start": 824,
-                    "end": 830,
+                    "type": "ReturnStatement",
+                    "start": 1175,
+                    "end": 1226,
                     "loc": {
                       "start": {
-                        "line": 26,
-                        "column": 46
+                        "line": 37,
+                        "column": 8
                       },
                       "end": {
-                        "line": 26,
-                        "column": 52
-                      },
-                      "identifierName": "params"
+                        "line": 37,
+                        "column": 59
+                      }
                     },
-                    "name": "params"
+                    "argument": {
+                      "type": "NewExpression",
+                      "start": 1182,
+                      "end": 1225,
+                      "loc": {
+                        "start": {
+                          "line": 37,
+                          "column": 15
+                        },
+                        "end": {
+                          "line": 37,
+                          "column": 58
+                        }
+                      },
+                      "callee": {
+                        "type": "Identifier",
+                        "start": 1186,
+                        "end": 1209,
+                        "loc": {
+                          "start": {
+                            "line": 37,
+                            "column": 19
+                          },
+                          "end": {
+                            "line": 37,
+                            "column": 42
+                          },
+                          "identifierName": "EllipsoidGeometryBuffer"
+                        },
+                        "name": "EllipsoidGeometryBuffer"
+                      },
+                      "arguments": [
+                        {
+                          "type": "Identifier",
+                          "start": 1211,
+                          "end": 1215,
+                          "loc": {
+                            "start": {
+                              "line": 37,
+                              "column": 44
+                            },
+                            "end": {
+                              "line": 37,
+                              "column": 48
+                            },
+                            "identifierName": "data"
+                          },
+                          "name": "data"
+                        },
+                        {
+                          "type": "Identifier",
+                          "start": 1217,
+                          "end": 1223,
+                          "loc": {
+                            "start": {
+                              "line": 37,
+                              "column": 50
+                            },
+                            "end": {
+                              "line": 37,
+                              "column": 56
+                            },
+                            "identifierName": "params"
+                          },
+                          "name": "params"
+                        }
+                      ]
+                    }
                   }
-                ]
-              }
+                ],
+                "directives": []
+              },
+              "leadingComments": [
+                {
+                  "type": "CommentBlock",
+                  "value": "*\n     * @param {Object} data - buffer data\n     * @param {Float32Array} data.position - center positions\n     * @param {Float32Array} data.color - colors\n     * @param {Float32Array} data.radius - radii\n     * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n     * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n     * @param {Picker} [data.picking] - picking ids\n     * @param {BufferParameters} [params] - parameters object\n     ",
+                  "start": 591,
+                  "end": 1132,
+                  "loc": {
+                    "start": {
+                      "line": 25,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 34,
+                      "column": 7
+                    }
+                  }
+                }
+              ]
             }
-          ],
-          "directives": []
+          ]
         },
         "leadingComments": [],
         "name": "_",
@@ -313,29 +386,29 @@
       },
       {
         "type": "Identifier",
-        "start": 839,
-        "end": 870,
+        "start": 1239,
+        "end": 1270,
         "loc": {
           "start": {
-            "line": 31,
+            "line": 44,
             "column": 0
           },
           "end": {
-            "line": 31,
+            "line": 44,
             "column": 31
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 854,
-          "end": 869,
+          "start": 1254,
+          "end": 1269,
           "loc": {
             "start": {
-              "line": 31,
+              "line": 44,
               "column": 15
             },
             "end": {
-              "line": 31,
+              "line": 44,
               "column": 30
             },
             "identifierName": "EllipsoidBuffer"
@@ -348,210 +421,285 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 839,
-        "end": 870,
+        "start": 1239,
+        "end": 1270,
         "loc": {
           "start": {
-            "line": 31,
+            "line": 44,
             "column": 0
           },
           "end": {
-            "line": 31,
+            "line": 44,
             "column": 31
           }
         },
         "declaration": {
-          "type": "FunctionDeclaration",
-          "start": 735,
-          "end": 836,
+          "type": "ClassDeclaration",
+          "start": 563,
+          "end": 1236,
           "loc": {
             "start": {
-              "line": 24,
+              "line": 23,
               "column": 0
             },
             "end": {
-              "line": 28,
+              "line": 41,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 744,
-            "end": 759,
+            "start": 569,
+            "end": 584,
             "loc": {
               "start": {
-                "line": 24,
-                "column": 9
+                "line": 23,
+                "column": 6
               },
               "end": {
-                "line": 24,
-                "column": 24
+                "line": 23,
+                "column": 21
               },
               "identifierName": "EllipsoidBuffer"
             },
             "name": "EllipsoidBuffer",
             "leadingComments": null
           },
-          "generator": false,
-          "expression": false,
-          "async": false,
-          "params": [
-            {
-              "type": "Identifier",
-              "start": 761,
-              "end": 765,
-              "loc": {
-                "start": {
-                  "line": 24,
-                  "column": 26
-                },
-                "end": {
-                  "line": 24,
-                  "column": 30
-                },
-                "identifierName": "data"
-              },
-              "name": "data"
-            },
-            {
-              "type": "Identifier",
-              "start": 767,
-              "end": 773,
-              "loc": {
-                "start": {
-                  "line": 24,
-                  "column": 32
-                },
-                "end": {
-                  "line": 24,
-                  "column": 38
-                },
-                "identifierName": "params"
-              },
-              "name": "params"
-            }
-          ],
+          "superClass": null,
           "body": {
-            "type": "BlockStatement",
-            "start": 775,
-            "end": 836,
+            "type": "ClassBody",
+            "start": 584,
+            "end": 1236,
             "loc": {
               "start": {
-                "line": 24,
-                "column": 40
+                "line": 23,
+                "column": 21
               },
               "end": {
-                "line": 28,
+                "line": 41,
                 "column": 1
               }
             },
             "body": [
               {
-                "type": "ReturnStatement",
-                "start": 782,
-                "end": 833,
+                "type": "ClassMethod",
+                "start": 1137,
+                "end": 1233,
                 "loc": {
                   "start": {
-                    "line": 26,
+                    "line": 35,
                     "column": 4
                   },
                   "end": {
-                    "line": 26,
-                    "column": 55
+                    "line": 39,
+                    "column": 5
                   }
                 },
-                "argument": {
-                  "type": "NewExpression",
-                  "start": 789,
-                  "end": 832,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 1137,
+                  "end": 1148,
                   "loc": {
                     "start": {
-                      "line": 26,
-                      "column": 11
+                      "line": 35,
+                      "column": 4
                     },
                     "end": {
-                      "line": 26,
-                      "column": 54
-                    }
+                      "line": 35,
+                      "column": 15
+                    },
+                    "identifierName": "constructor"
                   },
-                  "callee": {
+                  "name": "constructor",
+                  "leadingComments": null
+                },
+                "static": false,
+                "kind": "constructor",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
+                  {
                     "type": "Identifier",
-                    "start": 793,
-                    "end": 816,
+                    "start": 1150,
+                    "end": 1154,
                     "loc": {
                       "start": {
-                        "line": 26,
-                        "column": 15
+                        "line": 35,
+                        "column": 17
                       },
                       "end": {
-                        "line": 26,
-                        "column": 38
+                        "line": 35,
+                        "column": 21
                       },
-                      "identifierName": "EllipsoidGeometryBuffer"
+                      "identifierName": "data"
                     },
-                    "name": "EllipsoidGeometryBuffer"
+                    "name": "data"
                   },
-                  "arguments": [
-                    {
-                      "type": "Identifier",
-                      "start": 818,
-                      "end": 822,
-                      "loc": {
-                        "start": {
-                          "line": 26,
-                          "column": 40
-                        },
-                        "end": {
-                          "line": 26,
-                          "column": 44
-                        },
-                        "identifierName": "data"
+                  {
+                    "type": "Identifier",
+                    "start": 1156,
+                    "end": 1162,
+                    "loc": {
+                      "start": {
+                        "line": 35,
+                        "column": 23
                       },
-                      "name": "data"
+                      "end": {
+                        "line": 35,
+                        "column": 29
+                      },
+                      "identifierName": "params"
                     },
+                    "name": "params"
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 1164,
+                  "end": 1233,
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 31
+                    },
+                    "end": {
+                      "line": 39,
+                      "column": 5
+                    }
+                  },
+                  "body": [
                     {
-                      "type": "Identifier",
-                      "start": 824,
-                      "end": 830,
+                      "type": "ReturnStatement",
+                      "start": 1175,
+                      "end": 1226,
                       "loc": {
                         "start": {
-                          "line": 26,
-                          "column": 46
+                          "line": 37,
+                          "column": 8
                         },
                         "end": {
-                          "line": 26,
-                          "column": 52
-                        },
-                        "identifierName": "params"
+                          "line": 37,
+                          "column": 59
+                        }
                       },
-                      "name": "params"
+                      "argument": {
+                        "type": "NewExpression",
+                        "start": 1182,
+                        "end": 1225,
+                        "loc": {
+                          "start": {
+                            "line": 37,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 37,
+                            "column": 58
+                          }
+                        },
+                        "callee": {
+                          "type": "Identifier",
+                          "start": 1186,
+                          "end": 1209,
+                          "loc": {
+                            "start": {
+                              "line": 37,
+                              "column": 19
+                            },
+                            "end": {
+                              "line": 37,
+                              "column": 42
+                            },
+                            "identifierName": "EllipsoidGeometryBuffer"
+                          },
+                          "name": "EllipsoidGeometryBuffer"
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "start": 1211,
+                            "end": 1215,
+                            "loc": {
+                              "start": {
+                                "line": 37,
+                                "column": 44
+                              },
+                              "end": {
+                                "line": 37,
+                                "column": 48
+                              },
+                              "identifierName": "data"
+                            },
+                            "name": "data"
+                          },
+                          {
+                            "type": "Identifier",
+                            "start": 1217,
+                            "end": 1223,
+                            "loc": {
+                              "start": {
+                                "line": 37,
+                                "column": 50
+                              },
+                              "end": {
+                                "line": 37,
+                                "column": 56
+                              },
+                              "identifierName": "params"
+                            },
+                            "name": "params"
+                          }
+                        ]
+                      }
                     }
-                  ]
-                }
+                  ],
+                  "directives": []
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * @param {Object} data - buffer data\n     * @param {Float32Array} data.position - center positions\n     * @param {Float32Array} data.color - colors\n     * @param {Float32Array} data.radius - radii\n     * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n     * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n     * @param {Picker} [data.picking] - picking ids\n     * @param {BufferParameters} [params] - parameters object\n     ",
+                    "start": 591,
+                    "end": 1132,
+                    "loc": {
+                      "start": {
+                        "line": 25,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 34,
+                        "column": 7
+                      }
+                    }
+                  }
+                ]
               }
-            ],
-            "directives": []
+            ]
           },
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Ellipsoid buffer\n * @class\n * @augments {Buffer}\n * @param {Object} data - buffer data\n * @param {Float32Array} data.position - center positions\n * @param {Float32Array} data.color - colors\n * @param {Float32Array} data.radius - radii\n * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n * @param {Float32Array} [data.picking] - picking ids\n * @param {BufferParams} [params] - parameters object\n ",
+              "value": "*\n * Ellipsoid buffer. Returns an {@link EllipsoidGeometryBuffer}\n *\n * @example\n * var ellipsoidBuffer = new EllipsoidBuffer( {\n *     position: new Float32Array( [ 0, 0, 0 ] ),\n *     color: new Float32Array( [ 1, 0, 0 ] ),\n *     radius: new Float32Array( [ 1 ] ),\n *     majorAxis: new Float32Array( [ 1, 1, 0 ] ),\n *     minorAxis: new Float32Array( [ 0.5, 0, 0.5 ] ),\n * } );\n ",
               "start": 175,
-              "end": 734,
+              "end": 562,
               "loc": {
                 "start": {
                   "line": 11,
                   "column": 0
                 },
                 "end": {
-                  "line": 23,
+                  "line": 22,
                   "column": 3
                 }
               }
             }
           ],
+          "__PseudoExport__": false,
           "trailingComments": []
-        }
+        },
+        "leadingComments": null
       }
     ],
     "directives": []
@@ -575,17 +723,33 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Ellipsoid buffer\n * @class\n * @augments {Buffer}\n * @param {Object} data - buffer data\n * @param {Float32Array} data.position - center positions\n * @param {Float32Array} data.color - colors\n * @param {Float32Array} data.radius - radii\n * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n * @param {Float32Array} [data.picking] - picking ids\n * @param {BufferParams} [params] - parameters object\n ",
+      "value": "*\n * Ellipsoid buffer. Returns an {@link EllipsoidGeometryBuffer}\n *\n * @example\n * var ellipsoidBuffer = new EllipsoidBuffer( {\n *     position: new Float32Array( [ 0, 0, 0 ] ),\n *     color: new Float32Array( [ 1, 0, 0 ] ),\n *     radius: new Float32Array( [ 1 ] ),\n *     majorAxis: new Float32Array( [ 1, 1, 0 ] ),\n *     minorAxis: new Float32Array( [ 0.5, 0, 0.5 ] ),\n * } );\n ",
       "start": 175,
-      "end": 734,
+      "end": 562,
       "loc": {
         "start": {
           "line": 11,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 22,
           "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n     * @param {Object} data - buffer data\n     * @param {Float32Array} data.position - center positions\n     * @param {Float32Array} data.color - colors\n     * @param {Float32Array} data.radius - radii\n     * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n     * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n     * @param {Picker} [data.picking] - picking ids\n     * @param {BufferParameters} [params] - parameters object\n     ",
+      "start": 591,
+      "end": 1132,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 4
+        },
+        "end": {
+          "line": 34,
+          "column": 7
         }
       }
     }
@@ -742,44 +906,45 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Ellipsoid buffer\n * @class\n * @augments {Buffer}\n * @param {Object} data - buffer data\n * @param {Float32Array} data.position - center positions\n * @param {Float32Array} data.color - colors\n * @param {Float32Array} data.radius - radii\n * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n * @param {Float32Array} [data.picking] - picking ids\n * @param {BufferParams} [params] - parameters object\n ",
+      "value": "*\n * Ellipsoid buffer. Returns an {@link EllipsoidGeometryBuffer}\n *\n * @example\n * var ellipsoidBuffer = new EllipsoidBuffer( {\n *     position: new Float32Array( [ 0, 0, 0 ] ),\n *     color: new Float32Array( [ 1, 0, 0 ] ),\n *     radius: new Float32Array( [ 1 ] ),\n *     majorAxis: new Float32Array( [ 1, 1, 0 ] ),\n *     minorAxis: new Float32Array( [ 0.5, 0, 0.5 ] ),\n * } );\n ",
       "start": 175,
-      "end": 734,
+      "end": 562,
       "loc": {
         "start": {
           "line": 11,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 22,
           "column": 3
         }
       }
     },
     {
       "type": {
-        "label": "function",
-        "keyword": "function",
+        "label": "class",
+        "keyword": "class",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": null
+        "binop": null,
+        "updateContext": null
       },
-      "value": "function",
-      "start": 735,
-      "end": 743,
+      "value": "class",
+      "start": 563,
+      "end": 568,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 23,
           "column": 0
         },
         "end": {
-          "line": 24,
-          "column": 8
+          "line": 23,
+          "column": 5
         }
       }
     },
@@ -796,16 +961,83 @@
         "binop": null
       },
       "value": "EllipsoidBuffer",
-      "start": 744,
-      "end": 759,
+      "start": 569,
+      "end": 584,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 9
+          "line": 23,
+          "column": 6
         },
         "end": {
-          "line": 24,
-          "column": 24
+          "line": 23,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 584,
+      "end": 585,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 21
+        },
+        "end": {
+          "line": 23,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n     * @param {Object} data - buffer data\n     * @param {Float32Array} data.position - center positions\n     * @param {Float32Array} data.color - colors\n     * @param {Float32Array} data.radius - radii\n     * @param {Float32Array} data.majorAxis - major axis vectors, length defines radius in major direction\n     * @param {Float32Array} data.minorAxis - minor axis vectors, length defines radius in minor direction\n     * @param {Picker} [data.picking] - picking ids\n     * @param {BufferParameters} [params] - parameters object\n     ",
+      "start": 591,
+      "end": 1132,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 4
+        },
+        "end": {
+          "line": 34,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "constructor",
+      "start": 1137,
+      "end": 1148,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 15
         }
       }
     },
@@ -821,16 +1053,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 759,
-      "end": 760,
+      "start": 1148,
+      "end": 1149,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 24
+          "line": 35,
+          "column": 15
         },
         "end": {
-          "line": 24,
-          "column": 25
+          "line": 35,
+          "column": 16
         }
       }
     },
@@ -847,16 +1079,16 @@
         "binop": null
       },
       "value": "data",
-      "start": 761,
-      "end": 765,
+      "start": 1150,
+      "end": 1154,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 26
+          "line": 35,
+          "column": 17
         },
         "end": {
-          "line": 24,
-          "column": 30
+          "line": 35,
+          "column": 21
         }
       }
     },
@@ -873,16 +1105,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 765,
-      "end": 766,
+      "start": 1154,
+      "end": 1155,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 30
+          "line": 35,
+          "column": 21
         },
         "end": {
-          "line": 24,
-          "column": 31
+          "line": 35,
+          "column": 22
         }
       }
     },
@@ -899,16 +1131,16 @@
         "binop": null
       },
       "value": "params",
-      "start": 767,
-      "end": 773,
+      "start": 1156,
+      "end": 1162,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 32
+          "line": 35,
+          "column": 23
         },
         "end": {
-          "line": 24,
-          "column": 38
+          "line": 35,
+          "column": 29
         }
       }
     },
@@ -924,16 +1156,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 774,
-      "end": 775,
+      "start": 1163,
+      "end": 1164,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 39
+          "line": 35,
+          "column": 30
         },
         "end": {
-          "line": 24,
-          "column": 40
+          "line": 35,
+          "column": 31
         }
       }
     },
@@ -949,16 +1181,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 775,
-      "end": 776,
+      "start": 1164,
+      "end": 1165,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 40
+          "line": 35,
+          "column": 31
         },
         "end": {
-          "line": 24,
-          "column": 41
+          "line": 35,
+          "column": 32
         }
       }
     },
@@ -977,16 +1209,16 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 782,
-      "end": 788,
+      "start": 1175,
+      "end": 1181,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 4
+          "line": 37,
+          "column": 8
         },
         "end": {
-          "line": 26,
-          "column": 10
+          "line": 37,
+          "column": 14
         }
       }
     },
@@ -1005,16 +1237,16 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 789,
-      "end": 792,
+      "start": 1182,
+      "end": 1185,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 11
+          "line": 37,
+          "column": 15
         },
         "end": {
-          "line": 26,
-          "column": 14
+          "line": 37,
+          "column": 18
         }
       }
     },
@@ -1031,16 +1263,16 @@
         "binop": null
       },
       "value": "EllipsoidGeometryBuffer",
-      "start": 793,
-      "end": 816,
+      "start": 1186,
+      "end": 1209,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 15
+          "line": 37,
+          "column": 19
         },
         "end": {
-          "line": 26,
-          "column": 38
+          "line": 37,
+          "column": 42
         }
       }
     },
@@ -1056,16 +1288,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 816,
-      "end": 817,
+      "start": 1209,
+      "end": 1210,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 38
+          "line": 37,
+          "column": 42
         },
         "end": {
-          "line": 26,
-          "column": 39
+          "line": 37,
+          "column": 43
         }
       }
     },
@@ -1082,16 +1314,16 @@
         "binop": null
       },
       "value": "data",
-      "start": 818,
-      "end": 822,
+      "start": 1211,
+      "end": 1215,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 40
+          "line": 37,
+          "column": 44
         },
         "end": {
-          "line": 26,
-          "column": 44
+          "line": 37,
+          "column": 48
         }
       }
     },
@@ -1108,16 +1340,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 822,
-      "end": 823,
+      "start": 1215,
+      "end": 1216,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 44
+          "line": 37,
+          "column": 48
         },
         "end": {
-          "line": 26,
-          "column": 45
+          "line": 37,
+          "column": 49
         }
       }
     },
@@ -1134,16 +1366,16 @@
         "binop": null
       },
       "value": "params",
-      "start": 824,
-      "end": 830,
+      "start": 1217,
+      "end": 1223,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 46
+          "line": 37,
+          "column": 50
         },
         "end": {
-          "line": 26,
-          "column": 52
+          "line": 37,
+          "column": 56
         }
       }
     },
@@ -1159,16 +1391,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 831,
-      "end": 832,
+      "start": 1224,
+      "end": 1225,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 53
+          "line": 37,
+          "column": 57
         },
         "end": {
-          "line": 26,
-          "column": 54
+          "line": 37,
+          "column": 58
         }
       }
     },
@@ -1185,16 +1417,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 832,
-      "end": 833,
+      "start": 1225,
+      "end": 1226,
       "loc": {
         "start": {
-          "line": 26,
-          "column": 54
+          "line": 37,
+          "column": 58
         },
         "end": {
-          "line": 26,
-          "column": 55
+          "line": 37,
+          "column": 59
         }
       }
     },
@@ -1210,15 +1442,40 @@
         "postfix": false,
         "binop": null
       },
-      "start": 835,
-      "end": 836,
+      "start": 1232,
+      "end": 1233,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 39,
+          "column": 4
+        },
+        "end": {
+          "line": 39,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1235,
+      "end": 1236,
+      "loc": {
+        "start": {
+          "line": 41,
           "column": 0
         },
         "end": {
-          "line": 28,
+          "line": 41,
           "column": 1
         }
       }
@@ -1238,15 +1495,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 839,
-      "end": 845,
+      "start": 1239,
+      "end": 1245,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 44,
           "column": 0
         },
         "end": {
-          "line": 31,
+          "line": 44,
           "column": 6
         }
       }
@@ -1266,15 +1523,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 846,
-      "end": 853,
+      "start": 1246,
+      "end": 1253,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 44,
           "column": 7
         },
         "end": {
-          "line": 31,
+          "line": 44,
           "column": 14
         }
       }
@@ -1292,15 +1549,15 @@
         "binop": null
       },
       "value": "EllipsoidBuffer",
-      "start": 854,
-      "end": 869,
+      "start": 1254,
+      "end": 1269,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 44,
           "column": 15
         },
         "end": {
-          "line": 31,
+          "line": 44,
           "column": 30
         }
       }
@@ -1318,15 +1575,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 869,
-      "end": 870,
+      "start": 1269,
+      "end": 1270,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 44,
           "column": 30
         },
         "end": {
-          "line": 31,
+          "line": 44,
           "column": 31
         }
       }
@@ -1344,15 +1601,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 871,
-      "end": 871,
+      "start": 1271,
+      "end": 1271,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 45,
           "column": 0
         },
         "end": {
-          "line": 32,
+          "line": 45,
           "column": 0
         }
       }

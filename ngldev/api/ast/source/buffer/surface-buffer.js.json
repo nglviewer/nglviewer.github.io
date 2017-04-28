@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 257,
+  "end": 351,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 19,
+      "line": 22,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 257,
+    "end": 351,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 19,
+        "line": 22,
         "column": 0
       }
     },
@@ -115,50 +115,69 @@
               }
             }
           }
+        ],
+        "trailingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * Surface buffer. Like a {@link MeshBuffer}, but with `.isSurface` set to `true`.\n ",
+            "start": 147,
+            "end": 237,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 0
+              },
+              "end": {
+                "line": 13,
+                "column": 3
+              }
+            }
+          }
         ]
       },
       {
         "type": "Identifier",
-        "start": 147,
-        "end": 224,
+        "start": 238,
+        "end": 318,
         "loc": {
           "start": {
-            "line": 11,
+            "line": 14,
             "column": 0
           },
           "end": {
-            "line": 15,
+            "line": 18,
             "column": 1
           }
         },
         "id": {
           "type": "Identifier",
-          "start": 153,
-          "end": 166,
+          "start": 244,
+          "end": 257,
           "loc": {
             "start": {
-              "line": 11,
+              "line": 14,
               "column": 6
             },
             "end": {
-              "line": 11,
+              "line": 14,
               "column": 19
             },
             "identifierName": "SurfaceBuffer"
           },
-          "name": "SurfaceBuffer"
+          "name": "SurfaceBuffer",
+          "leadingComments": null
         },
         "superClass": {
           "type": "Identifier",
-          "start": 175,
-          "end": 185,
+          "start": 266,
+          "end": 276,
           "loc": {
             "start": {
-              "line": 11,
+              "line": 14,
               "column": 28
             },
             "end": {
-              "line": 11,
+              "line": 14,
               "column": 38
             },
             "identifierName": "MeshBuffer"
@@ -167,50 +186,50 @@
         },
         "body": {
           "type": "ClassBody",
-          "start": 185,
-          "end": 224,
+          "start": 276,
+          "end": 318,
           "loc": {
             "start": {
-              "line": 11,
+              "line": 14,
               "column": 38
             },
             "end": {
-              "line": 15,
+              "line": 18,
               "column": 1
             }
           },
           "body": [
             {
               "type": "ClassMethod",
-              "start": 189,
-              "end": 221,
+              "start": 283,
+              "end": 315,
               "loc": {
                 "start": {
-                  "line": 13,
-                  "column": 1
+                  "line": 16,
+                  "column": 4
                 },
                 "end": {
-                  "line": 13,
-                  "column": 33
+                  "line": 16,
+                  "column": 36
                 }
               },
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 193,
-                "end": 197,
+                "start": 287,
+                "end": 296,
                 "loc": {
                   "start": {
-                    "line": 13,
-                    "column": 5
+                    "line": 16,
+                    "column": 8
                   },
                   "end": {
-                    "line": 13,
-                    "column": 9
+                    "line": 16,
+                    "column": 17
                   },
-                  "identifierName": "type"
+                  "identifierName": "isSurface"
                 },
-                "name": "type"
+                "name": "isSurface"
               },
               "static": false,
               "kind": "get",
@@ -221,52 +240,48 @@
               "params": [],
               "body": {
                 "type": "BlockStatement",
-                "start": 200,
-                "end": 221,
+                "start": 299,
+                "end": 315,
                 "loc": {
                   "start": {
-                    "line": 13,
-                    "column": 12
+                    "line": 16,
+                    "column": 20
                   },
                   "end": {
-                    "line": 13,
-                    "column": 33
+                    "line": 16,
+                    "column": 36
                   }
                 },
                 "body": [
                   {
                     "type": "ReturnStatement",
-                    "start": 202,
-                    "end": 219,
+                    "start": 301,
+                    "end": 313,
                     "loc": {
                       "start": {
-                        "line": 13,
-                        "column": 14
+                        "line": 16,
+                        "column": 22
                       },
                       "end": {
-                        "line": 13,
-                        "column": 31
+                        "line": 16,
+                        "column": 34
                       }
                     },
                     "argument": {
-                      "type": "StringLiteral",
-                      "start": 209,
-                      "end": 218,
+                      "type": "BooleanLiteral",
+                      "start": 308,
+                      "end": 312,
                       "loc": {
                         "start": {
-                          "line": 13,
-                          "column": 21
+                          "line": 16,
+                          "column": 29
                         },
                         "end": {
-                          "line": 13,
-                          "column": 30
+                          "line": 16,
+                          "column": 33
                         }
                       },
-                      "extra": {
-                        "rawValue": "surface",
-                        "raw": "\"surface\""
-                      },
-                      "value": "surface"
+                      "value": true
                     }
                   }
                 ],
@@ -275,35 +290,35 @@
             }
           ]
         },
-        "name": "_",
         "leadingComments": [],
+        "name": "_",
         "trailingComments": []
       },
       {
         "type": "Identifier",
-        "start": 227,
-        "end": 256,
+        "start": 321,
+        "end": 350,
         "loc": {
           "start": {
-            "line": 18,
+            "line": 21,
             "column": 0
           },
           "end": {
-            "line": 18,
+            "line": 21,
             "column": 29
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 242,
-          "end": 255,
+          "start": 336,
+          "end": 349,
           "loc": {
             "start": {
-              "line": 18,
+              "line": 21,
               "column": 15
             },
             "end": {
-              "line": 18,
+              "line": 21,
               "column": 28
             },
             "identifierName": "SurfaceBuffer"
@@ -316,60 +331,61 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 227,
-        "end": 256,
+        "start": 321,
+        "end": 350,
         "loc": {
           "start": {
-            "line": 18,
+            "line": 21,
             "column": 0
           },
           "end": {
-            "line": 18,
+            "line": 21,
             "column": 29
           }
         },
         "declaration": {
           "type": "ClassDeclaration",
-          "start": 147,
-          "end": 224,
+          "start": 238,
+          "end": 318,
           "loc": {
             "start": {
-              "line": 11,
+              "line": 14,
               "column": 0
             },
             "end": {
-              "line": 15,
+              "line": 18,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 153,
-            "end": 166,
+            "start": 244,
+            "end": 257,
             "loc": {
               "start": {
-                "line": 11,
+                "line": 14,
                 "column": 6
               },
               "end": {
-                "line": 11,
+                "line": 14,
                 "column": 19
               },
               "identifierName": "SurfaceBuffer"
             },
-            "name": "SurfaceBuffer"
+            "name": "SurfaceBuffer",
+            "leadingComments": null
           },
           "superClass": {
             "type": "Identifier",
-            "start": 175,
-            "end": 185,
+            "start": 266,
+            "end": 276,
             "loc": {
               "start": {
-                "line": 11,
+                "line": 14,
                 "column": 28
               },
               "end": {
-                "line": 11,
+                "line": 14,
                 "column": 38
               },
               "identifierName": "MeshBuffer"
@@ -378,50 +394,50 @@
           },
           "body": {
             "type": "ClassBody",
-            "start": 185,
-            "end": 224,
+            "start": 276,
+            "end": 318,
             "loc": {
               "start": {
-                "line": 11,
+                "line": 14,
                 "column": 38
               },
               "end": {
-                "line": 15,
+                "line": 18,
                 "column": 1
               }
             },
             "body": [
               {
                 "type": "ClassMethod",
-                "start": 189,
-                "end": 221,
+                "start": 283,
+                "end": 315,
                 "loc": {
                   "start": {
-                    "line": 13,
-                    "column": 1
+                    "line": 16,
+                    "column": 4
                   },
                   "end": {
-                    "line": 13,
-                    "column": 33
+                    "line": 16,
+                    "column": 36
                   }
                 },
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 193,
-                  "end": 197,
+                  "start": 287,
+                  "end": 296,
                   "loc": {
                     "start": {
-                      "line": 13,
-                      "column": 5
+                      "line": 16,
+                      "column": 8
                     },
                     "end": {
-                      "line": 13,
-                      "column": 9
+                      "line": 16,
+                      "column": 17
                     },
-                    "identifierName": "type"
+                    "identifierName": "isSurface"
                   },
-                  "name": "type"
+                  "name": "isSurface"
                 },
                 "static": false,
                 "kind": "get",
@@ -432,52 +448,48 @@
                 "params": [],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 200,
-                  "end": 221,
+                  "start": 299,
+                  "end": 315,
                   "loc": {
                     "start": {
-                      "line": 13,
-                      "column": 12
+                      "line": 16,
+                      "column": 20
                     },
                     "end": {
-                      "line": 13,
-                      "column": 33
+                      "line": 16,
+                      "column": 36
                     }
                   },
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 202,
-                      "end": 219,
+                      "start": 301,
+                      "end": 313,
                       "loc": {
                         "start": {
-                          "line": 13,
-                          "column": 14
+                          "line": 16,
+                          "column": 22
                         },
                         "end": {
-                          "line": 13,
-                          "column": 31
+                          "line": 16,
+                          "column": 34
                         }
                       },
                       "argument": {
-                        "type": "StringLiteral",
-                        "start": 209,
-                        "end": 218,
+                        "type": "BooleanLiteral",
+                        "start": 308,
+                        "end": 312,
                         "loc": {
                           "start": {
-                            "line": 13,
-                            "column": 21
+                            "line": 16,
+                            "column": 29
                           },
                           "end": {
-                            "line": 13,
-                            "column": 30
+                            "line": 16,
+                            "column": 33
                           }
                         },
-                        "extra": {
-                          "rawValue": "surface",
-                          "raw": "\"surface\""
-                        },
-                        "value": "surface"
+                        "value": true
                       }
                     }
                   ],
@@ -486,8 +498,25 @@
               }
             ]
           },
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * Surface buffer. Like a {@link MeshBuffer}, but with `.isSurface` set to `true`.\n ",
+              "start": 147,
+              "end": 237,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 0
+                },
+                "end": {
+                  "line": 13,
+                  "column": 3
+                }
+              }
+            }
+          ],
           "__PseudoExport__": false,
-          "leadingComments": [],
           "trailingComments": []
         },
         "leadingComments": null
@@ -508,6 +537,22 @@
         },
         "end": {
           "line": 5,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Surface buffer. Like a {@link MeshBuffer}, but with `.isSurface` set to `true`.\n ",
+      "start": 147,
+      "end": 237,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
           "column": 3
         }
       }
@@ -664,6 +709,22 @@
       }
     },
     {
+      "type": "CommentBlock",
+      "value": "*\n * Surface buffer. Like a {@link MeshBuffer}, but with `.isSurface` set to `true`.\n ",
+      "start": 147,
+      "end": 237,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 3
+        }
+      }
+    },
+    {
       "type": {
         "label": "class",
         "keyword": "class",
@@ -678,15 +739,15 @@
         "updateContext": null
       },
       "value": "class",
-      "start": 147,
-      "end": 152,
+      "start": 238,
+      "end": 243,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 14,
           "column": 5
         }
       }
@@ -704,15 +765,15 @@
         "binop": null
       },
       "value": "SurfaceBuffer",
-      "start": 153,
-      "end": 166,
+      "start": 244,
+      "end": 257,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 14,
           "column": 6
         },
         "end": {
-          "line": 11,
+          "line": 14,
           "column": 19
         }
       }
@@ -732,15 +793,15 @@
         "updateContext": null
       },
       "value": "extends",
-      "start": 167,
-      "end": 174,
+      "start": 258,
+      "end": 265,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 14,
           "column": 20
         },
         "end": {
-          "line": 11,
+          "line": 14,
           "column": 27
         }
       }
@@ -758,15 +819,15 @@
         "binop": null
       },
       "value": "MeshBuffer",
-      "start": 175,
-      "end": 185,
+      "start": 266,
+      "end": 276,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 14,
           "column": 28
         },
         "end": {
-          "line": 11,
+          "line": 14,
           "column": 38
         }
       }
@@ -783,15 +844,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 185,
-      "end": 186,
+      "start": 276,
+      "end": 277,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 14,
           "column": 38
         },
         "end": {
-          "line": 11,
+          "line": 14,
           "column": 39
         }
       }
@@ -809,16 +870,16 @@
         "binop": null
       },
       "value": "get",
-      "start": 189,
-      "end": 192,
+      "start": 283,
+      "end": 286,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 1
+          "line": 16,
+          "column": 4
         },
         "end": {
-          "line": 13,
-          "column": 4
+          "line": 16,
+          "column": 7
         }
       }
     },
@@ -834,17 +895,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "type",
-      "start": 193,
-      "end": 197,
+      "value": "isSurface",
+      "start": 287,
+      "end": 296,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 5
+          "line": 16,
+          "column": 8
         },
         "end": {
-          "line": 13,
-          "column": 9
+          "line": 16,
+          "column": 17
         }
       }
     },
@@ -860,16 +921,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 198,
-      "end": 199,
+      "start": 297,
+      "end": 298,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 10
+          "line": 16,
+          "column": 18
         },
         "end": {
-          "line": 13,
-          "column": 11
+          "line": 16,
+          "column": 19
         }
       }
     },
@@ -885,16 +946,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 199,
-      "end": 200,
+      "start": 298,
+      "end": 299,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 11
+          "line": 16,
+          "column": 19
         },
         "end": {
-          "line": 13,
-          "column": 12
+          "line": 16,
+          "column": 20
         }
       }
     },
@@ -910,16 +971,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 200,
-      "end": 201,
+      "start": 299,
+      "end": 300,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 12
+          "line": 16,
+          "column": 20
         },
         "end": {
-          "line": 13,
-          "column": 13
+          "line": 16,
+          "column": 21
         }
       }
     },
@@ -938,22 +999,23 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 202,
-      "end": 208,
+      "start": 301,
+      "end": 307,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 14
+          "line": 16,
+          "column": 22
         },
         "end": {
-          "line": 13,
-          "column": 20
+          "line": 16,
+          "column": 28
         }
       }
     },
     {
       "type": {
-        "label": "string",
+        "label": "true",
+        "keyword": "true",
         "beforeExpr": false,
         "startsExpr": true,
         "rightAssociative": false,
@@ -964,17 +1026,17 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "surface",
-      "start": 209,
-      "end": 218,
+      "value": "true",
+      "start": 308,
+      "end": 312,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 21
+          "line": 16,
+          "column": 29
         },
         "end": {
-          "line": 13,
-          "column": 30
+          "line": 16,
+          "column": 33
         }
       }
     },
@@ -991,41 +1053,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 218,
-      "end": 219,
+      "start": 312,
+      "end": 313,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 30
-        },
-        "end": {
-          "line": 13,
-          "column": 31
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 220,
-      "end": 221,
-      "loc": {
-        "start": {
-          "line": 13,
-          "column": 32
-        },
-        "end": {
-          "line": 13,
+          "line": 16,
           "column": 33
+        },
+        "end": {
+          "line": 16,
+          "column": 34
         }
       }
     },
@@ -1041,15 +1078,40 @@
         "postfix": false,
         "binop": null
       },
-      "start": 223,
-      "end": 224,
+      "start": 314,
+      "end": 315,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 16,
+          "column": 35
+        },
+        "end": {
+          "line": 16,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 317,
+      "end": 318,
+      "loc": {
+        "start": {
+          "line": 18,
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 18,
           "column": 1
         }
       }
@@ -1069,15 +1131,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 227,
-      "end": 233,
+      "start": 321,
+      "end": 327,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 21,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 21,
           "column": 6
         }
       }
@@ -1097,15 +1159,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 234,
-      "end": 241,
+      "start": 328,
+      "end": 335,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 21,
           "column": 7
         },
         "end": {
-          "line": 18,
+          "line": 21,
           "column": 14
         }
       }
@@ -1123,15 +1185,15 @@
         "binop": null
       },
       "value": "SurfaceBuffer",
-      "start": 242,
-      "end": 255,
+      "start": 336,
+      "end": 349,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 21,
           "column": 15
         },
         "end": {
-          "line": 18,
+          "line": 21,
           "column": 28
         }
       }
@@ -1149,15 +1211,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 255,
-      "end": 256,
+      "start": 349,
+      "end": 350,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 21,
           "column": 28
         },
         "end": {
-          "line": 18,
+          "line": 21,
           "column": 29
         }
       }
@@ -1175,15 +1237,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 257,
-      "end": 257,
+      "start": 351,
+      "end": 351,
       "loc": {
         "start": {
-          "line": 19,
+          "line": 22,
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 22,
           "column": 0
         }
       }

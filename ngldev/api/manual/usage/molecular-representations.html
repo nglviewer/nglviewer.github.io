@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">Usage</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/arose/ngl.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual" data-toc-name="usage">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html" data-ice="link">Coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#representations" data-ice="link">Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#available-schemes" data-ice="link">Available schemes</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#selection-based-coloring" data-ice="link">Selection-based coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/coloring.html"><a href="manual/usage/coloring.html#custom-coloring" data-ice="link">Custom coloring</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html" data-ice="link">Custom geometries</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html#shape" data-ice="link">Shape</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html#buffer" data-ice="link">Buffer</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html" data-ice="link">Embedding</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html" data-ice="link">File Formats</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#structures" data-ice="link">Structures</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mmcif" data-ice="link">mmCIF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#pdb-pqr" data-ice="link">PDB/PQR</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#gro" data-ice="link">GRO</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#sdf" data-ice="link">SDF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mol2" data-ice="link">MOL2</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mmtf" data-ice="link">MMTF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#psf" data-ice="link">PSF</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#trajectories" data-ice="link">Trajectories</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#dcd" data-ice="link">DCD</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#densities" data-ice="link">Densities</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mrc-map-ccp4" data-ice="link">MRC/MAP/CCP4</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#cube" data-ice="link">CUBE</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#dsn6-brix" data-ice="link">DSN6/BRIX</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#dx-dxbin" data-ice="link">DX/DXBIN</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#xplor-cns" data-ice="link">XPLOR/CNS</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#surfaces" data-ice="link">Surfaces</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#obj" data-ice="link">OBJ</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#ply" data-ice="link">PLY</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#annotation" data-ice="link">Annotation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#wwpdb-validation-report" data-ice="link">wwPDB Validation Report</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#general" data-ice="link">General</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#json" data-ice="link">JSON</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#csv" data-ice="link">CSV</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#txt" data-ice="link">TXT</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#xml" data-ice="link">XML</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html" data-ice="link">Interaction controls</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#camera" data-ice="link">Camera</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#viewer" data-ice="link">Viewer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#animation" data-ice="link">Animation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#automatic-view" data-ice="link">Automatic view</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#principal-axes" data-ice="link">Principal axes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#spin" data-ice="link">Spin</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#picking" data-ice="link">Picking</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#clicked" data-ice="link">Clicked</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#hovered" data-ice="link">Hovered</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#mouse" data-ice="link">Mouse</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html" data-ice="link">Molecular Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#index" data-ice="link">Index</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#backbone" data-ice="link">backbone</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#ball-stick" data-ice="link">ball+stick</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#base" data-ice="link">base</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#cartoon" data-ice="link">cartoon</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#contact" data-ice="link">contact</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#helixorient" data-ice="link">helixorient</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#hyperball" data-ice="link">hyperball</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#label" data-ice="link">label</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#licorice" data-ice="link">licorice</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#line" data-ice="link">line</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#point" data-ice="link">point</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#ribbon" data-ice="link">ribbon</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#rocket" data-ice="link">rocket</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#rope" data-ice="link">rope</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#spacefill" data-ice="link">spacefill</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#surface" data-ice="link">surface</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#trace" data-ice="link">trace</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#tube" data-ice="link">tube</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/scripting.html"><a href="manual/usage/scripting.html" data-ice="link">Scripting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/scripting.html"><a href="manual/usage/scripting.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/scripting.html"><a href="manual/usage/scripting.html#variables" data-ice="link">Variables</a></li>
+<li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html" data-ice="link">Selection Language</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#language" data-ice="link">Language</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#keywords" data-ice="link">Keywords</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#expressions" data-ice="link">Expressions</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#atomindex" data-ice="link">Atomindex</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/selection-language.html"><a href="manual/usage/selection-language.html#logical-operators-in-order-of-binding-strength-" data-ice="link">Logical operators (in order of binding strength)</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="example">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-example" data-section-count="&#x25A0;" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#implementing-custom-default-representations" data-ice="link">Implementing custom default representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/example/snippets.html"><a href="manual/example/snippets.html#distance-based-selection" data-ice="link">Distance-based selection</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="reference">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="identifiers.html"><a href="identifiers.html" data-ice="link">Reference</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#class" data-ice="link">Class</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#interface" data-ice="link">Interface</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#function" data-ice="link">Function</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#typedef" data-ice="link">Typedef</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#external" data-ice="link">External</a></li>
+</ul>
+  </div>
+<div data-ice="manual" data-toc-name="changelog">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-changelog" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html" data-ice="link">Change Log</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-unreleased-" data-ice="link">Unreleased</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-3-2016-10-14" data-ice="link">v0.9.3 - 2016-10-14</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-2-2016-10-06" data-ice="link">v0.9.2 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-1-2016-10-06" data-ice="link">v0.9.1 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-9-0-2016-10-05" data-ice="link">v0.9.0 - 2016-10-05</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-8-2016-07-22" data-ice="link">v0.8 - 2016-07-22</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-1a-2016-06-02" data-ice="link">v0.7.1a - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-1-2016-06-02" data-ice="link">v0.7.1 - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-7-2016-05-08" data-ice="link">v0.7 - 2016-05-08</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#-v0-6-2015-10-12" data-ice="link">v0.6 - 2015-10-12</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#v0-5-2015-30-04" data-ice="link">v0.5 - 2015-30-04</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/changelog/CHANGELOG.html"><a href="manual/changelog/CHANGELOG.html#added" data-ice="link">Added</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-breadcrumb-list">
+    <a href="./manual/./index.html">Manual</a>
+    <span>&#xBB;</span>
+    <span data-ice="title">Usage</span>
+  </div>
+  <div data-ice="content"><h1 id="molecular-representations">Molecular Representations</h1>
+<p>Each loaded structure can be displayed using a variety of representations that can be combined to create complex molecular views. Multiple representation types are supported, including space-filling spheres for atoms (spacefill), cylinders and spheres for bonds and atoms (ball+stick), simple lines for bonds (line), secondary structure abstraction (cartoon), backbone atom trace (backbone). The appearance of the representations can be fine-tuned by parameters, for example, to change the quality. Most representations have a color and a radius parameter that can use data from the underlying structure. For instance, a representation can be colored uniformly or according to the element, residue or secondary structure type of the atoms from which the representation is derived. The size of representation objects, for example sphere and cylinder radii in a ball+stick representation, can be set similarly.</p>
+<p>Common parameters are described in the {@link StructureRepresentationParameters} type definition.</p>
+<h2 id="index">Index</h2>
+<ul>
+<li>backbone</li>
+<li>ball+stick</li>
+<li>base</li>
+<li>cartoon</li>
+<li>contact</li>
+<li>helixorient</li>
+<li>hyperball</li>
+<li>label</li>
+<li>licorice</li>
+<li>line</li>
+<li>point</li>
+<li>ribbon</li>
+<li>rocket</li>
+<li>rope</li>
+<li>spacefill</li>
+<li>surface</li>
+<li>trace</li>
+<li>tube</li>
+</ul>
+<h2 id="backbone">backbone</h2>
+<p>Cylinders connect successive residues of unbroken chains by their main backbone atoms, which are <strong>.CA</strong> atoms in case of proteins and <strong>C4&apos;</strong>/<strong>C3&apos;</strong> atoms for RNA/DNA, respectively. The main backbone atoms are displayed as spheres.</p>
+<ul>
+<li><em>aspectRatio</em>: &#x2026;</li>
+<li><em>radiusSegments</em>:&#x2026;</li>
+<li><em>sphereDetail</em>: &#x2026;</li>
+</ul>
+<h2 id="ball-stick">ball+stick</h2>
+<p>Atoms are displayed as spheres (balls) and bonds as cylinders (sticks).</p>
+<ul>
+<li><em>aspectRatio</em>: A number between 1.0 and 10.0, defining how much bigger the sphere radius is compared to the cylinder radius.</li>
+<li><em>radiusSegments</em>: An integer between 3 and 25, defining the number of segments used to create a cylinder. Only has an effect when ray-casting of geometric primitives is unavailable or switched of via the <em>impostor</em> preference.</li>
+<li><em>sphereDetail</em>: See <em>spacefill</em> representation</li>
+</ul>
+<h2 id="base">base</h2>
+<p>Simplified display of RNA/DNA nucleotides, best used in conjunction with a <a href="#cartoon">cartoon</a> representation. Here, a stick is drawn connecting the sugar backbone with a nitrogen in the base (<strong>.N1</strong> in case of adenine or guanine, <strong>.N3</strong> in case of thymine or cytosine).</p>
+<ul>
+<li><em>aspectRatio</em>: &#x2026;</li>
+<li><em>radiusSegments</em>: &#x2026;</li>
+<li><em>sphereDetail</em>: &#x2026;</li>
+</ul>
+<h2 id="cartoon">cartoon</h2>
+<p>The main backbone atoms (see <a href="#backbone">backbone</a>) of successive residues in unbroken chains are connected by a smooth trace. The trace is expanded perpendicular to its tangent with an elliptical cross-section. The major axis points from <strong>.CA</strong> in the direction of the <strong>.O</strong> in case of proteins and from the <strong>C1&apos;</strong>/<strong>C3&apos;</strong> to <strong>C2&apos;</strong>/<strong>O4&apos;</strong> for RNA/DNA, respectively.</p>
+<ul>
+<li><em>aspectRatio</em>: &#x2026;</li>
+<li><em>subdiv</em>: &#x2026;</li>
+<li><em>radialSegments</em>: &#x2026;</li>
+<li><em>tension</em>: &#x2026;</li>
+<li><em>capped</em>: &#x2026;</li>
+<li><em>wireframe</em>: &#x2026;</li>
+<li><em>arrows</em>: &#x2026; (in development)</li>
+</ul>
+<h2 id="contact">contact</h2>
+<p><em>CAUTION</em> This feature is only for preview. It is still under development and has not been thoroughly tested. Bugs and other surprises are likely.</p>
+<p>Works currently only for proteins. The angle criterion has currently little meaning.</p>
+<p>Displays cylinders between supposedly contacting atoms.</p>
+<ul>
+<li><p><em>contactType</em></p>
+</li>
+<li><p><em>polar</em>: &#x2026;</p>
+</li>
+<li><p><em>polar backbone</em>: &#x2026;.</p>
+</li>
+<li><p><em>maxDistance</em>: &#x2026;</p>
+</li>
+<li><em>maxAngle</em>: &#x2026;</li>
+</ul>
+<h2 id="helixorient">helixorient</h2>
+<p>Displays a various helix-related values. &#x2026;</p>
+<h2 id="hyperball">hyperball</h2>
+<p>A derivate of the <a href="#ball+stick">ball+stick</a> representation (pioneered by <a href="http://sourceforge.net/projects/hyperballs/">HyperBalls project</a>) in which atoms are smoothly connected by an elliptic hyperboloid.</p>
+<h2 id="label">label</h2>
+<p>Displays a label near the corresponding atom.</p>
+<ul>
+<li><em>labelType</em>: atom name, residue name, residue name + no or residue no</li>
+<li><em>font</em>: &#x2026;</li>
+<li><em>antialias</em>: &#x2026;</li>
+</ul>
+<h2 id="licorice">licorice</h2>
+<p>A variant of the <a href="#ball+stick">ball+stick</a> representation where balls and sticks have the same radius, that is the <em>aspectRatio</em> parameter is fixed to 1.0.</p>
+<h2 id="line">line</h2>
+<p>Bonds are displayed by a flat, unshaded line.</p>
+<h2 id="point">point</h2>
+<p><em>CAUTION</em> This feature is only for preview. It is still under development and has not been thoroughly tested. Bugs and other surprises are likely.</p>
+<p>Atoms are displayed by textured points.</p>
+<h2 id="ribbon">ribbon</h2>
+<p>A thin ribbon is displayed along the main backbone trace.</p>
+<h2 id="rocket">rocket</h2>
+<p>&#x2026;</p>
+<h2 id="rope">rope</h2>
+<p>A rope-like protein fold abstraction well suited for coarse-grained structures. In this representation a tube follows the center points of local axes as defined by <a href="#helixorient">helixorient</a>. The result is similar to what is shown by the <a href="http://sbcb.bioch.ox.ac.uk/Bendix/">Bendix tool</a>.</p>
+<ul>
+<li><em>subdiv</em>: &#x2026;</li>
+<li><em>radialSegments</em>: &#x2026;</li>
+<li><em>tension</em>: &#x2026;</li>
+<li><em>capped</em>: &#x2026;</li>
+<li><em>wireframe</em>: &#x2026;</li>
+<li><em>smooth</em>: &#x2026;</li>
+</ul>
+<h2 id="spacefill">spacefill</h2>
+<p>Atoms are displayed as a set of space-filling spheres.</p>
+<ul>
+<li><em>sphereDetail</em>: An integer between 0 and 3, where 0 means low and 3 very high geometric detail. Only has an effect when ray-casting of geometric primitives is unavailable or switched of via the <em>impostor</em> preference.</li>
+</ul>
+<h2 id="surface">surface</h2>
+<p><em>CAUTION</em> This feature is only for preview. It is still under development and has not been thoroughly tested. Bugs and other surprises are likely.</p>
+<p>Displays the molecular surface and its variants.</p>
+<ul>
+<li><p><em>surfaceType</em></p>
+</li>
+<li><p><em>vws</em>: van der Waals surface &#x2026;</p>
+</li>
+<li><em>sas</em>: solvent accessible surface &#x2026;</li>
+<li><em>ms</em>: molecular surface &#x2026;</li>
+<li><p><em>ses</em>: solvent excluded surface &#x2026;</p>
+</li>
+<li><p><em>probeRadius</em>: &#x2026;</p>
+</li>
+<li><em>scaleFactor</em>: &#x2026; (just for debugging)</li>
+</ul>
+<h2 id="trace">trace</h2>
+<p>A flat, unshaded line is displayed along the main backbone trace.</p>
+<h2 id="tube">tube</h2>
+<p>Essentially like <a href="#cartoon">cartoon</a> but with the <em>aspectRatio</em> fixed at a value of 1.0.</p>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
