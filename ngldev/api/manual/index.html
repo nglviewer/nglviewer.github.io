@@ -258,10 +258,38 @@ stage.loadFile( &quot;rcsb://3dqb.pdb&quot; ).then( function( o ){
         <div data-ice="card"><h1>Custom geometries</h1><h2>Shape</h2><p>Convenience API</p><ul>
 <li><a href="./manual/../class/src/geometry/shape.js~Shape.html">Shape</a> class</li>
 <li><a href="./manual/../class/src/component/shape-component.js~ShapeComponent.html">ShapeComponent</a> class</li>
-</ul><h2>Buffer</h2><p>Low level approach, more scalable</p><ul>
+</ul><p>Render a variety of geometry primitives using a Shape object:</p><pre><code><code class="source-code prettyprint">var shape = new NGL.Shape( &quot;shape&quot; );
+shape.addMesh(
+    [ 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1 ],
+    [ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 ],
+    undefined, undefined, &quot;My mesh&quot;
+);
+shape.addSphere( [ 0, 0, 9 ], [ 1, 0, 0 ], 1.5 );
+shape.addSphere( [ 12, 5, 15 ], [ 1, 0.5, 0 ], 1 );
+shape.addEllipsoid( [ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ] );
+shape.addCylinder( [ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5 );
+shape.addCone( [ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5 );
+shape.addArrow( [ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0 );
+shape.addArrow( [ 2, 2, 7 ], [ 30, -3, -3 ], [ 1, 0.5, 1 ], 1.0 );
+shape.addLabel( [ 15, -4, 4 ], [ 0.2, 0.5, 0.8 ], 2.5, &quot;Hello&quot; );
+
+var shapeComp = stage.addComponentFromObject( shape );
+shapeComp.addRepresentation( &quot;buffer&quot; );
+shapeComp.autoView();</code>
+</code></pre><h2>Buffer</h2><p>Low level approach, more scalable</p><ul>
 <li><a href="./manual/../class/src/representation/buffer-representation.js~BufferRepresentation.html">Buffer</a> class</li>
 <li><a href="./manual/../class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a> class</li>
-</ul></div>
+</ul><p>Render two spheres (sscales to many more) a SphereBuffer object:</p><pre><code><code class="source-code prettyprint">var shape = new NGL.Shape( &quot;shape&quot; );
+var sphereBuffer = new NGL.SphereBuffer( {
+    position: new Float32Array( [ 0, 0, 0, 4, 0, 0 ] ),
+    color: new Float32Array( [ 1, 0, 0, 1, 1, 0 ] ),
+    radius: new Float32Array( [ 1, 1.2 ] )
+} );
+shape.addBuffer( sphereBuffer );
+var shapeComp = stage.addComponentFromObject( shape );
+shapeComp.addRepresentation( &quot;buffer&quot; );
+shapeComp.autoView();</code>
+</code></pre></div>
         <a data-ice="link" href="manual/usage/custom-geometries.html"></a>
       </div>
     </div>
@@ -772,13 +800,13 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
+          <span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Assembly of transformed parts of a <span><a href="function/index.html#static-function-Structure">Structure</a></span></p>
+        <div data-ice="description"><p>Assembly of transformed parts of a <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></p>
 </div>
       </div>
     </td>
@@ -1584,6 +1612,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Entity of a <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">EntityindexColormaker</a></span></span>
         </p>
       </div>
@@ -2284,6 +2340,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/math/principal-axes.js~PrincipalAxes.html">PrincipalAxes</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Principal axes</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span>
         </p>
       </div>
@@ -2459,6 +2543,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Ribbon buffer.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Rock animation.</p>
 </div>
       </div>
     </td>
@@ -2872,13 +2984,41 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Structure</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Component wrapping a <span><a href="function/index.html#static-function-Structure">Structure</a></span> object</p>
+        <div data-ice="description"><p>Component wrapping a <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span> object</p>
 </div>
       </div>
     </td>
@@ -2907,6 +3047,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Structure representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>View on the structure, restricted to the selection</p>
 </div>
       </div>
     </td>
@@ -3096,7 +3264,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span><span data-ice="signature">(trajPath: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span>Frames</span>, structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, params: <span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span>)</span>
+          <span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span><span data-ice="signature">(trajPath: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span>Frames</span>, structure: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span>, params: <span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span>)</span>
         </p>
       </div>
       <div>
@@ -3243,6 +3411,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Color by uniform color</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Unitcell class</p>
 </div>
       </div>
     </td>
@@ -3762,6 +3958,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html">ShapePicker</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Shape picker class</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -3782,7 +4006,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span><span data-ice="signature">(atomsX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsZ: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsR: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, min: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, max: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, maxDistance: <span>Float</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span><span data-ice="signature">(atomsX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsZ: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, atomsR: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, min: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, max: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, maxDistance: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Float</a></span>)</span>
         </p>
       </div>
       <div>
@@ -3810,7 +4034,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
         </p>
       </div>
       <div>
@@ -3838,7 +4062,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, atomname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, element: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span><span data-ice="signature">(structure: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span>, atomname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, element: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -3894,7 +4118,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
         </p>
       </div>
       <div>
@@ -3922,7 +4146,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
         </p>
       </div>
       <div>
@@ -3978,7 +4202,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
         </p>
       </div>
       <div>
@@ -4006,7 +4230,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
         </p>
       </div>
       <div>
@@ -4034,7 +4258,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, resname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, atomTypeIdList: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, hetero: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, chemCompType: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, bonds: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span><span data-ice="signature">(structure: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span>, resname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, atomTypeIdList: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, hetero: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, chemCompType: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, bonds: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -4062,69 +4286,13 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span><span data-ice="signature">(size: <span>Integer</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
         </p>
       </div>
       <div>
         
         
         <div data-ice="description"><p>Store class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Structure">Structure</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Structure</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-StructureView">StructureView</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>, selection: <span><a href="class/src/selection.js~Selection.html">Selection</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>View on the structure, restricted to the selection</p>
 </div>
       </div>
     </td>
@@ -4202,7 +4370,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span><span data-ice="signature">(structure: <span><a href="function/index.html#static-function-Structure">Structure</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span><span data-ice="signature">(structure: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
       <div>
@@ -4343,7 +4511,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-quicksortIP">quicksortIP</a></span></span><span data-ice="signature">(arr: <span>TypedArray</span>, eleSize: <span>Integer</span>, orderElement: <span>Integer</span>, begin: <span>Integer</span>, end: <span>Integer</span>): <span>TypedArray</span></span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-quicksortIP">quicksortIP</a></span></span><span data-ice="signature">(arr: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span>, eleSize: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>, orderElement: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>, begin: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>, end: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span></span>
         </p>
       </div>
       <div>
@@ -4371,7 +4539,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span><span data-ice="signature">(s1: <span><a href="function/index.html#static-function-Structure">Structure</a></span> | <span><a href="function/index.html#static-function-StructureView">StructureView</a></span>, s2: <span><a href="function/index.html#static-function-Structure">Structure</a></span> | <span><a href="function/index.html#static-function-StructureView">StructureView</a></span>, align: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, sele1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, sele2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span><span data-ice="signature">(s1: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span> | <span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span>, s2: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span> | <span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span>, align: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, sele1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, sele2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
       <div>
@@ -5343,6 +5511,60 @@ position part for scene translation</p>
         <p>
           
           
+          <span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Float</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Matrix3">Matrix3</a></span></span>
         </p>
       </div>
@@ -5452,6 +5674,33 @@ position part for scene translation</p>
           
           
           <span data-ice="name"><span><a href="https://millermedeiros.github.io/js-signals/docs/symbols/Signal.html">Signal</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span></span>
         </p>
       </div>
       <div>

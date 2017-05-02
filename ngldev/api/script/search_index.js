@@ -270,6 +270,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/structure/entity.js~entity",
+    "class/src/structure/entity.js~Entity.html",
+    "<span>Entity</span> <span class=\"search-result-import-path\">ngl/src/structure/entity.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/entityindex-colormaker.js~entityindexcolormaker",
     "class/src/color/entityindex-colormaker.js~EntityindexColormaker.html",
     "<span>EntityindexColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/entityindex-colormaker.js</span>",
@@ -462,6 +468,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/math/principal-axes.js~principalaxes",
+    "class/src/math/principal-axes.js~PrincipalAxes.html",
+    "<span>PrincipalAxes</span> <span class=\"search-result-import-path\">ngl/src/math/principal-axes.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/quad-buffer.js~quadbuffer",
     "class/src/buffer/quad-buffer.js~QuadBuffer.html",
     "<span>QuadBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/quad-buffer.js</span>",
@@ -522,6 +534,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~rockanimation",
+    "class/src/animation/animation.js~RockAnimation.html",
+    "<span>RockAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/animation/animation.js~rotateanimation",
     "class/src/animation/animation.js~RotateAnimation.html",
     "<span>RotateAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
@@ -570,6 +588,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/utils/picker.js~shapepicker",
+    "class/src/utils/picker.js~ShapePicker.html",
+    "<span>ShapePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/sphere-buffer.js~spherebuffer",
     "class/src/buffer/sphere-buffer.js~SphereBuffer.html",
     "<span>SphereBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/sphere-buffer.js</span>",
@@ -613,9 +637,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/structure/structure.js~structure",
-    "function/index.html#static-function-Structure",
+    "class/src/structure/structure.js~Structure.html",
     "<span>Structure</span> <span class=\"search-result-import-path\">ngl/src/structure/structure.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/component/structure-component.js~structurecomponent",
@@ -631,9 +655,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/structure/structure-view.js~structureview",
-    "function/index.html#static-function-StructureView",
+    "class/src/structure/structure-view.js~StructureView.html",
     "<span>StructureView</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-view.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/surface/surface.js~surface",
@@ -711,6 +735,12 @@ window.esdocSearchIndex = [
     "ngl/src/color/uniform-colormaker.js~uniformcolormaker",
     "class/src/color/uniform-colormaker.js~UniformColormaker.html",
     "<span>UniformColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/uniform-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/symmetry/unitcell.js~unitcell",
+    "class/src/symmetry/unitcell.js~Unitcell.html",
+    "<span>Unitcell</span> <span class=\"search-result-import-path\">ngl/src/symmetry/unitcell.js</span>",
     "class"
   ],
   [
@@ -2274,6 +2304,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#rock",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-rock",
+    "src/controls/animation-controls.js~AnimationControls#rock",
+    "method"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#rotate",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-rotate",
     "src/controls/animation-controls.js~AnimationControls#rotate",
@@ -2346,6 +2382,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/controls/picking-proxy.js~pickingproxy#axes",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-axes",
+    "src/controls/picking-proxy.js~PickingProxy#axes",
+    "member"
+  ],
+  [
     "src/controls/picking-proxy.js~pickingproxy#bond",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-bond",
     "src/controls/picking-proxy.js~PickingProxy#bond",
@@ -2409,6 +2451,12 @@ window.esdocSearchIndex = [
     "src/controls/picking-proxy.js~pickingproxy#cylinder",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-cylinder",
     "src/controls/picking-proxy.js~PickingProxy#cylinder",
+    "member"
+  ],
+  [
+    "src/controls/picking-proxy.js~pickingproxy#distance",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-distance",
+    "src/controls/picking-proxy.js~PickingProxy#distance",
     "member"
   ],
   [
@@ -2487,6 +2535,18 @@ window.esdocSearchIndex = [
     "src/controls/picking-proxy.js~pickingproxy#type",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-type",
     "src/controls/picking-proxy.js~PickingProxy#type",
+    "member"
+  ],
+  [
+    "src/controls/picking-proxy.js~pickingproxy#unitcell",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-unitcell",
+    "src/controls/picking-proxy.js~PickingProxy#unitcell",
+    "member"
+  ],
+  [
+    "src/controls/picking-proxy.js~pickingproxy#unknown",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-unknown",
+    "src/controls/picking-proxy.js~PickingProxy#unknown",
     "member"
   ],
   [
@@ -2640,6 +2700,18 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/externals.js~float",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "src/externals.js~Float",
+    "external"
+  ],
+  [
+    "src/externals.js~integer",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "src/externals.js~Integer",
+    "external"
+  ],
+  [
     "src/externals.js~matrix3",
     "https://threejs.org/docs/#api/math/Matrix3",
     "src/externals.js~Matrix3",
@@ -2667,6 +2739,12 @@ window.esdocSearchIndex = [
     "src/externals.js~signal",
     "https://millermedeiros.github.io/js-signals/docs/symbols/Signal.html",
     "src/externals.js~Signal",
+    "external"
+  ],
+  [
+    "src/externals.js~typedarray",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray",
+    "src/externals.js~TypedArray",
     "external"
   ],
   [
@@ -2890,6 +2968,30 @@ window.esdocSearchIndex = [
     "file/src/math/principal-axes.js.html",
     "src/math/principal-axes.js",
     "file"
+  ],
+  [
+    "src/math/principal-axes.js~principalaxes#constructor",
+    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-constructor-constructor",
+    "src/math/principal-axes.js~PrincipalAxes#constructor",
+    "method"
+  ],
+  [
+    "src/math/principal-axes.js~principalaxes#getbasismatrix",
+    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-method-getBasisMatrix",
+    "src/math/principal-axes.js~PrincipalAxes#getBasisMatrix",
+    "method"
+  ],
+  [
+    "src/math/principal-axes.js~principalaxes#getprojectedscaleforatoms",
+    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-method-getProjectedScaleForAtoms",
+    "src/math/principal-axes.js~PrincipalAxes#getProjectedScaleForAtoms",
+    "method"
+  ],
+  [
+    "src/math/principal-axes.js~principalaxes#getrotationquaternion",
+    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-method-getRotationQuaternion",
+    "src/math/principal-axes.js~PrincipalAxes#getRotationQuaternion",
+    "method"
   ],
   [
     "src/math/vector-utils.js",
@@ -3138,6 +3240,18 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/proxy/atom-proxy.js~atomproxy#clone",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-clone",
+    "src/proxy/atom-proxy.js~AtomProxy#clone",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#connectedto",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-connectedTo",
+    "src/proxy/atom-proxy.js~AtomProxy#connectedTo",
+    "method"
+  ],
+  [
     "src/proxy/atom-proxy.js~atomproxy#constructor",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-constructor-constructor",
     "src/proxy/atom-proxy.js~AtomProxy#constructor",
@@ -3148,6 +3262,12 @@ window.esdocSearchIndex = [
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-covalent",
     "src/proxy/atom-proxy.js~AtomProxy#covalent",
     "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#distanceto",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-distanceTo",
+    "src/proxy/atom-proxy.js~AtomProxy#distanceTo",
+    "method"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#eachbond",
@@ -3198,10 +3318,112 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/proxy/atom-proxy.js~atomproxy#isbackbone",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isBackbone",
+    "src/proxy/atom-proxy.js~AtomProxy#isBackbone",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#iscg",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isCg",
+    "src/proxy/atom-proxy.js~AtomProxy#isCg",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#isdna",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isDna",
+    "src/proxy/atom-proxy.js~AtomProxy#isDna",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#ishetero",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isHetero",
+    "src/proxy/atom-proxy.js~AtomProxy#isHetero",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#ision",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isIon",
+    "src/proxy/atom-proxy.js~AtomProxy#isIon",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#isnucleic",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isNucleic",
+    "src/proxy/atom-proxy.js~AtomProxy#isNucleic",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#ispolymer",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isPolymer",
+    "src/proxy/atom-proxy.js~AtomProxy#isPolymer",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#isprotein",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isProtein",
+    "src/proxy/atom-proxy.js~AtomProxy#isProtein",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#isring",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isRing",
+    "src/proxy/atom-proxy.js~AtomProxy#isRing",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#isrna",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isRna",
+    "src/proxy/atom-proxy.js~AtomProxy#isRna",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#issaccharide",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isSaccharide",
+    "src/proxy/atom-proxy.js~AtomProxy#isSaccharide",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#issidechain",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isSidechain",
+    "src/proxy/atom-proxy.js~AtomProxy#isSidechain",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#iswater",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isWater",
+    "src/proxy/atom-proxy.js~AtomProxy#isWater",
+    "method"
+  ],
+  [
     "src/proxy/atom-proxy.js~atomproxy#occupancy",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-occupancy",
     "src/proxy/atom-proxy.js~AtomProxy#occupancy",
     "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#positionfromarray",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionFromArray",
+    "src/proxy/atom-proxy.js~AtomProxy#positionFromArray",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#positionfromvector3",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionFromVector3",
+    "src/proxy/atom-proxy.js~AtomProxy#positionFromVector3",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#positiontoarray",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionToArray",
+    "src/proxy/atom-proxy.js~AtomProxy#positionToArray",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#positiontovector3",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionToVector3",
+    "src/proxy/atom-proxy.js~AtomProxy#positionToVector3",
+    "method"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#residue",
@@ -3288,6 +3510,36 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/bond-proxy.js~bondproxy#atom1",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atom1",
+    "src/proxy/bond-proxy.js~BondProxy#atom1",
+    "member"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#atom2",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atom2",
+    "src/proxy/bond-proxy.js~BondProxy#atom2",
+    "member"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#atomindex1",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atomIndex1",
+    "src/proxy/bond-proxy.js~BondProxy#atomIndex1",
+    "member"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#atomindex2",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atomIndex2",
+    "src/proxy/bond-proxy.js~BondProxy#atomIndex2",
+    "member"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#bondorder",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-bondOrder",
+    "src/proxy/bond-proxy.js~BondProxy#bondOrder",
+    "member"
+  ],
+  [
     "src/proxy/bond-proxy.js~bondproxy#bondstore",
     "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-bondStore",
     "src/proxy/bond-proxy.js~BondProxy#bondStore",
@@ -3297,6 +3549,12 @@ window.esdocSearchIndex = [
     "src/proxy/bond-proxy.js~bondproxy#calculateshiftdir",
     "class/src/proxy/bond-proxy.js~BondProxy.html#instance-method-calculateShiftDir",
     "src/proxy/bond-proxy.js~BondProxy#calculateShiftDir",
+    "method"
+  ],
+  [
+    "src/proxy/bond-proxy.js~bondproxy#clone",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-method-clone",
+    "src/proxy/bond-proxy.js~BondProxy#clone",
     "method"
   ],
   [
@@ -3330,10 +3588,34 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/chain-proxy.js~chainproxy#atomcount",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-atomCount",
+    "src/proxy/chain-proxy.js~ChainProxy#atomCount",
+    "member"
+  ],
+  [
     "src/proxy/chain-proxy.js~chainproxy#chainstore",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-chainStore",
     "src/proxy/chain-proxy.js~ChainProxy#chainStore",
     "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#chainid",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainid",
+    "src/proxy/chain-proxy.js~ChainProxy#chainid",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#chainname",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainname",
+    "src/proxy/chain-proxy.js~ChainProxy#chainname",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#clone",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-clone",
+    "src/proxy/chain-proxy.js~ChainProxy#clone",
+    "method"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#constructor",
@@ -3342,9 +3624,105 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/proxy/chain-proxy.js~chainproxy#eachatom",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-eachAtom",
+    "src/proxy/chain-proxy.js~ChainProxy#eachAtom",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#eachpolymer",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-eachPolymer",
+    "src/proxy/chain-proxy.js~ChainProxy#eachPolymer",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#eachresidue",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-eachResidue",
+    "src/proxy/chain-proxy.js~ChainProxy#eachResidue",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#eachresiduen",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-eachResidueN",
+    "src/proxy/chain-proxy.js~ChainProxy#eachResidueN",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#entity",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-entity",
+    "src/proxy/chain-proxy.js~ChainProxy#entity",
+    "member"
+  ],
+  [
     "src/proxy/chain-proxy.js~chainproxy#index",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-index",
     "src/proxy/chain-proxy.js~ChainProxy#index",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#isdna",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isDna",
+    "src/proxy/chain-proxy.js~ChainProxy#isDna",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#ishetero",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isHetero",
+    "src/proxy/chain-proxy.js~ChainProxy#isHetero",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#ision",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isIon",
+    "src/proxy/chain-proxy.js~ChainProxy#isIon",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#isnucleic",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isNucleic",
+    "src/proxy/chain-proxy.js~ChainProxy#isNucleic",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#ispolymer",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isPolymer",
+    "src/proxy/chain-proxy.js~ChainProxy#isPolymer",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#isprotein",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isProtein",
+    "src/proxy/chain-proxy.js~ChainProxy#isProtein",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#isrna",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isRna",
+    "src/proxy/chain-proxy.js~ChainProxy#isRna",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#issaccharide",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isSaccharide",
+    "src/proxy/chain-proxy.js~ChainProxy#isSaccharide",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#iswater",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isWater",
+    "src/proxy/chain-proxy.js~ChainProxy#isWater",
+    "method"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#model",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-model",
+    "src/proxy/chain-proxy.js~ChainProxy#model",
+    "member"
+  ],
+  [
+    "src/proxy/chain-proxy.js~chainproxy#residuecount",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueCount",
+    "src/proxy/chain-proxy.js~ChainProxy#residueCount",
     "member"
   ],
   [
@@ -3366,15 +3744,51 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/model-proxy.js~modelproxy#atomcount",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-atomCount",
+    "src/proxy/model-proxy.js~ModelProxy#atomCount",
+    "member"
+  ],
+  [
     "src/proxy/model-proxy.js~modelproxy#chainstore",
     "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-chainStore",
     "src/proxy/model-proxy.js~ModelProxy#chainStore",
     "member"
   ],
   [
+    "src/proxy/model-proxy.js~modelproxy#clone",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-clone",
+    "src/proxy/model-proxy.js~ModelProxy#clone",
+    "method"
+  ],
+  [
     "src/proxy/model-proxy.js~modelproxy#constructor",
     "class/src/proxy/model-proxy.js~ModelProxy.html#instance-constructor-constructor",
     "src/proxy/model-proxy.js~ModelProxy#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#eachatom",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-eachAtom",
+    "src/proxy/model-proxy.js~ModelProxy#eachAtom",
+    "method"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#eachchain",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-eachChain",
+    "src/proxy/model-proxy.js~ModelProxy#eachChain",
+    "method"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#eachpolymer",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-eachPolymer",
+    "src/proxy/model-proxy.js~ModelProxy#eachPolymer",
+    "method"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#eachresidue",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-eachResidue",
+    "src/proxy/model-proxy.js~ModelProxy#eachResidue",
     "method"
   ],
   [
@@ -3387,6 +3801,12 @@ window.esdocSearchIndex = [
     "src/proxy/model-proxy.js~modelproxy#modelstore",
     "class/src/proxy/model-proxy.js~ModelProxy.html#instance-member-modelStore",
     "src/proxy/model-proxy.js~ModelProxy#modelStore",
+    "member"
+  ],
+  [
+    "src/proxy/model-proxy.js~modelproxy#residuecount",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-residueCount",
+    "src/proxy/model-proxy.js~ModelProxy#residueCount",
     "member"
   ],
   [
@@ -3420,9 +3840,45 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/proxy/polymer.js~polymer#chainname",
+    "class/src/proxy/polymer.js~Polymer.html#instance-get-chainname",
+    "src/proxy/polymer.js~Polymer#chainname",
+    "member"
+  ],
+  [
     "src/proxy/polymer.js~polymer#constructor",
     "class/src/proxy/polymer.js~Polymer.html#instance-constructor-constructor",
     "src/proxy/polymer.js~Polymer#constructor",
+    "method"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#eachatom",
+    "class/src/proxy/polymer.js~Polymer.html#instance-method-eachAtom",
+    "src/proxy/polymer.js~Polymer#eachAtom",
+    "method"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#eachresidue",
+    "class/src/proxy/polymer.js~Polymer.html#instance-method-eachResidue",
+    "src/proxy/polymer.js~Polymer#eachResidue",
+    "method"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#iscg",
+    "class/src/proxy/polymer.js~Polymer.html#instance-method-isCg",
+    "src/proxy/polymer.js~Polymer#isCg",
+    "method"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#isnucleic",
+    "class/src/proxy/polymer.js~Polymer.html#instance-method-isNucleic",
+    "src/proxy/polymer.js~Polymer#isNucleic",
+    "method"
+  ],
+  [
+    "src/proxy/polymer.js~polymer#isprotein",
+    "class/src/proxy/polymer.js~Polymer.html#instance-method-isProtein",
+    "src/proxy/polymer.js~Polymer#isProtein",
     "method"
   ],
   [
@@ -3462,6 +3918,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/proxy/residue-proxy.js~residueproxy#atomcount",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomCount",
+    "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
+    "member"
+  ],
+  [
     "src/proxy/residue-proxy.js~residueproxy#atommap",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-atomMap",
     "src/proxy/residue-proxy.js~ResidueProxy#atomMap",
@@ -3474,10 +3936,40 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/proxy/residue-proxy.js~residueproxy#chain",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chain",
+    "src/proxy/residue-proxy.js~ResidueProxy#chain",
+    "member"
+  ],
+  [
     "src/proxy/residue-proxy.js~residueproxy#chainstore",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-chainStore",
     "src/proxy/residue-proxy.js~ResidueProxy#chainStore",
     "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#chainid",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainid",
+    "src/proxy/residue-proxy.js~ResidueProxy#chainid",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#chainname",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainname",
+    "src/proxy/residue-proxy.js~ResidueProxy#chainname",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#clone",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-clone",
+    "src/proxy/residue-proxy.js~ResidueProxy#clone",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#connectedto",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-connectedTo",
+    "src/proxy/residue-proxy.js~ResidueProxy#connectedTo",
+    "method"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#constructor",
@@ -3486,10 +3978,94 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/proxy/residue-proxy.js~residueproxy#eachatom",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-eachAtom",
+    "src/proxy/residue-proxy.js~ResidueProxy#eachAtom",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#entity",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-entity",
+    "src/proxy/residue-proxy.js~ResidueProxy#entity",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#hetero",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-hetero",
+    "src/proxy/residue-proxy.js~ResidueProxy#hetero",
+    "member"
+  ],
+  [
     "src/proxy/residue-proxy.js~residueproxy#index",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-index",
     "src/proxy/residue-proxy.js~ResidueProxy#index",
     "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#inscode",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-inscode",
+    "src/proxy/residue-proxy.js~ResidueProxy#inscode",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#iscg",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isCg",
+    "src/proxy/residue-proxy.js~ResidueProxy#isCg",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#isdna",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isDna",
+    "src/proxy/residue-proxy.js~ResidueProxy#isDna",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#ishetero",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isHetero",
+    "src/proxy/residue-proxy.js~ResidueProxy#isHetero",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#ision",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isIon",
+    "src/proxy/residue-proxy.js~ResidueProxy#isIon",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#isnucleic",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isNucleic",
+    "src/proxy/residue-proxy.js~ResidueProxy#isNucleic",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#ispolymer",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isPolymer",
+    "src/proxy/residue-proxy.js~ResidueProxy#isPolymer",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#isprotein",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isProtein",
+    "src/proxy/residue-proxy.js~ResidueProxy#isProtein",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#isrna",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isRna",
+    "src/proxy/residue-proxy.js~ResidueProxy#isRna",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#issaccharide",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isSaccharide",
+    "src/proxy/residue-proxy.js~ResidueProxy#isSaccharide",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#iswater",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isWater",
+    "src/proxy/residue-proxy.js~ResidueProxy#isWater",
+    "method"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#residuemap",
@@ -3501,6 +4077,24 @@ window.esdocSearchIndex = [
     "src/proxy/residue-proxy.js~residueproxy#residuestore",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-residueStore",
     "src/proxy/residue-proxy.js~ResidueProxy#residueStore",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#resname",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resname",
+    "src/proxy/residue-proxy.js~ResidueProxy#resname",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#resno",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resno",
+    "src/proxy/residue-proxy.js~ResidueProxy#resno",
+    "member"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#sstruc",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-sstruc",
+    "src/proxy/residue-proxy.js~ResidueProxy#sstruc",
     "member"
   ],
   [
@@ -4164,6 +4758,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/stage/stage.js~stage#setrock",
+    "class/src/stage/stage.js~Stage.html#instance-method-setRock",
+    "src/stage/stage.js~Stage#setRock",
+    "method"
+  ],
+  [
     "src/stage/stage.js~stage#setspin",
     "class/src/stage/stage.js~Stage.html#instance-method-setSpin",
     "src/stage/stage.js~Stage#setSpin",
@@ -4308,6 +4908,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/structure/entity.js~entity#constructor",
+    "class/src/structure/entity.js~Entity.html#instance-constructor-constructor",
+    "src/structure/entity.js~Entity#constructor",
+    "method"
+  ],
+  [
     "src/structure/structure-builder.js",
     "file/src/structure/structure-builder.js.html",
     "src/structure/structure-builder.js",
@@ -4332,10 +4938,184 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/structure/structure-view.js~structureview#constructor",
+    "class/src/structure/structure-view.js~StructureView.html#instance-constructor-constructor",
+    "src/structure/structure-view.js~StructureView#constructor",
+    "method"
+  ],
+  [
+    "src/structure/structure-view.js~structureview#eachresiduen",
+    "class/src/structure/structure-view.js~StructureView.html#instance-method-eachResidueN",
+    "src/structure/structure-view.js~StructureView#eachResidueN",
+    "method"
+  ],
+  [
+    "src/structure/structure-view.js~structureview#refresh",
+    "class/src/structure/structure-view.js~StructureView.html#instance-method-refresh",
+    "src/structure/structure-view.js~StructureView#refresh",
+    "method"
+  ],
+  [
     "src/structure/structure.js",
     "file/src/structure/structure.js.html",
     "src/structure/structure.js",
     "file"
+  ],
+  [
+    "src/structure/structure.js~structure#atomcenter",
+    "class/src/structure/structure.js~Structure.html#instance-method-atomCenter",
+    "src/structure/structure.js~Structure#atomCenter",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#atommap",
+    "class/src/structure/structure.js~Structure.html#instance-member-atomMap",
+    "src/structure/structure.js~Structure#atomMap",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#bondhash",
+    "class/src/structure/structure.js~Structure.html#instance-member-bondHash",
+    "src/structure/structure.js~Structure#bondHash",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#boundingbox",
+    "class/src/structure/structure.js~Structure.html#instance-member-boundingBox",
+    "src/structure/structure.js~Structure#boundingBox",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#center",
+    "class/src/structure/structure.js~Structure.html#instance-member-center",
+    "src/structure/structure.js~Structure#center",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#constructor",
+    "class/src/structure/structure.js~Structure.html#instance-constructor-constructor",
+    "src/structure/structure.js~Structure#constructor",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#dispose",
+    "class/src/structure/structure.js~Structure.html#instance-method-dispose",
+    "src/structure/structure.js~Structure#dispose",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachatom",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachAtom",
+    "src/structure/structure.js~Structure#eachAtom",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachbond",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachBond",
+    "src/structure/structure.js~Structure#eachBond",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachchain",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachChain",
+    "src/structure/structure.js~Structure#eachChain",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachentity",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachEntity",
+    "src/structure/structure.js~Structure#eachEntity",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachmodel",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachModel",
+    "src/structure/structure.js~Structure#eachModel",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachpolymer",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachPolymer",
+    "src/structure/structure.js~Structure#eachPolymer",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachresidue",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachResidue",
+    "src/structure/structure.js~Structure#eachResidue",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#eachresiduen",
+    "class/src/structure/structure.js~Structure.html#instance-method-eachResidueN",
+    "src/structure/structure.js~Structure#eachResidueN",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#entitylist",
+    "class/src/structure/structure.js~Structure.html#instance-member-entityList",
+    "src/structure/structure.js~Structure#entityList",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#getatomsetwithinselection",
+    "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinSelection",
+    "src/structure/structure.js~Structure#getAtomSetWithinSelection",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#getboundingbox",
+    "class/src/structure/structure.js~Structure.html#instance-method-getBoundingBox",
+    "src/structure/structure.js~Structure#getBoundingBox",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#getchainnamecount",
+    "class/src/structure/structure.js~Structure.html#instance-method-getChainnameCount",
+    "src/structure/structure.js~Structure#getChainnameCount",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#getprincipalaxes",
+    "class/src/structure/structure.js~Structure.html#instance-method-getPrincipalAxes",
+    "src/structure/structure.js~Structure#getPrincipalAxes",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#header",
+    "class/src/structure/structure.js~Structure.html#instance-member-header",
+    "src/structure/structure.js~Structure#header",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#residuemap",
+    "class/src/structure/structure.js~Structure.html#instance-member-residueMap",
+    "src/structure/structure.js~Structure#residueMap",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#signals",
+    "class/src/structure/structure.js~Structure.html#instance-member-signals",
+    "src/structure/structure.js~Structure#signals",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#spatialhash",
+    "class/src/structure/structure.js~Structure.html#instance-member-spatialHash",
+    "src/structure/structure.js~Structure#spatialHash",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#unitcell",
+    "class/src/structure/structure.js~Structure.html#instance-member-unitcell",
+    "src/structure/structure.js~Structure#unitcell",
+    "member"
+  ],
+  [
+    "src/structure/structure.js~structure#validation",
+    "class/src/structure/structure.js~Structure.html#instance-member-validation",
+    "src/structure/structure.js~Structure#validation",
+    "member"
   ],
   [
     "src/structure/structure.js~structureheader",
@@ -4440,6 +5220,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/symmetry/assembly.js~assembly#constructor",
+    "class/src/symmetry/assembly.js~Assembly.html#instance-constructor-constructor",
+    "src/symmetry/assembly.js~Assembly#constructor",
+    "method"
+  ],
+  [
     "src/symmetry/assembly.js~assembly#getatomcount",
     "class/src/symmetry/assembly.js~Assembly.html#instance-method-getAtomCount",
     "src/symmetry/assembly.js~Assembly#getAtomCount",
@@ -4480,6 +5266,72 @@ window.esdocSearchIndex = [
     "file/src/symmetry/unitcell.js.html",
     "src/symmetry/unitcell.js",
     "file"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#a",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-a",
+    "src/symmetry/unitcell.js~Unitcell#a",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#alpha",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-alpha",
+    "src/symmetry/unitcell.js~Unitcell#alpha",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#b",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-b",
+    "src/symmetry/unitcell.js~Unitcell#b",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#beta",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-beta",
+    "src/symmetry/unitcell.js~Unitcell#beta",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#c",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-c",
+    "src/symmetry/unitcell.js~Unitcell#c",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#carttofrac",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-cartToFrac",
+    "src/symmetry/unitcell.js~Unitcell#cartToFrac",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#constructor",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-constructor-constructor",
+    "src/symmetry/unitcell.js~Unitcell#constructor",
+    "method"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#fractocart",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-fracToCart",
+    "src/symmetry/unitcell.js~Unitcell#fracToCart",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#gamma",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-gamma",
+    "src/symmetry/unitcell.js~Unitcell#gamma",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#spacegroup",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-spacegroup",
+    "src/symmetry/unitcell.js~Unitcell#spacegroup",
+    "member"
+  ],
+  [
+    "src/symmetry/unitcell.js~unitcell#volume",
+    "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-volume",
+    "src/symmetry/unitcell.js~Unitcell#volume",
+    "member"
   ],
   [
     "src/trajectory/frames-trajectory.js",
@@ -4680,9 +5532,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/utils/picker.js~picker#getobject",
+    "class/src/utils/picker.js~Picker.html#instance-method-getObject",
+    "src/utils/picker.js~Picker#getObject",
+    "method"
+  ],
+  [
     "src/utils/picker.js~picker#getposition",
     "class/src/utils/picker.js~Picker.html#instance-method-getPosition",
     "src/utils/picker.js~Picker#getPosition",
+    "method"
+  ],
+  [
+    "src/utils/picker.js~shapepicker#constructor",
+    "class/src/utils/picker.js~ShapePicker.html#instance-constructor-constructor",
+    "src/utils/picker.js~ShapePicker#constructor",
     "method"
   ],
   [
