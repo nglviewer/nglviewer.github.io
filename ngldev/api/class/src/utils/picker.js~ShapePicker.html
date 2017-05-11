@@ -41,7 +41,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Mobile">Mobile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Version">Version</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Box3">Box3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/core/BufferGeometry">BufferGeometry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Color">Color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Euler">Euler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Float</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Matrix3">Matrix3</a></span></span></li>
@@ -233,8 +235,8 @@
   
   
   <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/utils/picker.js~Picker.html">Picker</a></span> &#x2192; ShapePicker</div></div>
-  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span>src/utils/picker.js~CylinderPicker</span>, <span>src/utils/picker.js~EllipsoidPicker</span>, <span>src/utils/picker.js~MeshPicker</span>, <span>src/utils/picker.js~SpherePicker</span></div></div>
-  <div class="flat-list" data-ice="indirectSubclass"><h4>Indirect Subclass:</h4><div><span>src/utils/picker.js~ArrowPicker</span>, <span>src/utils/picker.js~ConePicker</span></div></div>
+  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span>src/utils/picker.js~ArrowPicker</span>, <span>src/utils/picker.js~ConePicker</span>, <span>src/utils/picker.js~CylinderPicker</span>, <span>src/utils/picker.js~EllipsoidPicker</span>, <span>src/utils/picker.js~MeshPicker</span>, <span>src/utils/picker.js~SpherePicker</span></div></div>
+  
   
   
   
@@ -274,7 +276,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+          <span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(shape: <span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span>)</span>
         </p>
       </div>
       <div>
@@ -398,11 +400,11 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(shape: <span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/picker.js.html#lineNumber92">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/picker.js.html#lineNumber91">source</a></span></span>
     </span>
   </h3>
 
@@ -422,17 +424,10 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">array</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>mapping</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">data</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="name" data-depth="0">shape</td>
+      <td data-ice="type"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>shape data</p>
+      <td data-ice="description"><p>shape object</p>
 </td>
     </tr>
 </tbody>

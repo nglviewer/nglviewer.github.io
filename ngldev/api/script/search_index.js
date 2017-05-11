@@ -1230,12 +1230,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/buffer-utils.js",
-    "file/src/buffer/buffer-utils.js.html",
-    "src/buffer/buffer-utils.js",
-    "file"
-  ],
-  [
     "src/buffer/buffer.js",
     "file/src/buffer/buffer.js.html",
     "src/buffer/buffer.js",
@@ -1626,6 +1620,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/color/atomindex-colormaker.js~atomindexcolormaker#atomcolor",
+    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html#instance-method-atomColor",
+    "src/color/atomindex-colormaker.js~AtomindexColormaker#atomColor",
+    "method"
+  ],
+  [
     "src/color/bfactor-colormaker.js",
     "file/src/color/bfactor-colormaker.js.html",
     "src/color/bfactor-colormaker.js",
@@ -1704,12 +1704,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/colormaker.js~colormaker#atomcolor",
-    "class/src/color/colormaker.js~Colormaker.html#instance-method-atomColor",
-    "src/color/colormaker.js~Colormaker#atomColor",
-    "method"
-  ],
-  [
     "src/color/colormaker.js~colormaker#atomcolortoarray",
     "class/src/color/colormaker.js~Colormaker.html#instance-method-atomColorToArray",
     "src/color/colormaker.js~Colormaker#atomColorToArray",
@@ -1740,21 +1734,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/color/colormaker.js~colormaker#positioncolor",
-    "class/src/color/colormaker.js~Colormaker.html#instance-method-positionColor",
-    "src/color/colormaker.js~Colormaker#positionColor",
-    "method"
-  ],
-  [
     "src/color/colormaker.js~colormaker#positioncolortoarray",
     "class/src/color/colormaker.js~Colormaker.html#instance-method-positionColorToArray",
     "src/color/colormaker.js~Colormaker#positionColorToArray",
-    "method"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#volumecolor",
-    "class/src/color/colormaker.js~Colormaker.html#instance-method-volumeColor",
-    "src/color/colormaker.js~Colormaker#volumeColor",
     "method"
   ],
   [
@@ -1884,10 +1866,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/color/value-colormaker.js~valuecolormaker#volumecolor",
+    "class/src/color/value-colormaker.js~ValueColormaker.html#instance-method-volumeColor",
+    "src/color/value-colormaker.js~ValueColormaker#volumeColor",
+    "method"
+  ],
+  [
     "src/color/volume-colormaker.js",
     "file/src/color/volume-colormaker.js.html",
     "src/color/volume-colormaker.js",
     "file"
+  ],
+  [
+    "src/color/volume-colormaker.js~volumecolormaker#positioncolor",
+    "class/src/color/volume-colormaker.js~VolumeColormaker.html#instance-method-positionColor",
+    "src/color/volume-colormaker.js~VolumeColormaker#positionColor",
+    "method"
   ],
   [
     "src/component/collection.js",
@@ -1929,6 +1923,18 @@ window.esdocSearchIndex = [
     "src/component/component.js~component#getbox",
     "class/src/component/component.js~Component.html#instance-method-getBox",
     "src/component/component.js~Component#getBox",
+    "method"
+  ],
+  [
+    "src/component/component.js~component#getboxuntransformed",
+    "class/src/component/component.js~Component.html#instance-method-getBoxUntransformed",
+    "src/component/component.js~Component#getBoxUntransformed",
+    "method"
+  ],
+  [
+    "src/component/component.js~component#getcenter",
+    "class/src/component/component.js~Component.html#instance-method-getCenter",
+    "src/component/component.js~Component#getCenter",
     "method"
   ],
   [
@@ -2640,6 +2646,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/controls/viewer-controls.js~viewercontrols#signals",
+    "class/src/controls/viewer-controls.js~ViewerControls.html#instance-member-signals",
+    "src/controls/viewer-controls.js~ViewerControls#signals",
+    "member"
+  ],
+  [
     "src/controls/viewer-controls.js~viewercontrols#spin",
     "class/src/controls/viewer-controls.js~ViewerControls.html#instance-method-spin",
     "src/controls/viewer-controls.js~ViewerControls#spin",
@@ -2694,9 +2706,21 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/externals.js~buffergeometry",
+    "https://threejs.org/docs/#api/core/BufferGeometry",
+    "src/externals.js~BufferGeometry",
+    "external"
+  ],
+  [
     "src/externals.js~color",
     "https://threejs.org/docs/#api/math/Color",
     "src/externals.js~Color",
+    "external"
+  ],
+  [
+    "src/externals.js~euler",
+    "https://threejs.org/docs/#api/math/Euler",
+    "src/externals.js~Euler",
     "external"
   ],
   [
