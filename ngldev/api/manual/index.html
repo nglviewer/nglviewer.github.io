@@ -469,7 +469,7 @@ shapeComp.autoView();</code>
 </ul><h3>PSF</h3><p>Extension: <strong>.psf</strong></p><h2>Trajectories</h2><p>Structure files in <em>mmCIF</em>, <em>PDB</em>, <em>GRO</em>, <em>SDF</em>, <em>MOL2</em> or <em>MMTF</em> format can also be loaded as trajectories by setting the <em>asTrajectory</em> flag in the <em>File</em> menu. Trajectory files in <em>DCD</em> format are added to a <em>Structure</em>.</p><h3>DCD</h3><p>Extension: <strong>.dcd</strong></p><h2>Densities</h2><p>Density data is saved into <a href="./manual/../class/src/volume/volume.js~Volume.html">Volume</a> instances.</p><h3>MRC/MAP/CCP4</h3><p>Extensions: <strong>.mrc</strong>, <strong>.map</strong>, <strong>.ccp4</strong></p><p>Specification: <a href="http://www.ccp4.ac.uk/html/maplib.html">http://www.ccp4.ac.uk/html/maplib.html</a>, <a href="http://ami.scripps.edu/software/mrctools/mrc_specification.php">http://ami.scripps.edu/software/mrctools/mrc_specification.php</a></p><p>Supported features:</p><ul>
 <li>Header data</li>
 <li>Density data</li>
-</ul><h3>CUBE</h3><p>Extension: <strong>.cube</strong></p><p>Specification: <a href="http://paulbourke.net/dataformats/cube/">http://paulbourke.net/dataformats/cube/</a></p><p>Supported features:</p><ul>
+</ul><h3>CUBE</h3><p>Extensions: <strong>.cube</strong>, <strong>.cub</strong></p><p>Specification: <a href="http://paulbourke.net/dataformats/cube/">http://paulbourke.net/dataformats/cube/</a></p><p>Supported features:</p><ul>
 <li>Header data</li>
 <li>Density data</li>
 </ul><p>TODO:</p><ul>
@@ -671,7 +671,7 @@ stage.viewerControls.orient( orientationMatrix );</code>
 <li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
 <li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
 <li>numeric residue name: <em>[032]</em>, <em>[1AB]</em>, ...</li>
-<li>element name: <strong>#H</strong>, <strong>#C</strong>, <strong>#O</strong>, ...</li>
+<li>element name: <strong>_H</strong>, <strong>_C</strong>, <strong>_O</strong>, ...</li>
 <li>alternate location: <strong>%A</strong>, <strong>%B</strong>, ... or <strong>%</strong> for non-alternate location atoms</li>
 <li>insertion code: <strong>^A</strong>, <strong>^B</strong>, ... or <strong>^</strong> for residues with no insertion code</li>
 </ul><p>Some of these expressions can be combined (in this order) - residue numer (range), insertion code, chain name, atom name, alternate location, model - like this</p><pre><code><code class="source-code prettyprint">10^A:F.CA%C/0  // select C-alpha atoms of residue 10 with insertion code A from chain F in model 0 at alternate location C</code>
@@ -1339,6 +1339,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Counter class for keeping track of counts</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/parser/csv-parser.js~CsvParser.html">CsvParser</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>CSV parser</p>
 </div>
       </div>
     </td>
@@ -5485,6 +5513,33 @@ position part for scene translation</p>
           
           
           <span data-ice="name"><span><a href="https://threejs.org/docs/#api/core/BufferGeometry">BufferGeometry</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Char</a></span></span>
         </p>
       </div>
       <div>

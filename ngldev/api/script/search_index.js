@@ -216,6 +216,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/parser/csv-parser.js~csvparser",
+    "class/src/parser/csv-parser.js~CsvParser.html",
+    "<span>CsvParser</span> <span class=\"search-result-import-path\">ngl/src/parser/csv-parser.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/cylinder-buffer.js~cylinderbuffer",
     "class/src/buffer/cylinder-buffer.js~CylinderBuffer.html",
     "<span>CylinderBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cylinder-buffer.js</span>",
@@ -1950,6 +1956,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#setposition",
+    "class/src/component/component.js~Component.html#instance-method-setPosition",
+    "src/component/component.js~Component#setPosition",
+    "method"
+  ],
+  [
+    "src/component/component.js~component#setrotation",
+    "class/src/component/component.js~Component.html#instance-method-setRotation",
+    "src/component/component.js~Component#setRotation",
+    "method"
+  ],
+  [
+    "src/component/component.js~component#setscale",
+    "class/src/component/component.js~Component.html#instance-method-setScale",
+    "src/component/component.js~Component#setScale",
+    "method"
+  ],
+  [
     "src/component/component.js~component#setvisibility",
     "class/src/component/component.js~Component.html#instance-method-setVisibility",
     "src/component/component.js~Component#setVisibility",
@@ -2712,6 +2736,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/externals.js~char",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "src/externals.js~Char",
+    "external"
+  ],
+  [
     "src/externals.js~color",
     "https://threejs.org/docs/#api/math/Color",
     "src/externals.js~Color",
@@ -3040,6 +3070,12 @@ window.esdocSearchIndex = [
     "file/src/parser/csv-parser.js.html",
     "src/parser/csv-parser.js",
     "file"
+  ],
+  [
+    "src/parser/csv-parser.js~csvparser#constructor",
+    "class/src/parser/csv-parser.js~CsvParser.html#instance-constructor-constructor",
+    "src/parser/csv-parser.js~CsvParser#constructor",
+    "method"
   ],
   [
     "src/parser/cube-parser.js",
