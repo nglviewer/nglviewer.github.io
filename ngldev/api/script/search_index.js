@@ -1974,6 +1974,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#settransform",
+    "class/src/component/component.js~Component.html#instance-method-setTransform",
+    "src/component/component.js~Component#setTransform",
+    "method"
+  ],
+  [
     "src/component/component.js~component#setvisibility",
     "class/src/component/component.js~Component.html#instance-method-setVisibility",
     "src/component/component.js~Component#setVisibility",
