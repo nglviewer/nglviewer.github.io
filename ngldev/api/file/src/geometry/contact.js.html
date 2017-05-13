@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,88 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/geometry/contact.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Contact
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Log } from &quot;../globals.js&quot;;
+import Bitset from &quot;../utils/bitset.js&quot;;
+import Kdtree from &quot;./kdtree.js&quot;;
+import BondStore from &quot;../store/bond-store.js&quot;;
+
+
+function Contact( sview1, sview2 ){
+
+    this.sview1 = sview1;
+    this.sview2 = sview2;
+
+    // this.kdtree1 = new Kdtree( sview1 );
+    this.kdtree2 = new Kdtree( sview2 );
+
+}
+
+Contact.prototype = {
+
+    within: function( maxDistance, minDistance ){
+
+        Log.time( &quot;Contact within&quot; );
+
+        // var kdtree1 = this.kdtree1;
+        var kdtree2 = this.kdtree2;
+
+        var ap2 = this.sview1.getAtomProxy();
+        var atomSet = this.sview1.getAtomSet( false );
+        var bondStore = new BondStore();
+
+        this.sview1.eachAtom( function( ap1 ){
+
+            var found = false;
+            var contacts = kdtree2.nearest(
+                ap1, Infinity, maxDistance
+            );
+
+            for( var j = 0, m = contacts.length; j &lt; m; ++j ){
+
+                var d = contacts[ j ];
+                ap2.index = d.index;
+
+                if( ap1.residueIndex !== ap2.residueIndex &amp;&amp;
+                    ( !minDistance || d.distance &gt; minDistance ) ){
+                    found = true;
+                    atomSet.add_unsafe( ap2.index );
+                    bondStore.addBond( ap1, ap2, 1 );
+                }
+
+            }
+
+            if( found ){
+                atomSet.add_unsafe( ap1.index );
+            }
+
+        } );
+
+        var bondSet = new Bitset( bondStore.count );
+        bondSet.set_all( true );
+
+        Log.timeEnd( &quot;Contact within&quot; );
+
+        return {
+            atomSet: atomSet,
+            bondSet: bondSet,
+            bondStore: bondStore
+        };
+
+    }
+
+};
+
+
+export default Contact;
+</code></pre>
+
 </div>
 
 <footer class="footer">

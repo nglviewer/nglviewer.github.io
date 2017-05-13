@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,43 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/loader/parser-loader.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Parser Loader
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ParserRegistry } from &quot;../globals.js&quot;;
+import Loader from &quot;./loader.js&quot;;
+
+
+/**
+ * Parser loader class
+ * @extends Loader
+ */
+class ParserLoader extends Loader{
+
+    /**
+     * Load parsed object
+     * @return {Promise} resolves to the loaded &amp; parsed {@link Structure},
+     *                   {@link Volume}, {@link Surface} or data object
+     */
+    load(){
+
+        var ParserClass = ParserRegistry.get( this.ext );
+        var parser = new ParserClass( this.streamer, this.params );
+
+        return parser.parse();
+
+    }
+
+}
+
+
+export default ParserLoader;
+</code></pre>
+
 </div>
 
 <footer class="footer">

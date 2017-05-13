@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,66 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/store/atom-store.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Atom Store
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Store from &quot;./store.js&quot;;
+
+
+/**
+ * Atom store class
+ * @class
+ * @extends Store
+ * @param {Integer} [size] - initial size
+ */
+function AtomStore( size ){
+
+    Store.call( this, size );
+
+}
+
+AtomStore.prototype = Object.assign( Object.create(
+
+    Store.prototype ), {
+
+    constructor: AtomStore,
+
+    type: &quot;AtomStore&quot;,
+
+    __fields: [
+
+        [ &quot;residueIndex&quot;, 1, &quot;uint32&quot; ],
+        [ &quot;atomTypeId&quot;, 1, &quot;uint16&quot; ],
+
+        [ &quot;x&quot;, 1, &quot;float32&quot; ],
+        [ &quot;y&quot;, 1, &quot;float32&quot; ],
+        [ &quot;z&quot;, 1, &quot;float32&quot; ],
+        [ &quot;serial&quot;, 1, &quot;int32&quot; ],
+        [ &quot;bfactor&quot;, 1, &quot;float32&quot; ],
+        [ &quot;altloc&quot;, 1, &quot;uint8&quot; ],
+        [ &quot;occupancy&quot;, 1, &quot;float32&quot; ]
+
+    ],
+
+    setAltloc: function( i, str ){
+        this.altloc[ i ] = str.charCodeAt( 0 );
+    },
+
+    getAltloc: function( i ){
+        var code = this.altloc[ i ];
+        return code ? String.fromCharCode( code ) : &quot;&quot;;
+    }
+
+} );
+
+
+export default AtomStore;
+</code></pre>
+
 </div>
 
 <footer class="footer">

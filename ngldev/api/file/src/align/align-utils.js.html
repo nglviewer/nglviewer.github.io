@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,160 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/align/align-utils.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Align Utils
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { defaults } from &quot;../utils.js&quot;;
+import Selection from &quot;../selection.js&quot;;
+import Alignment from &quot;./alignment.js&quot;;
+import Superposition from &quot;./superposition.js&quot;;
+
+
+/**
+ * Perform structural superposition of two structures,
+ * optionally guided by a sequence alignment
+ * @param  {Structure|StructureView} s1 - structure 1 which is superposed onto structure 2
+ * @param  {Structure|StructureView} s2 - structure 2 onto which structure 1 is superposed
+ * @param  {Boolean} [align] - guide the superposition by a sequence alignment
+ * @param  {String} [sele1] - selection string for structure 1
+ * @param  {String} [sele2] - selection string for structure 2
+ * @return {undefined}
+ */
+function superpose( s1, s2, align, sele1, sele2 ){
+
+    align = defaults( align, false );
+    sele1 = defaults( sele1, &quot;&quot; );
+    sele2 = defaults( sele2, &quot;&quot; );
+
+    var i, j, n, atoms1, atoms2;
+
+    if( align ){
+
+        var _s1 = s1;
+        var _s2 = s2;
+
+        if( sele1 &amp;&amp; sele2 ){
+            _s1 = s1.getView( new Selection( sele1 ) );
+            _s2 = s2.getView( new Selection( sele2 ) );
+        }
+
+        var seq1 = _s1.getSequence();
+        var seq2 = _s2.getSequence();
+
+        // Log.log( seq1.join(&quot;&quot;) );
+        // Log.log( seq2.join(&quot;&quot;) );
+
+        var ali = new Alignment( seq1.join( &quot;&quot; ), seq2.join( &quot;&quot; ) );
+
+        ali.calc();
+        ali.trace();
+
+        // Log.log( &quot;superpose alignment score&quot;, ali.score );
+
+        // Log.log( ali.ali1 );
+        // Log.log( ali.ali2 );
+
+        var l, _i, _j, x, y;
+        i = 0;
+        j = 0;
+        n = ali.ali1.length;
+        var aliIdx1 = [];
+        var aliIdx2 = [];
+
+        for( l = 0; l &lt; n; ++l ){
+
+            x = ali.ali1[ l ];
+            y = ali.ali2[ l ];
+
+            _i = 0;
+            _j = 0;
+
+            if( x === &quot;-&quot; ){
+                aliIdx2[ j ] = false;
+            }else{
+                aliIdx2[ j ] = true;
+                _i = 1;
+            }
+
+            if( y === &quot;-&quot; ){
+                aliIdx1[ i ] = false;
+            }else{
+                aliIdx1[ i ] = true;
+                _j = 1;
+            }
+
+            i += _i;
+            j += _j;
+
+        }
+
+        // Log.log( i, j );
+
+        // Log.log( aliIdx1 );
+        // Log.log( aliIdx2 );
+
+        var _atoms1 = [];
+        var _atoms2 = [];
+        var ap1 = _s1.getAtomProxy();
+        var ap2 = _s2.getAtomProxy();
+
+        i = 0;
+        _s1.eachResidue( function( r ){
+
+            if( r.traceAtomIndex === undefined ||
+                r.traceAtomIndex !== r.getAtomIndexByName( &quot;CA&quot; ) ) return;
+
+            if( aliIdx1[ i ] ){
+                ap1.index = r.getAtomIndexByName( &quot;CA&quot; );
+                _atoms1.push( ap1.x, ap1.y, ap1.z );
+            }
+            i += 1;
+
+        } );
+
+        i = 0;
+        _s2.eachResidue( function( r ){
+
+            if( r.traceAtomIndex === undefined ||
+                r.traceAtomIndex !== r.getAtomIndexByName( &quot;CA&quot; ) ) return;
+
+            if( aliIdx2[ i ] ){
+                ap2.index = r.getAtomIndexByName( &quot;CA&quot; );
+                _atoms2.push( ap2.x, ap2.y, ap2.z );
+            }
+            i += 1;
+
+        } );
+
+        atoms1 = new Float32Array( _atoms1 );
+        atoms2 = new Float32Array( _atoms2 );
+
+    }else{
+
+        var sviewCa1 = s1.getView( new Selection( sele1 + &quot; and .CA&quot; ) );
+        var sviewCa2 = s2.getView( new Selection( sele2 + &quot; and .CA&quot; ) );
+
+        atoms1 = sviewCa1;
+        atoms2 = sviewCa2;
+
+    }
+
+    var superpose = new Superposition( atoms1, atoms2 );
+    superpose.transform( s1 );
+    s1.refreshPosition();
+
+}
+
+
+export {
+	superpose
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,73 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/store/residue-store.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Residue Store
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Store from &quot;./store.js&quot;;
+
+
+/**
+ * Residue store class
+ * @class
+ * @extends Store
+ * @param {Integer} [size] - initial size
+ */
+function ResidueStore( size ){
+
+    Store.call( this, size );
+
+}
+
+ResidueStore.prototype = Object.assign( Object.create(
+
+    Store.prototype ), {
+
+    constructor: ResidueStore,
+
+    type: &quot;ResidueStore&quot;,
+
+    __fields: [
+
+        [ &quot;chainIndex&quot;, 1, &quot;uint32&quot; ],
+        [ &quot;atomOffset&quot;, 1, &quot;uint32&quot; ],
+        [ &quot;atomCount&quot;, 1, &quot;uint16&quot; ],
+        [ &quot;residueTypeId&quot;, 1, &quot;uint16&quot; ],
+
+        [ &quot;resno&quot;, 1, &quot;int32&quot; ],
+        [ &quot;sstruc&quot;, 1, &quot;uint8&quot; ],
+        [ &quot;inscode&quot;, 1, &quot;uint8&quot; ]
+
+    ],
+
+    setSstruc: function( i, str ){
+        this.sstruc[ i ] = str.charCodeAt( 0 );
+    },
+
+    getSstruc: function( i ){
+        var code = this.sstruc[ i ];
+        return code ? String.fromCharCode( code ) : &quot;&quot;;
+    },
+
+    setInscode: function( i, str ){
+        this.inscode[ i ] = str.charCodeAt( 0 );
+    },
+
+    getInscode: function( i ){
+        var code = this.inscode[ i ];
+        return code ? String.fromCharCode( code ) : &quot;&quot;;
+    }
+
+} );
+
+
+export default ResidueStore;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,79 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/resname-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Resname Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+// from Jmol http://jmol.sourceforge.net/jscolors/ (protein + shapely for nucleic)
+var ResidueColors = {
+    &quot;ALA&quot;: 0x8CFF8C,
+    &quot;ARG&quot;: 0x00007C,
+    &quot;ASN&quot;: 0xFF7C70,
+    &quot;ASP&quot;: 0xA00042,
+    &quot;CYS&quot;: 0xFFFF70,
+    &quot;GLN&quot;: 0xFF4C4C,
+    &quot;GLU&quot;: 0x660000,
+    &quot;GLY&quot;: 0xFFFFFF,
+    &quot;HIS&quot;: 0x7070FF,
+    &quot;ILE&quot;: 0x004C00,
+    &quot;LEU&quot;: 0x455E45,
+    &quot;LYS&quot;: 0x4747B8,
+    &quot;MET&quot;: 0xB8A042,
+    &quot;PHE&quot;: 0x534C52,
+    &quot;PRO&quot;: 0x525252,
+    &quot;SER&quot;: 0xFF7042,
+    &quot;THR&quot;: 0xB84C00,
+    &quot;TRP&quot;: 0x4F4600,
+    &quot;TYR&quot;: 0x8C704C,
+    &quot;VAL&quot;: 0xFF8CFF,
+
+    &quot;ASX&quot;: 0xFF00FF,
+    &quot;GLX&quot;: 0xFF00FF,
+    &quot;ASH&quot;: 0xFF00FF,
+    &quot;GLH&quot;: 0xFF00FF,
+
+    &quot;A&quot;: 0xA0A0FF,
+    &quot;G&quot;: 0xFF7070,
+    &quot;I&quot;: 0x80FFFF,
+    &quot;C&quot;: 0xFF8C4B,
+    &quot;T&quot;: 0xA0FFA0,
+    &quot;U&quot;: 0xFF8080,
+
+    &quot;DA&quot;: 0xA0A0FF,
+    &quot;DG&quot;: 0xFF7070,
+    &quot;DI&quot;: 0x80FFFF,
+    &quot;DC&quot;: 0xFF8C4B,
+    &quot;DT&quot;: 0xA0FFA0,
+    &quot;DU&quot;: 0xFF8080
+};
+var DefaultResidueColor = 0xFF00FF;
+
+
+/**
+ * Color by residue name
+ */
+class ResnameColormaker extends Colormaker{
+
+    atomColor( a ){
+        return ResidueColors[ a.resname ] || DefaultResidueColor;
+    }
+
+}
+
+
+ColormakerRegistry.add( &quot;resname&quot;, ResnameColormaker );
+
+
+export default ResnameColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

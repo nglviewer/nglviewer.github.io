@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,106 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/streamer/file-streamer.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file File Streamer
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Streamer from &quot;./streamer.js&quot;;
+
+
+function FileStreamer( file, params ){
+
+    Streamer.call( this, file, params );
+
+}
+
+FileStreamer.prototype = Object.assign( Object.create(
+
+    Streamer.prototype ), {
+
+    constructor: FileStreamer,
+
+    type: &quot;file&quot;,
+
+    __srcName: &quot;file&quot;,
+
+    _read: function( callback ){
+
+        var reader;
+
+        if( typeof importScripts === &apos;function&apos; ){
+
+            // Use FileReaderSync within Worker
+
+            reader = new FileReaderSync();
+            var data;
+            if( this.binary || this.compressed ){
+                data = reader.readAsArrayBuffer( this.file );
+            }else{
+                data = reader.readAsText( this.file );
+            }
+
+            //
+
+            callback( data );
+
+        }else{
+
+            reader = new FileReader();
+
+            //
+
+            reader.onload = function( event ){
+
+                callback( event.target.result );
+
+            }.bind( this );
+
+            //
+
+            if( typeof this.onprogress === &quot;function&quot; ){
+
+                reader.onprogress = function ( event ) {
+
+                    this.onprogress( event );
+
+                }.bind( this );
+
+            }
+
+            //
+
+            if( typeof this.onerror === &quot;function&quot; ){
+
+                reader.onerror = function ( event ) {
+
+                    this.onerror( event );
+
+                }.bind( this );
+
+            }
+
+            //
+
+            if( this.binary || this.compressed ){
+                reader.readAsArrayBuffer( this.file );
+            }else{
+                reader.readAsText( this.file );
+            }
+
+        }
+
+    }
+
+} );
+
+
+export default FileStreamer;
+</code></pre>
+
 </div>
 
 <footer class="footer">

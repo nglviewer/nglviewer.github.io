@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,129 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/script.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Script
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Signal from &quot;../lib/signals.es6.js&quot;;
+
+import { Log } from &quot;./globals.js&quot;;
+
+
+/**
+ * Script class
+ */
+class Script{
+
+    /**
+     * Create a script instance
+     * @param {String} functionBody - the function source
+     * @param {String} name - name of the script
+     * @param {String} path - path of the script
+     */
+    constructor( functionBody, name, path ){
+
+        this.signals = {
+
+            elementAdded: new Signal(),
+            elementRemoved: new Signal(),
+            nameChanged: new Signal(),
+
+        };
+
+        this.name = name;
+        this.path = path;
+        this.dir = path.substring( 0, path.lastIndexOf( &apos;/&apos; ) + 1 );
+
+        try {
+
+            // supress warning about string evaluation as code
+            // jshint evil:true
+            this.fn = new Function(
+
+                &apos;stage&apos;, &apos;panel&apos;,
+                &apos;__name__&apos;, &apos;__path__&apos;, &apos;__dir__&apos;,
+
+                functionBody
+
+            );
+
+        }catch( e ){
+
+            Log.error( &quot;Script compilation failed&quot;, e );
+            this.fn = function(){};
+
+        }
+
+    }
+
+    /**
+     * Object type
+     * @readonly
+     */
+    get type(){ return &quot;Script&quot;; }
+
+    /**
+     * Execute the script
+     * @param  {Stage} stage - the stage context
+     * @return {Promise} - resolve when script finished running
+     */
+    call( stage ){
+
+        var panel = {
+
+            add: function( /*element*/ ){
+
+                this.signals.elementAdded.dispatch( arguments );
+
+            }.bind( this ),
+
+            remove: function( /*element*/ ){
+
+                this.signals.elementRemoved.dispatch( arguments );
+
+            }.bind( this ),
+
+            setName: function( value ){
+
+                this.signals.nameChanged.dispatch( value );
+
+            }.bind( this )
+
+        };
+
+        return new Promise( ( resolve, reject ) =&gt; {
+
+            var args = [
+                stage, panel,
+                this.name, this.path, this.dir
+            ];
+
+            try{
+
+                this.fn.apply( null, args );
+                resolve();
+
+            }catch( e ){
+
+                Log.error( &quot;Script.fn&quot;, e );
+                reject( e );
+
+            }
+
+        } );
+
+    }
+
+}
+
+
+export default Script;
+</code></pre>
+
 </div>
 
 <footer class="footer">

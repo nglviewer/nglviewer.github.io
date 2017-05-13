@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,67 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/datasource/rcsb-datasource.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file RCSB Datasource
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Log, DatasourceRegistry } from &quot;../globals.js&quot;;
+import { getFileInfo, getProtocol } from &quot;../utils.js&quot;;
+
+
+var baseUrl = &quot;//files.rcsb.org/download/&quot;;
+var mmtfBaseUrl = &quot;//mmtf.rcsb.org/v1.0/&quot;;
+var mmtfFullUrl = mmtfBaseUrl + &quot;full/&quot;;
+var mmtfReducedUrl = mmtfBaseUrl + &quot;reduced/&quot;;
+
+
+function RcsbDatasource(){
+
+    this.getUrl = function( src ){
+        // valid path are
+        // XXXX.pdb, XXXX.pdb.gz, XXXX.cif, XXXX.cif.gz, XXXX.mmtf, XXXX.bb.mmtf
+        // XXXX defaults to XXXX.cif
+        var info = getFileInfo( src );
+        var pdbid = info.name.substr( 0, 4 );
+        var url;
+        if( [ &quot;pdb&quot;, &quot;cif&quot; ].includes( info.ext ) &amp;&amp;
+            ( info.compressed === false || info.compressed === &quot;gz&quot; )
+        ){
+            url = baseUrl + info.path;
+        }else if( info.ext === &quot;mmtf&quot; ){
+            if( info.base.endsWith( &quot;.bb&quot; ) ){
+                url = mmtfReducedUrl + pdbid;
+            }else{
+                url = mmtfFullUrl + pdbid;
+            }
+        }else if( !info.ext ){
+            url = mmtfFullUrl + pdbid;
+        }else{
+            Log.warn( &quot;unsupported ext&quot;, info.ext );
+            url = mmtfFullUrl + pdbid;
+        }
+        return getProtocol() + url;
+    };
+
+    this.getExt = function( src ){
+        var info = getFileInfo( src );
+        if( info.ext === &quot;mmtf&quot; || !info.ext ){
+            return &quot;mmtf&quot;;
+        }
+    };
+
+}
+
+
+DatasourceRegistry.add( &quot;rcsb&quot;, new RcsbDatasource() );
+
+
+export default RcsbDatasource;
+</code></pre>
+
 </div>
 
 <footer class="footer">

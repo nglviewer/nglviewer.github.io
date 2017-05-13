@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,53 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/parser/validation-parser.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Validation Parser
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Debug, Log, ParserRegistry } from &quot;../globals.js&quot;;
+import XmlParser from &quot;./xml-parser.js&quot;;
+import Validation from &quot;../structure/validation.js&quot;;
+
+
+class ValidationParser extends XmlParser{
+
+    constructor( streamer, params ){
+
+        const p = params || {};
+
+        super( streamer, p );
+
+        this.useDomParser = true;
+        this.validation = new Validation( this.name, this.path );
+
+    }
+
+    get __objName (){ return &quot;validation&quot;; }
+
+    _parse(){
+
+        super._parse();
+
+        if( Debug ) Log.time( &quot;ValidationParser._parse &quot; + this.name );
+
+        this.validation.fromXml( this.xml.data );
+
+        if( Debug ) Log.timeEnd( &quot;ValidationParser._parse &quot; + this.name );
+
+    }
+
+}
+
+ParserRegistry.add( &quot;validation&quot;, ValidationParser );
+
+
+export default ValidationParser;
+</code></pre>
+
 </div>
 
 <footer class="footer">

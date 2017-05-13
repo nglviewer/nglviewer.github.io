@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,90 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/spacefill-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Spacefill Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import StructureRepresentation from &quot;./structure-representation.js&quot;;
+import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
+
+
+class SpacefillRepresentation extends StructureRepresentation{
+
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;spacefill&quot;;
+
+        this.parameters = Object.assign( {
+            sphereDetail: true,
+            disableImpostor: true
+        }, this.parameters );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+
+        super.init( p );
+
+    }
+
+    createData( sview ){
+
+        var sphereBuffer = new SphereBuffer(
+            sview.getAtomData( this.getAtomParams() ),
+            this.getBufferParams( {
+                sphereDetail: this.sphereDetail,
+                dullInterior: true,
+                disableImpostor: this.disableImpostor
+            } )
+        );
+
+        return {
+            bufferList: [ sphereBuffer ]
+        };
+
+    }
+
+    updateData( what, data ){
+
+        var atomData = data.sview.getAtomData( this.getAtomParams( what ) );
+        var sphereData = {};
+
+        if( !what || what.position ){
+            sphereData.position = atomData.position;
+        }
+
+        if( !what || what.color ){
+            sphereData.color = atomData.color;
+        }
+
+        if( !what || what.radius ){
+            sphereData.radius = atomData.radius;
+        }
+
+        data.bufferList[ 0 ].setAttributes( sphereData );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;spacefill&quot;, SpacefillRepresentation );
+
+
+export default SpacefillRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

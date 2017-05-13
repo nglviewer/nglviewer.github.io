@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,54 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/parser/volume-parser.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Volume Parser
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Matrix4 } from &quot;../../lib/three.es6.js&quot;;
+
+import { defaults } from &quot;../utils.js&quot;;
+import Parser from &quot;./parser.js&quot;;
+import Volume from &quot;../surface/volume.js&quot;;
+
+
+class VolumeParser extends Parser{
+
+    constructor( streamer, params ){
+
+        const p = params || {};
+
+        super( streamer, p );
+
+        this.volume = new Volume( this.name, this.path );
+        this.voxelSize  = defaults( p.voxelSize, 1 );
+
+    }
+
+    get type (){ return &quot;volume&quot;; }
+    get __objName(){ return &quot;volume&quot;; }
+
+    _afterParse(){
+
+        this.volume.setMatrix( this.getMatrix() );
+
+    }
+
+    getMatrix(){
+
+        return new Matrix4();
+
+    }
+
+}
+
+
+export default VolumeParser;
+</code></pre>
+
 </div>
 
 <footer class="footer">

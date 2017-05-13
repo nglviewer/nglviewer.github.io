@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,165 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/helixorient-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Helixorient Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Debug, Log, RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import Helixorient from &quot;../geometry/helixorient.js&quot;;
+import StructureRepresentation from &quot;./structure-representation.js&quot;;
+import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
+import VectorBuffer from &quot;../buffer/vector-buffer.js&quot;;
+
+
+class HelixorientRepresentation extends StructureRepresentation{
+
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;helixorient&quot;,
+
+        this.parameters = Object.assign( {
+
+            sphereDetail: true,
+            disableImpostor: true
+
+        }, this.parameters );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.colorScheme = defaults( p.colorScheme, &quot;sstruc&quot; );
+        p.radius = defaults( p.radius, 0.15 );
+        p.scale = defaults( p.scale, 1.0 );
+
+        super.init( p );
+
+    }
+
+    createData( sview ){
+
+        var bufferList = [];
+        var polymerList = [];
+
+        this.structure.eachPolymer( polymer =&gt; {
+
+            if( polymer.residueCount &lt; 4 ) return;
+            polymerList.push( polymer );
+
+            var helixorient = new Helixorient( polymer );
+            var position = helixorient.getPosition();
+            var color = helixorient.getColor( this.getColorParams() );
+            var size = helixorient.getSize( this.radius, this.scale );
+            var picking = helixorient.getPicking();
+
+            bufferList.push(
+
+                new SphereBuffer(
+                    {
+                        position: position.center,
+                        color: color.color,
+                        radius: size.size,
+                        picking: picking.picking
+                    },
+                    this.getBufferParams( {
+                        sphereDetail: this.sphereDetail,
+                        disableImpostor: this.disableImpostor,
+                        dullInterior: true
+                    } )
+                ),
+
+                new VectorBuffer(
+                    {
+                        position: position.center,
+                        vector: position.axis
+                    },
+                    this.getBufferParams( {
+                        color: &quot;skyblue&quot;,
+                        scale: 1
+                    } )
+                ),
+
+                new VectorBuffer(
+                    {
+                        position: position.center,
+                        vector: position.resdir
+                    },
+                    this.getBufferParams( {
+                        color: &quot;lightgreen&quot;,
+                        scale: 1
+                    } )
+                )
+
+            );
+
+
+        }, sview.getSelection() );
+
+        return {
+            bufferList: bufferList,
+            polymerList: polymerList
+        };
+
+    }
+
+    updateData( what, data ){
+
+        if( Debug ) Log.time( this.type + &quot; repr update&quot; );
+
+        what = what || {};
+
+        for( var i = 0, il = data.polymerList.length; i &lt; il; ++i ){
+
+            var j = i * 3;
+
+            var bufferData = {};
+            var polymer = data.polymerList[ i ];
+            var helixorient = new Helixorient( polymer );
+
+            if( what.position ){
+
+                var position = helixorient.getPosition();
+
+                bufferData.position = position.center;
+
+                data.bufferList[ j + 1 ].setAttributes( {
+                    &quot;position&quot;: position.center,
+                    &quot;vector&quot;: position.axis,
+                } );
+                data.bufferList[ j + 2 ].setAttributes( {
+                    &quot;position&quot;: position.center,
+                    &quot;vector&quot;: position.resdir,
+                } );
+
+            }
+
+            data.bufferList[ j ].setAttributes( bufferData );
+
+        }
+
+        if( Debug ) Log.timeEnd( this.type + &quot; repr update&quot; );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;helixorient&quot;, HelixorientRepresentation );
+
+
+export default HelixorientRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

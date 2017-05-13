@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,67 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/atomindex-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Atomindex Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+
+/**
+ * Color by atom index. The {@link AtomProxy.index} property is used for coloring.
+ * Each {@link ModelProxy} of a {@link Structure} is colored seperately. The
+ * `params.domain` parameter is ignored.
+ *
+ * __Name:__ _atomindex_
+ *
+ * @example
+ * stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
+ *     o.addRepresentation( &quot;ball+stick&quot;, { colorScheme: &quot;atomindex&quot; } );
+ *     o.autoView();
+ * } );
+ */
+class AtomindexColormaker extends Colormaker{
+
+    constructor( params ){
+
+        super( params );
+
+        if( !params.scale ){
+            this.scale = &quot;rainbow&quot;;
+        }
+
+        this.scalePerModel = {};
+
+        this.structure.eachModel( mp =&gt; {
+            this.domain = [ mp.atomOffset, mp.atomEnd ];
+            this.scalePerModel[ mp.index ] = this.getScale();
+        } );
+
+    }
+
+    /**
+     * get color for an atom
+     * @param  {AtomProxy} atom - atom to get color for
+     * @return {Integer} hex atom color
+     */
+    atomColor( atom ){
+        return this.scalePerModel[ atom.modelIndex ]( atom.index );
+    }
+
+}
+
+
+ColormakerRegistry.add( &quot;atomindex&quot;, AtomindexColormaker );
+
+
+export default AtomindexColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

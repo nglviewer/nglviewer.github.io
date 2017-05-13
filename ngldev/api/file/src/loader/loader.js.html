@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,107 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/loader/loader.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Loader
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { defaults } from &quot;../utils.js&quot;;
+import FileStreamer from &quot;../streamer/file-streamer.js&quot;;
+import NetworkStreamer from &quot;../streamer/network-streamer.js&quot;;
+
+
+/**
+ * Loader parameter object.
+ * @typedef {Object} LoaderParameters - loader parameters
+ * @property {String} ext - file extension, determines file type
+ * @property {Boolean} compressed - flag data as compressed
+ * @property {Boolean} binary - flag data as binary
+ * @property {String} name - set data name
+ */
+
+
+const binaryFileExtensions = [
+    &quot;mmtf&quot;, &quot;dcd&quot;, &quot;mrc&quot;, &quot;ccp4&quot;, &quot;map&quot;, &quot;dsn6&quot;, &quot;brix&quot;, &quot;dxbin&quot;
+];
+
+const jsonFileTypes = [
+    &quot;json&quot;
+];
+
+const xmlFileTypes = [
+    &quot;xml&quot;, &quot;validation&quot;
+];
+
+
+/**
+ * Loader base class
+ */
+class Loader{
+
+    /**
+     * Construct a loader object
+     * @param  {String|File|Blob} src - data source, string is interpreted as an URL
+     * @param  {LoaderParameters} params - parameters object
+     */
+    constructor( src, params ){
+
+        var p = Object.assign( {}, params );
+
+        var binary = binaryFileExtensions.includes( p.ext );
+
+        this.compressed = defaults( p.compressed, false );
+        this.binary = defaults( p.binary, binary );
+        this.name = defaults( p.name, &quot;&quot; );
+        this.ext = defaults( p.ext, &quot;&quot; );
+        this.dir = defaults( p.dir, &quot;&quot; );
+        this.path = defaults( p.path, &quot;&quot; );
+        this.protocol = defaults( p.protocol, &quot;&quot; );
+
+        this.params = params;
+
+        //
+
+        var streamerParams = {
+            compressed: this.compressed,
+            binary: this.binary,
+            json: jsonFileTypes.includes( this.ext ),
+            xml: xmlFileTypes.includes( this.ext )
+        };
+
+        if( ( typeof File !== &quot;undefined&quot; &amp;&amp; src instanceof File ) ||
+            ( typeof Blob !== &quot;undefined&quot; &amp;&amp; src instanceof Blob )
+        ){
+            this.streamer = new FileStreamer( src, streamerParams );
+        }else{
+            this.streamer = new NetworkStreamer( src, streamerParams );
+        }
+
+        if( typeof p.onProgress === &quot;function&quot; ){
+            this.streamer.onprogress = p.onprogress;
+        }
+
+    }
+
+    /**
+     * Load data
+     * @abstract
+     * @return {Promise} resolves to the loaded data {@link Object}
+     */
+    load(){
+
+        return new Promise.reject( &quot;not implemented&quot; );
+
+    }
+
+}
+
+
+export default Loader;
+</code></pre>
+
 </div>
 
 <footer class="footer">

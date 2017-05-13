@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,115 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/utils/label-factory.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Label Factory
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { AA1 } from &quot;../structure/structure-constants.js&quot;;
+
+
+function LabelFactory( type, text ){
+
+    this.type = type;
+    this.text = text || {};
+
+}
+
+LabelFactory.prototype = {
+
+    constructor: LabelFactory,
+
+    atomLabel: function( a ){
+
+        var type = this.type;
+
+        var l;
+
+        switch( type ){
+
+            case &quot;atomname&quot;:
+                l = a.atomname;
+                break;
+
+            case &quot;atomindex&quot;:
+                l = &quot;&quot; + a.index;
+                break;
+
+            case &quot;occupancy&quot;:
+                l = a.occupancy.toFixed( 2 );
+                break;
+
+            case &quot;bfactor&quot;:
+                l = a.bfactor.toFixed( 2 );
+                break;
+
+            case &quot;serial&quot;:
+                l = &quot;&quot; + a.serial;
+                break;
+
+            case &quot;element&quot;:
+                l = a.element;
+                break;
+
+            case &quot;atom&quot;:
+                l = a.atomname + &quot;|&quot; + a.index;
+                break;
+
+            case &quot;resname&quot;:
+                l = a.resname;
+                break;
+
+            case &quot;resno&quot;:
+                l = &quot;&quot; + a.resno;
+                break;
+
+            case &quot;res&quot;:
+                var resname = a.resname.toUpperCase();
+                l = ( AA1[ resname ] || resname ) + a.resno;
+                break;
+
+            case &quot;text&quot;:
+                l = this.text[ a.index ];
+                break;
+
+            // case &quot;qualified&quot;:
+            default:
+                l = a.qualifiedName();
+                break;
+
+        }
+
+        return l === undefined ? &apos;&apos; : l;
+
+    }
+
+};
+
+LabelFactory.types = {
+
+    &quot;&quot;: &quot;&quot;,
+    &quot;atomname&quot;: &quot;atom name&quot;,
+    &quot;atomindex&quot;: &quot;atom index&quot;,
+    &quot;occupancy&quot;: &quot;occupancy&quot;,
+    &quot;bfactor&quot;: &quot;b-factor&quot;,
+    &quot;serial&quot;: &quot;serial&quot;,
+    &quot;element&quot;: &quot;element&quot;,
+    &quot;atom&quot;: &quot;atom name + index&quot;,
+    &quot;resname&quot;: &quot;residue name&quot;,
+    &quot;resno&quot;: &quot;residue no&quot;,
+    &quot;res&quot;: &quot;residue name + no&quot;,
+    &quot;text&quot;: &quot;text&quot;,
+    &quot;qualified&quot;: &quot;qualified name&quot;
+
+};
+
+
+export default LabelFactory;
+</code></pre>
+
 </div>
 
 <footer class="footer">

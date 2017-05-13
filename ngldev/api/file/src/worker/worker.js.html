@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,123 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/worker/worker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Worker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Log, Debug, WorkerRegistry } from &quot;../globals.js&quot;;
+
+
+function Worker( name ){
+
+    var pending = 0;
+    var postCount = 0;
+    var onmessageDict = {};
+    var onerrorDict = {};
+
+    var blobUrl = URL.createObjectURL( WorkerRegistry.get( name ) );
+    var worker = new window.Worker( blobUrl );
+
+    WorkerRegistry.activeWorkerCount += 1;
+
+    worker.onmessage = function( event ){
+
+        pending -= 1;
+        var postId = event.data.__postId;
+
+        if( Debug ) Log.timeEnd( &quot;Worker.postMessage &quot; + name + &quot; #&quot; + postId );
+
+        if( onmessageDict[ postId ] ){
+            onmessageDict[ postId ].call( worker, event );
+        }else{
+            // Log.debug( &quot;No onmessage&quot;, postId, name );
+        }
+
+        delete onmessageDict[ postId ];
+        delete onerrorDict[ postId ];
+
+    };
+
+    worker.onerror = function( event ){
+
+        pending -= 1;
+        if( event.data ){
+            var postId = event.data.__postId;
+            if( onerrorDict[ postId ] ){
+                onerrorDict[ postId ].call( worker, event );
+            }else{
+                Log.error( &quot;Worker.onerror&quot;, postId, name, event );
+            }
+            delete onmessageDict[ postId ];
+            delete onerrorDict[ postId ];
+        }else{
+            Log.error( &quot;Worker.onerror&quot;, name, event );
+        }
+
+    };
+
+    // API
+
+    this.name = name;
+
+    this.post = function( aMessage, transferList, onmessage, onerror ){
+
+        onmessageDict[ postCount ] = onmessage;
+        onerrorDict[ postCount ] = onerror;
+
+        aMessage = aMessage || {};
+        aMessage.__name = name;
+        aMessage.__postId = postCount;
+        aMessage.__debug = Debug;
+
+        if( Debug ) Log.time( &quot;Worker.postMessage &quot; + name + &quot; #&quot; + postCount );
+
+        try{
+            worker.postMessage( aMessage, transferList );
+        }catch( error ){
+            Log.error( &quot;worker.post:&quot;, error );
+            worker.postMessage( aMessage );
+        }
+
+        pending += 1;
+        postCount += 1;
+
+        return this;
+
+    };
+
+    this.terminate = function(){
+
+        if( worker ){
+            worker.terminate();
+            URL.revokeObjectURL( blobUrl );
+            WorkerRegistry.activeWorkerCount -= 1;
+        }else{
+            Log.log( &quot;no worker to terminate&quot; );
+        }
+
+    };
+
+    Object.defineProperties( this, {
+        postCount: {
+            get: function(){ return postCount; }
+        },
+        pending: {
+            get: function(){ return pending; }
+        }
+    } );
+
+}
+
+Worker.prototype.constructor = Worker;
+
+
+export default Worker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

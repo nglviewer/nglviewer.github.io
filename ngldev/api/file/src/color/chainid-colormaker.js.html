@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,63 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/chainid-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Chainid Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+
+/**
+ * Color by chain id
+ */
+class ChainidColormaker extends Colormaker{
+
+    constructor( params ){
+
+        super( params );
+
+        if( !params.scale ){
+            this.scale = &quot;Spectral&quot;;
+        }
+
+        var chainidDictPerModel = {};
+        var scalePerModel = {};
+
+        this.structure.eachModel( function( mp ){
+            var i = 0;
+            var chainidDict = {};
+            mp.eachChain( function( cp ){
+                if( chainidDict[ cp.chainid ] === undefined ){
+                    chainidDict[ cp.chainid ] = i;
+                    i += 1;
+                }
+            } );
+            this.domain = [ 0, i - 1 ];
+            chainidDictPerModel[ mp.index ] = chainidDict;
+            scalePerModel[ mp.index ] = this.getScale();
+        }.bind( this ) );
+
+        this.atomColor = function( a ){
+            var chainidDict = chainidDictPerModel[ a.modelIndex ];
+            return scalePerModel[ a.modelIndex ]( chainidDict[ a.chainid ] );
+        };
+
+    }
+
+}
+
+
+ColormakerRegistry.add( &quot;chainid&quot;, ChainidColormaker );
+
+
+export default ChainidColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

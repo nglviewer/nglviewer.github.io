@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,76 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/volume-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Volume Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Vector3 } from &quot;../../lib/three.es6.js&quot;;
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+
+/**
+ * Color by volume position
+ */
+class VolumeColormaker extends Colormaker{
+
+    constructor( params ){
+
+        super( params );
+
+        var volume = this.volume;
+
+        if( volume &amp;&amp; volume.inverseMatrix ){
+
+            var valueScale = this.getScale();
+            var inverseMatrix = volume.inverseMatrix;
+            var data = volume.data;
+            var nx = volume.nx;
+            var ny = volume.ny;
+            var vec = new Vector3();
+
+            this.positionColor = function( coords ){
+
+                vec.copy( coords );
+                vec.applyMatrix4( inverseMatrix );
+                vec.round();
+
+                var index = ( ( ( ( vec.z * ny ) + vec.y ) * nx ) + vec.x );
+
+                return valueScale( data[ index ] );
+
+            };
+
+        }else{
+
+            var colorValue = this.value;
+            this.positionColor = function(){ return colorValue; };
+
+        }
+
+    }
+
+    /**
+     * return the color for coordinates in space
+     * @param  {Vector3} coords - xyz coordinates
+     * @return {Integer} hex coords color
+     */
+    positionColor( /*coords*/ ){}
+
+}
+
+
+ColormakerRegistry.add( &quot;volume&quot;, VolumeColormaker );
+
+
+export default VolumeColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

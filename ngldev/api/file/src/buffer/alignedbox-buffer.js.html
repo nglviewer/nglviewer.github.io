@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,53 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/buffer/alignedbox-buffer.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Aligned Box Buffer
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import MappedBuffer from &quot;./mapped-buffer.js&quot;;
+
+
+const mapping = new Float32Array( [
+    -1.0,  1.0, -1.0,
+    -1.0, -1.0, -1.0,
+     1.0,  1.0, -1.0,
+     1.0,  1.0,  1.0,
+     1.0, -1.0, -1.0,
+     1.0, -1.0,  1.0
+] );
+
+const mappingIndices = new Uint16Array( [
+    0, 1, 2,
+    1, 4, 2,
+    2, 4, 3,
+    4, 5, 3
+] );
+
+
+/**
+ * Aligned box buffer. Draws boxes where one side is always screen-space aligned.
+ * Used to render cylinder imposters.
+ * @interface
+ */
+class AlignedBoxBuffer extends MappedBuffer{
+
+    get mapping (){ return mapping; }
+    get mappingIndices (){ return mappingIndices; }
+    get mappingIndicesSize (){ return 12; }
+    get mappingType (){ return &quot;v3&quot;; }
+    get mappingSize (){ return 6; }
+    get mappingItemSize (){ return 3; }
+
+}
+
+
+export default AlignedBoxBuffer;
+</code></pre>
+
 </div>
 
 <footer class="footer">

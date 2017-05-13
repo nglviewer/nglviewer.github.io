@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,79 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/validation-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Validation Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import StructureRepresentation from &quot;./structure-representation.js&quot;;
+import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
+
+
+/**
+ * Validation representation
+ */
+class ValidationRepresentation extends StructureRepresentation{
+
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;validation&quot;;
+
+        this.parameters = Object.assign( {
+
+        }, this.parameters, {
+            radiusType: null,
+            radius: null,
+            scale: null
+        } );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        const p = params || {};
+        p.colorValue = defaults( p.colorValue, &quot;#f0027f&quot; );
+
+        super.init( p );
+
+    }
+
+    createData( sview ){
+
+        if( !sview.validation ) return;
+
+        const clashData = sview.validation.getClashData( {
+            structure: sview,
+            color: this.colorValue
+        } );
+
+        const cylinderBuffer = new CylinderBuffer(
+            clashData, this.getBufferParams( { openEnded: false } )
+        );
+
+        return {
+            bufferList: [ cylinderBuffer ]
+        };
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;validation&quot;, ValidationRepresentation );
+
+
+export default ValidationRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

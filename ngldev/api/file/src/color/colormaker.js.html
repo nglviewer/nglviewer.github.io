@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,191 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Color } from &quot;../../lib/three.es6.js&quot;;
+
+import { defaults } from &quot;../utils.js&quot;;
+
+import chroma from &quot;../../lib/chroma.es6.js&quot;;
+
+
+/**
+ * Colormaker parameter object.
+ * @typedef {Object} ColormakerParameters - colormaker parameters
+ * @property {String|Array} [scale] - color scale, either a string for a
+ *                                    predefined scale or an array of
+ *                                    colors to be used as the scale
+ * @property {String} [mode] - color mode, one of rgb, hsv, hsl, hsi, lab, hcl
+ * @property {Integer[]} [colorDomain] - scale value range
+ * @property {Integer} colorDomain.0 - min value
+ * @property {Integer} colorDomain.1 - max value
+ * @property {Color|String|Integer} [value] - color value
+ * @property {Structure} [structure] - structure object
+ * @property {Volume} [volume] - volume object
+ * @property {Surface} [surface] - surface object
+ */
+
+
+/**
+ * Class for making colors.
+ * @interface
+ */
+class Colormaker{
+
+    /**
+     * Create a colormaker instance
+     * @param  {ColormakerParameters} params - colormaker parameter
+     */
+    constructor( params ){
+
+        var p = params || {};
+
+        this.scale = defaults( p.scale, &quot;uniform&quot; );
+        this.mode = defaults( p.mode, &quot;hcl&quot; );
+        this.domain = defaults( p.domain, [ 0, 1 ] );
+        this.value = new Color( defaults( p.value, 0xFFFFFF ) ).getHex();
+        this.reverse = defaults( p.reverse, false );
+
+        this.structure = p.structure;
+        this.volume = p.volume;
+        this.surface = p.surface;
+
+        if( this.structure ){
+            this.atomProxy = this.structure.getAtomProxy();
+        }
+
+    }
+
+    getScale( params ){
+
+        var p = params || {};
+
+        var scale = defaults( p.scale, this.scale );
+        if( scale === &quot;rainbow&quot; ){
+            scale = [ &quot;red&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;blue&quot; ];
+        }else if( scale === &quot;rwb&quot; ){
+            scale = [ &quot;red&quot;, &quot;white&quot;, &quot;blue&quot; ];
+        }
+
+        var domain = defaults( p.domain, this.domain );
+        if( this.reverse ){
+            domain.reverse();
+        }
+
+        return chroma
+            .scale( scale )
+            .mode( defaults( p.mode, this.mode ) )
+            .domain( domain )
+            .out( &quot;num&quot; );
+
+    }
+
+    /**
+     * safe a color to an array
+     * @param  {Integer} color - hex color value
+     * @param  {Array|TypedArray} array - destination
+     * @param  {Integer} offset - index into the array
+     * @return {Array} the destination array
+     */
+    colorToArray( color, array, offset ){
+
+        if( array === undefined ) array = [];
+        if( offset === undefined ) offset = 0;
+
+        array[ offset + 0 ] = ( color &gt;&gt; 16 &amp; 255 ) / 255;
+        array[ offset + 1 ] = ( color &gt;&gt; 8 &amp; 255 ) / 255;
+        array[ offset + 2 ] = ( color &amp; 255 ) / 255;
+
+        return array;
+
+    }
+
+    /**
+     * safe a atom color to an array
+     * @param  {AtomProxy} atom - atom to get color for
+     * @param  {Array|TypedArray} array - destination
+     * @param  {Integer} offset - index into the array
+     * @return {Array} the destination array
+     */
+    atomColorToArray( atom, array, offset ){
+
+        return this.colorToArray(
+            this.atomColor( atom ), array, offset
+        );
+
+    }
+
+    /**
+     * return the color for an bond
+     * @param  {BondProxy} bond - bond to get color for
+     * @param  {Boolean} fromTo - whether to use the first or second atom of the bond
+     * @return {Integer} hex bond color
+     */
+    bondColor( bond, fromTo ){
+
+        this.atomProxy.index = fromTo ? bond.atomIndex1 : bond.atomIndex2;
+        return this.atomColor( this.atomProxy );
+
+    }
+
+    /**
+     * safe a bond color to an array
+     * @param  {BondProxy} bond - bond to get color for
+     * @param  {Boolean} fromTo - whether to use the first or second atom of the bond
+     * @param  {Array|TypedArray} array - destination
+     * @param  {Integer} offset - index into the array
+     * @return {Array} the destination array
+     */
+    bondColorToArray( bond, fromTo, array, offset ){
+
+        return this.colorToArray(
+            this.bondColor( bond, fromTo ), array, offset
+        );
+
+    }
+
+    /**
+     * safe a volume cell color to an array
+     * @param  {Integer} index - volume cell index
+     * @param  {Array|TypedArray} array - destination
+     * @param  {Integer} offset - index into the array
+     * @return {Array} the destination array
+     */
+    volumeColorToArray( index, array, offset ){
+
+        return this.colorToArray(
+            this.volumeColor( index ), array, offset
+        );
+
+    }
+
+    /**
+     * safe a color for coordinates in space to an array
+     * @param  {Vector3} coords - xyz coordinates
+     * @param  {Array|TypedArray} array - destination
+     * @param  {Integer} offset - index into the array
+     * @return {Array} the destination array
+     */
+    positionColorToArray( coords, array, offset ){
+
+        return this.colorToArray(
+            this.positionColor( coords ), array, offset
+        );
+
+    }
+
+}
+
+
+export default Colormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

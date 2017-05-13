@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,237 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/geometry/contact-utils.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Contact Utils
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Vector3 } from &quot;../../lib/three.es6.js&quot;;
+
+import { radToDeg } from &quot;../math/math-utils.js&quot;;
+import Contact from &quot;./contact.js&quot;;
+import Selection from &quot;../selection.js&quot;;
+
+
+function polarContacts( structure, maxDistance, maxAngle ){
+
+    maxDistance = maxDistance || 3.5;
+    maxAngle = maxAngle || 40;
+
+    var donorSelection = new Selection(
+        &quot;( ARG and ( .NE or .NH1 or .NH2 ) ) or &quot; +
+        &quot;( ASP and .ND2 ) or &quot; +
+        &quot;( GLN and .NE2 ) or &quot; +
+        &quot;( HIS and ( .ND1 or .NE2 ) ) or &quot; +
+        &quot;( LYS and .NZ ) or &quot; +
+        &quot;( SER and .OG ) or &quot; +
+        &quot;( THR and .OG1 ) or &quot; +
+        &quot;( TRP and .NE1 ) or &quot; +
+        &quot;( TYR and .OH ) or &quot; +
+        &quot;( PROTEIN and .N )&quot;
+    );
+
+    var acceptorSelection = new Selection(
+        &quot;( ASN and .OD1 ) or &quot; +
+        &quot;( ASP and ( OD1 or .OD2 ) ) or &quot; +
+        &quot;( GLN and .OE1 ) or &quot; +
+        &quot;( GLU and ( .OE1 or .OE2 ) ) or &quot; +
+        &quot;( HIS and ( .ND1 or .NE2 ) ) or &quot; +
+        &quot;( SER and .OG ) or &quot; +
+        &quot;( THR and .OG1 ) or &quot; +
+        &quot;( TYR and .OH ) or &quot; +
+        &quot;( PROTEIN and .O )&quot;
+    );
+
+    var donorView = structure.getView( donorSelection );
+    var acceptorView = structure.getView( acceptorSelection );
+
+    var contact = new Contact( donorView, acceptorView );
+    var data = contact.within( maxDistance );
+    var bondStore = data.bondStore;
+
+    var ap1 = structure.getAtomProxy();
+    var ap2 = structure.getAtomProxy();
+    var atomCA = structure.getAtomProxy();
+    var atomC = structure.getAtomProxy();
+    var rp = structure.getResidueProxy();
+    var rpPrev = structure.getResidueProxy();
+    var v1 = new Vector3();
+    var v2 = new Vector3();
+
+    var checkAngle = function( atom1, atom2, oName, cName ){
+
+        var atomO, atomN;
+
+        if( atom1.atomname === oName ){
+            atomO = atom1;
+            atomN = atom2;
+        }else{
+            atomO = atom2;
+            atomN = atom1;
+        }
+
+        rp.index = atomO.residueIndex;
+        var atomC = rp.getAtomIndexByName( cName );
+
+        v1.subVectors( atomC, atomO );
+        v2.subVectors( atomC, atomN );
+
+        return radToDeg( v1.angleTo( v2 ) ) &lt; maxAngle;
+
+    };
+
+    for( var i = 0, il = bondStore.count; i &lt; il; ++i ){
+
+        ap1.index = bondStore.atomIndex1[ i ];
+        ap2.index = bondStore.atomIndex2[ i ];
+
+        if( ( ap1.atomname === &quot;O&quot; &amp;&amp; ap2.atomname === &quot;N&quot; ) ||
+            ( ap1.atomname === &quot;N&quot; &amp;&amp; ap2.atomname === &quot;O&quot; )
+        ){
+
+            // ignore backbone to backbone contacts
+            data.bondSet.flip_unsafe( i );
+            continue;
+
+        }else if( ap1.atomname === &quot;N&quot; || ap2.atomname === &quot;N&quot; ){
+
+            var atomN, atomX;
+
+            if( ap1.atomname === &quot;N&quot; ){
+                atomN = ap1;
+                atomX = ap2;
+            }else{
+                atomN = ap2;
+                atomX = ap1;
+            }
+
+            rp.index = atomN.residueIndex;
+            atomCA.index = rp.getAtomIndexByName( &quot;CA&quot; );
+            if( atomCA.index === undefined ) continue;
+
+            var prevRes = rp.getPreviousConnectedResidue( rpPrev );
+            if( prevRes === undefined ) continue;
+
+            atomC.index = prevRes.getAtomIndexByName( &quot;C&quot; );
+            if( atomC.index === undefined ) continue;
+
+            v1.subVectors( atomN, atomC );
+            v2.subVectors( atomN, atomCA );
+            v1.add( v2 ).multiplyScalar( 0.5 );
+            v2.subVectors( atomX, atomN );
+
+            if( radToDeg( v1.angleTo( v2 ) ) &gt; maxAngle ){
+                data.bondSet.flip_unsafe( i );
+            }
+
+        }else if(
+            ( ap1.atomname === &quot;OH&quot; &amp;&amp; ap1.resname === &quot;TYR&quot; ) ||
+            ( ap2.atomname === &quot;OH&quot; &amp;&amp; ap2.resname === &quot;TYR&quot; )
+        ){
+
+            if( !checkAngle( ap1, ap2, &quot;OH&quot;, &quot;CZ&quot; ) ){
+                data.bondSet.flip_unsafe( i );
+            }
+
+        }
+
+    }
+
+    return {
+        atomSet: data.atomSet,
+        bondSet: data.bondSet,
+        bondStore: data.bondStore
+    };
+
+}
+
+
+function polarBackboneContacts( structure, maxDistance, maxAngle ){
+
+    maxDistance = maxDistance || 3.5;
+    maxAngle = maxAngle || 40;
+
+    var donorSelection = new Selection(
+        &quot;( PROTEIN and .N )&quot;
+    );
+
+    var acceptorSelection = new Selection(
+        &quot;( PROTEIN and .O )&quot;
+    );
+
+    var donorView = structure.getView( donorSelection );
+    var acceptorView = structure.getView( acceptorSelection );
+
+    var contact = new Contact( donorView, acceptorView );
+    var data = contact.within( maxDistance );
+    var bondStore = data.bondStore;
+
+    var ap1 = structure.getAtomProxy();
+    var ap2 = structure.getAtomProxy();
+    var atomCA = structure.getAtomProxy();
+    var atomC = structure.getAtomProxy();
+    var rp = structure.getResidueProxy();
+    var rpPrev = structure.getResidueProxy();
+    var v1 = new Vector3();
+    var v2 = new Vector3();
+
+    for( var i = 0, il = bondStore.count; i &lt; il; ++i ){
+
+        ap1.index = bondStore.atomIndex1[ i ];
+        ap2.index = bondStore.atomIndex2[ i ];
+
+        var atomN, atomO;
+
+        if( ap1.atomname === &quot;N&quot; ){
+            atomN = ap1;
+            atomO = ap2;
+        }else{
+            atomN = ap2;
+            atomO = ap1;
+        }
+
+        rp.index = atomN.residueIndex;
+
+        atomCA.index = rp.getAtomIndexByName( &quot;CA&quot; );
+        if( atomCA.index === undefined ) continue;
+
+        var prevRes = rp.getPreviousConnectedResidue( rpPrev );
+        if( prevRes === undefined ) continue;
+
+        atomC.index = prevRes.getAtomIndexByName( &quot;C&quot; );
+        if( atomC.index === undefined ) continue;
+
+        v1.subVectors( atomN, atomC );
+        v2.subVectors( atomN, atomCA );
+        v1.add( v2 ).multiplyScalar( 0.5 );
+        v2.subVectors( atomO, atomN );
+
+        // Log.log( radToDeg( v1.angleTo( v2 ) ) );
+
+        if( radToDeg( v1.angleTo( v2 ) ) &gt; maxAngle ){
+            data.bondSet.flip_unsafe( i );
+        }
+
+    }
+
+    return {
+        atomSet: data.atomSet,
+        bondSet: data.bondSet,
+        bondStore: data.bondStore
+    };
+
+}
+
+
+export {
+	polarContacts,
+	polarBackboneContacts
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

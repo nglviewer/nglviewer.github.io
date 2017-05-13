@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,85 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/component/script-component.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Script Component
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ComponentRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import Component from &quot;./component.js&quot;;
+
+
+/**
+ * Component wrapping a {@link Script} object
+ */
+class ScriptComponent extends Component{
+
+    /**
+     * @param {Stage} stage - stage object the component belongs to
+     * @param {Script} script - script object to wrap
+     * @param {ComponentParameters} params - component parameters
+     */
+    constructor( stage, script, params ){
+
+        var p = params || {};
+        p.name = defaults( p.name, script.name );
+
+        super( stage, p );
+
+        this.script = script;
+        this.status = &quot;loaded&quot;;
+
+        this.script.signals.nameChanged.add( value =&gt; {
+            this.setName( value );
+        } );
+
+    }
+
+    get type(){ return &quot;script&quot;; }
+
+    addRepresentation(){}
+
+    removeRepresentation(){}
+
+    run(){
+
+        this.setStatus( &quot;running&quot; );
+
+        this.script.call( this.stage ).then( () =&gt; {
+            this.setStatus( &quot;finished&quot; );
+        } );
+
+        this.setStatus( &quot;called&quot; );
+
+    }
+
+    dispose(){
+
+        // TODO dispose script
+        this.signals.disposed.dispatch();
+
+    }
+
+    setVisibility(){}
+
+    getCenter(){}
+
+    getZoom(){}
+
+    getBox(){}
+
+}
+
+ComponentRegistry.add( &quot;script&quot;, ScriptComponent );
+
+
+export default ScriptComponent;
+</code></pre>
+
 </div>
 
 <footer class="footer">

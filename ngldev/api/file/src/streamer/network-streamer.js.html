@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,132 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/streamer/network-streamer.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Network Streamer
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Streamer from &quot;./streamer.js&quot;;
+
+
+function NetworkStreamer( url, params ){
+
+    Streamer.call( this, url, params );
+
+}
+
+NetworkStreamer.prototype = Object.assign( Object.create(
+
+    Streamer.prototype ), {
+
+    constructor: NetworkStreamer,
+
+    type: &quot;network&quot;,
+
+    __srcName: &quot;url&quot;,
+
+    _read: function( callback ){
+
+        var url = this.src;
+
+        if( typeof importScripts === &apos;function&apos; ){
+
+            // FIXME
+            // adjust relative path when inside a web worker
+            if( url.substr( 0, 3 ) === &quot;../&quot; ) url = &quot;../&quot; + url;
+
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open( &quot;GET&quot;, url, true );
+
+        //
+
+        xhr.addEventListener( &apos;load&apos;, function () {
+
+            if( xhr.status === 200 || xhr.status === 304 ||
+                // when requesting from local file system
+                // the status in Google Chrome/Chromium is 0
+                xhr.status === 0
+            ){
+
+                try {
+                    callback( xhr.response );
+                } catch ( e ) {
+                    this.onerror( e );
+                }
+
+            } else {
+
+                if( typeof this.onerror === &quot;function&quot; ){
+
+                    this.onerror( xhr.status );
+
+                }
+
+                throw &quot;NetworkStreamer._read: status code &quot; + xhr.status;
+
+            }
+
+        }.bind( this ), false );
+
+        //
+
+        // if( typeof this.onprogress === &quot;function&quot; ){
+
+        //     xhr.addEventListener( &apos;progress&apos;, function ( event ) {
+
+        //         this.onprogress( event );
+
+        //     }.bind( this ), false );
+
+        // }
+
+        //
+
+        if( typeof this.onerror === &quot;function&quot; ){
+
+            xhr.addEventListener( &apos;error&apos;, function ( event ) {
+
+                this.onerror( event );
+
+            }.bind( this ), false );
+
+        }
+
+        //
+
+        if( this.isBinary() ){
+            xhr.responseType = &quot;arraybuffer&quot;;
+        }else if( this.json ){
+            xhr.responseType = &quot;json&quot;;
+        }else if( this.xml ){
+            xhr.responseType = &quot;document&quot;;
+        }else{
+            xhr.responseType = &quot;text&quot;;
+        }
+        // xhr.crossOrigin = true;
+
+        xhr.send( null );
+
+        // try {
+        //     xhr.send( null );
+        // }catch( e ){
+        //     if( typeof this.onerror === &quot;function&quot; ){
+        //         this.onerror( e.message );
+        //     }
+        // }
+
+    }
+
+} );
+
+
+export default NetworkStreamer;
+</code></pre>
+
 </div>
 
 <footer class="footer">

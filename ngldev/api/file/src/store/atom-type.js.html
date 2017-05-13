@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,53 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/store/atom-type.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Atom Type
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { guessElement } from &quot;../structure/structure-utils.js&quot;;
+import { VdwRadii, CovalentRadii } from &quot;../structure/structure-constants.js&quot;;
+
+
+/**
+ * Atom type class
+ * @class
+ * @param {Structure} structure - the structure object
+ * @param {String} atomname - the name of the atom
+ * @param {String} element - the chemical element
+ */
+function AtomType( structure, atomname, element ){
+
+    this.structure = structure;
+
+    element = element || guessElement( atomname );
+
+    this.atomname = atomname;
+    this.element = element;
+    this.vdw = VdwRadii[ element ];
+    this.covalent = CovalentRadii[ element ];
+
+}
+
+AtomType.prototype = {
+
+    constructor: AtomType,
+    type: &quot;AtomType&quot;,
+
+    atomname: undefined,
+    element: undefined,
+    vdw: undefined,
+    covalent: undefined,
+
+};
+
+
+export default AtomType;
+</code></pre>
+
 </div>
 
 <footer class="footer">

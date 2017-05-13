@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,126 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/utils/parse-xml.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Parse Xml
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+// https://github.com/segmentio/xml-parser
+// MIT license
+
+
+const reStrip = /^[&apos;&quot;]|[&apos;&quot;]$/g;
+const reTag = /^&lt;([\w-:.]+)\s*/;
+const reContent = /^([^&lt;]*)/;
+const reAttr = /([\w:-]+)\s*=\s*(&quot;[^&quot;]*&quot;|&apos;[^&apos;]*&apos;|\w+)\s*/;
+
+
+function strip( val ){
+    return val.replace( reStrip, &apos;&apos; );
+}
+
+
+function parseXml( xml ){
+
+    // trim and strip comments
+    xml = xml.trim().replace( /&lt;!--[\s\S]*?--&gt;/g, &apos;&apos; );
+
+    return document();
+
+    function document(){
+        return {
+            declaration: declaration(),
+            root: tag()
+        };
+    }
+
+    function declaration(){
+        const m = match( /^&lt;\?xml\s*/ );
+        if ( !m ) return;
+        // tag
+        const node = {
+            attributes: {}
+        };
+        // attributes
+        while ( !( eos() || is( &apos;?&gt;&apos; ) ) ) {
+            const attr = attribute();
+            if ( !attr ) return node;
+            node.attributes[attr.name] = attr.value;
+        }
+        match( /\?&gt;\s*/ );
+        return node;
+    }
+
+    function tag(){
+        const m = match( reTag );
+        if ( !m ) return;
+        // name
+        const node = {
+            name: m[1],
+            attributes: {},
+            children: []
+        };
+        // attributes
+        while ( !( eos() || is( &apos;&gt;&apos; ) || is( &apos;?&gt;&apos; ) || is( &apos;/&gt;&apos; ) ) ) {
+            var attr = attribute();
+            if ( !attr ) return node;
+            node.attributes[attr.name] = attr.value;
+        }
+        // self closing tag
+        if ( match( /^\s*\/&gt;\s*/ ) ) {
+            return node;
+        }
+        match( /\??&gt;\s*/ );
+        // content
+        node.content = content();
+        // children
+        let child;
+        while ( ( child = tag() ) ) {
+            node.children.push( child );
+        }
+        // closing
+        match( /^&lt;\/[\w-:.]+&gt;\s*/ );
+        return node;
+    }
+
+    function content(){
+        const m = match( reContent );
+        if ( m ) return m[1];
+        return &apos;&apos;;
+    }
+
+    function attribute(){
+        const m = match( reAttr );
+        if ( !m ) return;
+        return { name: m[1], value: strip( m[2] ) };
+    }
+
+    function match( re ){
+        const m = xml.match( re );
+        if ( !m ) return;
+        xml = xml.slice( m[0].length );
+        return m;
+    }
+
+    function eos(){
+        return 0 === xml.length;
+    }
+
+    function is( prefix ){
+        return 0 === xml.indexOf( prefix );
+    }
+
+}
+
+
+export {
+    parseXml
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

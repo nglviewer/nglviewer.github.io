@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,60 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/parser/dxbin-parser.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Dxbin Parser
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Debug, Log, ParserRegistry } from &quot;../globals.js&quot;;
+import { uint8ToLines } from &quot;../utils.js&quot;;
+import DxParser from &quot;./dx-parser.js&quot;;
+
+
+class DxbinParser extends DxParser{
+
+    get type (){ return &quot;dxbin&quot;; }
+
+    _parse(){
+
+        // https://github.com/Electrostatics/apbs-pdb2pqr/issues/216
+
+        if( Debug ) Log.time( &quot;DxbinParser._parse &quot; + this.name );
+
+        var bin = this.streamer.data;
+        if( bin instanceof Uint8Array ){
+            bin = bin.buffer;
+        }
+
+        var headerLines = uint8ToLines( new Uint8Array( bin, 0, 1000 ) );
+        var headerInfo = this.parseHeaderLines( headerLines );
+        var header = this.volume.header;
+        var headerByteCount = headerInfo.headerByteCount;
+
+        var size = header.nx * header.ny * header.nz;
+        var dv = new DataView( bin );
+        var data = new Float32Array( size );
+
+        for( var i = 0; i &lt; size; ++i ){
+            data[ i ] = dv.getFloat64( i * 8 + headerByteCount, true );
+        }
+
+        this.volume.setData( data, header.nz, header.ny, header.nx );
+
+        if( Debug ) Log.timeEnd( &quot;DxbinParser._parse &quot; + this.name );
+
+    }
+
+}
+
+ParserRegistry.add( &quot;dxbin&quot;, DxbinParser );
+
+
+export default DxbinParser;
+</code></pre>
+
 </div>
 
 <footer class="footer">

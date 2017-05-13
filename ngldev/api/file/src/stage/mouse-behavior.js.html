@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,78 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/stage/mouse-behavior.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Mouse Behavior
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RightMouseButton } from &quot;../constants.js&quot;;
+import { almostIdentity } from &quot;../math/math-utils.js&quot;;
+
+
+class MouseBehavior{
+
+    constructor( stage/*, params*/ ){
+
+        this.stage = stage;
+        this.mouse = stage.mouseObserver;
+        this.controls = stage.trackballControls;
+
+        this.stage.signals.hovered.add( this._onHover, this );
+        this.mouse.signals.scrolled.add( this._onScroll, this );
+        this.mouse.signals.dragged.add( this._onDrag, this );
+
+    }
+
+    _onHover( pickingProxy ){
+
+        if( pickingProxy &amp;&amp; this.mouse.down.equals( this.mouse.position ) ){
+            this.stage.transformComponent = pickingProxy.component;
+        }
+
+    }
+
+    _onScroll( delta ){
+
+        if( this.mouse.shiftKey ){
+            const sp = this.stage.getParameters();
+            const focus = sp.clipNear * 2;
+            const sign = Math.sign( delta );
+            const step = sign * almostIdentity( ( 100 - focus ) / 10, 5, 0.2 );
+            this.stage.setFocus( focus + step );
+        }else if( this.mouse.ctrlKey ){
+            const sp = this.stage.getParameters();
+            this.stage.setParameters( { clipNear: sp.clipNear + delta / 10 } );
+        }else{
+            this.controls.zoom( delta );
+        }
+
+    }
+
+    _onDrag( x, y ){
+
+        if( this.mouse.which === RightMouseButton ){
+            this.controls.pan( x, y );
+        }else{
+            this.controls.rotate( x, y );
+        }
+
+    }
+
+    dispose(){
+        this.stage.signals.hovered.remove( this._onHover, this );
+        this.mouse.signals.scrolled.remove( this._onScroll, this );
+        this.mouse.signals.dragged.remove( this._onDrag, this );
+    }
+
+}
+
+
+export default MouseBehavior;
+</code></pre>
+
 </div>
 
 <footer class="footer">

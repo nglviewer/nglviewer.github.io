@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,92 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/shader/shader-utils.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Shader Utils
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ShaderChunk } from &quot;../../lib/three.es6.js&quot;;
+
+import &quot;./chunk/dull_interior_fragment.glsl&quot;;
+import &quot;./chunk/fog_fragment.glsl&quot;;
+import &quot;./chunk/matrix_scale.glsl&quot;;
+import &quot;./chunk/nearclip_vertex.glsl&quot;;
+import &quot;./chunk/nearclip_fragment.glsl&quot;;
+import &quot;./chunk/opaque_back_fragment.glsl&quot;;
+import &quot;./chunk/radiusclip_vertex.glsl&quot;;
+import &quot;./chunk/radiusclip_fragment.glsl&quot;;
+import &quot;./chunk/unpack_color.glsl&quot;;
+
+import { ShaderRegistry } from &quot;../globals.js&quot;;
+
+
+function getDefines( defines ){
+
+    if( defines === undefined ) return &quot;&quot;;
+
+    var lines = [];
+
+    for ( var name in defines ) {
+
+        var value = defines[ name ];
+
+        if ( value === false ) continue;
+
+        lines.push( &apos;#define &apos; + name + &apos; &apos; + value );
+
+    }
+
+    return lines.join( &apos;\n&apos; ) + &quot;\n&quot;;
+
+}
+
+
+var reInclude = /^(?!\/\/)\s*#include\s+(\S+)/gmi;
+var shaderCache = {};
+
+function getShader( name, defines ){
+
+    defines = defines || {};
+
+    var hash = name + &quot;|&quot;;
+    for( var key in defines ){
+        hash += key + &quot;:&quot; + defines[ key ];
+    }
+
+    if( !shaderCache[ hash ] ){
+
+        var definesText = getDefines( defines );
+
+        var shaderText = ShaderRegistry.get( &apos;shader/&apos; + name );
+        if( !shaderText ){
+            throw &quot;empty shader, &apos;&quot; + name + &quot;&apos;&quot;;
+        }
+        shaderText = shaderText.replace( reInclude, function( match, p1 ){
+
+            var path = &apos;shader/chunk/&apos; + p1 + &apos;.glsl&apos;;
+            var chunk = ShaderRegistry.get( path ) || ShaderChunk[ p1 ];
+
+            return chunk ? chunk : &quot;&quot;;
+
+        } );
+
+        shaderCache[ hash ] = definesText + shaderText;
+
+    }
+
+    return shaderCache[ hash ];
+
+}
+
+
+export {
+	getShader
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

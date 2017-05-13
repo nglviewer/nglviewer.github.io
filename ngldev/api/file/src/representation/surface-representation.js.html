@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,387 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/surface-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Surface Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Vector3, Box3 } from &quot;../../lib/three.es6.js&quot;;
+
+import { defaults } from &quot;../utils.js&quot;;
+import Representation from &quot;./representation.js&quot;;
+import Volume from &quot;../surface/volume.js&quot;;
+import SurfaceBuffer from &quot;../buffer/surface-buffer.js&quot;;
+import DoubleSidedBuffer from &quot;../buffer/doublesided-buffer&quot;;
+import ContourBuffer from &quot;../buffer/contour-buffer.js&quot;;
+
+
+/**
+ * Surface representation parameter object.
+ * @typedef {Object} SurfaceRepresentationParameters - surface representation parameters
+ * @mixes RepresentationParameters
+ *
+ * @property {String} isolevelType - Meaning of the isolevel value. Either *value* for the literal value or *sigma* as a factor of the sigma of the data. For volume data only.
+ * @property {Float} isolevel - The value at which to create the isosurface. For volume data only.
+ * @property {Integer} smooth - How many iterations of laplacian smoothing after surface triangulation. For volume data only.
+ * @property {Boolean} background - Render the surface in the background, unlit.
+ * @property {Boolean} opaqueBack - Render the back-faces (where normals point away from the camera) of the surface opaque, ignoring of the transparency parameter.
+ * @property {Integer} boxSize - Size of the box to triangulate volume data in. Set to zero to triangulate the whole volume. For volume data only.
+ * @property {Boolean} useWorker - Weather or not to triangulate the volume asynchronously in a Web Worker. For volume data only.
+ */
+
+
+/**
+ * Surface representation
+ */
+class SurfaceRepresentation extends Representation{
+
+    /**
+     * Create Surface representation object
+     * @param {Surface|Volume} surface - the surface or volume to be represented
+     * @param {Viewer} viewer - a viewer object
+     * @param {SurfaceRepresentationParameters} params - surface representation parameters
+     */
+    constructor( surface, viewer, params ){
+
+        super( surface, viewer, params );
+
+        this.type = &quot;surface&quot;;
+
+        this.parameters = Object.assign( {
+
+            isolevelType: {
+                type: &quot;select&quot;, options: {
+                    &quot;value&quot;: &quot;value&quot;, &quot;sigma&quot;: &quot;sigma&quot;
+                }
+            },
+            isolevel: {
+                type: &quot;number&quot;, precision: 2, max: 1000, min: -1000
+            },
+            smooth: {
+                type: &quot;integer&quot;, precision: 1, max: 10, min: 0
+            },
+            background: {
+                type: &quot;boolean&quot;, rebuild: true  // FIXME
+            },
+            opaqueBack: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            boxSize: {
+                type: &quot;integer&quot;, precision: 1, max: 100, min: 0
+            },
+            colorVolume: {
+                type: &quot;hidden&quot;
+            },
+            contour: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            useWorker: {
+                type: &quot;boolean&quot;, rebuild: true
+            }
+
+        }, this.parameters );
+
+        if( surface instanceof Volume ){
+            this.surface = undefined;
+            this.volume = surface;
+        }else{
+            this.surface = surface;
+            this.volume = undefined;
+        }
+
+        this.boxCenter = new Vector3();
+        this.__boxCenter = new Vector3();
+        this.box = new Box3();
+        this.__box = new Box3();
+
+        this._position = new Vector3();
+        this.setBox = function setBox(){
+            this._position.copy( viewer.translationGroup.position ).negate();
+            if( !this._position.equals( this.boxCenter ) ){
+                this.setParameters( { &quot;boxCenter&quot;: this._position } );
+            }
+        };
+
+        this.viewer.signals.ticked.add( this.setBox, this );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.colorScheme = defaults( p.colorScheme, &quot;uniform&quot; );
+        p.colorValue = defaults( p.colorValue, 0xDDDDDD );
+
+        this.isolevelType  = defaults( p.isolevelType, &quot;sigma&quot; );
+        this.isolevel = defaults( p.isolevel, 2.0 );
+        this.smooth = defaults( p.smooth, 0 );
+        this.background = defaults( p.background, false );
+        this.opaqueBack = defaults( p.opaqueBack, true );
+        this.boxSize = defaults( p.boxSize, 0 );
+        this.colorVolume = defaults( p.colorVolume, undefined );
+        this.contour = defaults( p.contour, false );
+        this.useWorker = defaults( p.useWorker, true );
+
+        super.init( p );
+
+        this.build();
+
+    }
+
+    attach( callback ){
+
+        this.bufferList.forEach( buffer =&gt; {
+            this.viewer.add( buffer );
+        } );
+
+        this.setVisibility( this.visible );
+
+        callback();
+
+    }
+
+    prepare( callback ){
+
+        if( this.volume ){
+
+            var isolevel;
+
+            if( this.isolevelType === &quot;sigma&quot; ){
+                isolevel = this.volume.getValueForSigma( this.isolevel );
+            }else{
+                isolevel = this.isolevel;
+            }
+
+            if( !this.surface ||
+                this.__isolevel !== isolevel ||
+                this.__smooth !== this.smooth ||
+                this.__contour !== this.contour ||
+                this.__boxSize !== this.boxSize ||
+                ( this.boxSize &gt; 0 &amp;&amp;
+                    !this.__boxCenter.equals( this.boxCenter ) )
+            ){
+                this.__isolevel = isolevel;
+                this.__smooth = this.smooth;
+                this.__contour = this.contour;
+                this.__boxSize = this.boxSize;
+                this.__boxCenter.copy( this.boxCenter );
+                this.__box.copy( this.box );
+
+                var onSurfaceFinish = function( surface ){
+                    this.surface = surface;
+                    callback();
+                }.bind( this );
+
+                if( this.useWorker ){
+                    this.volume.getSurfaceWorker(
+                        isolevel, this.smooth, this.boxCenter, this.boxSize,
+                        this.contour, onSurfaceFinish
+                    );
+                }else{
+                    onSurfaceFinish(
+                        this.volume.getSurface(
+                            isolevel, this.smooth, this.boxCenter, this.boxSize,
+                            this.contour
+                        )
+                    );
+                }
+            }else{
+                callback();
+            }
+
+        }else{
+            callback();
+        }
+
+    }
+
+    getSurfaceData(){
+
+        return {
+            position: this.surface.getPosition(),
+            color: this.surface.getColor( this.getColorParams() ),
+            index: this.surface.getIndex(),
+            normal: this.surface.getNormal(),
+            picking: this.surface.getPicking()
+        };
+
+    }
+
+    create(){
+
+        var sd = this.getSurfaceData();
+
+        var buffer;
+
+        if( this.contour ){
+
+            buffer = new ContourBuffer(
+                sd, this.getBufferParams( {
+                    wireframe: false
+            } ) );
+
+        } else {
+
+            var surfaceBuffer = new SurfaceBuffer(
+                sd, this.getBufferParams( {
+                    background: this.background,
+                    opaqueBack: this.opaqueBack,
+                    dullInterior: false
+                } ) );
+
+            buffer = new DoubleSidedBuffer( surfaceBuffer );
+
+        }
+
+        this.bufferList.push( buffer );
+
+    }
+
+    update( what ){
+
+        if( this.bufferList.length === 0 ) return;
+
+        what = what || {};
+
+        var surfaceData = {};
+
+        if( what.position ){
+            surfaceData.position = this.surface.getPosition();
+        }
+
+        if( what.color ){
+            surfaceData.color = this.surface.getColor(
+                this.getColorParams()
+            );
+        }
+
+        if( what.index ){
+            surfaceData.index = this.surface.getIndex();
+        }
+
+        if( what.normal ){
+            surfaceData.normal = this.surface.getNormal();
+        }
+
+        this.bufferList.forEach( function( buffer ){
+            buffer.setAttributes( surfaceData );
+        } );
+
+    }
+
+    /**
+     * Set representation parameters
+     * @alias SurfaceRepresentation#setParameters
+     * @param {SurfaceRepresentationParameters} params - surface parameter object
+     * @param {Object} [what] - buffer data attributes to be updated,
+     *                        note that this needs to be implemented in the
+     *                        derived classes. Generally it allows more
+     *                        fine-grained control over updating than
+     *                        forcing a rebuild.
+     * @param {Boolean} what.position - update position data
+     * @param {Boolean} what.color - update color data
+     * @param {Boolean} [rebuild] - whether or not to rebuild the representation
+     * @return {SurfaceRepresentation} this object
+     */
+    setParameters( params, what, rebuild ){
+
+        if( params &amp;&amp; params.isolevelType !== undefined &amp;&amp;
+            this.volume
+        ){
+
+            if( this.isolevelType === &quot;value&quot; &amp;&amp;
+                params.isolevelType === &quot;sigma&quot;
+            ){
+
+                this.isolevel = this.volume.getSigmaForValue(
+                    this.isolevel
+                );
+
+            }else if( this.isolevelType === &quot;sigma&quot; &amp;&amp;
+                params.isolevelType === &quot;value&quot;
+            ){
+
+                this.isolevel = this.volume.getValueForSigma(
+                    this.isolevel
+                );
+
+            }
+
+            this.isolevelType = params.isolevelType;
+
+        }
+
+        if( params &amp;&amp; params.boxCenter ){
+            this.boxCenter.copy( params.boxCenter );
+            delete params.boxCenter;
+        }
+
+        // Forbid wireframe &amp;&amp; contour as in molsurface
+        if( params &amp;&amp; params.wireframe &amp;&amp; (
+            params.contour || ( params.contour === undefined &amp;&amp; this.contour )
+        ) ){
+            params.wireframe = false;
+        }
+
+        super.setParameters( params, what, rebuild );
+
+        if( this.volume ){
+            this.volume.getBox( this.boxCenter, this.boxSize, this.box );
+        }
+
+        if( params &amp;&amp; params.colorVolume !== undefined ){
+            what.color = true;
+        }
+
+        if( this.surface &amp;&amp; (
+                params.isolevel !== undefined ||
+                params.smooth !== undefined ||
+                params.boxSize !== undefined ||
+                ( this.boxSize &gt; 0 &amp;&amp;
+                    !this.__box.equals( this.box ) )
+            )
+        ){
+            this.build( {
+                &quot;position&quot;: true,
+                &quot;color&quot;: true,
+                &quot;index&quot;: true,
+                &quot;normal&quot;: !this.contour
+            } );
+        }
+
+        return this;
+
+    }
+
+    getColorParams(){
+
+        var p = super.getColorParams();
+
+        p.volume = this.colorVolume;
+
+        return p;
+
+    }
+
+    dispose(){
+
+        this.viewer.signals.ticked.remove( this.setBox, this );
+
+        super.dispose();
+
+    }
+
+}
+
+
+export default SurfaceRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,40 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/streamer/binary-streamer.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Binary Streamer
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Streamer from &quot;./streamer.js&quot;;
+
+
+function BinaryStreamer( bin, params ){
+
+    if( bin instanceof ArrayBuffer ) bin = new Uint8Array( bin );
+
+    Streamer.call( this, bin, params );
+
+}
+
+BinaryStreamer.prototype = Object.assign( Object.create(
+
+    Streamer.prototype ), {
+
+    constructor: BinaryStreamer,
+
+    type: &quot;binary&quot;,
+
+    __srcName: &quot;bin&quot;,
+
+} );
+
+
+export default BinaryStreamer;
+</code></pre>
+
 </div>
 
 <footer class="footer">

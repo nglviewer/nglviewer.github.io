@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,46 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/worker/worker-registry.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Worker Registry
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { makeWorkerBlob } from &quot;./worker-utils.js&quot;;
+
+
+class WorkerRegistry{
+
+    constructor(){
+        this.activeWorkerCount = 0;
+
+        this._funcDict = {};
+        this._depsDict = {};
+        this._blobDict = {};
+    }
+
+    add( name, func, deps ){
+        this._funcDict[ name ] = func;
+        this._depsDict[ name ] = deps;
+    }
+
+    get( name ){
+        if( !this._blobDict[ name ] ){
+            this._blobDict[ name ] = makeWorkerBlob(
+                this._funcDict[ name ], this._depsDict[ name ]
+            );
+        }
+        return this._blobDict[ name ];
+    }
+
+}
+
+
+export default WorkerRegistry;
+</code></pre>
+
 </div>
 
 <footer class="footer">

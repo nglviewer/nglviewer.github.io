@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,132 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/point-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Point Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import StructureRepresentation from &quot;./structure-representation.js&quot;;
+import PointBuffer from &quot;../buffer/point-buffer.js&quot;;
+
+
+class PointRepresentation extends StructureRepresentation{
+
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;point&quot;;
+
+        this.parameters = Object.assign( {
+
+            pointSize: {
+                type: &quot;number&quot;, precision: 1, max: 100, min: 0, buffer: true
+            },
+            sizeAttenuation: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            sortParticles: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            useTexture: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            alphaTest: {
+                type: &quot;range&quot;, step: 0.001, max: 1, min: 0, buffer: true
+            },
+            forceTransparent: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            edgeBleach: {
+                type: &quot;range&quot;, step: 0.001, max: 1, min: 0, buffer: true
+            },
+
+        }, this.parameters, {
+
+            flatShaded: null,
+            wireframe: null,
+            linewidth: null,
+
+            roughness: null,
+            metalness: null
+
+        } );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+
+        this.pointSize = defaults( p.pointSize, 1 );
+        this.sizeAttenuation = defaults( p.sizeAttenuation, true );
+        this.sortParticles = defaults( p.sortParticles, false );
+        this.useTexture = defaults( p.useTexture, false );
+        this.alphaTest = defaults( p.alphaTest, 0.5 );
+        this.forceTransparent = defaults( p.forceTransparent, false );
+        this.edgeBleach = defaults( p.edgeBleach, 0.0 );
+
+        super.init( this, p );
+
+    }
+
+    createData( sview ){
+
+        var what = { position: true, color: true, picking: true };
+        var atomData = sview.getAtomData( this.getAtomParams( what ) );
+
+        var pointBuffer = new PointBuffer(
+            atomData,
+            this.getBufferParams( {
+                pointSize: this.pointSize,
+                sizeAttenuation: this.sizeAttenuation,
+                sortParticles: this.sortParticles,
+                useTexture: this.useTexture,
+                alphaTest: this.alphaTest,
+                forceTransparent: this.forceTransparent,
+                edgeBleach: this.edgeBleach
+            } )
+        );
+
+        return {
+            bufferList: [ pointBuffer ]
+        };
+
+    }
+
+    updateData( what, data ){
+
+        var atomData = data.sview.getAtomData( this.getAtomParams( what ) );
+        var pointData = {};
+
+        if( !what || what.position ){
+            pointData.position = atomData.position;
+        }
+
+        if( !what || what.color ){
+            pointData.color = atomData.color;
+        }
+
+        data.bufferList[ 0 ].setAttributes( pointData );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;point&quot;, PointRepresentation );
+
+
+export default PointRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

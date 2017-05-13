@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,39 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/utils/gzip-decompressor.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Gzip Decompressor
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { DecompressorRegistry } from &quot;../globals.js&quot;;
+import { ungzip } from &quot;../../lib/pako_inflate.es6.js&quot;;
+
+
+function gzipDecompress( data ){
+
+    var decompressedData;
+
+    if( data instanceof ArrayBuffer ){
+        data = new Uint8Array( data );
+    }
+
+    try{
+        decompressedData = ungzip( data );
+    }catch( e ){
+        decompressedData = data;  // assume it is already uncompressed
+    }
+
+    return decompressedData;
+
+}
+
+
+DecompressorRegistry.add( &quot;gz&quot;, gzipDecompress );
+</code></pre>
+
 </div>
 
 <footer class="footer">

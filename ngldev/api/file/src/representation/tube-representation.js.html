@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,63 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/tube-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Tube Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import CartoonRepresentation from &quot;./cartoon-representation.js&quot;;
+
+
+class TubeRepresentation extends CartoonRepresentation{
+
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;tube&quot;;
+
+        this.parameters = Object.assign(
+            {}, this.parameters, { aspectRatio: null }
+        );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.aspectRatio = 1.0;
+        p.scale = defaults( p.scale, 2.0 );
+
+        if( p.quality === &quot;low&quot; ){
+            this.radialSegments = 5;
+        }
+
+        super.init( p );
+
+    }
+
+    getSplineParams( /*params*/ ){
+
+        return super.getSplineParams( {
+            directional: false
+        } );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;tube&quot;, TubeRepresentation );
+
+
+export default TubeRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

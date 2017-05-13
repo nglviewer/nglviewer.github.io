@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,494 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/structure/structure-constants.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Structure Constants
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+// entity types
+var UnknownEntity = 0;
+var PolymerEntity = 1;
+var NonPolymerEntity = 2;
+var MacrolideEntity = 3;
+var WaterEntity = 4;
+
+
+// molecule types
+var UnknownType = 0;
+var WaterType = 1;
+var IonType = 2;
+var ProteinType = 3;
+var RnaType = 4;
+var DnaType = 5;
+var SaccharideType = 6;
+
+
+// backbone types
+var UnknownBackboneType = 0;
+var ProteinBackboneType = 1;
+var RnaBackboneType = 2;
+var DnaBackboneType = 3;
+var CgProteinBackboneType = 4;
+var CgRnaBackboneType = 5;
+var CgDnaBackboneType = 6;
+
+
+// chemical component types
+var ChemCompProtein = [
+    &quot;D-BETA-PEPTIDE, C-GAMMA LINKING&quot;, &quot;D-GAMMA-PEPTIDE, C-DELTA LINKING&quot;,
+    &quot;D-PEPTIDE COOH CARBOXY TERMINUS&quot;, &quot;D-PEPTIDE NH3 AMINO TERMINUS&quot;, &quot;D-PEPTIDE LINKING&quot;,
+    &quot;L-BETA-PEPTIDE, C-GAMMA LINKING&quot;, &quot;L-GAMMA-PEPTIDE, C-DELTA LINKING&quot;,
+    &quot;L-PEPTIDE COOH CARBOXY TERMINUS&quot;, &quot;L-PEPTIDE NH3 AMINO TERMINUS&quot;, &quot;L-PEPTIDE LINKING&quot;,
+    &quot;PEPTIDE LINKING&quot;, &quot;PEPTIDE-LIKE&quot;
+];
+var ChemCompRna = [
+    &quot;RNA OH 3 PRIME TERMINUS&quot;, &quot;RNA OH 5 PRIME TERMINUS&quot;, &quot;RNA LINKING&quot;
+];
+var ChemCompDna = [
+    &quot;DNA OH 3 PRIME TERMINUS&quot;, &quot;DNA OH 5 PRIME TERMINUS&quot;, &quot;DNA LINKING&quot;,
+    &quot;L-DNA LINKING&quot;, &quot;L-RNA LINKING&quot;
+];
+var ChemCompSaccharide = [
+    &quot;D-SACCHARIDE&quot;, &quot;D-SACCHARIDE 1,4 AND 1,4 LINKING&quot;, &quot;D-SACCHARIDE 1,4 AND 1,6 LINKING&quot;,
+    &quot;L-SACCHARIDE&quot;, &quot;L-SACCHARIDE 1,4 AND 1,4 LINKING&quot;, &quot;L-SACCHARIDE 1,4 AND 1,6 LINKING&quot;,
+    &quot;SACCHARIDE&quot;
+];
+var ChemCompOther = [
+    &quot;OTHER&quot;
+];
+var ChemCompNonPolymer = [
+    &quot;NON-POLYMER&quot;
+];
+var ChemCompHetero = ChemCompNonPolymer.concat( ChemCompOther, ChemCompSaccharide );
+
+
+// http://dx.doi.org/10.1021/jp8111556 (or 2.0)
+var VdwRadii = {
+    &quot;H&quot;: 1.1, &quot;HE&quot;: 1.4, &quot;LI&quot;: 1.81, &quot;BE&quot;: 1.53, &quot;B&quot;: 1.92, &quot;C&quot;: 1.7,
+    &quot;N&quot;: 1.55, &quot;O&quot;: 1.52, &quot;F&quot;: 1.47, &quot;NE&quot;: 1.54, &quot;NA&quot;: 2.27, &quot;MG&quot;: 1.73, &quot;AL&quot;: 1.84,
+    &quot;SI&quot;: 2.1, &quot;P&quot;: 1.8, &quot;S&quot;: 1.8, &quot;CL&quot;: 1.75, &quot;AR&quot;: 1.88, &quot;K&quot;: 2.75, &quot;CA&quot;: 2.31,
+    &quot;SC&quot;: 2.3, &quot;TI&quot;: 2.15, &quot;V&quot;: 2.05, &quot;CR&quot;: 2.05, &quot;MN&quot;: 2.05, &quot;FE&quot;: 2.05, &quot;CO&quot;: 2.0,
+    &quot;NI&quot;: 2.0, &quot;CU&quot;: 2.0, &quot;ZN&quot;: 2.1, &quot;GA&quot;: 1.87, &quot;GE&quot;: 2.11, &quot;AS&quot;: 1.85, &quot;SE&quot;: 1.9,
+    &quot;BR&quot;: 1.83, &quot;KR&quot;: 2.02, &quot;RB&quot;: 3.03, &quot;SR&quot;: 2.49, &quot;Y&quot;: 2.4, &quot;ZR&quot;: 2.3, &quot;NB&quot;: 2.15,
+    &quot;MO&quot;: 2.1, &quot;TC&quot;: 2.05, &quot;RU&quot;: 2.05, &quot;RH&quot;: 2.0, &quot;PD&quot;: 2.05, &quot;AG&quot;: 2.1, &quot;CD&quot;: 2.2,
+    &quot;IN&quot;: 2.2, &quot;SN&quot;: 1.93, &quot;SB&quot;: 2.17, &quot;TE&quot;: 2.06, &quot;I&quot;: 1.98, &quot;XE&quot;: 2.16, &quot;CS&quot;: 3.43,
+    &quot;BA&quot;: 2.68, &quot;LA&quot;: 2.5, &quot;CE&quot;: 2.48, &quot;PR&quot;: 2.47, &quot;ND&quot;: 2.45, &quot;PM&quot;: 2.43, &quot;SM&quot;: 2.42,
+    &quot;EU&quot;: 2.4, &quot;GD&quot;: 2.38, &quot;TB&quot;: 2.37, &quot;DY&quot;: 2.35, &quot;HO&quot;: 2.33, &quot;ER&quot;: 2.32, &quot;TM&quot;: 2.3,
+    &quot;YB&quot;: 2.28, &quot;LU&quot;: 2.27, &quot;HF&quot;: 2.25, &quot;TA&quot;: 2.2, &quot;W&quot;: 2.1, &quot;RE&quot;: 2.05, &quot;OS&quot;: 2.0,
+    &quot;IR&quot;: 2.0, &quot;PT&quot;: 2.05, &quot;AU&quot;: 2.1, &quot;HG&quot;: 2.05, &quot;TL&quot;: 1.96, &quot;PB&quot;: 2.02, &quot;BI&quot;: 2.07,
+    &quot;PO&quot;: 1.97, &quot;AT&quot;: 2.02, &quot;RN&quot;: 2.2, &quot;FR&quot;: 3.48, &quot;RA&quot;: 2.83, &quot;AC&quot;: 2.0, &quot;TH&quot;: 2.4,
+    &quot;PA&quot;: 2.0, &quot;U&quot;: 2.3, &quot;NP&quot;: 2.0, &quot;PU&quot;: 2.0, &quot;AM&quot;: 2.0, &quot;CM&quot;: 2.0, &quot;BK&quot;: 2.0,
+    &quot;CF&quot;: 2.0, &quot;ES&quot;: 2.0, &quot;FM&quot;: 2.0, &quot;MD&quot;: 2.0, &quot;NO&quot;: 2.0, &quot;LR&quot;: 2.0, &quot;RF&quot;: 2.0,
+    &quot;DB&quot;: 2.0, &quot;SG&quot;: 2.0, &quot;BH&quot;: 2.0, &quot;HS&quot;: 2.0, &quot;MT&quot;: 2.0, &quot;DS&quot;: 2.0, &quot;RG&quot;: 2.0,
+    &quot;CN&quot;: 2.0, &quot;UUT&quot;: 2.0, &quot;FL&quot;: 2.0, &quot;UUP&quot;: 2.0, &quot;LV&quot;: 2.0, &quot;UUH&quot;: 2.0
+};
+var DefaultVdwRadius = 2.0;
+
+
+// Peter Rose (peter.rose@rcsb.org), private communication, average accross PDB
+var ResidueRadii = {
+    &quot;2QY&quot;: 6.58, &quot;CY0&quot;: 11.98, &quot;2QZ&quot;: 2.52, &quot;CY1&quot;: 6.59, &quot;HHK&quot;: 5.11, &quot;CXM&quot;: 4.69, &quot;HHI&quot;: 4.58, &quot;CY4&quot;: 4.57,
+    &quot;S12&quot;: 18.57, &quot;CY3&quot;: 2.79, &quot;C5C&quot;: 5.35, &quot;PFX&quot;: 11.84, &quot;2R3&quot;: 6.94, &quot;2R1&quot;: 3.78, &quot;ILX&quot;: 4.99, &quot;32S&quot;: 5.68,
+    &quot;BTK&quot;: 8.59, &quot;32T&quot;: 5.72, &quot;FAK&quot;: 9.8, &quot;B27&quot;: 2.78, &quot;ILM&quot;: 3.84, &quot;C4R&quot;: 5.63, &quot;32L&quot;: 6.75, &quot;SYS&quot;: 3.01,
+    &quot;1MH&quot;: 5.04, &quot;ILE&quot;: 3.65, &quot;YNM&quot;: 6.39, &quot;2RX&quot;: 4.91, &quot;B3A&quot;: 2.48, &quot;GEE&quot;: 4.76, &quot;7MN&quot;: 7.34, &quot;B3E&quot;: 5.4,
+    &quot;ARG&quot;: 6.33, &quot;200&quot;: 6.89, &quot;HIP&quot;: 5.47, &quot;HIA&quot;: 4.64, &quot;B3K&quot;: 5.89, &quot;HIC&quot;: 5.76, &quot;B3L&quot;: 4.96, &quot;B3M&quot;: 5.07,
+    &quot;ARM&quot;: 6.86, &quot;ARO&quot;: 7.35, &quot;AR4&quot;: 8.42, &quot;PG1&quot;: 10.67, &quot;YOF&quot;: 6.44, &quot;IML&quot;: 3.74, &quot;SXE&quot;: 6.65, &quot;HIQ&quot;: 7.98,
+    &quot;PFF&quot;: 6.31, &quot;HIS&quot;: 4.52, &quot;0TD&quot;: 3.62, &quot;C3Y&quot;: 5.24, &quot;1OP&quot;: 11.55, &quot;02Y&quot;: 4.77, &quot;02V&quot;: 4.83, &quot;ASB&quot;: 5.59,
+    &quot;30V&quot;: 8.53, &quot;S2P&quot;: 4.81, &quot;ASP&quot;: 3.55, &quot;ASN&quot;: 3.54, &quot;2OR&quot;: 6.91, &quot;QMM&quot;: 6.13, &quot;2P0&quot;: 8.52, &quot;ASL&quot;: 5.36,
+    &quot;HFA&quot;: 5.14, &quot;5PG&quot;: 5.69, &quot;B3X&quot;: 4.38, &quot;AS9&quot;: 4.1, &quot;ARV&quot;: 7.59, &quot;B3U&quot;: 6.06, &quot;S2C&quot;: 7.54, &quot;B3T&quot;: 3.34,
+    &quot;175&quot;: 5.64, &quot;GFT&quot;: 8.18, &quot;HG7&quot;: 6.8, &quot;B3Q&quot;: 4.48, &quot;ASA&quot;: 3.64, &quot;02K&quot;: 2.94, &quot;B3Y&quot;: 7.45, &quot;PHD&quot;: 5.35,
+    &quot;C6C&quot;: 6.42, &quot;BUC&quot;: 5.8, &quot;HGL&quot;: 8.07, &quot;PHE&quot;: 5.06, &quot;03Y&quot;: 2.6, &quot;PHA&quot;: 5.11, &quot;OCY&quot;: 5.0, &quot;4PH&quot;: 6.79,
+    &quot;5OH&quot;: 4.7, &quot;31Q&quot;: 10.46, &quot;BTR&quot;: 7.98, &quot;3PX&quot;: 4.7, &quot;1PA&quot;: 8.07, &quot;ASX&quot;: 3.54, &quot;IOR&quot;: 7.23, &quot;03E&quot;: 3.38,
+    &quot;PHL&quot;: 5.17, &quot;KWS&quot;: 5.09, &quot;PHI&quot;: 7.12, &quot;NAL&quot;: 7.22, &quot;S1H&quot;: 19.21, &quot;2ML&quot;: 3.86, &quot;2MR&quot;: 7.35, &quot;GHG&quot;: 4.83,
+    &quot;TYY&quot;: 6.54, &quot;2MT&quot;: 3.67, &quot;56A&quot;: 13.01, &quot;SVA&quot;: 5.46, &quot;TYX&quot;: 8.31, &quot;TYS&quot;: 8.59, &quot;TYR&quot;: 6.38, &quot;TYQ&quot;: 6.43,
+    &quot;HLU&quot;: 3.99, &quot;MYK&quot;: 19.47, &quot;TYO&quot;: 7.71, &quot;HLX&quot;: 4.98, &quot;TYN&quot;: 9.87, &quot;TYJ&quot;: 6.25, &quot;TYI&quot;: 6.49, &quot;LYH&quot;: 5.13,
+    &quot;LYF&quot;: 12.19, &quot;SUN&quot;: 6.73, &quot;LYR&quot;: 18.28, &quot;TYB&quot;: 6.46, &quot;11W&quot;: 14.39, &quot;LYS&quot;: 5.54, &quot;LYN&quot;: 4.8, &quot;11Q&quot;: 4.85,
+    &quot;LYO&quot;: 4.71, &quot;LYZ&quot;: 1.76, &quot;TXY&quot;: 6.44, &quot;MYN&quot;: 4.71, &quot;TY5&quot;: 10.6, &quot;HMR&quot;: 5.09, &quot;01W&quot;: 8.55, &quot;LYX&quot;: 13.36,
+    &quot;TY8&quot;: 7.22, &quot;TY2&quot;: 6.49, &quot;KYN&quot;: 6.18, &quot;KYQ&quot;: 9.75, &quot;CZZ&quot;: 5.14, &quot;IIL&quot;: 3.81, &quot;HNC&quot;: 10.41, &quot;OIC&quot;: 4.62,
+    &quot;LVN&quot;: 2.89, &quot;QIL&quot;: 3.84, &quot;JJL&quot;: 8.3, &quot;VAH&quot;: 3.88, &quot;JJJ&quot;: 7.5, &quot;JJK&quot;: 7.43, &quot;VAD&quot;: 2.56, &quot;CYW&quot;: 4.65,
+    &quot;0QL&quot;: 5.72, &quot;143&quot;: 8.22, &quot;SVX&quot;: 7.04, &quot;CYJ&quot;: 11.64, &quot;SVY&quot;: 7.1, &quot;SVZ&quot;: 6.6, &quot;CYG&quot;: 8.03, &quot;CYF&quot;: 13.54,
+    &quot;SVV&quot;: 5.09, &quot;GL3&quot;: 2.72, &quot;8SP&quot;: 14.26, &quot;CYS&quot;: 2.78, &quot;004&quot;: 4.33, &quot;CYR&quot;: 10.33, &quot;PLJ&quot;: 3.71, &quot;EXY&quot;: 7.37,
+    &quot;HL2&quot;: 3.75, &quot;A5N&quot;: 5.21, &quot;CYQ&quot;: 5.67, &quot;CZ2&quot;: 5.16, &quot;LWY&quot;: 4.12, &quot;PM3&quot;: 8.78, &quot;OHS&quot;: 6.98, &quot;OHI&quot;: 5.35,
+    &quot;3TY&quot;: 8.42, &quot;CYD&quot;: 8.55, &quot;DYS&quot;: 7.87, &quot;DAH&quot;: 6.47, &quot;4IK&quot;: 11.81, &quot;3EG&quot;: 3.66, &quot;AYA&quot;: 3.65, &quot;4IN&quot;: 6.31,
+    &quot;DAB&quot;: 3.48, &quot;4HT&quot;: 6.03, &quot;RGL&quot;: 7.03, &quot;DAM&quot;: 2.49, &quot;NFA&quot;: 5.04, &quot;WFP&quot;: 6.07, &quot;2JC&quot;: 2.97, &quot;HAR&quot;: 7.55,
+    &quot;2JG&quot;: 5.67, &quot;MH6&quot;: 1.72, &quot;2JF&quot;: 9.13, &quot;3FG&quot;: 4.96, &quot;MGN&quot;: 4.84, &quot;AZH&quot;: 5.36, &quot;AZK&quot;: 6.03, &quot;ZBZ&quot;: 7.79,
+    &quot;TBG&quot;: 2.58, &quot;VAL&quot;: 2.51, &quot;MGG&quot;: 7.34, &quot;AZS&quot;: 5.61, &quot;FHL&quot;: 9.75, &quot;2JH&quot;: 4.56, &quot;IEL&quot;: 7.07, &quot;FHO&quot;: 6.75,
+    &quot;DA2&quot;: 7.79, &quot;FH7&quot;: 6.99, &quot;ME0&quot;: 4.52, &quot;3GL&quot;: 4.84, &quot;MDO&quot;: 5.03, &quot;AZY&quot;: 7.37, &quot;A8E&quot;: 3.76, &quot;ZCL&quot;: 6.71,
+    &quot;MDH&quot;: 2.58, &quot;LA2&quot;: 14.07, &quot;4FW&quot;: 6.1, &quot;YCM&quot;: 5.32, &quot;MDF&quot;: 4.95, &quot;YCP&quot;: 3.01, &quot;TEF&quot;: 8.63, &quot;FGP&quot;: 4.34,
+    &quot;UF0&quot;: 19.72, &quot;XCN&quot;: 4.57, &quot;FGL&quot;: 2.56, &quot;MF3&quot;: 6.37, &quot;MEQ&quot;: 5.13, &quot;LAA&quot;: 3.23, &quot;IGL&quot;: 5.52, &quot;MET&quot;: 4.49,
+    &quot;NIY&quot;: 6.81, &quot;QCS&quot;: 5.18, &quot;TCQ&quot;: 8.56, &quot;MEN&quot;: 4.33, &quot;4HL&quot;: 8.79, &quot;MEA&quot;: 4.95, &quot;EFC&quot;: 5.28, &quot;LAL&quot;: 2.41,
+    &quot;2HF&quot;: 5.52, &quot;KBE&quot;: 5.64, &quot;OCS&quot;: 3.94, &quot;CAF&quot;: 5.46, &quot;NC1&quot;: 11.4, &quot;NBQ&quot;: 9.82, &quot;CAB&quot;: 4.19, &quot;MBQ&quot;: 9.55,
+    &quot;193&quot;: 7.38, &quot;192&quot;: 2.44, &quot;0WZ&quot;: 7.61, &quot;CAS&quot;: 5.35, &quot;NB8&quot;: 11.98, &quot;OBS&quot;: 11.71, &quot;1AC&quot;: 2.42, &quot;PCA&quot;: 3.48,
+    &quot;MCL&quot;: 9.73, &quot;LBY&quot;: 7.75, &quot;GAU&quot;: 4.67, &quot;PBF&quot;: 9.75, &quot;MCG&quot;: 6.46, &quot;DDE&quot;: 6.86, &quot;19W&quot;: 3.94, &quot;MD5&quot;: 9.33,
+    &quot;MD6&quot;: 6.44, &quot;MD3&quot;: 8.41, &quot;MCS&quot;: 7.56, &quot;OBF&quot;: 3.64, &quot;UAL&quot;: 4.68, &quot;PAT&quot;: 6.05, &quot;IAM&quot;: 8.88, &quot;PAQ&quot;: 8.77,
+    &quot;FDL&quot;: 9.49, &quot;NCB&quot;: 3.45, &quot;LCK&quot;: 9.81, &quot;DDZ&quot;: 2.52, &quot;2FM&quot;: 5.54, &quot;IAR&quot;: 6.77, &quot;OAS&quot;: 4.8, &quot;HBN&quot;: 8.8,
+    &quot;TA4&quot;: 5.55, &quot;1C3&quot;: 7.43, &quot;ECX&quot;: 5.51, &quot;PF5&quot;: 6.28, &quot;RE3&quot;: 5.29, &quot;FCL&quot;: 6.25, &quot;ECC&quot;: 4.79, &quot;LDH&quot;: 7.06,
+    &quot;NCY&quot;: 2.91, &quot;CCS&quot;: 4.58, &quot;PEC&quot;: 6.54, &quot;2CO&quot;: 4.45, &quot;LE1&quot;: 2.72, &quot;HCM&quot;: 5.53, &quot;07O&quot;: 8.05, &quot;HCL&quot;: 4.96,
+    &quot;NEP&quot;: 6.94, &quot;PE1&quot;: 8.01, &quot;LEF&quot;: 4.37, &quot;FC0&quot;: 5.18, &quot;LED&quot;: 4.34, &quot;HCS&quot;: 4.09, &quot;DBU&quot;: 2.49, &quot;RE0&quot;: 5.53,
+    &quot;LEN&quot;: 3.82, &quot;1E3&quot;: 8.71, &quot;BB9&quot;: 2.56, &quot;BB8&quot;: 5.14, &quot;PCS&quot;: 5.05, &quot;BB7&quot;: 4.56, &quot;BB6&quot;: 2.62, &quot;LEU&quot;: 3.83,
+    &quot;DBZ&quot;: 7.08, &quot;LET&quot;: 11.29, &quot;DBY&quot;: 6.46, &quot;ICY&quot;: 7.76, &quot;MAA&quot;: 2.4, &quot;CGA&quot;: 7.91, &quot;5CS&quot;: 8.34, &quot;UGY&quot;: 3.7,
+    &quot;LGY&quot;: 11.71, &quot;N10&quot;: 8.96, &quot;AAR&quot;: 6.39, &quot;FT6&quot;: 7.5, &quot;MOD&quot;: 12.62, &quot;5CW&quot;: 7.21, &quot;PVH&quot;: 4.58, &quot;BBC&quot;: 6.42,
+    &quot;YYA&quot;: 7.3, &quot;O12&quot;: 14.08, &quot;NOT&quot;: 7.15, &quot;KGC&quot;: 9.88, &quot;MP4&quot;: 5.86, &quot;0CS&quot;: 4.07, &quot;MP8&quot;: 3.75, &quot;VLL&quot;: 2.54,
+    &quot;VLM&quot;: 2.51, &quot;BCS&quot;: 8.03, &quot;MNL&quot;: 4.9, &quot;AA4&quot;: 4.47, &quot;SAC&quot;: 3.49, &quot;BCX&quot;: 2.99, &quot;3CF&quot;: 6.47, &quot;SAH&quot;: 11.7,
+    &quot;NNH&quot;: 6.86, &quot;CGU&quot;: 4.71, &quot;SIB&quot;: 12.41, &quot;TLY&quot;: 8.78, &quot;SIC&quot;: 4.81, &quot;VMS&quot;: 8.82, &quot;TMD&quot;: 6.76, &quot;MMO&quot;: 6.53,
+    &quot;PXU&quot;: 2.46, &quot;4AW&quot;: 6.22, &quot;OTH&quot;: 3.6, &quot;DLS&quot;: 6.84, &quot;MME&quot;: 4.99, &quot;DM0&quot;: 6.99, &quot;0FL&quot;: 2.76, &quot;SBL&quot;: 8.96,
+    &quot;CDV&quot;: 3.72, &quot;OTY&quot;: 6.51, &quot;PYA&quot;: 7.75, &quot;2AS&quot;: 3.57, &quot;DMH&quot;: 4.92, &quot;ELY&quot;: 7.42, &quot;GVL&quot;: 9.6, &quot;FVA&quot;: 2.9,
+    &quot;SAR&quot;: 2.48, &quot;4BF&quot;: 6.92, &quot;EME&quot;: 4.69, &quot;CDE&quot;: 2.51, &quot;3AR&quot;: 7.86, &quot;3AH&quot;: 9.11, &quot;AC5&quot;: 2.44, &quot;FTR&quot;: 6.08,
+    &quot;MLL&quot;: 3.76, &quot;NPH&quot;: 11.66, &quot;NPI&quot;: 6.9, &quot;DMT&quot;: 6.67, &quot;PYX&quot;: 11.3, &quot;MLE&quot;: 3.87, &quot;PYL&quot;: 9.67, &quot;ZZU&quot;: 6.94,
+    &quot;H5M&quot;: 3.61, &quot;SCH&quot;: 4.46, &quot;DMK&quot;: 3.52, &quot;FTY&quot;: 9.07, &quot;2AG&quot;: 3.7, &quot;ABA&quot;: 2.55, &quot;ZZJ&quot;: 2.44, &quot;MLZ&quot;: 6.8,
+    &quot;MLY&quot;: 6.88, &quot;KCX&quot;: 7.28, &quot;ZZD&quot;: 8.16, &quot;3A5&quot;: 5.37, &quot;LHC&quot;: 7.75, &quot;9AT&quot;: 2.47, &quot;OZT&quot;: 3.4, &quot;THO&quot;: 2.62,
+    &quot;THR&quot;: 2.5, &quot;DFI&quot;: 3.93, &quot;MKD&quot;: 6.42, &quot;4CY&quot;: 4.6, &quot;SDP&quot;: 6.07, &quot;DFO&quot;: 3.94, &quot;0A0&quot;: 3.45, &quot;4DB&quot;: 9.73,
+    &quot;ML3&quot;: 6.26, &quot;BG1&quot;: 8.02, &quot;SD4&quot;: 4.57, &quot;THC&quot;: 3.8, &quot;SCS&quot;: 5.48, &quot;TH5&quot;: 4.65, &quot;BFD&quot;: 5.33, &quot;AEI&quot;: 6.34,
+    &quot;TH6&quot;: 2.85, &quot;SCY&quot;: 4.53, &quot;TIS&quot;: 4.81, &quot;SEE&quot;: 4.53, &quot;BHD&quot;: 3.48, &quot;SEB&quot;: 8.18, &quot;SEC&quot;: 2.96, &quot;SEP&quot;: 4.8,
+    &quot;CLH&quot;: 7.13, &quot;TIH&quot;: 5.02, &quot;CLG&quot;: 13.62, &quot;SEN&quot;: 6.43, &quot;XXA&quot;: 7.34, &quot;SEL&quot;: 2.46, &quot;SE7&quot;: 4.19, &quot;4CF&quot;: 7.72,
+    &quot;G8M&quot;: 3.57, &quot;BH2&quot;: 3.51, &quot;UN2&quot;: 3.22, &quot;VR0&quot;: 10.51, &quot;MK8&quot;: 4.76, &quot;DHA&quot;: 2.32, &quot;LMQ&quot;: 4.69, &quot;SFE&quot;: 5.01,
+    &quot;AHB&quot;: 3.47, &quot;OXX&quot;: 7.05, &quot;BIF&quot;: 9.63, &quot;IZO&quot;: 4.47, &quot;NMM&quot;: 8.25, &quot;0BN&quot;: 7.0, &quot;HZP&quot;: 3.12, &quot;NMC&quot;: 4.23,
+    &quot;DHL&quot;: 2.69, &quot;9DS&quot;: 9.29, &quot;SER&quot;: 2.41, &quot;CHG&quot;: 4.2, &quot;MIR&quot;: 6.54, &quot;AGQ&quot;: 7.79, &quot;SET&quot;: 2.46, &quot;MIS&quot;: 6.32,
+    &quot;4FB&quot;: 3.08, &quot;0AR&quot;: 8.46, &quot;LME&quot;: 3.99, &quot;FZN&quot;: 24.42, &quot;AGT&quot;: 9.04, &quot;IYR&quot;: 6.46, &quot;9DN&quot;: 9.31, &quot;CHP&quot;: 5.75,
+    &quot;UNK&quot;: 1.64, &quot;XX1&quot;: 9.92, &quot;AGM&quot;: 6.57, &quot;0AH&quot;: 5.78, &quot;LLP&quot;: 10.22, &quot;0AF&quot;: 6.72, &quot;4DP&quot;: 9.28, &quot;HYP&quot;: 2.25,
+    &quot;DIR&quot;: 5.8, &quot;LLY&quot;: 8.71, &quot;0AK&quot;: 6.11, &quot;NLE&quot;: 4.67, &quot;OYL&quot;: 6.42, &quot;WVL&quot;: 4.69, &quot;0A8&quot;: 8.1, &quot;NLY&quot;: 6.37,
+    &quot;MHO&quot;: 4.89, &quot;VOL&quot;: 2.55, &quot;0A1&quot;: 7.1, &quot;MHL&quot;: 3.92, &quot;NLP&quot;: 4.81, &quot;NLQ&quot;: 4.65, &quot;MHW&quot;: 2.74, &quot;BIL&quot;: 4.7,
+    &quot;NLO&quot;: 4.8, &quot;MHU&quot;: 7.51, &quot;XW1&quot;: 9.36, &quot;LLO&quot;: 10.13, &quot;SGB&quot;: 6.88, &quot;MHV&quot;: 3.6, &quot;MHS&quot;: 4.51, &quot;0A9&quot;: 5.17,
+    &quot;0LF&quot;: 9.96, &quot;HT7&quot;: 6.82, &quot;X2W&quot;: 6.6, &quot;YPZ&quot;: 9.38, &quot;I58&quot;: 6.73, &quot;FLA&quot;: 2.4, &quot;M0H&quot;: 4.83, &quot;HSL&quot;: 2.46,
+    &quot;FLE&quot;: 6.17, &quot;KOR&quot;: 10.1, &quot;1VR&quot;: 3.89, &quot;HSO&quot;: 4.56, &quot;TTS&quot;: 9.41, &quot;RVX&quot;: 7.01, &quot;TTQ&quot;: 7.71, &quot;H14&quot;: 5.27,
+    &quot;HTI&quot;: 7.8, &quot;ONH&quot;: 6.14, &quot;LP6&quot;: 8.58, &quot;ONL&quot;: 4.83, &quot;AHH&quot;: 5.06, &quot;HS8&quot;: 7.4, &quot;HS9&quot;: 4.71, &quot;BL2&quot;: 5.82,
+    &quot;AHP&quot;: 5.26, &quot;6HN&quot;: 7.34, &quot;HRP&quot;: 5.46, &quot;POM&quot;: 3.6, &quot;WPA&quot;: 5.11, &quot;2ZC&quot;: 4.29, &quot;CPC&quot;: 2.65, &quot;AIB&quot;: 2.4,
+    &quot;XSN&quot;: 3.47, &quot;M2S&quot;: 5.28, &quot;GND&quot;: 6.67, &quot;GNC&quot;: 4.6, &quot;MVA&quot;: 2.56, &quot;OLZ&quot;: 5.32, &quot;M2L&quot;: 6.15, &quot;TRF&quot;: 6.69,
+    &quot;NZH&quot;: 7.66, &quot;SRZ&quot;: 5.27, &quot;OLD&quot;: 10.47, &quot;CME&quot;: 5.86, &quot;CMH&quot;: 5.3, &quot;ALA&quot;: 2.38, &quot;TRQ&quot;: 7.36, &quot;PPN&quot;: 7.24,
+    &quot;TRP&quot;: 6.07, &quot;TRO&quot;: 5.82, &quot;TRN&quot;: 5.95, &quot;NYS&quot;: 8.1, &quot;ALC&quot;: 5.26, &quot;U3X&quot;: 11.7, &quot;HVA&quot;: 2.58, &quot;TS9&quot;: 3.92,
+    &quot;TRX&quot;: 7.27, &quot;TRW&quot;: 11.8, &quot;LPL&quot;: 7.51, &quot;GMA&quot;: 4.4, &quot;OMT&quot;: 5.07, &quot;CMT&quot;: 3.54, &quot;GME&quot;: 4.66, &quot;NYB&quot;: 6.07,
+    &quot;PR3&quot;: 5.12, &quot;LPD&quot;: 2.48, &quot;GLU&quot;: 4.49, &quot;1X6&quot;: 6.84, &quot;LPG&quot;: 2.39, &quot;GLX&quot;: 4.52, &quot;PR4&quot;: 4.52, &quot;CML&quot;: 6.16,
+    &quot;FME&quot;: 4.52, &quot;HTR&quot;: 6.48, &quot;PR7&quot;: 4.66, &quot;Z3E&quot;: 7.2, &quot;GLZ&quot;: 2.39, &quot;BMT&quot;: 6.37, &quot;WRP&quot;: 8.16, &quot;GLY&quot;: 2.37,
+    &quot;OMY&quot;: 6.11, &quot;MTY&quot;: 5.46, &quot;OMX&quot;: 6.15, &quot;GLN&quot;: 4.46, &quot;2XA&quot;: 8.25, &quot;28X&quot;: 7.84, &quot;7JA&quot;: 9.46, &quot;FLT&quot;: 9.65,
+    &quot;GLJ&quot;: 3.7, &quot;OMH&quot;: 5.26, &quot;TSY&quot;: 4.26, &quot;PRV&quot;: 4.28, &quot;CS4&quot;: 11.21, &quot;DOA&quot;: 12.33, &quot;23P&quot;: 5.42, &quot;CS3&quot;: 8.24,
+    &quot;6CL&quot;: 6.47, &quot;PRR&quot;: 5.58, &quot;KST&quot;: 11.58, &quot;CS1&quot;: 7.23, &quot;PRS&quot;: 2.63, &quot;ZYJ&quot;: 11.4, &quot;IT1&quot;: 9.75, &quot;UU5&quot;: 4.98,
+    &quot;ESB&quot;: 6.69, &quot;UU4&quot;: 2.49, &quot;ESC&quot;: 5.65, &quot;LSO&quot;: 10.58, &quot;ZYK&quot;: 11.45, &quot;9NV&quot;: 8.99, &quot;23F&quot;: 5.27, &quot;ORN&quot;: 4.25,
+    &quot;HOX&quot;: 6.61, &quot;CSD&quot;: 3.95, &quot;FP9&quot;: 3.03, &quot;DO2&quot;: 4.44, &quot;SLL&quot;: 11.53, &quot;P3Q&quot;: 9.54, &quot;ORQ&quot;: 6.04, &quot;MSL&quot;: 5.21,
+    &quot;DNP&quot;: 2.45, &quot;CSB&quot;: 3.51, &quot;WLU&quot;: 4.24, &quot;CSA&quot;: 5.7, &quot;MT2&quot;: 5.51, &quot;CSO&quot;: 3.53, &quot;TPO&quot;: 4.73, &quot;MSP&quot;: 13.11,
+    &quot;23S&quot;: 6.09, &quot;MSO&quot;: 4.96, &quot;PRO&quot;: 2.41, &quot;TPL&quot;: 5.41, &quot;DNS&quot;: 8.79, &quot;CSK&quot;: 3.91, &quot;Z70&quot;: 7.4, &quot;CSJ&quot;: 7.51,
+    &quot;DNW&quot;: 7.97, &quot;PRK&quot;: 9.15, &quot;GSU&quot;: 11.81, &quot;LTA&quot;: 6.57, &quot;HPE&quot;: 6.63, &quot;TPQ&quot;: 6.48, &quot;PRJ&quot;: 5.26, &quot;PSW&quot;: 4.65,
+    &quot;L3O&quot;: 3.89, &quot;CSU&quot;: 4.89, &quot;ALY&quot;: 7.38, &quot;M3L&quot;: 7.12, &quot;CSW&quot;: 3.68, &quot;XPR&quot;: 7.68, &quot;D4P&quot;: 5.66, &quot;FOE&quot;: 8.17,
+    &quot;SLZ&quot;: 5.69, &quot;CSP&quot;: 5.26, &quot;TQI&quot;: 7.68, &quot;ALT&quot;: 2.72, &quot;CSR&quot;: 5.42, &quot;CSS&quot;: 3.61, &quot;M3R&quot;: 7.18, &quot;ALO&quot;: 2.57,
+    &quot;R4K&quot;: 4.67, &quot;SMF&quot;: 9.0, &quot;MSA&quot;: 2.73, &quot;SMC&quot;: 3.39, &quot;CSX&quot;: 3.47, &quot;SME&quot;: 4.8, &quot;ETA&quot;: 2.4, &quot;CSZ&quot;: 3.6,
+    &quot;22G&quot;: 8.8, &quot;MSE&quot;: 4.62, &quot;ALN&quot;: 6.16, &quot;PSH&quot;: 7.26, &quot;CTE&quot;: 7.27, &quot;DON&quot;: 6.72, &quot;CTH&quot;: 3.45, &quot;U2X&quot;: 11.54,
+    &quot;6CW&quot;: 7.56, &quot;TQZ&quot;: 6.97, &quot;3YM&quot;: 6.52, &quot;OSE&quot;: 4.49, &quot;2VA&quot;: 9.82, &quot;TQQ&quot;: 7.76, &quot;NRG&quot;: 8.35, &quot;BPE&quot;: 7.24,
+    &quot;F2F&quot;: 6.25, &quot;1TQ&quot;: 8.58, &quot;I2M&quot;: 3.13, &quot;NVA&quot;: 3.76, &quot;R1A&quot;: 8.2, &quot;QPA&quot;: 6.95, &quot;C1X&quot;: 11.63, &quot;FRD&quot;: 5.05,
+    &quot;HR7&quot;: 6.98, &quot;SNC&quot;: 3.93, &quot;QPH&quot;: 5.15, &quot;26B&quot;: 8.39, &quot;DPQ&quot;: 6.54, &quot;DPP&quot;: 2.51, &quot;2TY&quot;: 8.65, &quot;TNR&quot;: 6.88,
+    &quot;PTH&quot;: 8.35, &quot;DPL&quot;: 3.58, &quot;APK&quot;: 8.79, &quot;1TY&quot;: 8.84, &quot;HRG&quot;: 7.36, &quot;PTM&quot;: 8.74, &quot;1U8&quot;: 3.62, &quot;PTR&quot;: 8.64,
+    &quot;LVG&quot;: 3.01, &quot;6FL&quot;: 4.85, &quot;SOC&quot;: 4.05, &quot;KPI&quot;: 9.79, &quot;IPG&quot;: 2.91, &quot;P2Y&quot;: 2.51, &quot;N2C&quot;: 3.55, &quot;T0I&quot;: 7.34,
+    &quot;MPH&quot;: 5.29, &quot;R2T&quot;: 4.71, &quot;TOX&quot;: 6.78, &quot;P2Q&quot;: 9.8, &quot;GPL&quot;: 10.77, &quot;MPJ&quot;: 5.07, &quot;F2Y&quot;: 6.2, &quot;T11&quot;: 8.58,
+    &quot;9NR&quot;: 9.33, &quot;FPR&quot;: 8.85, &quot;9NF&quot;: 8.93, &quot;KPY&quot;: 10.17, &quot;9NE&quot;: 9.77, &quot;TOQ&quot;: 7.5, &quot;MPQ&quot;: 4.2, &quot;FPK&quot;: 3.08,
+    &quot;HQA&quot;: 7.25, &quot;SOY&quot;: 10.94
+};
+var DefaultResidueRadius = 5.0;
+
+
+// http://dx.doi.org/10.1039/b801115j (or 1.6)
+var CovalentRadii = {
+    &quot;H&quot;: 0.31, &quot;HE&quot;: 0.28, &quot;LI&quot;: 1.28, &quot;BE&quot;: 0.96, &quot;B&quot;: 0.84, &quot;C&quot;: 0.76,
+    &quot;N&quot;: 0.71, &quot;O&quot;: 0.66, &quot;F&quot;: 0.57, &quot;NE&quot;: 0.58, &quot;NA&quot;: 1.66, &quot;MG&quot;: 1.41, &quot;AL&quot;: 1.21,
+    &quot;SI&quot;: 1.11, &quot;P&quot;: 1.07, &quot;S&quot;: 1.05, &quot;CL&quot;: 1.02, &quot;AR&quot;: 1.06, &quot;K&quot;: 2.03, &quot;CA&quot;: 1.76,
+    &quot;SC&quot;: 1.7, &quot;TI&quot;: 1.6, &quot;V&quot;: 1.53, &quot;CR&quot;: 1.39, &quot;MN&quot;: 1.39, &quot;FE&quot;: 1.32, &quot;CO&quot;: 1.26,
+    &quot;NI&quot;: 1.24, &quot;CU&quot;: 1.32, &quot;ZN&quot;: 1.22, &quot;GA&quot;: 1.22, &quot;GE&quot;: 1.2, &quot;AS&quot;: 1.19, &quot;SE&quot;: 1.2,
+    &quot;BR&quot;: 1.2, &quot;KR&quot;: 1.16, &quot;RB&quot;: 2.2, &quot;SR&quot;: 1.95, &quot;Y&quot;: 1.9, &quot;ZR&quot;: 1.75, &quot;NB&quot;: 1.64,
+    &quot;MO&quot;: 1.54, &quot;TC&quot;: 1.47, &quot;RU&quot;: 1.46, &quot;RH&quot;: 1.42, &quot;PD&quot;: 1.39, &quot;AG&quot;: 1.45, &quot;CD&quot;: 1.44,
+    &quot;IN&quot;: 1.42, &quot;SN&quot;: 1.39, &quot;SB&quot;: 1.39, &quot;TE&quot;: 1.38, &quot;I&quot;: 1.39, &quot;XE&quot;: 1.4, &quot;CS&quot;: 2.44,
+    &quot;BA&quot;: 2.15, &quot;LA&quot;: 2.07, &quot;CE&quot;: 2.04, &quot;PR&quot;: 2.03, &quot;ND&quot;: 2.01, &quot;PM&quot;: 1.99, &quot;SM&quot;: 1.98,
+    &quot;EU&quot;: 1.98, &quot;GD&quot;: 1.96, &quot;TB&quot;: 1.94, &quot;DY&quot;: 1.92, &quot;HO&quot;: 1.92, &quot;ER&quot;: 1.89, &quot;TM&quot;: 1.9,
+    &quot;YB&quot;: 1.87, &quot;LU&quot;: 1.87, &quot;HF&quot;: 1.75, &quot;TA&quot;: 1.7, &quot;W&quot;: 1.62, &quot;RE&quot;: 1.51, &quot;OS&quot;: 1.44,
+    &quot;IR&quot;: 1.41, &quot;PT&quot;: 1.36, &quot;AU&quot;: 1.36, &quot;HG&quot;: 1.32, &quot;TL&quot;: 1.45, &quot;PB&quot;: 1.46, &quot;BI&quot;: 1.48,
+    &quot;PO&quot;: 1.4, &quot;AT&quot;: 1.5, &quot;RN&quot;: 1.5, &quot;FR&quot;: 2.6, &quot;RA&quot;: 2.21, &quot;AC&quot;: 2.15, &quot;TH&quot;: 2.06,
+    &quot;PA&quot;: 2.0, &quot;U&quot;: 1.96, &quot;NP&quot;: 1.9, &quot;PU&quot;: 1.87, &quot;AM&quot;: 1.8, &quot;CM&quot;: 1.69, &quot;BK&quot;: 1.6,
+    &quot;CF&quot;: 1.6, &quot;ES&quot;: 1.6, &quot;FM&quot;: 1.6, &quot;MD&quot;: 1.6, &quot;NO&quot;: 1.6, &quot;LR&quot;: 1.6, &quot;RF&quot;: 1.6,
+    &quot;DB&quot;: 1.6, &quot;SG&quot;: 1.6, &quot;BH&quot;: 1.6, &quot;HS&quot;: 1.6, &quot;MT&quot;: 1.6, &quot;DS&quot;: 1.6, &quot;RG&quot;: 1.6,
+    &quot;CN&quot;: 1.6, &quot;UUT&quot;: 1.6, &quot;FL&quot;: 1.6, &quot;UUP&quot;: 1.6, &quot;LV&quot;: 1.6, &quot;UUH&quot;: 1.6
+};
+var DefaultCovalentRadius = 1.6;
+
+
+// http://blanco.biomol.uci.edu/Whole_residue_HFscales.txt
+var ResidueHydrophobicity = {
+    // AA  DGwif   DGwoct  Oct-IF
+    &quot;ALA&quot;: [  0.17,  0.50,  0.33 ],
+    &quot;ARG&quot;: [  0.81,  1.81,  1.00 ],
+    &quot;ASN&quot;: [  0.42,  0.85,  0.43 ],
+    &quot;ASP&quot;: [  1.23,  3.64,  2.41 ],
+    &quot;ASH&quot;: [ -0.07,  0.43,  0.50 ],
+    &quot;CYS&quot;: [ -0.24, -0.02,  0.22 ],
+    &quot;GLN&quot;: [  0.58,  0.77,  0.19 ],
+    &quot;GLU&quot;: [  2.02,  3.63,  1.61 ],
+    &quot;GLH&quot;: [ -0.01,  0.11,  0.12 ],
+    &quot;GLY&quot;: [  0.01,  1.15,  1.14 ],
+    // &quot;His+&quot;: [  0.96,  2.33,  1.37 ],
+    &quot;HIS&quot;: [  0.17,  0.11, -0.06 ],
+    &quot;ILE&quot;: [ -0.31, -1.12, -0.81 ],
+    &quot;LEU&quot;: [ -0.56, -1.25, -0.69 ],
+    &quot;LYS&quot;: [  0.99,  2.80,  1.81 ],
+    &quot;MET&quot;: [ -0.23, -0.67, -0.44 ],
+    &quot;PHE&quot;: [ -1.13, -1.71, -0.58 ],
+    &quot;PRO&quot;: [  0.45,  0.14, -0.31 ],
+    &quot;SER&quot;: [  0.13,  0.46,  0.33 ],
+    &quot;THR&quot;: [  0.14,  0.25,  0.11 ],
+    &quot;TRP&quot;: [ -1.85, -2.09, -0.24 ],
+    &quot;TYR&quot;: [ -0.94, -0.71,  0.23 ],
+    &quot;VAL&quot;: [  0.07, -0.46, -0.53 ]
+};
+var DefaultResidueHydrophobicity = [ 0.00, 0.00, 0.00 ];
+
+
+var AA1 = {
+    &apos;HIS&apos;: &apos;H&apos;,
+    &apos;ARG&apos;: &apos;R&apos;,
+    &apos;LYS&apos;: &apos;K&apos;,
+    &apos;ILE&apos;: &apos;I&apos;,
+    &apos;PHE&apos;: &apos;F&apos;,
+    &apos;LEU&apos;: &apos;L&apos;,
+    &apos;TRP&apos;: &apos;W&apos;,
+    &apos;ALA&apos;: &apos;A&apos;,
+    &apos;MET&apos;: &apos;M&apos;,
+    &apos;PRO&apos;: &apos;P&apos;,
+    &apos;CYS&apos;: &apos;C&apos;,
+    &apos;ASN&apos;: &apos;N&apos;,
+    &apos;VAL&apos;: &apos;V&apos;,
+    &apos;GLY&apos;: &apos;G&apos;,
+    &apos;SER&apos;: &apos;S&apos;,
+    &apos;GLN&apos;: &apos;Q&apos;,
+    &apos;TYR&apos;: &apos;Y&apos;,
+    &apos;ASP&apos;: &apos;D&apos;,
+    &apos;GLU&apos;: &apos;E&apos;,
+    &apos;THR&apos;: &apos;T&apos;,
+
+    &apos;ASH&apos;: &apos;D&apos;,
+    &apos;GLH&apos;: &apos;E&apos;,
+
+    &apos;UNK&apos;: &apos;&apos;,
+};
+
+var AA3 = Object.keys( AA1 );
+
+var RnaBases = [ &quot;A&quot;, &quot;C&quot;, &quot;T&quot;, &quot;G&quot;, &quot;U&quot; ];
+
+var DnaBases = [ &quot;DA&quot;, &quot;DC&quot;, &quot;DT&quot;, &quot;DG&quot;, &quot;DU&quot;, &quot;TCY&quot;, &quot;MCY&quot;, &quot;5CM&quot; ];
+
+var PurinBases = [ &quot;A&quot;, &quot;G&quot;, &quot;DA&quot;, &quot;DG&quot; ];
+
+var WaterNames = [
+    &quot;SOL&quot;, &quot;WAT&quot;, &quot;HOH&quot;, &quot;H2O&quot;, &quot;W&quot;, &quot;DOD&quot;, &quot;D3O&quot;, &quot;TIP3&quot;, &quot;TIP4&quot;
+];
+
+// all chemical components with the word &quot;ion&quot; in their name, Sep 2016
+//
+// SET SESSION group_concat_max_len = 1000000;
+// SELECT GROUP_CONCAT(id_ ORDER BY id_ ASC SEPARATOR &apos;&quot;, &quot;&apos;) from
+// (
+//     SELECT count(obj_id) as c, id_
+//     FROM pdb.chem_comp WHERE name LIKE &quot;% ION%&quot;
+//     GROUP BY id_
+// ) AS t1;
+var IonNames = [
+    &quot;118&quot;, &quot;119&quot;, &quot;1AL&quot;, &quot;1CU&quot;, &quot;2FK&quot;, &quot;2HP&quot;, &quot;2OF&quot;, &quot;3CO&quot;,
+    &quot;3MT&quot;, &quot;3NI&quot;, &quot;3OF&quot;, &quot;3P8&quot;, &quot;4MO&quot;, &quot;4PU&quot;, &quot;543&quot;, &quot;6MO&quot;, &quot;ACT&quot;, &quot;AG&quot;, &quot;AL&quot;,
+    &quot;ALF&quot;, &quot;AM&quot;, &quot;ATH&quot;, &quot;AU&quot;, &quot;AU3&quot;, &quot;AUC&quot;, &quot;AZI&quot;, &quot;BA&quot;, &quot;BCT&quot;, &quot;BEF&quot;, &quot;BF4&quot;, &quot;BO4&quot;,
+    &quot;BR&quot;, &quot;BS3&quot;, &quot;BSY&quot;, &quot;CA&quot;, &quot;CAC&quot;, &quot;CD&quot;, &quot;CD1&quot;, &quot;CD3&quot;, &quot;CD5&quot;, &quot;CE&quot;, &quot;CHT&quot;, &quot;CL&quot;,
+    &quot;CO&quot;, &quot;CO3&quot;, &quot;CO5&quot;, &quot;CON&quot;, &quot;CR&quot;, &quot;CS&quot;, &quot;CSB&quot;, &quot;CU&quot;, &quot;CU1&quot;, &quot;CU3&quot;, &quot;CUA&quot;, &quot;CUZ&quot;,
+    &quot;CYN&quot;, &quot;DME&quot;, &quot;DMI&quot;, &quot;DSC&quot;, &quot;DTI&quot;, &quot;DY&quot;, &quot;E4N&quot;, &quot;EDR&quot;, &quot;EMC&quot;, &quot;ER3&quot;, &quot;EU&quot;,
+    &quot;EU3&quot;, &quot;F&quot;, &quot;FE&quot;, &quot;FE2&quot;, &quot;FPO&quot;, &quot;GA&quot;, &quot;GD3&quot;, &quot;GEP&quot;, &quot;HAI&quot;, &quot;HG&quot;, &quot;HGC&quot;, &quot;IN&quot;,
+    &quot;IOD&quot;, &quot;IR&quot;, &quot;IR3&quot;, &quot;IRI&quot;, &quot;IUM&quot;, &quot;K&quot;, &quot;KO4&quot;, &quot;LA&quot;, &quot;LCO&quot;, &quot;LCP&quot;, &quot;LI&quot;, &quot;LU&quot;,
+    &quot;MAC&quot;, &quot;MG&quot;, &quot;MH2&quot;, &quot;MH3&quot;, &quot;MLI&quot;, &quot;MLT&quot;, &quot;MMC&quot;, &quot;MN&quot;, &quot;MN3&quot;, &quot;MN5&quot;, &quot;MN6&quot;,
+    &quot;MO1&quot;, &quot;MO2&quot;, &quot;MO3&quot;, &quot;MO4&quot;, &quot;MO5&quot;, &quot;MO6&quot;, &quot;MOO&quot;, &quot;MOS&quot;, &quot;MOW&quot;, &quot;MW1&quot;, &quot;MW2&quot;,
+    &quot;MW3&quot;, &quot;NA&quot;, &quot;NA2&quot;, &quot;NA5&quot;, &quot;NA6&quot;, &quot;NAO&quot;, &quot;NAW&quot;, &quot;NCO&quot;, &quot;NET&quot;, &quot;NH4&quot;, &quot;NI&quot;,
+    &quot;NI1&quot;, &quot;NI2&quot;, &quot;NI3&quot;, &quot;NO2&quot;, &quot;NO3&quot;, &quot;NRU&quot;, &quot;O4M&quot;, &quot;OAA&quot;, &quot;OC1&quot;, &quot;OC2&quot;, &quot;OC3&quot;,
+    &quot;OC4&quot;, &quot;OC5&quot;, &quot;OC6&quot;, &quot;OC7&quot;, &quot;OC8&quot;, &quot;OCL&quot;, &quot;OCM&quot;, &quot;OCN&quot;, &quot;OCO&quot;, &quot;OF1&quot;, &quot;OF2&quot;,
+    &quot;OF3&quot;, &quot;OH&quot;, &quot;OS&quot;, &quot;OS4&quot;, &quot;OXL&quot;, &quot;PB&quot;, &quot;PBM&quot;, &quot;PD&quot;, &quot;PDV&quot;, &quot;PER&quot;, &quot;PI&quot;, &quot;PO3&quot;,
+    &quot;PO4&quot;, &quot;PR&quot;, &quot;PT&quot;, &quot;PT4&quot;, &quot;PTN&quot;, &quot;RB&quot;, &quot;RH3&quot;, &quot;RHD&quot;, &quot;RU&quot;, &quot;SB&quot;, &quot;SCN&quot;, &quot;SE4&quot;,
+    &quot;SEK&quot;, &quot;SM&quot;, &quot;SMO&quot;, &quot;SO3&quot;, &quot;SO4&quot;, &quot;SR&quot;, &quot;T1A&quot;, &quot;TB&quot;, &quot;TBA&quot;, &quot;TCN&quot;, &quot;TEA&quot;, &quot;TH&quot;,
+    &quot;THE&quot;, &quot;TL&quot;, &quot;TMA&quot;, &quot;TRA&quot;, &quot;UNX&quot;, &quot;V&quot;, &quot;VN3&quot;, &quot;VO4&quot;, &quot;W&quot;, &quot;WO5&quot;, &quot;Y1&quot;, &quot;YB&quot;,
+    &quot;YB2&quot;, &quot;YH&quot;, &quot;YT3&quot;, &quot;ZCM&quot;, &quot;ZN&quot;, &quot;ZN2&quot;, &quot;ZN3&quot;, &quot;ZNO&quot;, &quot;ZO3&quot;,
+    // additional ion names
+    &quot;OHX&quot;
+];
+
+// all chemical components with the word &quot;%saccharide%&quot; in their type, Sep 2016
+//
+// SET SESSION group_concat_max_len = 1000000;
+// select GROUP_CONCAT(id_ ORDER BY id_ ASC SEPARATOR &apos;&quot;, &quot;&apos;) from
+// (
+//     SELECT count(obj_id), id_
+//     FROM pdb.chem_comp WHERE type like &quot;%SACCHARIDE%&quot;
+//     GROUP BY id_
+// ) AS t1;
+var SaccharideNames = [
+    &quot;045&quot;, &quot;0AT&quot;, &quot;0BD&quot;, &quot;0MK&quot;, &quot;0NZ&quot;, &quot;0TS&quot;, &quot;0V4&quot;, &quot;0XY&quot;, &quot;0YT&quot;, &quot;10M&quot;,
+    &quot;147&quot;, &quot;149&quot;, &quot;14T&quot;, &quot;15L&quot;, &quot;16G&quot;, &quot;18T&quot;, &quot;18Y&quot;, &quot;1AR&quot;, &quot;1BW&quot;, &quot;1GL&quot;, &quot;1GN&quot;,
+    &quot;1JB&quot;, &quot;1LL&quot;, &quot;1NA&quot;, &quot;1S3&quot;, &quot;26M&quot;, &quot;26Q&quot;, &quot;26R&quot;, &quot;26V&quot;, &quot;26W&quot;, &quot;26Y&quot;, &quot;27C&quot;,
+    &quot;289&quot;, &quot;291&quot;, &quot;293&quot;, &quot;2DG&quot;, &quot;2F8&quot;, &quot;2FG&quot;, &quot;2FL&quot;, &quot;2FP&quot;, &quot;2GL&quot;, &quot;2M4&quot;, &quot;2M5&quot;,
+    &quot;32O&quot;, &quot;34V&quot;, &quot;3CM&quot;, &quot;3DO&quot;, &quot;3DY&quot;, &quot;3FM&quot;, &quot;3LR&quot;, &quot;3MF&quot;, &quot;3MG&quot;, &quot;3SA&quot;, &quot;3ZW&quot;,
+    &quot;46D&quot;, &quot;46M&quot;, &quot;46Z&quot;, &quot;48Z&quot;, &quot;4CQ&quot;, &quot;4GC&quot;, &quot;4NN&quot;, &quot;50A&quot;, &quot;5DI&quot;, &quot;5GF&quot;, &quot;5MM&quot;,
+    &quot;5RP&quot;, &quot;5SA&quot;, &quot;5SP&quot;, &quot;64K&quot;, &quot;6PG&quot;, &quot;6SA&quot;, &quot;7JZ&quot;, &quot;7SA&quot;, &quot;A1Q&quot;, &quot;A2G&quot;, &quot;AAB&quot;,
+    &quot;AAL&quot;, &quot;AAO&quot;, &quot;ABC&quot;, &quot;ABD&quot;, &quot;ABE&quot;, &quot;ABF&quot;, &quot;ABL&quot;, &quot;ACG&quot;, &quot;ACI&quot;, &quot;ACR&quot;, &quot;ACX&quot;,
+    &quot;ADA&quot;, &quot;ADG&quot;, &quot;ADR&quot;, &quot;AF1&quot;, &quot;AFD&quot;, &quot;AFL&quot;, &quot;AFO&quot;, &quot;AFP&quot;, &quot;AFR&quot;, &quot;AGC&quot;, &quot;AGH&quot;,
+    &quot;AGL&quot;, &quot;AHR&quot;, &quot;AIG&quot;, &quot;ALL&quot;, &quot;ALX&quot;, &quot;AMU&quot;, &quot;AOG&quot;, &quot;AOS&quot;, &quot;ARA&quot;, &quot;ARB&quot;, &quot;ARE&quot;,
+    &quot;ARI&quot;, &quot;ASG&quot;, &quot;ASO&quot;, &quot;AXP&quot;, &quot;AXR&quot;, &quot;B0D&quot;, &quot;B16&quot;, &quot;B2G&quot;, &quot;B4G&quot;, &quot;B6D&quot;, &quot;B8D&quot;,
+    &quot;B9D&quot;, &quot;BBK&quot;, &quot;BCD&quot;, &quot;BDG&quot;, &quot;BDP&quot;, &quot;BDR&quot;, &quot;BEM&quot;, &quot;BFP&quot;, &quot;BGC&quot;, &quot;BGL&quot;, &quot;BGP&quot;,
+    &quot;BGS&quot;, &quot;BHG&quot;, &quot;BMA&quot;, &quot;BMX&quot;, &quot;BNG&quot;, &quot;BNX&quot;, &quot;BOG&quot;, &quot;BRI&quot;, &quot;BXF&quot;, &quot;BXP&quot;, &quot;BXX&quot;,
+    &quot;BXY&quot;, &quot;C3X&quot;, &quot;C4X&quot;, &quot;C5X&quot;, &quot;CAP&quot;, &quot;CBI&quot;, &quot;CBK&quot;, &quot;CBS&quot;, &quot;CDR&quot;, &quot;CEG&quot;, &quot;CGF&quot;,
+    &quot;CHO&quot;, &quot;CR1&quot;, &quot;CR6&quot;, &quot;CRA&quot;, &quot;CT3&quot;, &quot;CTO&quot;, &quot;CTR&quot;, &quot;CTT&quot;, &quot;D6G&quot;, &quot;DAF&quot;, &quot;DAG&quot;,
+    &quot;DDA&quot;, &quot;DDB&quot;, &quot;DDL&quot;, &quot;DEL&quot;, &quot;DFR&quot;, &quot;DFX&quot;, &quot;DG0&quot;, &quot;DGC&quot;, &quot;DGD&quot;, &quot;DGM&quot;, &quot;DGS&quot;,
+    &quot;DIG&quot;, &quot;DLF&quot;, &quot;DLG&quot;, &quot;DMU&quot;, &quot;DNO&quot;, &quot;DOM&quot;, &quot;DP5&quot;, &quot;DQQ&quot;, &quot;DQR&quot;, &quot;DR2&quot;, &quot;DR3&quot;,
+    &quot;DR4&quot;, &quot;DRI&quot;, &quot;DSR&quot;, &quot;DT6&quot;, &quot;DVC&quot;, &quot;E4P&quot;, &quot;E5G&quot;, &quot;EAG&quot;, &quot;EBG&quot;, &quot;EBQ&quot;, &quot;EGA&quot;,
+    &quot;EJT&quot;, &quot;EPG&quot;, &quot;ERE&quot;, &quot;ERI&quot;, &quot;F1P&quot;, &quot;F1X&quot;, &quot;F6P&quot;, &quot;FBP&quot;, &quot;FCA&quot;, &quot;FCB&quot;, &quot;FCT&quot;,
+    &quot;FDP&quot;, &quot;FDQ&quot;, &quot;FFC&quot;, &quot;FIX&quot;, &quot;FMO&quot;, &quot;FRU&quot;, &quot;FSI&quot;, &quot;FU4&quot;, &quot;FUB&quot;, &quot;FUC&quot;, &quot;FUD&quot;,
+    &quot;FUL&quot;, &quot;FXP&quot;, &quot;G16&quot;, &quot;G1P&quot;, &quot;G2F&quot;, &quot;G3I&quot;, &quot;G4D&quot;, &quot;G4S&quot;, &quot;G6D&quot;, &quot;G6P&quot;, &quot;G6S&quot;,
+    &quot;GAC&quot;, &quot;GAD&quot;, &quot;GAL&quot;, &quot;GC1&quot;, &quot;GC4&quot;, &quot;GCD&quot;, &quot;GCN&quot;, &quot;GCO&quot;, &quot;GCS&quot;, &quot;GCT&quot;, &quot;GCU&quot;,
+    &quot;GCV&quot;, &quot;GCW&quot;, &quot;GCX&quot;, &quot;GE1&quot;, &quot;GFG&quot;, &quot;GFP&quot;, &quot;GIV&quot;, &quot;GL0&quot;, &quot;GL2&quot;, &quot;GL5&quot;, &quot;GL6&quot;,
+    &quot;GL7&quot;, &quot;GL9&quot;, &quot;GLA&quot;, &quot;GLB&quot;, &quot;GLC&quot;, &quot;GLD&quot;, &quot;GLF&quot;, &quot;GLG&quot;, &quot;GLO&quot;, &quot;GLP&quot;, &quot;GLS&quot;,
+    &quot;GLT&quot;, &quot;GLW&quot;, &quot;GMH&quot;, &quot;GN1&quot;, &quot;GNX&quot;, &quot;GP1&quot;, &quot;GP4&quot;, &quot;GPH&quot;, &quot;GPM&quot;, &quot;GQ1&quot;, &quot;GQ2&quot;,
+    &quot;GQ4&quot;, &quot;GS1&quot;, &quot;GS4&quot;, &quot;GSA&quot;, &quot;GSD&quot;, &quot;GTE&quot;, &quot;GTH&quot;, &quot;GTK&quot;, &quot;GTR&quot;, &quot;GTZ&quot;, &quot;GU0&quot;,
+    &quot;GU1&quot;, &quot;GU2&quot;, &quot;GU3&quot;, &quot;GU4&quot;, &quot;GU5&quot;, &quot;GU6&quot;, &quot;GU8&quot;, &quot;GU9&quot;, &quot;GUF&quot;, &quot;GUP&quot;, &quot;GUZ&quot;,
+    &quot;GYP&quot;, &quot;GYV&quot;, &quot;H2P&quot;, &quot;HDL&quot;, &quot;HMS&quot;, &quot;HS2&quot;, &quot;HSD&quot;, &quot;HSG&quot;, &quot;HSH&quot;, &quot;HSJ&quot;, &quot;HSQ&quot;,
+    &quot;HSR&quot;, &quot;HSU&quot;, &quot;HSX&quot;, &quot;HSY&quot;, &quot;HSZ&quot;, &quot;IAB&quot;, &quot;IDG&quot;, &quot;IDR&quot;, &quot;IDS&quot;, &quot;IDT&quot;, &quot;IDU&quot;,
+    &quot;IDX&quot;, &quot;IDY&quot;, &quot;IMK&quot;, &quot;IN1&quot;, &quot;IPT&quot;, &quot;ISL&quot;, &quot;KBG&quot;, &quot;KD2&quot;, &quot;KDA&quot;, &quot;KDM&quot;, &quot;KDO&quot;,
+    &quot;KFN&quot;, &quot;KO1&quot;, &quot;KO2&quot;, &quot;KTU&quot;, &quot;L6S&quot;, &quot;LAG&quot;, &quot;LAI&quot;, &quot;LAK&quot;, &quot;LAO&quot;, &quot;LAT&quot;, &quot;LB2&quot;,
+    &quot;LBT&quot;, &quot;LCN&quot;, &quot;LDY&quot;, &quot;LGC&quot;, &quot;LGU&quot;, &quot;LM2&quot;, &quot;LMT&quot;, &quot;LMU&quot;, &quot;LOG&quot;, &quot;LOX&quot;, &quot;LPK&quot;,
+    &quot;LSM&quot;, &quot;LTM&quot;, &quot;LVZ&quot;, &quot;LXB&quot;, &quot;LXZ&quot;, &quot;M1F&quot;, &quot;M3M&quot;, &quot;M6P&quot;, &quot;M8C&quot;, &quot;MA1&quot;, &quot;MA2&quot;,
+    &quot;MA3&quot;, &quot;MAB&quot;, &quot;MAG&quot;, &quot;MAL&quot;, &quot;MAN&quot;, &quot;MAT&quot;, &quot;MAV&quot;, &quot;MAW&quot;, &quot;MBG&quot;, &quot;MCU&quot;, &quot;MDA&quot;,
+    &quot;MDM&quot;, &quot;MDP&quot;, &quot;MFA&quot;, &quot;MFB&quot;, &quot;MFU&quot;, &quot;MG5&quot;, &quot;MGA&quot;, &quot;MGL&quot;, &quot;MLB&quot;, &quot;MMA&quot;, &quot;MMN&quot;,
+    &quot;MN0&quot;, &quot;MRP&quot;, &quot;MTT&quot;, &quot;MUG&quot;, &quot;MVP&quot;, &quot;MXY&quot;, &quot;N1L&quot;, &quot;N9S&quot;, &quot;NAA&quot;, &quot;NAG&quot;, &quot;NBG&quot;,
+    &quot;NDG&quot;, &quot;NED&quot;, &quot;NG1&quot;, &quot;NG6&quot;, &quot;NGA&quot;, &quot;NGB&quot;, &quot;NGC&quot;, &quot;NGE&quot;, &quot;NGF&quot;, &quot;NGL&quot;, &quot;NGS&quot;,
+    &quot;NGY&quot;, &quot;NHF&quot;, &quot;NM6&quot;, &quot;NM9&quot;, &quot;NTF&quot;, &quot;NTO&quot;, &quot;NTP&quot;, &quot;NXD&quot;, &quot;NYT&quot;, &quot;OPG&quot;, &quot;OPM&quot;,
+    &quot;ORP&quot;, &quot;OX2&quot;, &quot;P3M&quot;, &quot;P53&quot;, &quot;P6P&quot;, &quot;PA5&quot;, &quot;PNA&quot;, &quot;PNG&quot;, &quot;PNW&quot;, &quot;PRP&quot;, &quot;PSJ&quot;,
+    &quot;PSV&quot;, &quot;PTQ&quot;, &quot;QDK&quot;, &quot;QPS&quot;, &quot;QV4&quot;, &quot;R1P&quot;, &quot;R1X&quot;, &quot;R2B&quot;, &quot;R5P&quot;, &quot;RAA&quot;, &quot;RAE&quot;,
+    &quot;RAF&quot;, &quot;RAM&quot;, &quot;RAO&quot;, &quot;RAT&quot;, &quot;RB5&quot;, &quot;RBL&quot;, &quot;RCD&quot;, &quot;RDP&quot;, &quot;REL&quot;, &quot;RER&quot;, &quot;RF5&quot;,
+    &quot;RG1&quot;, &quot;RGG&quot;, &quot;RHA&quot;, &quot;RIB&quot;, &quot;RIP&quot;, &quot;RNS&quot;, &quot;RNT&quot;, &quot;ROB&quot;, &quot;ROR&quot;, &quot;RPA&quot;, &quot;RST&quot;,
+    &quot;RUB&quot;, &quot;RUU&quot;, &quot;RZM&quot;, &quot;S6P&quot;, &quot;S7P&quot;, &quot;SA0&quot;, &quot;SCR&quot;, &quot;SDD&quot;, &quot;SF6&quot;, &quot;SF9&quot;, &quot;SG4&quot;,
+    &quot;SG5&quot;, &quot;SG6&quot;, &quot;SG7&quot;, &quot;SGA&quot;, &quot;SGC&quot;, &quot;SGD&quot;, &quot;SGN&quot;, &quot;SGS&quot;, &quot;SHB&quot;, &quot;SHG&quot;, &quot;SI3&quot;,
+    &quot;SIO&quot;, &quot;SOE&quot;, &quot;SOL&quot;, &quot;SSG&quot;, &quot;SUC&quot;, &quot;SUP&quot;, &quot;SUS&quot;, &quot;T6P&quot;, &quot;T6T&quot;, &quot;TAG&quot;, &quot;TCB&quot;,
+    &quot;TDG&quot;, &quot;TGK&quot;, &quot;TGY&quot;, &quot;TH1&quot;, &quot;TIA&quot;, &quot;TM5&quot;, &quot;TM6&quot;, &quot;TM9&quot;, &quot;TMR&quot;, &quot;TMX&quot;, &quot;TOA&quot;,
+    &quot;TOC&quot;, &quot;TRE&quot;, &quot;TYV&quot;, &quot;UCD&quot;, &quot;UDC&quot;, &quot;VG1&quot;, &quot;X0X&quot;, &quot;X1X&quot;, &quot;X2F&quot;, &quot;X4S&quot;, &quot;X5S&quot;,
+    &quot;X6X&quot;, &quot;XBP&quot;, &quot;XDN&quot;, &quot;XDP&quot;, &quot;XIF&quot;, &quot;XIM&quot;, &quot;XLF&quot;, &quot;XLS&quot;, &quot;XMM&quot;, &quot;XUL&quot;, &quot;XXR&quot;,
+    &quot;XYP&quot;, &quot;XYS&quot;, &quot;YO5&quot;, &quot;Z3Q&quot;, &quot;Z6J&quot;, &quot;Z9M&quot;, &quot;ZDC&quot;, &quot;ZDM&quot;
+];
+
+
+var ProteinBackboneAtoms = [
+    &quot;CA&quot;, &quot;C&quot;, &quot;N&quot;, &quot;O&quot;,
+    &quot;O1&quot;, &quot;O2&quot;, &quot;OC1&quot;, &quot;OC2&quot;, &quot;OX1&quot;, &quot;OXT&quot;,
+    &quot;H&quot;, &quot;H1&quot;, &quot;H2&quot;, &quot;H3&quot;, &quot;HA&quot;,
+    &quot;BB&quot;
+];
+
+var NucleicBackboneAtoms = [
+    &quot;P&quot;, &quot;O3&apos;&quot;, &quot;O5&apos;&quot;, &quot;C5&apos;&quot;, &quot;C4&apos;&quot;, &quot;C3&apos;&quot;, &quot;OP1&quot;, &quot;OP2&quot;,
+    &quot;O3*&quot;, &quot;O5*&quot;, &quot;C5*&quot;, &quot;C4*&quot;, &quot;C3*&quot;
+];
+
+
+var ResidueTypeAtoms = {};
+
+ResidueTypeAtoms[ ProteinBackboneType ] = {
+    trace: &quot;CA&quot;,
+    direction1: &quot;C&quot;,
+    direction2: [ &quot;O&quot;, &quot;OC1&quot;, &quot;O1&quot;, &quot;OX1&quot;, &quot;OXT&quot; ],
+    backboneStart: &quot;N&quot;,
+    backboneEnd: &quot;C&quot;,
+};
+
+ResidueTypeAtoms[ RnaBackboneType ] = {
+    trace: [ &quot;C4&apos;&quot;, &quot;C4*&quot; ],
+    direction1: [ &quot;C1&apos;&quot;, &quot;C1*&quot; ],
+    direction2: [ &quot;C3&apos;&quot;, &quot;C3*&quot; ],
+    backboneStart: &quot;P&quot;,
+    backboneEnd: [ &quot;O3&apos;&quot;, &quot;O3*&quot; ]
+};
+
+ResidueTypeAtoms[ DnaBackboneType ] = {
+    trace: [ &quot;C3&apos;&quot;, &quot;C3*&quot; ],
+    direction1: [ &quot;C2&apos;&quot;, &quot;C2*&quot; ],
+    direction2: [ &quot;O4&apos;&quot;, &quot;O4*&quot; ],
+    backboneStart: &quot;P&quot;,
+    backboneEnd: [ &quot;O3&apos;&quot;, &quot;O3*&quot; ]
+};
+
+ResidueTypeAtoms[ CgProteinBackboneType ] = {
+    trace: [ &quot;CA&quot;, &quot;BB&quot; ],
+    backboneStart: [ &quot;CA&quot;, &quot;BB&quot; ],
+    backboneEnd: [ &quot;CA&quot;, &quot;BB&quot; ],
+};
+
+ResidueTypeAtoms[ CgRnaBackboneType ] = {
+    trace: [ &quot;C4&apos;&quot;, &quot;C4*&quot;, &quot;P&quot; ],
+    backboneStart: [ &quot;C4&apos;&quot;, &quot;C4*&quot;, &quot;P&quot; ],
+    backboneEnd: [ &quot;C4&apos;&quot;, &quot;C4*&quot;, &quot;P&quot; ],
+};
+
+ResidueTypeAtoms[ CgDnaBackboneType ] = {
+    trace: [ &quot;C3&apos;&quot;, &quot;C3*&quot;, &quot;C2&apos;&quot;, &quot;P&quot; ],  // C2&apos; is used in martini ff
+    backboneStart: [ &quot;C3&apos;&quot;, &quot;C3*&quot;, &quot;C2&apos;&quot;, &quot;P&quot; ],
+    backboneEnd: [ &quot;C3&apos;&quot;, &quot;C3*&quot;, &quot;C2&apos;&quot;, &quot;P&quot; ],
+};
+
+ResidueTypeAtoms[ UnknownBackboneType ] = {};
+
+
+export {
+    UnknownEntity,
+    PolymerEntity,
+    NonPolymerEntity,
+    MacrolideEntity,
+    WaterEntity,
+
+    UnknownType,
+    WaterType,
+    IonType,
+    ProteinType,
+    RnaType,
+    DnaType,
+    SaccharideType,
+
+    UnknownBackboneType,
+    ProteinBackboneType,
+    RnaBackboneType,
+    DnaBackboneType,
+    CgProteinBackboneType,
+    CgRnaBackboneType,
+    CgDnaBackboneType,
+
+    ChemCompProtein,
+    ChemCompRna,
+    ChemCompDna,
+    ChemCompSaccharide,
+    ChemCompOther,
+    ChemCompNonPolymer,
+    ChemCompHetero,
+
+    VdwRadii,
+    DefaultVdwRadius,
+    ResidueRadii,
+    DefaultResidueRadius,
+    CovalentRadii,
+    DefaultCovalentRadius,
+    ResidueHydrophobicity,
+    DefaultResidueHydrophobicity,
+
+    AA1,
+    AA3,
+    RnaBases,
+    DnaBases,
+    PurinBases,
+    WaterNames,
+    IonNames,
+    SaccharideNames,
+
+    ProteinBackboneAtoms,
+    NucleicBackboneAtoms,
+
+    ResidueTypeAtoms
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

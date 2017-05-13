@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,268 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/label-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Label Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Browser, RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import LabelFactory from &quot;../utils/label-factory.js&quot;;
+import StructureRepresentation from &quot;./structure-representation.js&quot;;
+import TextBuffer from &quot;../buffer/text-buffer.js&quot;;
+
+
+/**
+ * Label representation parameter object.
+ * @typedef {Object} LabelRepresentationParameters - label representation parameters
+ *
+ * @property {Integer} clipNear - position of camera near/front clipping plane
+ *                                in percent of scene bounding box
+ * @property {Float} opacity - translucency: 1 is fully opaque, 0 is fully transparent
+ * @property {String} labelType - type of the label, one of:
+ *                                 &quot;atomname&quot;, &quot;atomindex&quot;, &quot;occupancy&quot;, &quot;bfactor&quot;,
+ *                                 &quot;serial&quot;, &quot;element&quot;, &quot;atom&quot;, &quot;resname&quot;, &quot;resno&quot;,
+ *                                 &quot;res&quot;, &quot;text&quot;, &quot;qualified&quot;. When set to &quot;text&quot;, the
+ *                                 `labelText` list is used.
+ * @property {String[]} labelText - list of label strings, must set `labelType` to &quot;text&quot;
+ *                                   to take effect
+ * @property {String} fontFamily - font family, one of: &quot;sans-serif&quot;, &quot;monospace&quot;, &quot;serif&quot;
+ * @property {String} fontStyle - font style, &quot;normal&quot; or &quot;italic&quot;
+ * @property {String} fontWeight - font weight, &quot;normal&quot; or &quot;bold&quot;
+ * @property {Boolean} sdf - use &quot;signed distance field&quot;-based rendering for sharper edges
+ * @property {Float} xOffset - offset in x-direction
+ * @property {Float} yOffset - offset in y-direction
+ * @property {Float} zOffset - offset in z-direction (i.e. in camera direction)
+ * @property {String} attachment - attachment of the label, one of:
+ *                                 &quot;bottom-left&quot;, &quot;bottom-center&quot;, &quot;bottom-right&quot;,
+ *                                 &quot;middle-left&quot;, &quot;middle-center&quot;, &quot;middle-right&quot;,
+ *                                 &quot;top-left&quot;, &quot;top-center&quot;, &quot;top-right&quot;
+ * @property {Boolean} showBorder - show border/outline
+ * @property {Color} borderColor - color of the border/outline
+ * @property {Float} borderWidth - width of the border/outline
+ * @property {Boolean} showBackground - show background rectangle
+ * @property {Color} backgroundColor - color of the background
+ * @property {Float} backgroundMargin - width of the background
+ * @property {Float} backgroundOpacity - opacity of the background
+ */
+
+
+/**
+ * Label representation
+ */
+class LabelRepresentation extends StructureRepresentation{
+
+    /**
+     * Create Label representation object
+     * @param {Structure} structure - the structure to be represented
+     * @param {Viewer} viewer - a viewer object
+     * @param {LabelRepresentationParameters} params - label representation parameters
+     */
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;label&quot;;
+
+        this.parameters = Object.assign( {
+
+            labelType: {
+                type: &quot;select&quot;, options: LabelFactory.types, rebuild: true
+            },
+            labelText: {
+                type: &quot;hidden&quot;, rebuild: true
+            },
+            fontFamily: {
+                type: &quot;select&quot;, options: {
+                    &quot;sans-serif&quot;: &quot;sans-serif&quot;,
+                    &quot;monospace&quot;: &quot;monospace&quot;,
+                    &quot;serif&quot;: &quot;serif&quot;
+                },
+                buffer: true
+            },
+            fontStyle: {
+                type: &quot;select&quot;, options: {
+                    &quot;normal&quot;: &quot;normal&quot;,
+                    &quot;italic&quot;: &quot;italic&quot;
+                },
+                buffer: true
+            },
+            fontWeight: {
+                type: &quot;select&quot;, options: {
+                    &quot;normal&quot;: &quot;normal&quot;,
+                    &quot;bold&quot;: &quot;bold&quot;
+                },
+                buffer: true
+            },
+            sdf: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            xOffset: {
+                type: &quot;number&quot;, precision: 1, max: 20, min: -20, buffer: true
+            },
+            yOffset: {
+                type: &quot;number&quot;, precision: 1, max: 20, min: -20, buffer: true
+            },
+            zOffset: {
+                type: &quot;number&quot;, precision: 1, max: 20, min: -20, buffer: true
+            },
+            attachment: {
+                type: &quot;select&quot;, options: {
+                    &quot;bottom-left&quot;: &quot;bottom-left&quot;,
+                    &quot;bottom-center&quot;: &quot;bottom-center&quot;,
+                    &quot;bottom-right&quot;: &quot;bottom-right&quot;,
+                    &quot;middle-left&quot;: &quot;middle-left&quot;,
+                    &quot;middle-center&quot;: &quot;middle-center&quot;,
+                    &quot;middle-right&quot;: &quot;middle-right&quot;,
+                    &quot;top-left&quot;: &quot;top-left&quot;,
+                    &quot;top-center&quot;: &quot;top-center&quot;,
+                    &quot;top-right&quot;: &quot;top-right&quot;
+                },
+                rebuild: true
+            },
+            showBorder: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            borderColor: {
+                type: &quot;color&quot;, buffer: true
+            },
+            borderWidth: {
+                type: &quot;number&quot;, precision: 2, max: 0.3, min: 0, buffer: true
+            },
+            showBackground: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            backgroundColor: {
+                type: &quot;color&quot;, buffer: true
+            },
+            backgroundMargin: {
+                type: &quot;number&quot;, precision: 2, max: 2, min: 0, rebuild: true
+            },
+            backgroundOpacity: {
+                type: &quot;range&quot;, step: 0.01, max: 1, min: 0, buffer: true
+            },
+
+        }, this.parameters, {
+
+            side: null,
+            flatShaded: null,
+            wireframe: null,
+            linewidth: null,
+
+            roughness: null,
+            metalness: null,
+            diffuse: null,
+
+        } );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+
+        this.labelType = defaults( p.labelType, &quot;res&quot; );
+        this.labelText = defaults( p.labelText, {} );
+        this.fontFamily = defaults( p.fontFamily, &quot;sans-serif&quot; );
+        this.fontStyle = defaults( p.fontStyle, &quot;normal&quot; );
+        this.fontWeight = defaults( p.fontWeight, &quot;bold&quot; );
+        this.sdf = defaults( p.sdf, Browser === &quot;Chrome&quot; );
+        this.xOffset = defaults( p.xOffset, 0.0 );
+        this.yOffset = defaults( p.yOffset, 0.0 );
+        this.zOffset = defaults( p.zOffset, 0.5 );
+        this.attachment = defaults( p.attachment, &quot;bottom-left&quot; );
+        this.showBorder = defaults( p.showBorder, false );
+        this.borderColor = defaults( p.borderColor, &quot;lightgrey&quot; );
+        this.borderWidth = defaults( p.borderWidth, 0.15 );
+        this.showBackground = defaults( p.showBackground, false );
+        this.backgroundColor = defaults( p.backgroundColor, &quot;lightgrey&quot; );
+        this.backgroundMargin = defaults( p.backgroundMargin, 0.5 );
+        this.backgroundOpacity = defaults( p.backgroundOpacity, 1.0 );
+
+        super.init( p );
+
+    }
+
+    createData( sview ){
+
+        var what = { position: true, color: true, radius: true };
+        var atomData = sview.getAtomData( this.getAtomParams( what ) );
+
+        var text = [];
+        var labelFactory = new LabelFactory(
+            this.labelType, this.labelText
+        );
+        sview.eachAtom( function( ap ){
+            text.push( labelFactory.atomLabel( ap ) );
+        } );
+
+        var textBuffer = new TextBuffer(
+            {
+                position: atomData.position,
+                size: atomData.radius,
+                color: atomData.color,
+                text
+            },
+            this.getBufferParams( {
+                fontFamily: this.fontFamily,
+                fontStyle: this.fontStyle,
+                fontWeight: this.fontWeight,
+                sdf: this.sdf,
+                xOffset: this.xOffset,
+                yOffset: this.yOffset,
+                zOffset: this.zOffset,
+                attachment: this.attachment,
+                showBorder: this.showBorder,
+                borderColor: this.borderColor,
+                borderWidth: this.borderWidth,
+                showBackground: this.showBackground,
+                backgroundColor: this.backgroundColor,
+                backgroundMargin: this.backgroundMargin,
+                backgroundOpacity: this.backgroundOpacity
+            } )
+        );
+
+        return {
+            bufferList: [ textBuffer ]
+        };
+
+    }
+
+    updateData( what, data ){
+
+        var atomData = data.sview.getAtomData( this.getAtomParams( what ) );
+        var textData = {};
+
+        if( !what || what.position ){
+            textData.position = atomData.position;
+        }
+
+        if( !what || what.radius ){
+            textData.size = atomData.radius;
+        }
+
+        if( !what || what.color ){
+            textData.color = atomData.color;
+        }
+
+        data.bufferList[ 0 ].setAttributes( textData );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;label&quot;, LabelRepresentation );
+
+
+export default LabelRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,349 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/dot-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Dot Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ExtensionFragDepth } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import Representation from &quot;./representation.js&quot;;
+import Volume from &quot;../surface/volume.js&quot;;
+import FilteredVolume from &quot;../surface/filtered-volume.js&quot;;
+import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
+import PointBuffer from &quot;../buffer/point-buffer.js&quot;;
+
+
+class DotRepresentation extends Representation{
+
+    constructor( surface, viewer, params ){
+
+        super( surface, viewer, params );
+
+        this.type = &quot;dot&quot;;
+
+        this.parameters = Object.assign( {
+
+            thresholdType: {
+                type: &quot;select&quot;, rebuild: true, options: {
+                    &quot;value&quot;: &quot;value&quot;, &quot;sigma&quot;: &quot;sigma&quot;
+                }
+            },
+            thresholdMin: {
+                type: &quot;number&quot;, precision: 3, max: Infinity, min: -Infinity, rebuild: true
+            },
+            thresholdMax: {
+                type: &quot;number&quot;, precision: 3, max: Infinity, min: -Infinity, rebuild: true
+            },
+            thresholdOut: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            dotType: {
+                type: &quot;select&quot;, rebuild: true, options: {
+                    &quot;&quot;: &quot;&quot;,
+                    &quot;sphere&quot;: &quot;sphere&quot;,
+                    &quot;point&quot;: &quot;point&quot;
+                }
+            },
+            radiusType: {
+                type: &quot;select&quot;, options: {
+                    &quot;&quot;: &quot;&quot;,
+                    &quot;value&quot;: &quot;value&quot;,
+                    &quot;abs-value&quot;: &quot;abs-value&quot;,
+                    &quot;value-min&quot;: &quot;value-min&quot;,
+                    &quot;deviation&quot;: &quot;deviation&quot;,
+                    &quot;size&quot;: &quot;size&quot;
+                }
+            },
+            radius: {
+                type: &quot;number&quot;, precision: 3, max: 10.0, min: 0.001, property: &quot;size&quot;
+            },
+            scale: {
+                type: &quot;number&quot;, precision: 3, max: 10.0, min: 0.001
+            },
+            sphereDetail: true,
+            disableImpostor: true,
+
+            pointSize: {
+                type: &quot;number&quot;, precision: 1, max: 100, min: 0, buffer: true
+            },
+            sizeAttenuation: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            sortParticles: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            useTexture: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            alphaTest: {
+                type: &quot;range&quot;, step: 0.001, max: 1, min: 0, buffer: true
+            },
+            forceTransparent: {
+                type: &quot;boolean&quot;, buffer: true
+            },
+            edgeBleach: {
+                type: &quot;range&quot;, step: 0.001, max: 1, min: 0, buffer: true
+            },
+
+        }, this.parameters, {
+
+            colorScheme: {
+                type: &quot;select&quot;, update: &quot;color&quot;, options: {
+                    &quot;&quot;: &quot;&quot;,
+                    &quot;value&quot;: &quot;value&quot;,
+                    &quot;uniform&quot;: &quot;uniform&quot;,
+                    &quot;random&quot;: &quot;random&quot;
+                }
+            },
+
+        } );
+
+        if( surface instanceof Volume ){
+            this.surface = undefined;
+            this.volume = new FilteredVolume( surface );
+        }else{
+            this.surface = surface;
+            this.volume = undefined;
+        }
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.colorScheme = defaults( p.colorScheme, &quot;uniform&quot; );
+        p.colorValue = defaults( p.colorValue, 0xDDDDDD );
+
+        this.thresholdType = defaults( p.thresholdType, &quot;sigma&quot; );
+        this.thresholdMin = defaults( p.thresholdMin, 2.0 );
+        this.thresholdMax = defaults( p.thresholdMax, Infinity );
+        this.thresholdOut = defaults( p.thresholdOut, false );
+        this.dotType = defaults( p.dotType, &quot;point&quot; );
+        this.radius = defaults( p.radius, 0.1 );
+        this.scale = defaults( p.scale, 1.0 );
+
+        this.pointSize = defaults( p.pointSize, 1 );
+        this.sizeAttenuation = defaults( p.sizeAttenuation, true );
+        this.sortParticles = defaults( p.sortParticles, false );
+        this.useTexture = defaults( p.useTexture, false );
+        this.alphaTest = defaults( p.alphaTest, 0.5 );
+        this.forceTransparent = defaults( p.forceTransparent, false );
+        this.edgeBleach = defaults( p.edgeBleach, 0.0 );
+
+        super.init( p );
+
+        this.build();
+
+    }
+
+    attach( callback ){
+
+        this.bufferList.forEach( buffer =&gt; {
+            this.viewer.add( buffer );
+        } );
+        this.setVisibility( this.visible );
+
+        callback();
+
+    }
+
+    create(){
+
+        var dotData = {};
+
+        if( this.volume ){
+
+            var volume = this.volume;
+            var thresholdMin, thresholdMax;
+
+            if( this.thresholdType === &quot;sigma&quot; ){
+                thresholdMin = volume.getValueForSigma( this.thresholdMin );
+                thresholdMax = volume.getValueForSigma( this.thresholdMax );
+            }else{
+                thresholdMin = this.thresholdMin;
+                thresholdMax = this.thresholdMax;
+            }
+            volume.setFilter( thresholdMin, thresholdMax, this.thresholdOut );
+
+            dotData.position = volume.getDataPosition();
+            dotData.color = volume.getDataColor( this.getColorParams() );
+            if( this.dotType === &quot;sphere&quot; ){
+                dotData.radius = volume.getDataSize( this.radius, this.scale );
+                dotData.picking = volume.getDataPicking();
+            }
+
+        }else{
+
+            var surface = this.surface;
+            dotData.position = surface.getPosition();
+            dotData.color = surface.getColor( this.getColorParams() );
+            if( this.dotType === &quot;sphere&quot; ){
+                dotData.radius = surface.getSize( this.radius, this.scale );
+                dotData.picking = surface.getPicking();
+            }
+
+        }
+
+        if( this.dotType === &quot;sphere&quot; ){
+
+            this.dotBuffer = new SphereBuffer(
+                dotData,
+                this.getBufferParams( {
+                    sphereDetail: this.sphereDetail,
+                    disableImpostor: this.disableImpostor,
+                    dullInterior: false
+                } )
+            );
+
+        }else{
+
+            this.dotBuffer = new PointBuffer(
+                dotData,
+                this.getBufferParams( {
+                    pointSize: this.pointSize,
+                    sizeAttenuation: this.sizeAttenuation,
+                    sortParticles: this.sortParticles,
+                    useTexture: this.useTexture,
+                    alphaTest: this.alphaTest,
+                    forceTransparent: this.forceTransparent,
+                    edgeBleach: this.edgeBleach
+                } )
+            );
+
+        }
+
+        this.bufferList.push( this.dotBuffer );
+
+    }
+
+    update( what ){
+
+        if( this.bufferList.length === 0 ) return;
+
+        what = what || {};
+
+        var dotData = {};
+
+        if( what.color ){
+            if( this.volume ){
+                dotData.color = this.volume.getDataColor(
+                    this.getColorParams()
+                );
+            }else{
+                dotData.color = this.surface.getColor(
+                    this.getColorParams()
+                );
+            }
+        }
+
+        if( this.dotType === &quot;sphere&quot; &amp;&amp; ( what.radius || what.scale ) ){
+            if( this.volume ){
+                dotData.radius = this.volume.getDataSize(
+                    this.radius, this.scale
+                );
+            }else{
+                dotData.radius = this.surface.getSize(
+                    this.radius, this.scale
+                );
+            }
+        }
+
+        this.dotBuffer.setAttributes( dotData );
+
+    }
+
+    setParameters( params, what, rebuild ){
+
+        what = what || {};
+
+        if( params &amp;&amp; params.thresholdType !== undefined &amp;&amp;
+            this.volume instanceof Volume
+        ){
+
+            if( this.thresholdType === &quot;value&quot; &amp;&amp;
+                params.thresholdType === &quot;sigma&quot;
+            ){
+
+                this.thresholdMin = this.volume.getSigmaForValue(
+                    this.thresholdMin
+                );
+                this.thresholdMax = this.volume.getSigmaForValue(
+                    this.thresholdMax
+                );
+
+            }else if( this.thresholdType === &quot;sigma&quot; &amp;&amp;
+                params.thresholdType === &quot;value&quot;
+            ){
+
+                this.thresholdMin = this.volume.getValueForSigma(
+                    this.thresholdMin
+                );
+                this.thresholdMax = this.volume.getValueForSigma(
+                    this.thresholdMax
+                );
+
+            }
+
+            this.thresholdType = params.thresholdType;
+
+        }
+
+        if( params &amp;&amp; params.radiusType !== undefined ){
+
+            if( params.radiusType === &quot;radius&quot; ){
+                this.radius = 0.1;
+            }else{
+                this.radius = params.radiusType;
+            }
+            what.radius = true;
+            if( this.dotType === &quot;sphere&quot; &amp;&amp;
+                ( !ExtensionFragDepth || this.disableImpostor )
+            ){
+                rebuild = true;
+            }
+
+        }
+
+        if( params &amp;&amp; params.radius !== undefined ){
+
+            what.radius = true;
+            if( this.dotType === &quot;sphere&quot; &amp;&amp;
+                ( !ExtensionFragDepth || this.disableImpostor )
+            ){
+                rebuild = true;
+            }
+
+        }
+
+        if( params &amp;&amp; params.scale !== undefined ){
+
+            what.scale = true;
+            if( this.dotType === &quot;sphere&quot; &amp;&amp;
+                ( !ExtensionFragDepth || this.disableImpostor )
+            ){
+                rebuild = true;
+            }
+
+        }
+
+        super.setParameters( params, what, rebuild );
+
+        return this;
+
+    }
+
+}
+
+
+export default DotRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

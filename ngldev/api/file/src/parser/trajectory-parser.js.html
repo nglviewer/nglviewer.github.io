@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,36 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/parser/trajectory-parser.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Trajectory Parser
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Parser from &quot;./parser.js&quot;;
+import Frames from &quot;../trajectory/frames.js&quot;;
+
+
+class TrajectoryParser extends Parser{
+
+    constructor( streamer, params ){
+
+        super( streamer, params );
+
+        this.frames = new Frames( this.name, this.path );
+
+    }
+
+    get type (){ return &quot;trajectory&quot;; }
+    get __objName(){ return &quot;frames&quot;; }
+
+}
+
+
+export default TrajectoryParser;
+</code></pre>
+
 </div>
 
 <footer class="footer">

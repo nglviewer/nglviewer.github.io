@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,175 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/geometry/helixbundle.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Helixbundle
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Vector3 } from &quot;../../lib/three.es6.js&quot;;
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import { AtomPicker } from &quot;../utils/picker.js&quot;;
+import RadiusFactory from &quot;../utils/radius-factory.js&quot;;
+import Helixorient from &quot;./helixorient.js&quot;;
+import { calculateMeanVector3, projectPointOnVector } from &quot;../math/vector-utils.js&quot;;
+
+
+function Helixbundle( polymer ){
+
+    this.polymer = polymer;
+
+    this.helixorient = new Helixorient( polymer );
+    this.position = this.helixorient.getPosition();
+
+}
+
+Helixbundle.prototype = {
+
+    constructor: Helixbundle,
+
+    getAxis: function( localAngle, centerDist, ssBorder, colorParams, radius, scale ){
+
+        localAngle = localAngle || 30;
+        centerDist = centerDist || 2.5;
+        ssBorder = ssBorder === undefined ? false : ssBorder;
+
+        var polymer = this.polymer;
+        var structure = polymer.structure;
+        var n = polymer.residueCount;
+        var residueIndexStart = polymer.residueIndexStart;
+
+        var pos = this.position;
+
+        var cp = colorParams || {};
+        cp.structure = structure;
+
+        var colormaker = ColormakerRegistry.getScheme( cp );
+
+        var radiusFactory = new RadiusFactory( radius, scale );
+
+        var j = 0;
+        var k = 0;
+
+        var axis = [];
+        var center = [];
+        var beg = [];
+        var end = [];
+        var col = [];
+        var pick = [];
+        var size = [];
+        var residueOffset = [];
+        var residueCount = [];
+
+        var tmpAxis = [];
+        var tmpCenter = [];
+
+        var _axis, _center;
+        var _beg = new Vector3();
+        var _end = new Vector3();
+
+        var rp1 = structure.getResidueProxy();
+        var rp2 = structure.getResidueProxy();
+        var ap = structure.getAtomProxy();
+
+        var c1 = new Vector3();
+        var c2 = new Vector3();
+
+        var split = false;
+
+        for( var i = 0; i &lt; n; ++i ){
+
+            rp1.index = residueIndexStart + i;
+            c1.fromArray( pos.center, i * 3 );
+
+            if( i === n - 1 ){
+                split = true;
+            }else{
+
+                rp2.index = residueIndexStart + i + 1;
+                c2.fromArray( pos.center, i * 3 + 3 );
+
+                if( ssBorder &amp;&amp; rp1.sstruc !== rp2.sstruc ){
+                    split = true;
+                }else if( c1.distanceTo( c2 ) &gt; centerDist ){
+                    split = true;
+                }else if( pos.bending[ i ] &gt; localAngle ){
+                    split = true;
+                }
+
+            }
+
+            if( split ){
+
+                if( i - j &lt; 4 ){
+                    j = i;
+                    split = false;
+                    continue;
+                }
+
+                ap.index = rp1.traceAtomIndex;
+
+                // ignore first and last axis
+                tmpAxis = pos.axis.subarray( j * 3 + 3, i * 3 );
+                tmpCenter = pos.center.subarray( j * 3, i * 3 + 3 );
+
+                _axis = calculateMeanVector3( tmpAxis ).normalize();
+                _center = calculateMeanVector3( tmpCenter );
+
+                _beg.fromArray( tmpCenter );
+                projectPointOnVector( _beg, _axis, _center );
+
+                _end.fromArray( tmpCenter, tmpCenter.length - 3 );
+                projectPointOnVector( _end, _axis, _center );
+
+                _axis.subVectors( _end, _beg );
+
+                _axis.toArray( axis, k );
+                _center.toArray( center, k );
+                _beg.toArray( beg, k );
+                _end.toArray( end, k );
+
+                colormaker.atomColorToArray( ap, col, k );
+
+                pick.push( ap.index );
+
+                size.push( radiusFactory.atomRadius( ap ) );
+
+                residueOffset.push( residueIndexStart + j );
+                residueCount.push( residueIndexStart + i + 1 - j );
+
+                k += 3;
+                j = i;
+                split = false;
+
+            }
+
+        }
+
+        var picking = new Float32Array( pick );
+
+        return {
+            &quot;axis&quot;: new Float32Array( axis ),
+            &quot;center&quot;: new Float32Array( center ),
+            &quot;begin&quot;: new Float32Array( beg ),
+            &quot;end&quot;: new Float32Array( end ),
+            &quot;color&quot;: new Float32Array( col ),
+            &quot;picking&quot;: new AtomPicker( picking, structure ),
+            &quot;size&quot;: new Float32Array( size ),
+            &quot;residueOffset&quot;: residueOffset,
+            &quot;residueCount&quot;: residueCount
+        };
+
+    }
+
+};
+
+
+export default Helixbundle;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,82 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/store/bond-store.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Bond Store
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Store from &quot;./store.js&quot;;
+
+
+/**
+ * Bond store class
+ * @class
+ * @extends Store
+ * @param {Integer} [size] - initial size
+ */
+function BondStore( size ){
+
+    Store.call( this, size );
+
+}
+
+BondStore.prototype = Object.assign( Object.create(
+
+    Store.prototype ), {
+
+    constructor: BondStore,
+
+    type: &quot;BondStore&quot;,
+
+    __fields: [
+
+        [ &quot;atomIndex1&quot;, 1, &quot;int32&quot; ],
+        [ &quot;atomIndex2&quot;, 1, &quot;int32&quot; ],
+        [ &quot;bondOrder&quot;, 1, &quot;int8&quot; ],
+
+    ],
+
+    addBond: function( atom1, atom2, bondOrder ){
+
+        this.growIfFull();
+
+        var i = this.count;
+        var ai1 = atom1.index;
+        var ai2 = atom2.index;
+
+        if( ai1 &lt; ai2 ){
+            this.atomIndex1[ i ] = ai1;
+            this.atomIndex2[ i ] = ai2;
+        }else{
+            this.atomIndex2[ i ] = ai1;
+            this.atomIndex1[ i ] = ai2;
+        }
+        if( bondOrder ) this.bondOrder[ i ] = bondOrder;
+
+        this.count += 1;
+
+    },
+
+    addBondIfConnected: function( atom1, atom2, bondOrder ){
+
+        if( atom1.connectedTo( atom2 ) ){
+            this.addBond( atom1, atom2, bondOrder );
+            return true;
+        }
+
+        return false;
+
+    }
+
+} );
+
+
+export default BondStore;
+</code></pre>
+
 </div>
 
 <footer class="footer">

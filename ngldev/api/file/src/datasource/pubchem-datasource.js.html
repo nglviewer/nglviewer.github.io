@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,52 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/datasource/pubchem-datasource.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file PubChem Datasource
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Log, DatasourceRegistry } from &quot;../globals.js&quot;;
+import { getFileInfo, getProtocol } from &quot;../utils.js&quot;;
+
+
+var baseUrl = &quot;//pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/&quot;;
+var suffixUrl = &quot;/SDF?record_type=3d&quot;;
+
+
+function PubchemDatasource(){
+
+    this.getUrl = function( src ){
+        var info = getFileInfo( src );
+        var cid = info.name;
+        var url;
+        if( !info.ext || info.ext === &quot;sdf&quot; ){
+            url = baseUrl + cid + suffixUrl;
+        }else{
+            Log.warn( &quot;unsupported ext&quot;, info.ext );
+            url = baseUrl + cid + suffixUrl;
+        }
+        return getProtocol() + url;
+    };
+
+    this.getExt = function( src ){
+        var info = getFileInfo( src );
+        if( !info.ext || info.ext === &quot;sdf&quot; ){
+            return &quot;sdf&quot;;
+        }
+    };
+
+}
+
+
+DatasourceRegistry.add( &quot;pubchem&quot;, new PubchemDatasource() );
+
+
+export default PubchemDatasource;
+</code></pre>
+
 </div>
 
 <footer class="footer">

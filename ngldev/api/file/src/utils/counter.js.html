@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,161 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/utils/counter.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Counter
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Log } from &quot;../globals.js&quot;;
+
+import Signal from &quot;../../lib/signals.es6.js&quot;;
+
+
+/**
+ * {@link Signal}, dispatched when the `count` changes
+ * @example
+ * counter.signals.countChanged.add( function( delta ){ ... } );
+ * @event Counter#countChanged
+ * @type {Integer}
+ */
+
+
+/**
+ * Counter class for keeping track of counts
+ */
+class Counter{
+
+    constructor(){
+
+        /**
+         * The `count`
+         * @member {Integer}
+         */
+        this.count = 0;
+
+        this.signals = {
+            countChanged: new Signal(),
+        };
+
+    }
+
+    /**
+     * Set the `count` to zero
+     * @return {undefined}
+     */
+    clear(){
+
+        this.change( -this.count );
+
+    }
+
+    /**
+     * Change the `count`
+     * @fires Counter#countChanged
+     * @param {Integer} delta - count change
+     * @return {undefined}
+     */
+    change( delta ){
+
+        this.count += delta;
+        this.signals.countChanged.dispatch( delta, this.count );
+
+        if( this.count &lt; 0 ){
+            Log.warn( &quot;Counter.count below zero&quot;, this.count );
+        }
+
+    }
+
+    /**
+     * Increments the `count` by one.
+     * @return {undefined}
+     */
+    increment(){
+
+        this.change( 1 );
+
+    }
+
+    /**
+     * Decrements the `count` by one.
+     * @return {undefined}
+     */
+    decrement(){
+
+        this.change( -1 );
+
+    }
+
+    /**
+     * Listen to another counter object and change this `count` by the
+     * same amount
+     * @param  {Counter} counter - the counter object to listen to
+     * @return {undefined}
+     */
+    listen( counter ){
+
+        this.change( counter.count );
+        counter.signals.countChanged.add( this.change, this );
+
+    }
+
+    /**
+     * Stop listening to the other counter object
+     * @param  {Counter} counter - the counter object to stop listening to
+     * @return {undefined}
+     */
+    unlisten( counter ){
+
+        var countChanged = counter.signals.countChanged;
+        if( countChanged.has( this.change, this ) ){
+            countChanged.remove( this.change, this );
+        }
+
+    }
+
+    /**
+     * Invole the callback function once, when the `count` becomes zero
+     * @param  {Function} callback - the callback function
+     * @param  {Object}   context - the context for the callback function
+     * @return {undefined}
+     */
+    onZeroOnce( callback, context ){
+
+        if( this.count === 0 ){
+
+            callback.call( context, 0, 0 );
+
+        }else{
+
+            var fn = function(){
+
+                if( this.count === 0 ){
+                    this.signals.countChanged.remove( fn, this );
+                    callback.apply( context, arguments );
+                }
+
+            };
+            this.signals.countChanged.add( fn, this );
+
+        }
+
+    }
+
+    dispose(){
+
+        this.clear();
+        this.signals.countChanged.dispose();
+
+    }
+
+}
+
+
+export default Counter;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,241 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/ngl.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file ngl
+ * @private
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ */
+
+
+import &quot;./polyfills&quot;;
+import _Promise from &quot;../lib/promise.es6.js&quot;;
+if( typeof window !== &apos;undefined&apos; &amp;&amp; !window.Promise ){
+    window.Promise = _Promise;
+}
+
+
+/**
+ * The NGL module. These members are available in the `NGL` namespace when using the {@link https://github.com/umdjs/umd|UMD} build in the `ngl.js` file.
+ * @module NGL
+ */
+
+import {
+    Debug, setDebug,
+    ColormakerRegistry, DatasourceRegistry, ParserRegistry, RepresentationRegistry
+} from &quot;./globals.js&quot;;
+import { autoLoad, getDataInfo } from &quot;./loader/loader-utils.js&quot;;
+import Selection from &quot;./selection.js&quot;;
+import PdbWriter from &quot;./writer/pdb-writer.js&quot;;
+import Stage from &quot;./stage/stage.js&quot;;
+import Collection from &quot;./component/collection.js&quot;;
+import ComponentCollection from &quot;./component/component-collection.js&quot;;
+import RepresentationCollection from &quot;./component/representation-collection.js&quot;;
+import Assembly from &quot;./symmetry/assembly.js&quot;;
+import TrajectoryPlayer from &quot;./trajectory/trajectory-player.js&quot;;
+import { superpose } from &quot;./align/align-utils.js&quot;;
+import { guessElement } from &quot;./structure/structure-utils.js&quot;;
+
+import { throttle, download, getQuery, uniqueArray, getFileInfo } from &quot;./utils.js&quot;;
+import Queue from &quot;./utils/queue.js&quot;;
+import Counter from &quot;./utils/counter.js&quot;;
+
+//
+
+import Colormaker from &quot;./color/colormaker.js&quot;;
+
+import &quot;./color/atomindex-colormaker.js&quot;;
+import &quot;./color/bfactor-colormaker.js&quot;;
+import &quot;./color/chainid-colormaker.js&quot;;
+import &quot;./color/chainindex-colormaker.js&quot;;
+import &quot;./color/chainname-colormaker.js&quot;;
+import &quot;./color/densityfit-colormaker.js&quot;;
+import &quot;./color/element-colormaker.js&quot;;
+import &quot;./color/entityindex-colormaker.js&quot;;
+import &quot;./color/entitytype-colormaker.js&quot;;
+import &quot;./color/geoquality-colormaker.js&quot;;
+import &quot;./color/hydrophobicity-colormaker.js&quot;;
+import &quot;./color/modelindex-colormaker.js&quot;;
+import &quot;./color/moleculetype-colormaker.js&quot;;
+import &quot;./color/occupancy-colormaker.js&quot;;
+import &quot;./color/random-colormaker.js&quot;;
+import &quot;./color/residueindex-colormaker.js&quot;;
+import &quot;./color/resname-colormaker.js&quot;;
+import &quot;./color/sstruc-colormaker.js&quot;;
+import &quot;./color/uniform-colormaker.js&quot;;
+import &quot;./color/value-colormaker.js&quot;;
+import &quot;./color/volume-colormaker.js&quot;;
+
+//
+
+import &quot;./component/script-component.js&quot;;
+import &quot;./component/shape-component.js&quot;;
+import &quot;./component/structure-component.js&quot;;
+import &quot;./component/surface-component.js&quot;;
+import &quot;./component/volume-component.js&quot;;
+
+//
+
+import &quot;./representation/axes-representation.js&quot;;
+import &quot;./representation/backbone-representation.js&quot;;
+import &quot;./representation/ballandstick-representation.js&quot;;
+import &quot;./representation/base-representation.js&quot;;
+import &quot;./representation/cartoon-representation.js&quot;;
+import &quot;./representation/contact-representation.js&quot;;
+import &quot;./representation/distance-representation.js&quot;;
+import &quot;./representation/helixorient-representation.js&quot;;
+import &quot;./representation/hyperball-representation.js&quot;;
+import &quot;./representation/label-representation.js&quot;;
+import &quot;./representation/licorice-representation.js&quot;;
+import &quot;./representation/line-representation.js&quot;;
+import &quot;./representation/molecularsurface-representation.js&quot;;
+import &quot;./representation/point-representation.js&quot;;
+import &quot;./representation/ribbon-representation.js&quot;;
+import &quot;./representation/rocket-representation.js&quot;;
+import &quot;./representation/rope-representation.js&quot;;
+import &quot;./representation/spacefill-representation.js&quot;;
+import &quot;./representation/trace-representation.js&quot;;
+import &quot;./representation/tube-representation.js&quot;;
+import &quot;./representation/unitcell-representation.js&quot;;
+import &quot;./representation/validation-representation.js&quot;;
+
+import BufferRepresentation from &quot;./representation/buffer-representation.js&quot;;
+import ArrowBuffer from &quot;./buffer/arrow-buffer.js&quot;;
+import ConeBuffer from &quot;./buffer/cone-buffer.js&quot;;
+import CylinderBuffer from &quot;./buffer/cylinder-buffer.js&quot;;
+import EllipsoidBuffer from &quot;./buffer/ellipsoid-buffer.js&quot;;
+import SphereBuffer from &quot;./buffer/sphere-buffer.js&quot;;
+import TextBuffer from &quot;./buffer/text-buffer.js&quot;;
+
+//
+
+import &quot;./parser/cif-parser.js&quot;;
+import &quot;./parser/gro-parser.js&quot;;
+import &quot;./parser/mmtf-parser.js&quot;;
+import &quot;./parser/mol2-parser.js&quot;;
+import &quot;./parser/pdb-parser.js&quot;;
+import &quot;./parser/pqr-parser.js&quot;;
+import &quot;./parser/psf-parser.js&quot;;
+import &quot;./parser/sdf-parser.js&quot;;
+
+import &quot;./parser/dcd-parser.js&quot;;
+
+import &quot;./parser/cube-parser.js&quot;;
+import &quot;./parser/dsn6-parser.js&quot;;
+import &quot;./parser/dx-parser.js&quot;;
+import &quot;./parser/dxbin-parser.js&quot;;
+import &quot;./parser/mrc-parser.js&quot;;
+import &quot;./parser/xplor-parser.js&quot;;
+
+import &quot;./parser/obj-parser.js&quot;;
+import &quot;./parser/ply-parser.js&quot;;
+
+import &quot;./parser/csv-parser.js&quot;;
+import &quot;./parser/json-parser.js&quot;;
+import &quot;./parser/text-parser.js&quot;;
+import &quot;./parser/xml-parser.js&quot;;
+
+import &quot;./parser/validation-parser.js&quot;;
+
+//
+
+import Shape from &quot;./geometry/shape.js&quot;;
+import Kdtree from &quot;./geometry/kdtree.js&quot;;
+import SpatialHash from &quot;./geometry/spatial-hash.js&quot;;
+
+//
+
+import &quot;./utils/gzip-decompressor.js&quot;;
+
+//
+
+import &quot;./datasource/rcsb-datasource.js&quot;;
+import &quot;./datasource/pubchem-datasource.js&quot;;
+import &quot;./datasource/passthrough-datasource.js&quot;;
+import StaticDatasource from &quot;./datasource/static-datasource.js&quot;;
+
+//
+
+import {
+    LeftMouseButton, MiddleMouseButton, RightMouseButton
+} from &quot;./constants.js&quot;;
+
+//
+
+import Signal from &quot;../lib/signals.es6.js&quot;;
+import {
+    Matrix3, Matrix4, Vector2, Vector3, Box3, Quaternion, Euler, Plane, Color
+} from &quot;../lib/three.es6.js&quot;;
+
+//
+
+import Version from &quot;./version.js&quot;;
+
+
+export {
+    Version,
+    Debug,
+    setDebug,
+    DatasourceRegistry,
+    StaticDatasource,
+    ParserRegistry,
+    autoLoad,
+    RepresentationRegistry,
+    ColormakerRegistry,
+    Colormaker,
+    Selection,
+    PdbWriter,
+    Stage,
+    Collection,
+    ComponentCollection,
+    RepresentationCollection,
+
+    Assembly,
+    TrajectoryPlayer,
+
+    superpose,
+    guessElement,
+
+    Queue,
+    Counter,
+    throttle,
+    download,
+    getQuery,
+    getDataInfo,
+    getFileInfo,
+    uniqueArray,
+
+    BufferRepresentation,
+    SphereBuffer,
+    EllipsoidBuffer,
+    CylinderBuffer,
+    ConeBuffer,
+    ArrowBuffer,
+    TextBuffer,
+
+    Shape,
+
+    Kdtree,
+    SpatialHash,
+
+    LeftMouseButton,
+    MiddleMouseButton,
+    RightMouseButton,
+
+    Signal,
+
+    Matrix3,
+    Matrix4,
+    Vector2,
+    Vector3,
+    Box3,
+    Quaternion,
+    Euler,
+    Plane,
+    Color
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

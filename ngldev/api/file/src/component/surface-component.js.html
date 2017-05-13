@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,93 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/component/surface-component.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Surface Component
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ComponentRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import Component from &quot;./component.js&quot;;
+
+
+/**
+ * Component wrapping a {@link Surface} object
+ *
+ * @example
+ * // get a surface component by loading a surface file into the stage
+ * stage.loadFile( &quot;url/for/surface&quot; ).then( function( surfaceComponent ){
+ *     surfaceComponent.addRepresentation( &quot;surface&quot; );
+ *     surfaceComponent.autoView();
+ * } );
+ */
+class SurfaceComponent extends Component{
+
+    /**
+     * @param {Stage} stage - stage object the component belongs to
+     * @param {Surface} surface - surface object to wrap
+     * @param {ComponentParameters} params - component parameters
+     */
+    constructor( stage, surface, params ){
+
+        var p = params || {};
+        p.name = defaults( p.name, surface.name );
+
+        super( stage, p );
+
+        this.surface = surface;
+
+    }
+
+    /**
+     * Component type
+     * @type {String}
+     */
+    get type(){ return &quot;surface&quot;; }
+
+    /**
+     * Add a new surface representation to the component
+     * @param {String} type - the name of the representation, one of:
+     *                        surface, dot.
+     * @param {SurfaceRepresentationParameters} params - representation parameters
+     * @return {RepresentationComponent} the created representation wrapped into
+     *                                   a representation component object
+     */
+    addRepresentation( type, params ){
+
+        return super.addRepresentation( type, this.surface, params );
+
+    }
+
+    getBoxUntransformed(){
+
+        return this.surface.boundingBox;
+
+    }
+
+    getCenterUntransformed(){
+
+        return this.surface.center;
+
+    }
+
+    dispose(){
+
+        this.surface.dispose();
+        super.dispose();
+
+    }
+
+}
+
+ComponentRegistry.add( &quot;surface&quot;, SurfaceComponent );
+
+
+export default SurfaceComponent;
+</code></pre>
+
 </div>
 
 <footer class="footer">

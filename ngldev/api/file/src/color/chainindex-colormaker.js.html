@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,63 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/chainindex-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Chainindex Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+
+/**
+ * Color by chain index
+ */
+class ChainindexColormaker extends Colormaker{
+
+    constructor( params ){
+
+        super( params );
+
+        if( !params.scale ){
+            this.scale = &quot;Spectral&quot;;
+        }
+        if( !params.domain ){
+
+            var scalePerModel = {};
+
+            this.structure.eachModel( function( mp ){
+                this.domain = [ mp.chainOffset, mp.chainEnd ];
+                scalePerModel[ mp.index ] = this.getScale();
+            }.bind( this ) );
+
+            this.atomColor = function( a ){
+                return scalePerModel[ a.modelIndex ]( a.chainIndex );
+            };
+
+        }else{
+
+            var chainindexScale = this.getScale();
+
+            this.atomColor = function( a ){
+                return chainindexScale( a.chainIndex );
+            };
+
+        }
+
+    }
+
+}
+
+
+ColormakerRegistry.add( &quot;chainindex&quot;, ChainindexColormaker );
+
+
+export default ChainindexColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,73 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/loader/plugin-loader.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Plugin Loader
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Loader from &quot;./loader.js&quot;;
+import { autoLoad } from &quot;./loader-utils.js&quot;;
+import Script from &quot;../script.js&quot;;
+
+
+/**
+ * Plugin loader class
+ * @extends Loader
+ */
+class PluginLoader extends Loader{
+
+    /**
+     * Load plugin
+     * @return {Promise} resolves to the loaded plugin {@link Script}
+     */
+    load(){
+
+        var basePath;
+        if( this.protocol ){
+            basePath = this.protocol + &quot;://&quot; + this.dir;
+        }else{
+            basePath = this.dir;
+        }
+
+        return this.streamer.read().then( () =&gt; {
+
+            var manifest = JSON.parse( this.streamer.asText() );
+            var promiseList = [];
+
+            manifest.files.map( function( name ){
+
+                promiseList.push(
+                    autoLoad( basePath + name, {
+                        ext: &quot;text&quot;, useWorker: false
+                    } )
+                );
+
+            } );
+
+            return Promise.all( promiseList ).then( dataList =&gt; {
+
+                var text = dataList.reduce( function( text, value ){
+                    return text + &quot;\n\n&quot; + value.data;
+                }, &quot;&quot; );
+                text += manifest.source || &quot;&quot;;
+
+                return new Script( text, this.name, this.path );
+
+            } );
+
+        } );
+
+    }
+
+}
+
+
+export default PluginLoader;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,98 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/buffer/hyperballstickimpostor-buffer.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Hyperball Stick Impostor Buffer
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Matrix4 } from &quot;../../lib/three.es6.js&quot;;
+
+import &quot;../shader/HyperballStickImpostor.vert&quot;;
+import &quot;../shader/HyperballStickImpostor.frag&quot;;
+
+import { defaults } from &quot;../utils.js&quot;;
+import BoxBuffer from &quot;./box-buffer.js&quot;;
+
+
+/**
+ * Hyperball stick impostor buffer.
+ *
+ * @example
+ * var hyperballStickImpostorBuffer = new HyperballStickImpostorBuffer( {
+ *     position1: new Float32Array( [ 0, 0, 0 ] ),
+ *     position2: new Float32Array( [ 2, 2, 2 ] ),
+ *     color: new Float32Array( [ 1, 0, 0 ] ),
+ *     color2: new Float32Array( [ 0, 1, 0 ] ),
+ *     radius1: new Float32Array( [ 1 ] ),
+ *     radius2: new Float32Array( [ 2 ] )
+ * } );
+ */
+class HyperballStickImpostorBuffer extends BoxBuffer{
+
+    /**
+     * @param  {Object} data - attribute object
+     * @param  {Float32Array} data.position1 - from positions
+     * @param  {Float32Array} data.position2 - to positions
+     * @param  {Float32Array} data.color - from colors
+     * @param  {Float32Array} data.color2 - to colors
+     * @param  {Float32Array} data.radius1 - from radii
+     * @param  {Float32Array} data.radius2 - to radii
+     * @param  {Picker} data.picking - picking ids
+     * @param  {BufferParameters} params - parameter object
+     */
+    constructor( data, params ){
+
+        super( data, params );
+
+        var d = data || {};
+        var p = params || {};
+
+        var shrink = defaults( p.shrink, 0.14 );
+
+        this.addUniforms( {
+            &quot;modelViewProjectionMatrix&quot;: { value: new Matrix4() },
+            &quot;modelViewProjectionMatrixInverse&quot;: { value: new Matrix4() },
+            &quot;modelViewMatrixInverseTranspose&quot;: { value: new Matrix4() },
+            &quot;shrink&quot;: { value: shrink },
+        } );
+
+        this.addAttributes( {
+            &quot;position1&quot;: { type: &quot;v3&quot;, value: null },
+            &quot;position2&quot;: { type: &quot;v3&quot;, value: null },
+            &quot;color2&quot;: { type: &quot;c&quot;, value: null },
+            &quot;radius&quot;: { type: &quot;f&quot;, value: null },
+            &quot;radius2&quot;: { type: &quot;f&quot;, value: null }
+        } );
+
+        this.setAttributes( d );
+
+        this.makeMapping();
+
+    }
+
+    get parameters (){
+
+        return Object.assign( {
+
+            shrink: { uniform: true }
+
+        }, super.parameters );
+
+    }
+
+    get isImpostor (){ return true; }
+    get vertexShader (){ return &quot;HyperballStickImpostor.vert&quot;; }
+    get fragmentShader (){ return &quot;HyperballStickImpostor.frag&quot;; }
+
+}
+
+
+export default HyperballStickImpostorBuffer;
+</code></pre>
+
 </div>
 
 <footer class="footer">

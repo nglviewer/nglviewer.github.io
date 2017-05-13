@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,75 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/rope-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Rope Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import CartoonRepresentation from &quot;./cartoon-representation.js&quot;;
+import Helixorient from &quot;../geometry/helixorient.js&quot;;
+import Spline from &quot;../geometry/spline.js&quot;;
+
+
+class RopeRepresentation extends CartoonRepresentation{
+
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;rope&quot;;
+
+        this.parameters = Object.assign( {
+
+            smooth: {
+                type: &quot;integer&quot;, max: 15, min: 0, rebuild: true
+            }
+
+        }, this.parameters, {
+            aspectRatio: null,
+            smoothSheet: null
+        } );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.aspectRatio = 1.0;
+        p.tension = defaults( p.tension, 0.5 );
+        p.scale = defaults( p.scale, 5.0 );
+        p.smoothSheet = false;
+
+        this.smooth = defaults( p.smooth, 2 );
+
+        super.init( p );
+
+    }
+
+    getSpline( polymer ){
+
+        var helixorient = new Helixorient( polymer );
+
+        return new Spline( polymer, this.getSplineParams( {
+            directional: false,
+            positionIterator: helixorient.getCenterIterator( this.smooth )
+        } ) );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;rope&quot;, RopeRepresentation );
+
+
+export default RopeRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

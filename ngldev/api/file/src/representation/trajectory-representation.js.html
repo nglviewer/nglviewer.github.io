@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,236 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/trajectory-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Trajectory Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Color } from &quot;../../lib/three.es6.js&quot;;
+
+import { defaults } from &quot;../utils.js&quot;;
+import { uniformArray, uniformArray3 } from &quot;../math/array-utils.js&quot;;
+
+import StructureRepresentation from &quot;./structure-representation.js&quot;;
+
+import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
+import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
+import PointBuffer from &quot;../buffer/point-buffer.js&quot;;
+import LineBuffer from &quot;../buffer/line-buffer.js&quot;;
+
+
+/**
+ * Trajectory representation parameter object.
+ * @typedef {Object} TrajectoryRepresentationParameters - parameters
+ *
+ * @property {Boolean} drawLine - draw lines
+ * @property {Boolean} drawCylinder - draw cylinders
+ * @property {Boolean} drawPoint - draw points
+ * @property {Boolean} drawSphere - draw sphere
+ * @property {Integer} linewidth - line width
+ * @property {Integer} pointSize - point size
+ * @property {Boolean} sizeAttenuation - size attenuation
+ * @property {Boolean} sort - sort flag for points
+ */
+
+
+/**
+ * Trajectory representation
+ */
+class TrajectoryRepresentation extends StructureRepresentation{
+
+    /**
+     * @param  {Trajectory} trajectory - the trajectory
+     * @param  {Viewer} viewer - viewer object
+     * @param  {TrajectoryRepresentationParameters} params - parameters
+     */
+    constructor( trajectory, viewer, params ){
+
+        super( trajectory.structure, viewer, params );
+
+        this.type = &quot;trajectory&quot;;
+
+        this.parameters = Object.assign( {
+
+            drawLine: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            drawCylinder: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            drawPoint: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            drawSphere: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+
+            linewidth: {
+                type: &quot;integer&quot;, max: 20, min: 1, rebuild: true
+            },
+            pointSize: {
+                type: &quot;integer&quot;, max: 20, min: 1, rebuild: true
+            },
+            sizeAttenuation: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+            sort: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+
+        }, this.parameters );
+
+        this.manualAttach = true;
+
+        this.trajectory = trajectory;
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.colorScheme = defaults( p.colorScheme, &quot;uniform&quot; );
+        p.colorValue = defaults( p.colorValue, 0xDDDDDD );
+
+        this.drawLine = defaults( p.drawLine, true );
+        this.drawCylinder = defaults( p.drawCylinder, false );
+        this.drawPoint = defaults( p.drawPoint, false );
+        this.drawSphere = defaults( p.drawSphere, false );
+
+        this.pointSize = defaults( p.pointSize, 1 );
+        this.sizeAttenuation = defaults( p.sizeAttenuation, false );
+        this.sort = defaults( p.sort, true );
+
+        super.init( p );
+
+    }
+
+    attach( callback ){
+
+        this.bufferList.forEach( buffer =&gt; {
+            this.viewer.add( buffer );
+        } );
+        this.setVisibility( this.visible );
+
+        callback();
+
+    }
+
+    prepare( callback ){
+
+        // TODO
+        callback();
+
+    }
+
+    create(){
+
+        // Log.log( this.selection )
+        // Log.log( this.atomSet )
+
+        if( this.atomSet.atomCount === 0 ) return;
+
+        var scope = this;
+
+        var index = this.atomSet.atoms[ 0 ].index;
+
+        this.trajectory.getPath( index, function( path ){
+
+            var n = path.length / 3;
+            var tc = new Color( scope.colorValue );
+
+            if( scope.drawSphere ){
+
+                var sphereBuffer = new SphereBuffer(
+                    {
+                        position: path,
+                        color: uniformArray3( n, tc.r, tc.g, tc.b ),
+                        radius: uniformArray( n, 0.2 )
+                    },
+                    scope.getBufferParams( {
+                        sphereDetail: scope.sphereDetail,
+                        dullInterior: true,
+                        disableImpostor: scope.disableImpostor
+                    } )
+                );
+
+                scope.bufferList.push( sphereBuffer );
+
+            }
+
+            if( scope.drawCylinder ){
+
+                var cylinderBuffer = new CylinderBuffer(
+                    {
+                        position1: path.subarray( 0, -3 ),
+                        position2: path.subarray( 3 ),
+                        color: uniformArray3( n - 1, tc.r, tc.g, tc.b ),
+                        color2: uniformArray3( n - 1, tc.r, tc.g, tc.b ),
+                        radius: uniformArray( n, 0.05 )
+                    },
+                    scope.getBufferParams( {
+                        openEnded: false,
+                        radialSegments: scope.radialSegments,
+                        disableImpostor: scope.disableImpostor,
+                        dullInterior: true
+                    } )
+
+                );
+
+                scope.bufferList.push( cylinderBuffer );
+
+            }
+
+            if( scope.drawPoint ){
+
+                var pointBuffer = new PointBuffer(
+                    {
+                        position: path,
+                        color: uniformArray3( n, tc.r, tc.g, tc.b )
+                    },
+                    scope.getBufferParams( {
+                        pointSize: scope.pointSize,
+                        sizeAttenuation: scope.sizeAttenuation,
+                        sort: scope.sort,
+                    } )
+                );
+
+                scope.bufferList.push( pointBuffer );
+
+            }
+
+            if( scope.drawLine ){
+
+                var lineBuffer = new LineBuffer(
+                    {
+                        position1: path.subarray( 0, -3 ),
+                        position2: path.subarray( 3 ),
+                        color: uniformArray3( n - 1, tc.r, tc.g, tc.b ),
+                        color2: uniformArray3( n - 1, tc.r, tc.g, tc.b )
+                    },
+                    scope.getBufferParams()
+                );
+
+                scope.bufferList.push( lineBuffer );
+
+            }
+
+            scope.attach();
+
+        } );
+
+    }
+
+}
+
+
+export default TrajectoryRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,87 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/backbone-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Backbone Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import BallAndStickRepresentation from &quot;./ballandstick-representation.js&quot;;
+
+
+/**
+ * Backbone representation. Show cylinders (or lines) connecting .CA (protein)
+ * or .C4&apos;/.C3&apos; (RNA/DNA) of polymers.
+ *
+ * __Name:__ _backbone_
+ *
+ * @example
+ * stage.loadFile( &quot;rcsb://1sfi&quot; ).then( function( o ){
+ *     o.addRepresentation( &quot;backbone&quot; );
+ *     o.autoView();
+ * } );
+ */
+class BackboneRepresentation extends BallAndStickRepresentation{
+
+    /**
+     * @param  {Structure} structure - the structure object
+     * @param  {Viewer} viewer - the viewer object
+     * @param  {BallAndStickRepresentationParameters} params - parameters object
+     */
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;backbone&quot;;
+
+        this.parameters = Object.assign( {
+
+        }, this.parameters, {
+
+            multipleBond: null,
+            bondSpacing: null,
+
+        } );
+
+        this.init( params );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.aspectRatio = defaults( p.aspectRatio, 1.0 );
+        p.radius = defaults( p.radius, 0.25 );
+
+        super.init( p );
+
+    }
+
+    getAtomData( sview, what, params ){
+
+        return sview.getBackboneAtomData( this.getAtomParams( what, params ) );
+
+    }
+
+    getBondData( sview, what, params ){
+
+        return sview.getBackboneBondData( this.getBondParams( what, params ) );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;backbone&quot;, BackboneRepresentation );
+
+
+export default BackboneRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

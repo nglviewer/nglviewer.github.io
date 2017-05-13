@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,58 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/licorice-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Licorice Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import BallAndStickRepresentation from &quot;./ballandstick-representation.js&quot;;
+
+
+/**
+ * Licorice representation object ({@link BallAndStickRepresentation} with `aspectRatio` fixed at 1.0)
+ */
+class LicoriceRepresentation extends BallAndStickRepresentation{
+
+    /**
+     * Create Licorice representation object
+     * @param {Structure} structure - the structure to be represented
+     * @param {Viewer} viewer - a viewer object
+     * @param {BallAndStickRepresentationParameters} params - ball and stick representation parameters
+     */
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;licorice&quot;;
+
+        this.parameters = Object.assign(
+            {}, this.parameters, { aspectRatio: null }
+        );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.aspectRatio = 1.0;
+
+        super.init( p );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;licorice&quot;, LicoriceRepresentation );
+
+
+export default LicoriceRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

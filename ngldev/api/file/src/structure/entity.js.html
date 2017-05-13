@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,100 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/structure/entity.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Entity
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import {
+    UnknownEntity, PolymerEntity, NonPolymerEntity, MacrolideEntity, WaterEntity
+} from &quot;./structure-constants.js&quot;;
+
+
+function entityTypeFromString( string ){
+    string = string.toLowerCase();
+    switch( string ){
+        case &quot;polymer&quot;:
+            return PolymerEntity;
+        case &quot;non-polymer&quot;:
+            return NonPolymerEntity;
+        case &quot;macrolide&quot;:
+            return MacrolideEntity;
+        case &quot;water&quot;:
+            return WaterEntity;
+        default:
+            return UnknownEntity;
+    }
+}
+
+
+/**
+ * Entity of a {@link Structure}
+ */
+class Entity{
+
+    /**
+     * @param {Structure} structure - structure the entity belongs to
+     * @param {Integer} index - index within structure.entityList
+     * @param {String} description - entity description
+     * @param {String} type - entity type
+     * @param {Array} chainIndexList - entity chainIndexList
+     */
+    constructor( structure, index, description, type, chainIndexList ){
+
+        this.structure = structure;
+        this.index = index;
+        this.description = description || &quot;&quot;;
+        this.entityType = entityTypeFromString( type || &quot;&quot; );
+        this.chainIndexList = chainIndexList || [];
+
+        chainIndexList.forEach( function( ci ){
+            structure.chainStore.entityIndex[ ci ] = index;
+        } );
+
+    }
+
+    get type (){ return &quot;Entity&quot;; }
+
+    getEntityType(){
+        return this.entityType;
+    }
+
+    isPolymer(){
+        return this.entityType === PolymerEntity;
+    }
+
+    isNonPolymer(){
+        return this.entityType === NonPolymerEntity;
+    }
+
+    isMacrolide(){
+        return this.entityType === MacrolideEntity;
+    }
+
+    isWater(){
+        return this.entityType === WaterEntity;
+    }
+
+    eachChain( callback ){
+
+        const cp = this.structure.getChainProxy();
+
+        this.chainIndexList.forEach( function( index ){
+            cp.index = index;
+            callback( cp );
+        } );
+
+    }
+
+}
+
+
+export default Entity;
+</code></pre>
+
 </div>
 
 <footer class="footer">

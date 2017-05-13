@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,83 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/viewer/stats.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Stats
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Signal from &quot;../../lib/signals.es6.js&quot;;
+
+
+function Stats(){
+
+    this.signals = {
+        updated: new Signal(),
+    };
+
+    this.begin();
+
+    this.maxDuration = -Infinity;
+    this.minDuration = Infinity;
+    this.avgDuration = 14;
+    this.lastDuration = Infinity;
+
+    this.prevFpsTime = 0;
+    this.lastFps = Infinity;
+    this.lastFrames = 1;
+    this.frames = 0;
+    this.count = 0;
+
+}
+
+Stats.prototype = {
+
+    update: function(){
+
+        this.startTime = this.end();
+        this.currentTime = this.startTime;
+        this.signals.updated.dispatch();
+
+    },
+
+    begin: function(){
+
+        this.startTime = performance.now();
+        this.lastFrames = this.frames;
+
+    },
+
+    end: function(){
+
+        var time = performance.now();
+
+        this.count += 1;
+        this.frames += 1;
+
+        this.lastDuration = time - this.startTime;
+        this.minDuration = Math.min( this.minDuration, this.lastDuration );
+        this.maxDuration = Math.max( this.maxDuration, this.lastDuration );
+        this.avgDuration -= this.avgDuration / 30;
+        this.avgDuration += this.lastDuration / 30;
+
+        if( time &gt; this.prevFpsTime + 1000 ) {
+            this.lastFps = this.frames;
+            this.prevFpsTime = time;
+            this.frames = 0;
+        }
+
+        return time;
+
+    }
+
+};
+
+
+export default Stats;
+</code></pre>
+
 </div>
 
 <footer class="footer">

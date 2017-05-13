@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,166 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/component/trajectory-component.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Trajectory Component
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Signal from &quot;../../lib/signals.es6.js&quot;;
+
+import { defaults } from &quot;../utils.js&quot;;
+import Component from &quot;./component.js&quot;;
+
+
+/**
+ * Trajectory component parameter object.
+ * @typedef {Object} TrajectoryComponentParameters - component parameters
+ *
+ * @property {String} name - component name
+ * @property {Integer} initialFrame - initial frame the trajectory is set to
+ * @property {Integer} defaultStep - default step size to be used by trajectory players
+ * @property {Integer} defaultTimeout - default timeout to be used by trajectory players
+ * @property {String} defaultInterpolateType - one of &quot;&quot; (empty string), &quot;linear&quot; or &quot;spline&quot;
+ * @property {Integer} defaultInterpolateStep - window size used for interpolation
+ * @property {String} defaultMode - either &quot;loop&quot; or &quot;once&quot;
+ * @property {String} defaultDirection - either &quot;forward&quot; or &quot;backward&quot;
+ */
+
+
+/**
+ * Extends {@link ComponentSignals}
+ *
+ * @example
+ * component.signals.representationAdded.add( function( representationComponent ){ ... } );
+ *
+ * @typedef {Object} TrajectoryComponentSignals
+ * @property {Signal&lt;RepresentationComponent&gt;} frameChanged - on frame change
+ * @property {Signal&lt;RepresentationComponent&gt;} playerChanged - on player change
+ * @property {Signal&lt;String&gt;} gotNumframes - when frame count is available
+ * @property {Signal&lt;String&gt;} parametersChanged - on parameters change
+ */
+
+
+/**
+ * Component wrapping a {@link Trajectory} object
+ */
+class TrajectoryComponent extends Component{
+
+    /**
+     * @param {Stage} stage - stage object the component belongs to
+     * @param {Trajectory} trajectory - the trajectory object
+     * @param {TrajectoryComponentParameters} params - component parameters
+     * @param {StructureComponent} parent - the parent structure
+     */
+    constructor( stage, trajectory, params, parent ){
+
+        var p = params || {};
+        p.name = defaults( p.name, trajectory.name );
+
+        super( stage, p );
+
+        /**
+         * Events emitted by the component
+         * @type {TrajectoryComponentSignals}
+         */
+        this.signals = Object.assign( this.signals, {
+            frameChanged: new Signal(),
+            playerChanged: new Signal(),
+            gotNumframes: new Signal(),
+            parametersChanged: new Signal()
+        } );
+
+        this.trajectory = trajectory;
+        this.parent = parent;
+        this.status = &quot;loaded&quot;;
+
+        this.defaultStep = defaults( p.defaultStep, undefined );
+        this.defaultTimeout = defaults( p.defaultTimeout, 50 );
+        this.defaultInterpolateType = defaults( p.defaultInterpolateType, &quot;&quot; );
+        this.defaultInterpolateStep = defaults( p.defaultInterpolateStep, 5 );
+        this.defaultMode = defaults( p.defaultMode, &quot;loop&quot; );
+        this.defaultDirection = defaults( p.defaultDirection, &quot;forward&quot; );
+
+        // signals
+
+        trajectory.signals.frameChanged.add( i =&gt; {
+            this.signals.frameChanged.dispatch( i );
+        } );
+
+        trajectory.signals.playerChanged.add( player =&gt; {
+            this.signals.playerChanged.dispatch( player );
+        } );
+
+        trajectory.signals.gotNumframes.add( n =&gt; {
+            this.signals.gotNumframes.dispatch( n );
+        } );
+
+        //
+
+        if( p.initialFrame !== undefined ){
+            this.setFrame( p.initialFrame );
+        }
+
+    }
+
+    /**
+     * Component type
+     * @type {String}
+     */
+    get type(){ return &quot;trajectory&quot; }
+
+    /**
+     * Add trajectory representation
+     * @param {String} type - representation type, currently only: &quot;trajectory&quot;
+     * @param {RepresentationParameters} params - parameters
+     * @return {RepresentationComponent} the added representation component
+     */
+    addRepresentation( type, params ){
+
+        return super.addRepresentation( type, this.trajectory, params );
+
+    }
+
+    /**
+     * Set the frame of the trajectory
+     * @param {Integer} i - frame number
+     * @return {undefined}
+     */
+    setFrame( i ){
+
+        this.trajectory.setFrame( i );
+
+    }
+
+    /**
+     * Set trajectory parameters
+     * @param {TrajectoryParameters} params - trajectory parameters
+     * @return {undefined}
+     */
+    setParameters( params ){
+
+        this.trajectory.setParameters( params );
+        this.signals.parametersChanged.dispatch( params );
+
+    }
+
+    dispose(){
+
+        this.trajectory.dispose();
+        super.dispose();
+
+    }
+
+    getCenter(){}
+
+}
+
+
+export default TrajectoryComponent;
+</code></pre>
+
 </div>
 
 <footer class="footer">

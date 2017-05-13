@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,131 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/parser/cube-parser.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Cube Parser
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Matrix4, Vector3 } from &quot;../../lib/three.es6.js&quot;;
+
+import { Debug, Log, ParserRegistry } from &quot;../globals.js&quot;;
+import VolumeParser from &quot;./volume-parser.js&quot;;
+
+
+// @author Johanna Tiemann &lt;johanna.tiemann@googlemail.com&gt;
+// @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+
+class CubeParser extends VolumeParser{
+
+    get type (){ return &quot;cube&quot;; }
+
+    _parse(){
+
+        // http://paulbourke.net/dataformats/cube/
+
+        if( Debug ) Log.time( &quot;CubeParser._parse &quot; + this.name );
+
+        var v = this.volume;
+        var headerLines = this.streamer.peekLines( 6 );
+        var header = {};
+        var reWhitespace = /\s+/;
+        var bohrToAngstromFactor = 0.529177210859;
+        var scaleFactor = bohrToAngstromFactor * this.voxelSize;
+
+        function h( k, l ) {
+            var field = headerLines[ k ].trim().split( reWhitespace )[ l ];
+            return parseFloat( field );
+        }
+
+        header.atomCount = Math.abs( h( 2, 0 ) );  // Number of atoms
+        header.originX = h( 2, 1 ) * bohrToAngstromFactor;  // Position of origin of volumetric data
+        header.originY = h( 2, 2 ) * bohrToAngstromFactor;
+        header.originZ = h( 2, 3 ) * bohrToAngstromFactor;
+        header.NVX = h( 3, 0 );  // Number of voxels
+        header.NVY = h( 4, 0 );
+        header.NVZ = h( 5, 0 );
+
+        header.basisX = new Vector3(
+            h( 3, 1 ), h( 3, 2 ), h( 3, 3 ) ).multiplyScalar( scaleFactor );
+        header.basisY = new Vector3(
+            h( 4, 1 ), h( 4, 2 ), h( 4, 3 ) ).multiplyScalar( scaleFactor );
+        header.basisZ = new Vector3(
+            h( 5, 1 ), h( 5, 2 ), h( 5, 3 ) ).multiplyScalar( scaleFactor );
+
+        var data = new Float32Array( header.NVX * header.NVY * header.NVZ );
+        var count = 0;
+        var lineNo = 0;
+        var oribitalFlag = h( 2, 0 ) &gt; 0 ? 0 : 1;
+
+        function _parseChunkOfLines( _i, _n, lines ){
+
+            for( var i = _i; i &lt; _n; ++i ){
+
+                var line = lines[ i ].trim();
+
+                if( line !== &quot;&quot; &amp;&amp; lineNo &gt;= header.atomCount + 6 + oribitalFlag ){
+
+                    line = line.split( reWhitespace );
+                    for( var j = 0, lj = line.length; j &lt; lj; ++j ){
+                        if ( line.length !==1 ) {
+                            data[ count ] = parseFloat( line[ j ] );
+                            ++count;
+                        }
+                    }
+
+                }
+
+                ++lineNo;
+
+            }
+
+        }
+
+        this.streamer.eachChunkOfLines( function( lines/*, chunkNo, chunkCount*/ ){
+            _parseChunkOfLines( 0, lines.length, lines );
+        } );
+
+        v.header = header;
+        v.setData( data, header.NVZ, header.NVY, header.NVX );
+
+        if( Debug ) Log.timeEnd( &quot;CubeParser._parse &quot; + this.name );
+
+    }
+
+    getMatrix(){
+
+        var h = this.volume.header;
+        var matrix = new Matrix4();
+
+        matrix.multiply(
+            new Matrix4().makeTranslation(
+                h.originX, h.originY, h.originZ
+            )
+        );
+
+        matrix.multiply(
+            new Matrix4().makeBasis(
+                h.basisZ,
+                h.basisY,
+                h.basisX
+            )
+        );
+
+        return matrix;
+
+    }
+
+}
+
+ParserRegistry.add( &quot;cub&quot;, CubeParser );
+ParserRegistry.add( &quot;cube&quot;, CubeParser );
+
+
+export default CubeParser;
+</code></pre>
+
 </div>
 
 <footer class="footer">

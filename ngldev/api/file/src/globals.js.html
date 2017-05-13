@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,98 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/globals.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Globals
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { getBrowser, getQuery, boolean } from &quot;./utils.js&quot;;
+import Registry from &quot;./utils/registry.js&quot;;
+import _WorkerRegistry from &quot;./worker/worker-registry.js&quot;;
+import _ColormakerRegistry from &quot;./color/colormaker-registry.js&quot;;
+
+
+/**
+ * The browser name: &quot;Opera&quot;, &quot;Chrome&quot;, &quot;Firefox&quot;, &quot;Mobile Safari&quot;,
+ * &quot;Internet Explorer&quot;, &quot;Safari&quot; or false.
+ * @type {String|false}
+ */
+const Browser = getBrowser();
+
+/**
+ * Flag indicating a mobile browser
+ * @type {Boolean}
+ */
+const Mobile = typeof window !== &apos;undefined&apos; ? typeof window.orientation !== &apos;undefined&apos; : false;
+
+let SupportsReadPixelsFloat = false;
+function setSupportsReadPixelsFloat( value ){
+    SupportsReadPixelsFloat = value;
+}
+
+/**
+ * Flag indicating support for the `EXT_frag_depth` WebGL extension
+ * @type {Boolean}
+ */
+let ExtensionFragDepth = false;
+function setExtensionFragDepth( value ){
+    ExtensionFragDepth = value;
+}
+
+const Log = {
+    log: Function.prototype.bind.call( console.log, console ),
+    info: Function.prototype.bind.call( console.info, console ),
+    warn: Function.prototype.bind.call( console.warn, console ),
+    error: Function.prototype.bind.call( console.error, console ),
+    time: Function.prototype.bind.call( console.time, console ),
+    timeEnd: Function.prototype.bind.call( console.timeEnd, console )
+};
+
+let Debug = boolean( getQuery( &quot;debug&quot; ) );
+function setDebug( value ){
+    Debug = value;
+}
+
+const WebglErrorMessage = &apos;&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;&quot;&gt;&lt;p style=&quot;padding:15px;text-align:center;&quot;&gt;Your browser/graphics card does not seem to support &lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/WebGL&quot;&gt;WebGL&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;Find out how to get it &lt;a target=&quot;_blank&quot; href=&quot;http://get.webgl.org/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&apos;;
+
+const WorkerRegistry = new _WorkerRegistry();
+/**
+ * Global instance of {@link src/color/colormaker-registry.js~ColormakerRegistry}
+ * @type {src/color/colormaker-registry.js~ColormakerRegistry}
+ */
+const ColormakerRegistry = new _ColormakerRegistry();
+const DatasourceRegistry = new Registry( &quot;datasource&quot; );
+const RepresentationRegistry = new Registry( &quot;representatation&quot; );
+const ParserRegistry = new Registry( &quot;parser&quot; );
+const ShaderRegistry = new Registry( &quot;shader&quot; );
+const DecompressorRegistry = new Registry( &quot;decompressor&quot; );
+const ComponentRegistry = new Registry( &quot;component&quot; );
+
+
+export {
+    Browser,
+    Mobile,
+    SupportsReadPixelsFloat,
+    setSupportsReadPixelsFloat,
+    ExtensionFragDepth,
+    setExtensionFragDepth,
+    Log,
+    Debug,
+    setDebug,
+    WebglErrorMessage,
+    WorkerRegistry,
+    ColormakerRegistry,
+    DatasourceRegistry,
+    RepresentationRegistry,
+    ParserRegistry,
+    ShaderRegistry,
+    DecompressorRegistry,
+    ComponentRegistry
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

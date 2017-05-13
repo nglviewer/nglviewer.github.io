@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,223 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/surface/volume-slice.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Volume Slice
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { Vector3 } from &quot;../../lib/three.es6.js&quot;;
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import { SlicePicker } from &quot;../utils/picker.js&quot;;
+
+
+class VolumeSlice{
+
+    constructor( volume, params ){
+
+        const p = params || {};
+
+        this.dimension = defaults( p.dimension, &quot;x&quot; );
+        this.positionType = defaults( p.positionType, &quot;percent&quot; );
+        this.position = defaults( p.position, 30 );
+        this.thresholdType = defaults( p.thresholdType, &quot;sigma&quot; );
+        this.thresholdMin = defaults( p.thresholdMin, -Infinity );
+        this.thresholdMax = defaults( p.thresholdMax, Infinity );
+        this.normalize = defaults( p.normalize, false );
+
+        this.volume = volume;
+
+    }
+
+    getPositionFromCoordinate( coord ){
+
+        const dim = this.dimension;
+        const v = this.volume;
+        const m = v.matrix;
+
+        const mp = new Vector3().setFromMatrixPosition( m )[ dim ];
+        const ms = new Vector3().setFromMatrixScale( m )[ dim ];
+
+        let vn;
+        if( dim === &quot;x&quot; ){
+            vn = v.nx;
+        }else if( dim === &quot;y&quot; ){
+            vn = v.ny;
+        }else{
+            vn = v.nz;
+        }
+
+        return Math.round( ( ( ( coord - mp ) / ( vn / 100 ) ) + 1 ) / ms );
+
+    }
+
+    getData( params ){
+
+        params = params || {};
+
+        const v = this.volume;
+        const d = v.data;
+        const m = v.matrix;
+
+        let p;
+        if( this.positionType === &quot;coordinate&quot; ){
+            p = this.getPositionFromCoordinate( this.position );
+        }else{
+            p = this.position;
+        }
+
+        function pos( dimLen ){
+            return Math.round( ( dimLen  / 100 ) * ( p - 1 ) )
+        }
+
+        function index( x, y, z, i ){
+            return ( z * v.ny * v.nx + y * v.nx + x ) * 3 + i;
+        }
+
+        const position = new Float32Array( 4 * 3 );
+        const vec = new Vector3();
+
+        let width, height;
+        let x, y, z;
+        let x0 = 0, y0 = 0, z0 = 0;
+        let nx = v.nx, ny = v.ny, nz = v.nz;
+
+        function setVec( x, y, z, offset ){
+            vec.set( x, y, z ).applyMatrix4( m ).toArray( position, offset );
+        }
+
+        if( this.dimension === &quot;x&quot; ){
+
+            x = pos( v.nx );
+            y = v.ny-1;
+            z = v.nz-1;
+
+            width = v.nz;
+            height = v.ny;
+
+            x0 = x;
+            nx = x0 + 1;
+
+            setVec( x, 0, 0, 0 );
+            setVec( x, y, 0, 3 );
+            setVec( x, 0, z, 6 );
+            setVec( x, y, z, 9 );
+
+        }else if( this.dimension === &quot;y&quot; ){
+
+            x = v.nx-1;
+            y = pos( v.ny );
+            z = v.nz-1;
+
+            width = v.nz;
+            height = v.nx;
+
+            y0 = y;
+            ny = y0 + 1;
+
+            setVec( 0, y, 0, 0 );
+            setVec( x, y, 0, 3 );
+            setVec( 0, y, z, 6 );
+            setVec( x, y, z, 9 );
+
+        }else if( this.dimension === &quot;z&quot; ){
+
+            x = v.nx-1;
+            y = v.ny-1;
+            z = pos( v.nz );
+
+            width = v.nx;
+            height = v.ny;
+
+            z0 = z;
+            nz = z0 + 1;
+
+            setVec( 0, 0, z, 0 );
+            setVec( 0, y, z, 3 );
+            setVec( x, 0, z, 6 );
+            setVec( x, y, z, 9 );
+
+        }
+
+        let i = 0, j = 0;
+        const imageData = new Uint8Array( width * height * 4 );
+        const pickingArray = new Float32Array( width * height );
+
+        let tMin, tMax;
+        if( this.thresholdType === &quot;sigma&quot; ){
+            tMin = v.getValueForSigma( this.thresholdMin );
+            tMax = v.getValueForSigma( this.thresholdMax );
+        }else{
+            tMin = this.thresholdMin;
+            tMax = this.thresholdMax;
+        }
+
+        const cp = Object.assign( {}, params.colorParams, { volume: v } );
+        if( this.normalize ){
+            cp.domain = [ 0, 1 ];
+        }
+        const colormaker = ColormakerRegistry.getScheme( cp );
+        const tmp = new Float32Array( 3 );
+        const scale = colormaker.getScale();
+
+        let min, max, diff;
+        if( this.normalize ){
+            min = +Infinity
+            max = -Infinity;
+            for( let iy = y0; iy &lt; ny; ++iy ){
+                for( let ix = x0; ix &lt; nx; ++ix ){
+                    for( let iz = z0; iz &lt; nz; ++iz ){
+                        const idx = index( ix, iy, iz, 0 ) / 3;
+                        const val = d[ idx ];
+                        if( val &lt; min  ) min = val;
+                        if( val &gt; max  ) max = val;
+                    }
+                }
+            }
+            diff = max - min;
+        }
+
+        for( let iy = y0; iy &lt; ny; ++iy ){
+            for( let ix = x0; ix &lt; nx; ++ix ){
+                for( let iz = z0; iz &lt; nz; ++iz ){
+
+                    const idx = index( ix, iy, iz, 0 ) / 3;
+                    let val = d[ idx ];
+                    if( this.normalize ){
+                        val = ( val - min ) / diff;
+                    }
+
+                    colormaker.colorToArray( scale( val ), tmp );
+                    imageData[ i     ] = Math.round( tmp[ 0 ] * 255 );
+                    imageData[ i + 1 ] = Math.round( tmp[ 1 ] * 255 );
+                    imageData[ i + 2 ] = Math.round( tmp[ 2 ] * 255 );
+                    imageData[ i + 3 ] = ( val &gt; tMin &amp;&amp; val &lt; tMax ) ? 255 : 0;
+
+                    pickingArray[ j ] = idx;
+
+                    ++j
+                    i += 4;
+
+                }
+            }
+        }
+
+        const picking = new SlicePicker( pickingArray, v );
+
+        return { position, imageData, width, height, picking };
+
+    }
+
+}
+
+
+export default VolumeSlice;
+</code></pre>
+
 </div>
 
 <footer class="footer">

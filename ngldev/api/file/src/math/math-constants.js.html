@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,28 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/math/math-constants.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Math Constants
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+var EPS = 0.0000001;
+var TwoPI = 2 * Math.PI;
+
+var DEG2RAD = Math.PI / 180;
+var RAD2DEG = 180 / Math.PI;
+
+
+export {
+	EPS,
+	TwoPI,
+	DEG2RAD,
+	RAD2DEG
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

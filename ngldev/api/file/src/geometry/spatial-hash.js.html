@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,140 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/geometry/spatial-hash.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Spatial Hash
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+//import { Debug, Log } from &quot;../globals.js&quot;;
+
+
+function SpatialHash( atomStore, boundingBox ){
+
+    var exp = 3;
+
+    var bb = boundingBox;
+    var minX = bb.min.x;
+    var minY = bb.min.y;
+    var minZ = bb.min.z;
+    var boundX = ( ( bb.max.x - minX ) &gt;&gt; exp ) + 1;
+    var boundY = ( ( bb.max.y - minY ) &gt;&gt; exp ) + 1;
+    var boundZ = ( ( bb.max.z - minZ ) &gt;&gt; exp ) + 1;
+
+    var n = boundX * boundY * boundZ;
+    var an = atomStore.count;
+
+    var xArray = atomStore.x;
+    var yArray = atomStore.y;
+    var zArray = atomStore.z;
+
+    var i, j;
+
+    var count = 0;
+    var grid = new Uint32Array( n );
+    var bucketIndex = new Int32Array( an );
+    for( i = 0; i &lt; an; ++i ){
+        var x = ( xArray[ i ] - minX ) &gt;&gt; exp;
+        var y = ( yArray[ i ] - minY ) &gt;&gt; exp;
+        var z = ( zArray[ i ] - minZ ) &gt;&gt; exp;
+        var idx = ( ( ( x * boundY ) + y ) * boundZ ) + z;
+        if( ( grid[ idx ] += 1 ) === 1 ){
+            count += 1;
+        }
+        bucketIndex[ i ] = idx;
+    }
+
+    var bucketCount = new Uint16Array( count );
+    for( i = 0, j = 0; i &lt; n; ++i ){
+        var c = grid[ i ];
+        if( c &gt; 0 ){
+            grid[ i ] = j + 1;
+            bucketCount[ j ] = c;
+            j += 1;
+        }
+    }
+
+    var bucketOffset = new Uint32Array( count );
+    for( i = 1; i &lt; count; ++i ){
+        bucketOffset[ i ] += bucketOffset[ i - 1 ] + bucketCount[ i - 1 ];
+    }
+
+    var bucketFill = new Uint16Array( count );
+    var bucketArray = new Int32Array( an );
+    for( i = 0; i &lt; an; ++i ){
+        var bucketIdx = grid[ bucketIndex[ i ] ];
+        if( bucketIdx &gt; 0 ){
+            var k = bucketIdx - 1;
+            bucketArray[ bucketOffset[ k ] + bucketFill[ k ] ] = i;
+            bucketFill[ k ] += 1;
+        }
+    }
+
+    //
+
+    function within( x, y, z, r ){
+
+        var rSq = r * r;
+
+        var loX = Math.max( 0, ( x - r - minX ) &gt;&gt; exp );
+        var loY = Math.max( 0, ( y - r - minY ) &gt;&gt; exp );
+        var loZ = Math.max( 0, ( z - r - minZ ) &gt;&gt; exp );
+
+        var hiX = Math.min( boundX, ( x + r - minX ) &gt;&gt; exp );
+        var hiY = Math.min( boundY, ( y + r - minY ) &gt;&gt; exp );
+        var hiZ = Math.min( boundZ, ( z + r - minZ ) &gt;&gt; exp );
+
+        var result = [];
+
+        for( var ix = loX; ix &lt;= hiX; ++ix ){
+            for( var iy = loY; iy &lt;= hiY; ++iy ){
+                for( var iz = loZ; iz &lt;= hiZ; ++iz ){
+
+                    var idx = ( ( ( ix * boundY ) + iy ) * boundZ ) + iz;
+                    var bucketIdx = grid[ idx ];
+
+                    if( bucketIdx &gt; 0 ){
+
+                        var k = bucketIdx - 1;
+                        var offset = bucketOffset[ k ];
+                        var count = bucketCount[ k ];
+                        var end = offset + count;
+
+                        for( var i = offset; i &lt; end; ++i ){
+
+                            var atomIndex = bucketArray[ i ];
+                            var dx = xArray[ atomIndex ] - x;
+                            var dy = yArray[ atomIndex ] - y;
+                            var dz = zArray[ atomIndex ] - z;
+
+                            if( dx * dx + dy * dy + dz * dz &lt;= rSq ){
+                                result.push( atomIndex );
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        return result;
+
+    }
+
+    // API
+
+    this.within = within;
+
+}
+
+
+export default SpatialHash;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,86 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/store/atom-map.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Atom Map
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import AtomType from &quot;./atom-type.js&quot;;
+import { guessElement } from &quot;../structure/structure-utils.js&quot;;
+
+
+function AtomMap( structure ){
+
+    var idDict = {};
+    var typeList = [];
+
+    function getHash( atomname, element ){
+        return atomname + &quot;|&quot; + element;
+    }
+
+    function add( atomname, element ){
+        atomname = atomname.toUpperCase();
+        if( !element ){
+            element = guessElement( atomname );
+        }else{
+            element = element.toUpperCase();
+        }
+        var hash = getHash( atomname, element );
+        var id = idDict[ hash ];
+        if( id === undefined ){
+            var atomType = new AtomType( structure, atomname, element );
+            id = typeList.length;
+            idDict[ hash ] = id;
+            typeList.push( atomType );
+        }
+        return id;
+    }
+
+    function get( id ){
+        return typeList[ id ];
+    }
+
+    // API
+
+    this.add = add;
+    this.get = get;
+
+    this.list = typeList;
+    this.dict = idDict;
+
+    this.toJSON = function(){
+        var output = {
+            metadata: {
+                version: 0.1,
+                type: &apos;AtomMap&apos;,
+                generator: &apos;AtomMapExporter&apos;
+            },
+            idDict: idDict,
+            typeList: typeList.map( function( atomType ){
+                return atomType.toJSON();
+            } )
+        };
+        return output;
+    };
+
+    this.fromJSON = function( input ){
+        idDict = input.idDict;
+        typeList = input.typeList.map( function( input ){
+            return new AtomType( structure, input.atomname, input.element );
+        } );
+        this.list = typeList;
+        this.dict = idDict;
+    };
+
+}
+
+
+export default AtomMap;
+</code></pre>
+
 </div>
 
 <footer class="footer">

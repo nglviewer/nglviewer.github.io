@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,40 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/stage/animation-behavior.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Animation Behavior
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+class AnimationBehavior{
+
+    constructor( stage ){
+
+        this.viewer = stage.viewer;
+        this.animationControls = stage.animationControls;
+
+        this.viewer.signals.ticked.add( this.onTick, this );
+
+    }
+
+    onTick( stats ){
+
+        this.animationControls.run( stats );
+
+    }
+
+    dispose(){
+        this.viewer.signals.ticked.remove( this.onTick, this );
+    }
+
+}
+
+
+export default AnimationBehavior;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,85 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/worker/worker-utils.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Worker Utils
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { uniqueArray } from &quot;../utils.js&quot;;
+
+
+function getWorkerDeps( vars ){
+    var deps = vars;
+    vars.forEach( function( sym ){
+        if( sym.__deps ){
+            Array.prototype.push.apply( deps, getWorkerDeps( sym.__deps ) );
+        }
+    } );
+    return deps;
+}
+
+
+function makeWorkerString( vars ){
+    var deps = uniqueArray( getWorkerDeps( vars ) );
+    return deps.map( function( sym ){
+        return sym.toString();
+    } ).join( &quot;\n\n\n&quot; );
+}
+
+
+function onmessage( e ){
+
+    var name = e.data.__name;
+    var postId = e.data.__postId;
+
+    if( name === undefined ){
+
+        console.error( &quot;message __name undefined&quot; );
+
+    }else if( self.func === undefined ){
+
+        console.error( &quot;worker func undefined&quot;, name );
+
+    }else{
+
+        var callback = function( aMessage, transferList ){
+
+            aMessage = aMessage || {};
+            if( postId !== undefined ) aMessage.__postId = postId;
+
+            try{
+                self.postMessage( aMessage, transferList );
+            }catch( error ){
+                console.error( &quot;self.postMessage:&quot;, error );
+                self.postMessage( aMessage );
+            }
+
+        };
+
+        self.func( e, callback );
+
+    }
+
+}
+
+
+function makeWorkerBlob( func, deps ){
+    var str = &quot;&apos;use strict&apos;;\n\n&quot; + makeWorkerString( deps );
+    str += &quot;\n\n\nself.func = &quot; + func.toString() + &quot;;&quot;;
+    str += &quot;\n\n\nself.onmessage = &quot; + onmessage.toString() + &quot;;&quot;;
+    // console.log( str );
+    return new Blob( [ str ], { type: &quot;application/javascript&quot; } );
+}
+
+
+export {
+    makeWorkerBlob
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

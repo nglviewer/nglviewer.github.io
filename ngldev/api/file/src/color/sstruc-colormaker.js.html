@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,87 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/sstruc-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Sstruc Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+// from Jmol http://jmol.sourceforge.net/jscolors/ (shapely)
+var StructureColors = {
+    &quot;alphaHelix&quot;: 0xFF0080,
+    &quot;threeTenHelix&quot;: 0xA00080,
+    &quot;piHelix&quot;: 0x600080,
+    &quot;betaStrand&quot;: 0xFFC800,
+    &quot;betaTurn&quot;: 0x6080FF,
+    &quot;coil&quot;: 0xFFFFFF,
+
+    &quot;dna&quot;: 0xAE00FE,
+    &quot;rna&quot;: 0xFD0162,
+
+    &quot;carbohydrate&quot;: 0xA6A6FA
+};
+var DefaultStructureColor = 0x808080;
+
+
+/**
+ * Color by secondary structure
+ */
+class SstrucColormaker extends Colormaker{
+
+    constructor( params ){
+
+        super( params );
+
+        this.rp = this.structure.getResidueProxy();
+
+    }
+
+    atomColor( ap ){
+
+        var sstruc = ap.sstruc;
+        var rp = this.rp;
+
+        if( sstruc === &quot;h&quot; ){
+            return StructureColors.alphaHelix;
+        }else if( sstruc === &quot;g&quot; ){
+            return StructureColors.threeTenHelix;
+        }else if( sstruc === &quot;i&quot; ){
+            return StructureColors.piHelix;
+        }else if( sstruc === &quot;e&quot; || sstruc === &quot;b&quot; ){
+            return StructureColors.betaStrand;
+        }else if( sstruc === &quot;t&quot; ){
+            return StructureColors.betaTurn;
+        }else{
+            rp.index = ap.residueIndex;
+            if( rp.isDna() ){
+                return StructureColors.dna;
+            }else if( rp.isRna() ){
+                return StructureColors.rna;
+            }else if( rp.isSaccharide() ){
+                return StructureColors.carbohydrate;
+            }else if( rp.isProtein() || sstruc === &quot;s&quot; || sstruc === &quot;l&quot; ){
+                return StructureColors.coil;
+            }else{
+                return DefaultStructureColor;
+            }
+        }
+
+    }
+
+}
+
+
+ColormakerRegistry.add( &quot;sstruc&quot;, SstrucColormaker );
+
+
+export default SstrucColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

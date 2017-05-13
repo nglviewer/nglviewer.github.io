@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,33 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/buffer/contour-buffer.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Contour Buffer
+ * @author Fred ludlow &lt;fred.ludlow@gmail.com&gt;
+ * @private
+ */
+
+import &quot;../shader/Line.vert&quot;;
+import &quot;../shader/Line.frag&quot;;
+
+import Buffer from &quot;./buffer.js&quot;;
+
+
+/**
+ * Contour buffer. A buffer that draws lines (instead of triangle meshes).
+ */
+class ContourBuffer extends Buffer{
+
+    get isLine (){ return true; }
+    get vertexShader (){ return &quot;Line.vert&quot;; }
+    get fragmentShader (){ return &quot;Line.frag&quot;; }
+
+}
+
+
+export default ContourBuffer;
+</code></pre>
+
 </div>
 
 <footer class="footer">

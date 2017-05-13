@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,104 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/store/chain-store.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Chain Store
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import Store from &quot;./store.js&quot;;
+
+
+/**
+ * Chain store class
+ * @class
+ * @extends Store
+ * @param {Integer} [size] - initial size
+ */
+function ChainStore( size ){
+
+    Store.call( this, size );
+
+}
+
+ChainStore.prototype = Object.assign( Object.create(
+
+    Store.prototype ), {
+
+    constructor: ChainStore,
+
+    type: &quot;ChainStore&quot;,
+
+    __fields: [
+
+        [ &quot;entityIndex&quot;, 1, &quot;uint16&quot; ],
+        [ &quot;modelIndex&quot;, 1, &quot;uint16&quot; ],
+        [ &quot;residueOffset&quot;, 1, &quot;uint32&quot; ],
+        [ &quot;residueCount&quot;, 1, &quot;uint32&quot; ],
+
+        [ &quot;chainname&quot;, 4, &quot;uint8&quot; ],
+        [ &quot;chainid&quot;, 4, &quot;uint8&quot; ]
+
+    ],
+
+    setChainname: function( i, str ){
+
+        var j = 4 * i;
+        this.chainname[ j ] = str.charCodeAt( 0 );
+        this.chainname[ j + 1 ] = str.charCodeAt( 1 );
+        this.chainname[ j + 2 ] = str.charCodeAt( 2 );
+        this.chainname[ j + 3 ] = str.charCodeAt( 3 );
+
+    },
+
+    getChainname: function( i ){
+
+        var chainname = &quot;&quot;;
+        for( var k = 0; k &lt; 4; ++k ){
+            var code = this.chainname[ 4 * i + k ];
+            if( code ){
+                chainname += String.fromCharCode( code );
+            }else{
+                break;
+            }
+        }
+        return chainname;
+
+    },
+
+    setChainid: function( i, str ){
+
+        var j = 4 * i;
+        this.chainid[ j ] = str.charCodeAt( 0 );
+        this.chainid[ j + 1 ] = str.charCodeAt( 1 );
+        this.chainid[ j + 2 ] = str.charCodeAt( 2 );
+        this.chainid[ j + 3 ] = str.charCodeAt( 3 );
+
+    },
+
+    getChainid: function( i ){
+
+        var chainid = &quot;&quot;;
+        for( var k = 0; k &lt; 4; ++k ){
+            var code = this.chainid[ 4 * i + k ];
+            if( code ){
+                chainid += String.fromCharCode( code );
+            }else{
+                break;
+            }
+        }
+        return chainid;
+
+    }
+
+} );
+
+
+export default ChainStore;
+</code></pre>
+
 </div>
 
 <footer class="footer">

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,76 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/color/bfactor-colormaker.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Bfactor Colormaker
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { ColormakerRegistry } from &quot;../globals.js&quot;;
+import Colormaker from &quot;./colormaker.js&quot;;
+
+
+/**
+ * Color by b-factor. The {@link AtomProxy.bfactor} property is used for coloring.
+ * By default the min and max b-factor values are used for the scale`s domain.
+ *
+ * __Name:__ _bfactor_
+ *
+ * @example
+ * stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
+ *     o.addRepresentation( &quot;ball+stick&quot;, { colorScheme: &quot;bfactor&quot; } );
+ *     o.autoView();
+ * } );
+ */
+class BfactorColormaker extends Colormaker{
+
+    constructor( params ){
+
+        super( params );
+
+        if( !params.scale ){
+            this.scale = &quot;OrRd&quot;;
+        }
+
+        if( !params.domain ){
+
+            var selection;
+            var min = Infinity;
+            var max = -Infinity;
+
+            if( params.sele ){
+                selection = new Selection( params.sele );
+            }
+
+            this.structure.eachAtom( function( a ){
+                var bfactor = a.bfactor;
+                min = Math.min( min, bfactor );
+                max = Math.max( max, bfactor );
+            }, selection );
+
+            this.domain = [ min, max ];
+
+        }
+
+        this.bfactorScale = this.getScale();
+
+    }
+
+    atomColor( a ){
+        return this.bfactorScale( a.bfactor );
+    }
+
+}
+
+
+ColormakerRegistry.add( &quot;bfactor&quot;, BfactorColormaker );
+
+
+export default BfactorColormaker;
+</code></pre>
+
 </div>
 
 <footer class="footer">

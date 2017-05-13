@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,88 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/representation/base-representation.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Base Representation
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { RepresentationRegistry } from &quot;../globals.js&quot;;
+import { defaults } from &quot;../utils.js&quot;;
+import BallAndStickRepresentation from &quot;./ballandstick-representation.js&quot;;
+
+
+/**
+ * Base representation. Show cylinders for RNA/DNA ladders.
+ *
+ * __Name:__ _base_
+ *
+ * @example
+ * stage.loadFile( &quot;rcsb://1d66&quot; ).then( function( o ){
+ *     o.addRepresentation( &quot;cartoon&quot;, { sele: &quot;nucleic&quot; } );
+ *     o.addRepresentation( &quot;base&quot;, { color: &quot;resname&quot; } );
+ *     o.autoView( &quot;nucleic&quot; );
+ * } );
+ */
+class BaseRepresentation extends BallAndStickRepresentation{
+
+    /**
+     * @param  {Structure} structure - the structure object
+     * @param  {Viewer} viewer - the viewer object
+     * @param  {BallAndStickRepresentationParameters} params - parameters object
+     */
+    constructor( structure, viewer, params ){
+
+        super( structure, viewer, params );
+
+        this.type = &quot;base&quot;;
+
+        this.parameters = Object.assign( {
+
+        }, this.parameters, {
+
+            multipleBond: null,
+            bondSpacing: null,
+
+        } );
+
+    }
+
+    init( params ){
+
+        var p = params || {};
+        p.aspectRatio = defaults( p.aspectRatio, 1.0 );
+        p.radius = defaults( p.radius, 0.3 );
+
+        super.init( p );
+
+    }
+
+    getAtomData( sview, what, params ){
+
+        return sview.getRungAtomData( this.getAtomParams( what, params ) );
+
+    }
+
+    getBondData( sview, what, params ){
+
+        var p = this.getBondParams( what, params );
+        p.colorParams.rung = true;
+
+        return sview.getRungBondData( p );
+
+    }
+
+}
+
+
+RepresentationRegistry.add( &quot;base&quot;, BaseRepresentation );
+
+
+export default BaseRepresentation;
+</code></pre>
+
 </div>
 
 <footer class="footer">

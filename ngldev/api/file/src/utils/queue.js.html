@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,60 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/utils/queue.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Queue
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+function Queue( fn, argList ){
+
+    var queue = [];
+    var pending = false;
+
+    if( argList ){
+        for( var i = 0, il = argList.length; i &lt; il; ++i ){
+            queue.push( argList[ i ] );
+        }
+        next();
+    }
+
+    function run( arg ){
+        fn( arg, next );
+    }
+
+    function next(){
+        var arg = queue.shift();
+        if( arg !== undefined ){
+            pending = true;
+            setTimeout( function(){ run( arg ); } );
+        }else{
+            pending = false;
+        }
+    }
+
+    // API
+
+    this.push = function( arg ){
+        queue.push( arg );
+        if( !pending ) next();
+    };
+
+    this.kill = function(){
+        queue.length = 0;
+    };
+
+    this.length = function(){
+        return queue.length;
+    };
+
+}
+
+
+export default Queue;
+</code></pre>
+
 </div>
 
 <footer class="footer">

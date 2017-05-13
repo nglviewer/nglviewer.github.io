@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,88 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/loader/loader-utils.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Loader Utils
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import { DatasourceRegistry, ParserRegistry } from &quot;../globals.js&quot;;
+import { getFileInfo } from &quot;../utils.js&quot;;
+import ParserLoader from &quot;./parser-loader.js&quot;;
+import ScriptLoader from &quot;./script-loader.js&quot;;
+import PluginLoader from &quot;./plugin-loader.js&quot;;
+
+
+function getDataInfo( src ){
+
+    var info = getFileInfo( src );
+    var datasource = DatasourceRegistry.get( info.protocol );
+    if( datasource ){
+        info = getFileInfo( datasource.getUrl( info.src ) );
+        if( !info.ext &amp;&amp; datasource.getExt ){
+            info.ext = datasource.getExt( src );
+        }
+    }
+    return info;
+}
+
+
+/**
+ * Load a file
+ *
+ * @example
+ * // load from URL
+ * NGL.autoLoad( &quot;http://files.rcsb.org/download/5IOS.cif&quot; );
+ *
+ * @example
+ * // load binary data in CCP4 format via a Blob
+ * var binaryBlob = new Blob( [ ccp4Data ], { type: &apos;application/octet-binary&apos;} );
+ * NGL.autoLoad( binaryBlob, { ext: &quot;ccp4&quot; } );
+ *
+ * @example
+ * // load string data in PDB format via a Blob
+ * var stringBlob = new Blob( [ pdbData ], { type: &apos;text/plain&apos;} );
+ * NGL.autoLoad( stringBlob, { ext: &quot;pdb&quot; } );
+ *
+ * @example
+ * // load a File object
+ * NGL.autoLoad( file );
+ *
+ * @param  {String|File|Blob} file - either a URL or an object containing the file data
+ * @param  {LoaderParameters} params - loading parameters
+ * @return {Promise} Promise resolves to the loaded data
+ */
+function autoLoad( file, params ){
+
+    var p = Object.assign( getDataInfo( file ), params );
+
+    var loaderClass;
+    if( ParserRegistry.names.includes( p.ext ) ){
+        loaderClass = ParserLoader;
+    }else if( [ &quot;ngl&quot;, &quot;js&quot; ].includes( p.ext ) ){
+        loaderClass = ScriptLoader;
+    }else if( p.ext === &quot;plugin&quot; ){
+        loaderClass = PluginLoader;
+    }
+
+    if( loaderClass ){
+        var loader = new loaderClass( p.src, p );
+        return loader.load();
+    }else{
+        return Promise.reject( &quot;autoLoad: ext &apos;&quot; + p.ext + &quot;&apos; unknown&quot; );
+    }
+
+}
+
+
+export {
+    getDataInfo,
+	autoLoad
+};
+</code></pre>
+
 </div>
 
 <footer class="footer">

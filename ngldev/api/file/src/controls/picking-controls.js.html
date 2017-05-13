@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header>
+<header><span>NGL@0.10.0-dev.19</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -220,8 +220,58 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/controls/picking-controls.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Picking Controls
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+
+import PickingProxy from &quot;./picking-proxy.js&quot;;
+
+
+/**
+ * Picking controls
+ */
+class PickingControls{
+
+    constructor( stage/*, params*/ ){
+
+        this.stage = stage;
+        this.viewer = stage.viewer;
+
+    }
+
+    /**
+     * get picking data
+     * @param {Number} x - canvas x coordinate
+     * @param {Number} y - canvas y coordinate
+     * @return {PickingProxy|undefined} picking proxy
+     */
+    pick( x, y ){
+
+        const pickingData = this.viewer.pick( x, y );
+
+        if( pickingData.picker &amp;&amp;
+            pickingData.picker.type !== &quot;ignore&quot; &amp;&amp;
+            pickingData.pid !== undefined
+        ){
+            const pickerArray = pickingData.picker.array
+            if( pickerArray &amp;&amp; pickingData.pid &gt;= pickerArray.length ){
+                console.error( &quot;pid &gt;= picker.array.length&quot; );
+            }else{
+                return new PickingProxy( pickingData, this.stage );
+            }
+        }
+
+    }
+
+}
+
+
+export default PickingControls;
+</code></pre>
+
 </div>
 
 <footer class="footer">
