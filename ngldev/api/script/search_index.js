@@ -96,6 +96,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/utils/bitarray.js~bitarray",
+    "class/src/utils/bitarray.js~BitArray.html",
+    "<span>BitArray</span> <span class=\"search-result-import-path\">ngl/src/utils/bitarray.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/proxy/bond-proxy.js~bondproxy",
     "class/src/proxy/bond-proxy.js~BondProxy.html",
     "<span>BondProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/bond-proxy.js</span>",
@@ -5496,10 +5502,142 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/bitset.js",
-    "file/src/utils/bitset.js.html",
-    "src/utils/bitset.js",
+    "src/utils/bitarray.js",
+    "file/src/utils/bitarray.js.html",
+    "src/utils/bitarray.js",
     "file"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#clear",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-clear",
+    "src/utils/bitarray.js~BitArray#clear",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#clearall",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-clearAll",
+    "src/utils/bitarray.js~BitArray#clearAll",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#clearrange",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-clearRange",
+    "src/utils/bitarray.js~BitArray#clearRange",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#clone",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-clone",
+    "src/utils/bitarray.js~BitArray#clone",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#constructor",
+    "class/src/utils/bitarray.js~BitArray.html#instance-constructor-constructor",
+    "src/utils/bitarray.js~BitArray#constructor",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#flip",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-flip",
+    "src/utils/bitarray.js~BitArray#flip",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#flipall",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-flipAll",
+    "src/utils/bitarray.js~BitArray#flipAll",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#foreach",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-forEach",
+    "src/utils/bitarray.js~BitArray#forEach",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#get",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-get",
+    "src/utils/bitarray.js~BitArray#get",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#getsize",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-getSize",
+    "src/utils/bitarray.js~BitArray#getSize",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#intersection",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-intersection",
+    "src/utils/bitarray.js~BitArray#intersection",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#isallclear",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isAllClear",
+    "src/utils/bitarray.js~BitArray#isAllClear",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#isallset",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isAllSet",
+    "src/utils/bitarray.js~BitArray#isAllSet",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#isclear",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isClear",
+    "src/utils/bitarray.js~BitArray#isClear",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#israngeclear",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isRangeClear",
+    "src/utils/bitarray.js~BitArray#isRangeClear",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#israngeset",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isRangeSet",
+    "src/utils/bitarray.js~BitArray#isRangeSet",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#isset",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isSet",
+    "src/utils/bitarray.js~BitArray#isSet",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#makeintersection",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-makeIntersection",
+    "src/utils/bitarray.js~BitArray#makeIntersection",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#set",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-set",
+    "src/utils/bitarray.js~BitArray#set",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#setall",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-setAll",
+    "src/utils/bitarray.js~BitArray#setAll",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#setrange",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-setRange",
+    "src/utils/bitarray.js~BitArray#setRange",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#toarray",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-toArray",
+    "src/utils/bitarray.js~BitArray#toArray",
+    "method"
   ],
   [
     "src/utils/counter.js",

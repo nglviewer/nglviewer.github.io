@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.20</span>
+<header><span>NGL@0.10.0-dev.21</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -207,7 +207,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~Picker.html">Picker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html">ShapePicker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span></li>
@@ -228,7 +229,6 @@
 
 
 import { Log } from &quot;../globals.js&quot;;
-import Bitset from &quot;../utils/bitset.js&quot;;
 
 
 /**
@@ -438,18 +438,18 @@ class Polymer{
         }
         // console.log( array, offset, end, count )
 
-        var as = this.structure.atomSetCache[ &quot;__&quot; + type ];
-        if( as === undefined ){
+        let atomSet = this.structure.atomSetCache[ &quot;__&quot; + type ];
+        if( atomSet === undefined ){
             Log.warn( &quot;no precomputed atomSet for: &quot; + type );
-            as = this.structure.getAtomSet( false );
+            atomSet = this.structure.getAtomSet( false );
             this.eachResidue( function( rp ){
                 var ap = rp.getAtomByName( type );
-                as.add_unsafe( ap.index );
+                atomSet.set( ap.index );
             } );
         }
         var j = 0;
 
-        as.forEach( function( index ){
+        atomSet.forEach( function( index ){
             if( index &gt;= offset &amp;&amp; index &lt; end ){
                 for( var i = 1; i &lt; n; ++i ){
                     array[ i - 1 ].index = array[ i ].index;
@@ -461,44 +461,6 @@ class Polymer{
                 }
             }
         } );
-
-    }
-
-    eachDirectionAtomsN( n, callback ){
-
-        var n2 = n * 2;
-        var offset = this.atomOffset;
-        var count = this.atomCount;
-        var end = offset + count;
-        if( count &lt; n ) return;
-
-        var array = new Array( n2 );
-        for( var i = 0; i &lt; n2; ++i ){
-            array[ i ] = this.structure.getAtomProxy();
-        }
-
-        var as1 = this.structure.atomSetCache.__direction1;
-        var as2 = this.structure.atomSetCache.__direction2;
-        if( as1 === undefined || as2 === undefined ){
-            Log.error( &quot;no precomputed atomSet for direction1 or direction2&quot; );
-            return;
-        }
-        var j = 0;
-
-        Bitset.forEach( function( index1, index2 ){
-            if( index1 &gt;= offset &amp;&amp; index1 &lt; end &amp;&amp; index2 &gt;= offset &amp;&amp; index2 &lt; end ){
-                for( var i = 1; i &lt; n; ++i ){
-                    array[ i - 1 ].index = array[ i ].index;
-                    array[ i - 1 + n ].index = array[ i + n ].index;
-                }
-                array[ n - 1 ].index = index1;
-                array[ n - 1 + n ].index = index2;
-                j += 1;
-                if( j &gt;= n ){
-                    callback.apply( this, array );
-                }
-            }
-        }, as1, as2 );
 
     }
 

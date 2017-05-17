@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.20</span>
+<header><span>NGL@0.10.0-dev.21</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -224,7 +224,39 @@ stage.viewerControls.orient( orientationMatrix );</code>
 <h3 id="clicked">Clicked</h3>
 <pre><code><code class="source-code prettyprint">stage.signals.clicked.add( function( pickingProxy ){ ... } );</code>
 </code></pre><h3 id="hovered">Hovered</h3>
+<p>Basis usage:</p>
 <pre><code><code class="source-code prettyprint">stage.signals.hovered.add( function( pickingProxy ){ ... } );</code>
+</code></pre><p>Example for showing a tooltip when hovering over atoms or bonds:</p>
+<pre><code><code class="source-code prettyprint">// create tooltip element and add to the viewer canvas
+var tooltip = document.createElement( &quot;div&quot; );
+Object.assign( tooltip.style, {
+    display: &quot;none&quot;,
+    position: &quot;absolute&quot;,
+    zIndex: 10,
+    pointerEvents: &quot;none&quot;,
+    backgroundColor: &quot;rgba( 0, 0, 0, 0.6 )&quot;,
+    color: &quot;lightgrey&quot;,
+    padding: &quot;0.5em&quot;,
+    fontFamily: &quot;sans-serif&quot;
+} );
+stage.viewer.container.appendChild( tooltip );
+
+// load a structure file
+stage.loadFile( &quot;data://1blu.mmtf&quot;, { defaultRepresentation: true } );
+
+// listen to `hovered` signal to move tooltip around and change its text
+stage.signals.hovered.add( function( pickingProxy ){
+    if( pickingProxy &amp;&amp; ( pickingProxy.atom || pickingProxy.bond ) ){
+        var atom = pickingProxy.atom || pickingProxy.closestBondAtom;
+        var cp = pickingProxy.canvasPosition;
+        tooltip.innerText = &quot;ATOM: &quot; + atom.qualifiedName();
+        tooltip.style.bottom = cp.y + 3 + &quot;px&quot;;
+        tooltip.style.left = cp.x + 3 + &quot;px&quot;;
+        tooltip.style.display = &quot;block&quot;;
+    }else{
+        tooltip.style.display = &quot;none&quot;;
+    }
+} );</code>
 </code></pre><h2 id="mouse">Mouse</h2>
 <p>For convenience, there is a <a href="./manual/../class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-mouseObserver">Stage.mouseObserver</a> and dispatches <a href="./manual/../typedef/index.html#static-typedef-MouseSignals">MouseSignals</a> originating from the viewer canvas.</p>
 <pre><code><code class="source-code prettyprint">stage.mouseObserver.signals.scroll.add( function( delta ){ ... } );</code>

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.20</span>
+<header><span>NGL@0.10.0-dev.21</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -207,7 +207,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~Picker.html">Picker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html">ShapePicker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span></li>
@@ -233,7 +234,7 @@ import { Browser, RepresentationRegistry } from &quot;../globals.js&quot;;
 import { defaults } from &quot;../utils.js&quot;;
 import { DistancePicker } from &quot;../utils/picker.js&quot;;
 import { uniformArray, uniformArray3 } from &quot;../math/array-utils.js&quot;;
-import Bitset from &quot;../utils/bitset.js&quot;;
+import BitArray from &quot;../utils/bitarray.js&quot;;
 import StructureRepresentation from &quot;./structure-representation.js&quot;;
 import Selection from &quot;../selection.js&quot;;
 import BondStore from &quot;../store/bond-store.js&quot;;
@@ -420,8 +421,7 @@ class DistanceRepresentation extends StructureRepresentation{
             position = position.subarray( 0, n * 3 );
         }
 
-        var bondSet = new Bitset( bondStore.count );
-        bondSet.set_all( true );
+        var bondSet = new BitArray( bondStore.count, true );
 
         return {
             text: text,
