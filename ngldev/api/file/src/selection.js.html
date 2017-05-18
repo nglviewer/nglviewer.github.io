@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.21</span>
+<header><span>NGL@0.10.0-dev.22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -198,9 +198,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
@@ -234,21 +236,35 @@ import { binarySearchIndexOf, rangeInSortedArray } from &quot;./utils.js&quot;;
 
 
 const kwd = {
-    &quot;PROTEIN&quot;: 1,
-    &quot;NUCLEIC&quot;: 2,
-    &quot;RNA&quot;: 3,
-    &quot;DNA&quot;: 4,
-    &quot;POLYMER&quot;: 5,
-    &quot;WATER&quot;: 6,
-    &quot;HELIX&quot;: 7,
-    &quot;SHEET&quot;: 8,
-    &quot;BACKBONE&quot;: 9,
-    &quot;SIDECHAIN&quot;: 10,
-    &quot;ALL&quot;: 11,
-    &quot;HETERO&quot;: 12,
-    &quot;ION&quot;: 13,
-    &quot;SACCHARIDE&quot;: 14
+    PROTEIN: 1,
+    NUCLEIC: 2,
+    RNA: 3,
+    DNA: 4,
+    POLYMER: 5,
+    WATER: 6,
+    HELIX: 7,
+    SHEET: 8,
+    TURN: 9,
+    BACKBONE: 10,
+    SIDECHAIN: 11,
+    ALL: 12,
+    HETERO: 13,
+    ION: 14,
+    SACCHARIDE: 15, SUGAR: 15,
+    BONDED: 16,
+    RING: 17
 };
+
+const SelectAllKeyword = [ &quot;*&quot;, &quot;&quot;, &quot;ALL&quot; ];
+
+const AtomOnlyKeywords = [
+    kwd.BACKBONE, kwd.SIDECHAIN, kwd.BONDED, kwd.RING
+];
+
+const ChainKeywords = [
+    kwd.HETERO, kwd.PROTEIN, kwd.NUCLEIC, kwd.RNA, kwd.DNA,
+    kwd.POLYMER, kwd.WATER, kwd.ION, kwd.SACCHARIDE
+];
 
 
 /**
@@ -313,26 +329,19 @@ class Selection{
 
         if( !string ) return;
 
-        var scope = this;
-
-        var selection = this.selection;
-        var selectionStack = [];
-        var newSelection, oldSelection;
+        let selection = this.selection;
+        let newSelection, oldSelection;
+        const selectionStack = [];
 
         string = string.replace( /\(/g, &apos; ( &apos; ).replace( /\)/g, &apos; ) &apos; ).trim();
         if( string.charAt( 0 ) === &quot;(&quot; &amp;&amp; string.substr( -1 ) === &quot;)&quot; ){
             string = string.slice( 1, -1 ).trim();
         }
-        var chunks = string.split( /\s+/ );
+        const chunks = string.split( /\s+/ );
 
         // Log.log( string, chunks )
 
-        var all = [ &quot;*&quot;, &quot;&quot;, &quot;ALL&quot; ];
-
-        var c, sele, i, not;
-        var atomname, chain, model, resi, altloc, inscode;
-
-        var createNewContext = function( operator ){
+        const createNewContext = operator =&gt; {
 
             newSelection = {
                 operator: operator,
@@ -340,7 +349,7 @@ class Selection{
             };
             if( selection === undefined ){
                 selection = newSelection;
-                scope.selection = newSelection;
+                this.selection = newSelection;
             }else{
                 selection.rules.push( newSelection );
                 selectionStack.push( selection );
@@ -349,7 +358,7 @@ class Selection{
 
         };
 
-        var getPrevContext = function( operator ){
+        const getPrevContext = function( operator ){
 
             oldSelection = selection;
             selection = selectionStack.pop();
@@ -360,15 +369,18 @@ class Selection{
 
         };
 
-        var pushRule = function( rule ){
+        const pushRule = function( rule ){
 
             selection.rules.push( rule );
 
         };
 
-        for( i = 0; i &lt; chunks.length; ++i ){
+        let not;
 
-            c = chunks[ i ];
+        for( let i = 0; i &lt; chunks.length; ++i ){
+
+            const c = chunks[ i ];
+            const cu = c.toUpperCase();
 
             // handle parens
 
@@ -396,7 +408,7 @@ class Selection{
 
             if( not &gt; 0 ){
 
-                if( c.toUpperCase() === &quot;NOT&quot; ){
+                if( cu === &quot;NOT&quot; ){
 
                     not = 1;
 
@@ -419,12 +431,12 @@ class Selection{
 
             // handle logic operators
 
-            if( c.toUpperCase() === &quot;AND&quot; ){
+            if( cu === &quot;AND&quot; ){
 
                 // Log.log( &quot;AND&quot; );
 
                 if( selection.operator === &quot;OR&quot; ){
-                    var lastRule = selection.rules.pop();
+                    const lastRule = selection.rules.pop();
                     createNewContext( &quot;AND&quot; );
                     pushRule( lastRule );
                 }else{
@@ -432,7 +444,7 @@ class Selection{
                 }
                 continue;
 
-            }else if( c.toUpperCase() === &quot;OR&quot; ){
+            }else if( cu === &quot;OR&quot; ){
 
                 // Log.log( &quot;OR&quot; );
 
@@ -460,95 +472,42 @@ class Selection{
 
             // handle keyword attributes
 
-            sele = {};
-
-            if( c.toUpperCase() === &quot;HETERO&quot; ){
-                sele.keyword = kwd.HETERO;
-                pushRule( sele );
+            const keyword = kwd[ cu ];
+            if( keyword !== undefined ){
+                pushRule( { keyword } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;WATER&quot; ){
-                sele.keyword = kwd.WATER;
-                pushRule( sele );
+            if( cu === &quot;HYDROGEN&quot; ){
+                pushRule( { element: &quot;H&quot; } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;PROTEIN&quot; ){
-                sele.keyword = kwd.PROTEIN;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;NUCLEIC&quot; ){
-                sele.keyword = kwd.NUCLEIC;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;RNA&quot; ){
-                sele.keyword = kwd.RNA;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;DNA&quot; ){
-                sele.keyword = kwd.DNA;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;POLYMER&quot; ){
-                sele.keyword = kwd.POLYMER;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;ION&quot; ){
-                sele.keyword = kwd.ION;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;SACCHARIDE&quot; || c.toUpperCase() === &quot;SUGAR&quot; ){
-                sele.keyword = kwd.SACCHARIDE;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;HYDROGEN&quot; ){
-                sele.element = &quot;H&quot;;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;SMALL&quot; ){
-                sele = {
+            if( cu === &quot;SMALL&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;GLY&quot; },
                         { resname: &quot;ALA&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;NUCLEOPHILIC&quot; ){
-                sele = {
+            if( cu === &quot;NUCLEOPHILIC&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;SER&quot; },
                         { resname: &quot;THR&quot; },
                         { resname: &quot;CYS&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;HYDROPHOBIC&quot; ){
-                sele = {
+            if( cu === &quot;HYDROPHOBIC&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;VAL&quot; },
@@ -557,63 +516,58 @@ class Selection{
                         { resname: &quot;MET&quot; },
                         { resname: &quot;PRO&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;AROMATIC&quot; ){
-                sele = {
+            if( cu === &quot;AROMATIC&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;PHE&quot; },
                         { resname: &quot;TYR&quot; },
                         { resname: &quot;TRP&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;AMIDE&quot; ){
-                sele = {
+            if( cu === &quot;AMIDE&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;ASN&quot; },
                         { resname: &quot;GLN&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;ACIDIC&quot; ){
-                sele = {
+            if( cu === &quot;ACIDIC&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;ASP&quot; },
                         { resname: &quot;GLU&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;BASIC&quot; ){
-                sele = {
+            if( cu === &quot;BASIC&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;HIS&quot; },
                         { resname: &quot;LYS&quot; },
                         { resname: &quot;ARG&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;CHARGED&quot; ){
-                sele = {
+            if( cu === &quot;CHARGED&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;ASP&quot; },
@@ -622,13 +576,12 @@ class Selection{
                         { resname: &quot;LYS&quot; },
                         { resname: &quot;ARG&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;POLAR&quot; ){
-                sele = {
+            if( cu === &quot;POLAR&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;ASP&quot; },
@@ -642,13 +595,12 @@ class Selection{
                         { resname: &quot;THR&quot; },
                         { resname: &quot;TYR&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;NONPOLAR&quot; ){
-                sele = {
+            if( cu === &quot;NONPOLAR&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { resname: &quot;ALA&quot; },
@@ -662,64 +614,12 @@ class Selection{
                         { resname: &quot;VAL&quot; },
                         { resname: &quot;TRP&quot; }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( c.toUpperCase() === &quot;HELIX&quot; ){
-                sele.keyword = kwd.HELIX;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;SHEET&quot; ){
-                sele.keyword = kwd.SHEET;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;TURN&quot; ){
-                sele = {
-                    operator: &quot;AND&quot;,
-                    rules: [
-                        {
-                            operator: &quot;OR&quot;,
-                            negate: true,
-                            rules: [
-                                { keyword: kwd.HELIX },
-                                { keyword: kwd.SHEET }
-                            ]
-                        },
-                        {
-                            operator: &quot;OR&quot;,
-                            rules: [
-                                { keyword: kwd.PROTEIN },
-                                { sstruc: &quot;s&quot; },
-                                { sstruc: &quot;t&quot; },
-                                { sstruc: &quot;l&quot; }
-                            ]
-                        }
-                    ]
-                };
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;BACKBONE&quot; ){
-                sele.keyword = kwd.BACKBONE;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;SIDECHAIN&quot; ){
-                sele.keyword = kwd.SIDECHAIN;
-                pushRule( sele );
-                continue;
-            }
-
-            if( c.toUpperCase() === &quot;SIDECHAINATTACHED&quot; ){
-                sele = {
+            if( cu === &quot;SIDECHAINATTACHED&quot; ){
+                pushRule( {
                     operator: &quot;OR&quot;,
                     rules: [
                         { keyword: kwd.SIDECHAIN },
@@ -769,52 +669,46 @@ class Selection{
                             ]
                         }
                     ]
-                };
-                pushRule( sele );
+                } );
                 continue;
             }
 
-            if( all.indexOf( c.toUpperCase() )!==-1 ){
-                sele.keyword = kwd.ALL;
-                pushRule( sele );
+            if( SelectAllKeyword.indexOf( cu ) !== -1 ){
+                pushRule( { keyword: kwd.ALL } );
                 continue;
             }
 
             // handle atom expressions
 
             if( c.charAt( 0 ) === &quot;@&quot; ){
-                var indexList = c.substr( 1 ).split( &quot;,&quot; );
-                for( var k = 0, kl = indexList.length; k &lt; kl; ++k ){
+                const indexList = c.substr( 1 ).split( &quot;,&quot; );
+                for( let k = 0, kl = indexList.length; k &lt; kl; ++k ){
                     indexList[ k ] = parseInt( indexList[ k ] );
                 }
                 indexList.sort( function( a, b ){ return a - b; } );
-                sele.atomindex = indexList;
-                pushRule( sele );
+                pushRule( { atomindex: indexList } );
                 continue;
             }
 
             if( c.charAt( 0 ) === &quot;#&quot; ){
                 console.error( &quot;# for element selection deprecated, use _&quot; );
-                sele.element = c.substr( 1 ).toUpperCase();
-                pushRule( sele );
+                pushRule( { element: cu.substr( 1 ) } );
                 continue;
             }
             if( c.charAt( 0 ) === &quot;_&quot; ){
-                sele.element = c.substr( 1 ).toUpperCase();
-                pushRule( sele );
+                pushRule( { element: cu.substr( 1 ) } );
                 continue;
             }
 
             if( c[0] === &quot;[&quot; &amp;&amp; c[c.length-1] === &quot;]&quot; ){
-                sele.resname = c.substr( 1, c.length-2 ).toUpperCase();
-                pushRule( sele );
+                pushRule( { resname: cu.substr( 1, c.length-2 ) } );
                 continue;
-            }else if( ( c.length &gt;= 1 &amp;&amp; c.length &lt;= 4 ) &amp;&amp;
-                    c[0] !== &quot;^&quot; &amp;&amp; c[0] !== &quot;:&quot; &amp;&amp; c[0] !== &quot;.&quot; &amp;&amp; c[0] !== &quot;%&quot; &amp;&amp; c[0] !== &quot;/&quot; &amp;&amp;
-                    isNaN( parseInt( c ) ) ){
-
-                sele.resname = c.toUpperCase();
-                pushRule( sele );
+            }else if(
+                ( c.length &gt;= 1 &amp;&amp; c.length &lt;= 4 ) &amp;&amp;
+                c[0] !== &quot;^&quot; &amp;&amp; c[0] !== &quot;:&quot; &amp;&amp; c[0] !== &quot;.&quot; &amp;&amp; c[0] !== &quot;%&quot; &amp;&amp; c[0] !== &quot;/&quot; &amp;&amp;
+                isNaN( parseInt( c ) )
+            ){
+                pushRule( { resname: cu } );
                 continue;
             }
 
@@ -822,12 +716,12 @@ class Selection{
             // otherwise a test quickly becomes not applicable
             // e.g. chainTest for chainname when resno is present too
 
-            sele = {
+            const sele = {
                 operator: &quot;AND&quot;,
                 rules: []
             };
 
-            model = c.split( &quot;/&quot; );
+            const model = c.split( &quot;/&quot; );
             if( model.length &gt; 1 &amp;&amp; model[1] ){
                 if( isNaN( parseInt( model[1] ) ) ){
                     throw new Error( &quot;model must be an integer&quot; );
@@ -837,14 +731,14 @@ class Selection{
                 } );
             }
 
-            altloc = model[0].split( &quot;%&quot; );
+            const altloc = model[0].split( &quot;%&quot; );
             if( altloc.length &gt; 1 ){
                 sele.rules.push( {
                     altloc: altloc[1]
                 } );
             }
 
-            atomname = altloc[0].split( &quot;.&quot; );
+            const atomname = altloc[0].split( &quot;.&quot; );
             if( atomname.length &gt; 1 &amp;&amp; atomname[1] ){
                 if( atomname[1].length &gt; 4 ){
                     throw new Error( &quot;atomname must be one to four characters&quot; );
@@ -854,14 +748,14 @@ class Selection{
                 } );
             }
 
-            chain = atomname[0].split( &quot;:&quot; );
+            const chain = atomname[0].split( &quot;:&quot; );
             if( chain.length &gt; 1 &amp;&amp; chain[1] ){
                 sele.rules.push( {
                     chainname: chain[1]
                 } );
             }
 
-            inscode = chain[0].split( &quot;^&quot; );
+            const inscode = chain[0].split( &quot;^&quot; );
             if( inscode.length &gt; 1 ){
                 sele.rules.push( {
                     inscode: inscode[1]
@@ -869,7 +763,7 @@ class Selection{
             }
 
             if( inscode[0] ){
-                var negate, negate2;
+                let negate, negate2;
                 if( inscode[0][0] === &quot;-&quot; ){
                     inscode[0] = inscode[0].substr( 1 );
                     negate = true;
@@ -878,7 +772,7 @@ class Selection{
                     inscode[0] = inscode[0].replace( &quot;--&quot;, &quot;-&quot; );
                     negate2 = true;
                 }
-                resi = inscode[0].split( &quot;-&quot; );
+                let resi = inscode[0].split( &quot;-&quot; );
                 if( resi.length === 1 ){
                     resi = parseInt( resi[0] );
                     if( isNaN( resi ) ){
@@ -913,12 +807,12 @@ class Selection{
 
         // cleanup
 
-        if( this.selection.operator === undefined &amp;&amp;
-                this.selection.rules.length === 1 &amp;&amp;
-                this.selection.rules[ 0 ].hasOwnProperty( &quot;operator&quot; ) ){
-
+        if(
+            this.selection.operator === undefined &amp;&amp;
+            this.selection.rules.length === 1 &amp;&amp;
+            this.selection.rules[ 0 ].hasOwnProperty( &quot;operator&quot; )
+        ){
             this.selection = this.selection.rules[ 0 ];
-
         }
 
     }
@@ -929,17 +823,15 @@ class Selection{
         if( selection === null ) return false;
         if( selection.error ) return false;
 
-        var n = selection.rules.length;
+        const n = selection.rules.length;
         if( n === 0 ) return false;
 
-        var t = selection.negate ? false : true;
-        var f = selection.negate ? true : false;
+        const t = selection.negate ? false : true;
+        const f = selection.negate ? true : false;
 
-        var s, and, ret, na;
-        var subTests = [];
-
-        for( var i = 0; i &lt; n; ++i ){
-            s = selection.rules[ i ];
+        const subTests = [];
+        for( let i = 0; i &lt; n; ++i ){
+            const s = selection.rules[ i ];
             if( s.hasOwnProperty( &quot;operator&quot; ) ){
                 subTests[ i ] = this._makeTest( fn, s );
             }
@@ -951,12 +843,13 @@ class Selection{
 
         return function test( entity ){
 
-            and = selection.operator === &quot;AND&quot;;
-            na = false;
+            const and = selection.operator === &quot;AND&quot;;
+            let na = false;
+            let ret;
 
-            for( var i = 0; i &lt; n; ++i ){
+            for( let i = 0; i &lt; n; ++i ){
 
-                s = selection.rules[ i ];
+                const s = selection.rules[ i ];
 
                 if( s.hasOwnProperty( &quot;operator&quot; ) ){
 
@@ -1015,10 +908,10 @@ class Selection{
         if( selection === undefined ) selection = this.selection;
         if( selection.error ) return selection;
 
-        var n = selection.rules.length;
+        const n = selection.rules.length;
         if( n === 0 ) return selection;
 
-        var filtered = {
+        const filtered = {
             operator: selection.operator,
             rules: []
         };
@@ -1026,11 +919,11 @@ class Selection{
             filtered.negate = selection.negate;
         }
 
-        for( var i = 0; i &lt; n; ++i ){
+        for( let i = 0; i &lt; n; ++i ){
 
-            var s = selection.rules[ i ];
+            const s = selection.rules[ i ];
             if( s.hasOwnProperty( &quot;operator&quot; ) ){
-                var fs = this._filter( fn, s );
+                const fs = this._filter( fn, s );
                 if( fs !== null ) filtered.rules.push( fs );
             }else if( !fn( s ) ){
                 filtered.rules.push( s );
@@ -1057,19 +950,14 @@ class Selection{
 
     makeAtomTest( atomOnly ){
 
-        var helixTypes = [ &quot;h&quot;, &quot;g&quot;, &quot;i&quot; ];
-        var sheetTypes = [ &quot;e&quot;, &quot;b&quot; ];
-
-        var selection;
+        let selection;
 
         if( atomOnly ){
 
             // console.log( this.selection )
 
             selection = this._filter( function( s ){
-                if( s.keyword!==undefined &amp;&amp;
-                        s.keyword!==kwd.BACKBONE &amp;&amp; s.keyword!==kwd.SIDECHAIN
-                ) return true;
+                if( s.keyword!==undefined &amp;&amp; !AtomOnlyKeywords.includes( s.keyword ) ) return true;
                 if( s.model!==undefined ) return true;
                 if( s.chainname!==undefined ) return true;
                 if( s.resname!==undefined ) return true;
@@ -1084,12 +972,11 @@ class Selection{
 
         }
 
-        var fn = function( a, s ){
+        const fn = function( a, s ){
 
             // returning -1 means the rule is not applicable
             if( s.atomname===undefined &amp;&amp; s.element===undefined &amp;&amp;
                     s.altloc===undefined &amp;&amp; s.atomindex===undefined &amp;&amp;
-                    // s.keyword!==kwd.BACKBONE &amp;&amp; s.keyword!==kwd.SIDECHAIN &amp;&amp;
                     s.keyword===undefined &amp;&amp; s.inscode===undefined &amp;&amp;
                     s.resname===undefined &amp;&amp; s.sstruc===undefined &amp;&amp;
                     s.resno===undefined &amp;&amp; s.chainname===undefined &amp;&amp;
@@ -1099,6 +986,8 @@ class Selection{
             if( s.keyword!==undefined ){
                 if( s.keyword===kwd.BACKBONE &amp;&amp; !a.isBackbone() ) return false;
                 if( s.keyword===kwd.SIDECHAIN &amp;&amp; !a.isSidechain() ) return false;
+                if( s.keyword===kwd.BONDED &amp;&amp; !a.isBonded() ) return false;
+                if( s.keyword===kwd.RING &amp;&amp; !a.isRing() ) return false;
 
                 if( s.keyword===kwd.HETERO &amp;&amp; !a.isHetero() ) return false;
                 if( s.keyword===kwd.PROTEIN &amp;&amp; !a.isProtein() ) return false;
@@ -1107,8 +996,9 @@ class Selection{
                 if( s.keyword===kwd.DNA &amp;&amp; !a.isDna() ) return false;
                 if( s.keyword===kwd.POLYMER &amp;&amp; !a.isPolymer() ) return false;
                 if( s.keyword===kwd.WATER &amp;&amp; !a.isWater() ) return false;
-                if( s.keyword===kwd.HELIX &amp;&amp; helixTypes.indexOf( a.sstruc )===-1 ) return false;
-                if( s.keyword===kwd.SHEET &amp;&amp; sheetTypes.indexOf( a.sstruc )===-1 ) return false;
+                if( s.keyword===kwd.HELIX &amp;&amp; !a.isHelix() ) return false;
+                if( s.keyword===kwd.SHEET &amp;&amp; !a.isSheet() ) return false;
+                if( s.keyword===kwd.TURN &amp;&amp; !a.isTurn() ) return false;
                 if( s.keyword===kwd.ION &amp;&amp; !a.isIon() ) return false;
                 if( s.keyword===kwd.SACCHARIDE &amp;&amp; !a.isSaccharide() ) return false;
             }
@@ -1145,17 +1035,14 @@ class Selection{
 
     makeResidueTest( residueOnly ){
 
-        var helixTypes = [ &quot;h&quot;, &quot;g&quot;, &quot;i&quot; ];
-        var sheetTypes = [ &quot;e&quot;, &quot;b&quot; ];
-
-        var selection;
+        let selection;
 
         if( residueOnly ){
 
             // console.log( this.selection )
 
             selection = this._filter( function( s ){
-                if( s.keyword===kwd.BACKBONE || s.keyword===kwd.SIDECHAIN ) return true;
+                if( s.keyword!==undefined &amp;&amp; AtomOnlyKeywords.includes( s.keyword ) ) return true;
                 if( s.model!==undefined ) return true;
                 if( s.chainname!==undefined ) return true;
                 if( s.atomname!==undefined ) return true;
@@ -1170,13 +1057,13 @@ class Selection{
 
         }
 
-        var fn = function( r, s ){
+        const fn = function( r, s ){
 
             // returning -1 means the rule is not applicable
             if( s.resname===undefined &amp;&amp; s.resno===undefined &amp;&amp; s.inscode===undefined &amp;&amp;
                     s.sstruc===undefined &amp;&amp; s.model===undefined &amp;&amp; s.chainname===undefined &amp;&amp;
                     s.atomindex===undefined &amp;&amp;
-                    ( s.keyword===undefined || s.keyword===kwd.BACKBONE || s.keyword===kwd.SIDECHAIN )
+                    ( s.keyword===undefined || AtomOnlyKeywords.includes( s.keyword ) )
             ) return -1;
 
             if( s.keyword!==undefined ){
@@ -1187,8 +1074,9 @@ class Selection{
                 if( s.keyword===kwd.DNA &amp;&amp; !r.isDna() ) return false;
                 if( s.keyword===kwd.POLYMER &amp;&amp; !r.isPolymer() ) return false;
                 if( s.keyword===kwd.WATER &amp;&amp; !r.isWater() ) return false;
-                if( s.keyword===kwd.HELIX &amp;&amp; helixTypes.indexOf( r.sstruc )===-1 ) return false;
-                if( s.keyword===kwd.SHEET &amp;&amp; sheetTypes.indexOf( r.sstruc )===-1 ) return false;
+                if( s.keyword===kwd.HELIX &amp;&amp; !r.isHelix() ) return false;
+                if( s.keyword===kwd.SHEET &amp;&amp; !r.isSheet() ) return false;
+                if( s.keyword===kwd.TURN &amp;&amp; !r.isTurn() ) return false;
                 if( s.keyword===kwd.ION &amp;&amp; !r.isIon() ) return false;
                 if( s.keyword===kwd.SACCHARIDE &amp;&amp; !r.isSaccharide() ) return false;
             }
@@ -1221,19 +1109,14 @@ class Selection{
 
     makeChainTest( chainOnly ){
 
-        var selection;
-
-        var chainKeywordList = [
-            kwd.HETERO, kwd.PROTEIN, kwd.NUCLEIC, kwd.RNA, kwd.DNA,
-            kwd.POLYMER, kwd.WATER, kwd.ION, kwd.SACCHARIDE
-        ];
+        let selection;
 
         if( chainOnly ){
 
             // console.log( this.selection )
 
             selection = this._filter( function( s ){
-                if( s.keyword!==undefined &amp;&amp; !chainKeywordList.includes( s.keyword ) ) return true;
+                if( s.keyword!==undefined &amp;&amp; !ChainKeywords.includes( s.keyword ) ) return true;
                 // if( s.model!==undefined ) return true;
                 if( s.resname!==undefined ) return true;
                 if( s.resno!==undefined ) return true;
@@ -1251,11 +1134,11 @@ class Selection{
 
         }
 
-        var fn = function( c, s ){
+        const fn = function( c, s ){
 
             // returning -1 means the rule is not applicable
             if( s.chainname===undefined &amp;&amp; s.model===undefined &amp;&amp; s.atomindex===undefined &amp;&amp;
-                    ( s.keyword===undefined || !chainKeywordList.includes( s.keyword ) )
+                    ( s.keyword===undefined || !ChainKeywords.includes( s.keyword ) )
             ) return -1;
 
             if( s.keyword!==undefined ){
@@ -1288,7 +1171,7 @@ class Selection{
 
     makeModelTest( modelOnly ){
 
-        var selection;
+        let selection;
 
         if( modelOnly ){
 
@@ -1313,7 +1196,7 @@ class Selection{
 
         }
 
-        var fn = function( m, s ){
+        const fn = function( m, s ){
 
             // returning -1 means the rule is not applicable
             if( s.model===undefined &amp;&amp; s.atomindex===undefined ) return -1;

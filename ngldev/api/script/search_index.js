@@ -414,6 +414,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/surface/molecular-surface.js~molecularsurface",
+    "class/src/surface/molecular-surface.js~MolecularSurface.html",
+    "<span>MolecularSurface</span> <span class=\"search-result-import-path\">ngl/src/surface/molecular-surface.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/moleculetype-colormaker.js~moleculetypecolormaker",
     "class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html",
     "<span>MoleculetypeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/moleculetype-colormaker.js</span>",
@@ -673,9 +679,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/surface/surface.js~surface",
-    "function/index.html#static-function-Surface",
+    "class/src/surface/surface.js~Surface.html",
     "<span>Surface</span> <span class=\"search-result-import-path\">ngl/src/surface/surface.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/buffer/surface-buffer.js~surfacebuffer",
@@ -3289,7 +3295,7 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#bondhash",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-bondHash",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bondHash",
     "src/proxy/atom-proxy.js~AtomProxy#bondHash",
     "member"
   ],
@@ -3408,6 +3414,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/proxy/atom-proxy.js~atomproxy#ishelix",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isHelix",
+    "src/proxy/atom-proxy.js~AtomProxy#isHelix",
+    "method"
+  ],
+  [
     "src/proxy/atom-proxy.js~atomproxy#ishetero",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isHetero",
     "src/proxy/atom-proxy.js~AtomProxy#isHetero",
@@ -3456,9 +3468,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/proxy/atom-proxy.js~atomproxy#issheet",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isSheet",
+    "src/proxy/atom-proxy.js~AtomProxy#isSheet",
+    "method"
+  ],
+  [
     "src/proxy/atom-proxy.js~atomproxy#issidechain",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isSidechain",
     "src/proxy/atom-proxy.js~AtomProxy#isSidechain",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#isturn",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isTurn",
+    "src/proxy/atom-proxy.js~AtomProxy#isTurn",
     "method"
   ],
   [
@@ -4092,6 +4116,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/proxy/residue-proxy.js~residueproxy#ishelix",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isHelix",
+    "src/proxy/residue-proxy.js~ResidueProxy#isHelix",
+    "method"
+  ],
+  [
     "src/proxy/residue-proxy.js~residueproxy#ishetero",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isHetero",
     "src/proxy/residue-proxy.js~ResidueProxy#isHetero",
@@ -4131,6 +4161,18 @@ window.esdocSearchIndex = [
     "src/proxy/residue-proxy.js~residueproxy#issaccharide",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isSaccharide",
     "src/proxy/residue-proxy.js~ResidueProxy#isSaccharide",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#issheet",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isSheet",
+    "src/proxy/residue-proxy.js~ResidueProxy#isSheet",
+    "method"
+  ],
+  [
+    "src/proxy/residue-proxy.js~residueproxy#isturn",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isTurn",
+    "src/proxy/residue-proxy.js~ResidueProxy#isTurn",
     "method"
   ],
   [
@@ -5232,6 +5274,30 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/surface/molecular-surface.js~molecularsurface#dispose",
+    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-method-dispose",
+    "src/surface/molecular-surface.js~MolecularSurface#dispose",
+    "method"
+  ],
+  [
+    "src/surface/molecular-surface.js~molecularsurface#getsurface",
+    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-method-getSurface",
+    "src/surface/molecular-surface.js~MolecularSurface#getSurface",
+    "method"
+  ],
+  [
+    "src/surface/molecular-surface.js~molecularsurface#getsurfaceworker",
+    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-method-getSurfaceWorker",
+    "src/surface/molecular-surface.js~MolecularSurface#getSurfaceWorker",
+    "method"
+  ],
+  [
+    "src/surface/molecular-surface.js~molecularsurfaceparameters",
+    "typedef/index.html#static-typedef-MolecularSurfaceParameters",
+    "src/surface/molecular-surface.js~MolecularSurfaceParameters",
+    "typedef"
+  ],
+  [
     "src/surface/surface-utils.js",
     "file/src/surface/surface-utils.js.html",
     "src/surface/surface-utils.js",
@@ -5242,6 +5308,48 @@ window.esdocSearchIndex = [
     "file/src/surface/surface.js.html",
     "src/surface/surface.js",
     "file"
+  ],
+  [
+    "src/surface/surface.js~surface#atomindex",
+    "class/src/surface/surface.js~Surface.html#instance-member-atomindex",
+    "src/surface/surface.js~Surface#atomindex",
+    "member"
+  ],
+  [
+    "src/surface/surface.js~surface#color",
+    "class/src/surface/surface.js~Surface.html#instance-member-color",
+    "src/surface/surface.js~Surface#color",
+    "member"
+  ],
+  [
+    "src/surface/surface.js~surface#constructor",
+    "class/src/surface/surface.js~Surface.html#instance-constructor-constructor",
+    "src/surface/surface.js~Surface#constructor",
+    "method"
+  ],
+  [
+    "src/surface/surface.js~surface#index",
+    "class/src/surface/surface.js~Surface.html#instance-member-index",
+    "src/surface/surface.js~Surface#index",
+    "member"
+  ],
+  [
+    "src/surface/surface.js~surface#normal",
+    "class/src/surface/surface.js~Surface.html#instance-member-normal",
+    "src/surface/surface.js~Surface#normal",
+    "member"
+  ],
+  [
+    "src/surface/surface.js~surface#position",
+    "class/src/surface/surface.js~Surface.html#instance-member-position",
+    "src/surface/surface.js~Surface#position",
+    "member"
+  ],
+  [
+    "src/surface/surface.js~surface#set",
+    "class/src/surface/surface.js~Surface.html#instance-method-set",
+    "src/surface/surface.js~Surface#set",
+    "method"
   ],
   [
     "src/surface/volume-slice.js",

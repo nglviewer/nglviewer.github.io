@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.21</span>
+<header><span>NGL@0.10.0-dev.22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -198,9 +198,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
@@ -221,13 +223,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AtomProxy from &apos;<span><a href="file/src/proxy/atom-proxy.js.html#lineNumber19">ngl/src/proxy/atom-proxy.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AtomProxy from &apos;<span><a href="file/src/proxy/atom-proxy.js.html#lineNumber20">ngl/src/proxy/atom-proxy.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/proxy/atom-proxy.js.html#lineNumber19">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/proxy/atom-proxy.js.html#lineNumber20">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -469,7 +471,7 @@
     <td>
       <span class="access" data-ice="access">public</span>
       
-      
+      <span class="kind" data-ice="kind">get</span>
       
       <span class="override" data-ice="override"></span>
     </td>
@@ -478,7 +480,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-member-bondHash">bondHash</a></span></span><span data-ice="signature">: <span>BondHash</span></span>
+          <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bondHash">bondHash</a></span></span><span data-ice="signature">: <span>BondHash</span></span>
         </p>
       </div>
       <div>
@@ -1403,6 +1405,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isHelix">isHelix</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>If atom is part of a helix</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isHetero">isHetero</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
         </p>
       </div>
@@ -1627,6 +1657,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isSheet">isSheet</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>If atom is part of a sheet</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isSidechain">isSidechain</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
         </p>
       </div>
@@ -1634,6 +1692,34 @@
         
         
         <div data-ice="description"><p>If atom is part of a sidechin</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isTurn">isTurn</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>If atom is part of a turn</p>
 </div>
       </div>
     </td>
@@ -1804,7 +1890,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber25">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber26">source</a></span></span>
     </span>
   </h3>
 
@@ -1874,7 +1960,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber274">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber276">source</a></span></span>
     </span>
   </h3>
 
@@ -1918,7 +2004,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber53">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber54">source</a></span></span>
     </span>
   </h3>
 
@@ -1961,7 +2047,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber44">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber45">source</a></span></span>
     </span>
   </h3>
 
@@ -2004,7 +2090,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber147">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber149">source</a></span></span>
     </span>
   </h3>
 
@@ -2047,7 +2133,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber177">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber179">source</a></span></span>
     </span>
   </h3>
 
@@ -2091,7 +2177,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber252">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber254">source</a></span></span>
     </span>
   </h3>
 
@@ -2124,10 +2210,10 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-bondHash">
+  <h3 data-ice="anchor" id="instance-get-bondHash">
     <span class="access" data-ice="access">public</span>
     
-    
+    <span class="kind" data-ice="kind">get</span>
     
     
     
@@ -2135,7 +2221,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber57">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber67">source</a></span></span>
     </span>
   </h3>
 
@@ -2178,7 +2264,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber37">source</a></span></span>
     </span>
   </h3>
 
@@ -2221,7 +2307,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber132">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber134">source</a></span></span>
     </span>
   </h3>
 
@@ -2265,7 +2351,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber125">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber127">source</a></span></span>
     </span>
   </h3>
 
@@ -2309,7 +2395,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber198">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber200">source</a></span></span>
     </span>
   </h3>
 
@@ -2353,7 +2439,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber184">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber186">source</a></span></span>
     </span>
   </h3>
 
@@ -2397,7 +2483,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber71">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber73">source</a></span></span>
     </span>
   </h3>
 
@@ -2441,7 +2527,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber167">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber169">source</a></span></span>
     </span>
   </h3>
 
@@ -2485,7 +2571,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber63">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber60">source</a></span></span>
     </span>
   </h3>
 
@@ -2529,7 +2615,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber111">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber113">source</a></span></span>
     </span>
   </h3>
 
@@ -2573,7 +2659,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber263">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber265">source</a></span></span>
     </span>
   </h3>
 
@@ -2617,7 +2703,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber86">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber88">source</a></span></span>
     </span>
   </h3>
 
@@ -2660,7 +2746,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber49">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber50">source</a></span></span>
     </span>
   </h3>
 
@@ -2703,7 +2789,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber40">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
@@ -2746,7 +2832,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber143">source</a></span></span>
     </span>
   </h3>
 
@@ -2789,7 +2875,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber160">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber162">source</a></span></span>
     </span>
   </h3>
 
@@ -2833,7 +2919,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber118">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber120">source</a></span></span>
     </span>
   </h3>
 
@@ -2877,7 +2963,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber241">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber243">source</a></span></span>
     </span>
   </h3>
 
@@ -2921,7 +3007,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber104">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber106">source</a></span></span>
     </span>
   </h3>
 
@@ -2965,7 +3051,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber31">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber32">source</a></span></span>
     </span>
   </h3>
 
@@ -3009,7 +3095,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber191">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber193">source</a></span></span>
     </span>
   </h3>
 
@@ -3053,7 +3139,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber208">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber210">source</a></span></span>
     </span>
   </h3>
 
@@ -3097,7 +3183,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber219">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber221">source</a></span></span>
     </span>
   </h3>
 
@@ -3141,7 +3227,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber230">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber232">source</a></span></span>
     </span>
   </h3>
 
@@ -3188,7 +3274,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber639">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber669">source</a></span></span>
     </span>
   </h3>
 
@@ -3245,7 +3331,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber480">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber510">source</a></span></span>
     </span>
   </h3>
 
@@ -3319,7 +3405,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber463">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber493">source</a></span></span>
     </span>
   </h3>
 
@@ -3393,7 +3479,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber289">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber291">source</a></span></span>
     </span>
   </h3>
 
@@ -3473,7 +3559,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber311">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber313">source</a></span></span>
     </span>
   </h3>
 
@@ -3553,7 +3639,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber590">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber620">source</a></span></span>
     </span>
   </h3>
 
@@ -3627,7 +3713,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber333">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber335">source</a></span></span>
     </span>
   </h3>
 
@@ -3684,7 +3770,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber372">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber374">source</a></span></span>
     </span>
   </h3>
 
@@ -3741,7 +3827,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber421">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber423">source</a></span></span>
     </span>
   </h3>
 
@@ -3749,6 +3835,63 @@
   
   
   <div data-ice="description"><p>If atom is part of a dna</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>flag</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isHelix">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isHelix</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber455">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>If atom is part of a helix</p>
 </div>
 
   
@@ -3798,7 +3941,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber385">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber387">source</a></span></span>
     </span>
   </h3>
 
@@ -3855,7 +3998,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber437">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber439">source</a></span></span>
     </span>
   </h3>
 
@@ -3912,7 +4055,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber401">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber403">source</a></span></span>
     </span>
   </h3>
 
@@ -3969,7 +4112,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber347">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber349">source</a></span></span>
     </span>
   </h3>
 
@@ -4026,7 +4169,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber393">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber395">source</a></span></span>
     </span>
   </h3>
 
@@ -4083,7 +4226,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber453">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber483">source</a></span></span>
     </span>
   </h3>
 
@@ -4140,7 +4283,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber413">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber415">source</a></span></span>
     </span>
   </h3>
 
@@ -4197,7 +4340,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber445">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber447">source</a></span></span>
     </span>
   </h3>
 
@@ -4205,6 +4348,63 @@
   
   
   <div data-ice="description"><p>If atom is part of a saccharide</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>flag</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isSheet">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isSheet</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber463">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>If atom is part of a sheet</p>
 </div>
 
   
@@ -4254,7 +4454,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber364">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber366">source</a></span></span>
     </span>
   </h3>
 
@@ -4262,6 +4462,63 @@
   
   
   <div data-ice="description"><p>If atom is part of a sidechin</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>flag</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isTurn">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isTurn</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber471">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>If atom is part of a turn</p>
 </div>
 
   
@@ -4311,7 +4568,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber429">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber431">source</a></span></span>
     </span>
   </h3>
 
@@ -4368,7 +4625,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber519">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber549">source</a></span></span>
     </span>
   </h3>
 
@@ -4449,7 +4706,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber575">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber605">source</a></span></span>
     </span>
   </h3>
 
@@ -4523,7 +4780,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber537">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber567">source</a></span></span>
     </span>
   </h3>
 
@@ -4604,7 +4861,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber558">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/atom-proxy.js.html#lineNumber588">source</a></span></span>
     </span>
   </h3>
 

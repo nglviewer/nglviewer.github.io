@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.21</span>
+<header><span>NGL@0.10.0-dev.22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -198,9 +198,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
@@ -221,13 +223,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ResidueProxy from &apos;<span><a href="file/src/proxy/residue-proxy.js.html#lineNumber18">ngl/src/proxy/residue-proxy.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ResidueProxy from &apos;<span><a href="file/src/proxy/residue-proxy.js.html#lineNumber19">ngl/src/proxy/residue-proxy.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/proxy/residue-proxy.js.html#lineNumber18">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/proxy/residue-proxy.js.html#lineNumber19">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -929,6 +931,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isHelix">isHelix</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>If residue is part of a helix</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isHetero">isHetero</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
         </p>
       </div>
@@ -1125,6 +1155,62 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isSheet">isSheet</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>If residue is part of a sheet</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isTurn">isTurn</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>If residue is part of a turn</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-isWater">isWater</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
         </p>
       </div>
@@ -1162,7 +1248,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
@@ -1232,7 +1318,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber93">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber94">source</a></span></span>
     </span>
   </h3>
 
@@ -1276,7 +1362,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber49">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber50">source</a></span></span>
     </span>
   </h3>
 
@@ -1319,7 +1405,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -1362,7 +1448,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber71">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber72">source</a></span></span>
     </span>
   </h3>
 
@@ -1406,7 +1492,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber33">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
@@ -1449,7 +1535,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber120">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber121">source</a></span></span>
     </span>
   </h3>
 
@@ -1493,7 +1579,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber113">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber114">source</a></span></span>
     </span>
   </h3>
 
@@ -1537,7 +1623,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber61">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber62">source</a></span></span>
     </span>
   </h3>
 
@@ -1581,7 +1667,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber176">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber177">source</a></span></span>
     </span>
   </h3>
 
@@ -1625,7 +1711,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber53">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber54">source</a></span></span>
     </span>
   </h3>
 
@@ -1668,7 +1754,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber152">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber153">source</a></span></span>
     </span>
   </h3>
 
@@ -1712,7 +1798,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber45">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber46">source</a></span></span>
     </span>
   </h3>
 
@@ -1755,7 +1841,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber38">source</a></span></span>
     </span>
   </h3>
 
@@ -1798,7 +1884,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber169">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber170">source</a></span></span>
     </span>
   </h3>
 
@@ -1842,7 +1928,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber130">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber131">source</a></span></span>
     </span>
   </h3>
 
@@ -1886,7 +1972,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
@@ -1930,7 +2016,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
@@ -1976,7 +2062,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber463">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber488">source</a></span></span>
     </span>
   </h3>
 
@@ -2033,7 +2119,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber395">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber420">source</a></span></span>
     </span>
   </h3>
 
@@ -2107,7 +2193,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber218">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber219">source</a></span></span>
     </span>
   </h3>
 
@@ -2187,7 +2273,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber283">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber284">source</a></span></span>
     </span>
   </h3>
 
@@ -2244,7 +2330,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber275">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber276">source</a></span></span>
     </span>
   </h3>
 
@@ -2252,6 +2338,63 @@
   
   
   <div data-ice="description"><p>If residue is dna</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>flag</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isHelix">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isHelix</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber346">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>If residue is part of a helix</p>
 </div>
 
   
@@ -2301,7 +2444,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber313">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber314">source</a></span></span>
     </span>
   </h3>
 
@@ -2358,7 +2501,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber329">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber330">source</a></span></span>
     </span>
   </h3>
 
@@ -2415,7 +2558,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber255">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber256">source</a></span></span>
     </span>
   </h3>
 
@@ -2472,7 +2615,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber296">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber297">source</a></span></span>
     </span>
   </h3>
 
@@ -2529,7 +2672,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber247">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber248">source</a></span></span>
     </span>
   </h3>
 
@@ -2586,7 +2729,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber267">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber268">source</a></span></span>
     </span>
   </h3>
 
@@ -2643,7 +2786,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber337">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber338">source</a></span></span>
     </span>
   </h3>
 
@@ -2651,6 +2794,120 @@
   
   
   <div data-ice="description"><p>If residue is a saccharide</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>flag</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isSheet">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isSheet</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber354">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>If residue is part of a sheet</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>flag</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isTurn">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isTurn</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber362">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>If residue is part of a turn</p>
 </div>
 
   
@@ -2700,7 +2957,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber321">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/proxy/residue-proxy.js.html#lineNumber322">source</a></span></span>
     </span>
   </h3>
 

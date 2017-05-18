@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.21</span>
+<header><span>NGL@0.10.0-dev.22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -198,9 +198,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
@@ -237,15 +239,15 @@ import Surface from &quot;./surface.js&quot;;
 
 WorkerRegistry.add( &quot;molsurf&quot;, function func( e, callback ){
 
-    var a = e.data.args;
-    var p = e.data.params;
+    const a = e.data.args;
+    const p = e.data.params;
     if( a &amp;&amp; p ){
-        var SurfClass = ( p.type === &quot;av&quot; ) ? AVSurface : EDTSurface;
-        var surf = new SurfClass( a.coordList, a.radiusList, a.indexList );
-        var sd = surf.getSurface(
+        const SurfClass = ( p.type === &quot;av&quot; ) ? AVSurface : EDTSurface;
+        const surf = new SurfClass( a.coordList, a.radiusList, a.indexList );
+        const sd = surf.getSurface(
             p.type, p.probeRadius, p.scaleFactor, p.cutoff, true, p.smooth, p.contour
         );
-        var transferList = [ sd.position.buffer, sd.index.buffer ];
+        const transferList = [ sd.position.buffer, sd.index.buffer ];
         if( sd.normal ) transferList.push( sd.normal.buffer );
         if( sd.atomindex ) transferList.push( sd.atomindex.buffer );
         callback( {
@@ -257,27 +259,40 @@ WorkerRegistry.add( &quot;molsurf&quot;, function func( e, callback ){
 }, [ EDTSurface, AVSurface ] );
 
 
+/**
+ * Molecular surface parameter object.
+ * @typedef {Object} MolecularSurfaceParameters - stage parameters
+ * @property {String} type - &quot;av&quot; or &quot;edt&quot;
+ * @property {Number} probeRadius - probe radius
+ * @property {Number} scaleFactor - higher for better quality
+ * @property {Integer} smooth - number of smoothing cycles to apply
+ * @property {String} name - name for created surface
+ */
 
-function MolecularSurface( structure ){
 
-    this.structure = structure;
+/**
+ * Create Molecular surfaces
+ */
+class MolecularSurface{
 
-}
+    constructor( structure ){
 
-MolecularSurface.prototype = {
+        this.structure = structure;
 
-    getAtomData: function(){
+    }
+
+    _getAtomData(){
 
         return this.structure.getAtomData( {
             what: { position: true, radius: true, index: true },
             radiusParams: { radius: &quot;vdw&quot;, scale: 1 }
         } );
 
-    },
+    }
 
-    makeSurface: function( sd, p ){
+    _makeSurface( sd, p ){
 
-        var surface = new Surface( &quot;&quot;, &quot;&quot;, sd );
+        var surface = new Surface( p.name, &quot;&quot;, sd );
 
         surface.info.type = p.type;
         surface.info.probeRadius = p.probeRadius;
@@ -287,30 +302,41 @@ MolecularSurface.prototype = {
 
         return surface;
 
-    },
+    }
 
-    getSurface: function( params ){
+    /**
+     * Get molecular surface
+     * @param {MolecularSurfaceParameters} params - parameters for surface creation
+     * @return {Surface} the surface
+     */
+    getSurface( params ){
 
-        var p = params || {};
+        const p = params || {};
 
-        var atomData = this.getAtomData();
-        var coordList = atomData.position;
-        var radiusList = atomData.radius;
-        var indexList = atomData.index;
+        const atomData = this._getAtomData();
+        const coordList = atomData.position;
+        const radiusList = atomData.radius;
+        const indexList = atomData.index;
 
-        var SurfClass = ( p.type === &quot;av&quot; ) ? AVSurface : EDTSurface;
-        var surf = new SurfClass( coordList, radiusList, indexList );
-        var sd = surf.getSurface(
+        const SurfClass = ( p.type === &quot;av&quot; ) ? AVSurface : EDTSurface;
+        const surf = new SurfClass( coordList, radiusList, indexList );
+        const sd = surf.getSurface(
             p.type, p.probeRadius, p.scaleFactor, p.cutoff, true, p.smooth, p.contour
         );
 
-        return this.makeSurface( sd, p );
+        return this._makeSurface( sd, p );
 
-    },
+    }
 
-    getSurfaceWorker: function( params, callback ){
+    /**
+     * Get molecular surface asynchronous
+     * @param {MolecularSurfaceParameters} params - parameters for surface creation
+     * @param {function(surface: Surface)} callback - function to be called after surface is created
+     * @return {undefined}
+     */
+    getSurfaceWorker( params, callback ){
 
-        var p = Object.assign( {}, params );
+        const p = Object.assign( {}, params );
 
         if( window.Worker ){
 
@@ -318,12 +344,12 @@ MolecularSurface.prototype = {
                 this.worker = new Worker( &quot;molsurf&quot; );
             }
 
-            var atomData = this.getAtomData();
-            var coordList = atomData.position;
-            var radiusList = atomData.radius;
-            var indexList = atomData.index;
+            const atomData = this._getAtomData();
+            const coordList = atomData.position;
+            const radiusList = atomData.radius;
+            const indexList = atomData.index;
 
-            var msg = {
+            const msg = {
                 args: {
                     coordList: coordList,
                     radiusList: radiusList,
@@ -332,45 +358,48 @@ MolecularSurface.prototype = {
                 params: p
             };
 
-            var transferList = [
+            const transferList = [
                 coordList.buffer, radiusList.buffer, indexList.buffer
             ];
 
             this.worker.post( msg, transferList,
 
-                function( e ){
-                    var sd = e.data.sd;
-                    callback( this.makeSurface( sd, p ) );
-                }.bind( this ),
+                e =&gt; {
+                    callback( this._makeSurface( e.data.sd, p ) );
+                },
 
-                function( e ){
+                e =&gt; {
                     console.warn(
                         &quot;MolecularSurface.getSurfaceWorker error - trying without worker&quot;, e
                     );
                     this.worker.terminate();
                     this.worker = undefined;
-                    var surface = this.getSurface( p );
+                    const surface = this.getSurface( p );
                     callback( surface );
-                }.bind( this )
+                }
 
             );
 
         }else{
 
-            var surface = this.getSurface( p );
+            const surface = this.getSurface( p );
             callback( surface );
 
         }
 
-    },
+    }
 
-    dispose: function(){
+    /**
+     * Cleanup
+     * @return {undefined}
+     */
+    dispose(){
 
         if( this.worker ) this.worker.terminate();
 
     }
 
-};
+}
 
 
 export default MolecularSurface;

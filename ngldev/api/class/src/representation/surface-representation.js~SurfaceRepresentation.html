@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.21</span>
+<header><span>NGL@0.10.0-dev.22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -198,9 +198,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
@@ -279,7 +281,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(surface: <span><a href="function/index.html#static-function-Surface">Surface</a></span> | <span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span>, viewer: <span><a href="function/index.html#static-function-Viewer">Viewer</a></span>, params: <span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span>)</span>
+          <span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(surface: <span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span> | <span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span>, viewer: <span><a href="function/index.html#static-function-Viewer">Viewer</a></span>, params: <span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span>)</span>
         </p>
       </div>
       <div>
@@ -466,7 +468,7 @@ the representation, including surface calculations.</p>
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(surface: <span><a href="function/index.html#static-function-Surface">Surface</a></span> | <span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span>, viewer: <span><a href="function/index.html#static-function-Viewer">Viewer</a></span>, params: <span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span>)</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(surface: <span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span> | <span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span>, viewer: <span><a href="function/index.html#static-function-Viewer">Viewer</a></span>, params: <span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span>)</span>
     <span class="right-info">
       
       
@@ -492,7 +494,7 @@ the representation, including surface calculations.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">surface</td>
-      <td data-ice="type"><span><a href="function/index.html#static-function-Surface">Surface</a></span> | <span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></td>
+      <td data-ice="type"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span> | <span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>the surface or volume to be represented</p>
 </td>

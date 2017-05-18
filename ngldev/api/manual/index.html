@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.21</span>
+<header><span>NGL@0.10.0-dev.22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -82,6 +82,7 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#clicked" data-ice="link">Clicked</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#hovered" data-ice="link">Hovered</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#mouse" data-ice="link">Mouse</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#component" data-ice="link">Component</a></li>
 <li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html" data-ice="link">Molecular Representations</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#index" data-ice="link">Index</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#backbone" data-ice="link">backbone</a></li>
@@ -545,7 +546,7 @@ Object.assign( tooltip.style, {
 stage.viewer.container.appendChild( tooltip );
 
 // load a structure file
-stage.loadFile( &quot;data://1blu.mmtf&quot;, { defaultRepresentation: true } );
+stage.loadFile( &quot;rcsb://1blu&quot;, { defaultRepresentation: true } );
 
 // listen to `hovered` signal to move tooltip around and change its text
 stage.signals.hovered.add( function( pickingProxy ){
@@ -561,6 +562,42 @@ stage.signals.hovered.add( function( pickingProxy ){
     }
 } );</code>
 </code></pre><h2>Mouse</h2><p>For convenience, there is a <a href="./manual/../class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-mouseObserver">Stage.mouseObserver</a> and dispatches <a href="./manual/../typedef/index.html#static-typedef-MouseSignals">MouseSignals</a> originating from the viewer canvas.</p><pre><code><code class="source-code prettyprint">stage.mouseObserver.signals.scroll.add( function( delta ){ ... } );</code>
+</code></pre><h2>Component</h2><p>Each <a href="./manual/../class/src/component/component.js~Component.html">Component</a> (wrapping a <code>Structure</code>, <code>Surface</code>, <code>Volume</code> or <code>Shape</code> object) can be moved independently from the camera using the <code>.setPosition</code>, <code>.setRotation</code>, <code>.setScale</code> methods.</p><pre><code><code class="source-code prettyprint">// Load a protein
+stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
+    o.addRepresentation( &quot;cartoon&quot; );
+    stage.autoView();
+} );
+
+// Load the same protein and move it
+stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
+    o.setPosition( [ 20, 0, 0 ] );
+    o.setRotation( [ 2, 0, 0 ] );
+    o.setScale( 0.5 );
+    o.addRepresentation( &quot;cartoon&quot;, { color: &quot;orange&quot; } );
+    stage.autoView();
+} );</code>
+</code></pre><p>In addition, a transformation matrix can be set with <code>.setTransform</code> which is applied before the set position, rotation and scale. Such a matrix can be supplied by external superposition tools to align two structures.</p><pre><code><code class="source-code prettyprint">Promise.all( [
+
+    stage.loadFile( &quot;rcsb://1u19&quot; ),
+    stage.loadFile( &quot;rcsb://3pqr&quot; )
+
+] ).then( function( ol ){
+
+    ol[ 0 ].addRepresentation( &quot;cartoon&quot;, { color: &quot;skyblue&quot;, sele: &quot;:A&quot; } );
+    ol[ 1 ].addRepresentation( &quot;cartoon&quot;, { color: &quot;tomato&quot; } );
+
+    var m = new NGL.Matrix4().fromArray( [
+        -0.674, 0.131, -0.727, -7.528,
+        0.283, 0.955, -0.090, -30.266,
+        0.682, -0.267, -0.681, 24.816,
+        0, 0, 0, 1
+    ] ).transpose();
+
+    ol[ 0 ].setTransform( m );
+
+    stage.autoView();
+
+} );</code>
 </code></pre></div>
         <a data-ice="link" href="manual/usage/interaction-controls.html"></a>
       </div>
@@ -693,6 +730,8 @@ stage.signals.hovered.add( function( pickingProxy ){
 <li><em>charged</em> (Asp, Glu, His, Lys, Arg)</li>
 <li><em>polar</em> (Asp, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
 <li><em>nonpolar</em> (Ala, Cys, Gly, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
+<li><em>bonded</em> (all atoms with at least one bond)</li>
+<li><em>ring</em> (all atoms within rings)</li>
 </ul><h3>Expressions</h3><ul>
 <li>residue number: <em>1</em>, <em>2</em>, <em>100</em></li>
 <li>residue number range: <em>3-40</em> (Note that around the dash <strong>-</strong> no spaces are allowed)</li>
@@ -2146,6 +2185,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create Molecular surfaces</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span>
         </p>
       </div>
@@ -3182,6 +3249,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Surface</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/buffer/surface-buffer.js~SurfaceBuffer.html">SurfaceBuffer</a></span></span>
         </p>
       </div>
@@ -3216,7 +3311,7 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
       <div>
         
         
-        <div data-ice="description"><p>Component wrapping a <span><a href="function/index.html#static-function-Surface">Surface</a></span> object</p>
+        <div data-ice="description"><p>Component wrapping a <span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span> object</p>
 </div>
       </div>
     </td>
@@ -4400,34 +4495,6 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span><span data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Surface</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
           <span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span><span data-ice="signature">(idOrElement: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>
         </p>
       </div>
@@ -5039,6 +5106,34 @@ optionally guided by a sequence alignment</p>
         
         
         <div data-ice="description"><p>Loader parameter object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Molecular surface parameter object.</p>
 </div>
       </div>
     </td>
@@ -5960,6 +6055,7 @@ position part for scene translation</p>
 <li>label primitive for Shape class</li>
 <li>support for reversing color schemes with <code>colorReverse</code> parameter</li>
 <li>independent component movement via <code>.setPosition</code>, <code>.setRotation</code>, <code>.setScale</code>, <code>.setTransform</code></li>
+<li><code>bonded</code> and <code>ring</code> selection language keywords</li>
 </ul><h3>Changed</h3><ul>
 <li>renamed <code>volume</code> parameter in molecular surface representation to <code>colorVolume</code></li>
 <li>renamed colormaker classes from colorMaker to colormaker, i.e. removed camel case</li>
