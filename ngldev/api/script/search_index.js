@@ -43,15 +43,15 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/store/atom-store.js~atomstore",
-    "function/index.html#static-function-AtomStore",
+    "class/src/store/atom-store.js~AtomStore.html",
     "<span>AtomStore</span> <span class=\"search-result-import-path\">ngl/src/store/atom-store.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/atom-type.js~atomtype",
-    "function/index.html#static-function-AtomType",
+    "class/src/store/atom-type.js~AtomType.html",
     "<span>AtomType</span> <span class=\"search-result-import-path\">ngl/src/store/atom-type.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/color/atomindex-colormaker.js~atomindexcolormaker",
@@ -109,9 +109,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/store/bond-store.js~bondstore",
-    "function/index.html#static-function-BondStore",
+    "class/src/store/bond-store.js~BondStore.html",
     "<span>BondStore</span> <span class=\"search-result-import-path\">ngl/src/store/bond-store.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/buffer/box-buffer.js~boxbuffer",
@@ -151,9 +151,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/store/chain-store.js~chainstore",
-    "function/index.html#static-function-ChainStore",
+    "class/src/store/chain-store.js~ChainStore.html",
     "<span>ChainStore</span> <span class=\"search-result-import-path\">ngl/src/store/chain-store.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/color/chainid-colormaker.js~chainidcolormaker",
@@ -403,9 +403,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/store/model-store.js~modelstore",
-    "function/index.html#static-function-ModelStore",
+    "class/src/store/model-store.js~ModelStore.html",
     "<span>ModelStore</span> <span class=\"search-result-import-path\">ngl/src/store/model-store.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/color/modelindex-colormaker.js~modelindexcolormaker",
@@ -523,15 +523,15 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/store/residue-store.js~residuestore",
-    "function/index.html#static-function-ResidueStore",
+    "class/src/store/residue-store.js~ResidueStore.html",
     "<span>ResidueStore</span> <span class=\"search-result-import-path\">ngl/src/store/residue-store.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/store/residue-type.js~residuetype",
-    "function/index.html#static-function-ResidueType",
+    "class/src/store/residue-type.js~ResidueType.html",
     "<span>ResidueType</span> <span class=\"search-result-import-path\">ngl/src/store/residue-type.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/color/residueindex-colormaker.js~residueindexcolormaker",
@@ -649,9 +649,9 @@ window.esdocSearchIndex = [
   ],
   [
     "ngl/src/store/store.js~store",
-    "function/index.html#static-function-Store",
+    "class/src/store/store.js~Store.html",
     "<span>Store</span> <span class=\"search-result-import-path\">ngl/src/store/store.js</span>",
-    "function"
+    "class"
   ],
   [
     "ngl/src/structure/structure.js~structure",
@@ -2068,6 +2068,12 @@ window.esdocSearchIndex = [
     "class/src/component/representation-component.js~RepresentationComponent.html#instance-member-signals",
     "src/component/representation-component.js~RepresentationComponent#signals",
     "member"
+  ],
+  [
+    "src/component/representation-component.js~representationcomponent#togglevisibility",
+    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-toggleVisibility",
+    "src/component/representation-component.js~RepresentationComponent#toggleVisibility",
+    "method"
   ],
   [
     "src/component/representation-component.js~representationcomponent#type",
@@ -4938,6 +4944,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/store/atom-type.js~atomtype#constructor",
+    "class/src/store/atom-type.js~AtomType.html#instance-constructor-constructor",
+    "src/store/atom-type.js~AtomType#constructor",
+    "method"
+  ],
+  [
     "src/store/bond-hash.js",
     "file/src/store/bond-hash.js.html",
     "src/store/bond-hash.js",
@@ -4978,6 +4990,30 @@ window.esdocSearchIndex = [
     "file/src/store/residue-type.js.html",
     "src/store/residue-type.js",
     "file"
+  ],
+  [
+    "src/store/residue-type.js~residuetype#assignbondreferenceatomindices",
+    "class/src/store/residue-type.js~ResidueType.html#instance-method-assignBondReferenceAtomIndices",
+    "src/store/residue-type.js~ResidueType#assignBondReferenceAtomIndices",
+    "method"
+  ],
+  [
+    "src/store/residue-type.js~residuetype#calculatebondgraph",
+    "class/src/store/residue-type.js~ResidueType.html#instance-method-calculateBondGraph",
+    "src/store/residue-type.js~ResidueType#calculateBondGraph",
+    "method"
+  ],
+  [
+    "src/store/residue-type.js~residuetype#calculaterings",
+    "class/src/store/residue-type.js~ResidueType.html#instance-method-calculateRings",
+    "src/store/residue-type.js~ResidueType#calculateRings",
+    "method"
+  ],
+  [
+    "src/store/residue-type.js~residuetype#constructor",
+    "class/src/store/residue-type.js~ResidueType.html#instance-constructor-constructor",
+    "src/store/residue-type.js~ResidueType#constructor",
+    "method"
   ],
   [
     "src/store/store.js",

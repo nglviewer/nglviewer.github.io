@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -208,16 +208,18 @@
 <li><em>helix</em></li>
 <li><em>sheet</em></li>
 <li><em>turn</em> (not helix and not sheet)</li>
-<li><em>small</em> (Gly, Ala)</li>
+<li><em>small</em> (Gly, Ala, Ser)</li>
 <li><em>nucleophilic</em> (Ser, Thr, Cys)</li>
-<li><em>hydrophobic</em> (Val, Leu, Ile, Met, Pro)</li>
-<li><em>aromatic</em> (Phe, Tyr, Trp)</li>
+<li><em>hydrophobic</em> (Ala, Val, Leu, Ile, Met, Pro, Phe, Trp)</li>
+<li><em>aromatic</em> (Phe, Tyr, Trp, His)</li>
 <li><em>amid</em> (Asn, Gln)</li>
 <li><em>acidic</em> (Asp, Glu)</li>
 <li><em>basic</em> (His, Lys, Arg)</li>
 <li><em>charged</em> (Asp, Glu, His, Lys, Arg)</li>
-<li><em>polar</em> (Asp, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
-<li><em>nonpolar</em> (Ala, Cys, Gly, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
+<li><em>polar</em> (Asp, Cys, Gly, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
+<li><em>nonpolar</em> (Ala, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
+<li><em>cyclic</em> (His, Phe, Pro, Trp, Tyr)</li>
+<li><em>aliphatic</em> (Ala, Gly, Ile, Leu, Val)</li>
 <li><em>bonded</em> (all atoms with at least one bond)</li>
 <li><em>ring</em> (all atoms within rings)</li>
 </ul>
@@ -230,6 +232,7 @@
 <li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
 <li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
 <li>numeric residue name: <em>[032]</em>, <em>[1AB]</em>, ...</li>
+<li>list of residue names: <em>[ALA,GLU,MET]</em>, <em>[ARG,LYS]</em>, ...</li>
 <li>element name: <strong>_H</strong>, <strong>_C</strong>, <strong>_O</strong>, ...</li>
 <li>alternate location: <strong>%A</strong>, <strong>%B</strong>, ... or <strong>%</strong> for non-alternate location atoms</li>
 <li>insertion code: <strong>^A</strong>, <strong>^B</strong>, ... or <strong>^</strong> for residues with no insertion code</li>

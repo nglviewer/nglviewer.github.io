@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -234,57 +234,44 @@ import Store from &quot;./store.js&quot;;
 
 
 /**
- * Residue store class
- * @class
- * @extends Store
- * @param {Integer} [size] - initial size
+ * Residue store
  */
-function ResidueStore( size ){
+class ResidueStore extends Store{
 
-    Store.call( this, size );
+    get __fields(){
 
-}
+        return [
+            [ &quot;chainIndex&quot;, 1, &quot;uint32&quot; ],
+            [ &quot;atomOffset&quot;, 1, &quot;uint32&quot; ],
+            [ &quot;atomCount&quot;, 1, &quot;uint16&quot; ],
+            [ &quot;residueTypeId&quot;, 1, &quot;uint16&quot; ],
 
-ResidueStore.prototype = Object.assign( Object.create(
+            [ &quot;resno&quot;, 1, &quot;int32&quot; ],
+            [ &quot;sstruc&quot;, 1, &quot;uint8&quot; ],
+            [ &quot;inscode&quot;, 1, &quot;uint8&quot; ]
+        ];
 
-    Store.prototype ), {
+    }
 
-    constructor: ResidueStore,
-
-    type: &quot;ResidueStore&quot;,
-
-    __fields: [
-
-        [ &quot;chainIndex&quot;, 1, &quot;uint32&quot; ],
-        [ &quot;atomOffset&quot;, 1, &quot;uint32&quot; ],
-        [ &quot;atomCount&quot;, 1, &quot;uint16&quot; ],
-        [ &quot;residueTypeId&quot;, 1, &quot;uint16&quot; ],
-
-        [ &quot;resno&quot;, 1, &quot;int32&quot; ],
-        [ &quot;sstruc&quot;, 1, &quot;uint8&quot; ],
-        [ &quot;inscode&quot;, 1, &quot;uint8&quot; ]
-
-    ],
-
-    setSstruc: function( i, str ){
+    setSstruc( i, str ){
         this.sstruc[ i ] = str.charCodeAt( 0 );
-    },
+    }
 
-    getSstruc: function( i ){
-        var code = this.sstruc[ i ];
-        return code ? String.fromCharCode( code ) : &quot;&quot;;
-    },
-
-    setInscode: function( i, str ){
-        this.inscode[ i ] = str.charCodeAt( 0 );
-    },
-
-    getInscode: function( i ){
-        var code = this.inscode[ i ];
+    getSstruc( i ){
+        const code = this.sstruc[ i ];
         return code ? String.fromCharCode( code ) : &quot;&quot;;
     }
 
-} );
+    setInscode( i, str ){
+        this.inscode[ i ] = str.charCodeAt( 0 );
+    }
+
+    getInscode( i ){
+        const code = this.inscode[ i ];
+        return code ? String.fromCharCode( code ) : &quot;&quot;;
+    }
+
+}
 
 
 export default ResidueStore;

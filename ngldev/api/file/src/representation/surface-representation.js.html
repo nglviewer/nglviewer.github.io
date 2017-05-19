@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -249,9 +249,10 @@ import ContourBuffer from &quot;../buffer/contour-buffer.js&quot;;
  * @property {Float} isolevel - The value at which to create the isosurface. For volume data only.
  * @property {Integer} smooth - How many iterations of laplacian smoothing after surface triangulation. For volume data only.
  * @property {Boolean} background - Render the surface in the background, unlit.
- * @property {Boolean} opaqueBack - Render the back-faces (where normals point away from the camera) of the surface opaque, ignoring of the transparency parameter.
+ * @property {Boolean} opaqueBack - Render the back-faces (where normals point away from the camera) of the surface opaque, ignoring the transparency parameter.
  * @property {Integer} boxSize - Size of the box to triangulate volume data in. Set to zero to triangulate the whole volume. For volume data only.
  * @property {Boolean} useWorker - Weather or not to triangulate the volume asynchronously in a Web Worker. For volume data only.
+ * @property {Boolean} wrap - Wrap volume data around the edges; use in conjuction with boxSize but not larger than the volume dimension. For volume data only.
  */
 
 
@@ -302,7 +303,10 @@ class SurfaceRepresentation extends Representation{
             },
             useWorker: {
                 type: &quot;boolean&quot;, rebuild: true
-            }
+            },
+            wrap: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
 
         }, this.parameters );
 
@@ -335,7 +339,7 @@ class SurfaceRepresentation extends Representation{
 
     init( params ){
 
-        var p = params || {};
+        const p = params || {};
         p.colorScheme = defaults( p.colorScheme, &quot;uniform&quot; );
         p.colorValue = defaults( p.colorValue, 0xDDDDDD );
 
@@ -348,6 +352,7 @@ class SurfaceRepresentation extends Representation{
         this.colorVolume = defaults( p.colorVolume, undefined );
         this.contour = defaults( p.contour, false );
         this.useWorker = defaults( p.useWorker, true );
+        this.wrap = defaults( p.wrap, false );
 
         super.init( p );
 
@@ -371,7 +376,7 @@ class SurfaceRepresentation extends Representation{
 
         if( this.volume ){
 
-            var isolevel;
+            let isolevel;
 
             if( this.isolevelType === &quot;sigma&quot; ){
                 isolevel = this.volume.getValueForSigma( this.isolevel );
@@ -383,6 +388,7 @@ class SurfaceRepresentation extends Representation{
                 this.__isolevel !== isolevel ||
                 this.__smooth !== this.smooth ||
                 this.__contour !== this.contour ||
+                this.__wrap !== this.wrap ||
                 this.__boxSize !== this.boxSize ||
                 ( this.boxSize &gt; 0 &amp;&amp;
                     !this.__boxCenter.equals( this.boxCenter ) )
@@ -390,25 +396,26 @@ class SurfaceRepresentation extends Representation{
                 this.__isolevel = isolevel;
                 this.__smooth = this.smooth;
                 this.__contour = this.contour;
+                this.__wrap = this.wrap
                 this.__boxSize = this.boxSize;
                 this.__boxCenter.copy( this.boxCenter );
                 this.__box.copy( this.box );
 
-                var onSurfaceFinish = function( surface ){
+                const onSurfaceFinish = surface =&gt; {
                     this.surface = surface;
                     callback();
-                }.bind( this );
+                };
 
                 if( this.useWorker ){
                     this.volume.getSurfaceWorker(
                         isolevel, this.smooth, this.boxCenter, this.boxSize,
-                        this.contour, onSurfaceFinish
+                        this.contour, this.wrap, onSurfaceFinish
                     );
                 }else{
                     onSurfaceFinish(
                         this.volume.getSurface(
                             isolevel, this.smooth, this.boxCenter, this.boxSize,
-                            this.contour
+                            this.contour, this.wrap
                         )
                     );
                 }
@@ -436,9 +443,9 @@ class SurfaceRepresentation extends Representation{
 
     create(){
 
-        var sd = this.getSurfaceData();
+        const sd = this.getSurfaceData();
 
-        var buffer;
+        let buffer;
 
         if( this.contour ){
 
@@ -449,7 +456,7 @@ class SurfaceRepresentation extends Representation{
 
         } else {
 
-            var surfaceBuffer = new SurfaceBuffer(
+            const surfaceBuffer = new SurfaceBuffer(
                 sd, this.getBufferParams( {
                     background: this.background,
                     opaqueBack: this.opaqueBack,
@@ -470,7 +477,7 @@ class SurfaceRepresentation extends Representation{
 
         what = what || {};
 
-        var surfaceData = {};
+        const surfaceData = {};
 
         if( what.position ){
             surfaceData.position = this.surface.getPosition();
@@ -563,6 +570,7 @@ class SurfaceRepresentation extends Representation{
         if( this.surface &amp;&amp; (
                 params.isolevel !== undefined ||
                 params.smooth !== undefined ||
+                params.wrap !== undefined ||
                 params.boxSize !== undefined ||
                 ( this.boxSize &gt; 0 &amp;&amp;
                     !this.__box.equals( this.box ) )
@@ -582,7 +590,7 @@ class SurfaceRepresentation extends Representation{
 
     getColorParams(){
 
-        var p = super.getColorParams();
+        const p = super.getColorParams();
 
         p.volume = this.colorVolume;
 

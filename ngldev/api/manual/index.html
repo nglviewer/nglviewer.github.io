@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -720,16 +720,18 @@ stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
 <li><em>helix</em></li>
 <li><em>sheet</em></li>
 <li><em>turn</em> (not helix and not sheet)</li>
-<li><em>small</em> (Gly, Ala)</li>
+<li><em>small</em> (Gly, Ala, Ser)</li>
 <li><em>nucleophilic</em> (Ser, Thr, Cys)</li>
-<li><em>hydrophobic</em> (Val, Leu, Ile, Met, Pro)</li>
-<li><em>aromatic</em> (Phe, Tyr, Trp)</li>
+<li><em>hydrophobic</em> (Ala, Val, Leu, Ile, Met, Pro, Phe, Trp)</li>
+<li><em>aromatic</em> (Phe, Tyr, Trp, His)</li>
 <li><em>amid</em> (Asn, Gln)</li>
 <li><em>acidic</em> (Asp, Glu)</li>
 <li><em>basic</em> (His, Lys, Arg)</li>
 <li><em>charged</em> (Asp, Glu, His, Lys, Arg)</li>
-<li><em>polar</em> (Asp, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
-<li><em>nonpolar</em> (Ala, Cys, Gly, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
+<li><em>polar</em> (Asp, Cys, Gly, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
+<li><em>nonpolar</em> (Ala, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
+<li><em>cyclic</em> (His, Phe, Pro, Trp, Tyr)</li>
+<li><em>aliphatic</em> (Ala, Gly, Ile, Leu, Val)</li>
 <li><em>bonded</em> (all atoms with at least one bond)</li>
 <li><em>ring</em> (all atoms within rings)</li>
 </ul><h3>Expressions</h3><ul>
@@ -740,6 +742,7 @@ stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
 <li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
 <li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
 <li>numeric residue name: <em>[032]</em>, <em>[1AB]</em>, ...</li>
+<li>list of residue names: <em>[ALA,GLU,MET]</em>, <em>[ARG,LYS]</em>, ...</li>
 <li>element name: <strong>_H</strong>, <strong>_C</strong>, <strong>_O</strong>, ...</li>
 <li>alternate location: <strong>%A</strong>, <strong>%B</strong>, ... or <strong>%</strong> for non-alternate location atoms</li>
 <li>insertion code: <strong>^A</strong>, <strong>^B</strong>, ... or <strong>^</strong> for residues with no insertion code</li>
@@ -904,6 +907,62 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Atom proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Atom store</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Atom type</p>
 </div>
       </div>
     </td>
@@ -1149,6 +1208,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Bond store</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span>
         </p>
       </div>
@@ -1212,6 +1299,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Chain proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Chain store</p>
 </div>
       </div>
     </td>
@@ -2157,6 +2272,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Model store</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span>
         </p>
       </div>
@@ -2612,6 +2755,62 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Residue proxy</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Residue store</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Residue type</p>
 </div>
       </div>
     </td>
@@ -3116,6 +3315,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Stage class, central for creating molecular scenes with NGL.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Store class</p>
 </div>
       </div>
     </td>
@@ -4215,62 +4442,6 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Atom store class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span><span data-ice="signature">(structure: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span>, atomname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, element: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Atom type class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
           <span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span><span data-ice="signature">(scoreFunction: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>)</span>
         </p>
       </div>
@@ -4299,62 +4470,6 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Bond store class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Chain store class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
           <span data-ice="name"><span><a href="function/index.html#static-function-Kdtree">Kdtree</a></span></span><span data-ice="signature">(points: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array">Float32Array</a></span>, metric: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>)</span>
         </p>
       </div>
@@ -4362,118 +4477,6 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Kdtree</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Model store class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Residue store class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span><span data-ice="signature">(structure: <span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span>, resname: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, atomTypeIdList: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, hetero: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>, chemCompType: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, bonds: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Residue type class</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span><span data-ice="signature">(size: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Store class</p>
 </div>
       </div>
     </td>
@@ -6050,12 +6053,14 @@ position part for scene translation</p>
 <li>support for non orthogonal cell in cube file parser</li>
 <li>dsn6/brix volume file parser</li>
 <li>psf topology/structure file parser</li>
+<li>wwPDB validation report xml parser, representation and colorschemes</li>
 <li>support for picking Shape objects, Volume slices, Contact bonds</li>
 <li>scroll mouse behavior to change far/near clipping and fog</li>
 <li>label primitive for Shape class</li>
 <li>support for reversing color schemes with <code>colorReverse</code> parameter</li>
 <li>independent component movement via <code>.setPosition</code>, <code>.setRotation</code>, <code>.setScale</code>, <code>.setTransform</code></li>
 <li><code>bonded</code> and <code>ring</code> selection language keywords</li>
+<li>resname list to selection language, <code>[ALA,GLU]</code></li>
 </ul><h3>Changed</h3><ul>
 <li>renamed <code>volume</code> parameter in molecular surface representation to <code>colorVolume</code></li>
 <li>renamed colormaker classes from colorMaker to colormaker, i.e. removed camel case</li>
@@ -6067,9 +6072,11 @@ position part for scene translation</p>
 <li>updated three.js to r85</li>
 <li>updated chroma.js to 1.3.3</li>
 <li>replaced utils/bitset with utils/bitarray</li>
+<li>tweaked aminoacid keywords in selection language to follow rasmol/jmol, vmd</li>
 </ul><h3>Removed</h3><ul>
 <li>stage/component.centerView method, use .autoView instead</li>
 <li>GidPool, picking handled by Picker objects</li>
+<li>deprecated use of <code>#</code> for element selection, use <code>_</code> instead</li>
 </ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.2...v0.9.3">v0.9.3</a> - 2016-10-14</h2><h3>Changed</h3><ul>
 <li>increased light distance from camera, to fix unlit rendering</li>
 <li>remove double quotes from atomnames in chemComp cif parser</li>

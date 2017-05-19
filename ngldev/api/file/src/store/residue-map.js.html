@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -233,46 +233,45 @@
 import ResidueType from &quot;./residue-type.js&quot;;
 
 
-function ResidueMap( structure ){
+function getHash( resname, atomTypeIdList, hetero, chemCompType ){
+    return (
+        resname + &quot;|&quot; +
+        atomTypeIdList.join( &quot;,&quot; ) + &quot;|&quot; +
+        ( hetero ? 1 : 0 ) + &quot;|&quot; +
+        ( chemCompType ? chemCompType : &quot;&quot; )
+    );
+}
 
-    var idDict = {};
-    var typeList = [];
 
-    function getHash( resname, atomTypeIdList, hetero, chemCompType ){
-        return (
-            resname + &quot;|&quot; +
-            atomTypeIdList.join( &quot;,&quot; ) + &quot;|&quot; +
-            ( hetero ? 1 : 0 ) + &quot;|&quot; +
-            ( chemCompType ? chemCompType : &quot;&quot; )
-        );
+class ResidueMap{
+
+    constructor( structure ){
+
+        this.structure = structure;
+
+        this.dict = {};
+        this.list = [];
+
     }
 
-    function add( resname, atomTypeIdList, hetero, chemCompType, bonds ){
+    add( resname, atomTypeIdList, hetero, chemCompType, bonds ){
         resname = resname.toUpperCase();
-        var hash = getHash( resname, atomTypeIdList, hetero, chemCompType );
-        var id = idDict[ hash ];
+        const hash = getHash( resname, atomTypeIdList, hetero, chemCompType );
+        let id = this.dict[ hash ];
         if( id === undefined ){
-            var residueType = new ResidueType(
-                structure, resname, atomTypeIdList, hetero, chemCompType, bonds
+            const residueType = new ResidueType(
+                this.structure, resname, atomTypeIdList, hetero, chemCompType, bonds
             );
-            id = typeList.length;
-            idDict[ hash ] = id;
-            typeList.push( residueType );
+            id = this.list.length;
+            this.dict[ hash ] = id;
+            this.list.push( residueType );
         }
         return id;
     }
 
-    function get( id ){
-        return typeList[ id ];
+    get( id ){
+        return this.list[ id ];
     }
-
-    // API
-
-    this.add = add;
-    this.get = get;
-
-    this.list = typeList;
-    this.dict = idDict;
 
 }
 

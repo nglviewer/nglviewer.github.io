@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -234,40 +234,27 @@ import Store from &quot;./store.js&quot;;
 
 
 /**
- * Bond store class
- * @class
- * @extends Store
- * @param {Integer} [size] - initial size
+ * Bond store
  */
-function BondStore( size ){
+class BondStore extends Store{
 
-    Store.call( this, size );
+    get __fields(){
 
-}
+        return [
+            [ &quot;atomIndex1&quot;, 1, &quot;int32&quot; ],
+            [ &quot;atomIndex2&quot;, 1, &quot;int32&quot; ],
+            [ &quot;bondOrder&quot;, 1, &quot;int8&quot; ]
+        ];
 
-BondStore.prototype = Object.assign( Object.create(
+    }
 
-    Store.prototype ), {
-
-    constructor: BondStore,
-
-    type: &quot;BondStore&quot;,
-
-    __fields: [
-
-        [ &quot;atomIndex1&quot;, 1, &quot;int32&quot; ],
-        [ &quot;atomIndex2&quot;, 1, &quot;int32&quot; ],
-        [ &quot;bondOrder&quot;, 1, &quot;int8&quot; ],
-
-    ],
-
-    addBond: function( atom1, atom2, bondOrder ){
+    addBond( atom1, atom2, bondOrder ){
 
         this.growIfFull();
 
-        var i = this.count;
-        var ai1 = atom1.index;
-        var ai2 = atom2.index;
+        const i = this.count;
+        const ai1 = atom1.index;
+        const ai2 = atom2.index;
 
         if( ai1 &lt; ai2 ){
             this.atomIndex1[ i ] = ai1;
@@ -280,9 +267,9 @@ BondStore.prototype = Object.assign( Object.create(
 
         this.count += 1;
 
-    },
+    }
 
-    addBondIfConnected: function( atom1, atom2, bondOrder ){
+    addBondIfConnected( atom1, atom2, bondOrder ){
 
         if( atom1.connectedTo( atom2 ) ){
             this.addBond( atom1, atom2, bondOrder );
@@ -293,7 +280,7 @@ BondStore.prototype = Object.assign( Object.create(
 
     }
 
-} );
+}
 
 
 export default BondStore;

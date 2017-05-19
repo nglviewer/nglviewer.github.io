@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -234,52 +234,39 @@ import Store from &quot;./store.js&quot;;
 
 
 /**
- * Chain store class
- * @class
- * @extends Store
- * @param {Integer} [size] - initial size
+ * Chain store
  */
-function ChainStore( size ){
+class ChainStore extends Store{
 
-    Store.call( this, size );
+    get __fields(){
 
-}
+        return [
+            [ &quot;entityIndex&quot;, 1, &quot;uint16&quot; ],
+            [ &quot;modelIndex&quot;, 1, &quot;uint16&quot; ],
+            [ &quot;residueOffset&quot;, 1, &quot;uint32&quot; ],
+            [ &quot;residueCount&quot;, 1, &quot;uint32&quot; ],
 
-ChainStore.prototype = Object.assign( Object.create(
+            [ &quot;chainname&quot;, 4, &quot;uint8&quot; ],
+            [ &quot;chainid&quot;, 4, &quot;uint8&quot; ]
+        ];
 
-    Store.prototype ), {
+    }
 
-    constructor: ChainStore,
+    setChainname( i, str ){
 
-    type: &quot;ChainStore&quot;,
-
-    __fields: [
-
-        [ &quot;entityIndex&quot;, 1, &quot;uint16&quot; ],
-        [ &quot;modelIndex&quot;, 1, &quot;uint16&quot; ],
-        [ &quot;residueOffset&quot;, 1, &quot;uint32&quot; ],
-        [ &quot;residueCount&quot;, 1, &quot;uint32&quot; ],
-
-        [ &quot;chainname&quot;, 4, &quot;uint8&quot; ],
-        [ &quot;chainid&quot;, 4, &quot;uint8&quot; ]
-
-    ],
-
-    setChainname: function( i, str ){
-
-        var j = 4 * i;
+        const j = 4 * i;
         this.chainname[ j ] = str.charCodeAt( 0 );
         this.chainname[ j + 1 ] = str.charCodeAt( 1 );
         this.chainname[ j + 2 ] = str.charCodeAt( 2 );
         this.chainname[ j + 3 ] = str.charCodeAt( 3 );
 
-    },
+    }
 
-    getChainname: function( i ){
+    getChainname( i ){
 
-        var chainname = &quot;&quot;;
-        for( var k = 0; k &lt; 4; ++k ){
-            var code = this.chainname[ 4 * i + k ];
+        let chainname = &quot;&quot;;
+        for( let k = 0; k &lt; 4; ++k ){
+            const code = this.chainname[ 4 * i + k ];
             if( code ){
                 chainname += String.fromCharCode( code );
             }else{
@@ -288,23 +275,23 @@ ChainStore.prototype = Object.assign( Object.create(
         }
         return chainname;
 
-    },
+    }
 
-    setChainid: function( i, str ){
+    setChainid( i, str ){
 
-        var j = 4 * i;
+        const j = 4 * i;
         this.chainid[ j ] = str.charCodeAt( 0 );
         this.chainid[ j + 1 ] = str.charCodeAt( 1 );
         this.chainid[ j + 2 ] = str.charCodeAt( 2 );
         this.chainid[ j + 3 ] = str.charCodeAt( 3 );
 
-    },
+    }
 
-    getChainid: function( i ){
+    getChainid( i ){
 
-        var chainid = &quot;&quot;;
-        for( var k = 0; k &lt; 4; ++k ){
-            var code = this.chainid[ 4 * i + k ];
+        let chainid = &quot;&quot;;
+        for( let k = 0; k &lt; 4; ++k ){
+            const code = this.chainid[ 4 * i + k ];
             if( code ){
                 chainid += String.fromCharCode( code );
             }else{
@@ -315,7 +302,7 @@ ChainStore.prototype = Object.assign( Object.create(
 
     }
 
-} );
+}
 
 
 export default ChainStore;

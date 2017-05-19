@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -265,6 +265,19 @@ const ChainKeywords = [
     kwd.HETERO, kwd.PROTEIN, kwd.NUCLEIC, kwd.RNA, kwd.DNA,
     kwd.POLYMER, kwd.WATER, kwd.ION, kwd.SACCHARIDE
 ];
+
+const SmallResname = [ &quot;ALA&quot;, &quot;GLY&quot;, &quot;SER&quot; ];
+const NucleophilicResname = [ &quot;CYS&quot;, &quot;SER&quot;, &quot;THR&quot; ];
+const HydrophobicResname = [ &quot;ALA&quot;, &quot;ILE&quot;, &quot;LEU&quot;, &quot;MET&quot;, &quot;PHE&quot;, &quot;PRO&quot;, &quot;TRP&quot;, &quot;VAL&quot; ];
+const AromaticResname = [ &quot;PHE&quot;, &quot;TRP&quot;, &quot;TYR&quot;, &quot;HIS&quot; ];
+const AmideResname = [ &quot;ASN&quot;, &quot;GLN&quot; ];
+const AcidicResname = [ &quot;ASP&quot;, &quot;GLU&quot; ];
+const BasicResname = [ &quot;ARG&quot;, &quot;HIS&quot;, &quot;LYS&quot; ];
+const ChargedResname = [ &quot;ARG&quot;, &quot;ASP&quot;, &quot;GLU&quot;, &quot;HIS&quot;, &quot;LYS&quot; ];
+const PolarResname = [ &quot;ASN&quot;, &quot;ARG&quot;, &quot;ASP&quot;, &quot;CYS&quot;, &quot;GLY&quot;, &quot;GLN&quot;, &quot;GLU&quot;, &quot;HIS&quot;, &quot;LYS&quot;, &quot;SER&quot;, &quot;THR&quot;, &quot;TYR&quot; ];
+const NonpolarResname = [ &quot;ALA&quot;, &quot;ILE&quot;, &quot;LEU&quot;, &quot;MET&quot;, &quot;PHE&quot;, &quot;PRO&quot;, &quot;TRP&quot;, &quot;VAL&quot; ];
+const CyclicResname = [ &quot;HIS&quot;, &quot;PHE&quot;, &quot;PRO&quot;, &quot;TRP&quot;, &quot;TYR&quot; ];
+const AliphaticResname = [ &quot;ALA&quot;, &quot;GLY&quot;, &quot;ILE&quot;, &quot;LEU&quot;, &quot;VAL&quot; ];
 
 
 /**
@@ -484,137 +497,62 @@ class Selection{
             }
 
             if( cu === &quot;SMALL&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;GLY&quot; },
-                        { resname: &quot;ALA&quot; }
-                    ]
-                } );
+                pushRule( { resname: SmallResname } );
                 continue;
             }
 
             if( cu === &quot;NUCLEOPHILIC&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;SER&quot; },
-                        { resname: &quot;THR&quot; },
-                        { resname: &quot;CYS&quot; }
-                    ]
-                } );
+                pushRule( { resname: NucleophilicResname } );
                 continue;
             }
 
             if( cu === &quot;HYDROPHOBIC&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;VAL&quot; },
-                        { resname: &quot;LEU&quot; },
-                        { resname: &quot;ILE&quot; },
-                        { resname: &quot;MET&quot; },
-                        { resname: &quot;PRO&quot; }
-                    ]
-                } );
+                pushRule( { resname: HydrophobicResname } );
                 continue;
             }
 
             if( cu === &quot;AROMATIC&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;PHE&quot; },
-                        { resname: &quot;TYR&quot; },
-                        { resname: &quot;TRP&quot; }
-                    ]
-                } );
+                pushRule( { resname: AromaticResname } );
                 continue;
             }
 
             if( cu === &quot;AMIDE&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;ASN&quot; },
-                        { resname: &quot;GLN&quot; }
-                    ]
-                } );
+                pushRule( { resname: AmideResname } );
                 continue;
             }
 
             if( cu === &quot;ACIDIC&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;ASP&quot; },
-                        { resname: &quot;GLU&quot; }
-                    ]
-                } );
+                pushRule( { resname: AcidicResname } );
                 continue;
             }
 
             if( cu === &quot;BASIC&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;HIS&quot; },
-                        { resname: &quot;LYS&quot; },
-                        { resname: &quot;ARG&quot; }
-                    ]
-                } );
+                pushRule( { resname: BasicResname } );
                 continue;
             }
 
             if( cu === &quot;CHARGED&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;ASP&quot; },
-                        { resname: &quot;GLU&quot; },
-                        { resname: &quot;HIS&quot; },
-                        { resname: &quot;LYS&quot; },
-                        { resname: &quot;ARG&quot; }
-                    ]
-                } );
+                pushRule( { resname: ChargedResname } );
                 continue;
             }
 
             if( cu === &quot;POLAR&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;ASP&quot; },
-                        { resname: &quot;GLU&quot; },
-                        { resname: &quot;HIS&quot; },
-                        { resname: &quot;LYS&quot; },
-                        { resname: &quot;ARG&quot; },
-                        { resname: &quot;ASN&quot; },
-                        { resname: &quot;GLN&quot; },
-                        { resname: &quot;SER&quot; },
-                        { resname: &quot;THR&quot; },
-                        { resname: &quot;TYR&quot; }
-                    ]
-                } );
+                pushRule( { resname: PolarResname } );
                 continue;
             }
 
             if( cu === &quot;NONPOLAR&quot; ){
-                pushRule( {
-                    operator: &quot;OR&quot;,
-                    rules: [
-                        { resname: &quot;ALA&quot; },
-                        { resname: &quot;CYS&quot; },
-                        { resname: &quot;GLY&quot; },
-                        { resname: &quot;ILE&quot; },
-                        { resname: &quot;LEU&quot; },
-                        { resname: &quot;MET&quot; },
-                        { resname: &quot;PHE&quot; },
-                        { resname: &quot;PRO&quot; },
-                        { resname: &quot;VAL&quot; },
-                        { resname: &quot;TRP&quot; }
-                    ]
-                } );
+                pushRule( { resname: NonpolarResname } );
+                continue;
+            }
+
+            if( cu === &quot;CYCLIC&quot; ){
+                pushRule( { resname: CyclicResname } );
+                continue;
+            }
+
+            if( cu === &quot;ALIPHATIC&quot; ){
+                pushRule( { resname: AliphaticResname } );
                 continue;
             }
 
@@ -701,7 +639,9 @@ class Selection{
             }
 
             if( c[0] === &quot;[&quot; &amp;&amp; c[c.length-1] === &quot;]&quot; ){
-                pushRule( { resname: cu.substr( 1, c.length-2 ) } );
+                const resnameList = cu.substr( 1, c.length-2 ).split( &quot;,&quot; );
+                const resname = resnameList.length &gt; 1 ? resnameList : resnameList[ 0 ];
+                pushRule( { resname: resname } );
                 continue;
             }else if(
                 ( c.length &gt;= 1 &amp;&amp; c.length &lt;= 4 ) &amp;&amp;
@@ -1011,7 +951,13 @@ class Selection{
                     binarySearchIndexOf( s.atomindex, a.index ) &lt; 0
             ) return false;
 
-            if( s.resname!==undefined &amp;&amp; s.resname!==a.resname ) return false;
+            if( s.resname!==undefined ){
+                if( Array.isArray( s.resname ) ){
+                    if( !s.resname.includes( a.resname ) ) return false;
+                }else{
+                    if( s.resname!==a.resname ) return false;
+                }
+            }
             if( s.sstruc!==undefined &amp;&amp; s.sstruc!==a.sstruc ) return false;
             if( s.resno!==undefined ){
                 if( Array.isArray( s.resno ) &amp;&amp; s.resno.length===2 ){
@@ -1085,7 +1031,13 @@ class Selection{
                     rangeInSortedArray( s.atomindex, r.atomOffset, r.atomEnd ) === 0
             ) return false;
 
-            if( s.resname!==undefined &amp;&amp; s.resname!==r.resname ) return false;
+            if( s.resname!==undefined ){
+                if( Array.isArray( s.resname ) ){
+                    if( !s.resname.includes( r.resname ) ) return false;
+                }else{
+                    if( s.resname!==r.resname ) return false;
+                }
+            }
             if( s.sstruc!==undefined &amp;&amp; s.sstruc!==r.sstruc ) return false;
             if( s.resno!==undefined ){
                 if( Array.isArray( s.resno ) &amp;&amp; s.resno.length===2 ){

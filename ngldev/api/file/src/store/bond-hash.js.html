@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.22</span>
+<header><span>NGL@0.10.0-dev.24</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -185,14 +185,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -233,59 +233,59 @@
 import { Debug, Log } from &quot;../globals.js&quot;;
 
 
-function BondHash( bondStore, atomCount ){
+class BondHash{
 
-    if( Debug ) Log.time( &quot;BondHash init&quot; );
+    constructor( bondStore, atomCount ){
 
-    var bondCount = bondStore.count;
-    var atomIndex1Array = bondStore.atomIndex1;
-    var atomIndex2Array = bondStore.atomIndex2;
-    var countArray = new Uint8Array( atomCount );
-    var offsetArray = new Int32Array( atomCount );
+        if( Debug ) Log.time( &quot;BondHash init&quot; );
 
-    var i;
+        const bondCount = bondStore.count;
+        const atomIndex1Array = bondStore.atomIndex1;
+        const atomIndex2Array = bondStore.atomIndex2;
+        const countArray = new Uint8Array( atomCount );
+        const offsetArray = new Int32Array( atomCount );
 
-    // count bonds per atom
-    for( i = 0; i &lt; bondCount; ++i ){
-        countArray[ atomIndex1Array[ i ] ] += 1;
-        countArray[ atomIndex2Array[ i ] ] += 1;
-    }
-
-    // get offsets to atom bonds
-    for( i = 1; i &lt; atomCount; ++i ){
-        offsetArray[ i ] += offsetArray[ i - 1 ] + countArray[ i - 1 ];
-    }
-
-    // prepare index array
-    var bondCount2 = bondCount * 2;
-    var indexArray = new Int32Array( bondCount2 );
-    for( var j = 0; j &lt; bondCount2; ++j ){
-        indexArray[ j ] = -1;
-    }
-
-    // build index array
-    for( i = 0; i &lt; bondCount; ++i ){
-        var idx1 = atomIndex1Array[ i ];
-        var idx2 = atomIndex2Array[ i ];
-        var j1 = offsetArray[ idx1 ];
-        while( indexArray[ j1 ] !== -1 ){
-            j1 += 1;
+        // count bonds per atom
+        for( let i = 0; i &lt; bondCount; ++i ){
+            countArray[ atomIndex1Array[ i ] ] += 1;
+            countArray[ atomIndex2Array[ i ] ] += 1;
         }
-        indexArray[ j1 ] = i;
-        var j2 = offsetArray[ idx2 ];
-        while( indexArray[ j2 ] !== -1 ){
-            j2 += 1;
+
+        // get offsets to atom bonds
+        for( let i = 1; i &lt; atomCount; ++i ){
+            offsetArray[ i ] += offsetArray[ i - 1 ] + countArray[ i - 1 ];
         }
-        indexArray[ j2 ] = i;
+
+        // prepare index array
+        const bondCount2 = bondCount * 2;
+        const indexArray = new Int32Array( bondCount2 );
+        for( let j = 0; j &lt; bondCount2; ++j ){
+            indexArray[ j ] = -1;
+        }
+
+        // build index array
+        for( let i = 0; i &lt; bondCount; ++i ){
+            const idx1 = atomIndex1Array[ i ];
+            const idx2 = atomIndex2Array[ i ];
+            let j1 = offsetArray[ idx1 ];
+            while( indexArray[ j1 ] !== -1 ){
+                j1 += 1;
+            }
+            indexArray[ j1 ] = i;
+            let j2 = offsetArray[ idx2 ];
+            while( indexArray[ j2 ] !== -1 ){
+                j2 += 1;
+            }
+            indexArray[ j2 ] = i;
+        }
+
+        if( Debug ) Log.timeEnd( &quot;BondHash init&quot; );
+
+        this.countArray = countArray;
+        this.offsetArray = offsetArray;
+        this.indexArray = indexArray;
+
     }
-
-    if( Debug ) Log.timeEnd( &quot;BondHash init&quot; );
-
-    // API
-
-    this.countArray = countArray;
-    this.offsetArray = offsetArray;
-    this.indexArray = indexArray;
 
 }
 
