@@ -50,14 +50,15 @@ NGL.ExampleRegistry.addDict( {
             asTrajectory: true,
             sele: "50-100"
         } ).then( function( o ){
-            o.addTrajectory();
+            var trajComp = o.addTrajectory();
+            trajComp.trajectory.player.play();
             o.addRepresentation( "cartoon" );
             // o.addRepresentation( "helixorient" );
             // o.addRepresentation( "rope" );
             o.addRepresentation( "line", {
                 sele: "not hydrogen and sidechainAttached"
             } );
-            o.centerView();
+            o.autoView();
         } );
 
     },
@@ -98,7 +99,7 @@ NGL.ExampleRegistry.addDict( {
                 color: "white", scale: 1.7, labelType: "resname"
             } );
 
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -114,7 +115,10 @@ NGL.ExampleRegistry.addDict( {
                 color: "lightgreen"
             } );
             o.addRepresentation( "licorice", { sele: "*", scale: 1.0 } );
-            o.centerView();
+
+            var center = o.getCenter( "101" );
+            var zoom = o.getZoom( "101" );
+            stage.animationControls.zoomMove( center, zoom );
 
         } );
 
@@ -128,7 +132,7 @@ NGL.ExampleRegistry.addDict( {
         } ).then( function( o ){
             o.addRepresentation( "cartoon", { sele: "*" } );
             // o.addRepresentation( "licorice", { sele: "*" } );
-            o.centerView();
+            stage.autoView();
             // o.addTrajectory();
         } );
 
@@ -137,8 +141,8 @@ NGL.ExampleRegistry.addDict( {
         } ).then( function( o ){
             o.addRepresentation( "cartoon", { sele: "*" } );
             // o.addRepresentation( "licorice", { sele: "*" } );
-            o.centerView();
-            o.addTrajectory();
+            o.autoView();
+            stage.addTrajectory();
         } );
 
     },
@@ -149,7 +153,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon", { sele: "*" } );
             o.addRepresentation( "ball+stick", { sele: "hetero" } );
-            o.centerView();
+            stage.autoView();
 
         } );
 
@@ -157,7 +161,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon", { sele: "*" } );
             o.addRepresentation( "ball+stick", { sele: "hetero" } );
-            o.centerView();
+            stage.autoView();
 
         } );
 
@@ -188,7 +192,7 @@ NGL.ExampleRegistry.addDict( {
         ] ).then( function( ol ){
 
             ol[ 0 ].superpose( ol[ 1 ], false, s );
-            ol[ 0 ].centerView( true, ":A" );
+            ol[ 0 ].autoView( ":A" );
 
         } );
 
@@ -203,14 +207,14 @@ NGL.ExampleRegistry.addDict( {
             } ).then( function( o ){
                 o.addRepresentation( "cartoon", { color: "lightgreen" } );
                 o.addRepresentation( "ball+stick", { sele: "hetero", color: "lightgreen" } );
-                o.centerView();
+                o.autoView();
                 return o;
             } ),
 
             stage.loadFile( "data://3sn6.pdb" ).then( function( o ){
                 o.addRepresentation( "cartoon", { color: "tomato" } );
                 o.addRepresentation( "ball+stick", { sele: "hetero",color: "tomato" } );
-                o.centerView();
+                o.autoView();
                 return o;
             } )
 
@@ -220,7 +224,7 @@ NGL.ExampleRegistry.addDict( {
             var s2 = ol[ 1 ].structure;
             NGL.superpose( s1, s2, true );
             ol[ 0 ].updateRepresentations( { position: true } );
-            ol[ 0 ].centerView();
+            ol[ 0 ].autoView();
 
         } );
 
@@ -232,13 +236,13 @@ NGL.ExampleRegistry.addDict( {
 
             stage.loadFile( "data://1gzm.pdb" ).then( function( o ){
                 o.addRepresentation( "cartoon", { color: "lightgreen" } );
-                o.centerView();
+                o.autoView();
                 return o;
             } ),
 
             stage.loadFile( "data://1u19.pdb" ).then( function( o ){
                 o.addRepresentation( "cartoon", { color: "tomato" } );
-                o.centerView();
+                o.autoView();
                 return o;
             } )
 
@@ -248,7 +252,7 @@ NGL.ExampleRegistry.addDict( {
             var s2 = ol[ 1 ].structure;
             NGL.superpose( s1, s2, true, ":A", ":A" );
             ol[ 0 ].updateRepresentations( { position: true } );
-            ol[ 0 ].centerView();
+            ol[ 0 ].autoView();
 
         } );
 
@@ -263,7 +267,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", { sele: "backbone" } );
             o.addRepresentation( "spacefill", { sele: "backbone" } );
             o.addRepresentation( "line" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -275,7 +279,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "ball+stick", { sele: "16", disableImpostor: true } );
             o.addRepresentation( "ball+stick", { sele: "not 16" } );
-            o.centerView( true, "16" );
+            o.autoView( "16" );
 
         } );
 
@@ -288,7 +292,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "rope", { sele: "helix" } );
             o.addRepresentation( "ball+stick" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -338,7 +342,7 @@ NGL.ExampleRegistry.addDict( {
 
             } );
 
-            o.centerView( true );
+            o.autoView();
 
         } );
 
@@ -352,7 +356,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "licorice", { sele: sele } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -367,7 +371,7 @@ NGL.ExampleRegistry.addDict( {
                 sele: "not 11-19", radius: 0.07, subdiv: 25, radialSegments: 25
             } );
             o.addRepresentation( "licorice", { sele: "sidechainAttached" } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -380,7 +384,7 @@ NGL.ExampleRegistry.addDict( {
         } ).then( function( o ){
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "licorice", { sele: "DPPC" } );
-            o.centerView();
+            o.autoView();
         } );
 
     },
@@ -405,7 +409,7 @@ NGL.ExampleRegistry.addDict( {
                 color: "bfactor", colorScale: "RdYlBu"
             } );
 
-            o.centerView( true, ":A" );
+            o.autoView( ":A" );
 
         } );
 
@@ -425,7 +429,7 @@ NGL.ExampleRegistry.addDict( {
                 sele: "nucleic", color: "element", visible: false
             } );
 
-            o.centerView( true, "nucleic" );
+            o.autoView( "nucleic" );
 
         } );
 
@@ -444,7 +448,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", { color: "chainindex" } );
             // o.addRepresentation( "trace", { color: "chainindex" } );
             // o.addRepresentation( "point", { color: "chainindex" } );
-            stage.centerView();
+            stage.autoView();
 
             console.timeEnd( "test" );
 
@@ -470,7 +474,7 @@ NGL.ExampleRegistry.addDict( {
                 colorScale: "RdYlBu",
                 useWorker: false
             } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -490,7 +494,7 @@ NGL.ExampleRegistry.addDict( {
                 colorScale: "PiYG",
                 useWorker: false
             } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -503,7 +507,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "ball+stick" );
             stage.viewer.setClip( 42, 100 );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -522,7 +526,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://water.gro" ).then( function( o ){
 
             o.addRepresentation( "line", { color: "residueindex" } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -541,7 +545,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "helixorient" );
 
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -562,7 +566,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "label", {
                 sele: ".CA", color: "element"
             } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -583,7 +587,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon", { radius: "sstruc" } );
             // o.addRepresentation( "ball+stick", { sele: "sidechainAttached" } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -605,7 +609,7 @@ NGL.ExampleRegistry.addDict( {
                 forceTransparent: true,
                 sortParticles: true
             } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -616,7 +620,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://1CRN.cif.gz" ).then( function( o ){
 
             o.addRepresentation( "cartoon" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -628,7 +632,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "rocket" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -660,7 +664,7 @@ NGL.ExampleRegistry.addDict( {
                 colorScheme: "chainindex"
             } );
 
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -680,7 +684,7 @@ NGL.ExampleRegistry.addDict( {
             } );
             o.addRepresentation( "contact", { contactType: "polarBackbone" } );
             o.addRepresentation( "line" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -696,7 +700,7 @@ NGL.ExampleRegistry.addDict( {
                 color: "element", sele: "TYR"
             }, true );
 
-            o.centerView();
+            o.autoView();
 
             o.setSelection( "1-90" );
             cartoon.setSelection( "4-50" );
@@ -706,41 +710,65 @@ NGL.ExampleRegistry.addDict( {
 
     },
 
+    "buffer": function( stage ){
+
+        var shape = new NGL.Shape( "shape" );
+        var sphereBuffer = new NGL.SphereBuffer( {
+            position: new Float32Array( [ 0, 0, 0, 4, 0, 0 ] ),
+            color: new Float32Array( [ 1, 0, 0, 1, 1, 0 ] ),
+            radius: new Float32Array( [ 1, 1.2 ] )
+        } );
+        shape.addBuffer( sphereBuffer );
+        var shapeComp = stage.addComponentFromObject( shape );
+        shapeComp.addRepresentation( "buffer" );
+        shapeComp.autoView();
+
+    },
+
     "ccp4": function( stage ){
 
         stage.loadFile( "data://3pqr.ccp4.gz" ).then( function( o ){
 
             o.addRepresentation( "surface", {
-                wireframe: true,
+                contour: true,
                 color: "skyblue",
                 boxSize: 10
             } );
-            o.centerView();
+            o.autoView();
 
             var position = new NGL.Vector3();
             function getCenterArray(){
-                var target = stage.viewer.controls.target;
-                var group = stage.viewer.rotationGroup.position;
-                position.copy( group ).negate().add( target );
-                return position.toArray()
+                position.copy( stage.viewerControls.position );
+                return position.negate().toArray();
             }
 
             var sphereBuffer = new NGL.SphereBuffer(
-                new Float32Array( getCenterArray() ),
-                new Float32Array( [ 1, 0, 0 ] ),
-                new Float32Array( [ 1 ] ),
-                undefined,
+                {
+                    position: new Float32Array( getCenterArray() ),
+                    color: new Float32Array( [ 1, 0, 0 ] ),
+                    radius: new Float32Array( [ 1 ] )
+                },
                 { disableImpostor: true }
             );
             o.addBufferRepresentation( sphereBuffer, { flatShaded: true } );
 
-            stage.viewer.controls.addEventListener(
-                'change', function(){
-                    sphereBuffer.setAttributes( {
-                        "position": getCenterArray(),
-                    } );
-                }
-            );
+            stage.viewerControls.signals.changed.add( function(){
+                sphereBuffer.setAttributes( {
+                    position: getCenterArray(),
+                } );
+            } );
+
+        } );
+
+        // mode 0 data
+        stage.loadFile( "data://3pqr-mode0.ccp4" ).then( function( o ){
+
+            o.addRepresentation( "surface", {
+                contour: true,
+                color: "tomato",
+                boxSize: 10
+            } );
+            o.autoView();
 
         } );
 
@@ -749,7 +777,32 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "line", {
                 linewidth: 5, colorValue: "yellow"
             } );
-            o.centerView();
+            o.autoView();
+
+        } );
+
+    },
+
+    "slice": function( stage ){
+
+        Promise.all( [
+            stage.loadFile( "data://3pqr.ccp4.gz" ),
+            stage.loadFile( "data://3pqr.pdb" )
+        ] ).then( function( ol ){
+
+            var sele = new NGL.Selection( "245:A.NZ" );
+
+            ol[ 0 ].addRepresentation( "slice", {
+                dimension: "z",
+                positionType: "coordinate",
+                position: ol[ 1 ].structure.getView( sele ).center.z
+            } );
+            ol[ 0 ].addRepresentation( "surface" );
+
+            ol[ 1 ].addRepresentation( "licorice" );
+            ol[ 1 ].addRepresentation( "cartoon" );
+
+            stage.autoView();
 
         } );
 
@@ -763,14 +816,14 @@ NGL.ExampleRegistry.addDict( {
                 opacity: 0.5,
                 opaqueBack: true
             } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
         stage.loadFile( "data://4UJD.cif.gz" ).then( function( o ){
 
             o.addRepresentation( "cartoon", { color: "chainindex" } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -796,7 +849,7 @@ NGL.ExampleRegistry.addDict( {
                 lowResolution: false,
                 colorScheme: "element"
             } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -831,14 +884,26 @@ NGL.ExampleRegistry.addDict( {
                 colorScheme: "uniform",
                 opacity: 0.7,
                 opaqueBack: false,
+                useWorker: false,
                 // clipNear: 50,
-                clipRadius: sview.boundingBox.size().length() * 0.5 + 3.5,
+                // clipRadius: sview.boundingBox.getSize().length() * 0.5 + 3.5,
                 clipCenter: sview.center,
-                // filterSele: filterSet.toSeleString()
+                filterSele: filterSet.toSeleString()
+                // filterSele: groupSet.toSeleString()
+            } );
+
+            o.addRepresentation( "surface", {
+                sele: "polymer",
+                surfaceType: "ms",
+                color: "lime",
+                opacity: 0.7,
+                wireframe: true,
+                clipRadius: sview.boundingBox.getSize().length() / 2 + 5,
+                clipCenter: sview.center
             } );
 
             stage.tasks.onZeroOnce( function(){
-                o.centerView( true, ligSele )
+                o.autoView( true, ligSele )
             } );
 
         } );
@@ -852,14 +917,39 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "surface", {
                 visible: true, isolevel: 0.1, opacity: 0.6
             } );
-            o.centerView();
+            o.autoView();
 
         } );
 
         stage.loadFile( "data://acrolein.pdb" ).then( function( o ){
 
             o.addRepresentation( "licorice" );
-            o.centerView();
+            o.autoView();
+
+        } );
+
+    },
+
+    "cube-benzene": function( stage ){
+
+        stage.loadFile( "data://benzene-homo.cube" ).then( function( o ){
+
+            o.addRepresentation( "surface", {
+                visible: true, isolevelType: "value", isolevel: 0.01,
+                color: "blue", opacity: 0.7, opaqueBack: false
+            } );
+            o.addRepresentation( "surface", {
+                visible: true, isolevelType: "value", isolevel: -0.01,
+                color: "red", opacity: 0.7, opaqueBack: false
+            } );
+            o.autoView();
+
+        } );
+
+        stage.loadFile( "data://benzene.sdf" ).then( function( o ){
+
+            o.addRepresentation( "licorice" );
+            o.autoView();
 
         } );
 
@@ -881,12 +971,12 @@ NGL.ExampleRegistry.addDict( {
             o2.addRepresentation( "licorice", { sele: "hetero" } );
 
             var as = o2.structure.getAtomSetWithinVolume(
-                o1.surface, 2, o1.surface.getValueForSigma( 2.7 )
+                o1.volume, 2, o1.volume.getValueForSigma( 2.7 )
             );
             var as2 = o2.structure.getAtomSetWithinGroup( as );
             o2.addRepresentation( "ball+stick", { sele: as2.toSeleString() } );
 
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -901,7 +991,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "ribbon", {
                 assembly: "UNITCELL", color: 0x00DD11, scale: 0.9
             } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -918,7 +1008,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", {
                 assembly: "BU2", color: 0x11FF11
             } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -936,7 +1026,7 @@ NGL.ExampleRegistry.addDict( {
                 opacity: 0.4, side: "front", smooth: 0
             } );
             o.addRepresentation( "licorice", { sele: "backbone" } );
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -944,24 +1034,36 @@ NGL.ExampleRegistry.addDict( {
 
     "selectionColoring": function( stage ){
 
-        var schemeId = NGL.ColorMakerRegistry.addSelectionScheme( [
-            [ "red", "64-74 or 134-154 or 222-254 or 310-310 or 322-326" ],
+        var schemeId = NGL.ColormakerRegistry.addSelectionScheme( [
+            [
+                "atomindex",
+                "64-74 or 134-154 or 222-254 or 310-310 or 322-326",
+                { scale: ['firebrick', 'red', 'orangered'] }
+            ],
             [ "green", "311-322" ],
-            [ "yellow", "40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309" ],
-            [ "blue", "1-39 or 96-112 or 174-201 or 278-288" ],
+            [
+                "atomindex",
+                "40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309",
+                { scale: ['gold', 'yellow', 'lightyellow'] }
+            ],
+            [
+                "atomindex",
+                "1-39 or 96-112 or 174-201 or 278-288",
+                { scale: ['blue', 'dodgerblue', 'cyan'] }
+            ],
             [ "white", "*" ]
         ], "TMDET 3dqb" );
 
         stage.loadFile( "data://3dqb.pdb" ).then( function( o ){
             o.addRepresentation( "cartoon", { color: schemeId } );
-            o.centerView();
+            o.autoView();
         } );
 
     },
 
     "customColoring": function( stage ){
 
-        var schemeId = NGL.ColorMakerRegistry.addScheme( function( params ){
+        var schemeId = NGL.ColormakerRegistry.addScheme( function( params ){
             this.atomColor = function( atom ){
                 if( atom.serial < 1000 ){
                     return 0x0000FF;  // blue
@@ -975,7 +1077,7 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://3dqb.pdb" ).then( function( o ){
             o.addRepresentation( "cartoon", { color: schemeId } );
-            o.centerView();
+            o.autoView();
         } );
 
     },
@@ -988,7 +1090,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "licorice" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -999,7 +1101,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://adrenalin.sdf" ).then( function( o ){
 
             o.addRepresentation( "hyperball" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -1011,7 +1113,7 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "hyperball", { sele: "popc" } );
             o.addRepresentation( "line", { sele: "water" } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -1022,7 +1124,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "data://adrenalin.mol2" ).then( function( o ){
 
             o.addRepresentation( "hyperball" );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -1035,7 +1137,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", { color: "chainindex" } );
             o.addRepresentation( "backbone" );
             o.addRepresentation( "trace", { linewidth: 3 } );
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -1048,9 +1150,12 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "hyperball", { sele: "hetero" } );
             o.addRepresentation( "cartoon" );
 
-            stage.setOrientation(
-                [[29.481397668954692,2.5831455594635324,3.923925380408911],[33.529085579796714,13.073238571888218,-8.062118521710765],[-15.846756959748253,8.42227503842896,25.959453083360533]]
-            );
+            stage.viewerControls.orient( [
+                  5.16,  -0.86, -8.11, 0,
+                  3.05,   9.11,  0.97, 0,
+                  7.56,  -3.08,  5.15, 0,
+                -28.57, -13.64,  3.36, 1
+            ] );
 
         } );
 
@@ -1068,10 +1173,11 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "distance", {
                 atomPair: atomPair,
-                color: "skyblue"
+                color: "skyblue",
+                labelUnit: "nm"
             } );
 
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -1092,7 +1198,7 @@ NGL.ExampleRegistry.addDict( {
                 colorDomain: [ -1, 0, 1 ]
             } );
 
-            o.centerView();
+            o.autoView();
 
         } );
 
@@ -1132,7 +1238,7 @@ NGL.ExampleRegistry.addDict( {
                 opaqueBack: false
             } );
 
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -1151,19 +1257,15 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "cartoon", { sele: "protein" } );
             o.addRepresentation( "distance", {
                 atomPair: atomPair,
+                labelColor: "skyblue",
                 color: "skyblue"
             } );
-            o.centerView();
+            o.autoView();
 
-            var framesPromise = NGL.autoLoad( "data://ala3.dcd" );
-            o.addTrajectory( framesPromise );
-
-            // FIXME
-            // .setParameters( {
-            //     "centerPbc": false,
-            //     "removePbc": false,
-            //     "superpose": true
-            // } );
+            NGL.autoLoad( "data://ala3.dcd" ).then( function( frames ){
+                var trajComp = o.addTrajectory( frames );
+                trajComp.trajectory.player.play();
+            });
 
         } );
 
@@ -1175,22 +1277,21 @@ NGL.ExampleRegistry.addDict( {
 
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "surface", { visible: false, lazy: true } );
-            o.centerView();
+            o.autoView();
 
-            var framesPromise = NGL.autoLoad( "data://md_1u19.dcd.gz" );
-            o.addTrajectory( framesPromise );
-
-            // var framesPromise = NGL.autoLoad( "data://md_1u19.dcd.gz" )
-            //     .then( function( frames ){
-            //         o.addTrajectory( frames );
-            //     } )
-
-            // FIXME
-            // .setParameters( {
-            //     "centerPbc": false,
-            //     "removePbc": false,
-            //     "superpose": true
-            // } );
+            NGL.autoLoad( "data://md_1u19.dcd.gz" ).then( function( frames ){
+                o.addTrajectory( frames, {
+                    initialFrame: 100,
+                    defaultTimeout: 100,
+                    defaultStep: undefined,
+                    defaultInterpolateType: "spline",
+                    defaultDirection: "forward",
+                    centerPbc: false,
+                    removePbc: false,
+                    superpose: true,
+                    sele: "backbone and not hydrogen"
+                } );
+            } );
 
         } );
 
@@ -1225,13 +1326,13 @@ NGL.ExampleRegistry.addDict( {
                 colorDomain: [ -1, 0, 1 ]
             } );
             pqr.addRepresentation( "surface", {
-                volume: dxbin.surface,
+                colorVolume: dxbin.volume,
                 colorScheme: "volume",
                 colorScale: "rwb",
                 colorDomain: [ -5, 0, 5 ]
             } );
 
-            pqr.centerView();
+            pqr.autoView();
 
             dxbin.addRepresentation( "surface", {
                 isolevelType: "value",
@@ -1253,7 +1354,7 @@ NGL.ExampleRegistry.addDict( {
                 opaqueBack: false
             } );
 
-            stage.centerView();
+            stage.autoView();
 
         } );
 
@@ -1267,7 +1368,7 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "ribbon", { assembly: "SUPERCELL", color: "grey", scale: 1.0, visible: false } );
             o.addRepresentation( "backbone", { assembly: "AU" } );
             o.addRepresentation( "surface", { assembly: "BU2" } );
-            stage.centerView();
+            stage.autoView();
             stage.tasks.onZeroOnce( function(){
                 console.timeEnd( "load-to-render" );
             } );
@@ -1279,7 +1380,7 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://4umt_47w.sdf" ).then( function ( o ) {
             o.addRepresentation( "licorice", { multipleBond: "symmetric" } );
-            stage.centerView();
+            stage.autoView();
         } );
 
     },
@@ -1288,7 +1389,7 @@ NGL.ExampleRegistry.addDict( {
 
         stage.loadFile( "data://PRDCC_000001.cif" ).then( function( o ){
             o.addRepresentation( "licorice", { sele: "/0", multipleBond: "symmetric" } );
-            stage.centerView();
+            stage.autoView();
         } );
 
     },
@@ -1298,16 +1399,57 @@ NGL.ExampleRegistry.addDict( {
         var shape = new NGL.Shape( "shape" );
         shape.addMesh(
             [ 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1 ],
-            [ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 ]
+            [ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 ],
+            undefined, undefined, "My mesh"
         );
         shape.addSphere( [ 0, 0, 9 ], [ 1, 0, 0 ], 1.5 );
+        shape.addSphere( [ 12, 5, 15 ], [ 1, 0.5, 0 ], 1 );
         shape.addEllipsoid( [ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ] );
         shape.addCylinder( [ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5 );
         shape.addCone( [ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5 );
         shape.addArrow( [ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0 );
+        shape.addArrow( [ 2, 2, 7 ], [ 30, -3, -3 ], [ 1, 0.5, 1 ], 1.0 );
+        shape.addLabel( [ 15, -4, 4 ], [ 0.2, 0.5, 0.8 ], 2.5, "Hello" );
+
         var shapeComp = stage.addComponentFromObject( shape );
         shapeComp.addRepresentation( "buffer" );
-        stage.centerView();
+        shapeComp.autoView();
+
+    },
+
+    "cat": function( stage ) {
+
+        var grey = [ 0.8, 0.8, 0.8 ];
+        var darkgrey = [ 0.6, 0.6, 0.6 ];
+
+        var shape = new NGL.Shape( "shape", {
+            labelParams: { attachment: "middle-center" },
+            sphereDetail: 4,
+            radialSegments: 100
+        } );
+        shape.addEllipsoid( [ 0, 0, 0 ], grey, 4, [ 0, 3, 0 ], [ 0, 0, 1 ], "Face" );
+        shape.addSphere( [ -2, 1, -1 ], darkgrey, 0.3, "Right eye" );
+        shape.addSphere( [  2, 1, -1 ], darkgrey, 0.3, "Left eye" );
+        shape.addSphere( [ 0, 0, -1 ], darkgrey, 0.5, "Nose" );
+        shape.addEllipsoid( [ -1, -1, -1 ], darkgrey, 1.3, [ 0, 1, 0 ], [ 0, 0, 0.3 ], "Right cheek" );
+        shape.addEllipsoid( [  1, -1, -1 ], darkgrey, 1.3, [ 0, 1, 0 ], [ 0, 0, 0.3 ], "Left cheek" );
+        shape.addCone( [ 2.5, 1.7, 0 ], [ 4, 3, 0 ], darkgrey, 0.8, "Left ear" );
+        shape.addCone( [ -2.5, 1.7, 0 ], [ -4, 3, 0 ], darkgrey, 0.8, "Right ear" );
+        shape.addCylinder( [ -1, -1, -1 ], [ -4.3, -0.2, -1.2 ], darkgrey, 0.1, "Whisker" );
+        shape.addCylinder( [ -1, -1, -1 ], [ -4.5, -1.2, -1.2 ], darkgrey, 0.1, "Whisker" );
+        shape.addCylinder( [ -1, -1, -1 ], [ -4.2, -2.2, -1.2 ], darkgrey, 0.1, "Whisker" );
+        shape.addCylinder( [  1, -1, -1 ], [  4.3, -0.2, -1.2 ], darkgrey, 0.1, "Whisker" );
+        shape.addCylinder( [  1, -1, -1 ], [  4.5, -1.2, -1.2 ], darkgrey, 0.1, "Whisker" );
+        shape.addCylinder( [  1, -1, -1 ], [  4.2, -2.2, -1.2 ], darkgrey, 0.1, "Whisker" );
+        shape.addLabel( [ 0, 4, -1 ], [ 0.2, 0.5, 0.8 ], 2.5, "Meow" );
+
+        var shapeComp = stage.addComponentFromObject( shape );
+        shapeComp.addRepresentation( "buffer" );
+        shapeComp.autoView();
+
+        setTimeout( function(){
+            stage.setRock( [ 0, 1, 0 ], 0.005, 0.3 );
+        }, 1000 );
 
     },
 
@@ -1319,42 +1461,38 @@ NGL.ExampleRegistry.addDict( {
 
             // o.addRepresentation( "backbone", { lineOnly: true } );
             o.addRepresentation( "cartoon", { quality: "low" } );
-            stage.centerView();
+            stage.autoView();
 
             var radius = 8;
             var spacefillRepr = o.addRepresentation( "ball+stick", { sele: "NONE"/*, radius: 0.5*/ } );
 
             function getCenterArray(){
                 var position = new NGL.Vector3();
-                var target = stage.viewer.controls.target;
-                var group = stage.viewer.rotationGroup.position;
-                position.copy( group ).negate().add( target );
-                return position;
+                position.copy( stage.viewerControls.position );
+                return position.negate();
             }
 
-            var sphereBuffer = new NGL.SphereBuffer(
-                new Float32Array( getCenterArray().toArray() ),
-                new Float32Array( [ 1, 0.5, 1 ] ),
-                new Float32Array( [ radius ] )
-            );
+            var sphereBuffer = new NGL.SphereBuffer( {
+                position: new Float32Array( getCenterArray().toArray() ),
+                color: new Float32Array( [ 1, 0.5, 1 ] ),
+                radius: new Float32Array( [ radius ] )
+            } );
             o.addBufferRepresentation( sphereBuffer, { opacity: 0.5 } );
 
             var prevSele = "";
             var prevPos = new NGL.Vector3( Infinity, Infinity, Infinity );
-            stage.viewer.controls.addEventListener(
-                'change', function(){
-                    var pos = getCenterArray();
-                    if( pos.distanceTo( prevPos ) > 0.1 ){
-                        sphereBuffer.setAttributes( { "position": pos.toArray() } );
-                        prevPos = pos;
-                        var sele = o.structure.getAtomSetWithinPoint( pos, radius ).toSeleString();
-                        if( sele !== prevSele ){
-                            spacefillRepr.setSelection( sele );
-                            prevSele = sele;
-                        }
+            stage.viewerControls.signals.changed.add( function(){
+                var pos = getCenterArray();
+                if( pos.distanceTo( prevPos ) > 0.1 ){
+                    sphereBuffer.setAttributes( { "position": pos.toArray() } );
+                    prevPos = pos;
+                    var sele = o.structure.getAtomSetWithinPoint( pos, radius ).toSeleString();
+                    if( sele !== prevSele ){
+                        spacefillRepr.setSelection( sele );
+                        prevSele = sele;
                     }
                 }
-            );
+            } );
 
         } );
 
@@ -1366,8 +1504,6 @@ NGL.ExampleRegistry.addDict( {
             assembly: "BU1"
         } ).then( function( o ){
             o.addRepresentation( "cartoon" );
-            var axes = o.addRepresentation( "axes", { visible: false } );
-            axes.repr.align();
             o.addRepresentation( "axes", {
                 sele: "RET", showAxes: false, showBox: true, radius: 0.2
             } );
@@ -1375,7 +1511,9 @@ NGL.ExampleRegistry.addDict( {
             o.addRepresentation( "axes", {
                 sele: ":B and backbone", showAxes: false, showBox: true, radius: 0.2
             } );
-            stage.centerView();
+            stage.autoView();
+            var pa = o.structure.getPrincipalAxes();
+            stage.animationControls.rotate( pa.getRotationQuaternion(), 1500 );
         } );
 
     },
@@ -1385,7 +1523,7 @@ NGL.ExampleRegistry.addDict( {
         stage.loadFile( "rcsb://3pqr.mmtf" ).then( function( o ){
             o.addRepresentation( "cartoon" );
             o.addRepresentation( "surface", { visible: false, lazy: true } );
-            stage.centerView();
+            stage.autoView();
         } );
 
     },
@@ -1409,7 +1547,7 @@ NGL.ExampleRegistry.addDict( {
                 scale: 0.25
             });
 
-            stage.centerView();
+            stage.autoView();
 
         })
 
@@ -1425,137 +1563,161 @@ NGL.ExampleRegistry.addDict( {
             } );
             o.addRepresentation( "surface", {
                 sele: "hetero and (not water)",
-                useWorker: true,
-                wireframe: true,
                 surfaceType: "av",
-                linewidth: 1.0,
-                color: "green"
+                contour: true,
+                colorScheme: "element",
+                colorValue: "#0f0",
+                useWorker: false
             } );
             o.addRepresentation( "surface", {
                 sele: "not hetero",
-                useWorker: false,
                 surfaceType: "av",
-                color: "grey"
+                colorScheme: "bfactor",
+                contour: true,
+                filterSele: "10 OR 11 OR 12 OR 13 OR 14 OR 18 OR 31 OR 33 OR "
+                            + "64 OR 80 OR 81 OR 82 OR 83 OR 84 OR 85 OR 86 OR "
+                            + "129 OR 131 OR 132 OR 134 OR 144 OR 145"
             } );
-            stage.centerView();
+            stage.viewerControls.orient( [
+                -25.08,  20.9,  -12.01, 0,
+                  3.52, -13.97, -31.66, 0,
+                -23.85, -24.05,   7.95, 0,
+                -27.16,  -8.65, -63.38, 1
+            ] );
         } );
 
     },
 
-    "test": function( stage ){
+    "cns": function( stage ){
 
-        stage.loadFile( "rcsb://3pqr.cif", {
-            assembly: "BU1"
-        } ).then( function( o ){
+        stage.loadFile( "data://3pqr.cns" ).then( function( o ){
+
+            o.addRepresentation( "surface", {
+                visible: true, isolevel: 2.0, opacity: 0.6
+            } );
+            // o.autoView();
+
+        } );
+
+        stage.loadFile( "data://3pqr.pdb" ).then( function( o ){
+
             o.addRepresentation( "cartoon" );
-            // o.addRepresentation( "trace", { color: "modelindex" } );
-            // o.addRepresentation( "ball+stick" );
-            var axes = o.addRepresentation( "axes" );
-            // axes.repr.align();
+            o.autoView();
 
-            // return;
+        } );
 
-            // function animate(){
-            //     rotationGroup.rotateX( 0.01 )
-            //     rotationGroup.updateMatrixWorld();
-            //     stage.viewer.requestRender();
-            //     requestAnimationFrame( animate );
-            // }
-            // animate();
+    },
 
-            stage.setOrientation([[11.285436209032113,0.691544421726666,48.474629999030476],[33.92462426694005,49.27624143506454,-83.85351885234937],[0.9641782619579492,0.19736231309694505,0.17722414208218956]]);
+    "localRes": function( stage ){
 
-            return
+        Promise.all([
+            stage.loadFile( "data://betaGal.mrc" ),
+            stage.loadFile( "data://localResolution.mrc", { voxelSize: 3.54 } )
+        ]).then( function( l ){
+            var betaGal = l[ 0 ];
+            var localResolution = l[ 1 ];
+            betaGal.addRepresentation( "surface", {
+                colorVolume: localResolution.volume,
+                colorScheme: "volume",
+                colorScale: "rwb",
+                colorDomain: [ 7, 14 ]
+            } );
+            localResolution.addRepresentation( "dot", {
+                thresholdMin: 0,
+                thresholdMax: 8,
+                thresholdType: "value",
+                dotType: "sphere",
+                radius: 0.6,
+                colorScheme: "value",
+                colorScale: "rwb",
+                colorDomain: [ 7, 14 ]
+            } );
+            stage.autoView();
+        } );
 
-            var viewer = stage.viewer;
-            var controls = viewer.controls;
-            var camera = viewer.camera;
+    },
 
-            var target = new NGL.Vector3();
-            var position = new NGL.Vector3();
-            var up = new NGL.Vector3();
+    "cube-bromobenzene": function( stage ){
 
-            var targetN = new NGL.Vector3( -39.345,-8.419, 38.473 );
-            var positionN = new NGL.Vector3( -27.929, -103.524, 201.946 );
-            var upN = new NGL.Vector3( 0.996, 0.072, -0.027 );
+        stage.loadFile( "data://bromobenzene-med.cube.gz" ).then( function( o ){
+            o.addRepresentation( "surface", { opacity: 0.6 } );
+            stage.autoView();
+        } );
 
-            // var q0 = new NGL.Quaternion();
-            // var qN = new NGL.Quaternion();
+        stage.loadFile( "data://bromobenzene.pdb" ).then( function( o ){
+            o.addRepresentation( "ball+stick" );
+            stage.autoView();
+        } );
 
-            // q0.copy( camera.quaternion );
-            // console.log( camera.rotation.toArray(), camera.position.toArray(), camera.up.toArray() )
+    },
 
-            // stage.setOrientation( [
-            //     targetN.toArray(),
-            //     positionN.toArray(),
-            //     upN.toArray()
-            // ] );
+    "dsn6": function( stage ){
 
-            // qN.copy( camera.quaternion );
+        stage.loadFile( "data://3str-2fofc.dsn6" ).then( function( o ){
+            o.addRepresentation( "surface", { wireframe: true, color: "tomato" } );
+            stage.autoView();
+        } );
 
-            // console.log( q0.toArray(), qN.toArray() );
-            // console.log( camera.rotation.toArray(), camera.position.toArray(), camera.up.toArray() )
+        stage.loadFile( "data://3str-2fofc.brix" ).then( function( o ){
+            o.addRepresentation( "surface" );
+            stage.autoView();
+        } );
 
-            // return;
+        stage.loadFile( "data://3str.cif" ).then( function( o ){
+            o.addRepresentation( "licorice" );
+            stage.autoView();
+        } );
 
-            // o.centerView();
+    },
 
-            var ori = stage.getOrientation();
-            var target0 = new NGL.Vector3().fromArray( ori[ 0 ] );
-            var position0 = new NGL.Vector3().fromArray( ori[ 1 ] );
-            var up0 = new NGL.Vector3().fromArray( ori[ 2 ] );
+    "validation": function( stage ){
 
-            var eye0 = new NGL.Vector3().subVectors( position0, target0 ).normalize();
-            var eyeN = new NGL.Vector3().subVectors( positionN, targetN ).normalize();
+        Promise.all( [
+            stage.loadFile( "data://3PQR.cif" ),
+            NGL.autoLoad( "data://3pqr_validation.xml", { ext: "validation" } )
+        ] ).then( function( ol ){
+            ol[ 0 ].structure.validation = ol[ 1 ];
+            ol[ 0 ].addRepresentation( "cartoon", { color: "geoquality" } );
+            ol[ 0 ].addRepresentation( "validation" );
+            ol[ 0 ].addRepresentation( "ball+stick", {
+                sele: ol[ 1 ].clashSele,
+                color: "geoquality"
+            } );
+            ol[ 0 ].addRepresentation( "licorice", {
+                sele: "hetero",
+                color: "geoquality"
+            } );
+            stage.autoView();
+        } );
 
-            var axis = new NGL.Vector3().crossVectors( eye0, eyeN ).normalize();
-            var angle = eye0.angleTo( eyeN );
-            if( eye0.dot( eyeN ) < 0 ) angle *= -1;
+    },
 
-            // target0.copy( targetN );
-            // position0.copy( positionN );
-            // up0.copy( upN );
+    "psf": function( stage ){
 
-            var t0 = performance.now();
-            var prevAlpha = 0;
-            var cumAngle = 0;
-            function animate(){
-                var delta = performance.now() - t0;
-                var alpha = Math.min( 1.0, delta / 2000 );
+        stage.loadFile( "data://ala3.psf" ).then( function( o ){
+            NGL.autoLoad( "data://ala3.dcd" ).then( function( frames ){
+                var trajComp = o.addTrajectory( frames, {
+                    initialFrame: 0,
+                    superpose: false
+                } );
+                o.addRepresentation( "ball+stick" );
+                stage.autoView();
+            });
+        } );
 
-                target.lerpVectors( target0, targetN, alpha );
-                // position.lerpVectors( position0, positionN, alpha );
-                // up.lerpVectors( up0, upN, alpha );
+    },
 
-                controls.target.copy( target );
-                // camera.position.copy( positionN );
-                camera.up.copy( up );
+    "compMatrix": function( stage ){
 
-                var eye = new NGL.Vector3().subVectors( camera.position, target ).normalize();
-                var axis2 = new NGL.Vector3().crossVectors( eye, eyeN ).normalize();
-                var angle = eye.angleTo( eyeN );
+        stage.loadFile( "data://1crn.pdb" ).then( function( o ){
+            o.addRepresentation( "cartoon" );
+            stage.autoView();
+        } );
 
-                cumAngle += ( alpha - prevAlpha ) * angle;
-                // console.log( angle, cumAngle )
-
-                viewer.rotate( axis2, ( alpha - prevAlpha ) * angle );
-
-                viewer.requestRender();
-
-                // stage.setOrientation( [
-                //     target.toArray(),
-                //     position.toArray(),
-                //     up.toArray()
-                // ] );
-
-                prevAlpha = alpha;
-
-                if( alpha < 1.0 ){
-                    requestAnimationFrame( animate );
-                }
-            }
-            animate();
-
+        stage.loadFile( "data://1crn.pdb" ).then( function( o ){
+            o.setPosition( [ 10, 0, 0 ] );
+            o.addRepresentation( "cartoon", { color: "orange" } );
+            stage.autoView();
         } );
 
     }
