@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0</span>
+<header><span>NGL@0.10.1-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -230,7 +230,7 @@
  */
 
 
-import { RightMouseButton } from &quot;../constants.js&quot;;
+import { RightMouseButton, MiddleMouseButton } from &quot;../constants.js&quot;;
 import { almostIdentity } from &quot;../math/math-utils.js&quot;;
 
 
@@ -267,6 +267,10 @@ class MouseBehavior{
         }else if( this.mouse.ctrlKey ){
             const sp = this.stage.getParameters();
             this.stage.setParameters( { clipNear: sp.clipNear + delta / 10 } );
+        }else if( this.mouse.altKey ){
+            // nothing yet
+        }else if( this.mouse.metaKey ){
+            // nothing yet
         }else{
             this.controls.zoom( delta );
         }
@@ -277,6 +281,8 @@ class MouseBehavior{
 
         if( this.mouse.which === RightMouseButton ){
             this.controls.pan( x, y );
+        }else if( this.mouse.which === MiddleMouseButton ){
+            // nothing yet
         }else{
             this.controls.rotate( x, y );
         }

@@ -5664,6 +5664,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/utils/bitarray.js~bitarray#clearbits",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-clearBits",
+    "src/utils/bitarray.js~BitArray#clearBits",
+    "method"
+  ],
+  [
     "src/utils/bitarray.js~bitarray#clearrange",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-clearRange",
     "src/utils/bitarray.js~BitArray#clearRange",
@@ -5679,6 +5685,12 @@ window.esdocSearchIndex = [
     "src/utils/bitarray.js~bitarray#constructor",
     "class/src/utils/bitarray.js~BitArray.html#instance-constructor-constructor",
     "src/utils/bitarray.js~BitArray#constructor",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#difference",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-difference",
+    "src/utils/bitarray.js~BitArray#difference",
     "method"
   ],
   [
@@ -5706,6 +5718,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/utils/bitarray.js~bitarray#getintersectionsize",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-getIntersectionSize",
+    "src/utils/bitarray.js~BitArray#getIntersectionSize",
+    "method"
+  ],
+  [
     "src/utils/bitarray.js~bitarray#getsize",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-getSize",
     "src/utils/bitarray.js~BitArray#getSize",
@@ -5715,6 +5733,12 @@ window.esdocSearchIndex = [
     "src/utils/bitarray.js~bitarray#intersection",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-intersection",
     "src/utils/bitarray.js~BitArray#intersection",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#intersects",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-intersects",
+    "src/utils/bitarray.js~BitArray#intersects",
     "method"
   ],
   [
@@ -5733,6 +5757,12 @@ window.esdocSearchIndex = [
     "src/utils/bitarray.js~bitarray#isclear",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-isClear",
     "src/utils/bitarray.js~BitArray#isClear",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#isequalto",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-isEqualTo",
+    "src/utils/bitarray.js~BitArray#isEqualTo",
     "method"
   ],
   [
@@ -5772,6 +5802,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/utils/bitarray.js~bitarray#setbits",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-setBits",
+    "src/utils/bitarray.js~BitArray#setBits",
+    "method"
+  ],
+  [
     "src/utils/bitarray.js~bitarray#setrange",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-setRange",
     "src/utils/bitarray.js~BitArray#setRange",
@@ -5781,6 +5817,12 @@ window.esdocSearchIndex = [
     "src/utils/bitarray.js~bitarray#toarray",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-toArray",
     "src/utils/bitarray.js~BitArray#toArray",
+    "method"
+  ],
+  [
+    "src/utils/bitarray.js~bitarray#union",
+    "class/src/utils/bitarray.js~BitArray.html#instance-method-union",
+    "src/utils/bitarray.js~BitArray#union",
     "method"
   ],
   [
