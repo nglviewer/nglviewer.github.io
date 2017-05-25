@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1-1</span>
+<header><span>NGL@0.10.1-2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -431,21 +431,13 @@ class SurfaceRepresentation extends Representation{
 
     }
 
-    getSurfaceData(){
+    create(){
 
-        return {
+        const sd = {
             position: this.surface.getPosition(),
             color: this.surface.getColor( this.getColorParams() ),
             index: this.surface.getIndex(),
-            normal: this.surface.getNormal(),
-            picking: this.surface.getPicking()
         };
-
-    }
-
-    create(){
-
-        const sd = this.getSurfaceData();
 
         let buffer;
 
@@ -457,6 +449,9 @@ class SurfaceRepresentation extends Representation{
             } ) );
 
         } else {
+
+            sd.normal = this.surface.getNormal(),
+            sd.picking = this.surface.getPicking()
 
             const surfaceBuffer = new SurfaceBuffer(
                 sd, this.getBufferParams( {

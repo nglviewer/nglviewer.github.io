@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1-1</span>
+<header><span>NGL@0.10.1-2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -240,11 +240,16 @@ class MouseBehavior{
         this.mouse = stage.mouseObserver;
         this.controls = stage.mouseControls;
 
+        this.mouse.signals.moved.add( this._onMove, this );
         this.mouse.signals.scrolled.add( this._onScroll, this );
         this.mouse.signals.dragged.add( this._onDrag, this );
         this.mouse.signals.clicked.add( this._onClick, this );
         this.mouse.signals.hovered.add( this._onHover, this );
 
+    }
+
+    _onMove( /*x, y*/ ){
+        this.stage.tooltip.style.display = &quot;none&quot;;
     }
 
     _onScroll( delta ){
@@ -264,6 +269,7 @@ class MouseBehavior{
     }
 
     dispose(){
+        this.mouse.signals.moved.remove( this._onMove, this );
         this.mouse.signals.scrolled.remove( this._onScroll, this );
         this.mouse.signals.dragged.remove( this._onDrag, this );
         this.mouse.signals.clicked.remove( this._onClick, this );

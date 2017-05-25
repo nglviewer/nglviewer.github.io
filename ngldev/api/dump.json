@@ -25236,7 +25236,7 @@
     "__docId__": 949,
     "kind": "file",
     "name": "src/controls/mouse-actions.js",
-    "content": "/**\n * @file Mouse Actions\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { almostIdentity } from \"../math/math-utils.js\";\n\n\n/**\n * Mouse actions provided as static methods\n */\nclass MouseActions{\n\n    /**\n     * Zoom scene based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to zoom\n     * @return {undefined}\n     */\n    static zoomScroll( stage, delta ){\n        stage.trackballControls.zoom( delta );\n    }\n\n    /**\n     * Move near clipping plane based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to move clipping plane\n     * @return {undefined}\n     */\n    static clipNearScroll( stage, delta ){\n        const sp = stage.getParameters();\n        stage.setParameters( { clipNear: sp.clipNear + delta / 10 } );\n    }\n\n    /**\n     * Move focus planes based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to move focus planes\n     * @return {undefined}\n     */\n    static focusScroll( stage, delta ){\n        const sp = stage.getParameters();\n        const focus = sp.clipNear * 2;\n        const sign = Math.sign( delta );\n        const step = sign * almostIdentity( ( 100 - focus ) / 10, 5, 0.2 );\n        stage.setFocus( focus + step );\n    }\n\n    /**\n     * Change isolevel of volume surfaces based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to change isolevel\n     * @return {undefined}\n     */\n    static isolevelScroll( stage, delta ){\n        const d = Math.sign( delta ) / 5;\n        stage.eachRepresentation( function( reprComp ){\n            if( reprComp.repr.type !== \"surface\" ) return;\n            const l = reprComp.getParameters().isolevel;\n            const s = Math.sign( l );\n            reprComp.setParameters( { isolevel: l + ( s * d ) } );\n        }, \"volume\" );\n    }\n\n    /**\n     * Pan scene based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to pan in x direction\n     * @param {Number} dy - amount to pan in y direction\n     * @return {undefined}\n     */\n    static panDrag( stage, dx, dy ){\n        stage.trackballControls.pan( dx, dy );\n    }\n\n    /**\n     * Rotate scene based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to rotate in x direction\n     * @param {Number} dy - amount to rotate in y direction\n     * @return {undefined}\n     */\n    static rotateDrag( stage, dx, dy ){\n        stage.trackballControls.rotate( dx, dy );\n    }\n\n    /**\n     * Zoom scene based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to zoom\n     * @param {Number} dy - amount to zoom\n     * @return {undefined}\n     */\n    static zoomDrag( stage, dx, dy ){\n        stage.trackballControls.zoom( ( dx + dy ) / -2 );\n    }\n\n    /**\n     * Zoom scene based on mouse coordinate changes and\n     * move focus planes based on camera position (zoom)\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to zoom\n     * @param {Number} dy - amount to zoom\n     * @return {undefined}\n     */\n    static zoomFocusDrag( stage, dx, dy ){\n        stage.trackballControls.zoom( ( dx + dy ) / -2 );\n        const z = stage.viewer.camera.position.z;\n        stage.setFocus( 100 - Math.abs( z / 10 ) );\n    }\n\n    /**\n     * Pan picked component based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to pan in x direction\n     * @param {Number} dy - amount to pan in y direction\n     * @return {undefined}\n     */\n    static panComponentDrag( stage, dx, dy ){\n        stage.trackballControls.panComponent( dx, dy );\n    }\n\n    /**\n     * Rotate picked component based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to rotate in x direction\n     * @param {Number} dy - amount to rotate in y direction\n     * @return {undefined}\n     */\n    static rotateComponentDrag( stage, dx, dy ){\n        stage.trackballControls.rotateComponent( dx, dy );\n    }\n\n    /**\n     * Move picked element to the center of the screen\n     * @param {Stage} stage - the stage\n     * @param {PickingProxy} pickingProxy - the picking data object\n     * @return {undefined}\n     */\n    static movePick( stage, pickingProxy ){\n        if( pickingProxy ){\n            stage.animationControls.move( pickingProxy.position.clone() );\n        }\n    }\n\n    /**\n     * Show tooltip with information of picked element\n     * @param {Stage} stage - the stage\n     * @param {PickingProxy} pickingProxy - the picking data object\n     * @return {undefined}\n     */\n    static tooltipPick( stage, pickingProxy ){\n        const tt = stage.tooltip;\n        const sp = stage.getParameters();\n        if( sp.tooltip && pickingProxy ){\n            const cp = pickingProxy.canvasPosition;\n            tt.innerText = pickingProxy.getLabel();\n            tt.style.bottom = cp.y + 3 + \"px\";\n            tt.style.left = cp.x + 3 + \"px\";\n            tt.style.display = \"block\";\n        }else{\n            tt.style.display = \"none\";\n        }\n    }\n\n}\n\n\nconst ActionPresets = {\n    default: [\n        [ \"scroll\", MouseActions.zoomScroll ],\n        [ \"scroll-ctrl\", MouseActions.clipNearScroll ],\n        [ \"scroll-shift\", MouseActions.focusScroll ],\n        [ \"scroll-alt\", MouseActions.isolevelScroll ],\n\n        [ \"drag-right\", MouseActions.panDrag ],\n        [ \"drag-left\", MouseActions.rotateDrag ],\n        [ \"drag-middle\", MouseActions.zoomDrag ],\n        [ \"drag-left+right\", MouseActions.zoomDrag ],\n        [ \"drag-ctrl-right\", MouseActions.panComponentDrag ],\n        [ \"drag-ctrl-left\", MouseActions.rotateComponentDrag ],\n\n        [ \"clickPick-middle\", MouseActions.movePick ],\n        [ \"hoverPick\", MouseActions.tooltipPick ],\n    ],\n    pymol: [\n        [ \"drag-left\", MouseActions.rotateDrag ],\n        [ \"drag-middle\", MouseActions.panDrag ],\n        [ \"drag-right\", MouseActions.zoomDrag ],\n        [ \"drag-shift-right\", MouseActions.focusScroll ],\n\n        [ \"clickPick-ctrl+shift-middle\", MouseActions.movePick ],\n    ],\n    coot: [\n        [ \"scroll\", MouseActions.isolevelScroll ],\n\n        [ \"drag-left\", MouseActions.rotateDrag ],\n        [ \"drag-middle\", MouseActions.panDrag ],\n        [ \"drag-ctrl-left\", MouseActions.panDrag ],\n        [ \"drag-right\", MouseActions.zoomFocusDrag ],\n        [ \"drag-ctrl-right\", MouseActions.focusScroll ],\n\n        [ \"clickPick-middle\", MouseActions.movePick ],\n    ]\n};\n\n\nexport default MouseActions;\n\nexport {\n    ActionPresets\n};\n",
+    "content": "/**\n * @file Mouse Actions\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { almostIdentity } from \"../math/math-utils.js\";\n\n\n/**\n * Mouse actions provided as static methods\n */\nclass MouseActions{\n\n    /**\n     * Zoom scene based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to zoom\n     * @return {undefined}\n     */\n    static zoomScroll( stage, delta ){\n        stage.trackballControls.zoom( delta );\n    }\n\n    /**\n     * Move near clipping plane based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to move clipping plane\n     * @return {undefined}\n     */\n    static clipNearScroll( stage, delta ){\n        const sp = stage.getParameters();\n        stage.setParameters( { clipNear: sp.clipNear + delta / 10 } );\n    }\n\n    /**\n     * Move focus planes based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to move focus planes\n     * @return {undefined}\n     */\n    static focusScroll( stage, delta ){\n        const sp = stage.getParameters();\n        const focus = sp.clipNear * 2;\n        const sign = Math.sign( delta );\n        const step = sign * almostIdentity( ( 100 - focus ) / 10, 5, 0.2 );\n        stage.setFocus( focus + step );\n    }\n\n    /**\n     * Change isolevel of volume surfaces based on scroll-delta\n     * @param {Stage} stage - the stage\n     * @param {Number} delta - amount to change isolevel\n     * @return {undefined}\n     */\n    static isolevelScroll( stage, delta ){\n        const d = Math.sign( delta ) / 5;\n        stage.eachRepresentation( function( reprComp ){\n            if( reprComp.repr.type !== \"surface\" ) return;\n            const l = reprComp.getParameters().isolevel;\n            const s = Math.sign( l );\n            reprComp.setParameters( { isolevel: l + ( s * d ) } );\n        }, \"volume\" );\n    }\n\n    /**\n     * Pan scene based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to pan in x direction\n     * @param {Number} dy - amount to pan in y direction\n     * @return {undefined}\n     */\n    static panDrag( stage, dx, dy ){\n        stage.trackballControls.pan( dx, dy );\n    }\n\n    /**\n     * Rotate scene based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to rotate in x direction\n     * @param {Number} dy - amount to rotate in y direction\n     * @return {undefined}\n     */\n    static rotateDrag( stage, dx, dy ){\n        stage.trackballControls.rotate( dx, dy );\n    }\n\n    /**\n     * Zoom scene based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to zoom\n     * @param {Number} dy - amount to zoom\n     * @return {undefined}\n     */\n    static zoomDrag( stage, dx, dy ){\n        stage.trackballControls.zoom( ( dx + dy ) / -2 );\n    }\n\n    /**\n     * Zoom scene based on mouse coordinate changes and\n     * move focus planes based on camera position (zoom)\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to zoom\n     * @param {Number} dy - amount to zoom\n     * @return {undefined}\n     */\n    static zoomFocusDrag( stage, dx, dy ){\n        stage.trackballControls.zoom( ( dx + dy ) / -2 );\n        const z = stage.viewer.camera.position.z;\n        stage.setFocus( 100 - Math.abs( z / 10 ) );\n    }\n\n    /**\n     * Pan picked component based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to pan in x direction\n     * @param {Number} dy - amount to pan in y direction\n     * @return {undefined}\n     */\n    static panComponentDrag( stage, dx, dy ){\n        stage.trackballControls.panComponent( dx, dy );\n    }\n\n    /**\n     * Rotate picked component based on mouse coordinate changes\n     * @param {Stage} stage - the stage\n     * @param {Number} dx - amount to rotate in x direction\n     * @param {Number} dy - amount to rotate in y direction\n     * @return {undefined}\n     */\n    static rotateComponentDrag( stage, dx, dy ){\n        stage.trackballControls.rotateComponent( dx, dy );\n    }\n\n    /**\n     * Move picked element to the center of the screen\n     * @param {Stage} stage - the stage\n     * @param {PickingProxy} pickingProxy - the picking data object\n     * @return {undefined}\n     */\n    static movePick( stage, pickingProxy ){\n        if( pickingProxy ){\n            stage.animationControls.move( pickingProxy.position.clone() );\n        }\n    }\n\n    /**\n     * Show tooltip with information of picked element\n     * @param {Stage} stage - the stage\n     * @param {PickingProxy} pickingProxy - the picking data object\n     * @return {undefined}\n     */\n    static tooltipPick( stage, pickingProxy ){\n        const tt = stage.tooltip;\n        const sp = stage.getParameters();\n        if( sp.tooltip && pickingProxy ){\n            const cp = pickingProxy.canvasPosition;\n            tt.innerText = pickingProxy.getLabel();\n            tt.style.bottom = cp.y + 3 + \"px\";\n            tt.style.left = cp.x + 3 + \"px\";\n            tt.style.display = \"block\";\n        }else{\n            tt.style.display = \"none\";\n        }\n    }\n\n}\n\n\nconst ActionPresets = {\n    default: [\n        [ \"scroll\", MouseActions.zoomScroll ],\n        [ \"scroll-ctrl\", MouseActions.clipNearScroll ],\n        [ \"scroll-shift\", MouseActions.focusScroll ],\n        [ \"scroll-alt\", MouseActions.isolevelScroll ],\n\n        [ \"drag-right\", MouseActions.panDrag ],\n        [ \"drag-left\", MouseActions.rotateDrag ],\n        [ \"drag-middle\", MouseActions.zoomDrag ],\n        [ \"drag-left+right\", MouseActions.zoomDrag ],\n        [ \"drag-ctrl-right\", MouseActions.panComponentDrag ],\n        [ \"drag-ctrl-left\", MouseActions.rotateComponentDrag ],\n\n        [ \"clickPick-middle\", MouseActions.movePick ],\n        [ \"hoverPick\", MouseActions.tooltipPick ],\n    ],\n    pymol: [\n        [ \"drag-left\", MouseActions.rotateDrag ],\n        [ \"drag-middle\", MouseActions.panDrag ],\n        [ \"drag-right\", MouseActions.zoomDrag ],\n        [ \"drag-shift-right\", MouseActions.focusScroll ],\n\n        [ \"clickPick-ctrl+shift-middle\", MouseActions.movePick ],\n        [ \"hoverPick\", MouseActions.tooltipPick ],\n    ],\n    coot: [\n        [ \"scroll\", MouseActions.isolevelScroll ],\n\n        [ \"drag-left\", MouseActions.rotateDrag ],\n        [ \"drag-middle\", MouseActions.panDrag ],\n        [ \"drag-ctrl-left\", MouseActions.panDrag ],\n        [ \"drag-right\", MouseActions.zoomFocusDrag ],\n        [ \"drag-ctrl-right\", MouseActions.focusScroll ],\n\n        [ \"clickPick-middle\", MouseActions.movePick ],\n        [ \"hoverPick\", MouseActions.tooltipPick ],\n    ]\n};\n\n\nexport default MouseActions;\n\nexport {\n    ActionPresets\n};\n",
     "static": true,
     "longname": "src/controls/mouse-actions.js",
     "access": null,
@@ -60716,7 +60716,7 @@
     "__docId__": 2256,
     "kind": "file",
     "name": "src/representation/surface-representation.js",
-    "content": "/**\n * @file Surface Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { Vector3, Box3 } from \"../../lib/three.es6.js\";\n\nimport { defaults } from \"../utils.js\";\nimport Representation from \"./representation.js\";\nimport Volume from \"../surface/volume.js\";\nimport SurfaceBuffer from \"../buffer/surface-buffer.js\";\nimport DoubleSidedBuffer from \"../buffer/doublesided-buffer\";\nimport ContourBuffer from \"../buffer/contour-buffer.js\";\n\n\n/**\n * Surface representation parameter object.\n * @typedef {Object} SurfaceRepresentationParameters - surface representation parameters\n * @mixes RepresentationParameters\n *\n * @property {String} isolevelType - Meaning of the isolevel value. Either *value* for the literal value or *sigma* as a factor of the sigma of the data. For volume data only.\n * @property {Float} isolevel - The value at which to create the isosurface. For volume data only.\n * @property {Integer} smooth - How many iterations of laplacian smoothing after surface triangulation. For volume data only.\n * @property {Boolean} background - Render the surface in the background, unlit.\n * @property {Boolean} opaqueBack - Render the back-faces (where normals point away from the camera) of the surface opaque, ignoring the transparency parameter.\n * @property {Integer} boxSize - Size of the box to triangulate volume data in. Set to zero to triangulate the whole volume. For volume data only.\n * @property {Boolean} useWorker - Weather or not to triangulate the volume asynchronously in a Web Worker. For volume data only.\n * @property {Boolean} wrap - Wrap volume data around the edges; use in conjuction with boxSize but not larger than the volume dimension. For volume data only.\n */\n\n\n/**\n * Surface representation\n */\nclass SurfaceRepresentation extends Representation{\n\n    /**\n     * Create Surface representation object\n     * @param {Surface|Volume} surface - the surface or volume to be represented\n     * @param {Viewer} viewer - a viewer object\n     * @param {SurfaceRepresentationParameters} params - surface representation parameters\n     */\n    constructor( surface, viewer, params ){\n\n        super( surface, viewer, params );\n\n        this.type = \"surface\";\n\n        this.parameters = Object.assign( {\n\n            isolevelType: {\n                type: \"select\", options: {\n                    \"value\": \"value\", \"sigma\": \"sigma\"\n                }\n            },\n            isolevel: {\n                type: \"number\", precision: 2, max: 1000, min: -1000\n            },\n            smooth: {\n                type: \"integer\", precision: 1, max: 10, min: 0\n            },\n            background: {\n                type: \"boolean\", rebuild: true  // FIXME\n            },\n            opaqueBack: {\n                type: \"boolean\", buffer: true\n            },\n            boxSize: {\n                type: \"integer\", precision: 1, max: 100, min: 0\n            },\n            colorVolume: {\n                type: \"hidden\"\n            },\n            contour: {\n                type: \"boolean\", rebuild: true\n            },\n            useWorker: {\n                type: \"boolean\", rebuild: true\n            },\n            wrap: {\n                type: \"boolean\", rebuild: true\n            },\n\n        }, this.parameters );\n\n        if( surface instanceof Volume ){\n            this.surface = undefined;\n            this.volume = surface;\n        }else{\n            this.surface = surface;\n            this.volume = undefined;\n        }\n\n        this.boxCenter = new Vector3();\n        this.__boxCenter = new Vector3();\n        this.box = new Box3();\n        this.__box = new Box3();\n\n        this._position = new Vector3();\n        this.setBox = function setBox(){\n            this._position.copy( viewer.translationGroup.position ).negate();\n            if( !this._position.equals( this.boxCenter ) ){\n                this.setParameters( { \"boxCenter\": this._position } );\n            }\n        };\n\n        this.viewer.signals.ticked.add( this.setBox, this );\n\n        this.init( params );\n\n    }\n\n    init( params ){\n\n        const p = params || {};\n        p.colorScheme = defaults( p.colorScheme, \"uniform\" );\n        p.colorValue = defaults( p.colorValue, 0xDDDDDD );\n\n        this.isolevelType  = defaults( p.isolevelType, \"sigma\" );\n        this.isolevel = defaults( p.isolevel, 2.0 );\n        this.smooth = defaults( p.smooth, 0 );\n        this.background = defaults( p.background, false );\n        this.opaqueBack = defaults( p.opaqueBack, true );\n        this.boxSize = defaults( p.boxSize, 0 );\n        this.colorVolume = defaults( p.colorVolume, undefined );\n        this.contour = defaults( p.contour, false );\n        this.useWorker = defaults( p.useWorker, true );\n        this.wrap = defaults( p.wrap, false );\n\n        super.init( p );\n\n        this.build();\n\n    }\n\n    attach( callback ){\n\n        this.bufferList.forEach( buffer => {\n            this.viewer.add( buffer );\n        } );\n\n        this.setVisibility( this.visible );\n\n        callback();\n\n    }\n\n    prepare( callback ){\n\n        if( this.volume ){\n\n            let isolevel;\n\n            if( this.isolevelType === \"sigma\" ){\n                isolevel = this.volume.getValueForSigma( this.isolevel );\n            }else{\n                isolevel = this.isolevel;\n            }\n\n            if( !this.surface ||\n                this.__isolevel !== isolevel ||\n                this.__smooth !== this.smooth ||\n                this.__contour !== this.contour ||\n                this.__wrap !== this.wrap ||\n                this.__boxSize !== this.boxSize ||\n                ( this.boxSize > 0 &&\n                    !this.__boxCenter.equals( this.boxCenter ) )\n            ){\n                this.__isolevel = isolevel;\n                this.__smooth = this.smooth;\n                this.__contour = this.contour;\n                this.__wrap = this.wrap\n                this.__boxSize = this.boxSize;\n                this.__boxCenter.copy( this.boxCenter );\n                this.__box.copy( this.box );\n\n                const onSurfaceFinish = surface => {\n                    this.surface = surface;\n                    callback();\n                };\n\n                if( this.useWorker ){\n                    this.volume.getSurfaceWorker(\n                        isolevel, this.smooth, this.boxCenter, this.boxSize,\n                        this.contour, this.wrap, onSurfaceFinish\n                    );\n                }else{\n                    onSurfaceFinish(\n                        this.volume.getSurface(\n                            isolevel, this.smooth, this.boxCenter, this.boxSize,\n                            this.contour, this.wrap\n                        )\n                    );\n                }\n            }else{\n                callback();\n            }\n\n        }else{\n            callback();\n        }\n\n    }\n\n    getSurfaceData(){\n\n        return {\n            position: this.surface.getPosition(),\n            color: this.surface.getColor( this.getColorParams() ),\n            index: this.surface.getIndex(),\n            normal: this.surface.getNormal(),\n            picking: this.surface.getPicking()\n        };\n\n    }\n\n    create(){\n\n        const sd = this.getSurfaceData();\n\n        let buffer;\n\n        if( this.contour ){\n\n            buffer = new ContourBuffer(\n                sd, this.getBufferParams( {\n                    wireframe: false\n            } ) );\n\n        } else {\n\n            const surfaceBuffer = new SurfaceBuffer(\n                sd, this.getBufferParams( {\n                    background: this.background,\n                    opaqueBack: this.opaqueBack,\n                    dullInterior: false\n                } ) );\n\n            buffer = new DoubleSidedBuffer( surfaceBuffer );\n\n        }\n\n        this.bufferList.push( buffer );\n\n    }\n\n    update( what ){\n\n        if( this.bufferList.length === 0 ) return;\n\n        what = what || {};\n\n        const surfaceData = {};\n\n        if( what.position ){\n            surfaceData.position = this.surface.getPosition();\n        }\n\n        if( what.color ){\n            surfaceData.color = this.surface.getColor(\n                this.getColorParams()\n            );\n        }\n\n        if( what.index ){\n            surfaceData.index = this.surface.getIndex();\n        }\n\n        if( what.normal ){\n            surfaceData.normal = this.surface.getNormal();\n        }\n\n        this.bufferList.forEach( function( buffer ){\n            buffer.setAttributes( surfaceData );\n        } );\n\n    }\n\n    /**\n     * Set representation parameters\n     * @alias SurfaceRepresentation#setParameters\n     * @param {SurfaceRepresentationParameters} params - surface parameter object\n     * @param {Object} [what] - buffer data attributes to be updated,\n     *                        note that this needs to be implemented in the\n     *                        derived classes. Generally it allows more\n     *                        fine-grained control over updating than\n     *                        forcing a rebuild.\n     * @param {Boolean} what.position - update position data\n     * @param {Boolean} what.color - update color data\n     * @param {Boolean} [rebuild] - whether or not to rebuild the representation\n     * @return {SurfaceRepresentation} this object\n     */\n    setParameters( params, what, rebuild ){\n\n        if( params && params.isolevelType !== undefined &&\n            this.volume\n        ){\n\n            if( this.isolevelType === \"value\" &&\n                params.isolevelType === \"sigma\"\n            ){\n\n                this.isolevel = this.volume.getSigmaForValue(\n                    this.isolevel\n                );\n\n            }else if( this.isolevelType === \"sigma\" &&\n                params.isolevelType === \"value\"\n            ){\n\n                this.isolevel = this.volume.getValueForSigma(\n                    this.isolevel\n                );\n\n            }\n\n            this.isolevelType = params.isolevelType;\n\n        }\n\n        if( params && params.boxCenter ){\n            this.boxCenter.copy( params.boxCenter );\n            delete params.boxCenter;\n        }\n\n        // Forbid wireframe && contour as in molsurface\n        if( params && params.wireframe && (\n            params.contour || ( params.contour === undefined && this.contour )\n        ) ){\n            params.wireframe = false;\n        }\n\n        super.setParameters( params, what, rebuild );\n\n        if( this.volume ){\n            this.volume.getBox( this.boxCenter, this.boxSize, this.box );\n        }\n\n        if( params && params.colorVolume !== undefined ){\n            what.color = true;\n        }\n\n        if( this.surface && (\n                params.isolevel !== undefined ||\n                params.smooth !== undefined ||\n                params.wrap !== undefined ||\n                params.boxSize !== undefined ||\n                ( this.boxSize > 0 &&\n                    !this.__box.equals( this.box ) )\n            )\n        ){\n            this.build( {\n                \"position\": true,\n                \"color\": true,\n                \"index\": true,\n                \"normal\": !this.contour\n            } );\n        }\n\n        return this;\n\n    }\n\n    getColorParams(){\n\n        const p = super.getColorParams();\n\n        p.volume = this.colorVolume;\n\n        return p;\n\n    }\n\n    dispose(){\n\n        this.viewer.signals.ticked.remove( this.setBox, this );\n\n        super.dispose();\n\n    }\n\n}\n\n\nexport default SurfaceRepresentation;\n",
+    "content": "/**\n * @file Surface Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { Vector3, Box3 } from \"../../lib/three.es6.js\";\n\nimport { defaults } from \"../utils.js\";\nimport Representation from \"./representation.js\";\nimport Volume from \"../surface/volume.js\";\nimport SurfaceBuffer from \"../buffer/surface-buffer.js\";\nimport DoubleSidedBuffer from \"../buffer/doublesided-buffer\";\nimport ContourBuffer from \"../buffer/contour-buffer.js\";\n\n\n/**\n * Surface representation parameter object.\n * @typedef {Object} SurfaceRepresentationParameters - surface representation parameters\n * @mixes RepresentationParameters\n *\n * @property {String} isolevelType - Meaning of the isolevel value. Either *value* for the literal value or *sigma* as a factor of the sigma of the data. For volume data only.\n * @property {Float} isolevel - The value at which to create the isosurface. For volume data only.\n * @property {Integer} smooth - How many iterations of laplacian smoothing after surface triangulation. For volume data only.\n * @property {Boolean} background - Render the surface in the background, unlit.\n * @property {Boolean} opaqueBack - Render the back-faces (where normals point away from the camera) of the surface opaque, ignoring the transparency parameter.\n * @property {Integer} boxSize - Size of the box to triangulate volume data in. Set to zero to triangulate the whole volume. For volume data only.\n * @property {Boolean} useWorker - Weather or not to triangulate the volume asynchronously in a Web Worker. For volume data only.\n * @property {Boolean} wrap - Wrap volume data around the edges; use in conjuction with boxSize but not larger than the volume dimension. For volume data only.\n */\n\n\n/**\n * Surface representation\n */\nclass SurfaceRepresentation extends Representation{\n\n    /**\n     * Create Surface representation object\n     * @param {Surface|Volume} surface - the surface or volume to be represented\n     * @param {Viewer} viewer - a viewer object\n     * @param {SurfaceRepresentationParameters} params - surface representation parameters\n     */\n    constructor( surface, viewer, params ){\n\n        super( surface, viewer, params );\n\n        this.type = \"surface\";\n\n        this.parameters = Object.assign( {\n\n            isolevelType: {\n                type: \"select\", options: {\n                    \"value\": \"value\", \"sigma\": \"sigma\"\n                }\n            },\n            isolevel: {\n                type: \"number\", precision: 2, max: 1000, min: -1000\n            },\n            smooth: {\n                type: \"integer\", precision: 1, max: 10, min: 0\n            },\n            background: {\n                type: \"boolean\", rebuild: true  // FIXME\n            },\n            opaqueBack: {\n                type: \"boolean\", buffer: true\n            },\n            boxSize: {\n                type: \"integer\", precision: 1, max: 100, min: 0\n            },\n            colorVolume: {\n                type: \"hidden\"\n            },\n            contour: {\n                type: \"boolean\", rebuild: true\n            },\n            useWorker: {\n                type: \"boolean\", rebuild: true\n            },\n            wrap: {\n                type: \"boolean\", rebuild: true\n            },\n\n        }, this.parameters );\n\n        if( surface instanceof Volume ){\n            this.surface = undefined;\n            this.volume = surface;\n        }else{\n            this.surface = surface;\n            this.volume = undefined;\n        }\n\n        this.boxCenter = new Vector3();\n        this.__boxCenter = new Vector3();\n        this.box = new Box3();\n        this.__box = new Box3();\n\n        this._position = new Vector3();\n        this.setBox = function setBox(){\n            this._position.copy( viewer.translationGroup.position ).negate();\n            if( !this._position.equals( this.boxCenter ) ){\n                this.setParameters( { \"boxCenter\": this._position } );\n            }\n        };\n\n        this.viewer.signals.ticked.add( this.setBox, this );\n\n        this.init( params );\n\n    }\n\n    init( params ){\n\n        const p = params || {};\n        p.colorScheme = defaults( p.colorScheme, \"uniform\" );\n        p.colorValue = defaults( p.colorValue, 0xDDDDDD );\n\n        this.isolevelType  = defaults( p.isolevelType, \"sigma\" );\n        this.isolevel = defaults( p.isolevel, 2.0 );\n        this.smooth = defaults( p.smooth, 0 );\n        this.background = defaults( p.background, false );\n        this.opaqueBack = defaults( p.opaqueBack, true );\n        this.boxSize = defaults( p.boxSize, 0 );\n        this.colorVolume = defaults( p.colorVolume, undefined );\n        this.contour = defaults( p.contour, false );\n        this.useWorker = defaults( p.useWorker, true );\n        this.wrap = defaults( p.wrap, false );\n\n        super.init( p );\n\n        this.build();\n\n    }\n\n    attach( callback ){\n\n        this.bufferList.forEach( buffer => {\n            this.viewer.add( buffer );\n        } );\n\n        this.setVisibility( this.visible );\n\n        callback();\n\n    }\n\n    prepare( callback ){\n\n        if( this.volume ){\n\n            let isolevel;\n\n            if( this.isolevelType === \"sigma\" ){\n                isolevel = this.volume.getValueForSigma( this.isolevel );\n            }else{\n                isolevel = this.isolevel;\n            }\n\n            if( !this.surface ||\n                this.__isolevel !== isolevel ||\n                this.__smooth !== this.smooth ||\n                this.__contour !== this.contour ||\n                this.__wrap !== this.wrap ||\n                this.__boxSize !== this.boxSize ||\n                ( this.boxSize > 0 &&\n                    !this.__boxCenter.equals( this.boxCenter ) )\n            ){\n                this.__isolevel = isolevel;\n                this.__smooth = this.smooth;\n                this.__contour = this.contour;\n                this.__wrap = this.wrap\n                this.__boxSize = this.boxSize;\n                this.__boxCenter.copy( this.boxCenter );\n                this.__box.copy( this.box );\n\n                const onSurfaceFinish = surface => {\n                    this.surface = surface;\n                    callback();\n                };\n\n                if( this.useWorker ){\n                    this.volume.getSurfaceWorker(\n                        isolevel, this.smooth, this.boxCenter, this.boxSize,\n                        this.contour, this.wrap, onSurfaceFinish\n                    );\n                }else{\n                    onSurfaceFinish(\n                        this.volume.getSurface(\n                            isolevel, this.smooth, this.boxCenter, this.boxSize,\n                            this.contour, this.wrap\n                        )\n                    );\n                }\n            }else{\n                callback();\n            }\n\n        }else{\n            callback();\n        }\n\n    }\n\n    create(){\n\n        const sd = {\n            position: this.surface.getPosition(),\n            color: this.surface.getColor( this.getColorParams() ),\n            index: this.surface.getIndex(),\n        };\n\n        let buffer;\n\n        if( this.contour ){\n\n            buffer = new ContourBuffer(\n                sd, this.getBufferParams( {\n                    wireframe: false\n            } ) );\n\n        } else {\n\n            sd.normal = this.surface.getNormal(),\n            sd.picking = this.surface.getPicking()\n\n            const surfaceBuffer = new SurfaceBuffer(\n                sd, this.getBufferParams( {\n                    background: this.background,\n                    opaqueBack: this.opaqueBack,\n                    dullInterior: false\n                } ) );\n\n            buffer = new DoubleSidedBuffer( surfaceBuffer );\n\n        }\n\n        this.bufferList.push( buffer );\n\n    }\n\n    update( what ){\n\n        if( this.bufferList.length === 0 ) return;\n\n        what = what || {};\n\n        const surfaceData = {};\n\n        if( what.position ){\n            surfaceData.position = this.surface.getPosition();\n        }\n\n        if( what.color ){\n            surfaceData.color = this.surface.getColor(\n                this.getColorParams()\n            );\n        }\n\n        if( what.index ){\n            surfaceData.index = this.surface.getIndex();\n        }\n\n        if( what.normal ){\n            surfaceData.normal = this.surface.getNormal();\n        }\n\n        this.bufferList.forEach( function( buffer ){\n            buffer.setAttributes( surfaceData );\n        } );\n\n    }\n\n    /**\n     * Set representation parameters\n     * @alias SurfaceRepresentation#setParameters\n     * @param {SurfaceRepresentationParameters} params - surface parameter object\n     * @param {Object} [what] - buffer data attributes to be updated,\n     *                        note that this needs to be implemented in the\n     *                        derived classes. Generally it allows more\n     *                        fine-grained control over updating than\n     *                        forcing a rebuild.\n     * @param {Boolean} what.position - update position data\n     * @param {Boolean} what.color - update color data\n     * @param {Boolean} [rebuild] - whether or not to rebuild the representation\n     * @return {SurfaceRepresentation} this object\n     */\n    setParameters( params, what, rebuild ){\n\n        if( params && params.isolevelType !== undefined &&\n            this.volume\n        ){\n\n            if( this.isolevelType === \"value\" &&\n                params.isolevelType === \"sigma\"\n            ){\n\n                this.isolevel = this.volume.getSigmaForValue(\n                    this.isolevel\n                );\n\n            }else if( this.isolevelType === \"sigma\" &&\n                params.isolevelType === \"value\"\n            ){\n\n                this.isolevel = this.volume.getValueForSigma(\n                    this.isolevel\n                );\n\n            }\n\n            this.isolevelType = params.isolevelType;\n\n        }\n\n        if( params && params.boxCenter ){\n            this.boxCenter.copy( params.boxCenter );\n            delete params.boxCenter;\n        }\n\n        // Forbid wireframe && contour as in molsurface\n        if( params && params.wireframe && (\n            params.contour || ( params.contour === undefined && this.contour )\n        ) ){\n            params.wireframe = false;\n        }\n\n        super.setParameters( params, what, rebuild );\n\n        if( this.volume ){\n            this.volume.getBox( this.boxCenter, this.boxSize, this.box );\n        }\n\n        if( params && params.colorVolume !== undefined ){\n            what.color = true;\n        }\n\n        if( this.surface && (\n                params.isolevel !== undefined ||\n                params.smooth !== undefined ||\n                params.wrap !== undefined ||\n                params.boxSize !== undefined ||\n                ( this.boxSize > 0 &&\n                    !this.__box.equals( this.box ) )\n            )\n        ){\n            this.build( {\n                \"position\": true,\n                \"color\": true,\n                \"index\": true,\n                \"normal\": !this.contour\n            } );\n        }\n\n        return this;\n\n    }\n\n    getColorParams(){\n\n        const p = super.getColorParams();\n\n        p.volume = this.colorVolume;\n\n        return p;\n\n    }\n\n    dispose(){\n\n        this.viewer.signals.ticked.remove( this.setBox, this );\n\n        super.dispose();\n\n    }\n\n}\n\n\nexport default SurfaceRepresentation;\n",
     "static": true,
     "longname": "src/representation/surface-representation.js",
     "access": null,
@@ -61600,12 +61600,12 @@
   {
     "__docId__": 2290,
     "kind": "method",
-    "name": "getSurfaceData",
+    "name": "create",
     "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#getSurfaceData",
+    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#create",
     "access": null,
     "description": null,
     "lineNumber": 207,
@@ -61616,36 +61616,10 @@
         "tagValue": ""
       }
     ],
-    "params": [],
-    "return": {
-      "types": [
-        "{\"position\": *, \"color\": *, \"index\": *, \"normal\": *, \"picking\": *}"
-      ]
-    }
-  },
-  {
-    "__docId__": 2291,
-    "kind": "method",
-    "name": "create",
-    "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#create",
-    "access": null,
-    "description": null,
-    "lineNumber": 219,
-    "undocument": true,
-    "unknown": [
-      {
-        "tagName": "@_undocument",
-        "tagValue": ""
-      }
-    ],
     "params": []
   },
   {
-    "__docId__": 2292,
+    "__docId__": 2291,
     "kind": "method",
     "name": "update",
     "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
@@ -61655,7 +61629,7 @@
     "longname": "src/representation/surface-representation.js~SurfaceRepresentation#update",
     "access": null,
     "description": null,
-    "lineNumber": 249,
+    "lineNumber": 244,
     "undocument": true,
     "unknown": [
       {
@@ -61673,7 +61647,7 @@
     ]
   },
   {
-    "__docId__": 2293,
+    "__docId__": 2292,
     "kind": "method",
     "name": "setParameters",
     "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
@@ -61683,7 +61657,7 @@
     "longname": "src/representation/surface-representation.js~SurfaceRepresentation#setParameters",
     "access": null,
     "description": "Set representation parameters",
-    "lineNumber": 295,
+    "lineNumber": 290,
     "unknown": [
       {
         "tagName": "@alias",
@@ -61752,6 +61726,29 @@
     }
   },
   {
+    "__docId__": 2293,
+    "kind": "member",
+    "name": "isolevel",
+    "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
+    "static": false,
+    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#isolevel",
+    "access": null,
+    "description": null,
+    "lineNumber": 300,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
     "__docId__": 2294,
     "kind": "member",
     "name": "isolevel",
@@ -61760,7 +61757,7 @@
     "longname": "src/representation/surface-representation.js~SurfaceRepresentation#isolevel",
     "access": null,
     "description": null,
-    "lineNumber": 305,
+    "lineNumber": 308,
     "undocument": true,
     "unknown": [
       {
@@ -61777,13 +61774,13 @@
   {
     "__docId__": 2295,
     "kind": "member",
-    "name": "isolevel",
+    "name": "isolevelType",
     "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
     "static": false,
-    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#isolevel",
+    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#isolevelType",
     "access": null,
     "description": null,
-    "lineNumber": 313,
+    "lineNumber": 314,
     "undocument": true,
     "unknown": [
       {
@@ -61799,29 +61796,6 @@
   },
   {
     "__docId__": 2296,
-    "kind": "member",
-    "name": "isolevelType",
-    "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
-    "static": false,
-    "longname": "src/representation/surface-representation.js~SurfaceRepresentation#isolevelType",
-    "access": null,
-    "description": null,
-    "lineNumber": 319,
-    "undocument": true,
-    "unknown": [
-      {
-        "tagName": "@_undocument",
-        "tagValue": ""
-      }
-    ],
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 2297,
     "kind": "method",
     "name": "getColorParams",
     "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
@@ -61831,7 +61805,7 @@
     "longname": "src/representation/surface-representation.js~SurfaceRepresentation#getColorParams",
     "access": null,
     "description": null,
-    "lineNumber": 366,
+    "lineNumber": 361,
     "undocument": true,
     "unknown": [
       {
@@ -61847,7 +61821,7 @@
     }
   },
   {
-    "__docId__": 2298,
+    "__docId__": 2297,
     "kind": "method",
     "name": "dispose",
     "memberof": "src/representation/surface-representation.js~SurfaceRepresentation",
@@ -61857,7 +61831,7 @@
     "longname": "src/representation/surface-representation.js~SurfaceRepresentation#dispose",
     "access": null,
     "description": null,
-    "lineNumber": 376,
+    "lineNumber": 371,
     "undocument": true,
     "unknown": [
       {
@@ -61868,7 +61842,7 @@
     "params": []
   },
   {
-    "__docId__": 2299,
+    "__docId__": 2298,
     "kind": "file",
     "name": "src/representation/trace-representation.js",
     "content": "/**\n * @file Trace Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { RepresentationRegistry } from \"../globals.js\";\nimport { defaults } from \"../utils.js\";\nimport Spline from \"../geometry/spline.js\";\nimport StructureRepresentation from \"./structure-representation.js\";\nimport TraceBuffer from \"../buffer/trace-buffer.js\";\n\n\nclass TraceRepresentation extends StructureRepresentation{\n\n    constructor( structure, viewer, params ){\n\n        super( structure, viewer, params );\n\n        this.type = \"trace\";\n\n        this.parameters = Object.assign( {\n\n            subdiv: {\n                type: \"integer\", max: 50, min: 1, rebuild: true\n            },\n            tension: {\n                type: \"number\", precision: 1, max: 1.0, min: 0.1\n            },\n            smoothSheet: {\n                type: \"boolean\", rebuild: true\n            }\n\n        }, this.parameters, {\n\n            flatShaded: null,\n            side: null,\n            wireframe: null\n\n        } );\n\n        this.init( params );\n\n    }\n\n    init( params ){\n\n        var p = params || {};\n        p.colorScheme = defaults( p.colorScheme, \"chainname\" );\n        p.colorScale = defaults( p.colorScale, \"RdYlBu\" );\n\n        if( p.quality === \"low\" ){\n            this.subdiv = 3;\n        }else if( p.quality === \"medium\" ){\n            this.subdiv = 6;\n        }else if( p.quality === \"high\" ){\n            this.subdiv = 12;\n        }else{\n            this.subdiv = defaults( p.subdiv, 6 );\n        }\n\n        this.tension = defaults( p.tension, NaN );\n        this.smoothSheet = defaults( p.smoothSheet, false );\n\n        super.init( p );\n\n    }\n\n    getSplineParams( params ){\n\n        return Object.assign( {\n            subdiv: this.subdiv,\n            tension: this.tension,\n            directional: false,\n            smoothSheet: this.smoothSheet\n        }, params );\n\n    }\n\n    createData( sview ){\n\n        var bufferList = [];\n        var polymerList = [];\n\n        this.structure.eachPolymer( polymer => {\n\n            if( polymer.residueCount < 4 ) return;\n            polymerList.push( polymer );\n\n            var spline = new Spline( polymer, this.getSplineParams() );\n            var subPos = spline.getSubdividedPosition();\n            var subCol = spline.getSubdividedColor( this.getColorParams() );\n\n            bufferList.push(\n                new TraceBuffer(\n                    Object.assign( {}, subPos, subCol ),\n                    this.getBufferParams()\n                )\n            );\n\n        }, sview.getSelection() );\n\n        return {\n            bufferList: bufferList,\n            polymerList: polymerList\n        };\n\n    }\n\n    updateData( what, data ){\n\n        what = what || {};\n\n        var i = 0;\n        var n = data.polymerList.length;\n\n        for( i = 0; i < n; ++i ){\n\n            var bufferData = {};\n            var spline = new Spline( data.polymerList[ i ], this.getSplineParams() );\n\n            if( what.position ){\n                var subPos = spline.getSubdividedPosition();\n                bufferData.position = subPos.position;\n            }\n\n            if( what.color ){\n                var subCol = spline.getSubdividedColor( this.getColorParams() );\n                bufferData.color = subCol.color;\n            }\n\n            data.bufferList[ i ].setAttributes( bufferData );\n\n        }\n\n    }\n\n    setParameters( params ){\n\n        var rebuild = false;\n        var what = {};\n\n        if( params && params.tension ){\n            what.position = true;\n        }\n\n        super.setParameters( params, what, rebuild );\n\n        return this;\n\n    }\n\n}\n\n\nRepresentationRegistry.add( \"trace\", TraceRepresentation );\n\n\nexport default TraceRepresentation;\n",
@@ -61879,7 +61853,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2300,
+    "__docId__": 2299,
     "kind": "class",
     "name": "TraceRepresentation",
     "memberof": "src/representation/trace-representation.js",
@@ -61904,7 +61878,7 @@
     ]
   },
   {
-    "__docId__": 2301,
+    "__docId__": 2300,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -61944,7 +61918,7 @@
     ]
   },
   {
-    "__docId__": 2302,
+    "__docId__": 2301,
     "kind": "member",
     "name": "type",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -61967,7 +61941,7 @@
     }
   },
   {
-    "__docId__": 2303,
+    "__docId__": 2302,
     "kind": "member",
     "name": "parameters",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -61990,7 +61964,7 @@
     }
   },
   {
-    "__docId__": 2304,
+    "__docId__": 2303,
     "kind": "method",
     "name": "init",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62018,7 +61992,7 @@
     ]
   },
   {
-    "__docId__": 2305,
+    "__docId__": 2304,
     "kind": "member",
     "name": "subdiv",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62041,7 +62015,7 @@
     }
   },
   {
-    "__docId__": 2306,
+    "__docId__": 2305,
     "kind": "member",
     "name": "subdiv",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62064,7 +62038,7 @@
     }
   },
   {
-    "__docId__": 2307,
+    "__docId__": 2306,
     "kind": "member",
     "name": "subdiv",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62087,7 +62061,7 @@
     }
   },
   {
-    "__docId__": 2308,
+    "__docId__": 2307,
     "kind": "member",
     "name": "subdiv",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62110,7 +62084,7 @@
     }
   },
   {
-    "__docId__": 2309,
+    "__docId__": 2308,
     "kind": "member",
     "name": "tension",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62133,7 +62107,7 @@
     }
   },
   {
-    "__docId__": 2310,
+    "__docId__": 2309,
     "kind": "member",
     "name": "smoothSheet",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62156,7 +62130,7 @@
     }
   },
   {
-    "__docId__": 2311,
+    "__docId__": 2310,
     "kind": "method",
     "name": "getSplineParams",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62189,7 +62163,7 @@
     }
   },
   {
-    "__docId__": 2312,
+    "__docId__": 2311,
     "kind": "method",
     "name": "createData",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62222,7 +62196,7 @@
     }
   },
   {
-    "__docId__": 2313,
+    "__docId__": 2312,
     "kind": "method",
     "name": "updateData",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62256,7 +62230,7 @@
     ]
   },
   {
-    "__docId__": 2314,
+    "__docId__": 2313,
     "kind": "method",
     "name": "setParameters",
     "memberof": "src/representation/trace-representation.js~TraceRepresentation",
@@ -62289,7 +62263,7 @@
     }
   },
   {
-    "__docId__": 2315,
+    "__docId__": 2314,
     "kind": "file",
     "name": "src/representation/trajectory-representation.js",
     "content": "/**\n * @file Trajectory Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { Color } from \"../../lib/three.es6.js\";\n\nimport { defaults } from \"../utils.js\";\nimport { uniformArray, uniformArray3 } from \"../math/array-utils.js\";\n\nimport StructureRepresentation from \"./structure-representation.js\";\n\nimport SphereBuffer from \"../buffer/sphere-buffer.js\";\nimport CylinderBuffer from \"../buffer/cylinder-buffer.js\";\nimport PointBuffer from \"../buffer/point-buffer.js\";\nimport LineBuffer from \"../buffer/line-buffer.js\";\n\n\n/**\n * Trajectory representation parameter object.\n * @typedef {Object} TrajectoryRepresentationParameters - parameters\n *\n * @property {Boolean} drawLine - draw lines\n * @property {Boolean} drawCylinder - draw cylinders\n * @property {Boolean} drawPoint - draw points\n * @property {Boolean} drawSphere - draw sphere\n * @property {Integer} linewidth - line width\n * @property {Integer} pointSize - point size\n * @property {Boolean} sizeAttenuation - size attenuation\n * @property {Boolean} sort - sort flag for points\n */\n\n\n/**\n * Trajectory representation\n */\nclass TrajectoryRepresentation extends StructureRepresentation{\n\n    /**\n     * @param  {Trajectory} trajectory - the trajectory\n     * @param  {Viewer} viewer - viewer object\n     * @param  {TrajectoryRepresentationParameters} params - parameters\n     */\n    constructor( trajectory, viewer, params ){\n\n        super( trajectory.structure, viewer, params );\n\n        this.type = \"trajectory\";\n\n        this.parameters = Object.assign( {\n\n            drawLine: {\n                type: \"boolean\", rebuild: true\n            },\n            drawCylinder: {\n                type: \"boolean\", rebuild: true\n            },\n            drawPoint: {\n                type: \"boolean\", rebuild: true\n            },\n            drawSphere: {\n                type: \"boolean\", rebuild: true\n            },\n\n            linewidth: {\n                type: \"integer\", max: 20, min: 1, rebuild: true\n            },\n            pointSize: {\n                type: \"integer\", max: 20, min: 1, rebuild: true\n            },\n            sizeAttenuation: {\n                type: \"boolean\", rebuild: true\n            },\n            sort: {\n                type: \"boolean\", rebuild: true\n            },\n\n        }, this.parameters );\n\n        this.manualAttach = true;\n\n        this.trajectory = trajectory;\n\n        this.init( params );\n\n    }\n\n    init( params ){\n\n        var p = params || {};\n        p.colorScheme = defaults( p.colorScheme, \"uniform\" );\n        p.colorValue = defaults( p.colorValue, 0xDDDDDD );\n\n        this.drawLine = defaults( p.drawLine, true );\n        this.drawCylinder = defaults( p.drawCylinder, false );\n        this.drawPoint = defaults( p.drawPoint, false );\n        this.drawSphere = defaults( p.drawSphere, false );\n\n        this.pointSize = defaults( p.pointSize, 1 );\n        this.sizeAttenuation = defaults( p.sizeAttenuation, false );\n        this.sort = defaults( p.sort, true );\n\n        super.init( p );\n\n    }\n\n    attach( callback ){\n\n        this.bufferList.forEach( buffer => {\n            this.viewer.add( buffer );\n        } );\n        this.setVisibility( this.visible );\n\n        callback();\n\n    }\n\n    prepare( callback ){\n\n        // TODO\n        callback();\n\n    }\n\n    create(){\n\n        // Log.log( this.selection )\n        // Log.log( this.atomSet )\n\n        if( this.atomSet.atomCount === 0 ) return;\n\n        var scope = this;\n\n        var index = this.atomSet.atoms[ 0 ].index;\n\n        this.trajectory.getPath( index, function( path ){\n\n            var n = path.length / 3;\n            var tc = new Color( scope.colorValue );\n\n            if( scope.drawSphere ){\n\n                var sphereBuffer = new SphereBuffer(\n                    {\n                        position: path,\n                        color: uniformArray3( n, tc.r, tc.g, tc.b ),\n                        radius: uniformArray( n, 0.2 )\n                    },\n                    scope.getBufferParams( {\n                        sphereDetail: scope.sphereDetail,\n                        dullInterior: true,\n                        disableImpostor: scope.disableImpostor\n                    } )\n                );\n\n                scope.bufferList.push( sphereBuffer );\n\n            }\n\n            if( scope.drawCylinder ){\n\n                var cylinderBuffer = new CylinderBuffer(\n                    {\n                        position1: path.subarray( 0, -3 ),\n                        position2: path.subarray( 3 ),\n                        color: uniformArray3( n - 1, tc.r, tc.g, tc.b ),\n                        color2: uniformArray3( n - 1, tc.r, tc.g, tc.b ),\n                        radius: uniformArray( n, 0.05 )\n                    },\n                    scope.getBufferParams( {\n                        openEnded: false,\n                        radialSegments: scope.radialSegments,\n                        disableImpostor: scope.disableImpostor,\n                        dullInterior: true\n                    } )\n\n                );\n\n                scope.bufferList.push( cylinderBuffer );\n\n            }\n\n            if( scope.drawPoint ){\n\n                var pointBuffer = new PointBuffer(\n                    {\n                        position: path,\n                        color: uniformArray3( n, tc.r, tc.g, tc.b )\n                    },\n                    scope.getBufferParams( {\n                        pointSize: scope.pointSize,\n                        sizeAttenuation: scope.sizeAttenuation,\n                        sort: scope.sort,\n                    } )\n                );\n\n                scope.bufferList.push( pointBuffer );\n\n            }\n\n            if( scope.drawLine ){\n\n                var lineBuffer = new LineBuffer(\n                    {\n                        position1: path.subarray( 0, -3 ),\n                        position2: path.subarray( 3 ),\n                        color: uniformArray3( n - 1, tc.r, tc.g, tc.b ),\n                        color2: uniformArray3( n - 1, tc.r, tc.g, tc.b )\n                    },\n                    scope.getBufferParams()\n                );\n\n                scope.bufferList.push( lineBuffer );\n\n            }\n\n            scope.attach();\n\n        } );\n\n    }\n\n}\n\n\nexport default TrajectoryRepresentation;\n",
@@ -62300,7 +62274,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2316,
+    "__docId__": 2315,
     "kind": "typedef",
     "name": "TrajectoryRepresentationParameters",
     "memberof": "src/representation/trajectory-representation.js",
@@ -62399,7 +62373,7 @@
     }
   },
   {
-    "__docId__": 2317,
+    "__docId__": 2316,
     "kind": "class",
     "name": "TrajectoryRepresentation",
     "memberof": "src/representation/trajectory-representation.js",
@@ -62417,7 +62391,7 @@
     ]
   },
   {
-    "__docId__": 2318,
+    "__docId__": 2317,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62462,7 +62436,7 @@
     ]
   },
   {
-    "__docId__": 2319,
+    "__docId__": 2318,
     "kind": "member",
     "name": "type",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62485,7 +62459,7 @@
     }
   },
   {
-    "__docId__": 2320,
+    "__docId__": 2319,
     "kind": "member",
     "name": "parameters",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62508,7 +62482,7 @@
     }
   },
   {
-    "__docId__": 2321,
+    "__docId__": 2320,
     "kind": "member",
     "name": "manualAttach",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62531,7 +62505,7 @@
     }
   },
   {
-    "__docId__": 2322,
+    "__docId__": 2321,
     "kind": "member",
     "name": "trajectory",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62554,7 +62528,7 @@
     }
   },
   {
-    "__docId__": 2323,
+    "__docId__": 2322,
     "kind": "method",
     "name": "init",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62582,7 +62556,7 @@
     ]
   },
   {
-    "__docId__": 2324,
+    "__docId__": 2323,
     "kind": "member",
     "name": "drawLine",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62605,7 +62579,7 @@
     }
   },
   {
-    "__docId__": 2325,
+    "__docId__": 2324,
     "kind": "member",
     "name": "drawCylinder",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62628,7 +62602,7 @@
     }
   },
   {
-    "__docId__": 2326,
+    "__docId__": 2325,
     "kind": "member",
     "name": "drawPoint",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62651,7 +62625,7 @@
     }
   },
   {
-    "__docId__": 2327,
+    "__docId__": 2326,
     "kind": "member",
     "name": "drawSphere",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62674,7 +62648,7 @@
     }
   },
   {
-    "__docId__": 2328,
+    "__docId__": 2327,
     "kind": "member",
     "name": "pointSize",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62697,7 +62671,7 @@
     }
   },
   {
-    "__docId__": 2329,
+    "__docId__": 2328,
     "kind": "member",
     "name": "sizeAttenuation",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62720,7 +62694,7 @@
     }
   },
   {
-    "__docId__": 2330,
+    "__docId__": 2329,
     "kind": "member",
     "name": "sort",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62743,7 +62717,7 @@
     }
   },
   {
-    "__docId__": 2331,
+    "__docId__": 2330,
     "kind": "method",
     "name": "attach",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62771,7 +62745,7 @@
     ]
   },
   {
-    "__docId__": 2332,
+    "__docId__": 2331,
     "kind": "method",
     "name": "prepare",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62799,7 +62773,7 @@
     ]
   },
   {
-    "__docId__": 2333,
+    "__docId__": 2332,
     "kind": "method",
     "name": "create",
     "memberof": "src/representation/trajectory-representation.js~TrajectoryRepresentation",
@@ -62820,7 +62794,7 @@
     "params": []
   },
   {
-    "__docId__": 2334,
+    "__docId__": 2333,
     "kind": "file",
     "name": "src/representation/tube-representation.js",
     "content": "/**\n * @file Tube Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { RepresentationRegistry } from \"../globals.js\";\nimport { defaults } from \"../utils.js\";\nimport CartoonRepresentation from \"./cartoon-representation.js\";\n\n\nclass TubeRepresentation extends CartoonRepresentation{\n\n    constructor( structure, viewer, params ){\n\n        super( structure, viewer, params );\n\n        this.type = \"tube\";\n\n        this.parameters = Object.assign(\n            {}, this.parameters, { aspectRatio: null }\n        );\n\n    }\n\n    init( params ){\n\n        var p = params || {};\n        p.aspectRatio = 1.0;\n        p.scale = defaults( p.scale, 2.0 );\n\n        if( p.quality === \"low\" ){\n            this.radialSegments = 5;\n        }\n\n        super.init( p );\n\n    }\n\n    getSplineParams( /*params*/ ){\n\n        return super.getSplineParams( {\n            directional: false\n        } );\n\n    }\n\n}\n\n\nRepresentationRegistry.add( \"tube\", TubeRepresentation );\n\n\nexport default TubeRepresentation;\n",
@@ -62831,7 +62805,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2335,
+    "__docId__": 2334,
     "kind": "class",
     "name": "TubeRepresentation",
     "memberof": "src/representation/tube-representation.js",
@@ -62856,7 +62830,7 @@
     ]
   },
   {
-    "__docId__": 2336,
+    "__docId__": 2335,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/representation/tube-representation.js~TubeRepresentation",
@@ -62896,7 +62870,7 @@
     ]
   },
   {
-    "__docId__": 2337,
+    "__docId__": 2336,
     "kind": "member",
     "name": "type",
     "memberof": "src/representation/tube-representation.js~TubeRepresentation",
@@ -62919,7 +62893,7 @@
     }
   },
   {
-    "__docId__": 2338,
+    "__docId__": 2337,
     "kind": "member",
     "name": "parameters",
     "memberof": "src/representation/tube-representation.js~TubeRepresentation",
@@ -62942,7 +62916,7 @@
     }
   },
   {
-    "__docId__": 2339,
+    "__docId__": 2338,
     "kind": "method",
     "name": "init",
     "memberof": "src/representation/tube-representation.js~TubeRepresentation",
@@ -62970,7 +62944,7 @@
     ]
   },
   {
-    "__docId__": 2340,
+    "__docId__": 2339,
     "kind": "member",
     "name": "radialSegments",
     "memberof": "src/representation/tube-representation.js~TubeRepresentation",
@@ -62993,7 +62967,7 @@
     }
   },
   {
-    "__docId__": 2341,
+    "__docId__": 2340,
     "kind": "method",
     "name": "getSplineParams",
     "memberof": "src/representation/tube-representation.js~TubeRepresentation",
@@ -63019,7 +62993,7 @@
     }
   },
   {
-    "__docId__": 2342,
+    "__docId__": 2341,
     "kind": "file",
     "name": "src/representation/unitcell-representation.js",
     "content": "/**\n * @file Unitcell Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { RepresentationRegistry } from \"../globals.js\";\nimport { defaults } from \"../utils.js\";\nimport StructureRepresentation from \"./structure-representation.js\";\nimport SphereBuffer from \"../buffer/sphere-buffer.js\";\nimport CylinderBuffer from \"../buffer/cylinder-buffer.js\";\n\n\nclass UnitcellRepresentation extends StructureRepresentation{\n\n    constructor( structure, viewer, params ){\n\n        super( structure, viewer, params );\n\n        this.type = \"unitcell\";\n\n        this.parameters = Object.assign( {\n\n            radius: {\n                type: \"number\", precision: 3, max: 10.0, min: 0.001\n            },\n            sphereDetail: true,\n            radialSegments: true,\n            disableImpostor: true\n\n        }, this.parameters, {\n            assembly: null\n        } );\n\n        this.init( params );\n\n    }\n\n    init( params ){\n\n        const p = params || {};\n\n        let defaultRadius = 0.5;\n        if( this.structure.unitcell ){\n            defaultRadius = Math.cbrt( this.structure.unitcell.volume ) / 200;\n        }\n\n        p.radius = defaults( p.radius, defaultRadius );\n        p.colorValue = defaults( p.colorValue, \"orange\" );\n\n        super.init( p );\n\n    }\n\n    getUnitcellData( structure ){\n\n        return structure.unitcell.getData( structure );\n\n    }\n\n    create(){\n\n        const structure = this.structureView.getStructure();\n        if( !structure.unitcell ) return;\n        const unitcellData = this.getUnitcellData( structure );\n\n        this.sphereBuffer = new SphereBuffer(\n            unitcellData.vertex,\n            this.getBufferParams( {\n                sphereDetail: this.sphereDetail,\n                disableImpostor: this.disableImpostor,\n                dullInterior: true\n            } )\n        );\n\n        this.cylinderBuffer = new CylinderBuffer(\n            unitcellData.edge,\n            this.getBufferParams( {\n                openEnded: true,\n                radialSegments: this.radialSegments,\n                disableImpostor: this.disableImpostor,\n                dullInterior: true\n            } )\n        );\n\n        this.dataList.push( {\n            sview: this.structureView,\n            bufferList: [ this.sphereBuffer, this.cylinderBuffer ]\n        } );\n\n    }\n\n    updateData( what, data ){\n\n        const structure = data.sview.getStructure();\n        const unitcellData = this.getUnitcellData( structure );\n        const sphereData = {};\n        const cylinderData = {};\n\n        if( !what || what.position ){\n            sphereData.position = unitcellData.vertexPosition;\n            cylinderData.position1 = unitcellData.edgePosition1;\n            cylinderData.position2 = unitcellData.edgePosition2;\n        }\n\n        if( !what || what.color ){\n            sphereData.color = unitcellData.vertexColor;\n            cylinderData.color = unitcellData.edgeColor;\n            cylinderData.color2 = unitcellData.edgeColor;\n        }\n\n        if( !what || what.radius ){\n            sphereData.radius = unitcellData.vertexRadius;\n            cylinderData.radius = unitcellData.edgeRadius;\n        }\n\n        this.sphereBuffer.setAttributes( sphereData );\n        this.cylinderBuffer.setAttributes( cylinderData );\n\n    }\n\n}\n\n\nRepresentationRegistry.add( \"unitcell\", UnitcellRepresentation );\n\n\nexport default UnitcellRepresentation;\n",
@@ -63030,7 +63004,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2343,
+    "__docId__": 2342,
     "kind": "class",
     "name": "UnitcellRepresentation",
     "memberof": "src/representation/unitcell-representation.js",
@@ -63055,7 +63029,7 @@
     ]
   },
   {
-    "__docId__": 2344,
+    "__docId__": 2343,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63095,7 +63069,7 @@
     ]
   },
   {
-    "__docId__": 2345,
+    "__docId__": 2344,
     "kind": "member",
     "name": "type",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63118,7 +63092,7 @@
     }
   },
   {
-    "__docId__": 2346,
+    "__docId__": 2345,
     "kind": "member",
     "name": "parameters",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63141,7 +63115,7 @@
     }
   },
   {
-    "__docId__": 2347,
+    "__docId__": 2346,
     "kind": "method",
     "name": "init",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63169,7 +63143,7 @@
     ]
   },
   {
-    "__docId__": 2348,
+    "__docId__": 2347,
     "kind": "method",
     "name": "getUnitcellData",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63202,7 +63176,7 @@
     }
   },
   {
-    "__docId__": 2349,
+    "__docId__": 2348,
     "kind": "method",
     "name": "create",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63223,7 +63197,7 @@
     "params": []
   },
   {
-    "__docId__": 2350,
+    "__docId__": 2349,
     "kind": "member",
     "name": "sphereBuffer",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63246,7 +63220,7 @@
     }
   },
   {
-    "__docId__": 2351,
+    "__docId__": 2350,
     "kind": "member",
     "name": "cylinderBuffer",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63269,7 +63243,7 @@
     }
   },
   {
-    "__docId__": 2352,
+    "__docId__": 2351,
     "kind": "method",
     "name": "updateData",
     "memberof": "src/representation/unitcell-representation.js~UnitcellRepresentation",
@@ -63303,7 +63277,7 @@
     ]
   },
   {
-    "__docId__": 2353,
+    "__docId__": 2352,
     "kind": "file",
     "name": "src/representation/validation-representation.js",
     "content": "/**\n * @file Validation Representation\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { RepresentationRegistry } from \"../globals.js\";\nimport { defaults } from \"../utils.js\";\nimport StructureRepresentation from \"./structure-representation.js\";\nimport CylinderBuffer from \"../buffer/cylinder-buffer.js\";\n\n\n/**\n * Validation representation\n */\nclass ValidationRepresentation extends StructureRepresentation{\n\n    constructor( structure, viewer, params ){\n\n        super( structure, viewer, params );\n\n        this.type = \"validation\";\n\n        this.parameters = Object.assign( {\n\n        }, this.parameters, {\n            radiusType: null,\n            radius: null,\n            scale: null\n        } );\n\n        this.init( params );\n\n    }\n\n    init( params ){\n\n        const p = params || {};\n        p.colorValue = defaults( p.colorValue, \"#f0027f\" );\n\n        super.init( p );\n\n    }\n\n    createData( sview ){\n\n        if( !sview.validation ) return;\n\n        const clashData = sview.validation.getClashData( {\n            structure: sview,\n            color: this.colorValue\n        } );\n\n        const cylinderBuffer = new CylinderBuffer(\n            clashData, this.getBufferParams( { openEnded: false } )\n        );\n\n        return {\n            bufferList: [ cylinderBuffer ]\n        };\n\n    }\n\n}\n\n\nRepresentationRegistry.add( \"validation\", ValidationRepresentation );\n\n\nexport default ValidationRepresentation;\n",
@@ -63314,7 +63288,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2354,
+    "__docId__": 2353,
     "kind": "class",
     "name": "ValidationRepresentation",
     "memberof": "src/representation/validation-representation.js",
@@ -63332,7 +63306,7 @@
     ]
   },
   {
-    "__docId__": 2355,
+    "__docId__": 2354,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/representation/validation-representation.js~ValidationRepresentation",
@@ -63372,7 +63346,7 @@
     ]
   },
   {
-    "__docId__": 2356,
+    "__docId__": 2355,
     "kind": "member",
     "name": "type",
     "memberof": "src/representation/validation-representation.js~ValidationRepresentation",
@@ -63395,7 +63369,7 @@
     }
   },
   {
-    "__docId__": 2357,
+    "__docId__": 2356,
     "kind": "member",
     "name": "parameters",
     "memberof": "src/representation/validation-representation.js~ValidationRepresentation",
@@ -63418,7 +63392,7 @@
     }
   },
   {
-    "__docId__": 2358,
+    "__docId__": 2357,
     "kind": "method",
     "name": "init",
     "memberof": "src/representation/validation-representation.js~ValidationRepresentation",
@@ -63446,7 +63420,7 @@
     ]
   },
   {
-    "__docId__": 2359,
+    "__docId__": 2358,
     "kind": "method",
     "name": "createData",
     "memberof": "src/representation/validation-representation.js~ValidationRepresentation",
@@ -63479,7 +63453,7 @@
     }
   },
   {
-    "__docId__": 2360,
+    "__docId__": 2359,
     "kind": "file",
     "name": "src/script.js",
     "content": "/**\n * @file Script\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport Signal from \"../lib/signals.es6.js\";\n\nimport { Log } from \"./globals.js\";\n\n\n/**\n * Script class\n */\nclass Script{\n\n    /**\n     * Create a script instance\n     * @param {String} functionBody - the function source\n     * @param {String} name - name of the script\n     * @param {String} path - path of the script\n     */\n    constructor( functionBody, name, path ){\n\n        this.signals = {\n\n            elementAdded: new Signal(),\n            elementRemoved: new Signal(),\n            nameChanged: new Signal(),\n\n        };\n\n        this.name = name;\n        this.path = path;\n        this.dir = path.substring( 0, path.lastIndexOf( '/' ) + 1 );\n\n        try {\n\n            // supress warning about string evaluation as code\n            // jshint evil:true\n            this.fn = new Function(\n\n                'stage', 'panel',\n                '__name__', '__path__', '__dir__',\n\n                functionBody\n\n            );\n\n        }catch( e ){\n\n            Log.error( \"Script compilation failed\", e );\n            this.fn = function(){};\n\n        }\n\n    }\n\n    /**\n     * Object type\n     * @readonly\n     */\n    get type(){ return \"Script\"; }\n\n    /**\n     * Execute the script\n     * @param  {Stage} stage - the stage context\n     * @return {Promise} - resolve when script finished running\n     */\n    call( stage ){\n\n        var panel = {\n\n            add: function( /*element*/ ){\n\n                this.signals.elementAdded.dispatch( arguments );\n\n            }.bind( this ),\n\n            remove: function( /*element*/ ){\n\n                this.signals.elementRemoved.dispatch( arguments );\n\n            }.bind( this ),\n\n            setName: function( value ){\n\n                this.signals.nameChanged.dispatch( value );\n\n            }.bind( this )\n\n        };\n\n        return new Promise( ( resolve, reject ) => {\n\n            var args = [\n                stage, panel,\n                this.name, this.path, this.dir\n            ];\n\n            try{\n\n                this.fn.apply( null, args );\n                resolve();\n\n            }catch( e ){\n\n                Log.error( \"Script.fn\", e );\n                reject( e );\n\n            }\n\n        } );\n\n    }\n\n}\n\n\nexport default Script;\n",
@@ -63490,7 +63464,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2361,
+    "__docId__": 2360,
     "kind": "class",
     "name": "Script",
     "memberof": "src/script.js",
@@ -63505,7 +63479,7 @@
     "interface": false
   },
   {
-    "__docId__": 2362,
+    "__docId__": 2361,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/script.js~Script",
@@ -63550,7 +63524,7 @@
     ]
   },
   {
-    "__docId__": 2363,
+    "__docId__": 2362,
     "kind": "member",
     "name": "signals",
     "memberof": "src/script.js~Script",
@@ -63573,7 +63547,7 @@
     }
   },
   {
-    "__docId__": 2364,
+    "__docId__": 2363,
     "kind": "member",
     "name": "name",
     "memberof": "src/script.js~Script",
@@ -63596,7 +63570,7 @@
     }
   },
   {
-    "__docId__": 2365,
+    "__docId__": 2364,
     "kind": "member",
     "name": "path",
     "memberof": "src/script.js~Script",
@@ -63619,7 +63593,7 @@
     }
   },
   {
-    "__docId__": 2366,
+    "__docId__": 2365,
     "kind": "member",
     "name": "dir",
     "memberof": "src/script.js~Script",
@@ -63642,7 +63616,7 @@
     }
   },
   {
-    "__docId__": 2367,
+    "__docId__": 2366,
     "kind": "member",
     "name": "fn",
     "memberof": "src/script.js~Script",
@@ -63665,7 +63639,7 @@
     }
   },
   {
-    "__docId__": 2368,
+    "__docId__": 2367,
     "kind": "get",
     "name": "type",
     "memberof": "src/script.js~Script",
@@ -63689,7 +63663,7 @@
     }
   },
   {
-    "__docId__": 2369,
+    "__docId__": 2368,
     "kind": "method",
     "name": "call",
     "memberof": "src/script.js~Script",
@@ -63722,7 +63696,7 @@
     }
   },
   {
-    "__docId__": 2370,
+    "__docId__": 2369,
     "kind": "file",
     "name": "src/selection.js",
     "content": "/**\n * @file Selection\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport Signal from \"../lib/signals.es6.js\";\n\nimport { binarySearchIndexOf, rangeInSortedArray } from \"./utils.js\";\n\n\nconst kwd = {\n    PROTEIN: 1,\n    NUCLEIC: 2,\n    RNA: 3,\n    DNA: 4,\n    POLYMER: 5,\n    WATER: 6,\n    HELIX: 7,\n    SHEET: 8,\n    TURN: 9,\n    BACKBONE: 10,\n    SIDECHAIN: 11,\n    ALL: 12,\n    HETERO: 13,\n    ION: 14,\n    SACCHARIDE: 15, SUGAR: 15,\n    BONDED: 16,\n    RING: 17\n};\n\nconst SelectAllKeyword = [ \"*\", \"\", \"ALL\" ];\n\nconst AtomOnlyKeywords = [\n    kwd.BACKBONE, kwd.SIDECHAIN, kwd.BONDED, kwd.RING\n];\n\nconst ChainKeywords = [\n    kwd.HETERO, kwd.PROTEIN, kwd.NUCLEIC, kwd.RNA, kwd.DNA,\n    kwd.POLYMER, kwd.WATER, kwd.ION, kwd.SACCHARIDE\n];\n\nconst SmallResname = [ \"ALA\", \"GLY\", \"SER\" ];\nconst NucleophilicResname = [ \"CYS\", \"SER\", \"THR\" ];\nconst HydrophobicResname = [ \"ALA\", \"ILE\", \"LEU\", \"MET\", \"PHE\", \"PRO\", \"TRP\", \"VAL\" ];\nconst AromaticResname = [ \"PHE\", \"TRP\", \"TYR\", \"HIS\" ];\nconst AmideResname = [ \"ASN\", \"GLN\" ];\nconst AcidicResname = [ \"ASP\", \"GLU\" ];\nconst BasicResname = [ \"ARG\", \"HIS\", \"LYS\" ];\nconst ChargedResname = [ \"ARG\", \"ASP\", \"GLU\", \"HIS\", \"LYS\" ];\nconst PolarResname = [ \"ASN\", \"ARG\", \"ASP\", \"CYS\", \"GLY\", \"GLN\", \"GLU\", \"HIS\", \"LYS\", \"SER\", \"THR\", \"TYR\" ];\nconst NonpolarResname = [ \"ALA\", \"ILE\", \"LEU\", \"MET\", \"PHE\", \"PRO\", \"TRP\", \"VAL\" ];\nconst CyclicResname = [ \"HIS\", \"PHE\", \"PRO\", \"TRP\", \"TYR\" ];\nconst AliphaticResname = [ \"ALA\", \"GLY\", \"ILE\", \"LEU\", \"VAL\" ];\n\n\n/**\n * Selection\n */\nclass Selection{\n\n    /**\n     * Create Selection\n     * @param {String} string - selection string, see {@tutorial selection-language}\n     */\n    constructor( string ){\n\n        this.signals = {\n            stringChanged: new Signal(),\n        };\n\n        this.setString( string );\n\n    }\n\n    get type(){ return \"selection\"; }\n\n    setString( string, silent ){\n\n        if( string === undefined ) string = this.string || \"\";\n        if( string === this.string ) return;\n\n        //\n\n        try{\n            this.parse( string );\n        }catch( e ){\n            // Log.error( e.stack );\n            this.selection = { \"error\": e.message };\n        }\n\n        this.string = string;\n\n        this.test = this.makeAtomTest();\n        this.residueTest = this.makeResidueTest();\n        this.chainTest = this.makeChainTest();\n        this.modelTest = this.makeModelTest();\n\n        this.atomOnlyTest = this.makeAtomTest( true );\n        this.residueOnlyTest = this.makeResidueTest( true );\n        this.chainOnlyTest = this.makeChainTest( true );\n        this.modelOnlyTest = this.makeModelTest( true );\n\n        if( !silent ){\n            this.signals.stringChanged.dispatch( this.string );\n        }\n\n    }\n\n    parse( string ){\n\n        this.selection = {\n            operator: undefined,\n            rules: []\n        };\n\n        if( !string ) return;\n\n        let selection = this.selection;\n        let newSelection, oldSelection;\n        const selectionStack = [];\n\n        string = string.replace( /\\(/g, ' ( ' ).replace( /\\)/g, ' ) ' ).trim();\n        if( string.charAt( 0 ) === \"(\" && string.substr( -1 ) === \")\" ){\n            string = string.slice( 1, -1 ).trim();\n        }\n        const chunks = string.split( /\\s+/ );\n\n        // Log.log( string, chunks )\n\n        const createNewContext = operator => {\n\n            newSelection = {\n                operator: operator,\n                rules: []\n            };\n            if( selection === undefined ){\n                selection = newSelection;\n                this.selection = newSelection;\n            }else{\n                selection.rules.push( newSelection );\n                selectionStack.push( selection );\n                selection = newSelection;\n            }\n\n        };\n\n        const getPrevContext = function( operator ){\n\n            oldSelection = selection;\n            selection = selectionStack.pop();\n            if( selection === undefined ){\n                createNewContext( operator );\n                pushRule( oldSelection );\n            }\n\n        };\n\n        const pushRule = function( rule ){\n\n            selection.rules.push( rule );\n\n        };\n\n        let not;\n\n        for( let i = 0; i < chunks.length; ++i ){\n\n            const c = chunks[ i ];\n            const cu = c.toUpperCase();\n\n            // handle parens\n\n            if( c === \"(\" ){\n\n                // Log.log( \"(\" );\n\n                not = false;\n                createNewContext();\n                continue;\n\n            }else if( c === \")\" ){\n\n                // Log.log( \")\" );\n\n                getPrevContext();\n                if( selection.negate ){\n                    getPrevContext();\n                }\n                continue;\n\n            }\n\n            // leave 'not' context\n\n            if( not > 0 ){\n\n                if( cu === \"NOT\" ){\n\n                    not = 1;\n\n                }else if( not === 1 ){\n\n                    not = 2;\n\n                }else if( not === 2 ){\n\n                    not = false;\n                    getPrevContext();\n\n                }else{\n\n                    throw new Error( \"something went wrong with 'not'\" );\n\n                }\n\n            }\n\n            // handle logic operators\n\n            if( cu === \"AND\" ){\n\n                // Log.log( \"AND\" );\n\n                if( selection.operator === \"OR\" ){\n                    const lastRule = selection.rules.pop();\n                    createNewContext( \"AND\" );\n                    pushRule( lastRule );\n                }else{\n                    selection.operator = \"AND\";\n                }\n                continue;\n\n            }else if( cu === \"OR\" ){\n\n                // Log.log( \"OR\" );\n\n                if( selection.operator === \"AND\" ){\n                    getPrevContext( \"OR\" );\n                }else{\n                    selection.operator = \"OR\";\n                }\n                continue;\n\n            }else if( c.toUpperCase() === \"NOT\" ){\n\n                // Log.log( \"NOT\", j );\n\n                not = 1;\n                createNewContext();\n                selection.negate = true;\n                continue;\n\n            }else{\n\n                // Log.log( \"chunk\", c, j, selection );\n\n            }\n\n            // handle keyword attributes\n\n            const keyword = kwd[ cu ];\n            if( keyword !== undefined ){\n                pushRule( { keyword } );\n                continue;\n            }\n\n            if( cu === \"HYDROGEN\" ){\n                pushRule( { element: \"H\" } );\n                continue;\n            }\n\n            if( cu === \"SMALL\" ){\n                pushRule( { resname: SmallResname } );\n                continue;\n            }\n\n            if( cu === \"NUCLEOPHILIC\" ){\n                pushRule( { resname: NucleophilicResname } );\n                continue;\n            }\n\n            if( cu === \"HYDROPHOBIC\" ){\n                pushRule( { resname: HydrophobicResname } );\n                continue;\n            }\n\n            if( cu === \"AROMATIC\" ){\n                pushRule( { resname: AromaticResname } );\n                continue;\n            }\n\n            if( cu === \"AMIDE\" ){\n                pushRule( { resname: AmideResname } );\n                continue;\n            }\n\n            if( cu === \"ACIDIC\" ){\n                pushRule( { resname: AcidicResname } );\n                continue;\n            }\n\n            if( cu === \"BASIC\" ){\n                pushRule( { resname: BasicResname } );\n                continue;\n            }\n\n            if( cu === \"CHARGED\" ){\n                pushRule( { resname: ChargedResname } );\n                continue;\n            }\n\n            if( cu === \"POLAR\" ){\n                pushRule( { resname: PolarResname } );\n                continue;\n            }\n\n            if( cu === \"NONPOLAR\" ){\n                pushRule( { resname: NonpolarResname } );\n                continue;\n            }\n\n            if( cu === \"CYCLIC\" ){\n                pushRule( { resname: CyclicResname } );\n                continue;\n            }\n\n            if( cu === \"ALIPHATIC\" ){\n                pushRule( { resname: AliphaticResname } );\n                continue;\n            }\n\n            if( cu === \"SIDECHAINATTACHED\" ){\n                pushRule( {\n                    operator: \"OR\",\n                    rules: [\n                        { keyword: kwd.SIDECHAIN },\n                        {\n                            operator: \"AND\",\n                            negate: false,\n                            rules: [\n                                { keyword: kwd.PROTEIN },\n                                {\n                                    operator: \"OR\",\n                                    negate: false,\n                                    rules: [\n                                        { atomname: \"CA\" },\n                                        { atomname: \"BB\" }\n                                    ]\n                                }\n                            ]\n                        },\n                        {\n                            operator: \"AND\",\n                            negate: false,\n                            rules: [\n                                { resname: \"PRO\" },\n                                { atomname: \"N\" }\n                            ]\n                        },\n                        {\n                            operator: \"AND\",\n                            negate: false,\n                            rules: [\n                                { keyword: kwd.NUCLEIC },\n                                {\n                                    operator: \"OR\",\n                                    negate: true,\n                                    rules: [\n                                        { atomname: \"P\" },\n                                        { atomname: \"OP1\" },\n                                        { atomname: \"OP2\" },\n                                        { atomname: \"O3'\" },\n                                        { atomname: \"O3*\" },\n                                        { atomname: \"O5'\" },\n                                        { atomname: \"O5*\" },\n                                        { atomname: \"C5'\" },\n                                        { atomname: \"C5*\" }\n                                    ]\n                                }\n                            ]\n                        }\n                    ]\n                } );\n                continue;\n            }\n\n            if( SelectAllKeyword.indexOf( cu ) !== -1 ){\n                pushRule( { keyword: kwd.ALL } );\n                continue;\n            }\n\n            // handle atom expressions\n\n            if( c.charAt( 0 ) === \"@\" ){\n                const indexList = c.substr( 1 ).split( \",\" );\n                for( let k = 0, kl = indexList.length; k < kl; ++k ){\n                    indexList[ k ] = parseInt( indexList[ k ] );\n                }\n                indexList.sort( function( a, b ){ return a - b; } );\n                pushRule( { atomindex: indexList } );\n                continue;\n            }\n\n            if( c.charAt( 0 ) === \"#\" ){\n                console.error( \"# for element selection deprecated, use _\" );\n                pushRule( { element: cu.substr( 1 ) } );\n                continue;\n            }\n            if( c.charAt( 0 ) === \"_\" ){\n                pushRule( { element: cu.substr( 1 ) } );\n                continue;\n            }\n\n            if( c[0] === \"[\" && c[c.length-1] === \"]\" ){\n                const resnameList = cu.substr( 1, c.length-2 ).split( \",\" );\n                const resname = resnameList.length > 1 ? resnameList : resnameList[ 0 ];\n                pushRule( { resname: resname } );\n                continue;\n            }else if(\n                ( c.length >= 1 && c.length <= 4 ) &&\n                c[0] !== \"^\" && c[0] !== \":\" && c[0] !== \".\" && c[0] !== \"%\" && c[0] !== \"/\" &&\n                isNaN( parseInt( c ) )\n            ){\n                pushRule( { resname: cu } );\n                continue;\n            }\n\n            // there must be only one constraint per rule\n            // otherwise a test quickly becomes not applicable\n            // e.g. chainTest for chainname when resno is present too\n\n            const sele = {\n                operator: \"AND\",\n                rules: []\n            };\n\n            const model = c.split( \"/\" );\n            if( model.length > 1 && model[1] ){\n                if( isNaN( parseInt( model[1] ) ) ){\n                    throw new Error( \"model must be an integer\" );\n                }\n                sele.rules.push( {\n                    model: parseInt( model[1] )\n                } );\n            }\n\n            const altloc = model[0].split( \"%\" );\n            if( altloc.length > 1 ){\n                sele.rules.push( {\n                    altloc: altloc[1]\n                } );\n            }\n\n            const atomname = altloc[0].split( \".\" );\n            if( atomname.length > 1 && atomname[1] ){\n                if( atomname[1].length > 4 ){\n                    throw new Error( \"atomname must be one to four characters\" );\n                }\n                sele.rules.push( {\n                    atomname: atomname[1].substring( 0, 4 ).toUpperCase()\n                } );\n            }\n\n            const chain = atomname[0].split( \":\" );\n            if( chain.length > 1 && chain[1] ){\n                sele.rules.push( {\n                    chainname: chain[1]\n                } );\n            }\n\n            const inscode = chain[0].split( \"^\" );\n            if( inscode.length > 1 ){\n                sele.rules.push( {\n                    inscode: inscode[1]\n                } );\n            }\n\n            if( inscode[0] ){\n                let negate, negate2;\n                if( inscode[0][0] === \"-\" ){\n                    inscode[0] = inscode[0].substr( 1 );\n                    negate = true;\n                }\n                if( inscode[0].includes( \"--\" ) ){\n                    inscode[0] = inscode[0].replace( \"--\", \"-\" );\n                    negate2 = true;\n                }\n                let resi = inscode[0].split( \"-\" );\n                if( resi.length === 1 ){\n                    resi = parseInt( resi[0] );\n                    if( isNaN( resi ) ){\n                        throw new Error( \"resi must be an integer\" );\n                    }\n                    if( negate ) resi *= -1;\n                    sele.rules.push( {\n                        resno: resi\n                    } );\n                }else if( resi.length === 2 ){\n                    if( negate ) resi[0] *= -1;\n                    if( negate2 ) resi[1] *= -1;\n                    sele.rules.push( {\n                        resno: [ parseInt( resi[0] ), parseInt( resi[1] ) ]\n                    } );\n                }else{\n                    throw new Error( \"resi range must contain one '-'\" );\n                }\n            }\n\n            // round up\n\n            if( sele.rules.length === 1 ){\n                pushRule( sele.rules[ 0 ] );\n            }else if( sele.rules.length > 1 ){\n                pushRule( sele );\n            }else{\n                throw new Error( \"empty selection chunk\" );\n            }\n\n        }\n\n        // cleanup\n\n        if(\n            this.selection.operator === undefined &&\n            this.selection.rules.length === 1 &&\n            this.selection.rules[ 0 ].hasOwnProperty( \"operator\" )\n        ){\n            this.selection = this.selection.rules[ 0 ];\n        }\n\n    }\n\n    _makeTest( fn, selection ){\n\n        if( selection === undefined ) selection = this.selection;\n        if( selection === null ) return false;\n        if( selection.error ) return false;\n\n        const n = selection.rules.length;\n        if( n === 0 ) return false;\n\n        const t = selection.negate ? false : true;\n        const f = selection.negate ? true : false;\n\n        const subTests = [];\n        for( let i = 0; i < n; ++i ){\n            const s = selection.rules[ i ];\n            if( s.hasOwnProperty( \"operator\" ) ){\n                subTests[ i ] = this._makeTest( fn, s );\n            }\n        }\n\n        // ( x and y ) can short circuit on false\n        // ( x or y ) can short circuit on true\n        // not ( x and y )\n\n        return function test( entity ){\n\n            const and = selection.operator === \"AND\";\n            let na = false;\n            let ret;\n\n            for( let i = 0; i < n; ++i ){\n\n                const s = selection.rules[ i ];\n\n                if( s.hasOwnProperty( \"operator\" ) ){\n\n                    if( subTests[ i ] ){\n                        ret = subTests[ i ]( entity );\n                    }else{\n                        ret = -1;\n                    }\n\n                    if( ret === -1 ){\n                        // return -1;\n                        na = true;\n                        continue;\n                    }else if( ret === true ){\n                        if( and ){ continue; }else{ return t; }\n                    }else{\n                        if( and ){ return f; }else{ continue; }\n                    }\n\n                }else{\n\n                    if( s.keyword===kwd.ALL ){\n                        if( and ){ continue; }else{ return t; }\n                    }\n\n                    ret = fn( entity, s );\n\n                    // console.log( entity.qualifiedName(), ret, s, selection.negate, \"t\", t, \"f\", f )\n\n                    if( ret === -1 ){\n                        // return -1;\n                        na = true;\n                        continue;\n                    }else if( ret === true ){\n                        if( and ){ continue; }else{ return t; }\n                    }else{\n                        if( and ){ return f; }else{ continue; }\n                    }\n\n                }\n\n            }\n\n            if( na ){\n                return -1;\n            }else{\n                if( and ){ return t; }else{ return f; }\n            }\n\n        };\n\n    }\n\n    _filter( fn, selection ){\n\n        if( selection === undefined ) selection = this.selection;\n        if( selection.error ) return selection;\n\n        const n = selection.rules.length;\n        if( n === 0 ) return selection;\n\n        const filtered = {\n            operator: selection.operator,\n            rules: []\n        };\n        if( selection.hasOwnProperty( \"negate\" ) ){\n            filtered.negate = selection.negate;\n        }\n\n        for( let i = 0; i < n; ++i ){\n\n            const s = selection.rules[ i ];\n            if( s.hasOwnProperty( \"operator\" ) ){\n                const fs = this._filter( fn, s );\n                if( fs !== null ) filtered.rules.push( fs );\n            }else if( !fn( s ) ){\n                filtered.rules.push( s );\n            }\n\n        }\n\n        if( filtered.rules.length > 0 ){\n\n            // TODO maybe the filtered rules could be returned\n            // in some case, but the way how tests are applied\n            // e.g. when traversing a structure would also need\n            // to change\n            return selection;\n            // return filtered;\n\n        }else{\n\n            return null;\n\n        }\n\n    }\n\n    makeAtomTest( atomOnly ){\n\n        let selection;\n\n        if( atomOnly ){\n\n            // console.log( this.selection )\n\n            selection = this._filter( function( s ){\n                if( s.keyword!==undefined && !AtomOnlyKeywords.includes( s.keyword ) ) return true;\n                if( s.model!==undefined ) return true;\n                if( s.chainname!==undefined ) return true;\n                if( s.resname!==undefined ) return true;\n                if( s.resno!==undefined ) return true;\n                if( s.sstruc!==undefined ) return true;\n                return false;\n            } );\n\n        }else{\n\n            selection = this.selection;\n\n        }\n\n        const fn = function( a, s ){\n\n            // returning -1 means the rule is not applicable\n            if( s.atomname===undefined && s.element===undefined &&\n                    s.altloc===undefined && s.atomindex===undefined &&\n                    s.keyword===undefined && s.inscode===undefined &&\n                    s.resname===undefined && s.sstruc===undefined &&\n                    s.resno===undefined && s.chainname===undefined &&\n                    s.model===undefined\n            ) return -1;\n\n            if( s.keyword!==undefined ){\n                if( s.keyword===kwd.BACKBONE && !a.isBackbone() ) return false;\n                if( s.keyword===kwd.SIDECHAIN && !a.isSidechain() ) return false;\n                if( s.keyword===kwd.BONDED && !a.isBonded() ) return false;\n                if( s.keyword===kwd.RING && !a.isRing() ) return false;\n\n                if( s.keyword===kwd.HETERO && !a.isHetero() ) return false;\n                if( s.keyword===kwd.PROTEIN && !a.isProtein() ) return false;\n                if( s.keyword===kwd.NUCLEIC && !a.isNucleic() ) return false;\n                if( s.keyword===kwd.RNA && !a.isRna() ) return false;\n                if( s.keyword===kwd.DNA && !a.isDna() ) return false;\n                if( s.keyword===kwd.POLYMER && !a.isPolymer() ) return false;\n                if( s.keyword===kwd.WATER && !a.isWater() ) return false;\n                if( s.keyword===kwd.HELIX && !a.isHelix() ) return false;\n                if( s.keyword===kwd.SHEET && !a.isSheet() ) return false;\n                if( s.keyword===kwd.TURN && !a.isTurn() ) return false;\n                if( s.keyword===kwd.ION && !a.isIon() ) return false;\n                if( s.keyword===kwd.SACCHARIDE && !a.isSaccharide() ) return false;\n            }\n\n            if( s.atomname!==undefined && s.atomname!==a.atomname ) return false;\n            if( s.element!==undefined && s.element!==a.element ) return false;\n            if( s.altloc!==undefined && s.altloc!==a.altloc ) return false;\n\n            if( s.atomindex!==undefined &&\n                    binarySearchIndexOf( s.atomindex, a.index ) < 0\n            ) return false;\n\n            if( s.resname!==undefined ){\n                if( Array.isArray( s.resname ) ){\n                    if( !s.resname.includes( a.resname ) ) return false;\n                }else{\n                    if( s.resname!==a.resname ) return false;\n                }\n            }\n            if( s.sstruc!==undefined && s.sstruc!==a.sstruc ) return false;\n            if( s.resno!==undefined ){\n                if( Array.isArray( s.resno ) && s.resno.length===2 ){\n                    if( s.resno[0]>a.resno || s.resno[1]<a.resno ) return false;\n                }else{\n                    if( s.resno!==a.resno ) return false;\n                }\n            }\n            if( s.inscode!==undefined && s.inscode!==a.inscode ) return false;\n\n            if( s.chainname!==undefined && s.chainname!==a.chainname ) return false;\n            if( s.model!==undefined && s.model!==a.modelIndex ) return false;\n\n            return true;\n\n        };\n\n        return this._makeTest( fn, selection );\n\n    }\n\n    makeResidueTest( residueOnly ){\n\n        let selection;\n\n        if( residueOnly ){\n\n            // console.log( this.selection )\n\n            selection = this._filter( function( s ){\n                if( s.keyword!==undefined && AtomOnlyKeywords.includes( s.keyword ) ) return true;\n                if( s.model!==undefined ) return true;\n                if( s.chainname!==undefined ) return true;\n                if( s.atomname!==undefined ) return true;\n                if( s.element!==undefined ) return true;\n                if( s.altloc!==undefined ) return true;\n                return false;\n            } );\n\n        }else{\n\n            selection = this.selection;\n\n        }\n\n        const fn = function( r, s ){\n\n            // returning -1 means the rule is not applicable\n            if( s.resname===undefined && s.resno===undefined && s.inscode===undefined &&\n                    s.sstruc===undefined && s.model===undefined && s.chainname===undefined &&\n                    s.atomindex===undefined &&\n                    ( s.keyword===undefined || AtomOnlyKeywords.includes( s.keyword ) )\n            ) return -1;\n\n            if( s.keyword!==undefined ){\n                if( s.keyword===kwd.HETERO && !r.isHetero() ) return false;\n                if( s.keyword===kwd.PROTEIN && !r.isProtein() ) return false;\n                if( s.keyword===kwd.NUCLEIC && !r.isNucleic() ) return false;\n                if( s.keyword===kwd.RNA && !r.isRna() ) return false;\n                if( s.keyword===kwd.DNA && !r.isDna() ) return false;\n                if( s.keyword===kwd.POLYMER && !r.isPolymer() ) return false;\n                if( s.keyword===kwd.WATER && !r.isWater() ) return false;\n                if( s.keyword===kwd.HELIX && !r.isHelix() ) return false;\n                if( s.keyword===kwd.SHEET && !r.isSheet() ) return false;\n                if( s.keyword===kwd.TURN && !r.isTurn() ) return false;\n                if( s.keyword===kwd.ION && !r.isIon() ) return false;\n                if( s.keyword===kwd.SACCHARIDE && !r.isSaccharide() ) return false;\n            }\n\n            if( s.atomindex!==undefined &&\n                    rangeInSortedArray( s.atomindex, r.atomOffset, r.atomEnd ) === 0\n            ) return false;\n\n            if( s.resname!==undefined ){\n                if( Array.isArray( s.resname ) ){\n                    if( !s.resname.includes( r.resname ) ) return false;\n                }else{\n                    if( s.resname!==r.resname ) return false;\n                }\n            }\n            if( s.sstruc!==undefined && s.sstruc!==r.sstruc ) return false;\n            if( s.resno!==undefined ){\n                if( Array.isArray( s.resno ) && s.resno.length===2 ){\n                    if( s.resno[0]>r.resno || s.resno[1]<r.resno ) return false;\n                }else{\n                    if( s.resno!==r.resno ) return false;\n                }\n            }\n            if( s.inscode!==undefined && s.inscode!==r.inscode ) return false;\n\n            if( s.chainname!==undefined && s.chainname!==r.chainname ) return false;\n            if( s.model!==undefined && s.model!==r.modelIndex ) return false;\n\n            return true;\n\n        };\n\n        return this._makeTest( fn, selection );\n\n    }\n\n    makeChainTest( chainOnly ){\n\n        let selection;\n\n        if( chainOnly ){\n\n            // console.log( this.selection )\n\n            selection = this._filter( function( s ){\n                if( s.keyword!==undefined && !ChainKeywords.includes( s.keyword ) ) return true;\n                // if( s.model!==undefined ) return true;\n                if( s.resname!==undefined ) return true;\n                if( s.resno!==undefined ) return true;\n                if( s.atomname!==undefined ) return true;\n                if( s.element!==undefined ) return true;\n                if( s.altloc!==undefined ) return true;\n                if( s.sstruc!==undefined ) return true;\n                if( s.inscode!==undefined ) return true;\n                return false;\n            } );\n\n        }else{\n\n            selection = this.selection;\n\n        }\n\n        const fn = function( c, s ){\n\n            // returning -1 means the rule is not applicable\n            if( s.chainname===undefined && s.model===undefined && s.atomindex===undefined &&\n                    ( s.keyword===undefined || !ChainKeywords.includes( s.keyword ) )\n            ) return -1;\n\n            if( s.keyword!==undefined ){\n                if( s.keyword===kwd.HETERO && !c.isHetero() ) return false;\n                if( s.keyword===kwd.PROTEIN && !c.isProtein() ) return false;\n                if( s.keyword===kwd.NUCLEIC && !c.isNucleic() ) return false;\n                if( s.keyword===kwd.RNA && !c.isRna() ) return false;\n                if( s.keyword===kwd.DNA && !c.isDna() ) return false;\n                if( s.keyword===kwd.POLYMER && !c.isPolymer() ) return false;\n                if( s.keyword===kwd.WATER && !c.isWater() ) return false;\n                if( s.keyword===kwd.ION && !c.isIon() ) return false;\n                if( s.keyword===kwd.SACCHARIDE && !c.isSaccharide() ) return false;\n            }\n\n            if( s.atomindex!==undefined &&\n                    rangeInSortedArray( s.atomindex, c.atomOffset, c.atomEnd ) === 0\n            ) return false;\n\n            if( s.chainname!==undefined && s.chainname!==c.chainname ) return false;\n\n            if( s.model!==undefined && s.model!==c.modelIndex ) return false;\n\n            return true;\n\n        };\n\n        return this._makeTest( fn, selection );\n\n    }\n\n    makeModelTest( modelOnly ){\n\n        let selection;\n\n        if( modelOnly ){\n\n            // console.log( this.selection )\n\n            selection = this._filter( function( s ){\n                if( s.keyword!==undefined ) return true;\n                if( s.chainname!==undefined ) return true;\n                if( s.resname!==undefined ) return true;\n                if( s.resno!==undefined ) return true;\n                if( s.atomname!==undefined ) return true;\n                if( s.element!==undefined ) return true;\n                if( s.altloc!==undefined ) return true;\n                if( s.sstruc!==undefined ) return true;\n                if( s.inscode!==undefined ) return true;\n                return false;\n            } );\n\n        }else{\n\n            selection = this.selection;\n\n        }\n\n        const fn = function( m, s ){\n\n            // returning -1 means the rule is not applicable\n            if( s.model===undefined && s.atomindex===undefined ) return -1;\n\n            if( s.atomindex!==undefined &&\n                    rangeInSortedArray( s.atomindex, m.atomOffset, m.atomEnd ) === 0\n            ) return false;\n\n            if( s.model!==undefined && s.model!==m.index ) return false;\n\n            return true;\n\n        };\n\n        return this._makeTest( fn, selection );\n\n    }\n\n}\n\n\nexport default Selection;\n\nexport {\n    kwd\n};\n",
@@ -63733,7 +63707,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2371,
+    "__docId__": 2370,
     "kind": "variable",
     "name": "SelectAllKeyword",
     "memberof": "src/selection.js",
@@ -63759,7 +63733,7 @@
     }
   },
   {
-    "__docId__": 2372,
+    "__docId__": 2371,
     "kind": "variable",
     "name": "AtomOnlyKeywords",
     "memberof": "src/selection.js",
@@ -63785,7 +63759,7 @@
     }
   },
   {
-    "__docId__": 2373,
+    "__docId__": 2372,
     "kind": "variable",
     "name": "ChainKeywords",
     "memberof": "src/selection.js",
@@ -63811,7 +63785,7 @@
     }
   },
   {
-    "__docId__": 2374,
+    "__docId__": 2373,
     "kind": "variable",
     "name": "SmallResname",
     "memberof": "src/selection.js",
@@ -63837,7 +63811,7 @@
     }
   },
   {
-    "__docId__": 2375,
+    "__docId__": 2374,
     "kind": "variable",
     "name": "NucleophilicResname",
     "memberof": "src/selection.js",
@@ -63863,7 +63837,7 @@
     }
   },
   {
-    "__docId__": 2376,
+    "__docId__": 2375,
     "kind": "variable",
     "name": "HydrophobicResname",
     "memberof": "src/selection.js",
@@ -63889,7 +63863,7 @@
     }
   },
   {
-    "__docId__": 2377,
+    "__docId__": 2376,
     "kind": "variable",
     "name": "AromaticResname",
     "memberof": "src/selection.js",
@@ -63915,7 +63889,7 @@
     }
   },
   {
-    "__docId__": 2378,
+    "__docId__": 2377,
     "kind": "variable",
     "name": "AmideResname",
     "memberof": "src/selection.js",
@@ -63941,7 +63915,7 @@
     }
   },
   {
-    "__docId__": 2379,
+    "__docId__": 2378,
     "kind": "variable",
     "name": "AcidicResname",
     "memberof": "src/selection.js",
@@ -63967,7 +63941,7 @@
     }
   },
   {
-    "__docId__": 2380,
+    "__docId__": 2379,
     "kind": "variable",
     "name": "BasicResname",
     "memberof": "src/selection.js",
@@ -63993,7 +63967,7 @@
     }
   },
   {
-    "__docId__": 2381,
+    "__docId__": 2380,
     "kind": "variable",
     "name": "ChargedResname",
     "memberof": "src/selection.js",
@@ -64019,7 +63993,7 @@
     }
   },
   {
-    "__docId__": 2382,
+    "__docId__": 2381,
     "kind": "variable",
     "name": "PolarResname",
     "memberof": "src/selection.js",
@@ -64045,7 +64019,7 @@
     }
   },
   {
-    "__docId__": 2383,
+    "__docId__": 2382,
     "kind": "variable",
     "name": "NonpolarResname",
     "memberof": "src/selection.js",
@@ -64071,7 +64045,7 @@
     }
   },
   {
-    "__docId__": 2384,
+    "__docId__": 2383,
     "kind": "variable",
     "name": "CyclicResname",
     "memberof": "src/selection.js",
@@ -64097,7 +64071,7 @@
     }
   },
   {
-    "__docId__": 2385,
+    "__docId__": 2384,
     "kind": "variable",
     "name": "AliphaticResname",
     "memberof": "src/selection.js",
@@ -64123,7 +64097,7 @@
     }
   },
   {
-    "__docId__": 2386,
+    "__docId__": 2385,
     "kind": "class",
     "name": "Selection",
     "memberof": "src/selection.js",
@@ -64138,7 +64112,7 @@
     "interface": false
   },
   {
-    "__docId__": 2387,
+    "__docId__": 2386,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/selection.js~Selection",
@@ -64163,7 +64137,7 @@
     ]
   },
   {
-    "__docId__": 2388,
+    "__docId__": 2387,
     "kind": "member",
     "name": "signals",
     "memberof": "src/selection.js~Selection",
@@ -64186,7 +64160,7 @@
     }
   },
   {
-    "__docId__": 2389,
+    "__docId__": 2388,
     "kind": "get",
     "name": "type",
     "memberof": "src/selection.js~Selection",
@@ -64211,7 +64185,7 @@
     }
   },
   {
-    "__docId__": 2390,
+    "__docId__": 2389,
     "kind": "method",
     "name": "setString",
     "memberof": "src/selection.js~Selection",
@@ -64245,7 +64219,7 @@
     ]
   },
   {
-    "__docId__": 2391,
+    "__docId__": 2390,
     "kind": "member",
     "name": "selection",
     "memberof": "src/selection.js~Selection",
@@ -64268,7 +64242,7 @@
     }
   },
   {
-    "__docId__": 2392,
+    "__docId__": 2391,
     "kind": "member",
     "name": "string",
     "memberof": "src/selection.js~Selection",
@@ -64291,7 +64265,7 @@
     }
   },
   {
-    "__docId__": 2393,
+    "__docId__": 2392,
     "kind": "member",
     "name": "test",
     "memberof": "src/selection.js~Selection",
@@ -64314,7 +64288,7 @@
     }
   },
   {
-    "__docId__": 2394,
+    "__docId__": 2393,
     "kind": "member",
     "name": "residueTest",
     "memberof": "src/selection.js~Selection",
@@ -64337,7 +64311,7 @@
     }
   },
   {
-    "__docId__": 2395,
+    "__docId__": 2394,
     "kind": "member",
     "name": "chainTest",
     "memberof": "src/selection.js~Selection",
@@ -64360,7 +64334,7 @@
     }
   },
   {
-    "__docId__": 2396,
+    "__docId__": 2395,
     "kind": "member",
     "name": "modelTest",
     "memberof": "src/selection.js~Selection",
@@ -64383,7 +64357,7 @@
     }
   },
   {
-    "__docId__": 2397,
+    "__docId__": 2396,
     "kind": "member",
     "name": "atomOnlyTest",
     "memberof": "src/selection.js~Selection",
@@ -64406,7 +64380,7 @@
     }
   },
   {
-    "__docId__": 2398,
+    "__docId__": 2397,
     "kind": "member",
     "name": "residueOnlyTest",
     "memberof": "src/selection.js~Selection",
@@ -64429,7 +64403,7 @@
     }
   },
   {
-    "__docId__": 2399,
+    "__docId__": 2398,
     "kind": "member",
     "name": "chainOnlyTest",
     "memberof": "src/selection.js~Selection",
@@ -64452,7 +64426,7 @@
     }
   },
   {
-    "__docId__": 2400,
+    "__docId__": 2399,
     "kind": "member",
     "name": "modelOnlyTest",
     "memberof": "src/selection.js~Selection",
@@ -64475,7 +64449,7 @@
     }
   },
   {
-    "__docId__": 2401,
+    "__docId__": 2400,
     "kind": "method",
     "name": "parse",
     "memberof": "src/selection.js~Selection",
@@ -64503,7 +64477,7 @@
     ]
   },
   {
-    "__docId__": 2402,
+    "__docId__": 2401,
     "kind": "member",
     "name": "selection",
     "memberof": "src/selection.js~Selection",
@@ -64526,7 +64500,7 @@
     }
   },
   {
-    "__docId__": 2403,
+    "__docId__": 2402,
     "kind": "member",
     "name": "selection",
     "memberof": "src/selection.js~Selection",
@@ -64549,7 +64523,7 @@
     }
   },
   {
-    "__docId__": 2404,
+    "__docId__": 2403,
     "kind": "member",
     "name": "selection",
     "memberof": "src/selection.js~Selection",
@@ -64572,7 +64546,7 @@
     }
   },
   {
-    "__docId__": 2405,
+    "__docId__": 2404,
     "kind": "method",
     "name": "_makeTest",
     "memberof": "src/selection.js~Selection",
@@ -64611,7 +64585,7 @@
     }
   },
   {
-    "__docId__": 2406,
+    "__docId__": 2405,
     "kind": "method",
     "name": "_filter",
     "memberof": "src/selection.js~Selection",
@@ -64650,7 +64624,7 @@
     }
   },
   {
-    "__docId__": 2407,
+    "__docId__": 2406,
     "kind": "method",
     "name": "makeAtomTest",
     "memberof": "src/selection.js~Selection",
@@ -64683,7 +64657,7 @@
     }
   },
   {
-    "__docId__": 2408,
+    "__docId__": 2407,
     "kind": "method",
     "name": "makeResidueTest",
     "memberof": "src/selection.js~Selection",
@@ -64716,7 +64690,7 @@
     }
   },
   {
-    "__docId__": 2409,
+    "__docId__": 2408,
     "kind": "method",
     "name": "makeChainTest",
     "memberof": "src/selection.js~Selection",
@@ -64749,7 +64723,7 @@
     }
   },
   {
-    "__docId__": 2410,
+    "__docId__": 2409,
     "kind": "method",
     "name": "makeModelTest",
     "memberof": "src/selection.js~Selection",
@@ -64782,7 +64756,7 @@
     }
   },
   {
-    "__docId__": 2411,
+    "__docId__": 2410,
     "kind": "variable",
     "name": "kwd",
     "memberof": "src/selection.js",
@@ -64808,7 +64782,7 @@
     }
   },
   {
-    "__docId__": 2412,
+    "__docId__": 2411,
     "kind": "file",
     "name": "src/shader/shader-utils.js",
     "content": "/**\n * @file Shader Utils\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nimport { ShaderChunk } from \"../../lib/three.es6.js\";\n\nimport \"./chunk/dull_interior_fragment.glsl\";\nimport \"./chunk/fog_fragment.glsl\";\nimport \"./chunk/matrix_scale.glsl\";\nimport \"./chunk/nearclip_vertex.glsl\";\nimport \"./chunk/nearclip_fragment.glsl\";\nimport \"./chunk/opaque_back_fragment.glsl\";\nimport \"./chunk/radiusclip_vertex.glsl\";\nimport \"./chunk/radiusclip_fragment.glsl\";\nimport \"./chunk/unpack_color.glsl\";\n\nimport { ShaderRegistry } from \"../globals.js\";\n\n\nfunction getDefines( defines ){\n\n    if( defines === undefined ) return \"\";\n\n    var lines = [];\n\n    for ( var name in defines ) {\n\n        var value = defines[ name ];\n\n        if ( value === false ) continue;\n\n        lines.push( '#define ' + name + ' ' + value );\n\n    }\n\n    return lines.join( '\\n' ) + \"\\n\";\n\n}\n\n\nvar reInclude = /^(?!\\/\\/)\\s*#include\\s+(\\S+)/gmi;\nvar shaderCache = {};\n\nfunction getShader( name, defines ){\n\n    defines = defines || {};\n\n    var hash = name + \"|\";\n    for( var key in defines ){\n        hash += key + \":\" + defines[ key ];\n    }\n\n    if( !shaderCache[ hash ] ){\n\n        var definesText = getDefines( defines );\n\n        var shaderText = ShaderRegistry.get( 'shader/' + name );\n        if( !shaderText ){\n            throw \"empty shader, '\" + name + \"'\";\n        }\n        shaderText = shaderText.replace( reInclude, function( match, p1 ){\n\n            var path = 'shader/chunk/' + p1 + '.glsl';\n            var chunk = ShaderRegistry.get( path ) || ShaderChunk[ p1 ];\n\n            return chunk ? chunk : \"\";\n\n        } );\n\n        shaderCache[ hash ] = definesText + shaderText;\n\n    }\n\n    return shaderCache[ hash ];\n\n}\n\n\nexport {\n\tgetShader\n};\n",
@@ -64819,7 +64793,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2413,
+    "__docId__": 2412,
     "kind": "function",
     "name": "getDefines",
     "memberof": "src/shader/shader-utils.js",
@@ -64855,7 +64829,7 @@
     }
   },
   {
-    "__docId__": 2414,
+    "__docId__": 2413,
     "kind": "variable",
     "name": "reInclude",
     "memberof": "src/shader/shader-utils.js",
@@ -64881,7 +64855,7 @@
     }
   },
   {
-    "__docId__": 2415,
+    "__docId__": 2414,
     "kind": "variable",
     "name": "shaderCache",
     "memberof": "src/shader/shader-utils.js",
@@ -64907,7 +64881,7 @@
     }
   },
   {
-    "__docId__": 2416,
+    "__docId__": 2415,
     "kind": "function",
     "name": "getShader",
     "memberof": "src/shader/shader-utils.js",
@@ -64949,7 +64923,7 @@
     }
   },
   {
-    "__docId__": 2417,
+    "__docId__": 2416,
     "kind": "file",
     "name": "src/stage/animation-behavior.js",
     "content": "/**\n * @file Animation Behavior\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nclass AnimationBehavior{\n\n    constructor( stage ){\n\n        this.viewer = stage.viewer;\n        this.animationControls = stage.animationControls;\n\n        this.viewer.signals.ticked.add( this.onTick, this );\n\n    }\n\n    onTick( stats ){\n\n        this.animationControls.run( stats );\n\n    }\n\n    dispose(){\n        this.viewer.signals.ticked.remove( this.onTick, this );\n    }\n\n}\n\n\nexport default AnimationBehavior;\n",
@@ -64960,7 +64934,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2418,
+    "__docId__": 2417,
     "kind": "class",
     "name": "AnimationBehavior",
     "memberof": "src/stage/animation-behavior.js",
@@ -64985,7 +64959,7 @@
     "interface": false
   },
   {
-    "__docId__": 2419,
+    "__docId__": 2418,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/stage/animation-behavior.js~AnimationBehavior",
@@ -65013,7 +64987,7 @@
     ]
   },
   {
-    "__docId__": 2420,
+    "__docId__": 2419,
     "kind": "member",
     "name": "viewer",
     "memberof": "src/stage/animation-behavior.js~AnimationBehavior",
@@ -65036,7 +65010,7 @@
     }
   },
   {
-    "__docId__": 2421,
+    "__docId__": 2420,
     "kind": "member",
     "name": "animationControls",
     "memberof": "src/stage/animation-behavior.js~AnimationBehavior",
@@ -65059,7 +65033,7 @@
     }
   },
   {
-    "__docId__": 2422,
+    "__docId__": 2421,
     "kind": "method",
     "name": "onTick",
     "memberof": "src/stage/animation-behavior.js~AnimationBehavior",
@@ -65087,7 +65061,7 @@
     ]
   },
   {
-    "__docId__": 2423,
+    "__docId__": 2422,
     "kind": "method",
     "name": "dispose",
     "memberof": "src/stage/animation-behavior.js~AnimationBehavior",
@@ -65108,10 +65082,10 @@
     "params": []
   },
   {
-    "__docId__": 2424,
+    "__docId__": 2423,
     "kind": "file",
     "name": "src/stage/mouse-behavior.js",
-    "content": "/**\n * @file Mouse Behavior\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nclass MouseBehavior{\n\n    constructor( stage/*, params*/ ){\n\n        this.stage = stage;\n        this.mouse = stage.mouseObserver;\n        this.controls = stage.mouseControls;\n\n        this.mouse.signals.scrolled.add( this._onScroll, this );\n        this.mouse.signals.dragged.add( this._onDrag, this );\n        this.mouse.signals.clicked.add( this._onClick, this );\n        this.mouse.signals.hovered.add( this._onHover, this );\n\n    }\n\n    _onScroll( delta ){\n        this.controls.run( \"scroll\", delta );\n    }\n\n    _onDrag( dx, dy ){\n        this.controls.run( \"drag\", dx, dy );\n    }\n\n    _onClick( x, y ){\n        this.controls.run( \"click\", x, y );\n    }\n\n    _onHover( x, y ){\n        this.controls.run( \"hover\", x, y );\n    }\n\n    dispose(){\n        this.mouse.signals.scrolled.remove( this._onScroll, this );\n        this.mouse.signals.dragged.remove( this._onDrag, this );\n        this.mouse.signals.clicked.remove( this._onClick, this );\n        this.mouse.signals.hovered.remove( this._onHover, this );\n    }\n\n}\n\n\nexport default MouseBehavior;\n",
+    "content": "/**\n * @file Mouse Behavior\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\n\nclass MouseBehavior{\n\n    constructor( stage/*, params*/ ){\n\n        this.stage = stage;\n        this.mouse = stage.mouseObserver;\n        this.controls = stage.mouseControls;\n\n        this.mouse.signals.moved.add( this._onMove, this );\n        this.mouse.signals.scrolled.add( this._onScroll, this );\n        this.mouse.signals.dragged.add( this._onDrag, this );\n        this.mouse.signals.clicked.add( this._onClick, this );\n        this.mouse.signals.hovered.add( this._onHover, this );\n\n    }\n\n    _onMove( /*x, y*/ ){\n        this.stage.tooltip.style.display = \"none\";\n    }\n\n    _onScroll( delta ){\n        this.controls.run( \"scroll\", delta );\n    }\n\n    _onDrag( dx, dy ){\n        this.controls.run( \"drag\", dx, dy );\n    }\n\n    _onClick( x, y ){\n        this.controls.run( \"click\", x, y );\n    }\n\n    _onHover( x, y ){\n        this.controls.run( \"hover\", x, y );\n    }\n\n    dispose(){\n        this.mouse.signals.moved.remove( this._onMove, this );\n        this.mouse.signals.scrolled.remove( this._onScroll, this );\n        this.mouse.signals.dragged.remove( this._onDrag, this );\n        this.mouse.signals.clicked.remove( this._onClick, this );\n        this.mouse.signals.hovered.remove( this._onHover, this );\n    }\n\n}\n\n\nexport default MouseBehavior;\n",
     "static": true,
     "longname": "src/stage/mouse-behavior.js",
     "access": null,
@@ -65119,7 +65093,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 2425,
+    "__docId__": 2424,
     "kind": "class",
     "name": "MouseBehavior",
     "memberof": "src/stage/mouse-behavior.js",
@@ -65144,7 +65118,7 @@
     "interface": false
   },
   {
-    "__docId__": 2426,
+    "__docId__": 2425,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/stage/mouse-behavior.js~MouseBehavior",
@@ -65172,7 +65146,7 @@
     ]
   },
   {
-    "__docId__": 2427,
+    "__docId__": 2426,
     "kind": "member",
     "name": "stage",
     "memberof": "src/stage/mouse-behavior.js~MouseBehavior",
@@ -65195,7 +65169,7 @@
     }
   },
   {
-    "__docId__": 2428,
+    "__docId__": 2427,
     "kind": "member",
     "name": "mouse",
     "memberof": "src/stage/mouse-behavior.js~MouseBehavior",
@@ -65218,7 +65192,7 @@
     }
   },
   {
-    "__docId__": 2429,
+    "__docId__": 2428,
     "kind": "member",
     "name": "controls",
     "memberof": "src/stage/mouse-behavior.js~MouseBehavior",
@@ -65241,6 +65215,27 @@
     }
   },
   {
+    "__docId__": 2429,
+    "kind": "method",
+    "name": "_onMove",
+    "memberof": "src/stage/mouse-behavior.js~MouseBehavior",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/stage/mouse-behavior.js~MouseBehavior#_onMove",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
     "__docId__": 2430,
     "kind": "method",
     "name": "_onScroll",
@@ -65251,7 +65246,7 @@
     "longname": "src/stage/mouse-behavior.js~MouseBehavior#_onScroll",
     "access": null,
     "description": null,
-    "lineNumber": 23,
+    "lineNumber": 28,
     "undocument": true,
     "unknown": [
       {
@@ -65279,7 +65274,7 @@
     "longname": "src/stage/mouse-behavior.js~MouseBehavior#_onDrag",
     "access": null,
     "description": null,
-    "lineNumber": 27,
+    "lineNumber": 32,
     "undocument": true,
     "unknown": [
       {
@@ -65313,7 +65308,7 @@
     "longname": "src/stage/mouse-behavior.js~MouseBehavior#_onClick",
     "access": null,
     "description": null,
-    "lineNumber": 31,
+    "lineNumber": 36,
     "undocument": true,
     "unknown": [
       {
@@ -65347,7 +65342,7 @@
     "longname": "src/stage/mouse-behavior.js~MouseBehavior#_onHover",
     "access": null,
     "description": null,
-    "lineNumber": 35,
+    "lineNumber": 40,
     "undocument": true,
     "unknown": [
       {
@@ -65381,7 +65376,7 @@
     "longname": "src/stage/mouse-behavior.js~MouseBehavior#dispose",
     "access": null,
     "description": null,
-    "lineNumber": 39,
+    "lineNumber": 44,
     "undocument": true,
     "unknown": [
       {
