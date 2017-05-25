@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1-0</span>
+<header><span>NGL@0.10.1-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -135,6 +135,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
@@ -429,6 +431,60 @@ class PickingProxy{
 
     _objectIfType( type ){
         return this.type === type ? this.object : undefined;
+    }
+
+    getLabel(){
+        let msg = &quot;nothing&quot;;
+        if( this.arrow ){
+            msg = &quot;arrow: &quot; + ( this.arrow.name || this.pid ) + &quot; (&quot; + this.arrow.shape.name + &quot;)&quot;;
+        }else if( this.atom ){
+            msg = &quot;atom: &quot; +
+                this.atom.qualifiedName() +
+                &quot; (&quot; + this.atom.structure.name + &quot;)&quot;;
+        }else if( this.axes ){
+            msg = &quot;axes&quot;;
+        }else if( this.bond ){
+            msg = &quot;bond: &quot; +
+                this.bond.atom1.qualifiedName() + &quot; - &quot; + this.bond.atom2.qualifiedName() +
+                &quot; (&quot; + this.bond.structure.name + &quot;)&quot;;
+        }else if( this.cone ){
+            msg = &quot;cone: &quot; + ( this.cone.name || this.pid ) + &quot; (&quot; + this.cone.shape.name + &quot;)&quot;;
+        }else if( this.clash ){
+            msg = &quot;clash: &quot; + this.clash.clash.sele1 + &quot; - &quot; + this.clash.clash.sele2;
+        }else if( this.contact ){
+            msg = &quot;contact: &quot; +
+                this.contact.atom1.qualifiedName() + &quot; - &quot; + this.contact.atom2.qualifiedName() +
+                &quot; (&quot; + this.contact.structure.name + &quot;)&quot;;
+        }else if( this.cylinder ){
+            msg = &quot;cylinder: &quot; + ( this.cylinder.name || this.pid ) + &quot; (&quot; + this.cylinder.shape.name + &quot;)&quot;;
+        }else if( this.distance ){
+            msg = &quot;distance: &quot; +
+                this.distance.atom1.qualifiedName() + &quot; - &quot; + this.distance.atom2.qualifiedName() +
+                &quot; (&quot; + this.distance.structure.name + &quot;)&quot;;
+        }else if( this.ellipsoid ){
+            msg = &quot;ellipsoid: &quot; + ( this.ellipsoid.name || this.pid ) + &quot; (&quot; + this.ellipsoid.shape.name + &quot;)&quot;;
+        }else if( this.mesh ){
+            msg = &quot;mesh: &quot; + ( this.mesh.name || this.mesh.serial ) + &quot; (&quot; + this.mesh.shape.name + &quot;)&quot;;
+        }else if( this.slice ){
+            msg = &quot;slice: &quot; +
+                this.slice.value.toPrecision( 3 ) +
+                &quot; (&quot; + this.slice.volume.name + &quot;)&quot;;
+        }else if( this.sphere ){
+            msg = &quot;sphere: &quot; + ( this.sphere.name || this.pid ) + &quot; (&quot; + this.sphere.shape.name + &quot;)&quot;;
+        }else if( this.surface ){
+            msg = &quot;surface: &quot; + this.surface.surface.name;
+        }else if( this.unitcell ){
+            msg = &quot;unitcell: &quot; +
+                this.unitcell.unitcell.spacegroup +
+                &quot; (&quot; + this.unitcell.structure.name + &quot;)&quot;;
+        }else if( this.unknown ){
+            msg = &quot;unknown&quot;;
+        }else if( this.volume ){
+            msg = &quot;volume: &quot; +
+                this.volume.value.toPrecision( 3 ) +
+                &quot; (&quot; + this.volume.volume.name + &quot;)&quot;;
+        }
+        return msg;
     }
 
 }

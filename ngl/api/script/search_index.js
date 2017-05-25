@@ -426,6 +426,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/controls/mouse-actions.js~mouseactions",
+    "class/src/controls/mouse-actions.js~MouseActions.html",
+    "<span>MouseActions</span> <span class=\"search-result-import-path\">ngl/src/controls/mouse-actions.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/controls/mouse-controls.js~mousecontrols",
+    "class/src/controls/mouse-controls.js~MouseControls.html",
+    "<span>MouseControls</span> <span class=\"search-result-import-path\">ngl/src/controls/mouse-controls.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/stage/mouse-observer.js~mouseobserver",
     "class/src/stage/mouse-observer.js~MouseObserver.html",
     "<span>MouseObserver</span> <span class=\"search-result-import-path\">ngl/src/stage/mouse-observer.js</span>",
@@ -2391,6 +2403,120 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#zoommove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-zoomMove",
     "src/controls/animation-controls.js~AnimationControls#zoomMove",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js",
+    "file/src/controls/mouse-actions.js.html",
+    "src/controls/mouse-actions.js",
+    "file"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.clipnearscroll",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-clipNearScroll",
+    "src/controls/mouse-actions.js~MouseActions.clipNearScroll",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.focusscroll",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-focusScroll",
+    "src/controls/mouse-actions.js~MouseActions.focusScroll",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.isolevelscroll",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-isolevelScroll",
+    "src/controls/mouse-actions.js~MouseActions.isolevelScroll",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.movepick",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-movePick",
+    "src/controls/mouse-actions.js~MouseActions.movePick",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.pancomponentdrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-panComponentDrag",
+    "src/controls/mouse-actions.js~MouseActions.panComponentDrag",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.pandrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-panDrag",
+    "src/controls/mouse-actions.js~MouseActions.panDrag",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.rotatecomponentdrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-rotateComponentDrag",
+    "src/controls/mouse-actions.js~MouseActions.rotateComponentDrag",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.rotatedrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-rotateDrag",
+    "src/controls/mouse-actions.js~MouseActions.rotateDrag",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.tooltippick",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-tooltipPick",
+    "src/controls/mouse-actions.js~MouseActions.tooltipPick",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.zoomdrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-zoomDrag",
+    "src/controls/mouse-actions.js~MouseActions.zoomDrag",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.zoomfocusdrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-zoomFocusDrag",
+    "src/controls/mouse-actions.js~MouseActions.zoomFocusDrag",
+    "method"
+  ],
+  [
+    "src/controls/mouse-actions.js~mouseactions.zoomscroll",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-zoomScroll",
+    "src/controls/mouse-actions.js~MouseActions.zoomScroll",
+    "method"
+  ],
+  [
+    "src/controls/mouse-controls.js",
+    "file/src/controls/mouse-controls.js.html",
+    "src/controls/mouse-controls.js",
+    "file"
+  ],
+  [
+    "src/controls/mouse-controls.js~mousecontrols#add",
+    "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-add",
+    "src/controls/mouse-controls.js~MouseControls#add",
+    "method"
+  ],
+  [
+    "src/controls/mouse-controls.js~mousecontrols#clear",
+    "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-clear",
+    "src/controls/mouse-controls.js~MouseControls#clear",
+    "method"
+  ],
+  [
+    "src/controls/mouse-controls.js~mousecontrols#constructor",
+    "class/src/controls/mouse-controls.js~MouseControls.html#instance-constructor-constructor",
+    "src/controls/mouse-controls.js~MouseControls#constructor",
+    "method"
+  ],
+  [
+    "src/controls/mouse-controls.js~mousecontrols#preset",
+    "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-preset",
+    "src/controls/mouse-controls.js~MouseControls#preset",
+    "method"
+  ],
+  [
+    "src/controls/mouse-controls.js~mousecontrols#remove",
+    "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-remove",
+    "src/controls/mouse-controls.js~MouseControls#remove",
     "method"
   ],
   [
@@ -4644,6 +4770,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/stage/mouse-observer.js~mouseobserver#buttons",
+    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-buttons",
+    "src/stage/mouse-observer.js~MouseObserver#buttons",
+    "member"
+  ],
+  [
     "src/stage/mouse-observer.js~mouseobserver#canvasposition",
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-canvasPosition",
     "src/stage/mouse-observer.js~MouseObserver#canvasPosition",
@@ -4906,6 +5038,12 @@ window.esdocSearchIndex = [
     "class/src/stage/stage.js~Stage.html#instance-method-toggleFullscreen",
     "src/stage/stage.js~Stage#toggleFullscreen",
     "method"
+  ],
+  [
+    "src/stage/stage.js~stage#tooltip",
+    "class/src/stage/stage.js~Stage.html#instance-member-tooltip",
+    "src/stage/stage.js~Stage#tooltip",
+    "member"
   ],
   [
     "src/stage/stage.js~stage#viewercontrols",
