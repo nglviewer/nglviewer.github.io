@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.24</span>
+<header><span>NGL@0.10.1-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -135,6 +135,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
@@ -230,43 +232,37 @@
  */
 
 
-import { MiddleMouseButton } from &quot;../constants.js&quot;;
-import { Debug, Log } from &quot;../globals.js&quot;;
-
-
 class PickingBehavior{
 
     constructor( stage ){
 
         this.stage = stage;
         this.mouse = stage.mouseObserver;
+        this.controls = stage.mouseControls;
 
-        this.mouse.signals.clicked.add( this.onClick, this );
-        this.mouse.signals.hovered.add( this.onHover, this );
+        this.mouse.signals.clicked.add( this._onClick, this );
+        this.mouse.signals.hovered.add( this._onHover, this );
 
     }
 
-    pick(){
-        const cp = this.mouse.canvasPosition;
-        return this.stage.pickingControls.pick( cp.x, cp.y );
+    _onClick( x, y ){
+        const pickingProxy = this.stage.pickingControls.pick( x, y );
+        this.stage.signals.clicked.dispatch( pickingProxy );
+        this.controls.run( &quot;clickPick&quot;, pickingProxy );
     }
 
-    onClick(){
-        var pp = this.pick();
-        if( pp &amp;&amp; this.mouse.which === MiddleMouseButton ){
-            this.stage.animationControls.move( pp.position.clone() );
+    _onHover( x, y ){
+        const pickingProxy = this.stage.pickingControls.pick( x, y );
+        if( pickingProxy &amp;&amp; this.mouse.down.equals( this.mouse.position ) ){
+            this.stage.transformComponent = pickingProxy.component;
         }
-        this.stage.signals.clicked.dispatch( pp );
-        if( Debug ) Log.log( &quot;clicked&quot;, pp );
-    }
-
-    onHover(){
-        this.stage.signals.hovered.dispatch( this.pick() );
+        this.stage.signals.hovered.dispatch( pickingProxy );
+        this.controls.run( &quot;hoverPick&quot;, pickingProxy );
     }
 
     dispose(){
-        this.mouse.signals.clicked.remove( this.onClick, this );
-        this.mouse.signals.hovered.remove( this.onHover, this );
+        this.mouse.signals.clicked.remove( this._onClick, this );
+        this.mouse.signals.hovered.remove( this._onHover, this );
     }
 
 }

@@ -11,7 +11,7 @@ Promise.all( [
 
     struc.autoView( "LIG" )
 
-    map.addRepresentation( "surface", {
+    var surfRepr = map.addRepresentation( "surface", {
         boxSize: 10,
         useWorker: false,
         wrap: true,
@@ -23,5 +23,15 @@ Promise.all( [
     struc.addRepresentation( "ball+stick", { sele: "hetero" } );
 
     stage.setFocus( 95 );
+
+    // remove default scroll mouse action
+    stage.mouseControls.remove( "scroll" );
+
+    // change isolevel on mouse scroll
+    stage.mouseControls.add( "scroll", function( stage, delta ){
+        var d = Math.sign( delta ) / 5;
+        var l = surfRepr.getParameters().isolevel;
+        surfRepr.setParameters( { isolevel: l + d } );
+    } );
 
 } );

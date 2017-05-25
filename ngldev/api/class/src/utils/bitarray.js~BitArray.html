@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.24</span>
+<header><span>NGL@0.10.1-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -135,6 +135,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
@@ -223,13 +225,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BitArray from &apos;<span><a href="file/src/utils/bitarray.js.html#lineNumber27">ngl/src/utils/bitarray.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BitArray from &apos;<span><a href="file/src/utils/bitarray.js.html#lineNumber28">ngl/src/utils/bitarray.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/utils/bitarray.js.html#lineNumber27">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/utils/bitarray.js.html#lineNumber28">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -374,6 +376,34 @@ which is licensed under the Apache License, Version 2.0.</p>
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-clearBits">clearBits</a></span></span><span data-ice="signature">(arguments: ...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Clear bits at all given indices</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-clearRange">clearRange</a></span></span><span data-ice="signature">(start: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>, end: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span>
         </p>
       </div>
@@ -409,6 +439,34 @@ which is licensed under the Apache License, Version 2.0.</p>
         
         
         <div data-ice="description"><p>Clone this object</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-difference">difference</a></span></span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Calculate difference betwen this and another bit array.</p>
 </div>
       </div>
     </td>
@@ -542,6 +600,34 @@ which is licensed under the Apache License, Version 2.0.</p>
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-getIntersectionSize">getIntersectionSize</a></span></span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Calculate the number of bits in common betwen this and another bit array.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-getSize">getSize</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span>
         </p>
       </div>
@@ -577,6 +663,34 @@ which is licensed under the Apache License, Version 2.0.</p>
         
         
         <div data-ice="description"><p>Calculate intersection betwen this and another bit array.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-intersects">intersects</a></span></span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Test if there is any intersection betwen this and another bit array.</p>
 </div>
       </div>
     </td>
@@ -661,6 +775,34 @@ which is licensed under the Apache License, Version 2.0.</p>
         
         
         <div data-ice="description"><p>Test if bits at all given indices are clear</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-isEqualTo">isEqualTo</a></span></span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Test if two BitArrays are identical in all their values</p>
 </div>
       </div>
     </td>
@@ -850,6 +992,34 @@ which is licensed under the Apache License, Version 2.0.</p>
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-setBits">setBits</a></span></span><span data-ice="signature">(arguments: ...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Set bits at all given indices</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-setRange">setRange</a></span></span><span data-ice="signature">(start: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>, end: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span>
         </p>
       </div>
@@ -893,6 +1063,34 @@ which is licensed under the Apache License, Version 2.0.</p>
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html#instance-method-union">union</a></span></span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Calculate union betwen this and another bit array.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -915,7 +1113,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber33">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
@@ -986,7 +1184,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber64">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber65">source</a></span></span>
     </span>
   </h3>
 
@@ -1059,7 +1257,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber138">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber182">source</a></span></span>
     </span>
   </h3>
 
@@ -1105,6 +1303,80 @@ which is licensed under the Apache License, Version 2.0.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-clearBits">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">clearBits</span><span data-ice="signature">(arguments: ...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber160">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Clear bits at all given indices</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">arguments</td>
+      <td data-ice="type">...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>indices</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>this object</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-clearRange">
     <span class="access" data-ice="access">public</span>
     
@@ -1116,7 +1388,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber122">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber136">source</a></span></span>
     </span>
   </h3>
 
@@ -1197,7 +1469,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber350">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber489">source</a></span></span>
     </span>
   </h3>
 
@@ -1243,6 +1515,81 @@ which is licensed under the Apache License, Version 2.0.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-difference">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">difference</span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber331">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Calculate difference betwen this and another bit array.
+Store result in this object.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">otherBitarray</td>
+      <td data-ice="type"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the other bit array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>this object</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-flip">
     <span class="access" data-ice="access">public</span>
     
@@ -1254,7 +1601,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber73">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber74">source</a></span></span>
     </span>
   </h3>
 
@@ -1327,7 +1674,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber146">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber190">source</a></span></span>
     </span>
   </h3>
 
@@ -1384,7 +1731,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber301">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber440">source</a></span></span>
     </span>
   </h3>
 
@@ -1457,7 +1804,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber47">source</a></span></span>
     </span>
   </h3>
 
@@ -1520,6 +1867,80 @@ which is licensed under the Apache License, Version 2.0.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-getIntersectionSize">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">getIntersectionSize</span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber404">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Calculate the number of bits in common betwen this and another bit array.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">otherBitarray</td>
+      <td data-ice="type"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the other bit array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>size</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-getSize">
     <span class="access" data-ice="access">public</span>
     
@@ -1531,7 +1952,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber247">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber315">source</a></span></span>
     </span>
   </h3>
 
@@ -1588,7 +2009,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber263">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber369">source</a></span></span>
     </span>
   </h3>
 
@@ -1652,6 +2073,80 @@ Store result in this object.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-intersects">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">intersects</span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber387">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Test if there is any intersection betwen this and another bit array.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">otherBitarray</td>
+      <td data-ice="type"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the other bit array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>test result</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-isAllClear">
     <span class="access" data-ice="access">public</span>
     
@@ -1663,7 +2158,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber209">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber260">source</a></span></span>
     </span>
   </h3>
 
@@ -1720,7 +2215,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber201">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber252">source</a></span></span>
     </span>
   </h3>
 
@@ -1777,7 +2272,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber233">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber284">source</a></span></span>
     </span>
   </h3>
 
@@ -1840,6 +2335,80 @@ Store result in this object.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isEqualTo">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">isEqualTo</span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber299">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Test if two BitArrays are identical in all their values</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">otherBitarray</td>
+      <td data-ice="type"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the other BitArray</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>test result</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-isRangeClear">
     <span class="access" data-ice="access">public</span>
     
@@ -1851,7 +2420,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber193">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber244">source</a></span></span>
     </span>
   </h3>
 
@@ -1932,7 +2501,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber183">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber234">source</a></span></span>
     </span>
   </h3>
 
@@ -2013,7 +2582,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber218">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber269">source</a></span></span>
     </span>
   </h3>
 
@@ -2087,7 +2656,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber282">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber421">source</a></span></span>
     </span>
   </h3>
 
@@ -2162,7 +2731,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber55">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber56">source</a></span></span>
     </span>
   </h3>
 
@@ -2235,7 +2804,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber130">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber174">source</a></span></span>
     </span>
   </h3>
 
@@ -2281,6 +2850,80 @@ Store result in a new bit array.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-setBits">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">setBits</span><span data-ice="signature">(arguments: ...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber145">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Set bits at all given indices</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">arguments</td>
+      <td data-ice="type">...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>indices</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>this object</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-setRange">
     <span class="access" data-ice="access">public</span>
     
@@ -2292,7 +2935,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber112">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber126">source</a></span></span>
     </span>
   </h3>
 
@@ -2373,7 +3016,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber321">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber460">source</a></span></span>
     </span>
   </h3>
 
@@ -2395,6 +3038,81 @@ Store result in a new bit array.</p>
         <tr>
           <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
           <td class="return-desc" data-ice="returnDescription"><p>bit indices</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-union">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">union</span><span data-ice="signature">(otherBitarray: <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span>): <span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber350">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Calculate union betwen this and another bit array.
+Store result in this object.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">otherBitarray</td>
+      <td data-ice="type"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the other bit array</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>this object</p>
 </td>
         </tr>
       </tbody>

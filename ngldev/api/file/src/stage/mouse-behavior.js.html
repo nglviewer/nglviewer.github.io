@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.24</span>
+<header><span>NGL@0.10.1-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -135,6 +135,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
@@ -230,63 +232,42 @@
  */
 
 
-import { RightMouseButton } from &quot;../constants.js&quot;;
-import { almostIdentity } from &quot;../math/math-utils.js&quot;;
-
-
 class MouseBehavior{
 
     constructor( stage/*, params*/ ){
 
         this.stage = stage;
         this.mouse = stage.mouseObserver;
-        this.controls = stage.trackballControls;
+        this.controls = stage.mouseControls;
 
-        this.stage.signals.hovered.add( this._onHover, this );
         this.mouse.signals.scrolled.add( this._onScroll, this );
         this.mouse.signals.dragged.add( this._onDrag, this );
-
-    }
-
-    _onHover( pickingProxy ){
-
-        if( pickingProxy &amp;&amp; this.mouse.down.equals( this.mouse.position ) ){
-            this.stage.transformComponent = pickingProxy.component;
-        }
+        this.mouse.signals.clicked.add( this._onClick, this );
+        this.mouse.signals.hovered.add( this._onHover, this );
 
     }
 
     _onScroll( delta ){
-
-        if( this.mouse.shiftKey ){
-            const sp = this.stage.getParameters();
-            const focus = sp.clipNear * 2;
-            const sign = Math.sign( delta );
-            const step = sign * almostIdentity( ( 100 - focus ) / 10, 5, 0.2 );
-            this.stage.setFocus( focus + step );
-        }else if( this.mouse.ctrlKey ){
-            const sp = this.stage.getParameters();
-            this.stage.setParameters( { clipNear: sp.clipNear + delta / 10 } );
-        }else{
-            this.controls.zoom( delta );
-        }
-
+        this.controls.run( &quot;scroll&quot;, delta );
     }
 
-    _onDrag( x, y ){
+    _onDrag( dx, dy ){
+        this.controls.run( &quot;drag&quot;, dx, dy );
+    }
 
-        if( this.mouse.which === RightMouseButton ){
-            this.controls.pan( x, y );
-        }else{
-            this.controls.rotate( x, y );
-        }
+    _onClick( x, y ){
+        this.controls.run( &quot;click&quot;, x, y );
+    }
 
+    _onHover( x, y ){
+        this.controls.run( &quot;hover&quot;, x, y );
     }
 
     dispose(){
-        this.stage.signals.hovered.remove( this._onHover, this );
         this.mouse.signals.scrolled.remove( this._onScroll, this );
         this.mouse.signals.dragged.remove( this._onDrag, this );
+        this.mouse.signals.clicked.remove( this._onClick, this );
+        this.mouse.signals.hovered.remove( this._onHover, this );
     }
 
 }

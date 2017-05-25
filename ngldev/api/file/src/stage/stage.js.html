@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.0-dev.24</span>
+<header><span>NGL@0.10.1-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -135,6 +135,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
@@ -244,6 +246,7 @@ import TrackballControls from &quot;../controls/trackball-controls.js&quot;;
 import PickingControls from &quot;../controls/picking-controls.js&quot;;
 import ViewerControls from &quot;../controls/viewer-controls.js&quot;;
 import AnimationControls from &quot;../controls/animation-controls.js&quot;;
+import MouseControls from &quot;../controls/mouse-controls.js&quot;;
 
 import PickingBehavior from &quot;./picking-behavior.js&quot;;
 import MouseBehavior from &quot;./mouse-behavior.js&quot;;
@@ -358,6 +361,23 @@ class Stage{
         if( !this.viewer.renderer ) return;
 
         /**
+         * Tooltip element
+         * @type {Element}
+         */
+        this.tooltip = document.createElement( &quot;div&quot; );
+        Object.assign( this.tooltip.style, {
+            display: &quot;none&quot;,
+            position: &quot;absolute&quot;,
+            zIndex: 10,
+            pointerEvents: &quot;none&quot;,
+            backgroundColor: &quot;rgba( 0, 0, 0, 0.6 )&quot;,
+            color: &quot;lightgrey&quot;,
+            padding: &quot;0.5em&quot;,
+            fontFamily: &quot;sans-serif&quot;
+        } );
+        this.viewer.container.appendChild( this.tooltip );
+
+        /**
          * @type {MouseObserver}
          */
         this.mouseObserver = new MouseObserver( this.viewer.renderer.domElement );
@@ -372,6 +392,7 @@ class Stage{
          * @type {AnimationControls}
          */
         this.animationControls = new AnimationControls( this );
+        this.mouseControls = new MouseControls( this );
 
         this.pickingBehavior = new PickingBehavior( this );
         this.mouseBehavior = new MouseBehavior( this );
@@ -401,6 +422,8 @@ class Stage{
             ambientColor: 0xdddddd,
             ambientIntensity: 0.2,
             hoverTimeout: 0,
+            tooltip: true,
+            mousePreset: &quot;default&quot;
         }, params );
 
         this.parameters = {
@@ -408,7 +431,7 @@ class Stage{
                 type: &quot;color&quot;
             },
             quality: {
-                type: &quot;select&quot;, options: { &quot;auto&quot;: &quot;auto&quot;, &quot;low&quot;: &quot;low&quot;, &quot;medium&quot;: &quot;medium&quot;, &quot;high&quot;: &quot;high&quot; }
+                type: &quot;select&quot;, options: { auto: &quot;auto&quot;, low: &quot;low&quot;, medium: &quot;medium&quot;, high: &quot;high&quot; }
             },
             sampleLevel: {
                 type: &quot;range&quot;, step: 1, max: 5, min: -1
@@ -444,7 +467,7 @@ class Stage{
                 type: &quot;range&quot;, step: 1, max: 100, min: 0
             },
             cameraType: {
-                type: &quot;select&quot;, options: { &quot;perspective&quot;: &quot;perspective&quot;, &quot;orthographic&quot;: &quot;orthographic&quot; }
+                type: &quot;select&quot;, options: { perspective: &quot;perspective&quot;, orthographic: &quot;orthographic&quot; }
             },
             cameraFov: {
                 type: &quot;range&quot;, step: 1, max: 120, min: 15
@@ -463,6 +486,12 @@ class Stage{
             },
             hoverTimeout: {
                 type: &quot;integer&quot;, max: 10000, min: -1
+            },
+            tooltip: {
+                type: &quot;boolean&quot;
+            },
+            mousePreset: {
+                type: &quot;select&quot;, options: { default: &quot;default&quot;, pymol: &quot;pymol&quot;, coot: &quot;coot&quot; }
             },
         };
 
@@ -502,6 +531,7 @@ class Stage{
         if( p.rotateSpeed !== undefined ) controls.rotateSpeed = p.rotateSpeed;
         if( p.zoomSpeed !== undefined ) controls.zoomSpeed = p.zoomSpeed;
         if( p.panSpeed !== undefined ) controls.panSpeed = p.panSpeed;
+        if( p.mousePreset !== undefined ) this.mouseControls.preset( p.mousePreset );
         this.mouseObserver.setParameters( { hoverTimeout: p.hoverTimeout } );
         viewer.setClip( p.clipNear, p.clipFar, p.clipDist );
         viewer.setFog( undefined, p.fogNear, p.fogFar );
