@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1-2</span>
+<header><span>NGL@0.10.1-3</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -141,6 +141,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TriggerString">TriggerString</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
@@ -225,13 +226,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Stage from &apos;<span><a href="file/src/stage/stage.js.html#lineNumber96">ngl/src/stage/stage.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Stage from &apos;<span><a href="file/src/stage/stage.js.html#lineNumber97">ngl/src/stage/stage.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/stage/stage.js.html#lineNumber96">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/stage/stage.js.html#lineNumber97">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -262,7 +263,7 @@
     
   <div class="example-doc" data-ice="exampleDoc">
       
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">    var stage = new Stage( &quot;elementId&quot;, { backgroundColor: &quot;white&quot; } );</code></pre>
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">var stage = new Stage( &quot;elementId&quot;, { backgroundColor: &quot;white&quot; } );</code></pre>
     </div>
 </div>
 
@@ -326,6 +327,33 @@
           
           
           <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-member-animationControls">animationControls</a></span></span><span data-ice="signature">: <span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-member-mouseControls">mouseControls</a></span></span><span data-ice="signature">: <span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span>
         </p>
       </div>
       <div>
@@ -1095,7 +1123,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber103">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber104">source</a></span></span>
     </span>
   </h3>
 
@@ -1166,7 +1194,50 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber167">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber168">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-mouseControls">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">mouseControls</span><span data-ice="signature">: <span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber172">source</a></span></span>
     </span>
   </h3>
 
@@ -1209,7 +1280,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber156">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber157">source</a></span></span>
     </span>
   </h3>
 
@@ -1252,7 +1323,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber109">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber110">source</a></span></span>
     </span>
   </h3>
 
@@ -1296,7 +1367,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber127">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber128">source</a></span></span>
     </span>
   </h3>
 
@@ -1341,7 +1412,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber140">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber141">source</a></span></span>
     </span>
   </h3>
 
@@ -1385,7 +1456,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber161">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber162">source</a></span></span>
     </span>
   </h3>
 
@@ -1431,7 +1502,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber586">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber590">source</a></span></span>
     </span>
   </h3>
 
@@ -1504,7 +1575,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber607">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber611">source</a></span></span>
     </span>
   </h3>
 
@@ -1585,7 +1656,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber876">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber880">source</a></span></span>
     </span>
   </h3>
 
@@ -1658,7 +1729,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber345">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber349">source</a></span></span>
     </span>
   </h3>
 
@@ -1731,7 +1802,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1114">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1118">source</a></span></span>
     </span>
   </h3>
 
@@ -1787,7 +1858,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber987">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber991">source</a></span></span>
     </span>
   </h3>
 
@@ -1867,7 +1938,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1005">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1009">source</a></span></span>
     </span>
   </h3>
 
@@ -1947,7 +2018,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1101">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1105">source</a></span></span>
     </span>
   </h3>
 
@@ -2021,7 +2092,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1023">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1027">source</a></span></span>
     </span>
   </h3>
 
@@ -2102,7 +2173,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1044">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1048">source</a></span></span>
     </span>
   </h3>
 
@@ -2176,7 +2247,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber330">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber334">source</a></span></span>
     </span>
   </h3>
 
@@ -2233,7 +2304,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1066">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1070">source</a></span></span>
     </span>
   </h3>
 
@@ -2314,7 +2385,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber656">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber660">source</a></span></span>
     </span>
   </h3>
 
@@ -2370,7 +2441,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber528">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber532">source</a></span></span>
     </span>
   </h3>
 
@@ -2492,7 +2563,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber891">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber895">source</a></span></span>
     </span>
   </h3>
 
@@ -2566,7 +2637,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber642">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber646">source</a></span></span>
     </span>
   </h3>
 
@@ -2639,7 +2710,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber626">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber630">source</a></span></span>
     </span>
   </h3>
 
@@ -2712,7 +2783,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber282">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber286">source</a></span></span>
     </span>
   </h3>
 
@@ -2786,7 +2857,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber807">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber811">source</a></span></span>
     </span>
   </h3>
 
@@ -2880,7 +2951,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber778">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber782">source</a></span></span>
     </span>
   </h3>
 
@@ -2967,7 +3038,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber668">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber672">source</a></span></span>
     </span>
   </h3>
 

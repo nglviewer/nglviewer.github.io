@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1-2</span>
+<header><span>NGL@0.10.1-3</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -82,6 +82,8 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#clicked" data-ice="link">Clicked</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#hovered" data-ice="link">Hovered</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#mouse" data-ice="link">Mouse</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#controls" data-ice="link">Controls</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#observer" data-ice="link">Observer</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/interaction-controls.html"><a href="manual/usage/interaction-controls.html#component" data-ice="link">Component</a></li>
 <li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html" data-ice="link">Molecular Representations</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/molecular-representations.html"><a href="manual/usage/molecular-representations.html#index" data-ice="link">Index</a></li>
@@ -185,23 +187,21 @@
     <span data-ice="title">Usage</span>
   </div>
   <div data-ice="content"><h1 id="scripting">Scripting</h1>
-<p>Scripts are written in JavaScript and can be loaded as files that have the extension <strong>.ngl</strong>.</p>
+<p>Scripts are written in JavaScript and can be loaded as files that have the extension <strong>.ngl</strong> or <strong>.js</strong>.</p>
 <h2 id="example">Example</h2>
 <p>Load the structure of PDB entry <em>1CRN</em> from <a href="http://www.rcsb.org/">RCSB</a>, add a cartoon representation and center the view on the structure.</p>
 <pre><code><code class="source-code prettyprint">stage.loadFile( &quot;rcsb://1CRN&quot;, function( o ){
     o.addRepresentation( &quot;cartoon&quot; );
     o.autoView();
 } );</code>
-</code></pre><p>Here, <em>o</em> is a <em>StructureComponent</em> instance.</p>
+</code></pre><p>Here, <code>o</code> is a <code>StructureComponent</code> instance.</p>
 <h2 id="variables">Variables</h2>
 <p>The following variables are available in a scripting context.</p>
-<ul>
-<li><em>stage</em> - the [page:Stage] object</li>
-<li><em>__name__</em> - the name of the script file</li>
-<li><em>__path__</em> - the full path of the script file</li>
-<li><em>__dir__</em> - the directory to the scipt file</li>
-</ul>
-</div>
+<pre><code><code class="source-code prettyprint">stage  // the stage object
+__name__  // the name of the script file
+__path__  // the full path of the script file
+__dir__  // the directory to the scipt file</code>
+</code></pre></div>
 </div>
 </div>
 

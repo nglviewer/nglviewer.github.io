@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1-2</span>
+<header><span>NGL@0.10.1-3</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -141,6 +141,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TriggerString">TriggerString</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
@@ -235,6 +236,40 @@
 import { ActionPresets } from &quot;./mouse-actions.js&quot;;
 
 
+/**
+ * Strings to describe mouse events (including optional keyboard modifiers).
+ * Must contain an event type: &quot;scroll&quot;, &quot;drag&quot;, &quot;click&quot;, &quot;hover&quot;, &quot;clickPick&quot;
+ * or &quot;hoverPick&quot;. Optionally contain one or more (seperated by plus signs)
+ * keyboard modifiers: &quot;alt&quot;, &quot;ctrl&quot;, &quot;meta&quot; or &quot;shift&quot;. Can contain the mouse
+ * button performing the event: &quot;left&quot;, &quot;middle&quot; or &quot;right&quot;. The type, key and
+ * button parts must be seperated by dashes.
+ *
+ * @example
+ * // triggered on scroll event (no key or button)
+ * &quot;scroll&quot;
+ *
+ * @example
+ * // triggered on scroll event while shift key is pressed
+ * &quot;scroll-shift&quot;
+ *
+ * @example
+ * // triggered on drag event with left mouse button
+ * &quot;drag-left&quot;
+ *
+ * @example
+ * // triggered on drag event with right mouse button
+ * // while ctrl and shift keys are pressed
+ * &quot;drag-right-ctrl+shift&quot;
+ *
+ * @typedef {String} TriggerString
+ */
+
+
+/**
+ * Get event type, key and button
+ * @param  {TriggerString} str - input trigger string
+ * @return {Array} event type, key and button
+ */
 function triggerFromString( str ){
     const tokens = str.split( /[-+]/ );
 
@@ -298,9 +333,25 @@ class MouseControls{
     }
 
     /**
-     * Add a new mouse action
-     * @param {String} triggerStr - the trigger for the action
-     * @param {Function} callback - the callback function for the action
+     * Add a new mouse action triggered by an event, key and button combination.
+     * The {@link MouseActions} class provides a number of static methods for
+     * use as callback functions.
+     *
+     * @example
+     * // change ambient light intensity on mouse scroll
+     * // while the ctrl and shift keys are pressed
+     * stage.mouseControls.add( &quot;scroll-ctrl+shift&quot;, function( stage, delta ){
+     *     var ai = stage.getParameters().ambientIntensity;
+     *     stage.setParameters( { ambientIntensity: Math.max( 0, ai + delta / 50 ) } );
+     * } );
+     *
+     * @example
+     * // Call the MouseActions.zoomDrag method on mouse drag events
+     * // with left and right mouse buttons simultaneous
+     * stage.mouseControls.add( &quot;drag-left+right&quot;, MouseActions.zoomDrag );
+     *
+     * @param {TriggerString} triggerStr - the trigger for the action
+     * @param {function(stage: Stage, ...args: Any)} callback - the callback function for the action
      * @return {undefined}
      */
     add( triggerStr, callback ){
@@ -312,8 +363,25 @@ class MouseControls{
     }
 
     /**
-     * Remove a mouse action
-     * @param {String} triggerStr - the trigger for the action
+     * Remove a mouse action. The trigger string can contain an asterix (*)
+     * as a wildcard for any key or mouse button. When the callback function
+     * is given, only actions that call that function are removed.
+     *
+     * @example
+     * // remove actions triggered solely by a scroll event
+     * stage.mouseControls.remove( &quot;scroll&quot; );
+     *
+     * @example
+     * // remove actions triggered by a scroll event, including
+     * // those requiring a key pressed or mouse button used
+     * stage.mouseControls.remove( &quot;scroll-*&quot; );
+     *
+     * @example
+     * // remove actions triggered by a scroll event
+     * // while the shift key is pressed
+     * stage.mouseControls.remove( &quot;scroll-shift&quot; );
+     *
+     * @param {TriggerString} triggerStr - the trigger for the action
      * @param {Function} [callback] - the callback function for the action
      * @return {undefined}
      */

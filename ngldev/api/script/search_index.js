@@ -2520,6 +2520,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/mouse-controls.js~triggerstring",
+    "typedef/index.html#static-typedef-TriggerString",
+    "src/controls/mouse-controls.js~TriggerString",
+    "typedef"
+  ],
+  [
     "src/controls/picking-controls.js",
     "file/src/controls/picking-controls.js.html",
     "src/controls/picking-controls.js",
@@ -4984,6 +4990,12 @@ window.esdocSearchIndex = [
     "class/src/stage/stage.js~Stage.html#instance-method-makeImage",
     "src/stage/stage.js~Stage#makeImage",
     "method"
+  ],
+  [
+    "src/stage/stage.js~stage#mousecontrols",
+    "class/src/stage/stage.js~Stage.html#instance-member-mouseControls",
+    "src/stage/stage.js~Stage#mouseControls",
+    "member"
   ],
   [
     "src/stage/stage.js~stage#mouseobserver",
