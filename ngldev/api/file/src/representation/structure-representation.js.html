@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1</span>
+<header><span>NGL@0.10.2-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -102,6 +102,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainname-colormaker.js~ChainnameColormaker.html">ChainnameColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/colormaker-registry.js~ColormakerRegistry.html">ColormakerRegistry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">DensityfitColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html">ElectrostaticColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/element-colormaker.js~ElementColormaker.html">ElementColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">EntityindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html">EntitytypeColormaker</a></span></span></li>
@@ -265,7 +266,7 @@ class StructureRepresentation extends Representation{
      */
     constructor( structure, viewer, params ){
 
-        var p = params || {};
+        const p = params || {};
 
         super( structure, viewer, p );
 
@@ -312,7 +313,7 @@ class StructureRepresentation extends Representation{
         this.structureView = this.structure.getView( this.selection );
 
         if( structure.biomolDict ){
-            var biomolOptions = {
+            const biomolOptions = {
                 &quot;default&quot;: &quot;default&quot;,
                 &quot;&quot;: ( structure.unitcell ? &quot;AU&quot; : &quot;FULL&quot; )
             };
@@ -343,7 +344,7 @@ class StructureRepresentation extends Representation{
 
     init( params ){
 
-        var p = params || {};
+        const p = params || {};
         p.colorScheme = defaults( p.colorScheme, &quot;element&quot; );
 
         this.radius = defaults( p.radius, &quot;vdw&quot; );
@@ -365,16 +366,16 @@ class StructureRepresentation extends Representation{
 
     getAssembly(){
 
-        var name = this.assembly === &quot;default&quot; ? this.defaultAssembly : this.assembly;
+        const name = this.assembly === &quot;default&quot; ? this.defaultAssembly : this.assembly;
         return this.structure.biomolDict[ name ];
 
     }
 
     getQuality(){
 
-        var atomCount;
-        var s = this.structureView;
-        var assembly = this.getAssembly();
+        let atomCount;
+        const s = this.structureView;
+        const assembly = this.getAssembly();
         if( assembly ){
             atomCount = assembly.getAtomCount( s );
         }else{
@@ -383,7 +384,7 @@ class StructureRepresentation extends Representation{
         if( Mobile ){
             atomCount *= 4;
         }
-        var backboneOnly = s.atomStore.count / s.residueStore.count &lt; 2;
+        const backboneOnly = s.atomStore.count / s.residueStore.count &lt; 2;
         if( backboneOnly ){
             atomCount *= 10;
         }
@@ -402,13 +403,13 @@ class StructureRepresentation extends Representation{
 
         if( this.structureView.atomCount === 0 ) return;
 
-        var assembly = this.getAssembly();
+        const assembly = this.getAssembly();
 
         if( assembly ){
             assembly.partList.forEach( function( part, i ){
-                var sview = part.getView( this.structureView );
+                const sview = part.getView( this.structureView );
                 if( sview.atomCount === 0 ) return;
-                var data = this.createData( sview, i );
+                const data = this.createData( sview, i );
                 if( data ){
                     data.sview = sview;
                     data.instanceList = part.getInstanceList();
@@ -416,7 +417,7 @@ class StructureRepresentation extends Representation{
                 }
             }, this );
         }else{
-            var data = this.createData( this.structureView, 0 );
+            const data = this.createData( this.structureView, 0 );
             if( data ){
                 data.sview = this.structureView;
                 this.dataList.push( data );
@@ -454,7 +455,7 @@ class StructureRepresentation extends Representation{
 
     getColorParams(){
 
-        var p = super.getColorParams();
+        const p = super.getColorParams();
         p.structure = this.structure;
 
         return p;
@@ -552,7 +553,7 @@ class StructureRepresentation extends Representation{
 
     getParameters(){
 
-        var params = Object.assign(
+        const params = Object.assign(
             super.getParameters(),
             {
                 sele: this.selection ? this.selection.string : undefined,
@@ -566,8 +567,8 @@ class StructureRepresentation extends Representation{
 
     attach( callback ){
 
-        var viewer = this.viewer;
-        var bufferList = this.bufferList;
+        const viewer = this.viewer;
+        const bufferList = this.bufferList;
 
         this.dataList.forEach( function( data ){
             data.bufferList.forEach( function( buffer ){

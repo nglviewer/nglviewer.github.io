@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1</span>
+<header><span>NGL@0.10.2-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -102,6 +102,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainname-colormaker.js~ChainnameColormaker.html">ChainnameColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/colormaker-registry.js~ColormakerRegistry.html">ColormakerRegistry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">DensityfitColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html">ElectrostaticColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/element-colormaker.js~ElementColormaker.html">ElementColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">EntityindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html">EntitytypeColormaker</a></span></span></li>
@@ -281,7 +282,10 @@ import Counter from &quot;../utils/counter.js&quot;;
  */
 class Representation{
 
-    constructor( object, viewer/*, params*/ ){
+    constructor( object, viewer, params ){
+
+        // eslint-disable-next-line no-unused-vars
+        const p = params || {};
 
         this.type = &quot;&quot;;
 
@@ -387,7 +391,7 @@ class Representation{
 
     init( params ){
 
-        var p = params || {};
+        const p = params || {};
 
         this.clipNear = defaults( p.clipNear, 0 );
         this.clipRadius = defaults( p.clipRadius, 0 );
@@ -425,7 +429,7 @@ class Representation{
 
         // handle common parameters when applicable
 
-        var tp = this.parameters;
+        const tp = this.parameters;
 
         if( tp.sphereDetail === true ){
             tp.sphereDetail = {
@@ -516,7 +520,7 @@ class Representation{
 
     setColor( value, p ){
 
-        var types = Object.keys( ColormakerRegistry.getSchemes() );
+        const types = Object.keys( ColormakerRegistry.getSchemes() );
 
         if( types.includes( value ) ){
 
@@ -588,7 +592,7 @@ class Representation{
 
         if( Debug ) Log.time( &quot;Representation.make &quot; + this.type );
 
-        var _make = function(){
+        const _make = function(){
 
             if( updateWhat ){
                 this.update( updateWhat );
@@ -640,9 +644,9 @@ class Representation{
 
         if( this.visible ){
 
-            var lazyProps = this.lazyProps;
-            var bufferParams = lazyProps.bufferParams;
-            var what = lazyProps.what;
+            const lazyProps = this.lazyProps;
+            const bufferParams = lazyProps.bufferParams;
+            const what = lazyProps.what;
 
             if( lazyProps.build ){
 
@@ -685,15 +689,15 @@ class Representation{
      */
     setParameters( params, what, rebuild ){
 
-        var p = params || {};
-        var tp = this.parameters;
+        const p = params || {};
+        const tp = this.parameters;
 
         what = what || {};
         rebuild = rebuild || false;
 
-        var bufferParams = {};
+        const bufferParams = {};
 
-        for( var name in p ){
+        for( let name in p ){
 
             if( p[ name ] === undefined ) continue;
             if( tp[ name ] === undefined ) continue;
@@ -771,7 +775,7 @@ class Representation{
 
     getParameters(){
 
-        var params = {
+        const params = {
             lazy: this.lazy,
             visible: this.visible,
             quality: this.quality

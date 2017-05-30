@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.1</span>
+<header><span>NGL@0.10.2-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -102,6 +102,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainname-colormaker.js~ChainnameColormaker.html">ChainnameColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/colormaker-registry.js~ColormakerRegistry.html">ColormakerRegistry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">DensityfitColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html">ElectrostaticColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/element-colormaker.js~ElementColormaker.html">ElementColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">EntityindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html">EntitytypeColormaker</a></span></span></li>
@@ -305,8 +306,7 @@ class HyperballRepresentation extends LicoriceRepresentation{
                 shrink: this.shrink,
                 radialSegments: this.radialSegments,
                 dullInterior: true
-            } ),
-            this.disableImpostor
+            } )
         );
 
         return {

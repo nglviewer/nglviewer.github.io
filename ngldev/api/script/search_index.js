@@ -264,6 +264,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/color/electrostatic-colormaker.js~electrostaticcolormaker",
+    "class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html",
+    "<span>ElectrostaticColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/electrostatic-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/element-colormaker.js~elementcolormaker",
     "class/src/color/element-colormaker.js~ElementColormaker.html",
     "<span>ElementColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/element-colormaker.js</span>",
@@ -1785,6 +1791,12 @@ window.esdocSearchIndex = [
     "src/color/densityfit-colormaker.js",
     "file/src/color/densityfit-colormaker.js.html",
     "src/color/densityfit-colormaker.js",
+    "file"
+  ],
+  [
+    "src/color/electrostatic-colormaker.js",
+    "file/src/color/electrostatic-colormaker.js.html",
+    "src/color/electrostatic-colormaker.js",
     "file"
   ],
   [
