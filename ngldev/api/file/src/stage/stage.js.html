@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-0</span>
+<header><span>NGL@0.10.2-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -1219,7 +1219,7 @@ class Stage{
      */
     eachComponent( callback, type ){
 
-        this.compList.forEach( function( o, i ){
+        this.compList.slice().forEach( function( o, i ){
 
             if( !type || o.type === type ){
                 callback( o, i );
@@ -1239,7 +1239,7 @@ class Stage{
 
         this.eachComponent( function( comp ){
 
-            comp.reprList.forEach( function( repr ){
+            comp.reprList.slice().forEach( function( repr ){
                 callback( repr, comp );
             } );
 

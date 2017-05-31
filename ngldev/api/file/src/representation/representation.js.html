@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-0</span>
+<header><span>NGL@0.10.2-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -781,11 +781,11 @@ class Representation{
             quality: this.quality
         };
 
-        Object.keys( this.parameters ).forEach( function( name ){
+        Object.keys( this.parameters ).forEach( name =&gt; {
             if( this.parameters[ name ] !== null ){
                 params[ name ] = this[ name ];
             }
-        }, this );
+        } );
 
         return params;
 
@@ -793,13 +793,10 @@ class Representation{
 
     clear(){
 
-        this.bufferList.forEach( function( buffer ){
-
+        this.bufferList.forEach( buffer =&gt; {
             this.viewer.remove( buffer );
             buffer.dispose();
-
-        }, this );
-
+        } );
         this.bufferList.length = 0;
 
         this.viewer.requestRender();

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-0</span>
+<header><span>NGL@0.10.2-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -419,15 +419,15 @@ class Buffer{
         return this.group.matrix.clone();
     }
 
-    get transparent () {
+    get transparent (){
         return this.opacity &lt; 1 || this.forceTransparent;
     }
 
-    get size () {
+    get size (){
         return this._positionDataSize;
     }
 
-    get attributeSize () {
+    get attributeSize (){
         return this.size;
     }
 
@@ -925,24 +925,26 @@ class Buffer{
 
         for( let name in p ){
 
-            if( p[ name ] === undefined ) continue;
+            const value = p[ name ];
+
+            if( value === undefined ) continue;
             if( tp[ name ] === undefined ) continue;
 
-            this[ name ] = p[ name ];
+            this[ name ] = value;
 
             if( tp[ name ].property ){
                 if( tp[ name ].property !== true ){
-                    propertyData[ tp[ name ].property ] = p[ name ];
+                    propertyData[ tp[ name ].property ] = value;
                 }else{
-                    propertyData[ name ] = p[ name ];
+                    propertyData[ name ] = value;
                 }
             }
 
             if( tp[ name ].uniform ){
                 if( tp[ name ].uniform !== true ){
-                    uniformData[ tp[ name ].uniform ] = p[ name ];
+                    uniformData[ tp[ name ].uniform ] = value;
                 }else{
-                    uniformData[ name ] = p[ name ];
+                    uniformData[ name ] = value;
                 }
             }
 
@@ -954,7 +956,7 @@ class Buffer{
                 doVisibilityUpdate = true;
             }
 
-            if( this.dynamic &amp;&amp; name === &quot;wireframe&quot; &amp;&amp; p[ name ] === true ){
+            if( this.dynamic &amp;&amp; name === &quot;wireframe&quot; &amp;&amp; value === true ){
                 this.updateWireframeIndex();
             }
 
