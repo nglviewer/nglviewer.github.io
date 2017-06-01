@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-1</span>
+<header><span>NGL@0.10.2-2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -378,7 +378,7 @@ class Stage{
             padding: &quot;0.5em&quot;,
             fontFamily: &quot;sans-serif&quot;
         } );
-        this.viewer.container.appendChild( this.tooltip );
+        document.body.appendChild( this.tooltip );
 
         /**
          * @type {MouseObserver}

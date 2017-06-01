@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-1</span>
+<header><span>NGL@0.10.2-2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -383,10 +383,10 @@ class MouseActions{
         const tt = stage.tooltip;
         const sp = stage.getParameters();
         if( sp.tooltip &amp;&amp; pickingProxy ){
-            const cp = pickingProxy.canvasPosition;
+            const mp = pickingProxy.mouse.position;
             tt.innerText = pickingProxy.getLabel();
-            tt.style.bottom = cp.y + 3 + &quot;px&quot;;
-            tt.style.left = cp.x + 3 + &quot;px&quot;;
+            tt.style.bottom = window.innerHeight - mp.y + 3 + &quot;px&quot;;
+            tt.style.left = mp.x + 3 + &quot;px&quot;;
             tt.style.display = &quot;block&quot;;
         }else{
             tt.style.display = &quot;none&quot;;

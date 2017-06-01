@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-1</span>
+<header><span>NGL@0.10.2-2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -311,6 +311,7 @@ class MouseObserver{
         var p = Object.assign( {}, params );
 
         this.hoverTimeout = defaults( p.hoverTimeout, 50 );
+        this.handleScroll = defaults( p.handleScroll, true );
 
         this.domElement = domElement;
 
@@ -405,16 +406,16 @@ class MouseObserver{
 
         this._listen();
 
-        domElement.addEventListener( &apos;mousewheel&apos;, this._onMousewheel );
-        domElement.addEventListener( &apos;wheel&apos;, this._onMousewheel );
-        domElement.addEventListener( &apos;MozMousePixelScroll&apos;, this._onMousewheel );
-        domElement.addEventListener( &apos;mousemove&apos;, this._onMousemove );
-        domElement.addEventListener( &apos;mousedown&apos;, this._onMousedown );
-        domElement.addEventListener( &apos;mouseup&apos;, this._onMouseup );
-        domElement.addEventListener( &apos;contextmenu&apos;, this._onContextmenu );
-        domElement.addEventListener( &apos;touchstart&apos;, this._onTouchstart );
-        domElement.addEventListener( &apos;touchend&apos;, this._onTouchend );
-        domElement.addEventListener( &apos;touchmove&apos;, this._onTouchmove );
+        document.addEventListener( &apos;mousewheel&apos;, this._onMousewheel );
+        document.addEventListener( &apos;wheel&apos;, this._onMousewheel );
+        document.addEventListener( &apos;MozMousePixelScroll&apos;, this._onMousewheel );
+        document.addEventListener( &apos;mousemove&apos;, this._onMousemove );
+        document.addEventListener( &apos;mousedown&apos;, this._onMousedown );
+        document.addEventListener( &apos;mouseup&apos;, this._onMouseup );
+        document.addEventListener( &apos;contextmenu&apos;, this._onContextmenu );
+        document.addEventListener( &apos;touchstart&apos;, this._onTouchstart );
+        document.addEventListener( &apos;touchend&apos;, this._onTouchend );
+        document.addEventListener( &apos;touchmove&apos;, this._onTouchmove );
 
     }
 
@@ -459,6 +460,9 @@ class MouseObserver{
      * @return {undefined}
      */
     _onMousewheel( event ){
+        if( event.target !== this.domElement || !this.handleScroll ){
+            return;
+        }
         event.preventDefault();
         this._setKeys( event );
 
@@ -488,13 +492,15 @@ class MouseObserver{
      * @return {undefined}
      */
     _onMousemove( event ){
-        event.preventDefault();
+        if( event.target === this.domElement ){
+            event.preventDefault();
+        }
         this._setKeys( event );
         this.moving = true;
         this.hovering = false;
         this.lastMoved = performance.now();
         this.prevPosition.copy( this.position );
-        this.position.set( event.layerX, event.layerY );
+        this.position.set( event.clientX, event.clientY );
         this._setCanvasPosition( event );
         const dx = this.prevPosition.x - this.position.x;
         const dy = this.prevPosition.y - this.position.y;
@@ -505,12 +511,15 @@ class MouseObserver{
     }
 
     _onMousedown( event ){
+        if( event.target !== this.domElement ){
+            return;
+        }
         event.preventDefault();
         this._setKeys( event );
         this.moving = false;
         this.hovering = false;
-        this.down.set( event.layerX, event.layerY );
-        this.position.set( event.layerX, event.layerY );
+        this.down.set( event.clientX, event.clientY );
+        this.position.set( event.clientX, event.clientY );
         this.which = event.which;
         this.buttons = event.buttons;
         this.pressed = true;
@@ -525,7 +534,9 @@ class MouseObserver{
      * @return {undefined}
      */
     _onMouseup( event ){
-        event.preventDefault();
+        if( event.target === this.domElement ){
+            event.preventDefault();
+        }
         this._setKeys( event );
         const cp = this.canvasPosition;
         this.signals.clicked.dispatch( cp.x, cp.y );
@@ -538,10 +549,15 @@ class MouseObserver{
     }
 
     _onContextmenu( event ){
-        event.preventDefault();
+        if( event.target === this.domElement ){
+            event.preventDefault();
+        }
     }
 
     _onTouchstart( event ){
+        if( event.target !== this.domElement ){
+            return;
+        }
         event.preventDefault();
         this.pressed = true;
         switch( event.touches.length ){
@@ -577,12 +593,16 @@ class MouseObserver{
     }
 
     _onTouchend( event ){
-        event.preventDefault();
+        if( event.target === this.domElement ){
+            event.preventDefault();
+        }
         this.pressed = false;
     }
 
     _onTouchmove( event ){
-        event.preventDefault();
+        if( event.target === this.domElement ){
+            event.preventDefault();
+        }
         switch( event.touches.length ){
 
             case 1: {
@@ -653,17 +673,16 @@ class MouseObserver{
     }
 
     dispose(){
-        var domElement = this.domElement;
-        domElement.removeEventListener( &apos;mousewheel&apos;, this._onMousewheel );
-        domElement.removeEventListener( &apos;wheel&apos;, this._onMousewheel );
-        domElement.removeEventListener( &apos;MozMousePixelScroll&apos;, this._onMousewheel );
-        domElement.removeEventListener( &apos;mousemove&apos;, this._onMousemove );
-        domElement.removeEventListener( &apos;mousedown&apos;, this._onMousedown );
-        domElement.removeEventListener( &apos;mouseup&apos;, this._onMouseup );
-        domElement.removeEventListener( &apos;contextmenu&apos;, this._onContextmenu );
-        domElement.removeEventListener( &apos;touchstart&apos;, this._onTouchstart );
-        domElement.removeEventListener( &apos;touchend&apos;, this._onTouchend );
-        domElement.removeEventListener( &apos;touchmove&apos;, this._onTouchmove );
+        document.removeEventListener( &apos;mousewheel&apos;, this._onMousewheel );
+        document.removeEventListener( &apos;wheel&apos;, this._onMousewheel );
+        document.removeEventListener( &apos;MozMousePixelScroll&apos;, this._onMousewheel );
+        document.removeEventListener( &apos;mousemove&apos;, this._onMousemove );
+        document.removeEventListener( &apos;mousedown&apos;, this._onMousedown );
+        document.removeEventListener( &apos;mouseup&apos;, this._onMouseup );
+        document.removeEventListener( &apos;contextmenu&apos;, this._onContextmenu );
+        document.removeEventListener( &apos;touchstart&apos;, this._onTouchstart );
+        document.removeEventListener( &apos;touchend&apos;, this._onTouchend );
+        document.removeEventListener( &apos;touchmove&apos;, this._onTouchmove );
     }
 
 }
