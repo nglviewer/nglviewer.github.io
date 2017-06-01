@@ -514,5 +514,16 @@
 <span class='name'>test/xray</span>
 <form method='post' id='test/xray' action='https://codepen.io/pen/define/' target='_blank'><input type='submit' value='View/Edit' style='cursor:pointer'/><input type='hidden' name='data' value='{"title":"NGL@0.10.2-2 - test/xray","tags":["ngl","nglviewer","webgl","molecule","scientific"],"editors":"001","layout":"left","html":"<div id=\"viewport\" style=\"width:100%; height:100%;\"></div>","css":"html, body { width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; }\n","js":"// Setup to load data from rawgit\nNGL.DatasourceRegistry.add(\n    \"data\", new NGL.StaticDatasource( \"//cdn.rawgit.com/arose/ngl/v0.10.2-2/data/\" )\n);\n\n// Create NGL Stage object\nvar stage = new NGL.Stage( \"viewport\" );\n\n// Handle window resizing\nwindow.addEventListener( \"resize\", function( event ){\n    stage.handleResize();\n}, false );\n\n\n// Code for example: test/xray\n\nstage.setParameters( {\n    cameraType: \"orthographic\",\n    mousePreset: \"coot\"\n} );\n\nstage.loadFile( \"data://3ek3.cif\" ).then( function( o ){\n    o.addRepresentation( \"licorice\", {\n        colorValue: \"yellow\",\n        roughness: 1.0\n    } );\n    o.autoView( \"FMN\" );\n    stage.setFocus( 97 );\n} );\n\nstage.loadFile( \"data://3ek3-2fofc.map.gz\" ).then( function( o ){\n    o.addRepresentation( \"surface\", {\n        color: \"skyblue\",\n        isolevel: 1.5,\n        boxSize: 10,\n        useWorker: false,\n        contour: true\n    } );\n} );\n\nstage.loadFile( \"data://3ek3-fofc.map.gz\" ).then( function( o ){\n    o.addRepresentation( \"surface\", {\n        color: \"lightgreen\",\n        isolevel: 3,\n        boxSize: 10,\n        useWorker: false,\n        contour: true\n    } );\n    o.addRepresentation( \"surface\", {\n        color: \"tomato\",\n        isolevel: 3,\n        negateIsolevel: true,\n        boxSize: 10,\n        useWorker: false,\n        contour: true\n    } );\n} );\n","js_external":"https://cdn.rawgit.com/arose/ngl/v0.10.2-2/dist/ngl.js"}'/></form>
 </div>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69549173-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
 </body>
 </html>
