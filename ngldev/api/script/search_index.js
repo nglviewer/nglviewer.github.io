@@ -24,6 +24,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~animationlist",
+    "class/src/animation/animation.js~AnimationList.html",
+    "<span>AnimationList</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/arrow-buffer.js~arrowbuffer",
     "class/src/buffer/arrow-buffer.js~ArrowBuffer.html",
     "<span>ArrowBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/arrow-buffer.js</span>",
@@ -786,6 +792,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~valueanimation",
+    "class/src/animation/animation.js~ValueAnimation.html",
+    "<span>ValueAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/value-colormaker.js~valuecolormaker",
     "class/src/color/value-colormaker.js~ValueColormaker.html",
     "<span>ValueColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/value-colormaker.js</span>",
@@ -1234,6 +1246,30 @@ window.esdocSearchIndex = [
     "file/src/animation/animation.js.html",
     "src/animation/animation.js",
     "file"
+  ],
+  [
+    "src/animation/animation.js~animation#done",
+    "class/src/animation/animation.js~Animation.html#instance-get-done",
+    "src/animation/animation.js~Animation#done",
+    "member"
+  ],
+  [
+    "src/animation/animation.js~animation#then",
+    "class/src/animation/animation.js~Animation.html#instance-method-then",
+    "src/animation/animation.js~Animation#then",
+    "method"
+  ],
+  [
+    "src/animation/animation.js~animationlist#done",
+    "class/src/animation/animation.js~AnimationList.html#instance-get-done",
+    "src/animation/animation.js~AnimationList#done",
+    "member"
+  ],
+  [
+    "src/animation/animation.js~animationlist#then",
+    "class/src/animation/animation.js~AnimationList.html#instance-method-then",
+    "src/animation/animation.js~AnimationList#then",
+    "method"
   ],
   [
     "src/buffer/alignedbox-buffer.js",
@@ -2376,6 +2412,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#orient",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-orient",
+    "src/controls/animation-controls.js~AnimationControls#orient",
+    "method"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#remove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-remove",
     "src/controls/animation-controls.js~AnimationControls#remove",
@@ -2403,6 +2445,12 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#spin",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-spin",
     "src/controls/animation-controls.js~AnimationControls#spin",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#value",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-value",
+    "src/controls/animation-controls.js~AnimationControls#value",
     "method"
   ],
   [
@@ -5037,6 +5085,12 @@ window.esdocSearchIndex = [
     "src/stage/stage.js~stage#setrock",
     "class/src/stage/stage.js~Stage.html#instance-method-setRock",
     "src/stage/stage.js~Stage#setRock",
+    "method"
+  ],
+  [
+    "src/stage/stage.js~stage#setsize",
+    "class/src/stage/stage.js~Stage.html#instance-method-setSize",
+    "src/stage/stage.js~Stage#setSize",
     "method"
   ],
   [

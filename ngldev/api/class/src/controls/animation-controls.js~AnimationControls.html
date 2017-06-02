@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-2</span>
+<header><span>NGL@0.10.2-3</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -56,10 +56,12 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector2">Vector2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">align</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">animation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~MoveAnimation.html">MoveAnimation</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">animation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~AnimationList.html">AnimationList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~MoveAnimation.html">MoveAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">buffer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/arrow-buffer.js~ArrowBuffer.html">ArrowBuffer</a></span></span></li>
@@ -227,13 +229,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AnimationControls from &apos;<span><a href="file/src/controls/animation-controls.js.html#lineNumber17">ngl/src/controls/animation-controls.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AnimationControls from &apos;<span><a href="file/src/controls/animation-controls.js.html#lineNumber20">ngl/src/controls/animation-controls.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/controls/animation-controls.js.html#lineNumber17">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/controls/animation-controls.js.html#lineNumber20">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -405,6 +407,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-orient">orient</a></span></span><span data-ice="signature">(orientTo: <span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Add an orient animation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-remove">remove</a></span></span><span data-ice="signature">(animation: <span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
@@ -545,6 +575,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-value">value</a></span></span><span data-ice="signature">(valueFrom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, valueTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, callback: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Add a value animation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-zoom">zoom</a></span></span><span data-ice="signature">(zoomTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span>
         </p>
       </div>
@@ -610,7 +668,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber26">source</a></span></span>
     </span>
   </h3>
 
@@ -675,7 +733,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber39">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -749,7 +807,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber195">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber236">source</a></span></span>
     </span>
   </h3>
 
@@ -805,7 +863,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber149">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber152">source</a></span></span>
     </span>
   </h3>
 
@@ -875,6 +933,87 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-orient">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">orient</span><span data-ice="signature">(orientTo: <span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber200">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Add an orient animation</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">orientTo</td>
+      <td data-ice="type"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>target orientation</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">duration</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>animation time in milliseconds</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the animations</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-remove">
     <span class="access" data-ice="access">public</span>
     
@@ -886,7 +1025,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber56">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber59">source</a></span></span>
     </span>
   </h3>
 
@@ -959,7 +1098,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber119">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber122">source</a></span></span>
     </span>
   </h3>
 
@@ -1054,7 +1193,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber133">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber136">source</a></span></span>
     </span>
   </h3>
 
@@ -1135,7 +1274,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber72">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber75">source</a></span></span>
     </span>
   </h3>
 
@@ -1208,7 +1347,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber103">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber106">source</a></span></span>
     </span>
   </h3>
 
@@ -1285,6 +1424,101 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-value">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">value</span><span data-ice="signature">(valueFrom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, valueTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, callback: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber224">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Add a value animation</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">valueFrom</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>start value</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">valueTo</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>target value</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">callback</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>called on every tick</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">duration</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>animation time in milliseconds</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the animation</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-zoom">
     <span class="access" data-ice="access">public</span>
     
@@ -1296,7 +1530,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber165">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber168">source</a></span></span>
     </span>
   </h3>
 
@@ -1377,7 +1611,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber182">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber185">source</a></span></span>
     </span>
   </h3>
 

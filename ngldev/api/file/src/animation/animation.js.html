@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-2</span>
+<header><span>NGL@0.10.2-3</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -56,10 +56,12 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector2">Vector2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">align</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">animation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~MoveAnimation.html">MoveAnimation</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">animation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~AnimationList.html">AnimationList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~MoveAnimation.html">MoveAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">buffer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/arrow-buffer.js~ArrowBuffer.html">ArrowBuffer</a></span></span></li>
@@ -254,8 +256,17 @@ class Animation{
         this.startTime = performance.now();
         this.elapsedTime = 0;
 
+        this._resolveList = [];
         this._init( ...args );
 
+    }
+
+    /**
+     * True when all animation has finished
+     * @type {Boolean}
+     */
+    get done(){
+        return this.alpha === 1;
     }
 
     /**
@@ -284,7 +295,34 @@ class Animation{
 
         this._tick( stats );
 
-        return this.alpha === 1;
+        if( this.done ){
+            this._resolveList.forEach( resolve =&gt; {
+                resolve();
+            } );
+        }
+
+        return this.done;
+
+    }
+
+    /**
+     * Promise-like interface
+     * @param  {Function} callback - a callback
+     * @return {Promise} a promise
+     */
+    then( callback ){
+
+        let p;
+
+        if( this.done ){
+            p = Promise.resolve();
+        }else{
+            p = new Promise( resolve =&gt; {
+                this._resolveList.push( resolve );
+            } );
+        }
+
+        return p.then( callback );
 
     }
 
@@ -448,13 +486,92 @@ class RotateAnimation extends Animation{
 }
 
 
+/**
+ * Value animation. Call callback with interpolated value.
+ */
+class ValueAnimation extends Animation{
+
+    _init( valueFrom, valueTo, callback ){
+
+        this.valueFrom = valueFrom;
+        this.valueTo = valueTo;
+
+        this.callback = callback;
+
+    }
+
+    _tick( /*stats*/ ){
+
+        this.callback( lerp( this.valueFrom, this.valueTo, this.alpha ) );
+
+    }
+
+}
+
+
+/**
+ * Animation list.
+ */
+class AnimationList{
+
+    constructor( list ){
+
+        this._list = list || [];
+        this._resolveList = [];
+
+    }
+
+    /**
+     * True when all animations have finished
+     * @type {Boolean}
+     */
+    get done(){
+        return this._list.every( animation =&gt; {
+            return animation.done;
+        } );
+    }
+
+    /**
+     * Promise-like interface
+     * @param  {Function} callback - a callback
+     * @return {Promise} a promise
+     */
+    then( callback ){
+
+        let p;
+
+        if( this.done ){
+            p = Promise.resolve();
+        }else{
+            p = new Promise( resolve =&gt; {
+                this._resolveList.push( resolve );
+                this._list.forEach( animation =&gt; {
+                    animation.then( () =&gt; {
+                        this._resolveList.forEach( callback =&gt; {
+                            callback();
+                        } );
+                        this._resolveList.length = 0;
+                    } );
+                } );
+            } );
+        }
+
+        return p.then( callback );
+
+    }
+
+}
+
+
 export {
     Animation,
     SpinAnimation,
     RockAnimation,
     MoveAnimation,
     ZoomAnimation,
-    RotateAnimation
+    RotateAnimation,
+    ValueAnimation,
+    AnimationList
 };
 </code></pre>
 

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-2</span>
+<header><span>NGL@0.10.2-3</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -44,6 +44,7 @@
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/custom-geometries.html"><a href="manual/usage/custom-geometries.html#buffer" data-ice="link">Buffer</a></li>
 <li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html" data-ice="link">Embedding</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/usage/embedding.html"><a href="manual/usage/embedding.html#notes" data-ice="link">Notes</a></li>
 <li data-ice="manualNav" class="indent-h1 manual-color manual-color-usage" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html" data-ice="link">File Formats</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#structures" data-ice="link">Structures</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/usage/file-formats.html"><a href="manual/usage/file-formats.html#mmcif" data-ice="link">mmCIF</a></li>
@@ -316,7 +317,9 @@ shapeComp.autoView();</code>
     &lt;div id=&quot;viewport&quot; style=&quot;width:400px; height:300px;&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code>
-</code></pre></div>
+</code></pre><h2>Notes</h2><ul>
+<li>If the size of your DOM element (here &quot;viewport&quot;) is not know upon calling the <code>Stage</code> constructor make sure that you call <code>stage.handleResize()</code> when the size is known.</li>
+</ul></div>
         <a data-ice="link" href="manual/usage/embedding.html"></a>
       </div>
     </div>
@@ -826,6 +829,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Animation controls</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/animation/animation.js~AnimationList.html">AnimationList</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Animation list.</p>
 </div>
       </div>
     </td>
@@ -3962,6 +3993,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Validation representation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Value animation.</p>
 </div>
       </div>
     </td>
