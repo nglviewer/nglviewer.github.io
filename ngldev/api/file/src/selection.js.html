@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-3</span>
+<header><span>NGL@0.10.2-4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -284,6 +284,171 @@ const PolarResname = [ &quot;ASN&quot;, &quot;ARG&quot;, &quot;ASP&quot;, &quot;
 const NonpolarResname = [ &quot;ALA&quot;, &quot;ILE&quot;, &quot;LEU&quot;, &quot;MET&quot;, &quot;PHE&quot;, &quot;PRO&quot;, &quot;TRP&quot;, &quot;VAL&quot; ];
 const CyclicResname = [ &quot;HIS&quot;, &quot;PHE&quot;, &quot;PRO&quot;, &quot;TRP&quot;, &quot;TYR&quot; ];
 const AliphaticResname = [ &quot;ALA&quot;, &quot;GLY&quot;, &quot;ILE&quot;, &quot;LEU&quot;, &quot;VAL&quot; ];
+
+
+function atomTestFn( a, s ){
+
+    // returning -1 means the rule is not applicable
+    if( s.atomname===undefined &amp;&amp; s.element===undefined &amp;&amp;
+            s.altloc===undefined &amp;&amp; s.atomindex===undefined &amp;&amp;
+            s.keyword===undefined &amp;&amp; s.inscode===undefined &amp;&amp;
+            s.resname===undefined &amp;&amp; s.sstruc===undefined &amp;&amp;
+            s.resno===undefined &amp;&amp; s.chainname===undefined &amp;&amp;
+            s.model===undefined
+    ) return -1;
+
+    if( s.keyword!==undefined ){
+        if( s.keyword===kwd.BACKBONE &amp;&amp; !a.isBackbone() ) return false;
+        if( s.keyword===kwd.SIDECHAIN &amp;&amp; !a.isSidechain() ) return false;
+        if( s.keyword===kwd.BONDED &amp;&amp; !a.isBonded() ) return false;
+        if( s.keyword===kwd.RING &amp;&amp; !a.isRing() ) return false;
+
+        if( s.keyword===kwd.HETERO &amp;&amp; !a.isHetero() ) return false;
+        if( s.keyword===kwd.PROTEIN &amp;&amp; !a.isProtein() ) return false;
+        if( s.keyword===kwd.NUCLEIC &amp;&amp; !a.isNucleic() ) return false;
+        if( s.keyword===kwd.RNA &amp;&amp; !a.isRna() ) return false;
+        if( s.keyword===kwd.DNA &amp;&amp; !a.isDna() ) return false;
+        if( s.keyword===kwd.POLYMER &amp;&amp; !a.isPolymer() ) return false;
+        if( s.keyword===kwd.WATER &amp;&amp; !a.isWater() ) return false;
+        if( s.keyword===kwd.HELIX &amp;&amp; !a.isHelix() ) return false;
+        if( s.keyword===kwd.SHEET &amp;&amp; !a.isSheet() ) return false;
+        if( s.keyword===kwd.TURN &amp;&amp; !a.isTurn() ) return false;
+        if( s.keyword===kwd.ION &amp;&amp; !a.isIon() ) return false;
+        if( s.keyword===kwd.SACCHARIDE &amp;&amp; !a.isSaccharide() ) return false;
+    }
+
+    if( s.atomname!==undefined &amp;&amp; s.atomname!==a.atomname ) return false;
+    if( s.element!==undefined &amp;&amp; s.element!==a.element ) return false;
+    if( s.altloc!==undefined &amp;&amp; s.altloc!==a.altloc ) return false;
+
+    if( s.atomindex!==undefined &amp;&amp;
+            binarySearchIndexOf( s.atomindex, a.index ) &lt; 0
+    ) return false;
+
+    if( s.resname!==undefined ){
+        if( Array.isArray( s.resname ) ){
+            if( !s.resname.includes( a.resname ) ) return false;
+        }else{
+            if( s.resname!==a.resname ) return false;
+        }
+    }
+    if( s.sstruc!==undefined &amp;&amp; s.sstruc!==a.sstruc ) return false;
+    if( s.resno!==undefined ){
+        if( Array.isArray( s.resno ) &amp;&amp; s.resno.length===2 ){
+            if( s.resno[0]&gt;a.resno || s.resno[1]&lt;a.resno ) return false;
+        }else{
+            if( s.resno!==a.resno ) return false;
+        }
+    }
+    if( s.inscode!==undefined &amp;&amp; s.inscode!==a.inscode ) return false;
+
+    if( s.chainname!==undefined &amp;&amp; s.chainname!==a.chainname ) return false;
+    if( s.model!==undefined &amp;&amp; s.model!==a.modelIndex ) return false;
+
+    return true;
+
+}
+
+
+function residueTestFn( r, s ){
+
+    // returning -1 means the rule is not applicable
+    if( s.resname===undefined &amp;&amp; s.resno===undefined &amp;&amp; s.inscode===undefined &amp;&amp;
+            s.sstruc===undefined &amp;&amp; s.model===undefined &amp;&amp; s.chainname===undefined &amp;&amp;
+            s.atomindex===undefined &amp;&amp;
+            ( s.keyword===undefined || AtomOnlyKeywords.includes( s.keyword ) )
+    ) return -1;
+
+    if( s.keyword!==undefined ){
+        if( s.keyword===kwd.HETERO &amp;&amp; !r.isHetero() ) return false;
+        if( s.keyword===kwd.PROTEIN &amp;&amp; !r.isProtein() ) return false;
+        if( s.keyword===kwd.NUCLEIC &amp;&amp; !r.isNucleic() ) return false;
+        if( s.keyword===kwd.RNA &amp;&amp; !r.isRna() ) return false;
+        if( s.keyword===kwd.DNA &amp;&amp; !r.isDna() ) return false;
+        if( s.keyword===kwd.POLYMER &amp;&amp; !r.isPolymer() ) return false;
+        if( s.keyword===kwd.WATER &amp;&amp; !r.isWater() ) return false;
+        if( s.keyword===kwd.HELIX &amp;&amp; !r.isHelix() ) return false;
+        if( s.keyword===kwd.SHEET &amp;&amp; !r.isSheet() ) return false;
+        if( s.keyword===kwd.TURN &amp;&amp; !r.isTurn() ) return false;
+        if( s.keyword===kwd.ION &amp;&amp; !r.isIon() ) return false;
+        if( s.keyword===kwd.SACCHARIDE &amp;&amp; !r.isSaccharide() ) return false;
+    }
+
+    if( s.atomindex!==undefined &amp;&amp;
+            rangeInSortedArray( s.atomindex, r.atomOffset, r.atomEnd ) === 0
+    ) return false;
+
+    if( s.resname!==undefined ){
+        if( Array.isArray( s.resname ) ){
+            if( !s.resname.includes( r.resname ) ) return false;
+        }else{
+            if( s.resname!==r.resname ) return false;
+        }
+    }
+    if( s.sstruc!==undefined &amp;&amp; s.sstruc!==r.sstruc ) return false;
+    if( s.resno!==undefined ){
+        if( Array.isArray( s.resno ) &amp;&amp; s.resno.length===2 ){
+            if( s.resno[0]&gt;r.resno || s.resno[1]&lt;r.resno ) return false;
+        }else{
+            if( s.resno!==r.resno ) return false;
+        }
+    }
+    if( s.inscode!==undefined &amp;&amp; s.inscode!==r.inscode ) return false;
+
+    if( s.chainname!==undefined &amp;&amp; s.chainname!==r.chainname ) return false;
+    if( s.model!==undefined &amp;&amp; s.model!==r.modelIndex ) return false;
+
+    return true;
+
+}
+
+
+function chainTestFn( c, s ){
+
+    // returning -1 means the rule is not applicable
+    if( s.chainname===undefined &amp;&amp; s.model===undefined &amp;&amp; s.atomindex===undefined &amp;&amp;
+            ( s.keyword===undefined || !ChainKeywords.includes( s.keyword ) )
+    ) return -1;
+
+    if( s.keyword!==undefined ){
+        if( s.keyword===kwd.HETERO &amp;&amp; !c.isHetero() ) return false;
+        if( s.keyword===kwd.PROTEIN &amp;&amp; !c.isProtein() ) return false;
+        if( s.keyword===kwd.NUCLEIC &amp;&amp; !c.isNucleic() ) return false;
+        if( s.keyword===kwd.RNA &amp;&amp; !c.isRna() ) return false;
+        if( s.keyword===kwd.DNA &amp;&amp; !c.isDna() ) return false;
+        if( s.keyword===kwd.POLYMER &amp;&amp; !c.isPolymer() ) return false;
+        if( s.keyword===kwd.WATER &amp;&amp; !c.isWater() ) return false;
+        if( s.keyword===kwd.ION &amp;&amp; !c.isIon() ) return false;
+        if( s.keyword===kwd.SACCHARIDE &amp;&amp; !c.isSaccharide() ) return false;
+    }
+
+    if( s.atomindex!==undefined &amp;&amp;
+            rangeInSortedArray( s.atomindex, c.atomOffset, c.atomEnd ) === 0
+    ) return false;
+
+    if( s.chainname!==undefined &amp;&amp; s.chainname!==c.chainname ) return false;
+
+    if( s.model!==undefined &amp;&amp; s.model!==c.modelIndex ) return false;
+
+    return true;
+
+}
+
+
+function modelTestFn( m, s ){
+
+    // returning -1 means the rule is not applicable
+    if( s.model===undefined &amp;&amp; s.atomindex===undefined ) return -1;
+
+    if( s.atomindex!==undefined &amp;&amp;
+            rangeInSortedArray( s.atomindex, m.atomOffset, m.atomEnd ) === 0
+    ) return false;
+
+    if( s.model!==undefined &amp;&amp; s.model!==m.index ) return false;
+
+    return true;
+
+}
 
 
 /**
@@ -791,11 +956,11 @@ class Selection{
 
             const and = selection.operator === &quot;AND&quot;;
             let na = false;
-            let ret;
 
             for( let i = 0; i &lt; n; ++i ){
 
                 const s = selection.rules[ i ];
+                let ret;
 
                 if( s.hasOwnProperty( &quot;operator&quot; ) ){
 
@@ -806,7 +971,6 @@ class Selection{
                     }
 
                     if( ret === -1 ){
-                        // return -1;
                         na = true;
                         continue;
                     }else if( ret === true ){
@@ -826,7 +990,6 @@ class Selection{
                     // console.log( entity.qualifiedName(), ret, s, selection.negate, &quot;t&quot;, t, &quot;f&quot;, f )
 
                     if( ret === -1 ){
-                        // return -1;
                         na = true;
                         continue;
                     }else if( ret === true ){
@@ -918,70 +1081,7 @@ class Selection{
 
         }
 
-        const fn = function( a, s ){
-
-            // returning -1 means the rule is not applicable
-            if( s.atomname===undefined &amp;&amp; s.element===undefined &amp;&amp;
-                    s.altloc===undefined &amp;&amp; s.atomindex===undefined &amp;&amp;
-                    s.keyword===undefined &amp;&amp; s.inscode===undefined &amp;&amp;
-                    s.resname===undefined &amp;&amp; s.sstruc===undefined &amp;&amp;
-                    s.resno===undefined &amp;&amp; s.chainname===undefined &amp;&amp;
-                    s.model===undefined
-            ) return -1;
-
-            if( s.keyword!==undefined ){
-                if( s.keyword===kwd.BACKBONE &amp;&amp; !a.isBackbone() ) return false;
-                if( s.keyword===kwd.SIDECHAIN &amp;&amp; !a.isSidechain() ) return false;
-                if( s.keyword===kwd.BONDED &amp;&amp; !a.isBonded() ) return false;
-                if( s.keyword===kwd.RING &amp;&amp; !a.isRing() ) return false;
-
-                if( s.keyword===kwd.HETERO &amp;&amp; !a.isHetero() ) return false;
-                if( s.keyword===kwd.PROTEIN &amp;&amp; !a.isProtein() ) return false;
-                if( s.keyword===kwd.NUCLEIC &amp;&amp; !a.isNucleic() ) return false;
-                if( s.keyword===kwd.RNA &amp;&amp; !a.isRna() ) return false;
-                if( s.keyword===kwd.DNA &amp;&amp; !a.isDna() ) return false;
-                if( s.keyword===kwd.POLYMER &amp;&amp; !a.isPolymer() ) return false;
-                if( s.keyword===kwd.WATER &amp;&amp; !a.isWater() ) return false;
-                if( s.keyword===kwd.HELIX &amp;&amp; !a.isHelix() ) return false;
-                if( s.keyword===kwd.SHEET &amp;&amp; !a.isSheet() ) return false;
-                if( s.keyword===kwd.TURN &amp;&amp; !a.isTurn() ) return false;
-                if( s.keyword===kwd.ION &amp;&amp; !a.isIon() ) return false;
-                if( s.keyword===kwd.SACCHARIDE &amp;&amp; !a.isSaccharide() ) return false;
-            }
-
-            if( s.atomname!==undefined &amp;&amp; s.atomname!==a.atomname ) return false;
-            if( s.element!==undefined &amp;&amp; s.element!==a.element ) return false;
-            if( s.altloc!==undefined &amp;&amp; s.altloc!==a.altloc ) return false;
-
-            if( s.atomindex!==undefined &amp;&amp;
-                    binarySearchIndexOf( s.atomindex, a.index ) &lt; 0
-            ) return false;
-
-            if( s.resname!==undefined ){
-                if( Array.isArray( s.resname ) ){
-                    if( !s.resname.includes( a.resname ) ) return false;
-                }else{
-                    if( s.resname!==a.resname ) return false;
-                }
-            }
-            if( s.sstruc!==undefined &amp;&amp; s.sstruc!==a.sstruc ) return false;
-            if( s.resno!==undefined ){
-                if( Array.isArray( s.resno ) &amp;&amp; s.resno.length===2 ){
-                    if( s.resno[0]&gt;a.resno || s.resno[1]&lt;a.resno ) return false;
-                }else{
-                    if( s.resno!==a.resno ) return false;
-                }
-            }
-            if( s.inscode!==undefined &amp;&amp; s.inscode!==a.inscode ) return false;
-
-            if( s.chainname!==undefined &amp;&amp; s.chainname!==a.chainname ) return false;
-            if( s.model!==undefined &amp;&amp; s.model!==a.modelIndex ) return false;
-
-            return true;
-
-        };
-
-        return this._makeTest( fn, selection );
+        return this._makeTest( atomTestFn, selection );
 
     }
 
@@ -1009,59 +1109,7 @@ class Selection{
 
         }
 
-        const fn = function( r, s ){
-
-            // returning -1 means the rule is not applicable
-            if( s.resname===undefined &amp;&amp; s.resno===undefined &amp;&amp; s.inscode===undefined &amp;&amp;
-                    s.sstruc===undefined &amp;&amp; s.model===undefined &amp;&amp; s.chainname===undefined &amp;&amp;
-                    s.atomindex===undefined &amp;&amp;
-                    ( s.keyword===undefined || AtomOnlyKeywords.includes( s.keyword ) )
-            ) return -1;
-
-            if( s.keyword!==undefined ){
-                if( s.keyword===kwd.HETERO &amp;&amp; !r.isHetero() ) return false;
-                if( s.keyword===kwd.PROTEIN &amp;&amp; !r.isProtein() ) return false;
-                if( s.keyword===kwd.NUCLEIC &amp;&amp; !r.isNucleic() ) return false;
-                if( s.keyword===kwd.RNA &amp;&amp; !r.isRna() ) return false;
-                if( s.keyword===kwd.DNA &amp;&amp; !r.isDna() ) return false;
-                if( s.keyword===kwd.POLYMER &amp;&amp; !r.isPolymer() ) return false;
-                if( s.keyword===kwd.WATER &amp;&amp; !r.isWater() ) return false;
-                if( s.keyword===kwd.HELIX &amp;&amp; !r.isHelix() ) return false;
-                if( s.keyword===kwd.SHEET &amp;&amp; !r.isSheet() ) return false;
-                if( s.keyword===kwd.TURN &amp;&amp; !r.isTurn() ) return false;
-                if( s.keyword===kwd.ION &amp;&amp; !r.isIon() ) return false;
-                if( s.keyword===kwd.SACCHARIDE &amp;&amp; !r.isSaccharide() ) return false;
-            }
-
-            if( s.atomindex!==undefined &amp;&amp;
-                    rangeInSortedArray( s.atomindex, r.atomOffset, r.atomEnd ) === 0
-            ) return false;
-
-            if( s.resname!==undefined ){
-                if( Array.isArray( s.resname ) ){
-                    if( !s.resname.includes( r.resname ) ) return false;
-                }else{
-                    if( s.resname!==r.resname ) return false;
-                }
-            }
-            if( s.sstruc!==undefined &amp;&amp; s.sstruc!==r.sstruc ) return false;
-            if( s.resno!==undefined ){
-                if( Array.isArray( s.resno ) &amp;&amp; s.resno.length===2 ){
-                    if( s.resno[0]&gt;r.resno || s.resno[1]&lt;r.resno ) return false;
-                }else{
-                    if( s.resno!==r.resno ) return false;
-                }
-            }
-            if( s.inscode!==undefined &amp;&amp; s.inscode!==r.inscode ) return false;
-
-            if( s.chainname!==undefined &amp;&amp; s.chainname!==r.chainname ) return false;
-            if( s.model!==undefined &amp;&amp; s.model!==r.modelIndex ) return false;
-
-            return true;
-
-        };
-
-        return this._makeTest( fn, selection );
+        return this._makeTest( residueTestFn, selection );
 
     }
 
@@ -1092,38 +1140,9 @@ class Selection{
 
         }
 
-        const fn = function( c, s ){
 
-            // returning -1 means the rule is not applicable
-            if( s.chainname===undefined &amp;&amp; s.model===undefined &amp;&amp; s.atomindex===undefined &amp;&amp;
-                    ( s.keyword===undefined || !ChainKeywords.includes( s.keyword ) )
-            ) return -1;
 
-            if( s.keyword!==undefined ){
-                if( s.keyword===kwd.HETERO &amp;&amp; !c.isHetero() ) return false;
-                if( s.keyword===kwd.PROTEIN &amp;&amp; !c.isProtein() ) return false;
-                if( s.keyword===kwd.NUCLEIC &amp;&amp; !c.isNucleic() ) return false;
-                if( s.keyword===kwd.RNA &amp;&amp; !c.isRna() ) return false;
-                if( s.keyword===kwd.DNA &amp;&amp; !c.isDna() ) return false;
-                if( s.keyword===kwd.POLYMER &amp;&amp; !c.isPolymer() ) return false;
-                if( s.keyword===kwd.WATER &amp;&amp; !c.isWater() ) return false;
-                if( s.keyword===kwd.ION &amp;&amp; !c.isIon() ) return false;
-                if( s.keyword===kwd.SACCHARIDE &amp;&amp; !c.isSaccharide() ) return false;
-            }
-
-            if( s.atomindex!==undefined &amp;&amp;
-                    rangeInSortedArray( s.atomindex, c.atomOffset, c.atomEnd ) === 0
-            ) return false;
-
-            if( s.chainname!==undefined &amp;&amp; s.chainname!==c.chainname ) return false;
-
-            if( s.model!==undefined &amp;&amp; s.model!==c.modelIndex ) return false;
-
-            return true;
-
-        };
-
-        return this._makeTest( fn, selection );
+        return this._makeTest( chainTestFn, selection );
 
     }
 
@@ -1154,22 +1173,7 @@ class Selection{
 
         }
 
-        const fn = function( m, s ){
-
-            // returning -1 means the rule is not applicable
-            if( s.model===undefined &amp;&amp; s.atomindex===undefined ) return -1;
-
-            if( s.atomindex!==undefined &amp;&amp;
-                    rangeInSortedArray( s.atomindex, m.atomOffset, m.atomEnd ) === 0
-            ) return false;
-
-            if( s.model!==undefined &amp;&amp; s.model!==m.index ) return false;
-
-            return true;
-
-        };
-
-        return this._makeTest( fn, selection );
+        return this._makeTest( modelTestFn, selection );
 
     }
 
