@@ -204,6 +204,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/controls/component-controls.js~componentcontrols",
+    "class/src/controls/component-controls.js~ComponentControls.html",
+    "<span>ComponentControls</span> <span class=\"search-result-import-path\">ngl/src/controls/component-controls.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/cone-buffer.js~conebuffer",
     "class/src/buffer/cone-buffer.js~ConeBuffer.html",
     "<span>ConeBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cone-buffer.js</span>",
@@ -2412,6 +2418,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#movecomponent",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-moveComponent",
+    "src/controls/animation-controls.js~AnimationControls#moveComponent",
+    "method"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#orient",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-orient",
     "src/controls/animation-controls.js~AnimationControls#orient",
@@ -2427,6 +2439,12 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#rock",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-rock",
     "src/controls/animation-controls.js~AnimationControls#rock",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#rockcomponent",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-rockComponent",
+    "src/controls/animation-controls.js~AnimationControls#rockComponent",
     "method"
   ],
   [
@@ -2448,6 +2466,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#spincomponent",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-spinComponent",
+    "src/controls/animation-controls.js~AnimationControls#spinComponent",
+    "method"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#value",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-value",
     "src/controls/animation-controls.js~AnimationControls#value",
@@ -2463,6 +2487,48 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#zoommove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-zoomMove",
     "src/controls/animation-controls.js~AnimationControls#zoomMove",
+    "method"
+  ],
+  [
+    "src/controls/component-controls.js",
+    "file/src/controls/component-controls.js.html",
+    "src/controls/component-controls.js",
+    "file"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#changed",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-method-changed",
+    "src/controls/component-controls.js~ComponentControls#changed",
+    "method"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#constructor",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-constructor-constructor",
+    "src/controls/component-controls.js~ComponentControls#constructor",
+    "method"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#position",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-get-position",
+    "src/controls/component-controls.js~ComponentControls#position",
+    "member"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#rotation",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-get-rotation",
+    "src/controls/component-controls.js~ComponentControls#rotation",
+    "member"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#signals",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-member-signals",
+    "src/controls/component-controls.js~ComponentControls#signals",
+    "member"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#spin",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-method-spin",
+    "src/controls/component-controls.js~ComponentControls#spin",
     "method"
   ],
   [
@@ -3952,60 +4018,6 @@ window.esdocSearchIndex = [
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-index",
     "src/proxy/chain-proxy.js~ChainProxy#index",
     "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isdna",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isDna",
-    "src/proxy/chain-proxy.js~ChainProxy#isDna",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#ishetero",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isHetero",
-    "src/proxy/chain-proxy.js~ChainProxy#isHetero",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#ision",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isIon",
-    "src/proxy/chain-proxy.js~ChainProxy#isIon",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isnucleic",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isNucleic",
-    "src/proxy/chain-proxy.js~ChainProxy#isNucleic",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#ispolymer",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isPolymer",
-    "src/proxy/chain-proxy.js~ChainProxy#isPolymer",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isprotein",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isProtein",
-    "src/proxy/chain-proxy.js~ChainProxy#isProtein",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isrna",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isRna",
-    "src/proxy/chain-proxy.js~ChainProxy#isRna",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#issaccharide",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isSaccharide",
-    "src/proxy/chain-proxy.js~ChainProxy#isSaccharide",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#iswater",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isWater",
-    "src/proxy/chain-proxy.js~ChainProxy#isWater",
-    "method"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#model",

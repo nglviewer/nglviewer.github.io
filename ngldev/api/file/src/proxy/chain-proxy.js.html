@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-4</span>
+<header><span>NGL@0.10.2-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -138,6 +138,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/component-controls.js~ComponentControls.html">ComponentControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
@@ -268,8 +269,6 @@ class ChainProxy{
          */
         this.index = index;
 
-        this.__residueProxy = this.structure.getResidueProxy();
-
     }
 
     /**
@@ -366,87 +365,6 @@ class ChainProxy{
     }
     set chainid ( value ) {
         this.chainStore.setChainid( this.index, value );
-    }
-
-    //
-
-    get __firstResidueProxy () {
-        this.__residueProxy.index = this.residueOffset;
-        return this.__residueProxy;
-    }
-
-    //
-
-    /**
-     * If first residue is from a protein
-     * @return {Boolean} flag
-     */
-    isProtein(){
-        return this.__firstResidueProxy.isProtein();
-    }
-
-    /**
-     * If first residue is nucleic
-     * @return {Boolean} flag
-     */
-    isNucleic(){
-        return this.__firstResidueProxy.isNucleic();
-    }
-
-    /**
-     * If first residue is rna
-     * @return {Boolean} flag
-     */
-    isRna(){
-        return this.__firstResidueProxy.isRna();
-    }
-
-    /**
-     * If first residue is dna
-     * @return {Boolean} flag
-     */
-    isDna(){
-        return this.__firstResidueProxy.isDna();
-    }
-
-    /**
-     * If first residue is a polymer
-     * @return {Boolean} flag
-     */
-    isPolymer(){
-        return this.__firstResidueProxy.isPolymer();
-    }
-
-    /**
-     * If first residue is a hetero group
-     * @return {Boolean} flag
-     */
-    isHetero(){
-        return this.__firstResidueProxy.isHetero();
-    }
-
-    /**
-     * If first residue is a water molecule
-     * @return {Boolean} flag
-     */
-    isWater(){
-        return this.__firstResidueProxy.isWater();
-    }
-
-    /**
-     * If first residue is an ion
-     * @return {Boolean} flag
-     */
-    isIon(){
-        return this.__firstResidueProxy.isIon();
-    }
-
-    /**
-     * If first residue is a saccharide
-     * @return {Boolean} flag
-     */
-    isSaccharide(){
-        return this.__firstResidueProxy.isSaccharide();
     }
 
     //
