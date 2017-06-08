@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-5</span>
+<header><span>NGL@0.10.2-6</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li>Connectivity: read from the &quot;_struct_conn&quot; item, which generally contains data on hetero atom connectivity. Entries with &quot;_conn_type_id&quot; equal to &quot;hydrog&quot; are currently ignored. Connectivity for non-hetero atoms is calculated during post-processing.</li>
+<li>The cif dictionary is added to the <code>structure.extraData</code> property, with key <code>cif</code>, excluding &quot;_atom_site&quot; items</li>
 </ul>
 <h3 id="pdb-pqr">PDB/PQR</h3>
 <p>Extension: <strong>.pdb</strong>, <strong>.ent</strong>, <strong>.pqr</strong></p>
@@ -300,7 +301,7 @@
 <li>Read velocity data from <em>GRO</em> files that includes it (and create a new <em>Representation</em> to display it).</li>
 </ul>
 <h3 id="sdf">SDF</h3>
-<p>Extension: <strong>.sdf</strong></p>
+<p>Extension: <strong>.sdf</strong>, <strong>.sd</strong></p>
 <p>Specification: <a href="http://download.accelrys.com/freeware/ctfile-formats/">http://download.accelrys.com/freeware/ctfile-formats/</a></p>
 <p>Supported features:</p>
 <ul>
@@ -322,6 +323,7 @@
 </ul>
 </li>
 <li>Connectivity: read from bond block, includes bond order</li>
+<li>Associated data items are added to the <code>structure.extraData</code> property with key <code>sdf</code></li>
 </ul>
 <h3 id="mol2">MOL2</h3>
 <p>Extension: <strong>.mol2</strong></p>

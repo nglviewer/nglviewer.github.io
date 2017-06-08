@@ -30,6 +30,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/component/annotation.js~annotation",
+    "class/src/component/annotation.js~Annotation.html",
+    "<span>Annotation</span> <span class=\"search-result-import-path\">ngl/src/component/annotation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/arrow-buffer.js~arrowbuffer",
     "class/src/buffer/arrow-buffer.js~ArrowBuffer.html",
     "<span>ArrowBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/arrow-buffer.js</span>",
@@ -1968,6 +1974,36 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/annotation.js",
+    "file/src/component/annotation.js.html",
+    "src/component/annotation.js",
+    "file"
+  ],
+  [
+    "src/component/annotation.js~annotation#constructor",
+    "class/src/component/annotation.js~Annotation.html#instance-constructor-constructor",
+    "src/component/annotation.js~Annotation#constructor",
+    "method"
+  ],
+  [
+    "src/component/annotation.js~annotation#dispose",
+    "class/src/component/annotation.js~Annotation.html#instance-method-dispose",
+    "src/component/annotation.js~Annotation#dispose",
+    "method"
+  ],
+  [
+    "src/component/annotation.js~annotation#setcontent",
+    "class/src/component/annotation.js~Annotation.html#instance-method-setContent",
+    "src/component/annotation.js~Annotation#setContent",
+    "method"
+  ],
+  [
+    "src/component/annotation.js~annotation#setvisibility",
+    "class/src/component/annotation.js~Annotation.html#instance-method-setVisibility",
+    "src/component/annotation.js~Annotation#setVisibility",
+    "method"
+  ],
+  [
     "src/component/collection.js",
     "file/src/component/collection.js.html",
     "src/component/collection.js",
@@ -1984,6 +2020,12 @@ window.esdocSearchIndex = [
     "file/src/component/component.js.html",
     "src/component/component.js",
     "file"
+  ],
+  [
+    "src/component/component.js~component#addannotation",
+    "class/src/component/component.js~Component.html#instance-method-addAnnotation",
+    "src/component/component.js~Component#addAnnotation",
+    "method"
   ],
   [
     "src/component/component.js~component#addrepresentation",
@@ -2022,9 +2064,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#removeallannotations",
+    "class/src/component/component.js~Component.html#instance-method-removeAllAnnotations",
+    "src/component/component.js~Component#removeAllAnnotations",
+    "method"
+  ],
+  [
     "src/component/component.js~component#removeallrepresentations",
     "class/src/component/component.js~Component.html#instance-method-removeAllRepresentations",
     "src/component/component.js~Component#removeAllRepresentations",
+    "method"
+  ],
+  [
+    "src/component/component.js~component#removeannotation",
+    "class/src/component/component.js~Component.html#instance-method-removeAnnotation",
+    "src/component/component.js~Component#removeAnnotation",
     "method"
   ],
   [
@@ -5436,6 +5490,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/structure/structure.js~structure#extradata",
+    "class/src/structure/structure.js~Structure.html#instance-member-extraData",
+    "src/structure/structure.js~Structure#extraData",
+    "member"
+  ],
+  [
     "src/structure/structure.js~structure#getatomsetwithinselection",
     "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinSelection",
     "src/structure/structure.js~Structure#getAtomSetWithinSelection",
@@ -5494,6 +5554,12 @@ window.esdocSearchIndex = [
     "class/src/structure/structure.js~Structure.html#instance-member-validation",
     "src/structure/structure.js~Structure#validation",
     "member"
+  ],
+  [
+    "src/structure/structure.js~structureextradata",
+    "typedef/index.html#static-typedef-StructureExtraData",
+    "src/structure/structure.js~StructureExtraData",
+    "typedef"
   ],
   [
     "src/structure/structure.js~structureheader",

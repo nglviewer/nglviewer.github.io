@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-5</span>
+<header><span>NGL@0.10.2-6</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -363,6 +363,7 @@ shapeComp.autoView();</code>
 </ul>
 </li>
 <li>Connectivity: read from the &quot;_struct_conn&quot; item, which generally contains data on hetero atom connectivity. Entries with &quot;_conn_type_id&quot; equal to &quot;hydrog&quot; are currently ignored. Connectivity for non-hetero atoms is calculated during post-processing.</li>
+<li>The cif dictionary is added to the <code>structure.extraData</code> property, with key <code>cif</code>, excluding &quot;_atom_site&quot; items</li>
 </ul><h3>PDB/PQR</h3><p>Extension: <strong>.pdb</strong>, <strong>.ent</strong>, <strong>.pqr</strong></p><p>Specification: <a href="http://www.wwpdb.org/documentation/file-format.php">http://www.wwpdb.org/documentation/file-format.php</a></p><p>Supported features:</p><ul>
 <li>Title: read from &quot;TITLE&quot; record</li>
 <li>Box coordinates: read from &quot;CRYST1&quot; record</li>
@@ -413,7 +414,7 @@ shapeComp.autoView();</code>
 <li>Connectivity: not available in the format, automatically calculated during post-processing</li>
 </ul><p>TODO:</p><ul>
 <li>Read velocity data from <em>GRO</em> files that includes it (and create a new <em>Representation</em> to display it).</li>
-</ul><h3>SDF</h3><p>Extension: <strong>.sdf</strong></p><p>Specification: <a href="http://download.accelrys.com/freeware/ctfile-formats/">http://download.accelrys.com/freeware/ctfile-formats/</a></p><p>Supported features:</p><ul>
+</ul><h3>SDF</h3><p>Extension: <strong>.sdf</strong>, <strong>.sd</strong></p><p>Specification: <a href="http://download.accelrys.com/freeware/ctfile-formats/">http://download.accelrys.com/freeware/ctfile-formats/</a></p><p>Supported features:</p><ul>
 <li>Title: read from the second line of the header block</li>
 <li>Box coordinates: not available in the format</li>
 <li>Secondary structure: not available in the format, automatically calculated during post-processing</li>
@@ -432,6 +433,7 @@ shapeComp.autoView();</code>
 </ul>
 </li>
 <li>Connectivity: read from bond block, includes bond order</li>
+<li>Associated data items are added to the <code>structure.extraData</code> property with key <code>sdf</code></li>
 </ul><h3>MOL2</h3><p>Extension: <strong>.mol2</strong></p><p>Specification: <a href="http://www.tripos.com/data/support/mol2.pdf">http://www.tripos.com/data/support/mol2.pdf</a></p><p>Supported features:</p><ul>
 <li>Title: read from the first line of the molecule record</li>
 <li>Box coordinates: not available in the format</li>
@@ -857,6 +859,34 @@ stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation )
         
         
         <div data-ice="description"><p>Animation list.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Annotation HTML element floating on top of a position rendered in 3d</p>
 </div>
       </div>
     </td>
@@ -5535,6 +5565,34 @@ position part for scene translation</p>
         
         
         <div data-ice="description"><p>Extends <span><a href="typedef/index.html#static-typedef-ComponentSignals">ComponentSignals</a></span></p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureExtraData">StructureExtraData</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Structure extra data.</p>
 </div>
       </div>
     </td>

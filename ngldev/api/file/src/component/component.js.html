@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-5</span>
+<header><span>NGL@0.10.2-6</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -123,7 +123,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/volume-colormaker.js~VolumeColormaker.html">VolumeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html">Colormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/script-component.js~ScriptComponent.html">ScriptComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/shape-component.js~ShapeComponent.html">ShapeComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span></li>
@@ -204,6 +205,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureExtraData">StructureExtraData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
@@ -243,6 +245,7 @@ import Signal from &quot;../../lib/signals.es6.js&quot;;
 
 import { defaults } from &quot;../utils.js&quot;;
 import { generateUUID } from &quot;../math/math-utils.js&quot;;
+import Annotation from &quot;../component/annotation.js&quot;;
 import ComponentControls from &quot;../controls/component-controls.js&quot;;
 import { makeRepresentation } from &quot;../representation/representation-utils.js&quot;;
 // import RepresentationComponent from &quot;./representation-component.js&quot;;
@@ -315,6 +318,7 @@ class Component{
         this.viewer = stage.viewer;
 
         this.reprList = [];
+        this.annotationList = [];
 
         this.matrix = new Matrix4();
         this.position = new Vector3();
@@ -446,6 +450,52 @@ class Component{
     }
 
     /**
+     * Add an anotation object
+     * @param {Vector3} position - the 3d position
+     * @param {String|Element} content - the HTML content
+     * @param {Object} [params] - parameters
+     * @param {Integer} params.offsetX - 2d offset in x direction
+     * @param {Integer} params.offsetY - 2d offset in y direction
+     * @return {Annotation} the added annotation object
+     */
+    addAnnotation( position, content, params ){
+
+        const annotation = new Annotation( this, position, content, params );
+        this.annotationList.push( annotation );
+
+        return annotation;
+
+    }
+
+    /**
+     * Remove the give annotation from the component
+     * @param {Annotation} annotation - the annotation to remove
+     * @return {undefined}
+     */
+    removeAnnotation( annotation ){
+
+        var idx = this.annotationList.indexOf( annotation );
+        if( idx !== -1 ){
+            this.annotationList.splice( idx, 1 );
+            annotation.dispose();
+        }
+
+    }
+
+    /**
+     * Remove all annotations from the component
+     * @return {undefined}
+     */
+    removeAllAnnotations(){
+
+        this.annotationList.forEach( function( annotation ){
+            annotation.dispose();
+        } );
+        this.annotationList.length = 0;
+
+    }
+
+    /**
      * Add a new representation to the component
      * @param {String} type - the name of the representation
      * @param {Object} object - the object on which the representation should be based
@@ -521,24 +571,22 @@ class Component{
      */
     removeAllRepresentations(){
 
-        // copy via .slice because side effects may change reprList
-        this.reprList.slice().forEach( function( repr ){
-            this.removeRepresentation( repr );
-        }, this );
-
-    }
-
-    clearRepresentations(){
-
-        console.warn( &quot;.clearRepresentations is deprecated, use .removeAllRepresentations() instead&quot; );
-        this.removeAllRepresentations();
+        this.reprList.forEach( repr =&gt; {
+            repr.dispose();
+            this.signals.representationRemoved.dispatch( repr );
+        } );
+        this.reprList.length = 0;
 
     }
 
     dispose(){
 
+        this.removeAllAnnotations();
         this.removeAllRepresentations();
+
+        delete this.annotationList;
         delete this.reprList;
+
         this.signals.disposed.dispatch();
 
     }
@@ -554,6 +602,10 @@ class Component{
 
         this.eachRepresentation( function( repr ){
             repr.updateVisibility();
+        } );
+
+        this.annotationList.forEach( function( annotation ){
+            annotation.updateVisibility();
         } );
 
         this.signals.visibilityChanged.dispatch( value );

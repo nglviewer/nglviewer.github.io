@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-5</span>
+<header><span>NGL@0.10.2-6</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -123,7 +123,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/volume-colormaker.js~VolumeColormaker.html">VolumeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html">Colormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/script-component.js~ScriptComponent.html">ScriptComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/shape-component.js~ShapeComponent.html">ShapeComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span></li>
@@ -204,6 +205,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureExtraData">StructureExtraData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
@@ -230,13 +232,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Component from &apos;<span><a href="file/src/component/component.js.html#lineNumber52">ngl/src/component/component.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Component from &apos;<span><a href="file/src/component/component.js.html#lineNumber53">ngl/src/component/component.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">interface</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/component/component.js.html#lineNumber52">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/component/component.js.html#lineNumber53">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -345,6 +347,34 @@
   <tbody>
   
   <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/component/component.js~Component.html#instance-method-addAnnotation">addAnnotation</a></span></span><span data-ice="signature">(position: <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span>, content: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, params: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Add an anotation object</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
       
@@ -494,6 +524,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/component/component.js~Component.html#instance-method-removeAllAnnotations">removeAllAnnotations</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Remove all annotations from the component</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/component/component.js~Component.html#instance-method-removeAllRepresentations">removeAllRepresentations</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
@@ -501,6 +559,34 @@
         
         
         <div data-ice="description"><p>Removes all representation components</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/component/component.js~Component.html#instance-method-removeAnnotation">removeAnnotation</a></span></span><span data-ice="signature">(annotation: <span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Remove the give annotation from the component</p>
 </div>
       </div>
     </td>
@@ -699,7 +785,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber58">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber59">source</a></span></span>
     </span>
   </h3>
 
@@ -769,7 +855,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber72">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber73">source</a></span></span>
     </span>
   </h3>
 
@@ -805,6 +891,108 @@
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-addAnnotation">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">addAnnotation</span><span data-ice="signature">(position: <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span>, content: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, params: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber227">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Add an anotation object</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">position</td>
+      <td data-ice="type"><span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the 3d position</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">content</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the HTML content</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">params</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>parameters</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">params.offsetX</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>2d offset in x direction</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">params.offsetY</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>2d offset in y direction</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the added annotation object</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-addRepresentation">
     <span class="access" data-ice="access">public</span>
     
@@ -816,7 +1004,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber224">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber272">source</a></span></span>
     </span>
   </h3>
 
@@ -905,7 +1093,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber394">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber444">source</a></span></span>
     </span>
   </h3>
 
@@ -978,7 +1166,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber354">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber404">source</a></span></span>
     </span>
   </h3>
 
@@ -1034,7 +1222,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber381">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber431">source</a></span></span>
     </span>
   </h3>
 
@@ -1090,7 +1278,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber364">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber414">source</a></span></span>
     </span>
   </h3>
 
@@ -1135,6 +1323,62 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-removeAllAnnotations">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">removeAllAnnotations</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber255">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Remove all annotations from the component</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-removeAllRepresentations">
     <span class="access" data-ice="access">public</span>
     
@@ -1146,7 +1390,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber290">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber338">source</a></span></span>
     </span>
   </h3>
 
@@ -1191,6 +1435,79 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-removeAnnotation">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">removeAnnotation</span><span data-ice="signature">(annotation: <span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber241">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Remove the give annotation from the component</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">annotation</td>
+      <td data-ice="type"><span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>the annotation to remove</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-removeRepresentation">
     <span class="access" data-ice="access">public</span>
     
@@ -1202,7 +1519,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber265">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber313">source</a></span></span>
     </span>
   </h3>
 
@@ -1275,7 +1592,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber109">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber111">source</a></span></span>
     </span>
   </h3>
 
@@ -1357,7 +1674,7 @@ component.setPosition( [ 25, 0, 0 ] );</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber132">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber134">source</a></span></span>
     </span>
   </h3>
 
@@ -1439,7 +1756,7 @@ component.setRotation( [ 2, 0, 0 ] );</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber162">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber164">source</a></span></span>
     </span>
   </h3>
 
@@ -1521,7 +1838,7 @@ component.setScale( 2 );</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber181">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber183">source</a></span></span>
     </span>
   </h3>
 
@@ -1603,7 +1920,7 @@ to the position, rotation and scale transformations</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber319">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/component/component.js.html#lineNumber365">source</a></span></span>
     </span>
   </h3>
 
