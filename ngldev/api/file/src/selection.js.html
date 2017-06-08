@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-6</span>
+<header><span>NGL@0.10.2-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -768,6 +768,41 @@ class Selection{
                                         { atomname: &quot;O5*&quot; },
                                         { atomname: &quot;C5&apos;&quot; },
                                         { atomname: &quot;C5*&quot; }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                } );
+                continue;
+            }
+
+            if( cu === &quot;LIGAND&quot; ){
+                pushRule( {
+                    operator: &quot;AND&quot;,
+                    rules: [
+                        {
+                            operator: &quot;OR&quot;,
+                            rules: [
+                                { keyword: kwd.HETERO },
+                                {
+                                    negate: true,
+                                    operator: undefined,
+                                    rules: [
+                                        { keyword: kwd.POLYMER }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            negate: true,
+                            operator: undefined,
+                            rules: [
+                                {
+                                    operator: &quot;OR&quot;,
+                                    rules: [
+                                        { keyword: kwd.WATER },
+                                        { keyword: kwd.ION }
                                     ]
                                 }
                             ]

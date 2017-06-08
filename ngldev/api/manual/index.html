@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-6</span>
+<header><span>NGL@0.10.2-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -713,13 +713,14 @@ __dir__  // the directory to the scipt file</code>
         <div data-ice="card"><h1>Selection Language</h1><p>Selections (or &apos;Sele&apos; for short) strings can be input at various places in the user interface or when scripting. They are used to limit which atoms/residues are shown in a [molecular representation]{@tutorial molecular-representations} or what atoms are loaded from a trajectory.</p><h2>Example</h2><p>Select the side-chain and C-alpha atoms plus the backbone nitrogen in case of proline. <code>not backbone or .CA or (PRO and .N)</code> This selection is useful to display the sidechains together with a backbone trace. Hence there is also the keyword <em>sidechainAttached</em> for it.</p><h2>Language</h2><h3>Keywords</h3><ul>
 <li><em>all</em>, <strong>*</strong></li>
 <li><em>sidechain</em></li>
-<li><em>sidechainAttached</em></li>
+<li><em>sidechainAttached</em> (<code>not backbone or .CA or (PRO and .N)</code>)</li>
 <li><em>backbone</em></li>
 <li><em>protein</em></li>
 <li><em>nucleic</em></li>
 <li><em>rna</em></li>
 <li><em>dna</em></li>
 <li><em>hetero</em></li>
+<li><em>ligand</em> (<code>( not polymer or hetero ) and not ( water or ion )</code>)</li>
 <li><em>ion</em></li>
 <li><em>saccharide</em>/<em>sugar</em></li>
 <li><em>polymer</em></li>
@@ -727,19 +728,19 @@ __dir__  // the directory to the scipt file</code>
 <li><em>hydrogen</em></li>
 <li><em>helix</em></li>
 <li><em>sheet</em></li>
-<li><em>turn</em> (not helix and not sheet)</li>
-<li><em>small</em> (Gly, Ala, Ser)</li>
-<li><em>nucleophilic</em> (Ser, Thr, Cys)</li>
-<li><em>hydrophobic</em> (Ala, Val, Leu, Ile, Met, Pro, Phe, Trp)</li>
-<li><em>aromatic</em> (Phe, Tyr, Trp, His)</li>
-<li><em>amid</em> (Asn, Gln)</li>
-<li><em>acidic</em> (Asp, Glu)</li>
-<li><em>basic</em> (His, Lys, Arg)</li>
-<li><em>charged</em> (Asp, Glu, His, Lys, Arg)</li>
-<li><em>polar</em> (Asp, Cys, Gly, Glu, His, Lys, Arg, Asn, Gln, Ser, Thr, Tyr)</li>
-<li><em>nonpolar</em> (Ala, Ile, Leu, Met, Phe, Pro, Val, Trp)</li>
-<li><em>cyclic</em> (His, Phe, Pro, Trp, Tyr)</li>
-<li><em>aliphatic</em> (Ala, Gly, Ile, Leu, Val)</li>
+<li><em>turn</em> (<code>not helix and not sheet</code>)</li>
+<li><em>small</em> (<code>Gly or Ala or Ser</code>)</li>
+<li><em>nucleophilic</em> (<code>Ser or Thr or Cys</code>)</li>
+<li><em>hydrophobic</em> (<code>Ala or Val or Leu or Ile or Met or Pro or Phe or Trp</code>)</li>
+<li><em>aromatic</em> (<code>Phe or Tyr or Trp or His</code>)</li>
+<li><em>amid</em> (<code>Asn or Gln</code>)</li>
+<li><em>acidic</em> (<code>Asp or Glu</code>)</li>
+<li><em>basic</em> (<code>His or Lys or Arg</code>)</li>
+<li><em>charged</em> (<code>Asp or Glu or His or Lys or Arg</code>)</li>
+<li><em>polar</em> (<code>Asp or Cys or Gly or Glu or His or Lys or Arg or Asn or Gln or Ser or Thr or Tyr</code>)</li>
+<li><em>nonpolar</em> (<code>Ala or Ile or Leu or Met or Phe or Pro or Val or Trp</code>)</li>
+<li><em>cyclic</em> (<code>His or Phe or Pro or Trp or Tyr</code>)</li>
+<li><em>aliphatic</em> (<code>Ala or Gly or Ile or Leu or Val</code>)</li>
 <li><em>bonded</em> (all atoms with at least one bond)</li>
 <li><em>ring</em> (all atoms within rings)</li>
 </ul><h3>Expressions</h3><ul>

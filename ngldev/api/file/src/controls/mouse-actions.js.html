@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-6</span>
+<header><span>NGL@0.10.2-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -341,7 +341,7 @@ class MouseActions{
     static zoomFocusDrag( stage, dx, dy ){
         stage.trackballControls.zoom( ( dx + dy ) / -2 );
         const z = stage.viewer.camera.position.z;
-        stage.setFocus( 100 - Math.abs( z / 10 ) );
+        stage.setFocus( 100 - Math.abs( z / 8 ) );
     }
 
     /**

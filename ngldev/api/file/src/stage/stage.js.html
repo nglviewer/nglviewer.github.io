@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.2-6</span>
+<header><span>NGL@0.10.2-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -707,7 +707,7 @@ class Stage{
                     } );
                 }
                 object.addRepresentation( &quot;ball+stick&quot;, {
-                    sele: &quot;hetero and not ( water or ion )&quot;,
+                    sele: &quot;ligand&quot;,
                     colorScheme: &quot;element&quot;,
                     scale: 2.0,
                     aspectRatio: 1.5,
@@ -1325,7 +1325,7 @@ class Stage{
 
         let compName, reprName;
 
-        if( typeof name !== &quot;object&quot; ){
+        if( typeof name !== &quot;object&quot; || name instanceof RegExp ){
             compName = undefined;
             reprName = name;
         }else{
