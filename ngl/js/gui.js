@@ -452,7 +452,7 @@ NGL.MenubarWidget = function( stage, preferences ){
 
     container.add( new NGL.MenubarFileWidget( stage ) );
     container.add( new NGL.MenubarViewWidget( stage, preferences ) );
-    if( NGL.ExampleRegistry && NGL.ExampleRegistry.count > 0 ){
+    if( NGL.examplesListUrl && NGL.examplesScriptUrl ){
         container.add( new NGL.MenubarExamplesWidget( stage ) );
     }
     if( NGL.PluginRegistry && NGL.PluginRegistry.count > 0 ){
@@ -726,23 +726,24 @@ NGL.MenubarExamplesWidget = function( stage ){
     // configure menu contents
 
     var createOption = UI.MenubarHelper.createOption;
-    var createDivider = UI.MenubarHelper.createDivider;
-    var menuConfig = [];
+    var optionsPanel = UI.MenubarHelper.createOptionsPanel( [] );
+    optionsPanel.setWidth( "300px" );
 
-    NGL.ExampleRegistry.names.sort().forEach( function( name ){
-        if( name === "__divider__" ){
-            menuConfig.push( createDivider() );
-        }else if( name.charAt( 0 ) === "_" ){
-            return;  // hidden
-        }else{
+    var xhr = new XMLHttpRequest();
+    xhr.open( "GET", NGL.examplesListUrl );
+    xhr.responseType = "json";
+    xhr.onload = function( e ){
+
+        this.response.sort().forEach( function( name ){
             var option = createOption( name, function(){
-                NGL.ExampleRegistry.load( name, stage );
+                stage.loadFile( NGL.examplesScriptUrl + name + ".js" );
             } );
-            menuConfig.push( option );
-        }
-    } );
+            optionsPanel.add( option );
+        } );
 
-    var optionsPanel = UI.MenubarHelper.createOptionsPanel( menuConfig );
+    };
+    xhr.send();
+
     return UI.MenubarHelper.createMenuContainer( 'Examples', optionsPanel );
 
 };
@@ -1582,6 +1583,24 @@ NGL.StructureComponentWidget = function( component, stage ){
         stage.animationControls.move( component.getCenter() );
     } );
 
+    // Annotations visibility
+
+    var showAnnotations = new UI.Button( "show" ).onClick( function(){
+        component.annotationList.forEach( function( annotation ){
+            annotation.setVisibility( true );
+        } );
+    } );
+
+    var hideAnnotations = new UI.Button( "hide" ).onClick( function(){
+        component.annotationList.forEach( function( annotation ){
+            annotation.setVisibility( false );
+        } );
+    } );
+
+    var annotationButtons = new UI.Panel()
+        .setDisplay( "inline-block" )
+        .add( showAnnotations, hideAnnotations );
+
     // Open validation
 
     function validationInputOnChange( e ){
@@ -1657,6 +1676,7 @@ NGL.StructureComponentWidget = function( component, stage ){
         )
         .addMenuEntry( "Trajectory", traj )
         .addMenuEntry( "Principal axes", alignAxes )
+        .addMenuEntry( "Annotations", annotationButtons )
         .addMenuEntry( "Validation", vali )
         .addMenuEntry( "Position", position )
         .addMenuEntry( "Rotation", rotation )

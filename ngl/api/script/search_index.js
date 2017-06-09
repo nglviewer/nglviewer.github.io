@@ -24,6 +24,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~animationlist",
+    "class/src/animation/animation.js~AnimationList.html",
+    "<span>AnimationList</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/component/annotation.js~annotation",
+    "class/src/component/annotation.js~Annotation.html",
+    "<span>Annotation</span> <span class=\"search-result-import-path\">ngl/src/component/annotation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/arrow-buffer.js~arrowbuffer",
     "class/src/buffer/arrow-buffer.js~ArrowBuffer.html",
     "<span>ArrowBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/arrow-buffer.js</span>",
@@ -198,6 +210,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/controls/component-controls.js~componentcontrols",
+    "class/src/controls/component-controls.js~ComponentControls.html",
+    "<span>ComponentControls</span> <span class=\"search-result-import-path\">ngl/src/controls/component-controls.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/cone-buffer.js~conebuffer",
     "class/src/buffer/cone-buffer.js~ConeBuffer.html",
     "<span>ConeBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cone-buffer.js</span>",
@@ -261,6 +279,12 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/doublesided-buffer.js~doublesidedbuffer",
     "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html",
     "<span>DoubleSidedBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/doublesided-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/color/electrostatic-colormaker.js~electrostaticcolormaker",
+    "class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html",
+    "<span>ElectrostaticColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/electrostatic-colormaker.js</span>",
     "class"
   ],
   [
@@ -780,6 +804,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~valueanimation",
+    "class/src/animation/animation.js~ValueAnimation.html",
+    "<span>ValueAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/value-colormaker.js~valuecolormaker",
     "class/src/color/value-colormaker.js~ValueColormaker.html",
     "<span>ValueColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/value-colormaker.js</span>",
@@ -1228,6 +1258,30 @@ window.esdocSearchIndex = [
     "file/src/animation/animation.js.html",
     "src/animation/animation.js",
     "file"
+  ],
+  [
+    "src/animation/animation.js~animation#done",
+    "class/src/animation/animation.js~Animation.html#instance-get-done",
+    "src/animation/animation.js~Animation#done",
+    "member"
+  ],
+  [
+    "src/animation/animation.js~animation#then",
+    "class/src/animation/animation.js~Animation.html#instance-method-then",
+    "src/animation/animation.js~Animation#then",
+    "method"
+  ],
+  [
+    "src/animation/animation.js~animationlist#done",
+    "class/src/animation/animation.js~AnimationList.html#instance-get-done",
+    "src/animation/animation.js~AnimationList#done",
+    "member"
+  ],
+  [
+    "src/animation/animation.js~animationlist#then",
+    "class/src/animation/animation.js~AnimationList.html#instance-method-then",
+    "src/animation/animation.js~AnimationList#then",
+    "method"
   ],
   [
     "src/buffer/alignedbox-buffer.js",
@@ -1788,6 +1842,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/color/electrostatic-colormaker.js",
+    "file/src/color/electrostatic-colormaker.js.html",
+    "src/color/electrostatic-colormaker.js",
+    "file"
+  ],
+  [
     "src/color/element-colormaker.js",
     "file/src/color/element-colormaker.js.html",
     "src/color/element-colormaker.js",
@@ -1914,6 +1974,36 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/annotation.js",
+    "file/src/component/annotation.js.html",
+    "src/component/annotation.js",
+    "file"
+  ],
+  [
+    "src/component/annotation.js~annotation#constructor",
+    "class/src/component/annotation.js~Annotation.html#instance-constructor-constructor",
+    "src/component/annotation.js~Annotation#constructor",
+    "method"
+  ],
+  [
+    "src/component/annotation.js~annotation#dispose",
+    "class/src/component/annotation.js~Annotation.html#instance-method-dispose",
+    "src/component/annotation.js~Annotation#dispose",
+    "method"
+  ],
+  [
+    "src/component/annotation.js~annotation#setcontent",
+    "class/src/component/annotation.js~Annotation.html#instance-method-setContent",
+    "src/component/annotation.js~Annotation#setContent",
+    "method"
+  ],
+  [
+    "src/component/annotation.js~annotation#setvisibility",
+    "class/src/component/annotation.js~Annotation.html#instance-method-setVisibility",
+    "src/component/annotation.js~Annotation#setVisibility",
+    "method"
+  ],
+  [
     "src/component/collection.js",
     "file/src/component/collection.js.html",
     "src/component/collection.js",
@@ -1930,6 +2020,12 @@ window.esdocSearchIndex = [
     "file/src/component/component.js.html",
     "src/component/component.js",
     "file"
+  ],
+  [
+    "src/component/component.js~component#addannotation",
+    "class/src/component/component.js~Component.html#instance-method-addAnnotation",
+    "src/component/component.js~Component#addAnnotation",
+    "method"
   ],
   [
     "src/component/component.js~component#addrepresentation",
@@ -1968,9 +2064,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/component/component.js~component#removeallannotations",
+    "class/src/component/component.js~Component.html#instance-method-removeAllAnnotations",
+    "src/component/component.js~Component#removeAllAnnotations",
+    "method"
+  ],
+  [
     "src/component/component.js~component#removeallrepresentations",
     "class/src/component/component.js~Component.html#instance-method-removeAllRepresentations",
     "src/component/component.js~Component#removeAllRepresentations",
+    "method"
+  ],
+  [
+    "src/component/component.js~component#removeannotation",
+    "class/src/component/component.js~Component.html#instance-method-removeAnnotation",
+    "src/component/component.js~Component#removeAnnotation",
     "method"
   ],
   [
@@ -2364,6 +2472,18 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#movecomponent",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-moveComponent",
+    "src/controls/animation-controls.js~AnimationControls#moveComponent",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#orient",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-orient",
+    "src/controls/animation-controls.js~AnimationControls#orient",
+    "method"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#remove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-remove",
     "src/controls/animation-controls.js~AnimationControls#remove",
@@ -2373,6 +2493,12 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#rock",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-rock",
     "src/controls/animation-controls.js~AnimationControls#rock",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#rockcomponent",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-rockComponent",
+    "src/controls/animation-controls.js~AnimationControls#rockComponent",
     "method"
   ],
   [
@@ -2394,6 +2520,18 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#spincomponent",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-spinComponent",
+    "src/controls/animation-controls.js~AnimationControls#spinComponent",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#value",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-value",
+    "src/controls/animation-controls.js~AnimationControls#value",
+    "method"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#zoom",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-zoom",
     "src/controls/animation-controls.js~AnimationControls#zoom",
@@ -2403,6 +2541,48 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#zoommove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-zoomMove",
     "src/controls/animation-controls.js~AnimationControls#zoomMove",
+    "method"
+  ],
+  [
+    "src/controls/component-controls.js",
+    "file/src/controls/component-controls.js.html",
+    "src/controls/component-controls.js",
+    "file"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#changed",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-method-changed",
+    "src/controls/component-controls.js~ComponentControls#changed",
+    "method"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#constructor",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-constructor-constructor",
+    "src/controls/component-controls.js~ComponentControls#constructor",
+    "method"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#position",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-get-position",
+    "src/controls/component-controls.js~ComponentControls#position",
+    "member"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#rotation",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-get-rotation",
+    "src/controls/component-controls.js~ComponentControls#rotation",
+    "member"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#signals",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-member-signals",
+    "src/controls/component-controls.js~ComponentControls#signals",
+    "member"
+  ],
+  [
+    "src/controls/component-controls.js~componentcontrols#spin",
+    "class/src/controls/component-controls.js~ComponentControls.html#instance-method-spin",
+    "src/controls/component-controls.js~ComponentControls#spin",
     "method"
   ],
   [
@@ -2518,6 +2698,12 @@ window.esdocSearchIndex = [
     "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-remove",
     "src/controls/mouse-controls.js~MouseControls#remove",
     "method"
+  ],
+  [
+    "src/controls/mouse-controls.js~triggerstring",
+    "typedef/index.html#static-typedef-TriggerString",
+    "src/controls/mouse-controls.js~TriggerString",
+    "typedef"
   ],
   [
     "src/controls/picking-controls.js",
@@ -3888,60 +4074,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/chain-proxy.js~chainproxy#isdna",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isDna",
-    "src/proxy/chain-proxy.js~ChainProxy#isDna",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#ishetero",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isHetero",
-    "src/proxy/chain-proxy.js~ChainProxy#isHetero",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#ision",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isIon",
-    "src/proxy/chain-proxy.js~ChainProxy#isIon",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isnucleic",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isNucleic",
-    "src/proxy/chain-proxy.js~ChainProxy#isNucleic",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#ispolymer",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isPolymer",
-    "src/proxy/chain-proxy.js~ChainProxy#isPolymer",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isprotein",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isProtein",
-    "src/proxy/chain-proxy.js~ChainProxy#isProtein",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#isrna",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isRna",
-    "src/proxy/chain-proxy.js~ChainProxy#isRna",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#issaccharide",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isSaccharide",
-    "src/proxy/chain-proxy.js~ChainProxy#isSaccharide",
-    "method"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#iswater",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-isWater",
-    "src/proxy/chain-proxy.js~ChainProxy#isWater",
-    "method"
-  ],
-  [
     "src/proxy/chain-proxy.js~chainproxy#model",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-model",
     "src/proxy/chain-proxy.js~ChainProxy#model",
@@ -4986,6 +5118,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/stage/stage.js~stage#mousecontrols",
+    "class/src/stage/stage.js~Stage.html#instance-member-mouseControls",
+    "src/stage/stage.js~Stage#mouseControls",
+    "member"
+  ],
+  [
     "src/stage/stage.js~stage#mouseobserver",
     "class/src/stage/stage.js~Stage.html#instance-member-mouseObserver",
     "src/stage/stage.js~Stage#mouseObserver",
@@ -5013,6 +5151,12 @@ window.esdocSearchIndex = [
     "src/stage/stage.js~stage#setrock",
     "class/src/stage/stage.js~Stage.html#instance-method-setRock",
     "src/stage/stage.js~Stage#setRock",
+    "method"
+  ],
+  [
+    "src/stage/stage.js~stage#setsize",
+    "class/src/stage/stage.js~Stage.html#instance-method-setSize",
+    "src/stage/stage.js~Stage#setSize",
     "method"
   ],
   [
@@ -5346,6 +5490,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/structure/structure.js~structure#extradata",
+    "class/src/structure/structure.js~Structure.html#instance-member-extraData",
+    "src/structure/structure.js~Structure#extraData",
+    "member"
+  ],
+  [
     "src/structure/structure.js~structure#getatomsetwithinselection",
     "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinSelection",
     "src/structure/structure.js~Structure#getAtomSetWithinSelection",
@@ -5404,6 +5554,12 @@ window.esdocSearchIndex = [
     "class/src/structure/structure.js~Structure.html#instance-member-validation",
     "src/structure/structure.js~Structure#validation",
     "member"
+  ],
+  [
+    "src/structure/structure.js~structureextradata",
+    "typedef/index.html#static-typedef-StructureExtraData",
+    "src/structure/structure.js~StructureExtraData",
+    "typedef"
   ],
   [
     "src/structure/structure.js~structureheader",

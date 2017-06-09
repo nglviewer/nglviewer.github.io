@@ -14,103 +14,115 @@ function createElement( name, properties, style ){
     return el;
 }
 
-var fileInput = createElement( "input", {
-    type: "file",
+function createSelect( options, properties, style ){
+    var select = createElement( "select", properties, style );
+    options.forEach( function( d ){
+        select.add( createElement( "option", {
+            value: d[ 0 ], text: d[ 1 ]
+        } ) );
+    } )
+    return select;
+}
+
+function createFileButton( label, properties, style ){
+    var input = createElement( "input", Object.assign( {
+        type: "file",
+    }, properties ), { display: "none" } );
+    addElement( input );
+    var button = createElement( "input", {
+        value: label,
+        type: "button",
+        onclick: function(){ input.click(); }
+    }, style );
+    return button;
+}
+
+
+function loadStructure( input ){
+    stage.removeAllComponents();
+    return stage.loadFile( input ).then( function( o ){
+        o.autoView();
+        o.addRepresentation( polymerSelect.value, {
+            sele: "polymer",
+            name: "polymer"
+        } );
+        o.addRepresentation( "ball+stick", {
+            name: "ligand",
+            visible: ligandCheckbox.checked,
+            sele: "not ( polymer or water or ion )"
+        } );
+        o.addRepresentation( "spacefill", {
+            name: "waterIon",
+            visible: waterIonCheckbox.checked,
+            sele: "water or ion",
+            scale: 0.25
+        } );
+    } );
+}
+
+
+var loadStructureButton = createFileButton( "load structure", {
+    accept: ".pdb,.cif,.ent,.gz",
     onchange: function( e ){
-        stage.loadFile()
+        if( e.target.files[ 0 ] ){
+            loadStructure( e.target.files[ 0 ] )
+        }
     }
-}, {
+}, { top: "12px", left: "12px" } );
+addElement( loadStructureButton );
 
-} );
+var polymerSelect = createSelect( [
+    [ "cartoon", "cartoon" ],
+    [ "spacefill", "spacefill" ],
+    [ "licorice", "licorice" ],
+    [ "surface", "surface" ]
+], {
+    onchange: function( e ){
+        stage.getRepresentationsByName( "polymer" ).dispose();
+        stage.eachComponent( function( o ){
+            o.addRepresentation( e.target.value, {
+                sele: "polymer",
+                name: "polymer"
+            } );
+        } );
+    }
+}, { top: "36px", left: "12px" } );
+addElement( polymerSelect );
+
+var ligandCheckbox = createElement( "input", {
+    type: "checkbox",
+    checked: true,
+    onchange: function( e ){
+        stage.getRepresentationsByName( "ligand" )
+            .setVisibility( e.target.checked );
+    }
+}, { top: "60px", left: "12px" } );
+addElement( ligandCheckbox );
+addElement( createElement( "span", {
+    innerText: "ligand"
+}, { top: "60px", left: "32px" } ) )
+
+var waterIonCheckbox = createElement( "input", {
+    type: "checkbox",
+    checked: false,
+    onchange: function( e ){
+        stage.getRepresentationsByName( "waterIon" )
+            .setVisibility( e.target.checked );
+    }
+}, { top: "84px", left: "12px" } );
+addElement( waterIonCheckbox );
+addElement( createElement( "span", {
+    innerText: "water+ion"
+}, { top: "84px", left: "32px" } ) )
+
+var centerButton = createElement( "input", {
+    type: "button",
+    value: "center",
+    onclick: function(){
+        stage.autoView( 1000 );
+    }
+}, { top: "108px", left: "12px" } );
+addElement( centerButton );
 
 
-stage.loadFile( "rcsb://3j3q.mmtf" ).then( function( o ){
-
-    var point = o.addRepresentation( "point" );
-
-    var surface = o.addRepresentation( "surface", {
-        surfaceType: "sas",
-        smooth: 2,
-        scaleFactor: 0.2,
-        colorScheme: "chainindex",
-        opaqueBack: false
-    } );
-
-    var cartoon = o.addRepresentation( "cartoon", {
-        sele: ":f0 or :f1 or :f2 or :f3 or :f4 or :f5",
-        colorScheme: "chainindex"
-    } );
-
-    var ballnstick = o.addRepresentation( "ball+stick", {
-        sele: ":f0",
-        colorScheme: "element"
-    } );
-
-    var rocket = o.addRepresentation( "rocket", {
-        sele: ":f0",
-        colorScheme: "chainindex"
-    } );
-
-    stage.tasks.onZeroOnce( function(){ stage.autoView(); } );
-
-    var pointButton = createElement( "input", {
-      type: "button",
-      value: "toggle points",
-    }, { top: "1em", left: "1em" } );
-    pointButton.onclick = function( e ){
-        point.toggleVisibility();
-    };
-    addElement( pointButton );
-
-    var surfaceButton = createElement( "input", {
-      type: "button",
-      value: "toggle surface",
-    }, { top: "3em", left: "1em" } );
-    surfaceButton.onclick = function( e ){
-        surface.toggleVisibility();
-    };
-    addElement( surfaceButton );
-
-    var cartoonButton = createElement( "input", {
-      type: "button",
-      value: "toggle cartoon",
-    }, { top: "5em", left: "1em" } );
-    cartoonButton.onclick = function( e ){
-        cartoon.toggleVisibility();
-    };
-    addElement( cartoonButton );
-
-    var centerAllButton = createElement( "input", {
-      type: "button",
-      value: "center all",
-    }, { top: "8em", left: "1em" } );
-    centerAllButton.onclick = function( e ){
-        stage.autoView()
-    };
-    addElement( centerAllButton );
-
-    var centerSubunitButton = createElement( "input", {
-      type: "button",
-      value: "center subunit",
-    }, { top: "10em", left: "1em" } );
-    centerSubunitButton.onclick = function( e ){
-        o.autoView( ":f0 or :f1 or :f2 or :f3 or :f4 or :f5" )
-    };
-    addElement( centerSubunitButton );
-
-    addElement( createElement( "span", {
-      innerText: "surface transparency",
-    }, { top: "11em", left: "1em", color: "lightgrey" } ) );
-    var opacityRange = createElement( "input", {
-      type: "range",
-      value: 0,
-      min: 0,
-      max: 10,
-      step: 1
-    }, { top: "15em", left: "1em" } );
-    opacityRange.oninput = function( e ){
-        surface.setParameters( { opacity: 1 - ( e.target.value / 10 ) } );
-    };
-    addElement( opacityRange );
-
-} );
+loadStructure( "data://3sn6.cif" );
