@@ -1,0 +1,902 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+    <style>
+        .reveal .slides > section {
+            background-color: rgba(255, 255, 255, 0.0);
+            pointer-events: none;
+        }
+        .inactive {
+            color: #999;
+        }
+        .warning {
+            color: #eea236;
+        }
+        .success {
+            color: #4cae4c;
+        }
+        .top {
+            top: 100px !important;
+        }
+        .bottom {
+            top: unset !important;
+            bottom: 100px !important;
+        }
+        .reveal .speaker-notes {
+            width: 50%;
+            left: 25%;
+        }
+
+        .x {
+            position:relative;
+        }
+
+        .x:before, .x:after{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:10px;
+            background-color:tomato;
+            top:140px;
+        }
+
+        .x:before {
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            transform:rotate(45deg);
+            left:2px;
+        }
+        .x:after {
+            -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg);
+            transform:rotate(-45deg);
+            right:2px;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<div id="viewport" style="position:absolute; width:960px; height:700px;">
+    <p id="info" style="display:none; position:absolute; width:100%; bottom:10%; background-color: rgba(255, 255, 255, 0.7);"></p>
+</div>
+<div id="wall" style="position:absolute; width:960px; height:700px;"></div>
+
+<img style="z-index:100; width:79px; height:76px; position:absolute; left:0px; bottom:0px;" src="img/UCSDlogo.jpeg" />
+<img style="z-index:100; width:165px; height:44px; position:absolute; right:0px; bottom:0px;" src="img/rcsb_logo.png" />
+
+
+<!-- INTRO -->
+
+<section data-state="slide-loading">
+    <h2 id="status" style="background-color:rgba(255, 255, 255, 0.7)">Loading...</h2>
+
+    <aside class="notes">
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+    </aside>
+</section>
+
+<section data-state="slide-title">
+    <h2>Web Molecular Graphics</h2>
+    <div style="height:300px">&nbsp;</div>
+    <div><small>
+        <i>Alexander Rose</i>
+        <br/>
+        VIZBI 2017
+    </small></div>
+    </br>
+    </br>
+    </br>
+    <small>Green Fluorescent Protein (PDB ID 1EMA)</small>
+</section>
+
+<section data-state="slide-web">
+    <h3>Why Web Molecular Graphics?</h3>
+    <div style="width:20%; margin-right:7%; float:right">
+        <img class="plain" style="margin:15px" src="img/logos/gmail.jpg" />
+        <img class="plain" style="margin:15px" src="img/logos/office365.jpg" />
+        <img class="plain" style="margin:15px" src="img/logos/mapbox.png" />
+        <img class="plain" style="margin:15px" src="img/logos/claraio.png" />
+    </div>
+    <div style="margin-left:7%; text-align:left; width:60%">
+        <p>
+            The last decade made the web a
+            stable &amp; versatile platform
+        </p>
+        <ul>
+            <li>
+                easier sharing</br>
+                <small>we are usually connected</small>
+            </li>
+            <li>
+                more accessible information</br>
+                <small>everyone has a browser installed</small>
+            </li>
+            <li>
+                live collaboration</br>
+                <small>simultaneous viewing and editing</small>
+            </li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li>advantages for users and developers</li>
+            <li>not hardware or operating system specific</li>
+            <li>no installation required</li>
+            <li>updates without user involvement</li>
+            <li>easy to create media-rich user interfaces</li>
+            <li>websites can even work off-line</li>
+            <li>apps: email, text, slides, spreadsheets, 3D-modeling, </li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-web2">
+    <h3>Why Web Molecular Graphics?</h3>
+    <div style="width:30%; margin-right:7%; float:right">
+        <img class="plain" style="margin:10px" src="img/apps/biodalliance.png" />
+        <img class="plain" style="margin:10px" src="img/apps/escher.png" />
+        <img class="plain" style="margin:10px" src="img/apps/allen-cell-explorer.png" />
+    </div>
+    <div style="margin-left:7%; text-align:left; width:60%">
+        <p>
+            More than for everyday tools, lots of scientific applications
+        </p>
+        <ul>
+            <li>
+                Genome browsers</br>
+                <small>UCSC, Biodalliance, ...</small>
+            </li>
+            <li>
+                Biological networks</br>
+                <small>Cytoscape.js, BiGG/Escher, ...</small>
+            </li>
+            <li>
+                Cell exploring (volumetric)</br>
+                <small>Allen Cell Explorer, ...</small>
+            </li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-history">
+    <h4>Brief &amp; incomplete History of</br> Web Molecular Graphics</h4>
+    <img class="plain" style="width:90%;"  src="img/history.png" />
+    </br></br>
+    <div><small>
+        <a href="http://dx.doi.org/10.1016/j.jmgm.2016.07.008">
+            Pirhadi et al. J Mol Graph Model, 2016
+        </a>
+        </br>
+        <a href="https://doi.org/10.1016/j.tibtech.2017.03.009">
+            Yuan et al. Trends Biotechnol, 2017
+        </a>
+    </small></div>
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-solved">
+    <h4><i>Past</i> Challenges</h4>
+    </br>
+    <div style="width:20%; margin-right:10%; float:right;">
+        <img class="plain" style="margin:15px" src="img/logos/java-applet.png" />
+        <img class="plain" style="margin:15px" src="img/logos/browser-war.png" />
+    </div>
+    <div style="margin-left:10%; text-align:left; width:60%">
+        <ul>
+            <li>
+                Plugins</br>
+                <small>security issues, had to be installed</small>
+            </li>
+            <li>
+                Cross-browser/OS issues</br>
+                <small>quirks, non-standard behaviors</small>
+            </li>
+            <li>
+                GPU access/availability</br>
+                <small>not (natively) available</small>
+            </li>
+            <li>
+                Scalability</br>
+                <small>slow JavaScript</small>
+            </li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        todo: add images of java, ie
+        <ul>
+            <li>JS advantage over Applets: can be extended within the browser</li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-solved2">
+    <h4><i>Solved</i> Challenges</h4>
+    </br>
+    <div style="width:20%; margin-right:10%; float:right;">
+        <img class="plain" style="margin:15px" src="img/logos/webgl.png" />
+        <img class="plain" style="margin:15px" src="img/logos/js-speed.png" />
+    </div>
+    <div style="margin-left:10%; text-align:left; width:60%">
+        <ul>
+            <li>
+                Plugins</br>
+                <small>support discontinued, feature-rich browsers</small>
+            </li>
+            <li>
+                Cross-browser/OS issues</br>
+                <small>spec-compliant &amp; evergreen browsers</small>
+            </li>
+            <li>
+                GPU access/availability</br>
+                <small>natively available (WebGL, WebGL2)</small>
+            </li>
+            <li>
+                Scalability</br>
+                <small>JavaScript within 2x of native apps</small>
+            </li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        todo: add images of java, ie
+        <ul>
+            <li>JS advantage over Applets: can be extended within the browser</li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-presentation">
+    <div style="background-color:rgba(255, 255, 255, 0.8)">
+        <h4>What is possible with</br> web molecular graphics now?</h4>
+    </div>
+    </br>
+    </br>
+    <div style="background-color:rgba(255, 255, 255, 0.8)" class="fragment">
+        <p style="margin-left:-12%">Let me show you...</p>
+        <small><ul>
+            <li>this presentation is a web-site</li>
+            <li>molecular graphics are rendered live</li>
+            <li>from standard files, no pre-processing</li>
+            <li>using the NGL Viewer &amp; Library</li>
+        </ul></small>
+    </div>
+    </br>
+    </br>
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-structure">
+    <h3 style="width:60%;">Structural data</h3>
+    <br/>
+    <div style="width:50%;">
+        <ul>
+            <li>Common representations</li>
+            <ul>
+                <li>Spacefill, Ball+Stick</li>
+                <li>Backbone, Cartoon</li>
+                <li>Surface</li>
+            </ul>
+            <div class="fragment" data-name="strucUncommon">
+                <li>Less common</li>
+                <ul>
+                    <li>Rope</li>
+                    <li>HyperBall</li>
+                </ul>
+            </div>
+        </ul>
+        </br></br>
+        <small>Ferredoxin (PDB ID 1BLU)</small>
+    </div>
+
+    <aside class="notes">
+        todo: make animation that zooms into binding pocket
+    </aside>
+</section>
+
+<section data-state="slide-gpcr">
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-dcd">
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-volume">
+    <h3 style="width:50%;">Volumetric Data</h3>
+    <br/>
+    <div style="width:50%;">
+        <ul>
+            <li>Data sources</li>
+            <small><ul>
+                <li>Xray/EM electron density</li>
+                <li>Spatial probability density</li>
+                <li>Electrostatic potential</li>
+                <li>Local resolution mapped on surface</li>
+            </ul></small>
+            <br/><br/>
+            <li>Representations</li>
+            <small><ul>
+                <li>Isosurface</li>
+                <li>Slice</li>
+                <li>Points</li>
+            </ul></small>
+        </ul>
+    </div>
+    <br/>
+    <small>Anthrax protective antigen pore (EMD-6224)</small>
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-xray">
+
+    <aside class="notes">
+        NADPH DIHYDRO-NICOTINAMIDE-ADENINE-DINUCLEOTIDE PHOSPHATE
+    </aside>
+</section>
+
+<section data-state="slide-scalability">
+    <h3>Scalability?</h3>
+    <div class="fragment">
+        <img class="plain" src="img/1BillionAtomsHorizontal.png" />
+        <p>Atoms in the Protein Data Bank</p>
+    </div>
+    
+    <br/>
+    <small><ul>
+        <li class="fragment">In over 130.000 structures (asymmetric units)</li>
+        <li class="fragment">68 of the 100 largest structures deposited in past 3 years</li>
+        <li class="fragment">Largest structure: HIV-1 Capsid with ~2.4M unique atoms</li>
+    </ul></small>
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-hiv">
+    
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section data-state="slide-apps">
+    <h4>What are Web Molecular Graphics for?</h4>
+    <br/>
+    <div style="width:24%; margin-right:7%; float:right">
+        <img class="plain" style="margin:10px" src="img/apps/libmol2.png" />
+        <img class="plain" style="margin:10px" src="img/apps/proteinsplus.png" />
+        <img class="plain" style="width:80%; margin:10px" src="img/speck/speck.png" />
+    </div>
+    <div style="margin-left:7%; text-align:left; width:60%;">
+        <p>Vast amount of viewers. Why?</p>
+        <small>
+            JSmol, GLmol, Jolecule, Libmol, NGL Viewer, MolMil, LiteMol, MoleculeViewer,
+            iView, uglymol, magekinjas, Aquaria, ChemDoodle, Speck, ...
+        </small>
+        <br/><br/>
+        <ul>
+            <li class="fragment">General purpose</li>
+            <li class="fragment">Input for computation</li>
+            <li class="fragment">Results/database entries</li>
+            <li class="fragment">Illustration</li>
+        </ul>
+    </div>
+
+    <p style="margin-top:10%;"><small>
+        <a hre="https://libmol.org/">LibMol</a> -
+        <a hre="http://proteinsplus.zbh.uni-hamburg.de/">ProteinsPlus</a> -
+        <a hre="https://wwwtyro.github.io/speck/">Speck</a>
+    </small></p>
+
+    <aside class="notes">
+        <ul>
+            <li>LibMol: Based on NGL Library</li>
+            <li>ProteinsPlus: Molecular graphics used for input and output of calculations</li>
+            <li>Speck: Ambient Occlusion, Depth-aware outlines, Depth of field</li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-integration">
+    <h4>Integration with other web-tools</h4>
+    <br/>
+    <div style="width:30%; margin-right:3%; float:right">
+        <img class="plain" style="margin:10px" src="img/apps/galaxy.png" />
+        <img class="plain" style="margin:10px" src="img/apps/nglview.gif" />
+        <img class="plain" style="width:90; margin:10px; padding-bottom:9px" src="img/logos/webcomponents.svg" />
+        <img class="plain" style="width:90; margin:10px" src="img/logos/biojs.png" />
+    </div>
+    <div style="margin-left:3%; text-align:left; width:55%">
+        <p></p>
+        <ul>
+            <li>
+                Galaxy Platform<br/>
+                <small>NGL Viewer integrated as a visualization tool </small>
+
+            </li>
+            <li>
+                Jupyter Notebooks<br/>
+                <small>nglview widget to interactively view structures and trajectories (kudos to Hai Nguyen)<br/><br/></small>
+            </li>
+            <li>
+                WebComponents/BioJS<br/>
+                <small>
+                    <i>WebComponents</i>: visualizations as HTML tags<br/>
+                    <i>BioJS</i>: repository for bio-related components
+                </small>
+            </li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-rendering">
+    <h3>More than Rendering</h3>
+    <br/>
+    <div class="fragment" style="width:30%; margin-right:2%; float:right">
+        <img class="plain" style="margin:15px" src="img/ngl-gallery2.jpg" />
+        <small><a href="http://arose.github.io/ngl/gallery/">
+            http://arose.github.io/ngl/gallery/
+        </a></small>
+    </div>
+    <div style="margin-left:2%; text-align:left; width:70%">
+        <p>Manipulation besides nice graphics</p>
+        <ul>
+            <li>transform individual molecules</li>
+            <li>selectively alter representation</li>
+            <li>show/hide parts of the molecule</li>
+            <li>change mouse/keyboard binding</li>
+            <li>developers/experts want scripting</li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li></li>
+        </ul>
+    </aside>
+</section>
+
+<section data-state="slide-transfer">
+    <h3>Data transfer</h3>
+    <div class="fragment" style="width:44%; margin-right:2%; float:right">
+        <h4>MDsrv</h4>
+        <img class="plain" style="margin:0px" src="img/apps/mdsrv.png" />
+        <small>Streaming of trajectories from<br/> molecular dynamics simulations</small>
+        <br/>
+        <small><small><a href="https://github.com/arose/mdsrv">https://github.com/arose/mdsrv</a></small></small>
+    </div>
+    <div style="width:45%; margin-left:2%;">
+        <img class="plain" style="width:50%; margin:15px" src="img/logos/mmtf.png" />
+        <img class="plain" style="margin:15px" src="img/mmtf-file-size2.png" />
+        <small>Compressed, binary format for the transmission macromolecular structures</small>
+        <br/>
+        <small><small><a href="http://mmtf.rcsb.org/">http://mmtf.rcsb.org/</a></small></small>
+    </div>
+</section>
+
+<section data-state="slide-data-challenges">
+    <h3>Data Challenges</h3>
+    <div style="width:30%; margin-right:7%; float:right">
+        <img class="plain" style="margin:10px" src="img/ihm-nup84.png" />
+        <img class="plain" style="margin:10px" src="img/3dgenome.png" />
+        <img class="plain" style="margin:10px" src="img/organell.png" />
+    </div>
+    <div style="margin-left:7%; text-align:left; width:60%">
+        <p>Bigger datasets, larger structures/complexes, more heterogeneous data</p>
+        <ul>
+            <li>
+                Integrative/Hybrid models</br>
+                <small>Spatial restraints, multi-scale, multi-state</small>
+            </li>
+            <li>
+                3D Genome data</br>
+                <small>Emerging technology</small>
+            </li>
+            <li>
+                Organelles/Whole cells</br>
+                <small>Enormous data size, level-of-detail required</small>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-top:7%;"><small><small>
+        <a href="http://dx.doi.org/10.5281/zenodo.583173">
+            IHM/Nup84: Shi et al. Mol Cell Proteomics, 2014
+        </a>
+        </br>
+        <a href="https://doi.org/10.1093/nar/gkv476">
+            3D Genome: Butyaev et al. NAR, 2015
+        </a>
+        </br>
+        <a href="https://elifesciences.org/articles/09541">
+            Chromatophore: Sener et al. eLife, 2016
+        </a>
+    </small></small></div>
+</section>
+
+<section data-state="slide-code-challenges">
+    <h3>Code Challenges</h3>
+    <br/>
+    <div style="width:15%; right:7%; position:absolute;">
+        <img class="plain" style="margin:12px" src="img/logos/webvr.png" />
+        <img class="plain" style="margin:12px" src="img/logos/webgl2.png" />
+        <img class="plain" style="margin:12px" src="img/logos/esnext.jpg" />
+        <img class="plain" style="margin:12px" src="img/logos/webassembly.jpg" />
+    </div>
+    <div style="left:7%; position:absolute; text-align:left; width:60%">
+        <ul>
+            <li>
+                Matching desktop applications</br>
+                <small>Too what extent, for which audience?</small>
+            </li>
+            <li>
+                New web technologies</br>
+                <small>WebVR, WebGL2, ES6/7/8, WebAssembly</small>
+            </li>
+            <li>
+                Developing large JS codebase</br>
+                <small>Rely on tooling, use TypeScript?</small>
+            </li>
+            <li>
+                Avoid code duplication</br>
+                <small>Share code for complex algorithms</small>
+            </li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        ngl exposes low level api for super efficient plugins and extensions; makes it also easy to integrate code into the ngl core library
+    </aside>
+</section>
+
+<section data-state="slide-ack">
+    <h3>Acknowledgements</h3>
+    <br/>
+    <img class="plain" style="width:50%; float:right;"  src="img/rcsb-team.jpg" />
+    <ul style="width:45%; float:left;">
+        <li>
+            RCSB PDB Team<br/>
+            <img class="plain" style="width:60%;" src="img/rcsb_logo.png" />
+        </li>
+        <li>
+            NGL Contributors<br/>
+            <small><ul>
+                <li>Fred Ludlow</li>
+                <li>Paul Pillot</li>
+                <li>Hai Nguyen</li>
+            </ul></small>
+        </li>
+        <p><small>Join us: Two PostDoc positions open at the RCSB PDB in San Diego, CA</small></p>
+    </ul>
+</section>
+
+<section data-state="slide-thanks">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <small><ul>
+        <li>NGL Viewer: <a target="_blank" href="https://github.com/arose/ngl">https://github.com/arose/ngl</a></li>
+        <li>MMTF: <a target="_blank" href="http://mmtf.rcsb.org">http://mmtf.rcsb.org</a></li>
+        <li>Twitter: <a target="_blank" href="https://twitter.com/asrmoin">@asrmoin</a></li>
+    </ul></small>
+</section>
+
+
+
+</div>
+</div>
+
+<script src="js/reveal.js"></script>
+<script src="js/ngl.dev.js"></script>
+
+<script>
+function loadScript( url ){
+    var script = document.createElement( "script" );
+    script.src = url;
+    document.body.append( script );
+}
+
+function loadScriptList( nameList ){
+    nameList.map( function( name ){
+        loadScript( "./scripts/" + name + ".js" );
+    } );
+}
+</script>
+
+<script>
+var stage, wall, counter, info;
+
+function handleResize(){
+    stage.handleResize();
+}
+
+function viewerFull(){
+    var s = document.getElementById( "viewport" ).style;
+    s.width = "960px";
+    s.height = "700px";
+    handleResize();
+}
+
+function viewerLeft(){
+    var s = document.getElementById( "viewport" ).style;
+    s.left = "0px";
+    s.width = "480px";
+    s.height = "700px";
+    handleResize();
+}
+
+function viewerRight(){
+    var s = document.getElementById( "viewport" ).style;
+    s.right = "0px";
+    s.width = "480px";
+    s.height = "700px";
+    handleResize();
+}
+
+function hideAll(){
+    wall.style.display = "none";
+    info.style.display = "none";
+    stage.setSpin( false );
+    stage.setRock( false );
+    stage.setFocus( 0 );
+    dcdStop();
+    stage.animationControls.animationList.forEach( function( anim ){
+        if( anim !== stage.spinAnimation && anim !== stage.rockAnimation ){
+            stage.animationControls.remove( anim );
+        }
+    } );
+    stage.eachComponent( function( comp ){
+        comp.setVisibility( false );
+    } );
+}
+
+function showName( name ){
+    hideAll();
+    stage.eachComponent( function( comp ){
+        comp.setVisibility( comp.name === name );
+    } );
+}
+
+function onSlide( name, fn ){
+    Reveal.addEventListener( name, fn, false );
+}
+
+function onFragment( name, fnShown, fnHidden ){
+    Reveal.addEventListener( 'fragmentshown', function( event ) {
+        if( event.fragment.dataset.name === name ){
+            fnShown();
+        }
+    }, false );
+    Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        if( event.fragment.dataset.name === name ){
+            fnHidden();
+        }
+    }, false);
+}
+
+var notesFlag = true;
+function toggleNotes(){
+    var elmList = document.querySelectorAll( ".reveal .speaker-notes.visible" );
+    for( var i = 0, il = elmList.length; i < il; ++i ){
+        elmList[ i ].style.display = notesFlag ? "none" : "block";
+    }
+    notesFlag = !notesFlag;
+}
+window.addEventListener( "keydown", function( e ){
+    if( e.which === 83 ){
+        toggleNotes( notesFlag );
+    }
+}, false );
+
+function lerp( start, stop, alpha ){
+    return start + ( stop - start ) * alpha;
+}
+
+
+document.addEventListener( "DOMContentLoaded", function(){
+
+    Reveal.initialize({
+        controls: false,
+        showNotes: true,
+        transition: "fade",
+        width: 960,
+        height: 700,
+        // width: 1280,
+        // height: 933,
+    });
+    toggleNotes();
+
+    wall = document.getElementById( "wall" );
+    info = document.getElementById( "info" );
+    stage = new NGL.Stage( "viewport", {
+        backgroundColor: "white",
+        sampleLevel: -1,
+        tooltip: false
+    } );
+    stage.mouseObserver.handleScroll = false;
+    window.addEventListener( "resize", handleResize, false );
+    window.addEventListener( "dblclick", function(){ stage.toggleFullscreen() }, false );
+
+    counter = new NGL.Counter();
+    counter.listen( stage.tasks );
+    counter.signals.countChanged.add( function( delta, count ){
+        document.getElementById( "status" ).innerHTML = count > 0 ? "Loading..." : "Ready!";
+    } );
+
+    loadScriptList( [
+        "wall",
+        "gfp",
+        "structure",
+        "gpcr",
+        "dcd",
+        "volume",
+        "xray",
+        "hiv",
+        "cat"
+    ] );
+
+    onSlide( "slide-loading", function(){
+        hideAll();
+        wall.style.display = "block";
+    } );
+
+    onSlide( "slide-title", function(){
+        viewerFull();
+        showName( "gfp" );
+        gfpSpin();
+    } );
+
+    onSlide( "slide-web", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-web2", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-presentation", function(){
+        hideAll();
+        wall.style.display = "block";
+    } );
+
+    onSlide( "slide-ngl", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-history", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-solved", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-solved2", function(){
+        hideAll();
+    } );
+
+    function onStructure(){
+        viewerRight();
+        showName( "structure" );
+        strucViewCommon();
+    }
+
+    onSlide( "slide-structure", onStructure );
+
+    onFragment( "strucUncommon", function(){
+        showName( "structure" );
+        strucViewUncommon();
+    }, onStructure );
+
+    onSlide( "slide-gpcr", function(){
+        viewerFull();
+        showName( "gpcr" );
+        gpcrAnim();
+    } );
+
+    onSlide( "slide-dcd", function(){
+        viewerFull();
+        showName( "dcd" );
+        dcdView();
+    } );
+
+    onSlide( "slide-volume", function(){
+        viewerRight();
+        showName( "volume" );
+        volumeView();
+    } );
+
+    onSlide( "slide-xray", function(){
+        viewerFull();
+        showName( "xray" );
+        xrayView();
+    } );
+
+    onSlide( "slide-scalability", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-hiv", function(){
+        viewerFull();
+        showName( "hiv" );
+        hivAnim();
+    } );
+
+    onSlide( "slide-apps", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-integration", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-rendering", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-transfer", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-data-challenges", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-code-challenges", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-ack", function(){
+        hideAll();
+    } );
+
+    onSlide( "slide-thanks", function(){
+        viewerFull();
+        showName( "cat" );
+        catView();
+    } );
+
+} );
+</script>
+
+</body>
+</html>
