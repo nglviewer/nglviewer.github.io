@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3-1</span>
+<header><span>NGL@0.10.4-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -258,6 +259,7 @@ import MouseControls from &quot;../controls/mouse-controls.js&quot;;
 import PickingBehavior from &quot;./picking-behavior.js&quot;;
 import MouseBehavior from &quot;./mouse-behavior.js&quot;;
 import AnimationBehavior from &quot;./animation-behavior.js&quot;;
+import KeyBehavior from &quot;./key-behavior.js&quot;;
 
 import Component from &quot;../component/component.js&quot;;
 // eslint-disable-next-line no-unused-vars
@@ -408,9 +410,18 @@ class Stage{
         this.pickingBehavior = new PickingBehavior( this );
         this.mouseBehavior = new MouseBehavior( this );
         this.animationBehavior = new AnimationBehavior( this );
+        this.keyBehavior = new KeyBehavior( this );
 
-        this.spinAnimation = this.animationControls.spin( null );
-        this.rockAnimation = this.animationControls.rock( null );
+        /**
+         * @type {SpinAnimation}
+         */
+        this.spinAnimation = this.animationControls.spin( [ 0, 1, 0 ], 0.005 );
+        this.spinAnimation.pause( true );
+        /**
+         * @type {RockAnimation}
+         */
+        this.rockAnimation = this.animationControls.rock( [ 0, 1, 0 ], 0.005 );
+        this.rockAnimation.pause( true );
 
         const p = Object.assign( {
             impostor: true,
@@ -601,13 +612,15 @@ class Stage{
                 instanceCount = 1;
             }
 
+            let sizeScore = atomCount;
+
             if( Mobile ){
-                atomCount *= 4;
+                sizeScore *= 4;
             }
 
             const backboneOnly = structure.atomStore.count / structure.residueStore.count &lt; 2;
             if( backboneOnly ){
-                atomCount *= 10;
+                sizeScore *= 10;
             }
 
             let colorScheme = &quot;chainname&quot;;
@@ -619,7 +632,7 @@ class Stage{
                 colorReverse = true;
             }
 
-            if( Debug ) console.log( atomCount, instanceCount, backboneOnly );
+            if( Debug ) console.log( sizeScore, atomCount, instanceCount, backboneOnly );
 
             if( residueCount / instanceCount &lt; 4 ){
 
@@ -633,8 +646,8 @@ class Stage{
                 } );
 
             }else if(
-                ( instanceCount &gt; 5 &amp;&amp; atomCount &gt; 15000 ) ||
-                atomCount &gt; 700000
+                ( instanceCount &gt; 5 &amp;&amp; sizeScore &gt; 15000 ) ||
+                sizeScore &gt; 700000
             ){
 
                 let scaleFactor = (
@@ -642,7 +655,7 @@ class Stage{
                         1.5,
                         Math.max(
                             0.1,
-                            2000 / ( atomCount / instanceCount )
+                            2000 / ( sizeScore / instanceCount )
                         )
                     )
                 );
@@ -659,7 +672,7 @@ class Stage{
                     useWorker: false
                 } );
 
-            }else if( atomCount &gt; 250000 ){
+            }else if( sizeScore &gt; 250000 ){
 
                 object.addRepresentation( &quot;backbone&quot;, {
                     lineOnly: true,
@@ -668,7 +681,7 @@ class Stage{
                     colorReverse: colorReverse
                 } );
 
-            }else if( atomCount &gt; 100000 ){
+            }else if( sizeScore &gt; 100000 ){
 
                 object.addRepresentation( &quot;backbone&quot;, {
                     quality: &quot;low&quot;,
@@ -679,7 +692,7 @@ class Stage{
                     scale: 2.0
                 } );
 
-            }else if( atomCount &gt; 80000 ){
+            }else if( sizeScore &gt; 80000 ){
 
                 object.addRepresentation( &quot;backbone&quot;, {
                     colorScheme: colorScheme,
@@ -698,7 +711,7 @@ class Stage{
                     aspectRatio: 5,
                     quality: &quot;auto&quot;
                 } );
-                if( atomCount &lt; 50000 ){
+                if( sizeScore &lt; 50000 ){
                     object.addRepresentation( &quot;base&quot;, {
                         colorScheme: colorScheme,
                         colorScale: colorScale,
@@ -1009,6 +1022,58 @@ class Stage{
 
     }
 
+    /**
+     * Set spin
+     * @param {Boolean} flag - if true start rocking and stop spinning
+     * @return {undefined}
+     */
+    setSpin( flag ){
+
+        if( flag ){
+            this.spinAnimation.resume( true );
+            this.rockAnimation.pause( true );
+        }else{
+            this.spinAnimation.pause( true );
+        }
+
+    }
+
+    /**
+     * Set rock
+     * @param {Boolean} flag - if true start rocking and stop spinning
+     * @return {undefined}
+     */
+    setRock( flag ){
+
+        if( flag ){
+            this.rockAnimation.resume( true );
+            this.spinAnimation.pause( true );
+        }else{
+            this.rockAnimation.pause( true );
+        }
+
+    }
+
+    /**
+     * Toggle spin
+     * @return {undefined}
+     */
+    toggleSpin(){
+
+        this.setSpin( this.spinAnimation.paused );
+
+    }
+
+    /**
+     * Toggle rock
+     * @return {undefined}
+     */
+    toggleRock(){
+
+        this.setRock( this.rockAnimation.paused );
+
+    }
+
     setFocus( value ){
 
         const clipNear = clamp( value / 2, 0, 49.9 );
@@ -1021,69 +1086,6 @@ class Stage{
             fogNear: pclamp( clipFar - diffHalf ),
             fogFar: pclamp( clipFar + diffHalf )
         } );
-
-    }
-
-    /**
-     * Spin the whole scene around an axis at the center
-     * @example
-     * stage.setSpin( [ 0, 1, 0 ], 0.01 );
-     *
-     * @param {Number[]|Vector3} axis - the axis to spin around
-     * @param {Number} angle - amount to spin per frame, radians
-     * @return {undefined}
-     */
-    setSpin( axis, angle ){
-
-        if( this.rockAnimation.axis ){
-            this.setRock( null );
-        }
-
-        if( Array.isArray( axis ) ){
-            axis = new Vector3().fromArray( axis );
-        }
-
-        if( axis !== undefined ){
-            this.spinAnimation.axis = axis;
-        }
-        if( angle !== undefined ){
-            this.spinAnimation.angle = angle;
-        }
-
-    }
-
-    /**
-     * Rock the whole scene around an axis at the center
-     * @example
-     * stage.setRock( [ 0, 1, 0 ], 0.01, 0.3 );
-     *
-     * @param {Number[]|Vector3} axis - the axis to rock around
-     * @param {Number} angle - amount to spin per frame, radians
-     * @param {Number} end - maximum extend of motion, radians
-     * @return {undefined}
-     */
-    setRock( axis, angle, end ){
-
-        if( this.spinAnimation.axis ){
-            this.setSpin( null );
-        }
-
-        if( Array.isArray( axis ) ){
-            axis = new Vector3().fromArray( axis );
-        }
-
-        if( axis !== undefined ){
-            this.rockAnimation.axis = axis;
-        }
-        if( angle !== undefined ){
-            this.rockAnimation.angleStep = angle;
-        }
-        if( end !== undefined ){
-            this.rockAnimation.angleEnd = end;
-        }
-
-        this.rockAnimation.angleSum = 0;
-        this.rockAnimation.direction = 1;
 
     }
 

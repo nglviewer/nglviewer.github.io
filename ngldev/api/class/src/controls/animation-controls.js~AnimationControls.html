@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3-1</span>
+<header><span>NGL@0.10.4-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -308,7 +309,41 @@
 </tbody>
 </table>
 </div>
-
+<div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      <span class="kind" data-ice="kind">get</span>
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-get-paused">paused</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>True when all animations are paused</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 <div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
   <tbody>
@@ -466,6 +501,34 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-pause">pause</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Pause all animations</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-remove">remove</a></span></span><span data-ice="signature">(animation: <span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
@@ -473,6 +536,34 @@
         
         
         <div data-ice="description"><p>Remove an animation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-resume">resume</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Resume all animations</p>
 </div>
       </div>
     </td>
@@ -662,6 +753,62 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-timeout">timeout</a></span></span><span data-ice="signature">(callback: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Add a timeout animation</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-toggle">toggle</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Toggle all animations</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html#instance-method-value">value</a></span></span><span data-ice="signature">(valueFrom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, valueTo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, callback: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span>
         </p>
       </div>
@@ -805,7 +952,53 @@
   
 </div>
 </div>
+<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-get-paused">
+    <span class="access" data-ice="access">public</span>
+    
+    <span class="kind" data-ice="kind">get</span>
+    
+    
+    
+    <span data-ice="name">paused</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber41">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>True when all animations are paused</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
@@ -820,7 +1013,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber52">source</a></span></span>
     </span>
   </h3>
 
@@ -894,7 +1087,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber286">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber344">source</a></span></span>
     </span>
   </h3>
 
@@ -950,7 +1143,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber152">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber162">source</a></span></span>
     </span>
   </h3>
 
@@ -1031,7 +1224,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber272">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber296">source</a></span></span>
     </span>
   </h3>
 
@@ -1119,7 +1312,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber200">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber210">source</a></span></span>
     </span>
   </h3>
 
@@ -1189,6 +1382,62 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-pause">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">pause</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber310">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Pause all animations</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-remove">
     <span class="access" data-ice="access">public</span>
     
@@ -1200,7 +1449,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber59">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber69">source</a></span></span>
     </span>
   </h3>
 
@@ -1262,6 +1511,62 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-resume">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">resume</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber320">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Resume all animations</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-rock">
     <span class="access" data-ice="access">public</span>
     
@@ -1273,7 +1578,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber122">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber132">source</a></span></span>
     </span>
   </h3>
 
@@ -1368,7 +1673,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber257">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber281">source</a></span></span>
     </span>
   </h3>
 
@@ -1470,7 +1775,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber136">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber146">source</a></span></span>
     </span>
   </h3>
 
@@ -1551,7 +1856,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber85">source</a></span></span>
     </span>
   </h3>
 
@@ -1624,7 +1929,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber106">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber116">source</a></span></span>
     </span>
   </h3>
 
@@ -1712,7 +2017,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber240">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber264">source</a></span></span>
     </span>
   </h3>
 
@@ -1796,6 +2101,143 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-timeout">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">timeout</span><span data-ice="signature">(callback: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, duration: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber248">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Add a timeout animation</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">callback</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>called after duration</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">duration</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>timeout in milliseconds</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>the animation</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-toggle">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">toggle</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber330">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Toggle all animations</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-value">
     <span class="access" data-ice="access">public</span>
     
@@ -1807,7 +2249,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber224">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber234">source</a></span></span>
     </span>
   </h3>
 
@@ -1902,7 +2344,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber168">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber178">source</a></span></span>
     </span>
   </h3>
 
@@ -1983,7 +2425,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber185">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controls/animation-controls.js.html#lineNumber195">source</a></span></span>
     </span>
   </h3>
 

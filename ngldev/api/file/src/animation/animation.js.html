@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3-1</span>
+<header><span>NGL@0.10.4-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -257,19 +258,31 @@ class Animation{
         this.controls = controls;
 
         this.startTime = performance.now();
-        this.elapsedTime = 0;
+        this.pausedTime = -1;
+        this.elapsedDuration = 0;
+        this.pausedDuration = 0;
+        this.ignoreGlobalToggle = false;
 
+        this._paused = false;
         this._resolveList = [];
         this._init( ...args );
 
     }
 
     /**
-     * True when all animation has finished
+     * True when animation has finished
      * @type {Boolean}
      */
     get done(){
         return this.alpha === 1;
+    }
+
+    /**
+     * True when animation is paused
+     * @type {Boolean}
+     */
+    get paused(){
+        return this._paused;
     }
 
     /**
@@ -288,23 +301,70 @@ class Animation{
 
     tick( stats ){
 
-        this.elapsedTime = stats.currentTime - this.startTime;
+        if( this._paused ) return;
+
+        this.elapsedDuration = stats.currentTime - this.startTime - this.pausedDuration;
 
         if( this.duration === 0 ){
             this.alpha = 1;
         }else{
-            this.alpha = smoothstep( 0, 1, this.elapsedTime / this.duration );
+            this.alpha = smoothstep( 0, 1, this.elapsedDuration / this.duration );
         }
 
         this._tick( stats );
 
         if( this.done ){
-            this._resolveList.forEach( resolve =&gt; {
-                resolve();
-            } );
+            this._resolveList.forEach( resolve =&gt; resolve() );
         }
 
         return this.done;
+
+    }
+
+    /**
+     * Pause animation
+     * @param {Boolean} [hold] - put animation on a hold which
+     *                           must be release before it can be resumed
+     * @return {undefined}
+     */
+    pause( hold ){
+
+        if( hold ) this._hold = true;
+
+        if( this.pausedTime === -1 ){
+            this.pausedTime = performance.now();
+        }
+        this._paused = true;
+
+    }
+
+    /**
+     * Resume animation
+     * @param {Boolean} [releaseHold] - release a hold on the animation
+     * @return {undefined}
+     */
+    resume( releaseHold ){
+
+        if( !releaseHold &amp;&amp; this._hold ) return;
+
+        this.pausedDuration += performance.now() - this.pausedTime;
+        this._paused = false;
+        this._hold = false;
+        this.pausedTime = -1;
+
+    }
+
+    /**
+     * Toggle animation
+     * @return {undefined}
+     */
+    toggle(){
+
+        if( this._paused ){
+            this.resume();
+        }else{
+            this.pause();
+        }
 
     }
 
@@ -320,9 +380,7 @@ class Animation{
         if( this.done ){
             p = Promise.resolve();
         }else{
-            p = new Promise( resolve =&gt; {
-                this._resolveList.push( resolve );
-            } );
+            p = new Promise( resolve =&gt; this._resolveList.push( resolve ) );
         }
 
         return p.then( callback );
@@ -513,6 +571,26 @@ class ValueAnimation extends Animation{
 
 
 /**
+ * Timeout animation. Call callback after duration.
+ */
+class TimeoutAnimation extends Animation{
+
+    _init( callback ){
+
+        this.callback = callback;
+
+    }
+
+    _tick( /*stats*/ ){
+
+        if( this.alpha === 1 ) this.callback();
+
+    }
+
+}
+
+
+/**
  * Animation list.
  */
 class AnimationList{
@@ -574,6 +652,7 @@ export {
     ZoomAnimation,
     RotateAnimation,
     ValueAnimation,
+    TimeoutAnimation,
     AnimationList
 };
 </code></pre>

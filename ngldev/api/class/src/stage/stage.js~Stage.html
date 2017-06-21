@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3-1</span>
+<header><span>NGL@0.10.4-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -232,13 +233,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Stage from &apos;<span><a href="file/src/stage/stage.js.html#lineNumber97">ngl/src/stage/stage.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Stage from &apos;<span><a href="file/src/stage/stage.js.html#lineNumber98">ngl/src/stage/stage.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/stage/stage.js.html#lineNumber97">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/stage/stage.js.html#lineNumber98">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -413,6 +414,33 @@
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-member-rockAnimation">rockAnimation</a></span></span><span data-ice="signature">: <span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-member-signals">signals</a></span></span><span data-ice="signature">: <span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span>
         </p>
       </div>
@@ -421,6 +449,33 @@
         
         <div data-ice="description"><p>Events emitted by the stage</p>
 </div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-member-spinAnimation">spinAnimation</a></span></span><span data-ice="signature">: <span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
       </div>
     </td>
     <td>
@@ -1036,13 +1091,13 @@ including file loading and surface calculation.</p>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-method-setRock">setRock</a></span></span><span data-ice="signature">(axis: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span><span>[]</span></span> | <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span>, angle: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, end: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-method-setRock">setRock</a></span></span><span data-ice="signature">(flag: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Rock the whole scene around an axis at the center</p>
+        <div data-ice="description"><p>Set rock</p>
 </div>
       </div>
     </td>
@@ -1092,13 +1147,13 @@ including file loading and surface calculation.</p>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-method-setSpin">setSpin</a></span></span><span data-ice="signature">(axis: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span><span>[]</span></span> | <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span>, angle: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-method-setSpin">setSpin</a></span></span><span data-ice="signature">(flag: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Spin the whole scene around an axis at the center</p>
+        <div data-ice="description"><p>Set spin</p>
 </div>
       </div>
     </td>
@@ -1135,6 +1190,62 @@ including file loading and surface calculation.</p>
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-method-toggleRock">toggleRock</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Toggle rock</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html#instance-method-toggleSpin">toggleSpin</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Toggle spin</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -1157,7 +1268,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber104">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber105">source</a></span></span>
     </span>
   </h3>
 
@@ -1228,7 +1339,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber168">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber169">source</a></span></span>
     </span>
   </h3>
 
@@ -1271,7 +1382,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber172">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber173">source</a></span></span>
     </span>
   </h3>
 
@@ -1314,7 +1425,50 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber157">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber158">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-rockAnimation">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">rockAnimation</span><span data-ice="signature">: <span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber188">source</a></span></span>
     </span>
   </h3>
 
@@ -1357,7 +1511,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber110">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber111">source</a></span></span>
     </span>
   </h3>
 
@@ -1366,6 +1520,49 @@ including file loading and surface calculation.</p>
   
   <div data-ice="description"><p>Events emitted by the stage</p>
 </div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-spinAnimation">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">spinAnimation</span><span data-ice="signature">: <span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber183">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
 
   
 
@@ -1401,7 +1598,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber128">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber129">source</a></span></span>
     </span>
   </h3>
 
@@ -1446,7 +1643,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
@@ -1490,7 +1687,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber162">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber163">source</a></span></span>
     </span>
   </h3>
 
@@ -1536,7 +1733,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber592">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber604">source</a></span></span>
     </span>
   </h3>
 
@@ -1609,7 +1806,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber613">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber625">source</a></span></span>
     </span>
   </h3>
 
@@ -1690,7 +1887,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber900">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber901">source</a></span></span>
     </span>
   </h3>
 
@@ -1763,7 +1960,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber349">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber359">source</a></span></span>
     </span>
   </h3>
 
@@ -1836,7 +2033,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1138">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1139">source</a></span></span>
     </span>
   </h3>
 
@@ -1892,7 +2089,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1011">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1012">source</a></span></span>
     </span>
   </h3>
 
@@ -1972,7 +2169,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1029">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1030">source</a></span></span>
     </span>
   </h3>
 
@@ -2052,7 +2249,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1125">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1126">source</a></span></span>
     </span>
   </h3>
 
@@ -2126,7 +2323,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1047">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1048">source</a></span></span>
     </span>
   </h3>
 
@@ -2207,7 +2404,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1068">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1069">source</a></span></span>
     </span>
   </h3>
 
@@ -2281,7 +2478,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber334">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber344">source</a></span></span>
     </span>
   </h3>
 
@@ -2338,7 +2535,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1090">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber1091">source</a></span></span>
     </span>
   </h3>
 
@@ -2419,7 +2616,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber662">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber674">source</a></span></span>
     </span>
   </h3>
 
@@ -2475,7 +2672,7 @@ including file loading and surface calculation.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber534">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber546">source</a></span></span>
     </span>
   </h3>
 
@@ -2597,7 +2794,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber915">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber916">source</a></span></span>
     </span>
   </h3>
 
@@ -2671,7 +2868,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber648">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber660">source</a></span></span>
     </span>
   </h3>
 
@@ -2744,7 +2941,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber632">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber644">source</a></span></span>
     </span>
   </h3>
 
@@ -2817,7 +3014,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber286">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber296">source</a></span></span>
     </span>
   </h3>
 
@@ -2887,18 +3084,18 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     
     
     
-    <span data-ice="name">setRock</span><span data-ice="signature">(axis: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span><span>[]</span></span> | <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span>, angle: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, end: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span data-ice="name">setRock</span><span data-ice="signature">(flag: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber831">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber811">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Rock the whole scene around an axis at the center</p>
+  <div data-ice="description"><p>Set rock</p>
 </div>
 
   
@@ -2912,24 +3109,10 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">axis</td>
-      <td data-ice="type"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span><span>[]</span></span> | <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></td>
+      <td data-ice="name" data-depth="0">flag</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>the axis to rock around</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">angle</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>amount to spin per frame, radians</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">end</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>maximum extend of motion, radians</p>
+      <td data-ice="description"><p>if true start rocking and stop spinning</p>
 </td>
     </tr>
 </tbody>
@@ -2959,14 +3142,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
   
 
-  <div data-ice="example">
-    <h4>Example:</h4>
-    
-  <div class="example-doc" data-ice="exampleDoc">
-      
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">stage.setRock( [ 0, 1, 0 ], 0.01, 0.3 );</code></pre>
-    </div>
-</div>
+  
 
   
 
@@ -2985,7 +3161,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber674">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber686">source</a></span></span>
     </span>
   </h3>
 
@@ -3061,18 +3237,18 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     
     
     
-    <span data-ice="name">setSpin</span><span data-ice="signature">(axis: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span><span>[]</span></span> | <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span>, angle: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span data-ice="name">setSpin</span><span data-ice="signature">(flag: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber802">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber795">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Spin the whole scene around an axis at the center</p>
+  <div data-ice="description"><p>Set spin</p>
 </div>
 
   
@@ -3086,17 +3262,10 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">axis</td>
-      <td data-ice="type"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span><span>[]</span></span> | <span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></td>
+      <td data-ice="name" data-depth="0">flag</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>the axis to spin around</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">angle</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>amount to spin per frame, radians</p>
+      <td data-ice="description"><p>if true start rocking and stop spinning</p>
 </td>
     </tr>
 </tbody>
@@ -3126,14 +3295,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 
   
 
-  <div data-ice="example">
-    <h4>Example:</h4>
-    
-  <div class="example-doc" data-ice="exampleDoc">
-      
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">stage.setSpin( [ 0, 1, 0 ], 0.01 );</code></pre>
-    </div>
-</div>
+  
 
   
 
@@ -3152,7 +3314,7 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber692">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber704">source</a></span></span>
     </span>
   </h3>
 
@@ -3183,6 +3345,118 @@ stage.loadFile( &quot;http://files.rcsb.org/download/1crn.cif&quot; ).then( func
 </tbody>
   </table>
 </div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-toggleRock">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">toggleRock</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber836">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Toggle rock</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-toggleSpin">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">toggleSpin</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/stage/stage.js.html#lineNumber826">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Toggle spin</p>
+</div>
+
+  
+
+  <div data-ice="properties">
 </div>
 
   <div class="return-params" data-ice="returnParams">

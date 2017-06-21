@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3-1</span>
+<header><span>NGL@0.10.4-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -275,7 +276,7 @@ class Colormaker{
      */
     constructor( params ){
 
-        var p = params || {};
+        const p = params || {};
 
         this.scale = defaults( p.scale, &quot;uniform&quot; );
         this.mode = defaults( p.mode, &quot;hcl&quot; );
@@ -295,18 +296,18 @@ class Colormaker{
 
     getScale( params ){
 
-        var p = params || {};
+        const p = params || {};
 
-        var scale = defaults( p.scale, this.scale );
+        let scale = defaults( p.scale, this.scale );
         if( scale === &quot;rainbow&quot; ){
             scale = [ &quot;red&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;blue&quot; ];
         }else if( scale === &quot;rwb&quot; ){
             scale = [ &quot;red&quot;, &quot;white&quot;, &quot;blue&quot; ];
         }
 
-        var domain = defaults( p.domain, this.domain );
+        let domain = defaults( p.domain, this.domain );
         if( this.reverse ){
-            domain.reverse();
+            domain = domain.slice().reverse();
         }
 
         return chroma

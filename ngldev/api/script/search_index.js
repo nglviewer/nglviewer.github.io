@@ -744,6 +744,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~timeoutanimation",
+    "class/src/animation/animation.js~TimeoutAnimation.html",
+    "<span>TimeoutAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/trace-buffer.js~tracebuffer",
     "class/src/buffer/trace-buffer.js~TraceBuffer.html",
     "<span>TraceBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/trace-buffer.js</span>",
@@ -1266,9 +1272,33 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/animation/animation.js~animation#pause",
+    "class/src/animation/animation.js~Animation.html#instance-method-pause",
+    "src/animation/animation.js~Animation#pause",
+    "method"
+  ],
+  [
+    "src/animation/animation.js~animation#paused",
+    "class/src/animation/animation.js~Animation.html#instance-get-paused",
+    "src/animation/animation.js~Animation#paused",
+    "member"
+  ],
+  [
+    "src/animation/animation.js~animation#resume",
+    "class/src/animation/animation.js~Animation.html#instance-method-resume",
+    "src/animation/animation.js~Animation#resume",
+    "method"
+  ],
+  [
     "src/animation/animation.js~animation#then",
     "class/src/animation/animation.js~Animation.html#instance-method-then",
     "src/animation/animation.js~Animation#then",
+    "method"
+  ],
+  [
+    "src/animation/animation.js~animation#toggle",
+    "class/src/animation/animation.js~Animation.html#instance-method-toggle",
+    "src/animation/animation.js~Animation#toggle",
     "method"
   ],
   [
@@ -2484,9 +2514,27 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#pause",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-pause",
+    "src/controls/animation-controls.js~AnimationControls#pause",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#paused",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-get-paused",
+    "src/controls/animation-controls.js~AnimationControls#paused",
+    "member"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#remove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-remove",
     "src/controls/animation-controls.js~AnimationControls#remove",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#resume",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-resume",
+    "src/controls/animation-controls.js~AnimationControls#resume",
     "method"
   ],
   [
@@ -2523,6 +2571,18 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#spincomponent",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-spinComponent",
     "src/controls/animation-controls.js~AnimationControls#spinComponent",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#timeout",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-timeout",
+    "src/controls/animation-controls.js~AnimationControls#timeout",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#toggle",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-toggle",
+    "src/controls/animation-controls.js~AnimationControls#toggle",
     "method"
   ],
   [
@@ -4884,6 +4944,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/stage/key-behavior.js",
+    "file/src/stage/key-behavior.js.html",
+    "src/stage/key-behavior.js",
+    "file"
+  ],
+  [
     "src/stage/mouse-behavior.js",
     "file/src/stage/mouse-behavior.js.html",
     "src/stage/mouse-behavior.js",
@@ -5142,6 +5208,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/stage/stage.js~stage#rockanimation",
+    "class/src/stage/stage.js~Stage.html#instance-member-rockAnimation",
+    "src/stage/stage.js~Stage#rockAnimation",
+    "member"
+  ],
+  [
     "src/stage/stage.js~stage#setparameters",
     "class/src/stage/stage.js~Stage.html#instance-method-setParameters",
     "src/stage/stage.js~Stage#setParameters",
@@ -5172,6 +5244,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/stage/stage.js~stage#spinanimation",
+    "class/src/stage/stage.js~Stage.html#instance-member-spinAnimation",
+    "src/stage/stage.js~Stage#spinAnimation",
+    "member"
+  ],
+  [
     "src/stage/stage.js~stage#tasks",
     "class/src/stage/stage.js~Stage.html#instance-member-tasks",
     "src/stage/stage.js~Stage#tasks",
@@ -5181,6 +5259,18 @@ window.esdocSearchIndex = [
     "src/stage/stage.js~stage#togglefullscreen",
     "class/src/stage/stage.js~Stage.html#instance-method-toggleFullscreen",
     "src/stage/stage.js~Stage#toggleFullscreen",
+    "method"
+  ],
+  [
+    "src/stage/stage.js~stage#togglerock",
+    "class/src/stage/stage.js~Stage.html#instance-method-toggleRock",
+    "src/stage/stage.js~Stage#toggleRock",
+    "method"
+  ],
+  [
+    "src/stage/stage.js~stage#togglespin",
+    "class/src/stage/stage.js~Stage.html#instance-method-toggleSpin",
+    "src/stage/stage.js~Stage#toggleSpin",
     "method"
   ],
   [

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3-1</span>
+<header><span>NGL@0.10.4-0</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -244,7 +245,7 @@ import { Vector3, Quaternion } from &quot;../../lib/three.es6.js&quot;;
 import { ensureMatrix4 } from &quot;../utils.js&quot;;
 import {
     SpinAnimation, RockAnimation, MoveAnimation, ZoomAnimation,
-    RotateAnimation, ValueAnimation, AnimationList
+    RotateAnimation, ValueAnimation, TimeoutAnimation, AnimationList
 } from &quot;../animation/animation.js&quot;;
 
 
@@ -265,6 +266,16 @@ class AnimationControls{
 
         this.animationList = [];
         this.finishedList = [];
+
+    }
+
+    /**
+     * True when all animations are paused
+     * @type {Boolean}
+     */
+    get paused(){
+
+        return this.animationList.every( animation =&gt; animation.paused );
 
     }
 
@@ -464,6 +475,20 @@ class AnimationControls{
     }
 
     /**
+     * Add a timeout animation
+     * @param  {Function} callback - called after duration
+     * @param  {Number} duration - timeout in milliseconds
+     * @return {TimeoutAnimation} the animation
+     */
+    timeout( callback, duration ){
+
+        return this.add(
+            new TimeoutAnimation( duration, this.controls, callback )
+        );
+
+    }
+
+    /**
      * Add a component spin animation
      * @param  {Component} component - object to move
      * @param  {Vector3} axis - axis to spin around
@@ -510,6 +535,40 @@ class AnimationControls{
         return this.add(
             new MoveAnimation( duration, component.controls, moveFrom, moveTo )
         );
+
+    }
+
+    /**
+     * Pause all animations
+     * @return {undefined}
+     */
+    pause(){
+
+        this.animationList.forEach( animation =&gt; animation.pause() );
+
+    }
+
+    /**
+     * Resume all animations
+     * @return {undefined}
+     */
+    resume(){
+
+        this.animationList.forEach( animation =&gt; animation.resume() );
+
+    }
+
+    /**
+     * Toggle all animations
+     * @return {undefined}
+     */
+    toggle(){
+
+        if( this.paused ){
+            this.resume();
+        }else{
+            this.pause();
+        }
 
     }
 
