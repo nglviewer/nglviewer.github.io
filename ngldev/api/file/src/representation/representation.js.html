@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.4-0</span>
+<header><span>NGL@0.10.4-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -259,6 +259,7 @@ import Counter from &quot;../utils/counter.js&quot;;
  * @property {Vector3} [clipCenter] - position of for spherical clipping
  * @property {Boolean} [flatShaded] - render flat shaded
  * @property {Float} [opacity] - translucency: 1 is fully opaque, 0 is fully transparent
+ * @property {Boolean} [depthWrite] - depth write
  * @property {String} [side] - which triangle sides to render, &quot;front&quot; front-side,
  *                            &quot;back&quot; back-side, &quot;double&quot; front- and back-side
  * @property {Boolean} [wireframe] - render as wireframe
@@ -276,6 +277,7 @@ import Counter from &quot;../utils/counter.js&quot;;
  * @property {Float} [roughness] - how rough the material is, between 0 and 1
  * @property {Float} [metalness] - how metallic the material is, between 0 and 1
  * @property {Color} [diffuse] - diffuse color for lighting
+ * @property {Boolean} [disablePicking] - disable picking
  */
 
 
@@ -366,6 +368,10 @@ class Representation{
                 type: &quot;hidden&quot;, buffer: true
             },
 
+            disablePicking: {
+                type: &quot;boolean&quot;, rebuild: true
+            },
+
         };
 
         /**
@@ -436,6 +442,8 @@ class Representation{
         };
 
         this.matrix = defaults( p.matrix, new Matrix4() );
+
+        this.disablePicking = defaults( p.disablePicking, false );
 
         // handle common parameters when applicable
 
@@ -523,7 +531,9 @@ class Representation{
             metalness: this.metalness,
             diffuse: this.diffuse,
 
-            matrix: this.matrix
+            matrix: this.matrix,
+
+            disablePicking: this.disablePicking
 
         }, p );
 

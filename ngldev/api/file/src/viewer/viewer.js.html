@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.4-0</span>
+<header><span>NGL@0.10.4-1</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -868,10 +868,52 @@ function Viewer( idOrElement ){
 
     }
 
-    function getImage(){
+    function getPickingPixels(){
+
+        const n = width * height * 4;
+        const imgBuffer = SupportsReadPixelsFloat ? new Float32Array( n ) : new Uint8Array( n );
+
+        render( true );
+        renderer.readRenderTargetPixels(
+            pickingTarget, 0, 0, width, height, imgBuffer
+        );
+
+        return imgBuffer;
+
+    }
+
+    function getImage( picking ){
 
         return new Promise( function( resolve ){
-            renderer.domElement.toBlob( resolve, &quot;image/png&quot; );
+
+            if( picking ){
+
+                const n = width * height * 4;
+                let imgBuffer = getPickingPixels();
+
+                if( SupportsReadPixelsFloat ){
+                    const imgBuffer2 = new Uint8Array( n );
+                    for( let i = 0; i &lt; n; ++i ){
+                        imgBuffer2[ i ] = Math.round( imgBuffer[ i ] * 255 );
+                    }
+                    imgBuffer = imgBuffer2;
+                }
+
+                const canvas = document.createElement( &quot;canvas&quot; );
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext( &quot;2d&quot; );
+                const imgData = ctx.getImageData( 0, 0, width, height );
+                imgData.data.set( imgBuffer );
+                ctx.putImageData( imgData, 0, 0 );
+                canvas.toBlob( resolve, &quot;image/png&quot; );
+
+            }else{
+
+                renderer.domElement.toBlob( resolve, &quot;image/png&quot; );
+
+            }
+
         } );
 
     }
@@ -1391,6 +1433,7 @@ function Viewer( idOrElement ){
     this.remove = remove;
     this.clear = clear;
 
+    this.getPickingPixels = getPickingPixels;
     this.getImage = getImage;
     this.makeImage = makeImage;
 
