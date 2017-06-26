@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,21 +255,19 @@
  * @private
  */
 
+import { Vector3, Box3 } from &apos;../../lib/three.es6.js&apos;
 
-import { Vector3, Box3 } from &quot;../../lib/three.es6.js&quot;;
-
-import { defaults } from &quot;../utils.js&quot;;
-import Representation from &quot;./representation.js&quot;;
-import Volume from &quot;../surface/volume.js&quot;;
-import SurfaceBuffer from &quot;../buffer/surface-buffer.js&quot;;
-import DoubleSidedBuffer from &quot;../buffer/doublesided-buffer&quot;;
-import ContourBuffer from &quot;../buffer/contour-buffer.js&quot;;
-
+import { defaults } from &apos;../utils.js&apos;
+import Representation from &apos;./representation.js&apos;
+import Volume from &apos;../surface/volume.js&apos;
+import SurfaceBuffer from &apos;../buffer/surface-buffer.js&apos;
+import DoubleSidedBuffer from &apos;../buffer/doublesided-buffer&apos;
+import ContourBuffer from &apos;../buffer/contour-buffer.js&apos;
 
 /**
- * Surface representation parameter object.
+ * Surface representation parameter object. Extends {@link RepresentationParameters}
+ *
  * @typedef {Object} SurfaceRepresentationParameters - surface representation parameters
- * @mixes RepresentationParameters
  *
  * @property {String} isolevelType - Meaning of the isolevel value. Either *value* for the literal value or *sigma* as a factor of the sigma of the data. For volume data only.
  * @property {Float} isolevel - The value at which to create the isosurface. For volume data only.
@@ -264,253 +279,236 @@ import ContourBuffer from &quot;../buffer/contour-buffer.js&quot;;
  * @property {Boolean} wrap - Wrap volume data around the edges; use in conjuction with boxSize but not larger than the volume dimension. For volume data only.
  */
 
-
 /**
  * Surface representation
  */
-class SurfaceRepresentation extends Representation{
+class SurfaceRepresentation extends Representation {
+  /**
+   * Create Surface representation object
+   * @param {Surface|Volume} surface - the surface or volume to be represented
+   * @param {Viewer} viewer - a viewer object
+   * @param {SurfaceRepresentationParameters} params - surface representation parameters
+   */
+  constructor (surface, viewer, params) {
+    super(surface, viewer, params)
 
-    /**
-     * Create Surface representation object
-     * @param {Surface|Volume} surface - the surface or volume to be represented
-     * @param {Viewer} viewer - a viewer object
-     * @param {SurfaceRepresentationParameters} params - surface representation parameters
-     */
-    constructor( surface, viewer, params ){
+    this.type = &apos;surface&apos;
 
-        super( surface, viewer, params );
+    this.parameters = Object.assign({
 
-        this.type = &quot;surface&quot;;
+      isolevelType: {
+        type: &apos;select&apos;,
+        options: {
+          &apos;value&apos;: &apos;value&apos;, &apos;sigma&apos;: &apos;sigma&apos;
+        }
+      },
+      isolevel: {
+        type: &apos;number&apos;, precision: 2, max: 1000, min: -1000
+      },
+      negateIsolevel: {
+        type: &apos;boolean&apos;
+      },
+      smooth: {
+        type: &apos;integer&apos;, precision: 1, max: 10, min: 0
+      },
+      background: {
+        type: &apos;boolean&apos;, rebuild: true  // FIXME
+      },
+      opaqueBack: {
+        type: &apos;boolean&apos;, buffer: true
+      },
+      boxSize: {
+        type: &apos;integer&apos;, precision: 1, max: 100, min: 0
+      },
+      colorVolume: {
+        type: &apos;hidden&apos;
+      },
+      contour: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      useWorker: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      wrap: {
+        type: &apos;boolean&apos;, rebuild: true
+      }
 
-        this.parameters = Object.assign( {
+    }, this.parameters)
 
-            isolevelType: {
-                type: &quot;select&quot;, options: {
-                    &quot;value&quot;: &quot;value&quot;, &quot;sigma&quot;: &quot;sigma&quot;
-                }
-            },
-            isolevel: {
-                type: &quot;number&quot;, precision: 2, max: 1000, min: -1000
-            },
-            negateIsolevel: {
-                type: &quot;boolean&quot;
-            },
-            smooth: {
-                type: &quot;integer&quot;, precision: 1, max: 10, min: 0
-            },
-            background: {
-                type: &quot;boolean&quot;, rebuild: true  // FIXME
-            },
-            opaqueBack: {
-                type: &quot;boolean&quot;, buffer: true
-            },
-            boxSize: {
-                type: &quot;integer&quot;, precision: 1, max: 100, min: 0
-            },
-            colorVolume: {
-                type: &quot;hidden&quot;
-            },
-            contour: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            useWorker: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            wrap: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
+    if (surface instanceof Volume) {
+      this.surface = undefined
+      this.volume = surface
+    } else {
+      this.surface = surface
+      this.volume = undefined
+    }
 
-        }, this.parameters );
+    this.boxCenter = new Vector3()
+    this.__boxCenter = new Vector3()
+    this.box = new Box3()
+    this.__box = new Box3()
 
-        if( surface instanceof Volume ){
-            this.surface = undefined;
-            this.volume = surface;
-        }else{
-            this.surface = surface;
-            this.volume = undefined;
+    this._position = new Vector3()
+    this.setBox = function setBox () {
+      this._position.copy(viewer.translationGroup.position).negate()
+      if (!this._position.equals(this.boxCenter)) {
+        this.setParameters({ &apos;boxCenter&apos;: this._position })
+      }
+    }
+
+    this.viewer.signals.ticked.add(this.setBox, this)
+
+    this.init(params)
+  }
+
+  init (params) {
+    const p = params || {}
+    p.colorScheme = defaults(p.colorScheme, &apos;uniform&apos;)
+    p.colorValue = defaults(p.colorValue, 0xDDDDDD)
+
+    this.isolevelType = defaults(p.isolevelType, &apos;sigma&apos;)
+    this.isolevel = defaults(p.isolevel, 2.0)
+    this.negateIsolevel = defaults(p.negateIsolevel, false)
+    this.smooth = defaults(p.smooth, 0)
+    this.background = defaults(p.background, false)
+    this.opaqueBack = defaults(p.opaqueBack, true)
+    this.boxSize = defaults(p.boxSize, 0)
+    this.colorVolume = defaults(p.colorVolume, undefined)
+    this.contour = defaults(p.contour, false)
+    this.useWorker = defaults(p.useWorker, true)
+    this.wrap = defaults(p.wrap, false)
+
+    super.init(p)
+
+    this.build()
+  }
+
+  attach (callback) {
+    this.bufferList.forEach(buffer =&gt; {
+      this.viewer.add(buffer)
+    })
+
+    this.setVisibility(this.visible)
+
+    callback()
+  }
+
+  prepare (callback) {
+    if (this.volume) {
+      let isolevel
+
+      if (this.isolevelType === &apos;sigma&apos;) {
+        isolevel = this.volume.getValueForSigma(this.isolevel)
+      } else {
+        isolevel = this.isolevel
+      }
+      if (this.negateIsolevel) isolevel *= -1
+
+      if (!this.surface ||
+        this.__isolevel !== isolevel ||
+        this.__smooth !== this.smooth ||
+        this.__contour !== this.contour ||
+        this.__wrap !== this.wrap ||
+        this.__boxSize !== this.boxSize ||
+        (this.boxSize &gt; 0 &amp;&amp;
+            !this.__boxCenter.equals(this.boxCenter))
+      ) {
+        this.__isolevel = isolevel
+        this.__smooth = this.smooth
+        this.__contour = this.contour
+        this.__wrap = this.wrap
+        this.__boxSize = this.boxSize
+        this.__boxCenter.copy(this.boxCenter)
+        this.__box.copy(this.box)
+
+        const onSurfaceFinish = surface =&gt; {
+          this.surface = surface
+          callback()
         }
 
-        this.boxCenter = new Vector3();
-        this.__boxCenter = new Vector3();
-        this.box = new Box3();
-        this.__box = new Box3();
-
-        this._position = new Vector3();
-        this.setBox = function setBox(){
-            this._position.copy( viewer.translationGroup.position ).negate();
-            if( !this._position.equals( this.boxCenter ) ){
-                this.setParameters( { &quot;boxCenter&quot;: this._position } );
-            }
-        };
-
-        this.viewer.signals.ticked.add( this.setBox, this );
-
-        this.init( params );
-
-    }
-
-    init( params ){
-
-        const p = params || {};
-        p.colorScheme = defaults( p.colorScheme, &quot;uniform&quot; );
-        p.colorValue = defaults( p.colorValue, 0xDDDDDD );
-
-        this.isolevelType  = defaults( p.isolevelType, &quot;sigma&quot; );
-        this.isolevel = defaults( p.isolevel, 2.0 );
-        this.negateIsolevel = defaults( p.negateIsolevel, false );
-        this.smooth = defaults( p.smooth, 0 );
-        this.background = defaults( p.background, false );
-        this.opaqueBack = defaults( p.opaqueBack, true );
-        this.boxSize = defaults( p.boxSize, 0 );
-        this.colorVolume = defaults( p.colorVolume, undefined );
-        this.contour = defaults( p.contour, false );
-        this.useWorker = defaults( p.useWorker, true );
-        this.wrap = defaults( p.wrap, false );
-
-        super.init( p );
-
-        this.build();
-
-    }
-
-    attach( callback ){
-
-        this.bufferList.forEach( buffer =&gt; {
-            this.viewer.add( buffer );
-        } );
-
-        this.setVisibility( this.visible );
-
-        callback();
-
-    }
-
-    prepare( callback ){
-
-        if( this.volume ){
-
-            let isolevel;
-
-            if( this.isolevelType === &quot;sigma&quot; ){
-                isolevel = this.volume.getValueForSigma( this.isolevel );
-            }else{
-                isolevel = this.isolevel;
-            }
-            if( this.negateIsolevel ) isolevel *= -1;
-
-            if( !this.surface ||
-                this.__isolevel !== isolevel ||
-                this.__smooth !== this.smooth ||
-                this.__contour !== this.contour ||
-                this.__wrap !== this.wrap ||
-                this.__boxSize !== this.boxSize ||
-                ( this.boxSize &gt; 0 &amp;&amp;
-                    !this.__boxCenter.equals( this.boxCenter ) )
-            ){
-                this.__isolevel = isolevel;
-                this.__smooth = this.smooth;
-                this.__contour = this.contour;
-                this.__wrap = this.wrap
-                this.__boxSize = this.boxSize;
-                this.__boxCenter.copy( this.boxCenter );
-                this.__box.copy( this.box );
-
-                const onSurfaceFinish = surface =&gt; {
-                    this.surface = surface;
-                    callback();
-                };
-
-                if( this.useWorker ){
-                    this.volume.getSurfaceWorker(
-                        isolevel, this.smooth, this.boxCenter, this.boxSize,
-                        this.contour, this.wrap, onSurfaceFinish
-                    );
-                }else{
-                    onSurfaceFinish(
-                        this.volume.getSurface(
-                            isolevel, this.smooth, this.boxCenter, this.boxSize,
-                            this.contour, this.wrap
-                        )
-                    );
-                }
-            }else{
-                callback();
-            }
-
-        }else{
-            callback();
-        }
-
-    }
-
-    create(){
-
-        const sd = {
-            position: this.surface.getPosition(),
-            color: this.surface.getColor( this.getColorParams() ),
-            index: this.surface.getIndex(),
-        };
-
-        let buffer;
-
-        if( this.contour ){
-
-            buffer = new ContourBuffer(
-                sd, this.getBufferParams( {
-                    wireframe: false
-            } ) );
-
+        if (this.useWorker) {
+          this.volume.getSurfaceWorker(
+            isolevel, this.smooth, this.boxCenter, this.boxSize,
+            this.contour, this.wrap, onSurfaceFinish
+          )
         } else {
-
-            sd.normal = this.surface.getNormal(),
-            sd.picking = this.surface.getPicking()
-
-            const surfaceBuffer = new SurfaceBuffer(
-                sd, this.getBufferParams( {
-                    background: this.background,
-                    opaqueBack: this.opaqueBack,
-                    dullInterior: false
-                } ) );
-
-            buffer = new DoubleSidedBuffer( surfaceBuffer );
-
+          onSurfaceFinish(
+            this.volume.getSurface(
+              isolevel, this.smooth, this.boxCenter, this.boxSize,
+              this.contour, this.wrap
+            )
+          )
         }
+      } else {
+        callback()
+      }
+    } else {
+      callback()
+    }
+  }
 
-        this.bufferList.push( buffer );
-
+  create () {
+    const sd = {
+      position: this.surface.getPosition(),
+      color: this.surface.getColor(this.getColorParams()),
+      index: this.surface.getIndex()
     }
 
-    update( what ){
+    let buffer
 
-        if( this.bufferList.length === 0 ) return;
+    if (this.contour) {
+      buffer = new ContourBuffer(
+        sd,
+        this.getBufferParams({ wireframe: false })
+      )
+    } else {
+      sd.normal = this.surface.getNormal()
+      sd.picking = this.surface.getPicking()
 
-        what = what || {};
+      const surfaceBuffer = new SurfaceBuffer(
+        sd,
+        this.getBufferParams({
+          background: this.background,
+          opaqueBack: this.opaqueBack,
+          dullInterior: false
+        })
+      )
 
-        const surfaceData = {};
-
-        if( what.position ){
-            surfaceData.position = this.surface.getPosition();
-        }
-
-        if( what.color ){
-            surfaceData.color = this.surface.getColor(
-                this.getColorParams()
-            );
-        }
-
-        if( what.index ){
-            surfaceData.index = this.surface.getIndex();
-        }
-
-        if( what.normal ){
-            surfaceData.normal = this.surface.getNormal();
-        }
-
-        this.bufferList.forEach( function( buffer ){
-            buffer.setAttributes( surfaceData );
-        } );
-
+      buffer = new DoubleSidedBuffer(surfaceBuffer)
     }
+
+    this.bufferList.push(buffer)
+  }
+
+  update (what) {
+    if (this.bufferList.length === 0) return
+
+    what = what || {}
+
+    const surfaceData = {}
+
+    if (what.position) {
+      surfaceData.position = this.surface.getPosition()
+    }
+
+    if (what.color) {
+      surfaceData.color = this.surface.getColor(
+        this.getColorParams()
+      )
+    }
+
+    if (what.index) {
+      surfaceData.index = this.surface.getIndex()
+    }
+
+    if (what.normal) {
+      surfaceData.normal = this.surface.getNormal()
+    }
+
+    this.bufferList.forEach(function (buffer) {
+      buffer.setAttributes(surfaceData)
+    })
+  }
 
     /**
      * Set representation parameters
@@ -526,100 +524,81 @@ class SurfaceRepresentation extends Representation{
      * @param {Boolean} [rebuild] - whether or not to rebuild the representation
      * @return {SurfaceRepresentation} this object
      */
-    setParameters( params, what, rebuild ){
+  setParameters (params, what, rebuild) {
+    if (params &amp;&amp; params.isolevelType !== undefined &amp;&amp;
+      this.volume
+    ) {
+      if (this.isolevelType === &apos;value&apos; &amp;&amp;
+        params.isolevelType === &apos;sigma&apos;
+      ) {
+        this.isolevel = this.volume.getSigmaForValue(this.isolevel)
+      } else if (this.isolevelType === &apos;sigma&apos; &amp;&amp;
+        params.isolevelType === &apos;value&apos;
+      ) {
+        this.isolevel = this.volume.getValueForSigma(this.isolevel)
+      }
 
-        if( params &amp;&amp; params.isolevelType !== undefined &amp;&amp;
-            this.volume
-        ){
+      this.isolevelType = params.isolevelType
+    }
 
-            if( this.isolevelType === &quot;value&quot; &amp;&amp;
-                params.isolevelType === &quot;sigma&quot;
-            ){
-
-                this.isolevel = this.volume.getSigmaForValue(
-                    this.isolevel
-                );
-
-            }else if( this.isolevelType === &quot;sigma&quot; &amp;&amp;
-                params.isolevelType === &quot;value&quot;
-            ){
-
-                this.isolevel = this.volume.getValueForSigma(
-                    this.isolevel
-                );
-
-            }
-
-            this.isolevelType = params.isolevelType;
-
-        }
-
-        if( params &amp;&amp; params.boxCenter ){
-            this.boxCenter.copy( params.boxCenter );
-            delete params.boxCenter;
-        }
+    if (params &amp;&amp; params.boxCenter) {
+      this.boxCenter.copy(params.boxCenter)
+      delete params.boxCenter
+    }
 
         // Forbid wireframe &amp;&amp; contour as in molsurface
-        if( params &amp;&amp; params.wireframe &amp;&amp; (
-            params.contour || ( params.contour === undefined &amp;&amp; this.contour )
-        ) ){
-            params.wireframe = false;
-        }
-
-        super.setParameters( params, what, rebuild );
-
-        if( this.volume ){
-            this.volume.getBox( this.boxCenter, this.boxSize, this.box );
-        }
-
-        if( params &amp;&amp; params.colorVolume !== undefined ){
-            what.color = true;
-        }
-
-        if( this.surface &amp;&amp; (
-                params.isolevel !== undefined ||
-                params.negateIsolevel !== undefined ||
-                params.smooth !== undefined ||
-                params.wrap !== undefined ||
-                params.boxSize !== undefined ||
-                ( this.boxSize &gt; 0 &amp;&amp;
-                    !this.__box.equals( this.box ) )
-            )
-        ){
-            this.build( {
-                &quot;position&quot;: true,
-                &quot;color&quot;: true,
-                &quot;index&quot;: true,
-                &quot;normal&quot;: !this.contour
-            } );
-        }
-
-        return this;
-
+    if (params &amp;&amp; params.wireframe &amp;&amp; (
+      params.contour || (params.contour === undefined &amp;&amp; this.contour)
+    )) {
+      params.wireframe = false
     }
 
-    getColorParams(){
+    super.setParameters(params, what, rebuild)
 
-        const p = super.getColorParams();
-
-        p.volume = this.colorVolume;
-
-        return p;
-
+    if (this.volume) {
+      this.volume.getBox(this.boxCenter, this.boxSize, this.box)
     }
 
-    dispose(){
-
-        this.viewer.signals.ticked.remove( this.setBox, this );
-
-        super.dispose();
-
+    if (params &amp;&amp; params.colorVolume !== undefined) {
+      what.color = true
     }
 
+    if (this.surface &amp;&amp; (
+      params.isolevel !== undefined ||
+      params.negateIsolevel !== undefined ||
+      params.smooth !== undefined ||
+      params.wrap !== undefined ||
+      params.boxSize !== undefined ||
+      (this.boxSize &gt; 0 &amp;&amp;
+        !this.__box.equals(this.box))
+    )) {
+      this.build({
+        &apos;position&apos;: true,
+        &apos;color&apos;: true,
+        &apos;index&apos;: true,
+        &apos;normal&apos;: !this.contour
+      })
+    }
+
+    return this
+  }
+
+  getColorParams () {
+    const p = super.getColorParams()
+
+    p.volume = this.colorVolume
+
+    return p
+  }
+
+  dispose () {
+    this.viewer.signals.ticked.remove(this.setBox, this)
+
+    super.dispose()
+  }
 }
 
-
-export default SurfaceRepresentation;
+export default SurfaceRepresentation
 </code></pre>
 
 </div>

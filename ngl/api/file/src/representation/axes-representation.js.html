@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,17 +255,15 @@
  * @private
  */
 
+import { Color, Vector3 } from &apos;../../lib/three.es6.js&apos;
 
-import { Color, Vector3 } from &quot;../../lib/three.es6.js&quot;;
-
-import { RepresentationRegistry } from &quot;../globals.js&quot;;
-import { defaults } from &quot;../utils.js&quot;;
-import { AxesPicker } from &quot;../utils/picker.js&quot;;
-import { uniformArray, uniformArray3 } from &quot;../math/array-utils.js&quot;;
-import StructureRepresentation from &quot;./structure-representation.js&quot;;
-import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
-import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
-
+import { RepresentationRegistry } from &apos;../globals.js&apos;
+import { defaults } from &apos;../utils.js&apos;
+import { AxesPicker } from &apos;../utils/picker.js&apos;
+import { uniformArray, uniformArray3 } from &apos;../math/array-utils.js&apos;
+import StructureRepresentation from &apos;./structure-representation.js&apos;
+import SphereBuffer from &apos;../buffer/sphere-buffer.js&apos;
+import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
 
 /**
  * Axes representation. Show principal axes and/or a box aligned with them
@@ -273,248 +288,228 @@ import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
  *     stage.animationControls.rotate( pa.getRotationQuaternion(), 1500 );
  * } );
  */
-class AxesRepresentation extends StructureRepresentation{
-
+class AxesRepresentation extends StructureRepresentation {
     /**
      * @param  {Structure} structure - the structure object
      * @param  {Viewer} viewer - the viewer object
      * @param  {StructureRepresentationParameters} params - parameters object
      */
-    constructor( structure, viewer, params ){
+  constructor (structure, viewer, params) {
+    super(structure, viewer, params)
 
-        super( structure, viewer, params );
+    this.type = &apos;axes&apos;
 
-        this.type = &quot;axes&quot;;
+    this.parameters = Object.assign({
 
-        this.parameters = Object.assign( {
+      radius: {
+        type: &apos;number&apos;, precision: 3, max: 10.0, min: 0.001
+      },
+      sphereDetail: true,
+      radialSegments: true,
+      disableImpostor: true,
+      showAxes: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      showBox: {
+        type: &apos;boolean&apos;, rebuild: true
+      }
 
-            radius: {
-                type: &quot;number&quot;, precision: 3, max: 10.0, min: 0.001
-            },
-            sphereDetail: true,
-            radialSegments: true,
-            disableImpostor: true,
-            showAxes: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            showBox: {
-                type: &quot;boolean&quot;, rebuild: true
-            }
+    }, this.parameters, {
+      assembly: null
+    })
 
-        }, this.parameters, {
-            assembly: null
-        } );
+    this.init(params)
+  }
 
-        this.init( params );
+  init (params) {
+    var p = params || {}
 
+    p.radius = defaults(p.radius, 0.5)
+    p.colorValue = defaults(p.colorValue, &apos;lightgreen&apos;)
+
+    this.showAxes = defaults(p.showAxes, true)
+    this.showBox = defaults(p.showBox, false)
+
+    super.init(p)
+  }
+
+  getPrincipalAxes (/* sview */) {
+    var selection
+    var assembly = this.getAssembly()
+
+    if (assembly) {
+      selection = assembly.partList[ 0 ].getSelection()
     }
 
-    init( params ){
+    return this.structureView.getPrincipalAxes(selection)
+  }
 
-        var p = params || {};
+  getAxesData (sview) {
+    var pa = this.getPrincipalAxes(sview)
+    var c = new Color(this.colorValue)
 
-        p.radius = defaults( p.radius, 0.5 );
-        p.colorValue = defaults( p.colorValue, &quot;lightgreen&quot; );
+    var vn = 0
+    var en = 0
 
-        this.showAxes = defaults( p.showAxes, true );
-        this.showBox = defaults( p.showBox, false );
-
-        super.init( p );
-
+    if (this.showAxes) {
+      vn += 6
+      en += 3
     }
 
-    getPrincipalAxes( /*sview*/ ){
-
-        var selection;
-        var assembly = this.getAssembly();
-
-        if( assembly ){
-            selection = assembly.partList[ 0 ].getSelection();
-        }
-
-        return this.structureView.getPrincipalAxes( selection );
-
+    if (this.showBox) {
+      vn += 8
+      en += 12
     }
 
-    getAxesData( sview ){
+    var vertexPosition = new Float32Array(3 * vn)
+    var vertexColor = uniformArray3(vn, c.r, c.g, c.b)
+    var vertexRadius = uniformArray(vn, this.radius)
 
-        var pa = this.getPrincipalAxes( sview );
-        var c = new Color( this.colorValue );
+    var edgePosition1 = new Float32Array(3 * en)
+    var edgePosition2 = new Float32Array(3 * en)
+    var edgeColor = uniformArray3(en, c.r, c.g, c.b)
+    var edgeRadius = uniformArray(en, this.radius)
 
-        var vn = 0;
-        var en = 0;
+    var offset = 0
 
-        if( this.showAxes ){
-            vn += 6;
-            en += 3;
-        }
+    if (this.showAxes) {
+      var addAxis = function (v1, v2) {
+        v1.toArray(vertexPosition, offset * 2)
+        v2.toArray(vertexPosition, offset * 2 + 3)
+        v1.toArray(edgePosition1, offset)
+        v2.toArray(edgePosition2, offset)
+        offset += 3
+      }
 
-        if( this.showBox ){
-            vn += 8;
-            en += 12;
-        }
-
-        var vertexPosition = new Float32Array( 3 * vn );
-        var vertexColor = uniformArray3( vn, c.r, c.g, c.b );
-        var vertexRadius = uniformArray( vn, this.radius );
-
-        var edgePosition1 = new Float32Array( 3 * en );
-        var edgePosition2 = new Float32Array( 3 * en );
-        var edgeColor = uniformArray3( en, c.r, c.g, c.b );
-        var edgeRadius = uniformArray( en, this.radius );
-
-        var offset = 0;
-
-        if( this.showAxes ){
-
-            var addAxis = function( v1, v2 ){
-                v1.toArray( vertexPosition, offset * 2 );
-                v2.toArray( vertexPosition, offset * 2 + 3 );
-                v1.toArray( edgePosition1, offset );
-                v2.toArray( edgePosition2, offset );
-                offset += 3;
-            }
-
-            addAxis( pa.begA, pa.endA );
-            addAxis( pa.begB, pa.endB );
-            addAxis( pa.begC, pa.endC );
-
-        }
-
-        if( this.showBox ){
-
-            var v = new Vector3();
-            var { d1a, d2a, d3a, d1b, d2b, d3b } = pa.getProjectedScaleForAtoms( sview );
-
-            console.log( d1a, d2a, d3a, d1b, d2b, d3b )
-
-            var offset2 = offset * 2;
-            var addCorner = function( d1, d2, d3 ){
-                v.copy( pa.center )
-                    .addScaledVector( pa.normVecA, d1 )
-                    .addScaledVector( pa.normVecB, d2 )
-                    .addScaledVector( pa.normVecC, d3 );
-                v.toArray( vertexPosition, offset2 );
-                offset2 += 3;
-            }
-            addCorner( d1a, d2a, d3a );
-            addCorner( d1a, d2a, d3b );
-            addCorner( d1a, d2b, d3b );
-            addCorner( d1a, d2b, d3a );
-            addCorner( d1b, d2b, d3b );
-            addCorner( d1b, d2b, d3a );
-            addCorner( d1b, d2a, d3a );
-            addCorner( d1b, d2a, d3b );
-
-            var edgeOffset = offset;
-            var addEdge = function( a, b ){
-                v.fromArray( vertexPosition, offset * 2 + a * 3 )
-                    .toArray( edgePosition1, edgeOffset );
-                v.fromArray( vertexPosition, offset * 2 + b * 3 )
-                    .toArray( edgePosition2, edgeOffset );
-                edgeOffset += 3;
-            }
-            addEdge( 0, 1 );
-            addEdge( 0, 3 );
-            addEdge( 0, 6 );
-            addEdge( 1, 2 );
-            addEdge( 1, 7 );
-            addEdge( 2, 3 );
-            addEdge( 2, 4 );
-            addEdge( 3, 5 );
-            addEdge( 4, 5 );
-            addEdge( 4, 7 );
-            addEdge( 5, 6 );
-            addEdge( 6, 7 );
-
-        }
-
-        const picker = new AxesPicker( pa );
-
-        return {
-            vertex: {
-                position: vertexPosition,
-                color: vertexColor,
-                radius: vertexRadius,
-                picking: picker
-            },
-            edge: {
-                position1: edgePosition1,
-                position2: edgePosition2,
-                color: edgeColor,
-                color2: edgeColor,
-                radius: edgeRadius,
-                picking: picker
-            }
-        };
-
+      addAxis(pa.begA, pa.endA)
+      addAxis(pa.begB, pa.endB)
+      addAxis(pa.begC, pa.endC)
     }
 
-    create(){
+    if (this.showBox) {
+      var v = new Vector3()
+      var { d1a, d2a, d3a, d1b, d2b, d3b } = pa.getProjectedScaleForAtoms(sview)
 
-        var axesData = this.getAxesData( this.structureView );
+      console.log(d1a, d2a, d3a, d1b, d2b, d3b)
 
-        this.sphereBuffer = new SphereBuffer(
+      var offset2 = offset * 2
+      var addCorner = function (d1, d2, d3) {
+        v.copy(pa.center)
+                    .addScaledVector(pa.normVecA, d1)
+                    .addScaledVector(pa.normVecB, d2)
+                    .addScaledVector(pa.normVecC, d3)
+        v.toArray(vertexPosition, offset2)
+        offset2 += 3
+      }
+      addCorner(d1a, d2a, d3a)
+      addCorner(d1a, d2a, d3b)
+      addCorner(d1a, d2b, d3b)
+      addCorner(d1a, d2b, d3a)
+      addCorner(d1b, d2b, d3b)
+      addCorner(d1b, d2b, d3a)
+      addCorner(d1b, d2a, d3a)
+      addCorner(d1b, d2a, d3b)
+
+      var edgeOffset = offset
+      var addEdge = function (a, b) {
+        v.fromArray(vertexPosition, offset * 2 + a * 3)
+                    .toArray(edgePosition1, edgeOffset)
+        v.fromArray(vertexPosition, offset * 2 + b * 3)
+                    .toArray(edgePosition2, edgeOffset)
+        edgeOffset += 3
+      }
+      addEdge(0, 1)
+      addEdge(0, 3)
+      addEdge(0, 6)
+      addEdge(1, 2)
+      addEdge(1, 7)
+      addEdge(2, 3)
+      addEdge(2, 4)
+      addEdge(3, 5)
+      addEdge(4, 5)
+      addEdge(4, 7)
+      addEdge(5, 6)
+      addEdge(6, 7)
+    }
+
+    const picker = new AxesPicker(pa)
+
+    return {
+      vertex: {
+        position: vertexPosition,
+        color: vertexColor,
+        radius: vertexRadius,
+        picking: picker
+      },
+      edge: {
+        position1: edgePosition1,
+        position2: edgePosition2,
+        color: edgeColor,
+        color2: edgeColor,
+        radius: edgeRadius,
+        picking: picker
+      }
+    }
+  }
+
+  create () {
+    var axesData = this.getAxesData(this.structureView)
+
+    this.sphereBuffer = new SphereBuffer(
             axesData.vertex,
-            this.getBufferParams( {
-                sphereDetail: this.sphereDetail,
-                disableImpostor: this.disableImpostor,
-                dullInterior: true
-            } )
-        );
+            this.getBufferParams({
+              sphereDetail: this.sphereDetail,
+              disableImpostor: this.disableImpostor,
+              dullInterior: true
+            })
+        )
 
-        this.cylinderBuffer = new CylinderBuffer(
+    this.cylinderBuffer = new CylinderBuffer(
             axesData.edge,
-            this.getBufferParams( {
-                openEnded: true,
-                radialSegments: this.radialSegments,
-                disableImpostor: this.disableImpostor,
-                dullInterior: true
-            } )
-        );
+            this.getBufferParams({
+              openEnded: true,
+              radialSegments: this.radialSegments,
+              disableImpostor: this.disableImpostor,
+              dullInterior: true
+            })
+        )
 
-        this.dataList.push( {
-            sview: this.structureView,
-            bufferList: [ this.sphereBuffer, this.cylinderBuffer ]
-        } );
+    this.dataList.push({
+      sview: this.structureView,
+      bufferList: [ this.sphereBuffer, this.cylinderBuffer ]
+    })
+  }
 
+  updateData (what, data) {
+    var axesData = this.getAxesData(data.sview)
+    var sphereData = {}
+    var cylinderData = {}
+
+    if (!what || what.position) {
+      sphereData.position = axesData.vertex.position
+      cylinderData.position1 = axesData.edge.position1
+      cylinderData.position2 = axesData.edge.position2
     }
 
-    updateData( what, data ){
-
-        var axesData = this.getAxesData( data.sview );
-        var sphereData = {};
-        var cylinderData = {};
-
-        if( !what || what.position ){
-            sphereData.position = axesData.vertex.position;
-            cylinderData.position1 = axesData.edge.position1;
-            cylinderData.position2 = axesData.edge.position2;
-        }
-
-        if( !what || what.color ){
-            sphereData.color = axesData.vertex.color;
-            cylinderData.color = axesData.edge.color;
-            cylinderData.color2 = axesData.edge.color;
-        }
-
-        if( !what || what.radius ){
-            sphereData.radius = axesData.vertex.radius;
-            cylinderData.radius = axesData.edge.radius;
-        }
-
-        this.sphereBuffer.setAttributes( sphereData );
-        this.cylinderBuffer.setAttributes( cylinderData );
-
+    if (!what || what.color) {
+      sphereData.color = axesData.vertex.color
+      cylinderData.color = axesData.edge.color
+      cylinderData.color2 = axesData.edge.color
     }
 
+    if (!what || what.radius) {
+      sphereData.radius = axesData.vertex.radius
+      cylinderData.radius = axesData.edge.radius
+    }
+
+    this.sphereBuffer.setAttributes(sphereData)
+    this.cylinderBuffer.setAttributes(cylinderData)
+  }
 }
 
+RepresentationRegistry.add(&apos;axes&apos;, AxesRepresentation)
 
-RepresentationRegistry.add( &quot;axes&quot;, AxesRepresentation );
-
-
-export default AxesRepresentation;
+export default AxesRepresentation
 </code></pre>
 
 </div>

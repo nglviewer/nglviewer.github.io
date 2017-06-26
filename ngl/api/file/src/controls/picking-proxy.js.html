@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,11 +255,9 @@
  * @private
  */
 
-
-function closer( x, a, b ){
-    return x.distanceTo( a ) &lt; x.distanceTo( b ) ;
+function closer (x, a, b) {
+  return x.distanceTo(a) &lt; x.distanceTo(b)
 }
-
 
 /**
  * Picking data object.
@@ -255,249 +270,241 @@ function closer( x, a, b ){
  * @property {Picker} [picker] - picker object
  */
 
-
 /**
  * Picking proxy class.
  */
-class PickingProxy{
+class PickingProxy {
+  /**
+   * Create picking proxy object
+   * @param  {PickingData} pickingData - picking data
+   * @param  {Stage} stage - stage object
+   */
+  constructor (pickingData, stage) {
+    this.pid = pickingData.pid
+    this.picker = pickingData.picker
 
     /**
-     * Create picking proxy object
-     * @param  {PickingData} pickingData - picking data
-     * @param  {Stage} stage - stage object
+     * @member {Object}
      */
-    constructor( pickingData, stage ){
+    this.instance = pickingData.instance
 
-        this.pid = pickingData.pid;
-        this.picker = pickingData.picker;
+    /**
+     * @member {Stage}
+     */
+    this.stage = stage
+    /**
+     * @member {ViewerControls}
+     */
+    this.controls = stage.viewerControls
+    /**
+     * @member {MouseObserver}
+     */
+    this.mouse = stage.mouseObserver
+  }
 
-        /**
-         * @member {Object}
-         */
-        this.instance = pickingData.instance;
+  /**
+   * Kind of the picked data
+   * @member {String}
+   */
+  get type () { return this.picker.type }
 
-        /**
-         * @member {Stage}
-         */
-        this.stage = stage;
-        /**
-         * @member {ViewerControls}
-         */
-        this.controls = stage.viewerControls;
-        /**
-         * @member {MouseObserver}
-         */
-        this.mouse = stage.mouseObserver;
+  /**
+   * If the `alt` key was pressed
+   * @member {Boolean}
+   */
+  get altKey () { return this.mouse.altKey }
+  /**
+   * If the `ctrl` key was pressed
+   * @member {Boolean}
+   */
+  get ctrlKey () { return this.mouse.ctrlKey }
+  /**
+   * If the `meta` key was pressed
+   * @member {Boolean}
+   */
+  get metaKey () { return this.mouse.metaKey }
+  /**
+   * If the `shift` key was pressed
+   * @member {Boolean}
+   */
+  get shiftKey () { return this.mouse.shiftKey }
 
+  /**
+   * Position of the mouse on the canvas
+   * @member {Vector2}
+   */
+  get canvasPosition () { return this.mouse.canvasPosition }
+
+  /**
+   * The component the picked data is part of
+   * @member {Component}
+   */
+  get component () {
+    return this.stage.getComponentsByObject(this.picker.data).list[ 0 ]
+  }
+
+  /**
+   * The picked object data
+   * @member {Object}
+   */
+  get object () {
+    return this.picker.getObject(this.pid)
+  }
+
+  /**
+   * The 3d position in the scene of the picked object
+   * @member {Vector3}
+   */
+  get position () {
+    return this.picker.getPosition(this.pid, this.instance, this.component)
+  }
+
+  /**
+   * The atom of a picked bond that is closest to the mouse
+   * @member {AtomProxy}
+   */
+  get closestBondAtom () {
+    if (this.type !== &apos;bond&apos;) return undefined
+
+    const bond = this.bond
+    const controls = this.controls
+    const cp = this.canvasPosition
+
+    const acp1 = controls.getPositionOnCanvas(bond.atom1)
+    const acp2 = controls.getPositionOnCanvas(bond.atom2)
+
+    return closer(cp, acp1, acp2) ? bond.atom1 : bond.atom2
+  }
+
+  /**
+   * @member {Object}
+   */
+  get arrow () { return this._objectIfType(&apos;arrow&apos;) }
+  /**
+   * @member {AtomProxy}
+   */
+  get atom () { return this._objectIfType(&apos;atom&apos;) }
+  /**
+   * @member {Object}
+   */
+  get axes () { return this._objectIfType(&apos;axes&apos;) }
+  /**
+   * @member {BondProxy}
+   */
+  get bond () { return this._objectIfType(&apos;bond&apos;) }
+  /**
+   * @member {Object}
+   */
+  get cone () { return this._objectIfType(&apos;cone&apos;) }
+  /**
+   * @member {Object}
+   */
+  get clash () { return this._objectIfType(&apos;clash&apos;) }
+  /**
+   * @member {BondProxy}
+   */
+  get contact () { return this._objectIfType(&apos;contact&apos;) }
+  /**
+   * @member {Object}
+   */
+  get cylinder () { return this._objectIfType(&apos;cylinder&apos;) }
+  /**
+   * @member {BondProxy}
+   */
+  get distance () { return this._objectIfType(&apos;distance&apos;) }
+  /**
+   * @member {Object}
+   */
+  get ellipsoid () { return this._objectIfType(&apos;ellipsoid&apos;) }
+  /**
+   * @member {Object}
+   */
+  get mesh () { return this._objectIfType(&apos;mesh&apos;) }
+  /**
+   * @member {Object}
+   */
+  get slice () { return this._objectIfType(&apos;slice&apos;) }
+  /**
+   * @member {Object}
+   */
+  get sphere () { return this._objectIfType(&apos;sphere&apos;) }
+  /**
+   * @member {Object}
+   */
+  get surface () { return this._objectIfType(&apos;surface&apos;) }
+  /**
+   * @member {Object}
+   */
+  get unitcell () { return this._objectIfType(&apos;unitcell&apos;) }
+  /**
+   * @member {Object}
+   */
+  get unknown () { return this._objectIfType(&apos;unknown&apos;) }
+  /**
+   * @member {Object}
+   */
+  get volume () { return this._objectIfType(&apos;volume&apos;) }
+
+  _objectIfType (type) {
+    return this.type === type ? this.object : undefined
+  }
+
+  getLabel () {
+    let msg = &apos;nothing&apos;
+    if (this.arrow) {
+      msg = &apos;arrow: &apos; + (this.arrow.name || this.pid) + &apos; (&apos; + this.arrow.shape.name + &apos;)&apos;
+    } else if (this.atom) {
+      msg = &apos;atom: &apos; +
+              this.atom.qualifiedName() +
+              &apos; (&apos; + this.atom.structure.name + &apos;)&apos;
+    } else if (this.axes) {
+      msg = &apos;axes&apos;
+    } else if (this.bond) {
+      msg = &apos;bond: &apos; +
+              this.bond.atom1.qualifiedName() + &apos; - &apos; + this.bond.atom2.qualifiedName() +
+              &apos; (&apos; + this.bond.structure.name + &apos;)&apos;
+    } else if (this.cone) {
+      msg = &apos;cone: &apos; + (this.cone.name || this.pid) + &apos; (&apos; + this.cone.shape.name + &apos;)&apos;
+    } else if (this.clash) {
+      msg = &apos;clash: &apos; + this.clash.clash.sele1 + &apos; - &apos; + this.clash.clash.sele2
+    } else if (this.contact) {
+      msg = &apos;contact: &apos; +
+              this.contact.atom1.qualifiedName() + &apos; - &apos; + this.contact.atom2.qualifiedName() +
+              &apos; (&apos; + this.contact.structure.name + &apos;)&apos;
+    } else if (this.cylinder) {
+      msg = &apos;cylinder: &apos; + (this.cylinder.name || this.pid) + &apos; (&apos; + this.cylinder.shape.name + &apos;)&apos;
+    } else if (this.distance) {
+      msg = &apos;distance: &apos; +
+              this.distance.atom1.qualifiedName() + &apos; - &apos; + this.distance.atom2.qualifiedName() +
+              &apos; (&apos; + this.distance.structure.name + &apos;)&apos;
+    } else if (this.ellipsoid) {
+      msg = &apos;ellipsoid: &apos; + (this.ellipsoid.name || this.pid) + &apos; (&apos; + this.ellipsoid.shape.name + &apos;)&apos;
+    } else if (this.mesh) {
+      msg = &apos;mesh: &apos; + (this.mesh.name || this.mesh.serial) + &apos; (&apos; + this.mesh.shape.name + &apos;)&apos;
+    } else if (this.slice) {
+      msg = &apos;slice: &apos; +
+              this.slice.value.toPrecision(3) +
+              &apos; (&apos; + this.slice.volume.name + &apos;)&apos;
+    } else if (this.sphere) {
+      msg = &apos;sphere: &apos; + (this.sphere.name || this.pid) + &apos; (&apos; + this.sphere.shape.name + &apos;)&apos;
+    } else if (this.surface) {
+      msg = &apos;surface: &apos; + this.surface.surface.name
+    } else if (this.unitcell) {
+      msg = &apos;unitcell: &apos; +
+              this.unitcell.unitcell.spacegroup +
+              &apos; (&apos; + this.unitcell.structure.name + &apos;)&apos;
+    } else if (this.unknown) {
+      msg = &apos;unknown&apos;
+    } else if (this.volume) {
+      msg = &apos;volume: &apos; +
+              this.volume.value.toPrecision(3) +
+              &apos; (&apos; + this.volume.volume.name + &apos;)&apos;
     }
-
-    /**
-     * Kind of the picked data
-     * @member {String}
-     */
-    get type (){ return this.picker.type; }
-
-    /**
-     * If the `alt` key was pressed
-     * @member {Boolean}
-     */
-    get altKey (){ return this.mouse.altKey; }
-    /**
-     * If the `ctrl` key was pressed
-     * @member {Boolean}
-     */
-    get ctrlKey (){ return this.mouse.ctrlKey; }
-    /**
-     * If the `meta` key was pressed
-     * @member {Boolean}
-     */
-    get metaKey (){ return this.mouse.metaKey; }
-    /**
-     * If the `shift` key was pressed
-     * @member {Boolean}
-     */
-    get shiftKey (){ return this.mouse.shiftKey; }
-
-    /**
-     * Position of the mouse on the canvas
-     * @member {Vector2}
-     */
-    get canvasPosition (){ return this.mouse.canvasPosition; }
-
-    /**
-     * The component the picked data is part of
-     * @member {Component}
-     */
-    get component (){
-        return this.stage.getComponentsByObject( this.picker.data ).list[ 0 ];
-    }
-
-    /**
-     * The picked object data
-     * @member {Object}
-     */
-    get object (){
-        return this.picker.getObject( this.pid );
-    }
-
-    /**
-     * The 3d position in the scene of the picked object
-     * @member {Vector3}
-     */
-    get position (){
-        return this.picker.getPosition( this.pid, this.instance, this.component );
-    }
-
-    /**
-     * The atom of a picked bond that is closest to the mouse
-     * @member {AtomProxy}
-     */
-    get closestBondAtom (){
-
-        if( this.type !== &quot;bond&quot; ) return undefined;
-
-        const bond = this.bond;
-        const controls = this.controls;
-        const cp = this.canvasPosition;
-
-        const acp1 = controls.getPositionOnCanvas( bond.atom1 );
-        const acp2 = controls.getPositionOnCanvas( bond.atom2 );
-
-        return closer( cp, acp1, acp2 ) ? bond.atom1 : bond.atom2;
-
-    }
-
-    /**
-     * @member {Object}
-     */
-    get arrow (){ return this._objectIfType( &quot;arrow&quot; ); }
-    /**
-     * @member {AtomProxy}
-     */
-    get atom (){ return this._objectIfType( &quot;atom&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get axes (){ return this._objectIfType( &quot;axes&quot; ); }
-    /**
-     * @member {BondProxy}
-     */
-    get bond (){ return this._objectIfType( &quot;bond&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get cone (){ return this._objectIfType( &quot;cone&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get clash (){ return this._objectIfType( &quot;clash&quot; ); }
-    /**
-     * @member {BondProxy}
-     */
-    get contact (){ return this._objectIfType( &quot;contact&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get cylinder (){ return this._objectIfType( &quot;cylinder&quot; ); }
-    /**
-     * @member {BondProxy}
-     */
-    get distance (){ return this._objectIfType( &quot;distance&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get ellipsoid (){ return this._objectIfType( &quot;ellipsoid&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get mesh (){ return this._objectIfType( &quot;mesh&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get slice (){ return this._objectIfType( &quot;slice&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get sphere (){ return this._objectIfType( &quot;sphere&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get surface (){ return this._objectIfType( &quot;surface&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get unitcell (){ return this._objectIfType( &quot;unitcell&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get unknown (){ return this._objectIfType( &quot;unknown&quot; ); }
-    /**
-     * @member {Object}
-     */
-    get volume (){ return this._objectIfType( &quot;volume&quot; ); }
-
-    _objectIfType( type ){
-        return this.type === type ? this.object : undefined;
-    }
-
-    getLabel(){
-        let msg = &quot;nothing&quot;;
-        if( this.arrow ){
-            msg = &quot;arrow: &quot; + ( this.arrow.name || this.pid ) + &quot; (&quot; + this.arrow.shape.name + &quot;)&quot;;
-        }else if( this.atom ){
-            msg = &quot;atom: &quot; +
-                this.atom.qualifiedName() +
-                &quot; (&quot; + this.atom.structure.name + &quot;)&quot;;
-        }else if( this.axes ){
-            msg = &quot;axes&quot;;
-        }else if( this.bond ){
-            msg = &quot;bond: &quot; +
-                this.bond.atom1.qualifiedName() + &quot; - &quot; + this.bond.atom2.qualifiedName() +
-                &quot; (&quot; + this.bond.structure.name + &quot;)&quot;;
-        }else if( this.cone ){
-            msg = &quot;cone: &quot; + ( this.cone.name || this.pid ) + &quot; (&quot; + this.cone.shape.name + &quot;)&quot;;
-        }else if( this.clash ){
-            msg = &quot;clash: &quot; + this.clash.clash.sele1 + &quot; - &quot; + this.clash.clash.sele2;
-        }else if( this.contact ){
-            msg = &quot;contact: &quot; +
-                this.contact.atom1.qualifiedName() + &quot; - &quot; + this.contact.atom2.qualifiedName() +
-                &quot; (&quot; + this.contact.structure.name + &quot;)&quot;;
-        }else if( this.cylinder ){
-            msg = &quot;cylinder: &quot; + ( this.cylinder.name || this.pid ) + &quot; (&quot; + this.cylinder.shape.name + &quot;)&quot;;
-        }else if( this.distance ){
-            msg = &quot;distance: &quot; +
-                this.distance.atom1.qualifiedName() + &quot; - &quot; + this.distance.atom2.qualifiedName() +
-                &quot; (&quot; + this.distance.structure.name + &quot;)&quot;;
-        }else if( this.ellipsoid ){
-            msg = &quot;ellipsoid: &quot; + ( this.ellipsoid.name || this.pid ) + &quot; (&quot; + this.ellipsoid.shape.name + &quot;)&quot;;
-        }else if( this.mesh ){
-            msg = &quot;mesh: &quot; + ( this.mesh.name || this.mesh.serial ) + &quot; (&quot; + this.mesh.shape.name + &quot;)&quot;;
-        }else if( this.slice ){
-            msg = &quot;slice: &quot; +
-                this.slice.value.toPrecision( 3 ) +
-                &quot; (&quot; + this.slice.volume.name + &quot;)&quot;;
-        }else if( this.sphere ){
-            msg = &quot;sphere: &quot; + ( this.sphere.name || this.pid ) + &quot; (&quot; + this.sphere.shape.name + &quot;)&quot;;
-        }else if( this.surface ){
-            msg = &quot;surface: &quot; + this.surface.surface.name;
-        }else if( this.unitcell ){
-            msg = &quot;unitcell: &quot; +
-                this.unitcell.unitcell.spacegroup +
-                &quot; (&quot; + this.unitcell.structure.name + &quot;)&quot;;
-        }else if( this.unknown ){
-            msg = &quot;unknown&quot;;
-        }else if( this.volume ){
-            msg = &quot;volume: &quot; +
-                this.volume.value.toPrecision( 3 ) +
-                &quot; (&quot; + this.volume.volume.name + &quot;)&quot;;
-        }
-        return msg;
-    }
-
+    return msg
+  }
 }
 
-
-export default PickingProxy;
+export default PickingProxy
 </code></pre>
 
 </div>

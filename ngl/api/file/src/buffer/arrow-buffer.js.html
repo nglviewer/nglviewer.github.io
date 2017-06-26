@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,15 +255,13 @@
  * @private
  */
 
+import { Matrix4, Vector3, Group } from &apos;../../lib/three.es6.js&apos;
 
-import { Matrix4, Vector3, Group } from &quot;../../lib/three.es6.js&quot;;
-
-import { defaults } from &quot;../utils.js&quot;;
-import Buffer from &quot;./buffer.js&quot;;
-import CylinderBuffer from &quot;./cylinder-buffer.js&quot;;
-import ConeBuffer from &quot;./cone-buffer.js&quot;;
-import GeometryGroup from &quot;../viewer/geometry-group.js&quot;;
-
+import { defaults } from &apos;../utils.js&apos;
+import Buffer from &apos;./buffer.js&apos;
+import CylinderBuffer from &apos;./cylinder-buffer.js&apos;
+import ConeBuffer from &apos;./cone-buffer.js&apos;
+import GeometryGroup from &apos;../viewer/geometry-group.js&apos;
 
 /**
  * Arrow buffer. Draws arrows made from a cylinder and a cone.
@@ -260,8 +275,7 @@ import GeometryGroup from &quot;../viewer/geometry-group.js&quot;;
  *     radius: new Float32Array( [ 1 ] )
  * } );
  */
-class ArrowBuffer{
-
+class ArrowBuffer {
     /**
      * @param {Object} data - buffer data
      * @param {Float32Array} data.position1 - from positions
@@ -271,189 +285,169 @@ class ArrowBuffer{
      * @param {Picker} [data.picking] - picking ids
      * @param {BufferParameters} [params] - parameters object
      */
-    constructor( data, params ){
+  constructor (data, params) {
+    const d = data || {}
+    const p = params || {}
 
-        const d = data || {};
-        const p = params || {};
+    this.aspectRatio = defaults(p.aspectRatio, 1.5)
+    this.wireframe = defaults(p.wireframe, false)
 
-        this.aspectRatio = defaults( p.aspectRatio, 1.5 );
-        this.wireframe = defaults( p.wireframe, false );
+    this.splitPosition = new Float32Array(d.position1.length)
+    this.cylinderRadius = new Float32Array(d.radius.length)
 
-        this.splitPosition = new Float32Array( d.position1.length );
-        this.cylinderRadius = new Float32Array( d.radius.length );
+    var attr = this.makeAttributes(d)
+    var bufferParams = {
+      radialSegments: defaults(p.radialSegments, 50),
+      openEnded: defaults(p.openEnded, false),
+      disableImpostor: defaults(p.disableImpostor, false)
+    }
 
-        var attr = this.makeAttributes( d );
-        var bufferParams = {
-            radialSegments: defaults( p.radialSegments, 50 ),
-            openEnded: defaults( p.openEnded, false ),
-            disableImpostor: defaults( p.disableImpostor, false )
-        }
-
-        this.cylinderBuffer = new CylinderBuffer(
+    this.cylinderBuffer = new CylinderBuffer(
             attr.cylinder, bufferParams
-        );
-        this.coneBuffer = new ConeBuffer(
+        )
+    this.coneBuffer = new ConeBuffer(
             attr.cone, bufferParams
-        );
+        )
 
-        this.geometry = new GeometryGroup( [
-            this.cylinderBuffer.geometry,
-            this.coneBuffer.geometry
-        ] );
+    this.geometry = new GeometryGroup([
+      this.cylinderBuffer.geometry,
+      this.coneBuffer.geometry
+    ])
 
-        this.group = new Group();
-        this.wireframeGroup = new Group();
-        this.pickingGroup = new Group();
+    this.group = new Group()
+    this.wireframeGroup = new Group()
+    this.pickingGroup = new Group()
 
         // requires Group objects to be present
-        this.matrix = defaults( p.matrix, new Matrix4() );
+    this.matrix = defaults(p.matrix, new Matrix4())
 
-        this.picking = d.picking;
+    this.picking = d.picking
+  }
 
+  set matrix (m) {
+    Buffer.prototype.setMatrix.call(this, m)
+  }
+  get matrix () {
+    return this.group.matrix.clone()
+  }
+
+  get pickable () {
+    return !!this.picking
+  }
+
+  makeAttributes (data) {
+    const splitPosition = this.splitPosition
+    const cylinderRadius = this.cylinderRadius
+
+    const aspectRatio = this.aspectRatio
+
+    let i, il
+    const cylinder = {}
+    const cone = {}
+
+    if (data.radius) {
+      for (i = 0, il = cylinderRadius.length; i &lt; il; ++i) {
+        cylinderRadius[ i ] = data.radius[ i ] / aspectRatio
+      }
+      cylinder.radius = cylinderRadius
+      cone.radius = data.radius
     }
 
-    set matrix ( m ){
-        Buffer.prototype.setMatrix.call( this, m );
-    }
-    get matrix (){
-        return this.group.matrix.clone();
-    }
-
-    get pickable (){
-        return !!this.picking;
-    }
-
-    makeAttributes( data ){
-
-        const splitPosition = this.splitPosition;
-        const cylinderRadius = this.cylinderRadius;
-
-        const aspectRatio = this.aspectRatio;
-
-        let i, il;
-        const cylinder = {};
-        const cone = {};
-
-        if( data.radius ){
-            for( i = 0, il = cylinderRadius.length; i &lt; il; ++i ){
-                cylinderRadius[ i ] = data.radius[ i ] / aspectRatio;
-            }
-            cylinder.radius = cylinderRadius;
-            cone.radius = data.radius;
-        }
-
-        if( data.position1 &amp;&amp; data.position2 ){
-            var vFrom = new Vector3();
-            var vTo = new Vector3();
-            var vDir = new Vector3();
-            var vSplit = new Vector3();
-            for( i = 0, il = splitPosition.length; i &lt; il; i += 3 ){
-                vFrom.fromArray( data.position1, i );
-                vTo.fromArray( data.position2, i );
-                vDir.subVectors( vFrom, vTo );
-                var fullLength = vDir.length();
-                var coneLength = cylinderRadius[ i / 3 ] * aspectRatio * 2;
-                var length = Math.min( fullLength, coneLength );
-                vDir.setLength( length );
-                vSplit.copy( vTo ).add( vDir );
-                vSplit.toArray( splitPosition, i );
-            }
-            cylinder.position1 = data.position1;
-            cylinder.position2 = splitPosition;
-            cone.position1 = splitPosition;
-            cone.position2 = data.position2;
-        }
-
-        if( data.color ){
-            cylinder.color = data.color;
-            cylinder.color2 = data.color;
-            cone.color = data.color;
-        }
-
-        return {
-            cylinder: cylinder,
-            cone: cone
-        };
-
+    if (data.position1 &amp;&amp; data.position2) {
+      var vFrom = new Vector3()
+      var vTo = new Vector3()
+      var vDir = new Vector3()
+      var vSplit = new Vector3()
+      for (i = 0, il = splitPosition.length; i &lt; il; i += 3) {
+        vFrom.fromArray(data.position1, i)
+        vTo.fromArray(data.position2, i)
+        vDir.subVectors(vFrom, vTo)
+        var fullLength = vDir.length()
+        var coneLength = cylinderRadius[ i / 3 ] * aspectRatio * 2
+        var length = Math.min(fullLength, coneLength)
+        vDir.setLength(length)
+        vSplit.copy(vTo).add(vDir)
+        vSplit.toArray(splitPosition, i)
+      }
+      cylinder.position1 = data.position1
+      cylinder.position2 = splitPosition
+      cone.position1 = splitPosition
+      cone.position2 = data.position2
     }
 
-    getMesh( picking ){
-
-        return new Group().add(
-            this.cylinderBuffer.getMesh( picking ),
-            this.coneBuffer.getMesh( picking )
-        );
-
+    if (data.color) {
+      cylinder.color = data.color
+      cylinder.color2 = data.color
+      cone.color = data.color
     }
 
-    getWireframeMesh(){
+    return {
+      cylinder: cylinder,
+      cone: cone
+    }
+  }
 
-        return new Group().add(
+  getMesh (picking) {
+    return new Group().add(
+            this.cylinderBuffer.getMesh(picking),
+            this.coneBuffer.getMesh(picking)
+        )
+  }
+
+  getWireframeMesh () {
+    return new Group().add(
             this.cylinderBuffer.getWireframeMesh(),
             this.coneBuffer.getWireframeMesh()
-        );
+        )
+  }
 
-    }
-
-    getPickingMesh(){
-
-        return new Group().add(
+  getPickingMesh () {
+    return new Group().add(
             this.cylinderBuffer.getPickingMesh(),
             this.coneBuffer.getPickingMesh()
-        );
+        )
+  }
 
-    }
+  setAttributes (data) {
+    var attr = this.makeAttributes(data)
 
-    setAttributes( data ){
-
-        var attr = this.makeAttributes( data );
-
-        this.cylinderBuffer.setAttributes( attr.cylinder );
-        this.coneBuffer.setAttributes( attr.cone );
-
-    }
+    this.cylinderBuffer.setAttributes(attr.cylinder)
+    this.coneBuffer.setAttributes(attr.cone)
+  }
 
     /**
      * Set buffer parameters
      * @param {BufferParameters} params - buffer parameters object
      * @return {undefined}
      */
-    setParameters( params ){
+  setParameters (params) {
+    params = Object.assign({}, params)
 
-        params = Object.assign( {}, params );
+    if (params &amp;&amp; params.matrix !== undefined) {
+      this.matrix = params.matrix
+    }
+    delete params.matrix
 
-        if( params &amp;&amp; params.matrix !== undefined ){
-            this.matrix = params.matrix;
-        }
-        delete params.matrix;
-
-        if( params &amp;&amp; params.wireframe !== undefined ){
-            this.wireframe = params.wireframe;
-            this.setVisibility( this.visible );
-        }
-
-        this.cylinderBuffer.setParameters( params );
-        this.coneBuffer.setParameters( params );
-
+    if (params &amp;&amp; params.wireframe !== undefined) {
+      this.wireframe = params.wireframe
+      this.setVisibility(this.visible)
     }
 
-    setVisibility(){
+    this.cylinderBuffer.setParameters(params)
+    this.coneBuffer.setParameters(params)
+  }
 
-        Buffer.prototype.setVisibility.apply( this, arguments );
+  setVisibility () {
+    Buffer.prototype.setVisibility.apply(this, arguments)
+  }
 
-    }
-
-    dispose(){
-
-        this.cylinderBuffer.dispose();
-        this.coneBuffer.dispose();
-
-    }
-
+  dispose () {
+    this.cylinderBuffer.dispose()
+    this.coneBuffer.dispose()
+  }
 }
 
-
-export default ArrowBuffer;
+export default ArrowBuffer
 </code></pre>
 
 </div>

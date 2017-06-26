@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,157 +255,131 @@
  * @private
  */
 
+import { download } from &apos;../utils.js&apos;
 
-import { download } from &quot;../utils.js&quot;;
+import { sprintf } from &apos;../../lib/sprintf.es6.js&apos;
 
-import { sprintf } from &quot;../../lib/sprintf.es6.js&quot;;
+function PdbWriter (structure, params) {
+  var p = Object.assign({}, params)
 
+  var renumberSerial = p.renumberSerial !== undefined ? p.renumberSerial : true
+  var remarks = p.remarks || []
+  if (!Array.isArray(remarks)) remarks = [ remarks ]
 
-function PdbWriter( structure, params ){
+  var records
 
-    var p = Object.assign( {}, params );
+  function writeRecords () {
+    records = []
 
-    var renumberSerial = p.renumberSerial !== undefined ? p.renumberSerial : true;
-    var remarks = p.remarks || [];
-    if( !Array.isArray( remarks ) ) remarks = [ remarks ];
+    writeTitle()
+    writeRemarks()
+    writeAtoms()
+  }
 
-    var records;
+  // http://www.wwpdb.org/documentation/file-format
 
-    function writeRecords(){
+  // Sample PDB line, the coords X,Y,Z are fields 5,6,7 on each line.
+  // ATOM      1  N   ARG     1      29.292  13.212 -12.751  1.00 33.78      1BPT 108
 
-        records = [];
+  function DEF (x, y) {
+    return x !== undefined ? x : y
+  }
 
-        writeTitle();
-        writeRemarks();
-        writeAtoms();
+  var atomFormat =
+    &apos;ATOM  %5d %-4s %3s %1s%4d    %8.3f%8.3f%8.3f%6.2f%6.2f      %4s%2s&apos;
 
+  var hetatmFormat =
+    &apos;HETATM%5d %-4s %3s %1s%4d    %8.3f%8.3f%8.3f%6.2f%6.2f      %4s%2s&apos;
+
+  function writeTitle () {
+    // FIXME multiline if title line longer than 80 chars
+    records.push(sprintf(&apos;TITEL %-74s&apos;, structure.name))
+  }
+
+  function writeRemarks () {
+    remarks.forEach(function (str) {
+      records.push(sprintf(&apos;REMARK %-73s&apos;, str))
+    })
+
+    if (structure.trajectory) {
+      records.push(sprintf(
+        &apos;REMARK %-73s&apos;,
+        &quot;Trajectory &apos;&quot; + structure.trajectory.name + &quot;&apos;&quot;
+      ))
+      records.push(sprintf(
+        &apos;REMARK %-73s&apos;,
+        &apos;Frame &apos; + structure.trajectory.frame + &apos;&apos;
+      ))
     }
+  }
 
-    // http://www.wwpdb.org/documentation/file-format
+  function writeAtoms () {
+    var ia = 1
+    var im = 1
 
-    // Sample PDB line, the coords X,Y,Z are fields 5,6,7 on each line.
-    // ATOM      1  N   ARG     1      29.292  13.212 -12.751  1.00 33.78      1BPT 108
+    structure.eachModel(function (m) {
+      records.push(sprintf(&apos;MODEL %-74d&apos;, im++))
 
-    function DEF( x, y ){
-        return x !== undefined ? x : y;
-    }
+      m.eachAtom(function (a) {
+        var formatString = a.hetero ? hetatmFormat : atomFormat
+        var serial = renumberSerial ? ia : a.serial
 
-    var atomFormat =
-        &quot;ATOM  %5d %-4s %3s %1s%4d    %8.3f%8.3f%8.3f%6.2f%6.2f      %4s%2s&quot;;
+        // Alignment of one-letter atom name such as C starts at column 14,
+        // while two-letter atom name such as FE starts at column 13.
+        var atomname = a.atomname
+        if (atomname.length === 1) atomname = &apos; &apos; + atomname
 
-    var hetatmFormat =
-        &quot;HETATM%5d %-4s %3s %1s%4d    %8.3f%8.3f%8.3f%6.2f%6.2f      %4s%2s&quot;;
+        records.push(sprintf(
+          formatString,
 
-    function writeTitle(){
+          serial,
+          atomname,
+          a.resname,
+          DEF(a.chainname, &apos; &apos;),
+          a.resno,
+          a.x, a.y, a.z,
+          DEF(a.occurence, 1.0),
+          DEF(a.bfactor, 0.0),
+          DEF(a.segid, &apos;&apos;),
+          DEF(a.element, &apos;&apos;)
+        ))
+        ia += 1
+      })
 
-        // FIXME multiline if title line longer than 80 chars
-        records.push( sprintf( &quot;TITEL %-74s&quot;, structure.name ) );
+      records.push(sprintf(&apos;%-80s&apos;, &apos;ENDMDL&apos;))
+      im += 1
+    })
 
-    }
+    records.push(sprintf(&apos;%-80s&apos;, &apos;END&apos;))
+  }
 
-    function writeRemarks(){
+  function getString () {
+    writeRecords()
+    return records.join(&apos;\n&apos;)
+  }
 
-        remarks.forEach( function( str ){
-            records.push( sprintf( &quot;REMARK %-73s&quot;, str ) );
-        } );
+  function getBlob () {
+    return new window.Blob([ getString() ], { type: &apos;text/plain&apos; })
+  }
 
-        if( structure.trajectory ){
-            records.push( sprintf(
-                &quot;REMARK %-73s&quot;,
-                &quot;Trajectory &apos;&quot; + structure.trajectory.name + &quot;&apos;&quot;
-            ) );
-            records.push( sprintf(
-                &quot;REMARK %-73s&quot;,
-                &quot;Frame &quot; + structure.trajectory.frame + &quot;&quot;
-            ) );
-        }
+  function _download (name, ext) {
+    name = name || &apos;structure&apos;
+    ext = ext || &apos;pdb&apos;
 
-    }
+    var file = name + &apos;.&apos; + ext
+    var blob = getBlob()
 
-    function writeAtoms(){
+    download(blob, file)
+  }
 
-        var ia = 1;
-        var im = 1;
+  // API
 
-        structure.eachModel( function( m ){
-
-            records.push( sprintf( &quot;MODEL %-74d&quot;, im++ ) );
-
-            m.eachAtom( function( a ){
-
-                var formatString = a.hetero ? hetatmFormat : atomFormat;
-                var serial = renumberSerial ? ia : a.serial;
-
-                // Alignment of one-letter atom name such as C starts at column 14,
-                // while two-letter atom name such as FE starts at column 13.
-                var atomname = a.atomname;
-                if( atomname.length === 1 ) atomname = &quot; &quot; + atomname;
-
-                records.push( sprintf(
-                    formatString,
-
-                    serial,
-                    atomname,
-                    a.resname,
-                    DEF( a.chainname, &quot; &quot; ),
-                    a.resno,
-                    a.x, a.y, a.z,
-                    DEF( a.occurence, 1.0 ),
-                    DEF( a.bfactor, 0.0 ),
-                    DEF( a.segid, &quot;&quot; ),
-                    DEF( a.element, &quot;&quot; )
-                ) );
-                ia += 1;
-
-            } );
-
-            records.push( sprintf( &quot;%-80s&quot;, &quot;ENDMDL&quot; ) );
-            im += 1;
-
-        } );
-
-        records.push( sprintf( &quot;%-80s&quot;, &quot;END&quot; ) );
-
-    }
-
-    function getString(){
-
-        writeRecords();
-        return records.join( &quot;\n&quot; );
-
-    }
-
-    function getBlob(){
-
-        return new Blob(
-            [ getString() ],
-            { type: &apos;text/plain&apos; }
-        );
-
-    }
-
-    function _download( name, ext ){
-
-        name = name || &quot;structure&quot;;
-        ext = ext || &quot;pdb&quot;;
-
-        var file = name + &quot;.&quot; + ext;
-        var blob = getBlob();
-
-        download( blob, file );
-
-    }
-
-    // API
-
-    this.getString = getString;
-    this.getBlob = getBlob;
-    this.download = _download;
-
+  this.getString = getString
+  this.getBlob = getBlob
+  this.download = _download
 }
 
-
-export default PdbWriter;
+export default PdbWriter
 </code></pre>
 
 </div>

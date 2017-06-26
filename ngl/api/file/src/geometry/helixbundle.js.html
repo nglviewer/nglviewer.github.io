@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,167 +255,154 @@
  * @private
  */
 
+import { Vector3 } from &apos;../../lib/three.es6.js&apos;
 
-import { Vector3 } from &quot;../../lib/three.es6.js&quot;;
+import { ColormakerRegistry } from &apos;../globals.js&apos;
+import { AtomPicker } from &apos;../utils/picker.js&apos;
+import RadiusFactory from &apos;../utils/radius-factory.js&apos;
+import Helixorient from &apos;./helixorient.js&apos;
+import { calculateMeanVector3, projectPointOnVector } from &apos;../math/vector-utils.js&apos;
 
-import { ColormakerRegistry } from &quot;../globals.js&quot;;
-import { AtomPicker } from &quot;../utils/picker.js&quot;;
-import RadiusFactory from &quot;../utils/radius-factory.js&quot;;
-import Helixorient from &quot;./helixorient.js&quot;;
-import { calculateMeanVector3, projectPointOnVector } from &quot;../math/vector-utils.js&quot;;
+function Helixbundle (polymer) {
+  this.polymer = polymer
 
-
-function Helixbundle( polymer ){
-
-    this.polymer = polymer;
-
-    this.helixorient = new Helixorient( polymer );
-    this.position = this.helixorient.getPosition();
-
+  this.helixorient = new Helixorient(polymer)
+  this.position = this.helixorient.getPosition()
 }
 
 Helixbundle.prototype = {
 
-    constructor: Helixbundle,
+  constructor: Helixbundle,
 
-    getAxis: function( localAngle, centerDist, ssBorder, colorParams, radius, scale ){
+  getAxis: function (localAngle, centerDist, ssBorder, colorParams, radius, scale) {
+    localAngle = localAngle || 30
+    centerDist = centerDist || 2.5
+    ssBorder = ssBorder === undefined ? false : ssBorder
 
-        localAngle = localAngle || 30;
-        centerDist = centerDist || 2.5;
-        ssBorder = ssBorder === undefined ? false : ssBorder;
+    var polymer = this.polymer
+    var structure = polymer.structure
+    var n = polymer.residueCount
+    var residueIndexStart = polymer.residueIndexStart
 
-        var polymer = this.polymer;
-        var structure = polymer.structure;
-        var n = polymer.residueCount;
-        var residueIndexStart = polymer.residueIndexStart;
+    var pos = this.position
 
-        var pos = this.position;
+    var cp = colorParams || {}
+    cp.structure = structure
 
-        var cp = colorParams || {};
-        cp.structure = structure;
+    var colormaker = ColormakerRegistry.getScheme(cp)
 
-        var colormaker = ColormakerRegistry.getScheme( cp );
+    var radiusFactory = new RadiusFactory(radius, scale)
 
-        var radiusFactory = new RadiusFactory( radius, scale );
+    var j = 0
+    var k = 0
 
-        var j = 0;
-        var k = 0;
+    var axis = []
+    var center = []
+    var beg = []
+    var end = []
+    var col = []
+    var pick = []
+    var size = []
+    var residueOffset = []
+    var residueCount = []
 
-        var axis = [];
-        var center = [];
-        var beg = [];
-        var end = [];
-        var col = [];
-        var pick = [];
-        var size = [];
-        var residueOffset = [];
-        var residueCount = [];
+    var tmpAxis = []
+    var tmpCenter = []
 
-        var tmpAxis = [];
-        var tmpCenter = [];
+    var _axis, _center
+    var _beg = new Vector3()
+    var _end = new Vector3()
 
-        var _axis, _center;
-        var _beg = new Vector3();
-        var _end = new Vector3();
+    var rp1 = structure.getResidueProxy()
+    var rp2 = structure.getResidueProxy()
+    var ap = structure.getAtomProxy()
 
-        var rp1 = structure.getResidueProxy();
-        var rp2 = structure.getResidueProxy();
-        var ap = structure.getAtomProxy();
+    var c1 = new Vector3()
+    var c2 = new Vector3()
 
-        var c1 = new Vector3();
-        var c2 = new Vector3();
+    var split = false
 
-        var split = false;
+    for (var i = 0; i &lt; n; ++i) {
+      rp1.index = residueIndexStart + i
+      c1.fromArray(pos.center, i * 3)
 
-        for( var i = 0; i &lt; n; ++i ){
+      if (i === n - 1) {
+        split = true
+      } else {
+        rp2.index = residueIndexStart + i + 1
+        c2.fromArray(pos.center, i * 3 + 3)
 
-            rp1.index = residueIndexStart + i;
-            c1.fromArray( pos.center, i * 3 );
+        if (ssBorder &amp;&amp; rp1.sstruc !== rp2.sstruc) {
+          split = true
+        } else if (c1.distanceTo(c2) &gt; centerDist) {
+          split = true
+        } else if (pos.bending[ i ] &gt; localAngle) {
+          split = true
+        }
+      }
 
-            if( i === n - 1 ){
-                split = true;
-            }else{
-
-                rp2.index = residueIndexStart + i + 1;
-                c2.fromArray( pos.center, i * 3 + 3 );
-
-                if( ssBorder &amp;&amp; rp1.sstruc !== rp2.sstruc ){
-                    split = true;
-                }else if( c1.distanceTo( c2 ) &gt; centerDist ){
-                    split = true;
-                }else if( pos.bending[ i ] &gt; localAngle ){
-                    split = true;
-                }
-
-            }
-
-            if( split ){
-
-                if( i - j &lt; 4 ){
-                    j = i;
-                    split = false;
-                    continue;
-                }
-
-                ap.index = rp1.traceAtomIndex;
-
-                // ignore first and last axis
-                tmpAxis = pos.axis.subarray( j * 3 + 3, i * 3 );
-                tmpCenter = pos.center.subarray( j * 3, i * 3 + 3 );
-
-                _axis = calculateMeanVector3( tmpAxis ).normalize();
-                _center = calculateMeanVector3( tmpCenter );
-
-                _beg.fromArray( tmpCenter );
-                projectPointOnVector( _beg, _axis, _center );
-
-                _end.fromArray( tmpCenter, tmpCenter.length - 3 );
-                projectPointOnVector( _end, _axis, _center );
-
-                _axis.subVectors( _end, _beg );
-
-                _axis.toArray( axis, k );
-                _center.toArray( center, k );
-                _beg.toArray( beg, k );
-                _end.toArray( end, k );
-
-                colormaker.atomColorToArray( ap, col, k );
-
-                pick.push( ap.index );
-
-                size.push( radiusFactory.atomRadius( ap ) );
-
-                residueOffset.push( residueIndexStart + j );
-                residueCount.push( residueIndexStart + i + 1 - j );
-
-                k += 3;
-                j = i;
-                split = false;
-
-            }
-
+      if (split) {
+        if (i - j &lt; 4) {
+          j = i
+          split = false
+          continue
         }
 
-        var picking = new Float32Array( pick );
+        ap.index = rp1.traceAtomIndex
 
-        return {
-            &quot;axis&quot;: new Float32Array( axis ),
-            &quot;center&quot;: new Float32Array( center ),
-            &quot;begin&quot;: new Float32Array( beg ),
-            &quot;end&quot;: new Float32Array( end ),
-            &quot;color&quot;: new Float32Array( col ),
-            &quot;picking&quot;: new AtomPicker( picking, structure ),
-            &quot;size&quot;: new Float32Array( size ),
-            &quot;residueOffset&quot;: residueOffset,
-            &quot;residueCount&quot;: residueCount
-        };
+                // ignore first and last axis
+        tmpAxis = pos.axis.subarray(j * 3 + 3, i * 3)
+        tmpCenter = pos.center.subarray(j * 3, i * 3 + 3)
 
+        _axis = calculateMeanVector3(tmpAxis).normalize()
+        _center = calculateMeanVector3(tmpCenter)
+
+        _beg.fromArray(tmpCenter)
+        projectPointOnVector(_beg, _axis, _center)
+
+        _end.fromArray(tmpCenter, tmpCenter.length - 3)
+        projectPointOnVector(_end, _axis, _center)
+
+        _axis.subVectors(_end, _beg)
+
+        _axis.toArray(axis, k)
+        _center.toArray(center, k)
+        _beg.toArray(beg, k)
+        _end.toArray(end, k)
+
+        colormaker.atomColorToArray(ap, col, k)
+
+        pick.push(ap.index)
+
+        size.push(radiusFactory.atomRadius(ap))
+
+        residueOffset.push(residueIndexStart + j)
+        residueCount.push(residueIndexStart + i + 1 - j)
+
+        k += 3
+        j = i
+        split = false
+      }
     }
 
-};
+    var picking = new Float32Array(pick)
 
+    return {
+      &apos;axis&apos;: new Float32Array(axis),
+      &apos;center&apos;: new Float32Array(center),
+      &apos;begin&apos;: new Float32Array(beg),
+      &apos;end&apos;: new Float32Array(end),
+      &apos;color&apos;: new Float32Array(col),
+      &apos;picking&apos;: new AtomPicker(picking, structure),
+      &apos;size&apos;: new Float32Array(size),
+      &apos;residueOffset&apos;: residueOffset,
+      &apos;residueCount&apos;: residueCount
+    }
+  }
 
-export default Helixbundle;
+}
+
+export default Helixbundle
 </code></pre>
 
 </div>

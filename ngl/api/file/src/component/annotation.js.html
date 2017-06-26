@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,18 +255,15 @@
  * @private
  */
 
+import { Vector3 } from &apos;../../lib/three.es6.js&apos;
 
-import { Vector3 } from &quot;../../lib/three.es6.js&quot;;
-
-import { defaults } from &quot;../utils.js&quot;;
-import { smoothstep } from &quot;../math/math-utils.js&quot;;
-
+import { defaults } from &apos;../utils.js&apos;
+import { smoothstep } from &apos;../math/math-utils.js&apos;
 
 /**
  * Annotation HTML element floating on top of a position rendered in 3d
  */
-class Annotation{
-
+class Annotation {
     /**
      * @param {Component} component - the associated component
      * @param {Vector3} position - position in 3d
@@ -259,155 +273,137 @@ class Annotation{
      * @param {Integer} params.offsetY - 2d offset in y direction
      * @param {Boolean} params.visible - visibility flag
      */
-    constructor( component, position, content, params ){
+  constructor (component, position, content, params) {
+    const p = params || {}
 
-        const p = params || {};
+    this.offsetX = defaults(p.offsetX, 0)
+    this.offsetY = defaults(p.offsetY, 0)
+    this.visible = defaults(p.visible, true)
 
-        this.offsetX = defaults( p.offsetX, 0 );
-        this.offsetY = defaults( p.offsetY, 0 );
-        this.visible = defaults( p.visible, true );
+    this.component = component
+    this.stage = component.stage
+    this.viewer = this.stage.viewer
+    this.position = position
 
-        this.component = component;
-        this.stage = component.stage;
-        this.viewer = this.stage.viewer;
-        this.position = position;
+    this._viewerPosition = new Vector3()
+    this._updateViewerPosition()
+    this._canvasPosition = new Vector3()
+    this._cameraPosition = new Vector3()
 
-        this._viewerPosition = new Vector3();
-        this._updateViewerPosition();
-        this._canvasPosition = new Vector3();
-        this._cameraPosition = new Vector3();
+    this.element = document.createElement(&apos;div&apos;)
+    Object.assign(this.element.style, {
+      display: &apos;block&apos;,
+      position: &apos;fixed&apos;,
+      zIndex: 1 + (parseInt(this.viewer.container.style.zIndex) || 0),
+      pointerEvents: &apos;none&apos;,
+      backgroundColor: &apos;rgba( 0, 0, 0, 0.6 )&apos;,
+      color: &apos;lightgrey&apos;,
+      padding: &apos;8px&apos;,
+      fontFamily: &apos;sans-serif&apos;,
+      left: &apos;-10000px&apos;
+    })
 
-        this.element = document.createElement( &quot;div&quot; );
-        Object.assign( this.element.style, {
-            display: &quot;block&quot;,
-            position: &quot;fixed&quot;,
-            zIndex: 1 + ( parseInt( this.viewer.container.style.zIndex ) || 0 ),
-            pointerEvents: &quot;none&quot;,
-            backgroundColor: &quot;rgba( 0, 0, 0, 0.6 )&quot;,
-            color: &quot;lightgrey&quot;,
-            padding: &quot;8px&quot;,
-            fontFamily: &quot;sans-serif&quot;,
-            left: &quot;-10000px&quot;
-        } );
-
-        this.viewer.container.appendChild( this.element );
-        this.setContent( content );
-        this.updateVisibility();
-        this.viewer.signals.ticked.add( this._update, this );
-        this.component.signals.matrixChanged.add( this._updateViewerPosition, this );
-
-    }
+    this.viewer.container.appendChild(this.element)
+    this.setContent(content)
+    this.updateVisibility()
+    this.viewer.signals.ticked.add(this._update, this)
+    this.component.signals.matrixChanged.add(this._updateViewerPosition, this)
+  }
 
     /**
      * Set HTML content of the annotation
      * @param {String|Element} value - HTML content
      * @return {undefined}
      */
-    setContent( value ){
-
-        const displayValue = this.element.style.display;
-        if( displayValue === &quot;none&quot; ){
-            this.element.style.left = &quot;-10000px&quot;;
-            this.element.style.display = &quot;block&quot;;
-        }
-
-        if( value instanceof Element ){
-            this.element.innerHTML = &quot;&quot;;
-            this.element.appendChild( value );
-        }else{
-            this.element.innerHTML = value;
-        }
-
-        this._clientRect = this.element.getBoundingClientRect();
-
-        if( displayValue === &quot;none&quot; ){
-            this.element.style.display = displayValue;
-        }
-
+  setContent (value) {
+    const displayValue = this.element.style.display
+    if (displayValue === &apos;none&apos;) {
+      this.element.style.left = &apos;-10000px&apos;
+      this.element.style.display = &apos;block&apos;
     }
+
+    if (value instanceof window.Element) {
+      this.element.innerHTML = &apos;&apos;
+      this.element.appendChild(value)
+    } else {
+      this.element.innerHTML = value
+    }
+
+    this._clientRect = this.element.getBoundingClientRect()
+
+    if (displayValue === &apos;none&apos;) {
+      this.element.style.display = displayValue
+    }
+  }
 
     /**
      * Set visibility of the annotation
      * @param {Boolean} value - visibility flag
      * @return {undefined}
      */
-    setVisibility( value ){
+  setVisibility (value) {
+    this.visible = value
+    this.updateVisibility()
+  }
 
-        this.visible = value;
-        this.updateVisibility();
+  getVisibility () {
+    return this.visible &amp;&amp; this.component.visible
+  }
 
+  updateVisibility () {
+    this.element.style.display = this.getVisibility() ? &apos;block&apos; : &apos;none&apos;
+  }
+
+  _updateViewerPosition () {
+    this._viewerPosition
+            .copy(this.position)
+            .applyMatrix4(this.component.matrix)
+  }
+
+  _update () {
+    if (!this.getVisibility()) return
+
+    const s = this.element.style
+    const cp = this._canvasPosition
+    const vp = this._viewerPosition
+    const cr = this._clientRect
+
+    this._cameraPosition.copy(vp)
+            .add(this.viewer.translationGroup.position)
+            .applyMatrix4(this.viewer.rotationGroup.matrix)
+            .sub(this.viewer.camera.position)
+
+    if (this._cameraPosition.z &lt; 0) {
+      s.display = &apos;none&apos;
+      return
+    } else {
+      s.display = &apos;block&apos;
     }
 
-    getVisibility(){
-
-        return this.visible &amp;&amp; this.component.visible;
-
-    }
-
-    updateVisibility(){
-
-        this.element.style.display = this.getVisibility() ? &quot;block&quot; : &quot;none&quot;;
-
-    }
-
-    _updateViewerPosition(){
-
-        this._viewerPosition
-            .copy( this.position )
-            .applyMatrix4( this.component.matrix );
-
-    }
-
-    _update(){
-
-        if( !this.getVisibility() ) return;
-
-        const s = this.element.style;
-        const cp = this._canvasPosition;
-        const vp = this._viewerPosition;
-        const cr = this._clientRect;
-
-        this._cameraPosition.copy( vp )
-            .add( this.viewer.translationGroup.position )
-            .applyMatrix4( this.viewer.rotationGroup.matrix )
-            .sub( this.viewer.camera.position );
-
-        if( this._cameraPosition.z &lt; 0 ){
-            s.display = &quot;none&quot;;
-            return;
-        }else{
-            s.display = &quot;block&quot;;
-        }
-
-        s.opacity = 1 - smoothstep(
+    s.opacity = 1 - smoothstep(
             this.viewer.scene.fog.near,
             this.viewer.scene.fog.far,
             this._cameraPosition.length()
-        );
+        )
 
-        this.stage.viewerControls.getPositionOnCanvas( vp, cp );
+    this.stage.viewerControls.getPositionOnCanvas(vp, cp)
 
-        s.bottom = ( this.offsetX + cp.y + cr.height / 2 ) + &quot;px&quot;;
-        s.left = ( this.offsetY + cp.x - cr.width / 2 ) + &quot;px&quot;;
-
-    }
+    s.bottom = (this.offsetX + cp.y + cr.height / 2) + &apos;px&apos;
+    s.left = (this.offsetY + cp.x - cr.width / 2) + &apos;px&apos;
+  }
 
     /**
      * Safely remove the annotation
      * @return {undefined}
      */
-    dispose(){
-
-        this.viewer.container.removeChild( this.element );
-        this.viewer.signals.ticked.remove( this._update, this );
-        this.component.signals.matrixChanged.remove( this._updateViewerPosition, this );
-
-    }
-
+  dispose () {
+    this.viewer.container.removeChild(this.element)
+    this.viewer.signals.ticked.remove(this._update, this)
+    this.component.signals.matrixChanged.remove(this._updateViewerPosition, this)
+  }
 }
 
-
-export default Annotation;
+export default Annotation
 </code></pre>
 
 </div>

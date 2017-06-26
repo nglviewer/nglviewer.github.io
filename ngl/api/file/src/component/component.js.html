@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -239,23 +256,20 @@
  * @private
  */
 
+import { Vector3, Quaternion, Matrix4, Euler } from &apos;../../lib/three.es6.js&apos;
+import Signal from &apos;../../lib/signals.es6.js&apos;
 
-import { Vector3, Quaternion, Matrix4, Euler } from &quot;../../lib/three.es6.js&quot;;
-import Signal from &quot;../../lib/signals.es6.js&quot;;
-
-import { defaults } from &quot;../utils.js&quot;;
-import { generateUUID } from &quot;../math/math-utils.js&quot;;
-import Annotation from &quot;../component/annotation.js&quot;;
-import ComponentControls from &quot;../controls/component-controls.js&quot;;
-import { makeRepresentation } from &quot;../representation/representation-utils.js&quot;;
+import { defaults } from &apos;../utils.js&apos;
+import { generateUUID } from &apos;../math/math-utils.js&apos;
+import Annotation from &apos;../component/annotation.js&apos;
+import ComponentControls from &apos;../controls/component-controls.js&apos;
+import { makeRepresentation } from &apos;../representation/representation-utils.js&apos;
 // import RepresentationComponent from &quot;./representation-component.js&quot;;
 
+let nextComponentId = 0
 
-let nextComponentId = 0;
-
-const _m = new Matrix4();
-const _v = new Vector3();
-
+const _m = new Matrix4()
+const _v = new Vector3()
 
 /**
  * Component parameter object.
@@ -263,7 +277,6 @@ const _v = new Vector3();
  * @property {String} name - component name
  * @property {Boolean} visible - component visibility
  */
-
 
 /**
  * @example
@@ -279,58 +292,54 @@ const _v = new Vector3();
  * @property {Signal} disposed - on dispose
  */
 
-
 /**
  * Base class for components
  * @interface
  */
-class Component{
-
+class Component {
     /**
      * @param {Stage} stage - stage object the component belongs to
      * @param {ComponentParameters} params - parameter object
      */
-    constructor( stage, params ){
+  constructor (stage, params) {
+    Object.defineProperty(this, &apos;id&apos;, { value: nextComponentId++ })
 
-        Object.defineProperty( this, &apos;id&apos;, { value: nextComponentId++ } );
+    var p = params || {}
 
-        var p = params || {};
-
-        this.name = p.name;
-        this.uuid = generateUUID();
-        this.visible = p.visible !== undefined ? p.visible : true;
+    this.name = p.name
+    this.uuid = generateUUID()
+    this.visible = p.visible !== undefined ? p.visible : true
 
         /**
          * Events emitted by the component
          * @type {ComponentSignals}
          */
-        this.signals = {
-            representationAdded: new Signal(),
-            representationRemoved: new Signal(),
-            visibilityChanged: new Signal(),
-            matrixChanged: new Signal(),
-            statusChanged: new Signal(),
-            nameChanged: new Signal(),
-            disposed: new Signal(),
-        };
-
-        this.stage = stage;
-        this.viewer = stage.viewer;
-
-        this.reprList = [];
-        this.annotationList = [];
-
-        this.matrix = new Matrix4();
-        this.position = new Vector3();
-        this.quaternion = new Quaternion();
-        this.scale = new Vector3( 1, 1, 1 );
-        this.transform = new Matrix4();
-
-        this.controls = new ComponentControls( this );
-
+    this.signals = {
+      representationAdded: new Signal(),
+      representationRemoved: new Signal(),
+      visibilityChanged: new Signal(),
+      matrixChanged: new Signal(),
+      statusChanged: new Signal(),
+      nameChanged: new Signal(),
+      disposed: new Signal()
     }
 
-    get type(){ return &quot;component&quot;; }
+    this.stage = stage
+    this.viewer = stage.viewer
+
+    this.reprList = []
+    this.annotationList = []
+
+    this.matrix = new Matrix4()
+    this.position = new Vector3()
+    this.quaternion = new Quaternion()
+    this.scale = new Vector3(1, 1, 1)
+    this.transform = new Matrix4()
+
+    this.controls = new ComponentControls(this)
+  }
+
+  get type () { return &apos;component&apos; }
 
     /**
      * Set position transform
@@ -342,18 +351,16 @@ class Component{
      * @param {Vector3|Array} p - the coordinates
      * @return {Component} this object
      */
-    setPosition( p ){
-
-        if( Array.isArray( p ) ){
-            this.position.fromArray( p );
-        }else{
-            this.position.copy( p );
-        }
-        this.updateMatrix();
-
-        return this;
-
+  setPosition (p) {
+    if (Array.isArray(p)) {
+      this.position.fromArray(p)
+    } else {
+      this.position.copy(p)
     }
+    this.updateMatrix()
+
+    return this
+  }
 
     /**
      * Set rotation transform
@@ -365,25 +372,23 @@ class Component{
      * @param {Quaternion|Euler|Array} r - the rotation
      * @return {Component} this object
      */
-    setRotation( r ){
-
-        if( Array.isArray( r ) ){
-            if( r.length === 3 ){
-                const e = new Euler().fromArray( r );
-                this.quaternion.setFromEuler( e );
-            }else{
-                this.quaternion.fromArray( r );
-            }
-        }else if( r instanceof Euler ){
-            this.quaternion.setFromEuler( r );
-        }else{
-            this.quaternion.copy( r );
-        }
-        this.updateMatrix();
-
-        return this;
-
+  setRotation (r) {
+    if (Array.isArray(r)) {
+      if (r.length === 3) {
+        const e = new Euler().fromArray(r)
+        this.quaternion.setFromEuler(e)
+      } else {
+        this.quaternion.fromArray(r)
+      }
+    } else if (r instanceof Euler) {
+      this.quaternion.setFromEuler(r)
+    } else {
+      this.quaternion.copy(r)
     }
+    this.updateMatrix()
+
+    return this
+  }
 
     /**
      * Set scale transform
@@ -395,14 +400,12 @@ class Component{
      * @param {Number} s - the scale
      * @return {Component} this object
      */
-    setScale( s ){
+  setScale (s) {
+    this.scale.set(s, s, s)
+    this.updateMatrix()
 
-        this.scale.set( s, s, s );
-        this.updateMatrix();
-
-        return this;
-
-    }
+    return this
+  }
 
     /**
      * Set general transform. Is applied before and in addition
@@ -414,40 +417,36 @@ class Component{
      * @param {Matrix4} m - the matrix
      * @return {Component} this object
      */
-    setTransform( m ){
+  setTransform (m) {
+    this.transform.copy(m)
+    this.updateMatrix()
 
-        this.transform.copy( m );
-        this.updateMatrix();
+    return this
+  }
 
-        return this;
+  updateMatrix () {
+    var c = this.getCenterUntransformed(_v)
+    this.matrix.makeTranslation(-c.x, -c.y, -c.z)
 
-    }
+    _m.makeRotationFromQuaternion(this.quaternion)
+    this.matrix.premultiply(_m)
 
-    updateMatrix(){
+    _m.makeScale(this.scale.x, this.scale.y, this.scale.z)
+    this.matrix.premultiply(_m)
 
-        var c = this.getCenterUntransformed( _v );
-        this.matrix.makeTranslation( -c.x, -c.y, -c.z );
+    var p = this.position
+    _m.makeTranslation(p.x + c.x, p.y + c.y, p.z + c.z)
+    this.matrix.premultiply(_m)
 
-        _m.makeRotationFromQuaternion( this.quaternion );
-        this.matrix.premultiply( _m );
+    this.matrix.premultiply(this.transform)
 
-        _m.makeScale( this.scale.x, this.scale.y, this.scale.z );
-        this.matrix.premultiply( _m );
+    this.reprList.forEach(repr =&gt; {
+      repr.setParameters({ matrix: this.matrix })
+    })
+    this.stage.viewer.updateBoundingBox()
 
-        var p = this.position;
-        _m.makeTranslation( p.x + c.x, p.y + c.y, p.z + c.z );
-        this.matrix.premultiply( _m );
-
-        this.matrix.premultiply( this.transform );
-
-        this.reprList.forEach( repr =&gt; {
-            repr.setParameters( { matrix: this.matrix } );
-        } );
-        this.stage.viewer.updateBoundingBox();
-
-        this.signals.matrixChanged.dispatch( this.matrix );
-
-    }
+    this.signals.matrixChanged.dispatch(this.matrix)
+  }
 
     /**
      * Add an anotation object
@@ -458,42 +457,36 @@ class Component{
      * @param {Integer} params.offsetY - 2d offset in y direction
      * @return {Annotation} the added annotation object
      */
-    addAnnotation( position, content, params ){
+  addAnnotation (position, content, params) {
+    const annotation = new Annotation(this, position, content, params)
+    this.annotationList.push(annotation)
 
-        const annotation = new Annotation( this, position, content, params );
-        this.annotationList.push( annotation );
-
-        return annotation;
-
-    }
+    return annotation
+  }
 
     /**
      * Remove the give annotation from the component
      * @param {Annotation} annotation - the annotation to remove
      * @return {undefined}
      */
-    removeAnnotation( annotation ){
-
-        var idx = this.annotationList.indexOf( annotation );
-        if( idx !== -1 ){
-            this.annotationList.splice( idx, 1 );
-            annotation.dispose();
-        }
-
+  removeAnnotation (annotation) {
+    var idx = this.annotationList.indexOf(annotation)
+    if (idx !== -1) {
+      this.annotationList.splice(idx, 1)
+      annotation.dispose()
     }
+  }
 
     /**
      * Remove all annotations from the component
      * @return {undefined}
      */
-    removeAllAnnotations(){
-
-        this.annotationList.forEach( function( annotation ){
-            annotation.dispose();
-        } );
-        this.annotationList.length = 0;
-
-    }
+  removeAllAnnotations () {
+    this.annotationList.forEach(function (annotation) {
+      annotation.dispose()
+    })
+    this.annotationList.length = 0
+  }
 
     /**
      * Add a new representation to the component
@@ -503,198 +496,162 @@ class Component{
      * @return {RepresentationComponent} the created representation wrapped into
      *                                   a representation component object
      */
-    addRepresentation( type, object, params ){
+  addRepresentation (type, object, params) {
+    var p = params || {}
+    var sp = this.stage.getParameters()
+    p.matrix = this.matrix.clone()
+    p.quality = p.quality || sp.quality
+    p.disableImpostor = defaults(p.disableImpostor, !sp.impostor)
+    p.useWorker = defaults(p.useWorker, sp.workerDefault)
+    p.visible = defaults(p.visible, true)
 
-        var p = params || {};
-        var sp = this.stage.getParameters();
-        p.matrix = this.matrix.clone();
-        p.quality = p.quality || sp.quality;
-        p.disableImpostor = defaults( p.disableImpostor, !sp.impostor );
-        p.useWorker = defaults( p.useWorker, sp.workerDefault );
-        p.visible = defaults( p.visible, true );
+    var p2 = Object.assign({}, p, { visible: this.visible &amp;&amp; p.visible })
+    var repr = makeRepresentation(type, object, this.viewer, p2)
+    var reprComp = this.__getRepresentationComponent(repr, p)
 
-        var p2 = Object.assign( {}, p, { visible: this.visible &amp;&amp; p.visible } );
-        var repr = makeRepresentation( type, object, this.viewer, p2 );
-        var reprComp = this.__getRepresentationComponent( repr, p );
+    this.reprList.push(reprComp)
+    this.signals.representationAdded.dispatch(reprComp)
 
-        this.reprList.push( reprComp );
-        this.signals.representationAdded.dispatch( reprComp );
+    return reprComp
+  }
 
-        return reprComp;
-
-    }
-
-    addBufferRepresentation( buffer, params ){
-
+  addBufferRepresentation (buffer, params) {
         // always use component base class method
-        return Component.prototype.addRepresentation.call(
-            this, &quot;buffer&quot;, buffer, params
-        );
+    return Component.prototype.addRepresentation.call(
+            this, &apos;buffer&apos;, buffer, params
+        )
+  }
 
-    }
-
-    hasRepresentation( repr ){
-
-        return this.reprList.indexOf( repr ) !== -1;
-
-    }
+  hasRepresentation (repr) {
+    return this.reprList.indexOf(repr) !== -1
+  }
 
     /**
      * Removes a representation component
      * @param {RepresentationComponent} repr - the representation component
      * @return {undefined}
      */
-    removeRepresentation( repr ){
-
-        var idx = this.reprList.indexOf( repr );
-        if( idx !== -1 ){
-            this.reprList.splice( idx, 1 );
-            repr.dispose();
-            this.signals.representationRemoved.dispatch( repr );
-        }
-
+  removeRepresentation (repr) {
+    var idx = this.reprList.indexOf(repr)
+    if (idx !== -1) {
+      this.reprList.splice(idx, 1)
+      repr.dispose()
+      this.signals.representationRemoved.dispatch(repr)
     }
+  }
 
-    updateRepresentations( what ){
+  updateRepresentations (what) {
+    this.reprList.forEach(function (repr) {
+      repr.update(what)
+    })
 
-        this.reprList.forEach( function( repr ){
-            repr.update( what );
-        } );
-
-        this.stage.viewer.requestRender();
-
-    }
+    this.stage.viewer.requestRender()
+  }
 
     /**
      * Removes all representation components
      * @return {undefined}
      */
-    removeAllRepresentations(){
+  removeAllRepresentations () {
+    this.reprList.slice(0).forEach(function (repr) {
+      repr.dispose()
+    })
+  }
 
-        this.reprList.forEach( repr =&gt; {
-            repr.dispose();
-            this.signals.representationRemoved.dispatch( repr );
-        } );
-        this.reprList.length = 0;
+  dispose () {
+    this.removeAllAnnotations()
+    this.removeAllRepresentations()
 
-    }
+    delete this.annotationList
+    delete this.reprList
 
-    dispose(){
-
-        this.removeAllAnnotations();
-        this.removeAllRepresentations();
-
-        delete this.annotationList;
-        delete this.reprList;
-
-        this.signals.disposed.dispatch();
-
-    }
+    this.signals.disposed.dispatch()
+  }
 
     /**
      * Set the visibility of the component, including added representations
      * @param {Boolean} value - visibility flag
      * @return {Component} this object
      */
-    setVisibility( value ){
+  setVisibility (value) {
+    this.visible = value
 
-        this.visible = value;
+    this.eachRepresentation(function (repr) {
+      repr.updateVisibility()
+    })
 
-        this.eachRepresentation( function( repr ){
-            repr.updateVisibility();
-        } );
+    this.annotationList.forEach(function (annotation) {
+      annotation.updateVisibility()
+    })
 
-        this.annotationList.forEach( function( annotation ){
-            annotation.updateVisibility();
-        } );
+    this.signals.visibilityChanged.dispatch(value)
 
-        this.signals.visibilityChanged.dispatch( value );
+    return this
+  }
 
-        return this;
+  setStatus (value) {
+    this.status = value
+    this.signals.statusChanged.dispatch(value)
 
-    }
+    return this
+  }
 
-    setStatus( value ){
+  setName (value) {
+    this.name = value
+    this.signals.nameChanged.dispatch(value)
 
-        this.status = value;
-        this.signals.statusChanged.dispatch( value );
-
-        return this;
-
-    }
-
-    setName( value ){
-
-        this.name = value;
-        this.signals.nameChanged.dispatch( value );
-
-        return this;
-
-    }
+    return this
+  }
 
     /**
      * @return {Box3} the component&apos;s bounding box
      */
-    getBox(){
-
-        return this.getBoxUntransformed( ...arguments )
-                    .clone().applyMatrix4( this.matrix );
-
-    }
+  getBox () {
+    return this.getBoxUntransformed(...arguments)
+                    .clone().applyMatrix4(this.matrix)
+  }
 
     /**
      * @return {Vector3} the component&apos;s center position
      */
-    getCenter(){
+  getCenter () {
+    return this.getCenterUntransformed(...arguments)
+                    .clone().applyMatrix4(this.matrix)
+  }
 
-        return this.getCenterUntransformed( ...arguments )
-                    .clone().applyMatrix4( this.matrix );
-
-    }
-
-    getZoom(){
-
-        return this.stage.getZoomForBox( this.getBox( ...arguments ) );
-
-    }
+  getZoom () {
+    return this.stage.getZoomForBox(this.getBox(...arguments))
+  }
 
     /**
      * @abstract
      * @return {Box3} the untransformed component&apos;s bounding box
      */
-    getBoxUntransformed(){}
+  getBoxUntransformed () {}
 
-    getCenterUntransformed(){
-
-        return this.getBoxUntransformed().getCenter();
-
-    }
+  getCenterUntransformed () {
+    return this.getBoxUntransformed().getCenter()
+  }
 
     /**
      * Automatically center and zoom the component
      * @param  {Integer} [duration] - duration of the animation, defaults to 0
      * @return {undefined}
      */
-    autoView( duration ){
-
-        this.stage.animationControls.zoomMove(
+  autoView (duration) {
+    this.stage.animationControls.zoomMove(
             this.getCenter(),
             this.getZoom(),
-            defaults( duration, 0 )
-        );
+            defaults(duration, 0)
+        )
+  }
 
-    }
-
-    eachRepresentation( callback ){
-
-        this.reprList.forEach( callback );
-
-    }
-
+  eachRepresentation (callback) {
+    this.reprList.forEach(callback)
+  }
 }
 
-
-export default Component;
+export default Component
 </code></pre>
 
 </div>

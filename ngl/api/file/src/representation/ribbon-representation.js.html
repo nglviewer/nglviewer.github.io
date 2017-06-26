@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,180 +255,161 @@
  * @private
  */
 
+import { RepresentationRegistry } from &apos;../globals.js&apos;
+import { defaults } from &apos;../utils.js&apos;
+import Spline from &apos;../geometry/spline.js&apos;
+import StructureRepresentation from &apos;./structure-representation.js&apos;
+import RibbonBuffer from &apos;../buffer/ribbon-buffer.js&apos;
 
-import { RepresentationRegistry } from &quot;../globals.js&quot;;
-import { defaults } from &quot;../utils.js&quot;;
-import Spline from &quot;../geometry/spline.js&quot;;
-import StructureRepresentation from &quot;./structure-representation.js&quot;;
-import RibbonBuffer from &quot;../buffer/ribbon-buffer.js&quot;;
+/**
+ * Ribbon Representation
+ */
+class RibbonRepresentation extends StructureRepresentation {
+  constructor (structure, viewer, params) {
+    super(structure, viewer, params)
 
+    this.type = &apos;ribbon&apos;
 
-class RibbonRepresentation extends StructureRepresentation{
+    this.parameters = Object.assign({
 
-    constructor( structure, viewer, params ){
+      subdiv: {
+        type: &apos;integer&apos;, max: 50, min: 1, rebuild: true
+      },
+      tension: {
+        type: &apos;number&apos;, precision: 1, max: 1.0, min: 0.1
+      },
+      smoothSheet: {
+        type: &apos;boolean&apos;, rebuild: true
+      }
 
-        super( structure, viewer, params );
+    }, this.parameters, {
 
-        this.type = &quot;ribbon&quot;;
+      side: null,
+      wireframe: null,
+      linewidth: null
 
-        this.parameters = Object.assign( {
+    })
 
-            subdiv: {
-                type: &quot;integer&quot;, max: 50, min: 1, rebuild: true
-            },
-            tension: {
-                type: &quot;number&quot;, precision: 1, max: 1.0, min: 0.1
-            },
-            smoothSheet: {
-                type: &quot;boolean&quot;, rebuild: true
-            }
+    this.init(params)
+  }
 
-        }, this.parameters, {
+  init (params) {
+    var p = params || {}
+    p.colorScheme = defaults(p.colorScheme, &apos;chainname&apos;)
+    p.colorScale = defaults(p.colorScale, &apos;RdYlBu&apos;)
+    p.radius = defaults(p.radius, &apos;sstruc&apos;)
+    p.scale = defaults(p.scale, 4.0)
 
-            side: null,
-            wireframe: null,
-            linewidth: null
-
-        } );
-
-        this.init( params );
-
+    if (p.quality === &apos;low&apos;) {
+      this.subdiv = 3
+    } else if (p.quality === &apos;medium&apos;) {
+      this.subdiv = 6
+    } else if (p.quality === &apos;high&apos;) {
+      this.subdiv = 12
+    } else {
+      this.subdiv = defaults(p.subdiv, 6)
     }
 
-    init( params ){
+    this.tension = defaults(p.tension, NaN)
+    this.smoothSheet = defaults(p.smoothSheet, false)
 
-        var p = params || {};
-        p.colorScheme = defaults( p.colorScheme, &quot;chainname&quot; );
-        p.colorScale = defaults( p.colorScale, &quot;RdYlBu&quot; );
-        p.radius = defaults( p.radius, &quot;sstruc&quot; );
-        p.scale = defaults( p.scale, 4.0 );
+    super.init(p)
+  }
 
-        if( p.quality === &quot;low&quot; ){
-            this.subdiv = 3;
-        }else if( p.quality === &quot;medium&quot; ){
-            this.subdiv = 6;
-        }else if( p.quality === &quot;high&quot; ){
-            this.subdiv = 12;
-        }else{
-            this.subdiv = defaults( p.subdiv, 6 );
-        }
+  getSplineParams (params) {
+    return Object.assign({
+      subdiv: this.subdiv,
+      tension: this.tension,
+      directional: true,
+      smoothSheet: this.smoothSheet
+    }, params)
+  }
 
-        this.tension = defaults( p.tension, NaN );
-        this.smoothSheet = defaults( p.smoothSheet, false );
+  createData (sview) {
+    var bufferList = []
+    var polymerList = []
 
-        super.init( p );
+    this.structure.eachPolymer(polymer =&gt; {
+      if (polymer.residueCount &lt; 4) return
+      polymerList.push(polymer)
 
-    }
+      var spline = new Spline(polymer, this.getSplineParams())
+      var subPos = spline.getSubdividedPosition()
+      var subOri = spline.getSubdividedOrientation()
+      var subCol = spline.getSubdividedColor(this.getColorParams())
+      var subPick = spline.getSubdividedPicking()
+      var subSize = spline.getSubdividedSize(this.radius, this.scale)
 
-    getSplineParams( params ){
-
-        return Object.assign( {
-            subdiv: this.subdiv,
-            tension: this.tension,
-            directional: true,
-            smoothSheet: this.smoothSheet
-        }, params );
-
-    }
-
-    createData( sview ){
-
-        var bufferList = [];
-        var polymerList = [];
-
-        this.structure.eachPolymer( polymer =&gt; {
-
-            if( polymer.residueCount &lt; 4 ) return;
-            polymerList.push( polymer );
-
-            var spline = new Spline( polymer, this.getSplineParams() );
-            var subPos = spline.getSubdividedPosition();
-            var subOri = spline.getSubdividedOrientation();
-            var subCol = spline.getSubdividedColor( this.getColorParams() );
-            var subPick = spline.getSubdividedPicking();
-            var subSize = spline.getSubdividedSize( this.radius, this.scale );
-
-            bufferList.push(
+      bufferList.push(
                 new RibbonBuffer(
-                    {
-                        position: subPos.position,
-                        normal: subOri.binormal,
-                        dir: subOri.normal,
-                        color: subCol.color,
-                        size: subSize.size,
-                        picking: subPick.picking
-                    },
+                  {
+                    position: subPos.position,
+                    normal: subOri.binormal,
+                    dir: subOri.normal,
+                    color: subCol.color,
+                    size: subSize.size,
+                    picking: subPick.picking
+                  },
                     this.getBufferParams()
                 )
-            );
+            )
+    }, sview.getSelection())
 
-        }, sview.getSelection() );
+    return {
+      bufferList: bufferList,
+      polymerList: polymerList
+    }
+  }
 
-        return {
-            bufferList: bufferList,
-            polymerList: polymerList
-        };
+  updateData (what, data) {
+    what = what || {}
 
+    var i = 0
+    var n = data.polymerList.length
+
+    for (i = 0; i &lt; n; ++i) {
+      var bufferData = {}
+      var spline = new Spline(data.polymerList[ i ], this.getSplineParams())
+
+      if (what.position) {
+        var subPos = spline.getSubdividedPosition()
+        var subOri = spline.getSubdividedOrientation()
+        bufferData.position = subPos.position
+        bufferData.normal = subOri.binormal
+        bufferData.dir = subOri.normal
+      }
+
+      if (what.radius || what.scale) {
+        var subSize = spline.getSubdividedSize(this.radius, this.scale)
+        bufferData.size = subSize.size
+      }
+
+      if (what.color) {
+        var subCol = spline.getSubdividedColor(this.getColorParams())
+        bufferData.color = subCol.color
+      }
+
+      data.bufferList[ i ].setAttributes(bufferData)
+    }
+  }
+
+  setParameters (params) {
+    var rebuild = false
+    var what = {}
+
+    if (params &amp;&amp; params.tension) {
+      what.position = true
     }
 
-    updateData( what, data ){
+    super.setParameters(params, what, rebuild)
 
-        what = what || {};
-
-        var i = 0;
-        var n = data.polymerList.length;
-
-        for( i = 0; i &lt; n; ++i ){
-
-            var bufferData = {};
-            var spline = new Spline( data.polymerList[ i ], this.getSplineParams() );
-
-            if( what.position ){
-                var subPos = spline.getSubdividedPosition();
-                var subOri = spline.getSubdividedOrientation();
-                bufferData.position = subPos.position;
-                bufferData.normal = subOri.binormal;
-                bufferData.dir = subOri.normal;
-            }
-
-            if( what.radius || what.scale ){
-                var subSize = spline.getSubdividedSize( this.radius, this.scale );
-                bufferData.size = subSize.size;
-            }
-
-            if( what.color ){
-                var subCol = spline.getSubdividedColor( this.getColorParams() );
-                bufferData.color = subCol.color;
-            }
-
-            data.bufferList[ i ].setAttributes( bufferData );
-
-        }
-
-    }
-
-    setParameters( params ){
-
-        var rebuild = false;
-        var what = {};
-
-        if( params &amp;&amp; params.tension ){
-            what.position = true;
-        }
-
-        super.setParameters( params, what, rebuild );
-
-        return this;
-
-    }
-
+    return this
+  }
 }
 
+RepresentationRegistry.add(&apos;ribbon&apos;, RibbonRepresentation)
 
-RepresentationRegistry.add( &quot;ribbon&quot;, RibbonRepresentation );
-
-
-export default RibbonRepresentation;
+export default RibbonRepresentation
 </code></pre>
 
 </div>

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,114 +255,99 @@
  * @private
  */
 
+import &apos;../shader/Line.vert&apos;
+import &apos;../shader/Line.frag&apos;
 
-import &quot;../shader/Line.vert&quot;;
-import &quot;../shader/Line.frag&quot;;
-
-import { Log } from &quot;../globals.js&quot;;
-import Buffer from &quot;./buffer.js&quot;;
-
+import { Log } from &apos;../globals.js&apos;
+import Buffer from &apos;./buffer.js&apos;
 
 /**
  * Trace buffer. Draws a series of lines.
  */
-class TraceBuffer extends Buffer{
-
+class TraceBuffer extends Buffer {
     /**
      * @param  {Object} data - attribute object
      * @param  {Float32Array} data.position - positions
      * @param  {Float32Array} data.color - colors
      * @param  {BufferParameters} params - parameter object
      */
-    constructor( data, params ){
+  constructor (data, params) {
+    var d = data || {}
+    var p = params || {}
 
-        var d = data || {};
-        var p = params || {};
+    var n = d.position.length / 3
+    var n1 = n - 1
 
-        var n = d.position.length / 3;
-        var n1 = n - 1;
+    var linePosition = new Float32Array(n1 * 3 * 2)
+    var lineColor = new Float32Array(n1 * 3 * 2)
 
-        var linePosition = new Float32Array( n1 * 3 * 2 );
-        var lineColor = new Float32Array( n1 * 3 * 2 );
+    super({
+      position: linePosition,
+      color: lineColor
+    }, p)
 
-        super( {
-            position: linePosition,
-            color: lineColor
-        }, p );
+    this.setAttributes(data)
+  }
 
-        this.setAttributes( data );
+  setAttributes (data) {
+    var position, color
+    var linePosition, lineColor
 
+    var attributes = this.geometry.attributes
+
+    if (data.position) {
+      position = data.position
+      linePosition = attributes.position.array
+      attributes.position.needsUpdate = true
     }
 
-    setAttributes( data ){
-
-        var position, color;
-        var linePosition, lineColor;
-
-        var attributes = this.geometry.attributes;
-
-        if( data.position ){
-            position = data.position;
-            linePosition = attributes.position.array;
-            attributes.position.needsUpdate = true;
-        }
-
-        if( data.color ){
-            color = data.color;
-            lineColor = attributes.color.array;
-            attributes.color.needsUpdate = true;
-        }
-
-        if( !position &amp;&amp; !color ){
-            Log.warn( &quot;TraceBuffer.prototype.setAttributes no data&quot; );
-            return;
-        }
-
-        var v, v2;
-        var n = this.size;
-        var n1 = n - 1;
-
-        for( var i = 0; i &lt; n1; ++i ){
-
-            v = 3 * i;
-            v2 = 3 * i * 2;
-
-            if( position ){
-
-                linePosition[ v2     ] = position[ v     ];
-                linePosition[ v2 + 1 ] = position[ v + 1 ];
-                linePosition[ v2 + 2 ] = position[ v + 2 ];
-
-                linePosition[ v2 + 3 ] = position[ v + 3 ];
-                linePosition[ v2 + 4 ] = position[ v + 4 ];
-                linePosition[ v2 + 5 ] = position[ v + 5 ];
-
-            }
-
-            if( color ){
-
-                lineColor[ v2     ] = color[ v     ];
-                lineColor[ v2 + 1 ] = color[ v + 1 ];
-                lineColor[ v2 + 2 ] = color[ v + 2 ];
-
-                lineColor[ v2 + 3 ] = color[ v + 3 ];
-                lineColor[ v2 + 4 ] = color[ v + 4 ];
-                lineColor[ v2 + 5 ] = color[ v + 5 ];
-
-            }
-
-        }
-
+    if (data.color) {
+      color = data.color
+      lineColor = attributes.color.array
+      attributes.color.needsUpdate = true
     }
 
-    get isLine (){ return true; }
-    get vertexShader (){ return &quot;Line.vert&quot;; }
-    get fragmentShader (){ return &quot;Line.frag&quot;; }
+    if (!position &amp;&amp; !color) {
+      Log.warn(&apos;TraceBuffer.prototype.setAttributes no data&apos;)
+      return
+    }
 
+    var v, v2
+    var n = this.size
+    var n1 = n - 1
+
+    for (var i = 0; i &lt; n1; ++i) {
+      v = 3 * i
+      v2 = 3 * i * 2
+
+      if (position) {
+        linePosition[ v2 ] = position[ v ]
+        linePosition[ v2 + 1 ] = position[ v + 1 ]
+        linePosition[ v2 + 2 ] = position[ v + 2 ]
+
+        linePosition[ v2 + 3 ] = position[ v + 3 ]
+        linePosition[ v2 + 4 ] = position[ v + 4 ]
+        linePosition[ v2 + 5 ] = position[ v + 5 ]
+      }
+
+      if (color) {
+        lineColor[ v2 ] = color[ v ]
+        lineColor[ v2 + 1 ] = color[ v + 1 ]
+        lineColor[ v2 + 2 ] = color[ v + 2 ]
+
+        lineColor[ v2 + 3 ] = color[ v + 3 ]
+        lineColor[ v2 + 4 ] = color[ v + 4 ]
+        lineColor[ v2 + 5 ] = color[ v + 5 ]
+      }
+    }
+  }
+
+  get isLine () { return true }
+  get vertexShader () { return &apos;Line.vert&apos; }
+  get fragmentShader () { return &apos;Line.frag&apos; }
 }
 
-
-export default TraceBuffer;
+export default TraceBuffer
 </code></pre>
 
 </div>

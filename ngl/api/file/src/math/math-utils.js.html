@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,133 +255,118 @@
  * @private
  */
 
-
-function degToRad( deg ){
-    return deg * 0.01745;  // deg * Math.PI / 180
+function degToRad (deg) {
+  return deg * 0.01745  // deg * Math.PI / 180
 }
 
-function radToDeg( rad ){
-    return rad * 57.29578;  // rad * 180 / Math.PI
+function radToDeg (rad) {
+  return rad * 57.29578  // rad * 180 / Math.PI
 }
-
 
 // http://www.broofa.com/Tools/Math.uuid.htm
-const chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;.split( &apos;&apos; );
-const uuid = new Array( 36 );
+const chars = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&apos;.split(&apos;&apos;)
+const uuid = new Array(36)
 
-function generateUUID(){
+function generateUUID () {
+  let rnd = 0
+  var r
 
-    let rnd = 0, r;
-
-    for( let i = 0; i &lt; 36; i ++ ){
-        if( i === 8 || i === 13 || i === 18 || i === 23 ){
-            uuid[ i ] = &apos;-&apos;;
-        }else if( i === 14 ){
-            uuid[ i ] = &apos;4&apos;;
-        }else{
-            if( rnd &lt;= 0x02 ) rnd = 0x2000000 + ( Math.random() * 0x1000000 ) | 0;
-            r = rnd &amp; 0xf;
-            rnd = rnd &gt;&gt; 4;
-            uuid[ i ] = chars[ ( i === 19 ) ? ( r &amp; 0x3 ) | 0x8 : r ];
-        }
+  for (let i = 0; i &lt; 36; i++) {
+    if (i === 8 || i === 13 || i === 18 || i === 23) {
+      uuid[ i ] = &apos;-&apos;
+    } else if (i === 14) {
+      uuid[ i ] = &apos;4&apos;
+    } else {
+      if (rnd &lt;= 0x02) rnd = 0x2000000 + (Math.random() * 0x1000000) | 0
+      r = rnd &amp; 0xf
+      rnd = rnd &gt;&gt; 4
+      uuid[ i ] = chars[ (i === 19) ? (r &amp; 0x3) | 0x8 : r ]
     }
+  }
 
-    return uuid.join( &apos;&apos; );
-
+  return uuid.join(&apos;&apos;)
 }
 
-
-function countSetBits( i ){
-    i = i - ( ( i &gt;&gt; 1 ) &amp; 0x55555555 );
-    i = ( i &amp; 0x33333333 ) + ( ( i &gt;&gt; 2 ) &amp; 0x33333333 );
-    return ( ( ( i + ( i &gt;&gt; 4 ) ) &amp; 0x0F0F0F0F ) * 0x01010101 ) &gt;&gt; 24;
+function countSetBits (i) {
+  i = i - ((i &gt;&gt; 1) &amp; 0x55555555)
+  i = (i &amp; 0x33333333) + ((i &gt;&gt; 2) &amp; 0x33333333)
+  return (((i + (i &gt;&gt; 4)) &amp; 0x0F0F0F0F) * 0x01010101) &gt;&gt; 24
 }
 
-
-function normalize( value, min, max ){
-    return ( value - min ) / ( max - min );
+function normalize (value, min, max) {
+  return (value - min) / (max - min)
 }
 
-
-function clamp( value, min, max ){
-    return Math.max( min, Math.min( max, value ) );
+function clamp (value, min, max) {
+  return Math.max(min, Math.min(max, value))
 }
 
-
-function pclamp( value ){
-    return clamp( value, 0, 100 );
+function pclamp (value) {
+  return clamp(value, 0, 100)
 }
 
-
-function saturate( value ){
-    return clamp( value, 0, 1 );
+function saturate (value) {
+  return clamp(value, 0, 1)
 }
 
-
-function lerp( start, stop, alpha ){
-    return start + ( stop - start ) * alpha;
+function lerp (start, stop, alpha) {
+  return start + (stop - start) * alpha
 }
 
-
-function spline( p0, p1, p2, p3, t, tension ) {
-    var v0 = ( p2 - p0 ) * tension;
-    var v1 = ( p3 - p1 ) * tension;
-    var t2 = t * t;
-    var t3 = t * t2;
-    return ( 2 * p1 - 2 * p2 + v0 + v1 ) * t3 +
-           ( -3 * p1 + 3 * p2 - 2 * v0 - v1 ) * t2 +
-           v0 * t + p1;
+function spline (p0, p1, p2, p3, t, tension) {
+  var v0 = (p2 - p0) * tension
+  var v1 = (p3 - p1) * tension
+  var t2 = t * t
+  var t3 = t * t2
+  return (2 * p1 - 2 * p2 + v0 + v1) * t3 +
+         (-3 * p1 + 3 * p2 - 2 * v0 - v1) * t2 +
+         v0 * t + p1
 }
 
-
-function smoothstep( min, max, x ){
-    x = saturate( normalize( x, min, max ) );
-    return x * x * ( 3 - 2 * x );
+function smoothstep (min, max, x) {
+  x = saturate(normalize(x, min, max))
+  return x * x * (3 - 2 * x)
 }
 
-
-function smootherstep( min, max, x ) {
-    x = saturate( normalize( x, min, max ) );
-    return x * x * x * ( x * ( x * 6 - 15 ) + 10 );
+function smootherstep (min, max, x) {
+  x = saturate(normalize(x, min, max))
+  return x * x * x * (x * (x * 6 - 15) + 10)
 }
 
-
-function smootheststep( min, max, x ) {
-    x = saturate( normalize( x, min, max ) );
-    return (
-        -20 * Math.pow( x, 7 ) +
-         70 * Math.pow( x, 6 ) -
-         84 * Math.pow( x, 5 ) +
-         35 * Math.pow( x, 4 )
-    );
+function smootheststep (min, max, x) {
+  x = saturate(normalize(x, min, max))
+  return (
+    -20 * Math.pow(x, 7) +
+     70 * Math.pow(x, 6) -
+     84 * Math.pow(x, 5) +
+     35 * Math.pow(x, 4)
+  )
 }
 
-
-function almostIdentity( value, start, stop ){
-    if( value &gt; start ) return value;
-    const a = 2 * stop - start
-    const b = 2 * start - 3 * stop;
-    const t = value / start;
-    return ( a * t + b ) * t * t + stop;
+function almostIdentity (value, start, stop) {
+  if (value &gt; start) return value
+  const a = 2 * stop - start
+  const b = 2 * start - 3 * stop
+  const t = value / start
+  return (a * t + b) * t * t + stop
 }
-
 
 export {
-    degToRad,
-    radToDeg,
-    generateUUID,
-    countSetBits,
-    normalize,
-    clamp,
-    pclamp,
-    saturate,
-    lerp,
-    spline,
-    smoothstep,
-    smootherstep,
-    smootheststep,
-    almostIdentity
-};
+  degToRad,
+  radToDeg,
+  generateUUID,
+  countSetBits,
+  normalize,
+  clamp,
+  pclamp,
+  saturate,
+  lerp,
+  spline,
+  smoothstep,
+  smootherstep,
+  smootheststep,
+  almostIdentity
+}
 </code></pre>
 
 </div>

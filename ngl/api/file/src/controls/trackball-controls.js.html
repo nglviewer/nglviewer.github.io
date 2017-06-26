@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,141 +255,119 @@
  * @private
  */
 
+import { Vector3, Matrix4, Quaternion } from &apos;../../lib/three.es6.js&apos;
 
-import { Vector3, Matrix4, Quaternion } from &quot;../../lib/three.es6.js&quot;;
+import { defaults } from &apos;../utils.js&apos;
+import { degToRad } from &apos;../math/math-utils.js&apos;
 
-import { defaults } from &quot;../utils.js&quot;;
-import { degToRad } from &quot;../math/math-utils.js&quot;;
-
-
-const tmpRotateXMatrix = new Matrix4();
-const tmpRotateYMatrix = new Matrix4();
-const tmpRotateMatrix = new Matrix4();
-const tmpRotateVector = new Vector3();
-const tmpRotateQuaternion = new Quaternion();
-const tmpPanMatrix = new Matrix4();
-const tmpPanVector = new Vector3();
-
+const tmpRotateXMatrix = new Matrix4()
+const tmpRotateYMatrix = new Matrix4()
+const tmpRotateMatrix = new Matrix4()
+const tmpRotateVector = new Vector3()
+const tmpRotateQuaternion = new Quaternion()
+const tmpPanMatrix = new Matrix4()
+const tmpPanVector = new Vector3()
 
 /**
  * Trackball controls
  */
-class TrackballControls{
+class TrackballControls {
+  constructor (stage, params) {
+    const p = params || {}
 
-    constructor( stage, params ){
+    this.rotateSpeed = defaults(p.rotateSpeed, 2.0)
+    this.zoomSpeed = defaults(p.zoomSpeed, 1.2)
+    this.panSpeed = defaults(p.panSpeed, 1.0)
 
-        const p = params || {};
+    this.stage = stage
+    this.viewer = stage.viewer
+    this.mouse = stage.mouseObserver
+    this.controls = stage.viewerControls
+  }
 
-        this.rotateSpeed = defaults( p.rotateSpeed, 2.0 );
-        this.zoomSpeed = defaults( p.zoomSpeed, 1.2 );
-        this.panSpeed = defaults( p.panSpeed, 1.0 );
+  get component () {
+    return this.stage.transformComponent
+  }
 
-        this.stage = stage;
-        this.viewer = stage.viewer;
-        this.mouse = stage.mouseObserver;
-        this.controls = stage.viewerControls;
+  _setPanVector (x, y) {
+    let scaleFactor
+    const camera = this.viewer.camera
 
+    if (camera.type === &apos;OrthographicCamera&apos;) {
+      scaleFactor = 1 / camera.zoom
+    } else {
+      const fov = degToRad(camera.fov)
+      const unitHeight = -2.0 * camera.position.z * Math.tan(fov / 2)
+      scaleFactor = unitHeight / this.viewer.height
     }
 
-    get component(){
-        return this.stage.transformComponent;
-    }
+    tmpPanVector.set(x, y, 0)
+    tmpPanVector.multiplyScalar(this.panSpeed * scaleFactor)
+  }
 
-    _setPanVector( x, y ){
+  _getRotateXY (x, y) {
+    return [
+      this.rotateSpeed * -x * 0.01,
+      this.rotateSpeed * y * 0.01
+    ]
+  }
 
-        let scaleFactor;
-        const camera = this.viewer.camera;
+  zoom (delta) {
+    this.controls.zoom(this.zoomSpeed * delta * 0.02)
+  }
 
-        if( camera.type === &quot;OrthographicCamera&quot; ){
-            scaleFactor = 1 / camera.zoom;
-        } else {
-            const fov = degToRad( camera.fov )
-            const unitHeight = -2.0 * camera.position.z * Math.tan( fov / 2 );
-            scaleFactor = unitHeight / this.viewer.height;
-        }
+  pan (x, y) {
+    this._setPanVector(x, y)
 
-        tmpPanVector.set( x, y, 0 );
-        tmpPanVector.multiplyScalar( this.panSpeed * scaleFactor );
+    tmpPanMatrix.getInverse(this.viewer.rotationGroup.matrix)
+    tmpPanVector.applyMatrix4(tmpPanMatrix)
+    this.controls.translate(tmpPanVector)
+  }
 
-    }
+  panComponent (x, y) {
+    if (!this.component) return
 
-    _getRotateXY( x, y ){
+    this._setPanVector(x, y)
 
-        return[
-            this.rotateSpeed * -x * 0.01,
-            this.rotateSpeed * y * 0.01
-        ];
+    tmpPanMatrix.extractRotation(this.component.transform)
+    tmpPanMatrix.premultiply(this.viewer.rotationGroup.matrix)
+    tmpPanMatrix.getInverse(tmpPanMatrix)
+    tmpPanVector.applyMatrix4(tmpPanMatrix)
+    this.component.position.add(tmpPanVector)
+    this.component.updateMatrix()
+  }
 
-    }
+  rotate (x, y) {
+    const [ dx, dy ] = this._getRotateXY(x, y)
 
-    zoom( delta ){
+    tmpRotateXMatrix.makeRotationX(dy)
+    tmpRotateYMatrix.makeRotationY(dx)
+    tmpRotateXMatrix.multiply(tmpRotateYMatrix)
+    this.controls.applyMatrix(tmpRotateXMatrix)
+  }
 
-        this.controls.zoom( this.zoomSpeed * delta * 0.02 );
+  rotateComponent (x, y) {
+    if (!this.component) return
 
-    }
+    const [ dx, dy ] = this._getRotateXY(x, y)
 
-    pan( x, y ){
-
-        this._setPanVector( x, y );
-
-        tmpPanMatrix.getInverse( this.viewer.rotationGroup.matrix );
-        tmpPanVector.applyMatrix4( tmpPanMatrix );
-        this.controls.translate( tmpPanVector );
-
-    }
-
-    panComponent( x, y ){
-
-        if( !this.component ) return;
-
-        this._setPanVector( x, y );
-
-        tmpPanMatrix.extractRotation( this.component.transform );
-        tmpPanMatrix.premultiply( this.viewer.rotationGroup.matrix );
-        tmpPanMatrix.getInverse( tmpPanMatrix );
-        tmpPanVector.applyMatrix4( tmpPanMatrix );
-        this.component.position.add( tmpPanVector );
-        this.component.updateMatrix();
-
-    }
-
-    rotate( x, y ){
-
-        const [ dx, dy ] = this._getRotateXY( x, y );
-
-        tmpRotateXMatrix.makeRotationX( dy );
-        tmpRotateYMatrix.makeRotationY( dx );
-        tmpRotateXMatrix.multiply( tmpRotateYMatrix );
-        this.controls.applyMatrix( tmpRotateXMatrix );
-
-    }
-
-    rotateComponent( x, y ){
-
-        if( !this.component ) return;
-
-        const [ dx, dy ] = this._getRotateXY( x, y );
-
-        tmpRotateMatrix.extractRotation( this.component.transform );
-        tmpRotateMatrix.premultiply( this.viewer.rotationGroup.matrix );
-        tmpRotateMatrix.getInverse( tmpRotateMatrix );
-        tmpRotateVector.set( 1, 0, 0 );
-        tmpRotateVector.applyMatrix4( tmpRotateMatrix );
-        tmpRotateXMatrix.makeRotationAxis( tmpRotateVector, dy );
-        tmpRotateVector.set( 0, 1, 0 );
-        tmpRotateVector.applyMatrix4( tmpRotateMatrix );
-        tmpRotateYMatrix.makeRotationAxis( tmpRotateVector, dx );
-        tmpRotateXMatrix.multiply( tmpRotateYMatrix );
-        tmpRotateQuaternion.setFromRotationMatrix( tmpRotateXMatrix );
-        this.component.quaternion.premultiply( tmpRotateQuaternion );
-        this.component.updateMatrix();
-
-    }
-
+    tmpRotateMatrix.extractRotation(this.component.transform)
+    tmpRotateMatrix.premultiply(this.viewer.rotationGroup.matrix)
+    tmpRotateMatrix.getInverse(tmpRotateMatrix)
+    tmpRotateVector.set(1, 0, 0)
+    tmpRotateVector.applyMatrix4(tmpRotateMatrix)
+    tmpRotateXMatrix.makeRotationAxis(tmpRotateVector, dy)
+    tmpRotateVector.set(0, 1, 0)
+    tmpRotateVector.applyMatrix4(tmpRotateMatrix)
+    tmpRotateYMatrix.makeRotationAxis(tmpRotateVector, dx)
+    tmpRotateXMatrix.multiply(tmpRotateYMatrix)
+    tmpRotateQuaternion.setFromRotationMatrix(tmpRotateXMatrix)
+    this.component.quaternion.premultiply(tmpRotateQuaternion)
+    this.component.updateMatrix()
+  }
 }
 
-
-export default TrackballControls;
+export default TrackballControls
 </code></pre>
 
 </div>

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,19 +255,17 @@
  * @private
  */
 
+import { Color } from &apos;../../lib/three.es6.js&apos;
 
-import { Color } from &quot;../../lib/three.es6.js&quot;;
+import { defaults } from &apos;../utils.js&apos;
+import { uniformArray, uniformArray3 } from &apos;../math/array-utils.js&apos;
 
-import { defaults } from &quot;../utils.js&quot;;
-import { uniformArray, uniformArray3 } from &quot;../math/array-utils.js&quot;;
+import StructureRepresentation from &apos;./structure-representation.js&apos;
 
-import StructureRepresentation from &quot;./structure-representation.js&quot;;
-
-import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
-import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
-import PointBuffer from &quot;../buffer/point-buffer.js&quot;;
-import LineBuffer from &quot;../buffer/line-buffer.js&quot;;
-
+import SphereBuffer from &apos;../buffer/sphere-buffer.js&apos;
+import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
+import PointBuffer from &apos;../buffer/point-buffer.js&apos;
+import LineBuffer from &apos;../buffer/line-buffer.js&apos;
 
 /**
  * Trajectory representation parameter object.
@@ -266,200 +281,176 @@ import LineBuffer from &quot;../buffer/line-buffer.js&quot;;
  * @property {Boolean} sort - sort flag for points
  */
 
-
 /**
  * Trajectory representation
  */
-class TrajectoryRepresentation extends StructureRepresentation{
-
+class TrajectoryRepresentation extends StructureRepresentation {
     /**
      * @param  {Trajectory} trajectory - the trajectory
      * @param  {Viewer} viewer - viewer object
      * @param  {TrajectoryRepresentationParameters} params - parameters
      */
-    constructor( trajectory, viewer, params ){
+  constructor (trajectory, viewer, params) {
+    super(trajectory.structure, viewer, params)
 
-        super( trajectory.structure, viewer, params );
+    this.type = &apos;trajectory&apos;
 
-        this.type = &quot;trajectory&quot;;
+    this.parameters = Object.assign({
 
-        this.parameters = Object.assign( {
+      drawLine: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      drawCylinder: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      drawPoint: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      drawSphere: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
 
-            drawLine: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            drawCylinder: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            drawPoint: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            drawSphere: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
+      linewidth: {
+        type: &apos;integer&apos;, max: 20, min: 1, rebuild: true
+      },
+      pointSize: {
+        type: &apos;integer&apos;, max: 20, min: 1, rebuild: true
+      },
+      sizeAttenuation: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      sort: {
+        type: &apos;boolean&apos;, rebuild: true
+      }
 
-            linewidth: {
-                type: &quot;integer&quot;, max: 20, min: 1, rebuild: true
-            },
-            pointSize: {
-                type: &quot;integer&quot;, max: 20, min: 1, rebuild: true
-            },
-            sizeAttenuation: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            sort: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
+    }, this.parameters)
 
-        }, this.parameters );
+    this.manualAttach = true
 
-        this.manualAttach = true;
+    this.trajectory = trajectory
 
-        this.trajectory = trajectory;
+    this.init(params)
+  }
 
-        this.init( params );
+  init (params) {
+    var p = params || {}
+    p.colorScheme = defaults(p.colorScheme, &apos;uniform&apos;)
+    p.colorValue = defaults(p.colorValue, 0xDDDDDD)
 
-    }
+    this.drawLine = defaults(p.drawLine, true)
+    this.drawCylinder = defaults(p.drawCylinder, false)
+    this.drawPoint = defaults(p.drawPoint, false)
+    this.drawSphere = defaults(p.drawSphere, false)
 
-    init( params ){
+    this.pointSize = defaults(p.pointSize, 1)
+    this.sizeAttenuation = defaults(p.sizeAttenuation, false)
+    this.sort = defaults(p.sort, true)
 
-        var p = params || {};
-        p.colorScheme = defaults( p.colorScheme, &quot;uniform&quot; );
-        p.colorValue = defaults( p.colorValue, 0xDDDDDD );
+    super.init(p)
+  }
 
-        this.drawLine = defaults( p.drawLine, true );
-        this.drawCylinder = defaults( p.drawCylinder, false );
-        this.drawPoint = defaults( p.drawPoint, false );
-        this.drawSphere = defaults( p.drawSphere, false );
+  attach (callback) {
+    this.bufferList.forEach(buffer =&gt; {
+      this.viewer.add(buffer)
+    })
+    this.setVisibility(this.visible)
 
-        this.pointSize = defaults( p.pointSize, 1 );
-        this.sizeAttenuation = defaults( p.sizeAttenuation, false );
-        this.sort = defaults( p.sort, true );
+    callback()
+  }
 
-        super.init( p );
-
-    }
-
-    attach( callback ){
-
-        this.bufferList.forEach( buffer =&gt; {
-            this.viewer.add( buffer );
-        } );
-        this.setVisibility( this.visible );
-
-        callback();
-
-    }
-
-    prepare( callback ){
-
+  prepare (callback) {
         // TODO
-        callback();
+    callback()
+  }
 
-    }
-
-    create(){
-
+  create () {
         // Log.log( this.selection )
         // Log.log( this.atomSet )
 
-        if( this.atomSet.atomCount === 0 ) return;
+    if (this.atomSet.atomCount === 0) return
 
-        var scope = this;
+    var scope = this
 
-        var index = this.atomSet.atoms[ 0 ].index;
+    var index = this.atomSet.atoms[ 0 ].index
 
-        this.trajectory.getPath( index, function( path ){
+    this.trajectory.getPath(index, function (path) {
+      var n = path.length / 3
+      var tc = new Color(scope.colorValue)
 
-            var n = path.length / 3;
-            var tc = new Color( scope.colorValue );
+      if (scope.drawSphere) {
+        var sphereBuffer = new SphereBuffer(
+          {
+            position: path,
+            color: uniformArray3(n, tc.r, tc.g, tc.b),
+            radius: uniformArray(n, 0.2)
+          },
+                    scope.getBufferParams({
+                      sphereDetail: scope.sphereDetail,
+                      dullInterior: true,
+                      disableImpostor: scope.disableImpostor
+                    })
+                )
 
-            if( scope.drawSphere ){
+        scope.bufferList.push(sphereBuffer)
+      }
 
-                var sphereBuffer = new SphereBuffer(
-                    {
-                        position: path,
-                        color: uniformArray3( n, tc.r, tc.g, tc.b ),
-                        radius: uniformArray( n, 0.2 )
-                    },
-                    scope.getBufferParams( {
-                        sphereDetail: scope.sphereDetail,
-                        dullInterior: true,
-                        disableImpostor: scope.disableImpostor
-                    } )
-                );
+      if (scope.drawCylinder) {
+        var cylinderBuffer = new CylinderBuffer(
+          {
+            position1: path.subarray(0, -3),
+            position2: path.subarray(3),
+            color: uniformArray3(n - 1, tc.r, tc.g, tc.b),
+            color2: uniformArray3(n - 1, tc.r, tc.g, tc.b),
+            radius: uniformArray(n, 0.05)
+          },
+                    scope.getBufferParams({
+                      openEnded: false,
+                      radialSegments: scope.radialSegments,
+                      disableImpostor: scope.disableImpostor,
+                      dullInterior: true
+                    })
 
-                scope.bufferList.push( sphereBuffer );
+                )
 
-            }
+        scope.bufferList.push(cylinderBuffer)
+      }
 
-            if( scope.drawCylinder ){
+      if (scope.drawPoint) {
+        var pointBuffer = new PointBuffer(
+          {
+            position: path,
+            color: uniformArray3(n, tc.r, tc.g, tc.b)
+          },
+                    scope.getBufferParams({
+                      pointSize: scope.pointSize,
+                      sizeAttenuation: scope.sizeAttenuation,
+                      sort: scope.sort
+                    })
+                )
 
-                var cylinderBuffer = new CylinderBuffer(
-                    {
-                        position1: path.subarray( 0, -3 ),
-                        position2: path.subarray( 3 ),
-                        color: uniformArray3( n - 1, tc.r, tc.g, tc.b ),
-                        color2: uniformArray3( n - 1, tc.r, tc.g, tc.b ),
-                        radius: uniformArray( n, 0.05 )
-                    },
-                    scope.getBufferParams( {
-                        openEnded: false,
-                        radialSegments: scope.radialSegments,
-                        disableImpostor: scope.disableImpostor,
-                        dullInterior: true
-                    } )
+        scope.bufferList.push(pointBuffer)
+      }
 
-                );
-
-                scope.bufferList.push( cylinderBuffer );
-
-            }
-
-            if( scope.drawPoint ){
-
-                var pointBuffer = new PointBuffer(
-                    {
-                        position: path,
-                        color: uniformArray3( n, tc.r, tc.g, tc.b )
-                    },
-                    scope.getBufferParams( {
-                        pointSize: scope.pointSize,
-                        sizeAttenuation: scope.sizeAttenuation,
-                        sort: scope.sort,
-                    } )
-                );
-
-                scope.bufferList.push( pointBuffer );
-
-            }
-
-            if( scope.drawLine ){
-
-                var lineBuffer = new LineBuffer(
-                    {
-                        position1: path.subarray( 0, -3 ),
-                        position2: path.subarray( 3 ),
-                        color: uniformArray3( n - 1, tc.r, tc.g, tc.b ),
-                        color2: uniformArray3( n - 1, tc.r, tc.g, tc.b )
-                    },
+      if (scope.drawLine) {
+        var lineBuffer = new LineBuffer(
+          {
+            position1: path.subarray(0, -3),
+            position2: path.subarray(3),
+            color: uniformArray3(n - 1, tc.r, tc.g, tc.b),
+            color2: uniformArray3(n - 1, tc.r, tc.g, tc.b)
+          },
                     scope.getBufferParams()
-                );
+                )
 
-                scope.bufferList.push( lineBuffer );
+        scope.bufferList.push(lineBuffer)
+      }
 
-            }
-
-            scope.attach();
-
-        } );
-
-    }
-
+      scope.attach()
+    })
+  }
 }
 
-
-export default TrajectoryRepresentation;
+export default TrajectoryRepresentation
 </code></pre>
 
 </div>

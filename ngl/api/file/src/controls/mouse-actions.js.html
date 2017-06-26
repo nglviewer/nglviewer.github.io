@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,24 +255,21 @@
  * @private
  */
 
-
-import { almostIdentity } from &quot;../math/math-utils.js&quot;;
-
+import { almostIdentity } from &apos;../math/math-utils.js&apos;
 
 /**
  * Mouse actions provided as static methods
  */
-class MouseActions{
-
+class MouseActions {
     /**
      * Zoom scene based on scroll-delta
      * @param {Stage} stage - the stage
      * @param {Number} delta - amount to zoom
      * @return {undefined}
      */
-    static zoomScroll( stage, delta ){
-        stage.trackballControls.zoom( delta );
-    }
+  static zoomScroll (stage, delta) {
+    stage.trackballControls.zoom(delta)
+  }
 
     /**
      * Move near clipping plane based on scroll-delta
@@ -263,10 +277,10 @@ class MouseActions{
      * @param {Number} delta - amount to move clipping plane
      * @return {undefined}
      */
-    static clipNearScroll( stage, delta ){
-        const sp = stage.getParameters();
-        stage.setParameters( { clipNear: sp.clipNear + delta / 10 } );
-    }
+  static clipNearScroll (stage, delta) {
+    const sp = stage.getParameters()
+    stage.setParameters({ clipNear: sp.clipNear + delta / 10 })
+  }
 
     /**
      * Move focus planes based on scroll-delta
@@ -274,13 +288,13 @@ class MouseActions{
      * @param {Number} delta - amount to move focus planes
      * @return {undefined}
      */
-    static focusScroll( stage, delta ){
-        const sp = stage.getParameters();
-        const focus = sp.clipNear * 2;
-        const sign = Math.sign( delta );
-        const step = sign * almostIdentity( ( 100 - focus ) / 10, 5, 0.2 );
-        stage.setFocus( focus + step );
-    }
+  static focusScroll (stage, delta) {
+    const sp = stage.getParameters()
+    const focus = sp.clipNear * 2
+    const sign = Math.sign(delta)
+    const step = sign * almostIdentity((100 - focus) / 10, 5, 0.2)
+    stage.setFocus(focus + step)
+  }
 
     /**
      * Change isolevel of volume surfaces based on scroll-delta
@@ -288,14 +302,14 @@ class MouseActions{
      * @param {Number} delta - amount to change isolevel
      * @return {undefined}
      */
-    static isolevelScroll( stage, delta ){
-        const d = Math.sign( delta ) / 5;
-        stage.eachRepresentation( function( reprComp ){
-            if( reprComp.repr.type !== &quot;surface&quot; ) return;
-            const l = reprComp.getParameters().isolevel;
-            reprComp.setParameters( { isolevel: l + d } );
-        }, &quot;volume&quot; );
-    }
+  static isolevelScroll (stage, delta) {
+    const d = Math.sign(delta) / 5
+    stage.eachRepresentation(function (reprComp) {
+      if (reprComp.repr.type !== &apos;surface&apos;) return
+      const l = reprComp.getParameters().isolevel
+      reprComp.setParameters({ isolevel: l + d })
+    }, &apos;volume&apos;)
+  }
 
     /**
      * Pan scene based on mouse coordinate changes
@@ -304,9 +318,9 @@ class MouseActions{
      * @param {Number} dy - amount to pan in y direction
      * @return {undefined}
      */
-    static panDrag( stage, dx, dy ){
-        stage.trackballControls.pan( dx, dy );
-    }
+  static panDrag (stage, dx, dy) {
+    stage.trackballControls.pan(dx, dy)
+  }
 
     /**
      * Rotate scene based on mouse coordinate changes
@@ -315,9 +329,9 @@ class MouseActions{
      * @param {Number} dy - amount to rotate in y direction
      * @return {undefined}
      */
-    static rotateDrag( stage, dx, dy ){
-        stage.trackballControls.rotate( dx, dy );
-    }
+  static rotateDrag (stage, dx, dy) {
+    stage.trackballControls.rotate(dx, dy)
+  }
 
     /**
      * Zoom scene based on mouse coordinate changes
@@ -326,9 +340,9 @@ class MouseActions{
      * @param {Number} dy - amount to zoom
      * @return {undefined}
      */
-    static zoomDrag( stage, dx, dy ){
-        stage.trackballControls.zoom( ( dx + dy ) / -2 );
-    }
+  static zoomDrag (stage, dx, dy) {
+    stage.trackballControls.zoom((dx + dy) / -2)
+  }
 
     /**
      * Zoom scene based on mouse coordinate changes and
@@ -338,11 +352,11 @@ class MouseActions{
      * @param {Number} dy - amount to zoom
      * @return {undefined}
      */
-    static zoomFocusDrag( stage, dx, dy ){
-        stage.trackballControls.zoom( ( dx + dy ) / -2 );
-        const z = stage.viewer.camera.position.z;
-        stage.setFocus( 100 - Math.abs( z / 8 ) );
-    }
+  static zoomFocusDrag (stage, dx, dy) {
+    stage.trackballControls.zoom((dx + dy) / -2)
+    const z = stage.viewer.camera.position.z
+    stage.setFocus(100 - Math.abs(z / 8))
+  }
 
     /**
      * Pan picked component based on mouse coordinate changes
@@ -351,9 +365,9 @@ class MouseActions{
      * @param {Number} dy - amount to pan in y direction
      * @return {undefined}
      */
-    static panComponentDrag( stage, dx, dy ){
-        stage.trackballControls.panComponent( dx, dy );
-    }
+  static panComponentDrag (stage, dx, dy) {
+    stage.trackballControls.panComponent(dx, dy)
+  }
 
     /**
      * Rotate picked component based on mouse coordinate changes
@@ -362,9 +376,9 @@ class MouseActions{
      * @param {Number} dy - amount to rotate in y direction
      * @return {undefined}
      */
-    static rotateComponentDrag( stage, dx, dy ){
-        stage.trackballControls.rotateComponent( dx, dy );
-    }
+  static rotateComponentDrag (stage, dx, dy) {
+    stage.trackballControls.rotateComponent(dx, dy)
+  }
 
     /**
      * Move picked element to the center of the screen
@@ -372,11 +386,11 @@ class MouseActions{
      * @param {PickingProxy} pickingProxy - the picking data object
      * @return {undefined}
      */
-    static movePick( stage, pickingProxy ){
-        if( pickingProxy ){
-            stage.animationControls.move( pickingProxy.position.clone() );
-        }
+  static movePick (stage, pickingProxy) {
+    if (pickingProxy) {
+      stage.animationControls.move(pickingProxy.position.clone())
     }
+  }
 
     /**
      * Show tooltip with information of picked element
@@ -384,69 +398,67 @@ class MouseActions{
      * @param {PickingProxy} pickingProxy - the picking data object
      * @return {undefined}
      */
-    static tooltipPick( stage, pickingProxy ){
-        const tt = stage.tooltip;
-        const sp = stage.getParameters();
-        if( sp.tooltip &amp;&amp; pickingProxy ){
-            const mp = pickingProxy.mouse.position;
-            tt.innerText = pickingProxy.getLabel();
-            tt.style.bottom = window.innerHeight - mp.y + 3 + &quot;px&quot;;
-            tt.style.left = mp.x + 3 + &quot;px&quot;;
-            tt.style.display = &quot;block&quot;;
-        }else{
-            tt.style.display = &quot;none&quot;;
-        }
+  static tooltipPick (stage, pickingProxy) {
+    const tt = stage.tooltip
+    const sp = stage.getParameters()
+    if (sp.tooltip &amp;&amp; pickingProxy) {
+      const mp = pickingProxy.mouse.position
+      tt.innerText = pickingProxy.getLabel()
+      tt.style.bottom = window.innerHeight - mp.y + 3 + &apos;px&apos;
+      tt.style.left = mp.x + 3 + &apos;px&apos;
+      tt.style.display = &apos;block&apos;
+    } else {
+      tt.style.display = &apos;none&apos;
     }
-
+  }
 }
 
-
 const ActionPresets = {
-    default: [
-        [ &quot;scroll&quot;, MouseActions.zoomScroll ],
-        [ &quot;scroll-ctrl&quot;, MouseActions.clipNearScroll ],
-        [ &quot;scroll-shift&quot;, MouseActions.focusScroll ],
-        [ &quot;scroll-alt&quot;, MouseActions.isolevelScroll ],
+  default: [
+        [ &apos;scroll&apos;, MouseActions.zoomScroll ],
+        [ &apos;scroll-ctrl&apos;, MouseActions.clipNearScroll ],
+        [ &apos;scroll-shift&apos;, MouseActions.focusScroll ],
+        [ &apos;scroll-alt&apos;, MouseActions.isolevelScroll ],
 
-        [ &quot;drag-right&quot;, MouseActions.panDrag ],
-        [ &quot;drag-left&quot;, MouseActions.rotateDrag ],
-        [ &quot;drag-middle&quot;, MouseActions.zoomDrag ],
-        [ &quot;drag-left+right&quot;, MouseActions.zoomDrag ],
-        [ &quot;drag-ctrl-right&quot;, MouseActions.panComponentDrag ],
-        [ &quot;drag-ctrl-left&quot;, MouseActions.rotateComponentDrag ],
+        [ &apos;drag-right&apos;, MouseActions.panDrag ],
+        [ &apos;drag-left&apos;, MouseActions.rotateDrag ],
+        [ &apos;drag-middle&apos;, MouseActions.zoomDrag ],
+        [ &apos;drag-shift-right&apos;, MouseActions.zoomDrag ],
+        [ &apos;drag-left+right&apos;, MouseActions.zoomDrag ],
+        [ &apos;drag-ctrl-right&apos;, MouseActions.panComponentDrag ],
+        [ &apos;drag-ctrl-left&apos;, MouseActions.rotateComponentDrag ],
 
-        [ &quot;clickPick-middle&quot;, MouseActions.movePick ],
-        [ &quot;hoverPick&quot;, MouseActions.tooltipPick ],
-    ],
-    pymol: [
-        [ &quot;drag-left&quot;, MouseActions.rotateDrag ],
-        [ &quot;drag-middle&quot;, MouseActions.panDrag ],
-        [ &quot;drag-right&quot;, MouseActions.zoomDrag ],
-        [ &quot;drag-shift-right&quot;, MouseActions.focusScroll ],
+        [ &apos;clickPick-middle&apos;, MouseActions.movePick ],
+        [ &apos;hoverPick&apos;, MouseActions.tooltipPick ]
+  ],
+  pymol: [
+        [ &apos;drag-left&apos;, MouseActions.rotateDrag ],
+        [ &apos;drag-middle&apos;, MouseActions.panDrag ],
+        [ &apos;drag-right&apos;, MouseActions.zoomDrag ],
+        [ &apos;drag-shift-right&apos;, MouseActions.focusScroll ],
 
-        [ &quot;clickPick-ctrl+shift-middle&quot;, MouseActions.movePick ],
-        [ &quot;hoverPick&quot;, MouseActions.tooltipPick ],
-    ],
-    coot: [
-        [ &quot;scroll&quot;, MouseActions.isolevelScroll ],
+        [ &apos;clickPick-ctrl+shift-middle&apos;, MouseActions.movePick ],
+        [ &apos;hoverPick&apos;, MouseActions.tooltipPick ]
+  ],
+  coot: [
+        [ &apos;scroll&apos;, MouseActions.isolevelScroll ],
 
-        [ &quot;drag-left&quot;, MouseActions.rotateDrag ],
-        [ &quot;drag-middle&quot;, MouseActions.panDrag ],
-        [ &quot;drag-ctrl-left&quot;, MouseActions.panDrag ],
-        [ &quot;drag-right&quot;, MouseActions.zoomFocusDrag ],
-        [ &quot;drag-ctrl-right&quot;, MouseActions.focusScroll ],
+        [ &apos;drag-left&apos;, MouseActions.rotateDrag ],
+        [ &apos;drag-middle&apos;, MouseActions.panDrag ],
+        [ &apos;drag-ctrl-left&apos;, MouseActions.panDrag ],
+        [ &apos;drag-right&apos;, MouseActions.zoomFocusDrag ],
+        [ &apos;drag-ctrl-right&apos;, MouseActions.focusScroll ],
 
-        [ &quot;clickPick-middle&quot;, MouseActions.movePick ],
-        [ &quot;hoverPick&quot;, MouseActions.tooltipPick ],
-    ]
-};
+        [ &apos;clickPick-middle&apos;, MouseActions.movePick ],
+        [ &apos;hoverPick&apos;, MouseActions.tooltipPick ]
+  ]
+}
 
-
-export default MouseActions;
+export default MouseActions
 
 export {
     ActionPresets
-};
+}
 </code></pre>
 
 </div>

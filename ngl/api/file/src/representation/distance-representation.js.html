@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,20 +255,18 @@
  * @private
  */
 
+import { Color } from &apos;../../lib/three.es6.js&apos;
 
-import { Color } from &quot;../../lib/three.es6.js&quot;;
-
-import { Browser, RepresentationRegistry } from &quot;../globals.js&quot;;
-import { defaults } from &quot;../utils.js&quot;;
-import { DistancePicker } from &quot;../utils/picker.js&quot;;
-import { uniformArray, uniformArray3 } from &quot;../math/array-utils.js&quot;;
-import BitArray from &quot;../utils/bitarray.js&quot;;
-import StructureRepresentation from &quot;./structure-representation.js&quot;;
-import Selection from &quot;../selection.js&quot;;
-import BondStore from &quot;../store/bond-store.js&quot;;
-import TextBuffer from &quot;../buffer/text-buffer.js&quot;;
-import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
-
+import { Browser, RepresentationRegistry } from &apos;../globals.js&apos;
+import { defaults } from &apos;../utils.js&apos;
+import { DistancePicker } from &apos;../utils/picker.js&apos;
+import { uniformArray, uniformArray3 } from &apos;../math/array-utils.js&apos;
+import BitArray from &apos;../utils/bitarray.js&apos;
+import StructureRepresentation from &apos;./structure-representation.js&apos;
+import Selection from &apos;../selection.js&apos;
+import BondStore from &apos;../store/bond-store.js&apos;
+import TextBuffer from &apos;../buffer/text-buffer.js&apos;
+import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
 
 /**
  * Distance representation parameter object.
@@ -275,12 +290,10 @@ import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
  * @property {Boolean} disableImpostor - disable use of raycasted impostors for rendering
  */
 
-
 /**
  * Distance representation
  */
-class DistanceRepresentation extends StructureRepresentation{
-
+class DistanceRepresentation extends StructureRepresentation {
     /**
      * Create Distance representation object
      * @example
@@ -297,313 +310,282 @@ class DistanceRepresentation extends StructureRepresentation{
      * @param {Viewer} viewer - a viewer object
      * @param {DistanceRepresentationParameters} params - distance representation parameters
      */
-    constructor( structure, viewer, params ){
+  constructor (structure, viewer, params) {
+    super(structure, viewer, params)
 
-        super( structure, viewer, params );
+    this.type = &apos;distance&apos;
 
-        this.type = &quot;distance&quot;;
+    this.parameters = Object.assign({
 
-        this.parameters = Object.assign( {
+      labelSize: {
+        type: &apos;number&apos;, precision: 3, max: 10.0, min: 0.001
+      },
+      labelColor: {
+        type: &apos;color&apos;
+      },
+      labelVisible: {
+        type: &apos;boolean&apos;
+      },
+      labelZOffset: {
+        type: &apos;number&apos;, precision: 1, max: 20, min: -20, buffer: &apos;zOffset&apos;
+      },
+      labelUnit: {
+        type: &apos;select&apos;,
+        rebuild: true,
+        options: { &apos;&apos;: &apos;&apos;, angstrom: &apos;angstrom&apos;, nm: &apos;nm&apos; }
+      },
+      atomPair: {
+        type: &apos;hidden&apos;, rebuild: true
+      },
+      radialSegments: true,
+      disableImpostor: true
 
-            labelSize: {
-                type: &quot;number&quot;, precision: 3, max: 10.0, min: 0.001
-            },
-            labelColor: {
-                type: &quot;color&quot;
-            },
-            labelVisible: {
-                type: &quot;boolean&quot;
-            },
-            labelZOffset: {
-                type: &quot;number&quot;, precision: 1, max: 20, min: -20, buffer: &quot;zOffset&quot;
-            },
-            labelUnit: {
-                type: &quot;select&quot;, rebuild: true,
-                options: { &quot;&quot;: &quot;&quot;, angstrom: &quot;angstrom&quot;, nm: &quot;nm&quot; },
-            },
-            atomPair: {
-                type: &quot;hidden&quot;, rebuild: true
-            },
-            radialSegments: true,
-            disableImpostor: true
+    }, this.parameters, {
+      flatShaded: null,
+      assembly: null
+    })
 
-        }, this.parameters, {
-            flatShaded: null,
-            assembly: null
-        } );
+    this.init(params)
+  }
 
-        this.init( params );
+  init (params) {
+    var p = params || {}
+    p.radius = defaults(p.radius, 0.15)
 
-    }
+    this.fontFamily = defaults(p.fontFamily, &apos;sans-serif&apos;)
+    this.fontStyle = defaults(p.fontStyle, &apos;normal&apos;)
+    this.fontWeight = defaults(p.fontWeight, &apos;bold&apos;)
+    this.sdf = defaults(p.sdf, Browser !== &apos;Firefox&apos;)  // FIXME
+    this.labelSize = defaults(p.labelSize, 2.0)
+    this.labelColor = defaults(p.labelColor, 0xFFFFFF)
+    this.labelVisible = defaults(p.labelVisible, true)
+    this.labelZOffset = defaults(p.labelZOffset, 0.5)
+    this.labelUnit = defaults(p.labelUnit, &apos;&apos;)
+    this.atomPair = defaults(p.atomPair, [])
 
-    init( params ){
+    super.init(p)
+  }
 
-        var p = params || {};
-        p.radius = defaults( p.radius, 0.15 );
+  getDistanceData (sview, atomPair) {
+    var n = atomPair.length
+    var text = new Array(n)
+    var position = new Float32Array(n * 3)
+    var sele1 = new Selection()
+    var sele2 = new Selection()
 
-        this.fontFamily = defaults( p.fontFamily, &quot;sans-serif&quot; );
-        this.fontStyle = defaults( p.fontStyle, &quot;normal&quot; );
-        this.fontWeight = defaults( p.fontWeight, &quot;bold&quot; );
-        this.sdf = defaults( p.sdf, Browser !== &quot;Firefox&quot; );  // FIXME
-        this.labelSize = defaults( p.labelSize, 2.0 );
-        this.labelColor = defaults( p.labelColor, 0xFFFFFF );
-        this.labelVisible = defaults( p.labelVisible, true );
-        this.labelZOffset = defaults( p.labelZOffset, 0.5 );
-        this.labelUnit = defaults( p.labelUnit, &quot;&quot; );
-        this.atomPair = defaults( p.atomPair, [] );
+    var bondStore = new BondStore()
 
-        super.init( p );
+    var ap1 = sview.getAtomProxy()
+    var ap2 = sview.getAtomProxy()
 
-    }
+    var j = 0
 
-    getDistanceData( sview, atomPair ){
+    atomPair.forEach(function (pair, i) {
+      var v1 = pair[ 0 ]
+      var v2 = pair[ 1 ]
 
-        var n = atomPair.length;
-        var text = new Array( n );
-        var position = new Float32Array( n * 3 );
-        var sele1 = new Selection();
-        var sele2 = new Selection();
+      if (Number.isInteger(v1) &amp;&amp; Number.isInteger(v2)) {
+        ap1.index = v1
+        ap2.index = v2
+      } else {
+        sele1.setString(v1)
+        sele2.setString(v2)
 
-        var bondStore = new BondStore();
+        var atomIndices1 = sview.getAtomIndices(sele1)
+        var atomIndices2 = sview.getAtomIndices(sele2)
 
-        var ap1 = sview.getAtomProxy();
-        var ap2 = sview.getAtomProxy();
-
-        var j = 0;
-
-        atomPair.forEach( function( pair, i ){
-
-            var v1 = pair[ 0 ];
-            var v2 = pair[ 1 ];
-
-            if( Number.isInteger( v1 ) &amp;&amp; Number.isInteger( v2 ) ){
-
-                ap1.index = v1;
-                ap2.index = v2;
-
-            }else{
-
-                sele1.setString( v1 );
-                sele2.setString( v2 );
-
-                var atomIndices1 = sview.getAtomIndices( sele1 );
-                var atomIndices2 = sview.getAtomIndices( sele2 );
-
-                if( atomIndices1.length &amp;&amp; atomIndices2.length ){
-
-                    ap1.index = atomIndices1[ 0 ];
-                    ap2.index = atomIndices2[ 0 ];
-
-                }else{
-
-                    j += 1;
-                    return;
-
-                }
-
-            }
-
-            bondStore.addBond( ap1, ap2, 1 );
-
-            i -= j;
-            var d = ap1.distanceTo( ap2 )
-            switch ( this.labelUnit ) {
-                case &quot;angstrom&quot;:
-                    text[ i ] = d.toFixed( 2 ) + &quot; &quot; + String.fromCharCode( 0x212B );
-                    break;
-                case &quot;nm&quot;:
-                    text[ i ] = ( d / 10 ).toFixed( 2 ) + &quot; nm&quot;;
-                    break;
-                default:
-                    text[ i ] = d.toFixed( 2 );
-                    break;
-            }
-
-
-            var i3 = i * 3;
-            position[ i3 + 0 ] = ( ap1.x + ap2.x ) / 2;
-            position[ i3 + 1 ] = ( ap1.y + ap2.y ) / 2;
-            position[ i3 + 2 ] = ( ap1.z + ap2.z ) / 2;
-
-        }, this );
-
-        if( j &gt; 0 ){
-            n -= j;
-            position = position.subarray( 0, n * 3 );
+        if (atomIndices1.length &amp;&amp; atomIndices2.length) {
+          ap1.index = atomIndices1[ 0 ]
+          ap2.index = atomIndices2[ 0 ]
+        } else {
+          j += 1
+          return
         }
+      }
 
-        var bondSet = new BitArray( bondStore.count, true );
+      bondStore.addBond(ap1, ap2, 1)
 
-        return {
-            text: text,
-            position: position,
-            bondSet: bondSet,
-            bondStore: bondStore
-        };
+      i -= j
+      var d = ap1.distanceTo(ap2)
+      switch (this.labelUnit) {
+        case &apos;angstrom&apos;:
+          text[ i ] = d.toFixed(2) + &apos; &apos; + String.fromCharCode(0x212B)
+          break
+        case &apos;nm&apos;:
+          text[ i ] = (d / 10).toFixed(2) + &apos; nm&apos;
+          break
+        default:
+          text[ i ] = d.toFixed(2)
+          break
+      }
 
+      var i3 = i * 3
+      position[ i3 + 0 ] = (ap1.x + ap2.x) / 2
+      position[ i3 + 1 ] = (ap1.y + ap2.y) / 2
+      position[ i3 + 2 ] = (ap1.z + ap2.z) / 2
+    }, this)
+
+    if (j &gt; 0) {
+      n -= j
+      position = position.subarray(0, n * 3)
     }
 
-    getBondData( sview, what, params ){
+    var bondSet = new BitArray(bondStore.count, true)
 
-        var bondData = sview.getBondData( this.getBondParams( what, params ) );
-        if( bondData.picking ){
-            bondData.picking = new DistancePicker(
+    return {
+      text: text,
+      position: position,
+      bondSet: bondSet,
+      bondStore: bondStore
+    }
+  }
+
+  getBondData (sview, what, params) {
+    var bondData = sview.getBondData(this.getBondParams(what, params))
+    if (bondData.picking) {
+      bondData.picking = new DistancePicker(
                 bondData.picking.array,
                 bondData.picking.structure,
                 params.bondStore
-            );
-        }
-        return bondData;
+            )
+    }
+    return bondData
+  }
 
+  create () {
+    if (this.structureView.atomCount === 0) return
+
+    var n = this.atomPair.length
+    if (n === 0) return
+
+    var distanceData = this.getDistanceData(this.structureView, this.atomPair)
+
+    var c = new Color(this.labelColor)
+
+    this.textBuffer = new TextBuffer(
+      {
+        position: distanceData.position,
+        size: uniformArray(n, this.labelSize),
+        color: uniformArray3(n, c.r, c.g, c.b),
+        text: distanceData.text
+      },
+            this.getBufferParams({
+              fontFamily: this.fontFamily,
+              fontStyle: this.fontStyle,
+              fontWeight: this.fontWeight,
+              sdf: this.sdf,
+              zOffset: this.labelZOffset,
+              opacity: 1.0,
+              visible: this.labelVisible
+            })
+        )
+
+    var bondParams = {
+      bondSet: distanceData.bondSet,
+      bondStore: distanceData.bondStore
     }
 
-    create(){
+    var bondData = this.getBondData(this.structureView, undefined, bondParams)
 
-        if( this.structureView.atomCount === 0 ) return;
-
-        var n = this.atomPair.length;
-        if( n === 0 ) return;
-
-        var distanceData = this.getDistanceData( this.structureView, this.atomPair );
-
-        var c = new Color( this.labelColor );
-
-        this.textBuffer = new TextBuffer(
-            {
-                position: distanceData.position,
-                size: uniformArray( n, this.labelSize ),
-                color: uniformArray3( n, c.r, c.g, c.b ),
-                text: distanceData.text
-            },
-            this.getBufferParams( {
-                fontFamily: this.fontFamily,
-                fontStyle: this.fontStyle,
-                fontWeight: this.fontWeight,
-                sdf: this.sdf,
-                zOffset: this.labelZOffset,
-                opacity: 1.0,
-                visible: this.labelVisible
-            } )
-        );
-
-        var bondParams = {
-            bondSet: distanceData.bondSet,
-            bondStore: distanceData.bondStore
-        };
-
-        var bondData = this.getBondData( this.structureView, undefined, bondParams );
-
-        this.cylinderBuffer = new CylinderBuffer(
+    this.cylinderBuffer = new CylinderBuffer(
             bondData,
-            this.getBufferParams( {
-                openEnded: false,
-                radialSegments: this.radialSegments,
-                disableImpostor: this.disableImpostor,
-                dullInterior: true
-            } )
-        );
+            this.getBufferParams({
+              openEnded: false,
+              radialSegments: this.radialSegments,
+              disableImpostor: this.disableImpostor,
+              dullInterior: true
+            })
+        )
 
-        this.dataList.push( {
-            sview: this.structureView,
-            bondSet: distanceData.bondSet,
-            bondStore: distanceData.bondStore,
-            position: distanceData.position,
-            bufferList: [ this.textBuffer, this.cylinderBuffer ]
-        } );
+    this.dataList.push({
+      sview: this.structureView,
+      bondSet: distanceData.bondSet,
+      bondStore: distanceData.bondStore,
+      position: distanceData.position,
+      bufferList: [ this.textBuffer, this.cylinderBuffer ]
+    })
+  }
 
+  update (what) {
+    if (what.position) {
+      this.build()
+    } else {
+      super.update(what)
+    }
+  }
+
+  updateData (what, data) {
+    var bondParams = {
+      bondSet: data.bondSet,
+      bondStore: data.bondStore
     }
 
-    update( what ){
+    var bondData = this.getBondData(data.sview, what, bondParams)
+    var cylinderData = {}
+    var textData = {}
+    var n = this.atomPair.length
 
-        if( what.position ){
-            this.build();
-        }else{
-            super.update( what );
-        }
-
+    if (what.labelSize) {
+      textData.size = uniformArray(n, this.labelSize)
     }
 
-    updateData( what, data ){
-
-        var bondParams = {
-            bondSet: data.bondSet,
-            bondStore: data.bondStore
-        };
-
-        var bondData = this.getBondData( data.sview, what, bondParams );
-        var cylinderData = {};
-        var textData = {};
-        var n = this.atomPair.length;
-
-        if( what.labelSize ){
-            textData.size = uniformArray( n, this.labelSize );
-        }
-
-        if( what.labelColor ){
-            var c = new Color( this.labelColor );
-            textData.color = uniformArray3( n, c.r, c.g, c.b );
-        }
-
-        if( what.color ){
-            cylinderData.color = bondData.color;
-            cylinderData.color2 = bondData.color2;
-        }
-
-        if( what.radius || what.scale ){
-            cylinderData.radius = bondData.radius;
-        }
-
-        this.textBuffer.setAttributes( textData );
-        this.cylinderBuffer.setAttributes( cylinderData );
-
+    if (what.labelColor) {
+      var c = new Color(this.labelColor)
+      textData.color = uniformArray3(n, c.r, c.g, c.b)
     }
 
-    setVisibility( value, noRenderRequest ){
+    if (what.color) {
+      cylinderData.color = bondData.color
+      cylinderData.color2 = bondData.color2
+    }
 
-        super.setVisibility( value, true );
+    if (what.radius || what.scale) {
+      cylinderData.radius = bondData.radius
+    }
 
-        if( this.textBuffer ){
-            this.textBuffer.setVisibility(
+    this.textBuffer.setAttributes(textData)
+    this.cylinderBuffer.setAttributes(cylinderData)
+  }
+
+  setVisibility (value, noRenderRequest) {
+    super.setVisibility(value, true)
+
+    if (this.textBuffer) {
+      this.textBuffer.setVisibility(
                 this.labelVisible &amp;&amp; this.visible
-            );
-        }
-
-        if( !noRenderRequest ) this.viewer.requestRender();
-
-        return this;
-
+            )
     }
 
-    setParameters( params ){
+    if (!noRenderRequest) this.viewer.requestRender()
 
-        var rebuild = false;
-        var what = {};
+    return this
+  }
 
-        if( params &amp;&amp; params.labelSize ){
-            what.labelSize = true;
-        }
+  setParameters (params) {
+    var rebuild = false
+    var what = {}
 
-        if( params &amp;&amp; ( params.labelColor || params.labelColor === 0x000000 ) ){
-            what.labelColor = true;
-        }
-
-        super.setParameters( params, what, rebuild );
-
-        if( params &amp;&amp; params.labelVisible !== undefined ){
-            this.setVisibility( this.visible );
-        }
-
-        return this;
-
+    if (params &amp;&amp; params.labelSize) {
+      what.labelSize = true
     }
 
+    if (params &amp;&amp; (params.labelColor || params.labelColor === 0x000000)) {
+      what.labelColor = true
+    }
+
+    super.setParameters(params, what, rebuild)
+
+    if (params &amp;&amp; params.labelVisible !== undefined) {
+      this.setVisibility(this.visible)
+    }
+
+    return this
+  }
 }
 
+RepresentationRegistry.add(&apos;distance&apos;, DistanceRepresentation)
 
-RepresentationRegistry.add( &quot;distance&quot;, DistanceRepresentation );
-
-
-export default DistanceRepresentation;
+export default DistanceRepresentation
 </code></pre>
 
 </div>

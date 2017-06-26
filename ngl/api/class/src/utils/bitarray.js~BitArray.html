@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -232,13 +249,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BitArray from &apos;<span><a href="file/src/utils/bitarray.js.html#lineNumber28">ngl/src/utils/bitarray.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BitArray from &apos;<span><a href="file/src/utils/bitarray.js.html#lineNumber26">ngl/src/utils/bitarray.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/utils/bitarray.js.html#lineNumber28">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/utils/bitarray.js.html#lineNumber26">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -1120,7 +1137,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber34">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
@@ -1191,7 +1208,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber65">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber62">source</a></span></span>
     </span>
   </h3>
 
@@ -1264,7 +1281,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber182">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber179">source</a></span></span>
     </span>
   </h3>
 
@@ -1321,7 +1338,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber160">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber157">source</a></span></span>
     </span>
   </h3>
 
@@ -1395,7 +1412,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber136">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber133">source</a></span></span>
     </span>
   </h3>
 
@@ -1476,7 +1493,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber489">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber486">source</a></span></span>
     </span>
   </h3>
 
@@ -1533,7 +1550,7 @@ which is licensed under the Apache License, Version 2.0.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber331">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber328">source</a></span></span>
     </span>
   </h3>
 
@@ -1608,7 +1625,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber74">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber71">source</a></span></span>
     </span>
   </h3>
 
@@ -1681,7 +1698,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber190">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber187">source</a></span></span>
     </span>
   </h3>
 
@@ -1738,7 +1755,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber440">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber437">source</a></span></span>
     </span>
   </h3>
 
@@ -1811,7 +1828,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber47">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber44">source</a></span></span>
     </span>
   </h3>
 
@@ -1885,7 +1902,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber404">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber401">source</a></span></span>
     </span>
   </h3>
 
@@ -1959,7 +1976,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber315">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber312">source</a></span></span>
     </span>
   </h3>
 
@@ -2016,7 +2033,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber369">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber366">source</a></span></span>
     </span>
   </h3>
 
@@ -2091,7 +2108,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber387">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber384">source</a></span></span>
     </span>
   </h3>
 
@@ -2165,7 +2182,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber260">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber257">source</a></span></span>
     </span>
   </h3>
 
@@ -2222,7 +2239,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber252">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber249">source</a></span></span>
     </span>
   </h3>
 
@@ -2279,7 +2296,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber284">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber281">source</a></span></span>
     </span>
   </h3>
 
@@ -2353,7 +2370,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber299">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber296">source</a></span></span>
     </span>
   </h3>
 
@@ -2427,7 +2444,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber244">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber241">source</a></span></span>
     </span>
   </h3>
 
@@ -2508,7 +2525,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber234">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber231">source</a></span></span>
     </span>
   </h3>
 
@@ -2589,7 +2606,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber269">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber266">source</a></span></span>
     </span>
   </h3>
 
@@ -2663,7 +2680,7 @@ Store result in this object.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber421">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber418">source</a></span></span>
     </span>
   </h3>
 
@@ -2738,7 +2755,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber56">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber53">source</a></span></span>
     </span>
   </h3>
 
@@ -2811,7 +2828,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber174">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber171">source</a></span></span>
     </span>
   </h3>
 
@@ -2868,7 +2885,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber145">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
@@ -2942,7 +2959,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber126">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber123">source</a></span></span>
     </span>
   </h3>
 
@@ -3023,7 +3040,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber460">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber457">source</a></span></span>
     </span>
   </h3>
 
@@ -3080,7 +3097,7 @@ Store result in a new bit array.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber350">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/bitarray.js.html#lineNumber347">source</a></span></span>
     </span>
   </h3>
 

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,14 +255,12 @@
  * @private
  */
 
-
 import {
-    BufferGeometry, BufferAttribute
-} from &quot;../../lib/three.es6.js&quot;;
+  BufferGeometry, BufferAttribute
+} from &apos;../../lib/three.es6.js&apos;
 
-import { ParserRegistry } from &quot;../globals.js&quot;;
-import SurfaceParser from &quot;./surface-parser.js&quot;;
-
+import { ParserRegistry } from &apos;../globals.js&apos;
+import SurfaceParser from &apos;./surface-parser.js&apos;
 
 /**
  * OBJLoader
@@ -253,430 +268,350 @@ import SurfaceParser from &quot;./surface-parser.js&quot;;
  * @private
  * @author mrdoob / http://mrdoob.com/
  */
-function OBJLoader() {
-
-    this.regexp = {
+function OBJLoader () {
+  this.regexp = {
         // v float float float
-        vertex_pattern           : /^v\s+([\d|\.|\+|\-|e|E]+)\s+([\d|\.|\+|\-|e|E]+)\s+([\d|\.|\+|\-|e|E]+)/,
+    vertex_pattern: /^v\s+([\d|.|+|\-|e|E]+)\s+([\d|.|+|\-|e|E]+)\s+([\d|.|+|\-|e|E]+)/,
         // vn float float float
-        normal_pattern           : /^vn\s+([\d|\.|\+|\-|e|E]+)\s+([\d|\.|\+|\-|e|E]+)\s+([\d|\.|\+|\-|e|E]+)/,
+    normal_pattern: /^vn\s+([\d|.|+|\-|e|E]+)\s+([\d|.|+|\-|e|E]+)\s+([\d|.|+|\-|e|E]+)/,
         // vt float float
-        uv_pattern               : /^vt\s+([\d|\.|\+|\-|e|E]+)\s+([\d|\.|\+|\-|e|E]+)/,
+    uv_pattern: /^vt\s+([\d|.|+|\-|e|E]+)\s+([\d|.|+|\-|e|E]+)/,
         // f vertex vertex vertex
-        face_vertex              : /^f\s+(-?\d+)\s+(-?\d+)\s+(-?\d+)(?:\s+(-?\d+))?/,
+    face_vertex: /^f\s+(-?\d+)\s+(-?\d+)\s+(-?\d+)(?:\s+(-?\d+))?/,
         // f vertex/uv vertex/uv vertex/uv
-        face_vertex_uv           : /^f\s+(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)(?:\s+(-?\d+)\/(-?\d+))?/,
+    face_vertex_uv: /^f\s+(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)(?:\s+(-?\d+)\/(-?\d+))?/,
         // f vertex/uv/normal vertex/uv/normal vertex/uv/normal
-        face_vertex_uv_normal    : /^f\s+(-?\d+)\/(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)\/(-?\d+)(?:\s+(-?\d+)\/(-?\d+)\/(-?\d+))?/,
+    face_vertex_uv_normal: /^f\s+(-?\d+)\/(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)\/(-?\d+)\s+(-?\d+)\/(-?\d+)\/(-?\d+)(?:\s+(-?\d+)\/(-?\d+)\/(-?\d+))?/,
         // f vertex//normal vertex//normal vertex//normal
-        face_vertex_normal       : /^f\s+(-?\d+)\/\/(-?\d+)\s+(-?\d+)\/\/(-?\d+)\s+(-?\d+)\/\/(-?\d+)(?:\s+(-?\d+)\/\/(-?\d+))?/,
+    face_vertex_normal: /^f\s+(-?\d+)\/\/(-?\d+)\s+(-?\d+)\/\/(-?\d+)\s+(-?\d+)\/\/(-?\d+)(?:\s+(-?\d+)\/\/(-?\d+))?/,
         // o object_name | g group_name
-        object_pattern           : /^[og]\s*(.+)?/,
+    object_pattern: /^[og]\s*(.+)?/,
         // s boolean
-        smoothing_pattern        : /^s\s+(\d+|on|off)/,
+    smoothing_pattern: /^s\s+(\d+|on|off)/,
         // mtllib file_reference
-        material_library_pattern : /^mtllib /,
+    material_library_pattern: /^mtllib /,
         // usemtl material_name
-        material_use_pattern     : /^usemtl /
-    };
-
+    material_use_pattern: /^usemtl /
+  }
 }
 
 OBJLoader.prototype = {
 
-    constructor: OBJLoader,
+  constructor: OBJLoader,
+
+  setPath: function (value) {
+    this.path = value
+  },
+
+  _createParserState: function () {
+    var state = {
+      objects: [],
+      object: {},
+
+      vertices: [],
+      normals: [],
+
+      startObject: function (name, fromDeclaration) {
+        // If the current object (initial from reset) is not from a g/o declaration in the parsed
+        // file. We need to use it for the first parsed g/o to keep things in sync.
+        if (this.object &amp;&amp; this.object.fromDeclaration === false) {
+          this.object.name = name
+          this.object.fromDeclaration = (fromDeclaration !== false)
+          return
+        }
+
+        this.object = {
+          name: name || &apos;&apos;,
+          geometry: {
+            vertices: [],
+            normals: []
+          },
+          fromDeclaration: (fromDeclaration !== false)
+        }
+
+        this.objects.push(this.object)
+      },
+
+      parseVertexIndex: function (value, len) {
+        var index = parseInt(value, 10)
+        return (index &gt;= 0 ? index - 1 : index + len / 3) * 3
+      },
+
+      parseNormalIndex: function (value, len) {
+        var index = parseInt(value, 10)
+        return (index &gt;= 0 ? index - 1 : index + len / 3) * 3
+      },
+
+      addVertex: function (a, b, c) {
+        var src = this.vertices
+        var dst = this.object.geometry.vertices
+
+        dst.push(src[ a + 0 ])
+        dst.push(src[ a + 1 ])
+        dst.push(src[ a + 2 ])
+        dst.push(src[ b + 0 ])
+        dst.push(src[ b + 1 ])
+        dst.push(src[ b + 2 ])
+        dst.push(src[ c + 0 ])
+        dst.push(src[ c + 1 ])
+        dst.push(src[ c + 2 ])
+      },
+
+      addVertexLine: function (a) {
+        var src = this.vertices
+        var dst = this.object.geometry.vertices
+
+        dst.push(src[ a + 0 ])
+        dst.push(src[ a + 1 ])
+        dst.push(src[ a + 2 ])
+      },
+
+      addNormal: function (a, b, c) {
+        var src = this.normals
+        var dst = this.object.geometry.normals
+
+        dst.push(src[ a + 0 ])
+        dst.push(src[ a + 1 ])
+        dst.push(src[ a + 2 ])
+        dst.push(src[ b + 0 ])
+        dst.push(src[ b + 1 ])
+        dst.push(src[ b + 2 ])
+        dst.push(src[ c + 0 ])
+        dst.push(src[ c + 1 ])
+        dst.push(src[ c + 2 ])
+      },
+
+      addFace: function (a, b, c, d, na, nb, nc, nd) {
+        var vLen = this.vertices.length
+
+        var ia = this.parseVertexIndex(a, vLen)
+        var ib = this.parseVertexIndex(b, vLen)
+        var ic = this.parseVertexIndex(c, vLen)
+        var id
+
+        if (d === undefined) {
+          this.addVertex(ia, ib, ic)
+        } else {
+          id = this.parseVertexIndex(d, vLen)
+
+          this.addVertex(ia, ib, id)
+          this.addVertex(ib, ic, id)
+        }
+
+        if (na !== undefined) {
+          // Normals are many times the same. If so, skip function call and parseInt.
+          var nLen = this.normals.length
+          ia = this.parseNormalIndex(na, nLen)
 
-    setPath: function ( value ) {
+          ib = na === nb ? ia : this.parseNormalIndex(nb, nLen)
+          ic = na === nc ? ia : this.parseNormalIndex(nc, nLen)
 
-        this.path = value;
+          if (d === undefined) {
+            this.addNormal(ia, ib, ic)
+          } else {
+            id = this.parseNormalIndex(nd, nLen)
 
-    },
+            this.addNormal(ia, ib, id)
+            this.addNormal(ib, ic, id)
+          }
+        }
+      },
 
-    _createParserState : function () {
+      addLineGeometry: function (vertices) {
+        this.object.geometry.type = &apos;Line&apos;
 
-        var state = {
-            objects  : [],
-            object   : {},
+        var vLen = this.vertices.length
 
-            vertices : [],
-            normals  : [],
+        for (var vi = 0, l = vertices.length; vi &lt; l; vi++) {
+          this.addVertexLine(this.parseVertexIndex(vertices[ vi ], vLen))
+        }
+      }
 
-            startObject: function ( name, fromDeclaration ) {
+    }
 
-                // If the current object (initial from reset) is not from a g/o declaration in the parsed
-                // file. We need to use it for the first parsed g/o to keep things in sync.
-                if ( this.object &amp;&amp; this.object.fromDeclaration === false ) {
+    state.startObject(&apos;&apos;, false)
 
-                    this.object.name = name;
-                    this.object.fromDeclaration = ( fromDeclaration !== false );
-                    return;
+    return state
+  },
 
-                }
+  parse: function (text) {
+    var state = this._createParserState()
 
-                this.object = {
-                    name : name || &apos;&apos;,
-                    geometry : {
-                        vertices : [],
-                        normals  : []
-                    },
-                    fromDeclaration : ( fromDeclaration !== false )
-                };
-
-                this.objects.push( this.object );
-
-            },
-
-            parseVertexIndex: function ( value, len ) {
-
-                var index = parseInt( value, 10 );
-                return ( index &gt;= 0 ? index - 1 : index + len / 3 ) * 3;
-
-            },
-
-            parseNormalIndex: function ( value, len ) {
-
-                var index = parseInt( value, 10 );
-                return ( index &gt;= 0 ? index - 1 : index + len / 3 ) * 3;
-
-            },
-
-            addVertex: function ( a, b, c ) {
-
-                var src = this.vertices;
-                var dst = this.object.geometry.vertices;
-
-                dst.push( src[ a + 0 ] );
-                dst.push( src[ a + 1 ] );
-                dst.push( src[ a + 2 ] );
-                dst.push( src[ b + 0 ] );
-                dst.push( src[ b + 1 ] );
-                dst.push( src[ b + 2 ] );
-                dst.push( src[ c + 0 ] );
-                dst.push( src[ c + 1 ] );
-                dst.push( src[ c + 2 ] );
-
-            },
-
-            addVertexLine: function ( a ) {
-
-                var src = this.vertices;
-                var dst = this.object.geometry.vertices;
-
-                dst.push( src[ a + 0 ] );
-                dst.push( src[ a + 1 ] );
-                dst.push( src[ a + 2 ] );
-
-            },
-
-            addNormal : function ( a, b, c ) {
-
-                var src = this.normals;
-                var dst = this.object.geometry.normals;
-
-                dst.push( src[ a + 0 ] );
-                dst.push( src[ a + 1 ] );
-                dst.push( src[ a + 2 ] );
-                dst.push( src[ b + 0 ] );
-                dst.push( src[ b + 1 ] );
-                dst.push( src[ b + 2 ] );
-                dst.push( src[ c + 0 ] );
-                dst.push( src[ c + 1 ] );
-                dst.push( src[ c + 2 ] );
-
-            },
-
-            addFace: function ( a, b, c, d, na, nb, nc, nd ) {
-
-                var vLen = this.vertices.length;
-
-                var ia = this.parseVertexIndex( a, vLen );
-                var ib = this.parseVertexIndex( b, vLen );
-                var ic = this.parseVertexIndex( c, vLen );
-                var id;
-
-                if ( d === undefined ) {
-
-                    this.addVertex( ia, ib, ic );
-
-                } else {
-
-                    id = this.parseVertexIndex( d, vLen );
-
-                    this.addVertex( ia, ib, id );
-                    this.addVertex( ib, ic, id );
-
-                }
-
-                if ( na !== undefined ) {
-
-                    // Normals are many times the same. If so, skip function call and parseInt.
-                    var nLen = this.normals.length;
-                    ia = this.parseNormalIndex( na, nLen );
-
-                    ib = na === nb ? ia : this.parseNormalIndex( nb, nLen );
-                    ic = na === nc ? ia : this.parseNormalIndex( nc, nLen );
-
-                    if ( d === undefined ) {
-
-                        this.addNormal( ia, ib, ic );
-
-                    } else {
-
-                        id = this.parseNormalIndex( nd, nLen );
-
-                        this.addNormal( ia, ib, id );
-                        this.addNormal( ib, ic, id );
-
-                    }
-
-                }
-
-            },
-
-            addLineGeometry: function ( vertices ) {
-
-                this.object.geometry.type = &apos;Line&apos;;
-
-                var vLen = this.vertices.length;
-
-                for ( var vi = 0, l = vertices.length; vi &lt; l; vi ++ ) {
-
-                    this.addVertexLine( this.parseVertexIndex( vertices[ vi ], vLen ) );
-
-                }
-
-            }
-
-        };
-
-        state.startObject( &apos;&apos;, false );
-
-        return state;
-
-    },
-
-    parse: function ( text ) {
-
-        var state = this._createParserState();
-
-        if ( text.indexOf( &apos;\r\n&apos; ) !== - 1 ) {
-
+    if (text.indexOf(&apos;\r\n&apos;) !== -1) {
             // This is faster than String.split with regex that splits on both
-            text = text.replace( /\r\n/g, &apos;\n&apos; );
+      text = text.replace(/\r\n/g, &apos;\n&apos;)
+    }
 
-        }
-
-        if ( text.indexOf( &apos;\\\n&apos; ) !== - 1 ) {
-
+    if (text.indexOf(&apos;\\\n&apos;) !== -1) {
             // join lines separated by a line continuation character (\)
-            text = text.replace( /\\\n/g, &apos;&apos; );
+      text = text.replace(/\\\n/g, &apos;&apos;)
+    }
 
-        }
-
-        var i, l;
-        var lines = text.split( &apos;\n&apos; );
-        var line = &apos;&apos;, lineFirstChar = &apos;&apos;, lineSecondChar = &apos;&apos;;
-        var lineLength = 0;
-        var result = [];
+    var i, l
+    var lines = text.split(&apos;\n&apos;)
+    var line = &apos;&apos;
+    var lineFirstChar = &apos;&apos;
+    var lineSecondChar = &apos;&apos;
+    var lineLength = 0
+    var result = []
 
         // Faster to just trim left side of the line. Use if available.
-        var trimLeft = ( typeof &apos;&apos;.trimLeft === &apos;function&apos; );
+    var trimLeft = (typeof &apos;&apos;.trimLeft === &apos;function&apos;)
 
-        for ( i = 0, l = lines.length; i &lt; l; i ++ ) {
+    for (i = 0, l = lines.length; i &lt; l; i++) {
+      line = lines[ i ]
 
-            line = lines[ i ];
+      line = trimLeft ? line.trimLeft() : line.trim()
 
-            line = trimLeft ? line.trimLeft() : line.trim();
+      lineLength = line.length
 
-            lineLength = line.length;
+      if (lineLength === 0) continue
 
-            if ( lineLength === 0 ) continue;
+      lineFirstChar = line.charAt(0)
 
-            lineFirstChar = line.charAt( 0 );
+      // @todo invoke passed in handler if any
+      if (lineFirstChar === &apos;#&apos;) continue
 
-            // @todo invoke passed in handler if any
-            if ( lineFirstChar === &apos;#&apos; ) continue;
+      if (lineFirstChar === &apos;v&apos;) {
+        lineSecondChar = line.charAt(1)
 
-            if ( lineFirstChar === &apos;v&apos; ) {
+        if (lineSecondChar === &apos; &apos; &amp;&amp; (result = this.regexp.vertex_pattern.exec(line)) !== null) {
+          // 0                  1      2      3
+          // [&quot;v 1.0 2.0 3.0&quot;, &quot;1.0&quot;, &quot;2.0&quot;, &quot;3.0&quot;]
 
-                lineSecondChar = line.charAt( 1 );
+          state.vertices.push(
+            parseFloat(result[ 1 ]),
+            parseFloat(result[ 2 ]),
+            parseFloat(result[ 3 ])
+          )
+        } else if (lineSecondChar === &apos;n&apos; &amp;&amp; (result = this.regexp.normal_pattern.exec(line)) !== null) {
+          // 0                   1      2      3
+          // [&quot;vn 1.0 2.0 3.0&quot;, &quot;1.0&quot;, &quot;2.0&quot;, &quot;3.0&quot;]
 
-                if ( lineSecondChar === &apos; &apos; &amp;&amp; ( result = this.regexp.vertex_pattern.exec( line ) ) !== null ) {
+          state.normals.push(
+            parseFloat(result[ 1 ]),
+            parseFloat(result[ 2 ]),
+            parseFloat(result[ 3 ])
+          )
+        } else if (lineSecondChar === &apos;t&apos; &amp;&amp; (result = this.regexp.uv_pattern.exec(line)) !== null) {
 
-                    // 0                  1      2      3
-                    // [&quot;v 1.0 2.0 3.0&quot;, &quot;1.0&quot;, &quot;2.0&quot;, &quot;3.0&quot;]
+          // ignore uv line
 
-                    state.vertices.push(
-                        parseFloat( result[ 1 ] ),
-                        parseFloat( result[ 2 ] ),
-                        parseFloat( result[ 3 ] )
-                    );
-
-                } else if ( lineSecondChar === &apos;n&apos; &amp;&amp; ( result = this.regexp.normal_pattern.exec( line ) ) !== null ) {
-
-                    // 0                   1      2      3
-                    // [&quot;vn 1.0 2.0 3.0&quot;, &quot;1.0&quot;, &quot;2.0&quot;, &quot;3.0&quot;]
-
-                    state.normals.push(
-                        parseFloat( result[ 1 ] ),
-                        parseFloat( result[ 2 ] ),
-                        parseFloat( result[ 3 ] )
-                    );
-
-                } else if ( lineSecondChar === &apos;t&apos; &amp;&amp; ( result = this.regexp.uv_pattern.exec( line ) ) !== null ) {
-
-                    // ignore uv line
-
-                } else {
-
-                    throw new Error( &quot;Unexpected vertex/normal/uv line: &apos;&quot; + line  + &quot;&apos;&quot; );
-
-                }
-
-            } else if ( lineFirstChar === &quot;f&quot; ) {
-
-                if ( ( result = this.regexp.face_vertex_uv_normal.exec( line ) ) !== null ) {
-
-                    // f vertex/uv/normal vertex/uv/normal vertex/uv/normal
-                    // 0                        1    2    3    4    5    6    7    8    9   10         11         12
-                    // [&quot;f 1/1/1 2/2/2 3/3/3&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, undefined, undefined, undefined]
-
-                    state.addFace(
-                        result[ 1 ], result[ 4 ], result[ 7 ], result[ 10 ],
-                        // result[ 2 ], result[ 5 ], result[ 8 ], result[ 11 ],  // ignore uv part
-                        result[ 3 ], result[ 6 ], result[ 9 ], result[ 12 ]
-                    );
-
-                } else if ( ( result = this.regexp.face_vertex_uv.exec( line ) ) !== null ) {
-
-                    // ignore uv line
-
-                } else if ( ( result = this.regexp.face_vertex_normal.exec( line ) ) !== null ) {
-
-                    // f vertex//normal vertex//normal vertex//normal
-                    // 0                     1    2    3    4    5    6   7          8
-                    // [&quot;f 1//1 2//2 3//3&quot;, &quot;1&quot;, &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;3&quot;, &quot;3&quot;, undefined, undefined]
-
-                    state.addFace(
-                        result[ 1 ], result[ 3 ], result[ 5 ], result[ 7 ],
-                        result[ 2 ], result[ 4 ], result[ 6 ], result[ 8 ]
-                    );
-
-                } else if ( ( result = this.regexp.face_vertex.exec( line ) ) !== null ) {
-
-                    // f vertex vertex vertex
-                    // 0            1    2    3   4
-                    // [&quot;f 1 2 3&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, undefined]
-
-                    state.addFace(
-                        result[ 1 ], result[ 2 ], result[ 3 ], result[ 4 ]
-                    );
-
-                } else {
-
-                    throw new Error( &quot;Unexpected face line: &apos;&quot; + line  + &quot;&apos;&quot; );
-
-                }
-
-            } else if ( lineFirstChar === &quot;l&quot; ) {
-
-                var lineParts = line.substring( 1 ).trim().split( &quot; &quot; );
-                var lineVertices = [], lineUVs = [];
-
-                if ( line.indexOf( &quot;/&quot; ) === - 1 ) {
-
-                    lineVertices = lineParts;
-
-                } else {
-
-                    for ( var li = 0, llen = lineParts.length; li &lt; llen; li ++ ) {
-
-                        var parts = lineParts[ li ].split( &quot;/&quot; );
-
-                        if ( parts[ 0 ] !== &quot;&quot; ) lineVertices.push( parts[ 0 ] );
-                        if ( parts[ 1 ] !== &quot;&quot; ) lineUVs.push( parts[ 1 ] );
-
-                    }
-
-                }
-                state.addLineGeometry( lineVertices, lineUVs );
-
-            } else if ( ( result = this.regexp.object_pattern.exec( line ) ) !== null ) {
-
-                // o object_name
-                // or
-                // g group_name
-
-                var name = result[ 0 ].substr( 1 ).trim();
-                state.startObject( name );
-
-            // ignore material related lines
-            // eslint-disable-next-line no-empty
-            } else if ( this.regexp.material_use_pattern.test( line ) ) {
-            // eslint-disable-next-line no-empty
-            } else if ( this.regexp.material_library_pattern.test( line ) ) {
-            // eslint-disable-next-line no-empty
-            } else if ( ( result = this.regexp.smoothing_pattern.exec( line ) ) !== null ) {
-            } else {
-
-                // Handle null terminated files without exception
-                if ( line === &apos;\0&apos; ) continue;
-
-                throw new Error( &quot;Unexpected line: &apos;&quot; + line  + &quot;&apos;&quot; );
-
-            }
-
+        } else {
+          throw new Error(&quot;Unexpected vertex/normal/uv line: &apos;&quot; + line + &quot;&apos;&quot;)
         }
+      } else if (lineFirstChar === &apos;f&apos;) {
+        if ((result = this.regexp.face_vertex_uv_normal.exec(line)) !== null) {
+          // f vertex/uv/normal vertex/uv/normal vertex/uv/normal
+          // 0                        1    2    3    4    5    6    7    8    9   10         11         12
+          // [&quot;f 1/1/1 2/2/2 3/3/3&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, undefined, undefined, undefined]
 
-        var container = [];
+          state.addFace(
+            result[ 1 ], result[ 4 ], result[ 7 ], result[ 10 ],
+            // result[ 2 ], result[ 5 ], result[ 8 ], result[ 11 ],  // ignore uv part
+            result[ 3 ], result[ 6 ], result[ 9 ], result[ 12 ]
+          )
+        } else if ((result = this.regexp.face_vertex_uv.exec(line)) !== null) {
 
-        for ( i = 0, l = state.objects.length; i &lt; l; i ++ ) {
+          // ignore uv line
 
-            var object = state.objects[ i ];
-            var geometry = object.geometry;
+        } else if ((result = this.regexp.face_vertex_normal.exec(line)) !== null) {
+          // f vertex//normal vertex//normal vertex//normal
+          // 0                     1    2    3    4    5    6   7          8
+          // [&quot;f 1//1 2//2 3//3&quot;, &quot;1&quot;, &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;3&quot;, &quot;3&quot;, undefined, undefined]
 
-            // Skip o/g line declarations that did not follow with any faces
-            if ( geometry.vertices.length === 0 ) continue;
+          state.addFace(
+            result[ 1 ], result[ 3 ], result[ 5 ], result[ 7 ],
+            result[ 2 ], result[ 4 ], result[ 6 ], result[ 8 ]
+          )
+        } else if ((result = this.regexp.face_vertex.exec(line)) !== null) {
+          // f vertex vertex vertex
+          // 0            1    2    3   4
+          // [&quot;f 1 2 3&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, undefined]
 
-            var buffergeometry = new BufferGeometry();
-
-            buffergeometry.addAttribute( &apos;position&apos;, new BufferAttribute( new Float32Array( geometry.vertices ), 3 ) );
-
-            if ( geometry.normals.length &gt; 0 ) {
-
-                buffergeometry.addAttribute( &apos;normal&apos;, new BufferAttribute( new Float32Array( geometry.normals ), 3 ) );
-
-            } else {
-
-                buffergeometry.computeVertexNormals();
-
-            }
-
-            container.push( buffergeometry );
-
+          state.addFace(
+            result[ 1 ], result[ 2 ], result[ 3 ], result[ 4 ]
+          )
+        } else {
+          throw new Error(&quot;Unexpected face line: &apos;&quot; + line + &quot;&apos;&quot;)
         }
+      } else if (lineFirstChar === &apos;l&apos;) {
+        var lineParts = line.substring(1).trim().split(&apos; &apos;)
+        var lineVertices = []
+        var lineUVs = []
 
-        return container;
+        if (line.indexOf(&apos;/&apos;) === -1) {
+          lineVertices = lineParts
+        } else {
+          for (var li = 0, llen = lineParts.length; li &lt; llen; li++) {
+            var parts = lineParts[ li ].split(&apos;/&apos;)
 
+            if (parts[ 0 ] !== &apos;&apos;) lineVertices.push(parts[ 0 ])
+            if (parts[ 1 ] !== &apos;&apos;) lineUVs.push(parts[ 1 ])
+          }
+        }
+        state.addLineGeometry(lineVertices, lineUVs)
+      } else if ((result = this.regexp.object_pattern.exec(line)) !== null) {
+        // o object_name
+        // or
+        // g group_name
+
+        var name = result[ 0 ].substr(1).trim()
+        state.startObject(name)
+
+        // ignore material related lines
+        // eslint-disable-next-line no-empty
+      } else if (this.regexp.material_use_pattern.test(line)) {
+        // eslint-disable-next-line no-empty
+      } else if (this.regexp.material_library_pattern.test(line)) {
+        // eslint-disable-next-line no-empty
+      } else if ((result = this.regexp.smoothing_pattern.exec(line)) !== null) {
+      } else {
+        // Handle null terminated files without exception
+        if (line === &apos;\0&apos;) continue
+
+        throw new Error(&quot;Unexpected line: &apos;&quot; + line + &quot;&apos;&quot;)
+      }
     }
 
-};
+    var container = []
 
+    for (i = 0, l = state.objects.length; i &lt; l; i++) {
+      var object = state.objects[ i ]
+      var geometry = object.geometry
 
-class ObjParser extends SurfaceParser{
+      // Skip o/g line declarations that did not follow with any faces
+      if (geometry.vertices.length === 0) continue
 
-    get type (){ return &quot;obj&quot;; }
+      var buffergeometry = new BufferGeometry()
 
-    getLoader(){
-        return new OBJLoader();
+      buffergeometry.addAttribute(&apos;position&apos;, new BufferAttribute(new Float32Array(geometry.vertices), 3))
+
+      if (geometry.normals.length &gt; 0) {
+        buffergeometry.addAttribute(&apos;normal&apos;, new BufferAttribute(new Float32Array(geometry.normals), 3))
+      } else {
+        buffergeometry.computeVertexNormals()
+      }
+
+      container.push(buffergeometry)
     }
+
+    return container
+  }
 
 }
 
-ParserRegistry.add( &quot;obj&quot;, ObjParser );
+class ObjParser extends SurfaceParser {
+  get type () { return &apos;obj&apos; }
 
+  getLoader () {
+    return new OBJLoader()
+  }
+}
 
-export default ObjParser;
+ParserRegistry.add(&apos;obj&apos;, ObjParser)
+
+export default ObjParser
 </code></pre>
 
 </div>

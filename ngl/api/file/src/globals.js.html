@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,69 +255,66 @@
  * @private
  */
 
-
-import { getBrowser, getQuery, boolean } from &quot;./utils.js&quot;;
-import Registry from &quot;./utils/registry.js&quot;;
-import _WorkerRegistry from &quot;./worker/worker-registry.js&quot;;
-import _ColormakerRegistry from &quot;./color/colormaker-registry.js&quot;;
-
+import { getBrowser, getQuery, boolean } from &apos;./utils.js&apos;
+import Registry from &apos;./utils/registry.js&apos;
+import _WorkerRegistry from &apos;./worker/worker-registry.js&apos;
+import _ColormakerRegistry from &apos;./color/colormaker-registry.js&apos;
 
 /**
  * The browser name: &quot;Opera&quot;, &quot;Chrome&quot;, &quot;Firefox&quot;, &quot;Mobile Safari&quot;,
  * &quot;Internet Explorer&quot;, &quot;Safari&quot; or false.
  * @type {String|false}
  */
-const Browser = getBrowser();
+const Browser = getBrowser()
 
 /**
  * Flag indicating a mobile browser
  * @type {Boolean}
  */
-const Mobile = typeof window !== &apos;undefined&apos; ? typeof window.orientation !== &apos;undefined&apos; : false;
+const Mobile = typeof window !== &apos;undefined&apos; ? typeof window.orientation !== &apos;undefined&apos; : false
 
-let SupportsReadPixelsFloat = false;
-function setSupportsReadPixelsFloat( value ){
-    SupportsReadPixelsFloat = value;
+let SupportsReadPixelsFloat = false
+function setSupportsReadPixelsFloat (value) {
+  SupportsReadPixelsFloat = value
 }
 
 /**
  * Flag indicating support for the `EXT_frag_depth` WebGL extension
  * @type {Boolean}
  */
-let ExtensionFragDepth = false;
-function setExtensionFragDepth( value ){
-    ExtensionFragDepth = value;
+let ExtensionFragDepth = false
+function setExtensionFragDepth (value) {
+  ExtensionFragDepth = value
 }
 
 const Log = {
-    log: Function.prototype.bind.call( console.log, console ),
-    info: Function.prototype.bind.call( console.info, console ),
-    warn: Function.prototype.bind.call( console.warn, console ),
-    error: Function.prototype.bind.call( console.error, console ),
-    time: Function.prototype.bind.call( console.time, console ),
-    timeEnd: Function.prototype.bind.call( console.timeEnd, console )
-};
-
-let Debug = boolean( getQuery( &quot;debug&quot; ) );
-function setDebug( value ){
-    Debug = value;
+  log: Function.prototype.bind.call(console.log, console),
+  info: Function.prototype.bind.call(console.info, console),
+  warn: Function.prototype.bind.call(console.warn, console),
+  error: Function.prototype.bind.call(console.error, console),
+  time: Function.prototype.bind.call(console.time, console),
+  timeEnd: Function.prototype.bind.call(console.timeEnd, console)
 }
 
-const WebglErrorMessage = &apos;&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;&quot;&gt;&lt;p style=&quot;padding:15px;text-align:center;&quot;&gt;Your browser/graphics card does not seem to support &lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/WebGL&quot;&gt;WebGL&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;Find out how to get it &lt;a target=&quot;_blank&quot; href=&quot;http://get.webgl.org/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&apos;;
+let Debug = boolean(getQuery(&apos;debug&apos;))
+function setDebug (value) {
+  Debug = value
+}
 
-const WorkerRegistry = new _WorkerRegistry();
+const WebglErrorMessage = &apos;&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;&quot;&gt;&lt;p style=&quot;padding:15px;text-align:center;&quot;&gt;Your browser/graphics card does not seem to support &lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/WebGL&quot;&gt;WebGL&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;Find out how to get it &lt;a target=&quot;_blank&quot; href=&quot;http://get.webgl.org/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&apos;
+
+const WorkerRegistry = new _WorkerRegistry()
 /**
  * Global instance of {@link src/color/colormaker-registry.js~ColormakerRegistry}
  * @type {src/color/colormaker-registry.js~ColormakerRegistry}
  */
-const ColormakerRegistry = new _ColormakerRegistry();
-const DatasourceRegistry = new Registry( &quot;datasource&quot; );
-const RepresentationRegistry = new Registry( &quot;representatation&quot; );
-const ParserRegistry = new Registry( &quot;parser&quot; );
-const ShaderRegistry = new Registry( &quot;shader&quot; );
-const DecompressorRegistry = new Registry( &quot;decompressor&quot; );
-const ComponentRegistry = new Registry( &quot;component&quot; );
-
+const ColormakerRegistry = new _ColormakerRegistry()
+const DatasourceRegistry = new Registry(&apos;datasource&apos;)
+const RepresentationRegistry = new Registry(&apos;representatation&apos;)
+const ParserRegistry = new Registry(&apos;parser&apos;)
+const ShaderRegistry = new Registry(&apos;shader&apos;)
+const DecompressorRegistry = new Registry(&apos;decompressor&apos;)
+const ComponentRegistry = new Registry(&apos;component&apos;)
 
 export {
     Browser,
@@ -321,7 +335,7 @@ export {
     ShaderRegistry,
     DecompressorRegistry,
     ComponentRegistry
-};
+}
 </code></pre>
 
 </div>

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,7 +255,6 @@
  * @private
  */
 
-
 import {
     PerspectiveCamera, OrthographicCamera,
     Box3, Vector3, Matrix4, Color,
@@ -251,851 +267,818 @@ import {
     Fog, SpotLight, AmbientLight,
     BufferGeometry, BufferAttribute,
     LineSegments
-} from &quot;../../lib/three.es6.js&quot;;
+} from &apos;../../lib/three.es6.js&apos;
 
-import &quot;../shader/BasicLine.vert&quot;;
-import &quot;../shader/BasicLine.frag&quot;;
-import &quot;../shader/Quad.vert&quot;;
-import &quot;../shader/Quad.frag&quot;;
+import &apos;../shader/BasicLine.vert&apos;
+import &apos;../shader/BasicLine.frag&apos;
+import &apos;../shader/Quad.vert&apos;
+import &apos;../shader/Quad.frag&apos;
 
 import {
     Debug, Log, Browser, Mobile, WebglErrorMessage,
     setExtensionFragDepth, SupportsReadPixelsFloat, setSupportsReadPixelsFloat
-} from &quot;../globals.js&quot;;
-import { degToRad } from &quot;../math/math-utils.js&quot;;
-import Stats from &quot;./stats.js&quot;;
-import { getShader } from &quot;../shader/shader-utils.js&quot;;
-import { JitterVectors } from &quot;./viewer-constants.js&quot;;
+} from &apos;../globals.js&apos;
+import { degToRad } from &apos;../math/math-utils.js&apos;
+import Stats from &apos;./stats.js&apos;
+import { getShader } from &apos;../shader/shader-utils.js&apos;
+import { JitterVectors } from &apos;./viewer-constants.js&apos;
 import {
     makeImage as _makeImage, sortProjectedPosition, updateMaterialUniforms
-} from &quot;./viewer-utils&quot;;
+} from &apos;./viewer-utils&apos;
 
-import Signal from &quot;../../lib/signals.es6.js&quot;;
+import Signal from &apos;../../lib/signals.es6.js&apos;
 
+const pixelBufferFloat = new Float32Array(4)
+const pixelBufferUint = new Uint8Array(4)
 
-const pixelBufferFloat = new Float32Array( 4 );
-const pixelBufferUint = new Uint8Array( 4 );
+var tmpMatrix = new Matrix4()
 
+function onBeforeRender (renderer, scene, camera, geometry, material/*, group */) {
+  var u = material.uniforms
+  var updateList = []
 
-var tmpMatrix = new Matrix4();
+  if (u.objectId) {
+    u.objectId.value = SupportsReadPixelsFloat ? this.id : this.id / 255
+    updateList.push(&apos;objectId&apos;)
+  }
 
-function onBeforeRender( renderer, scene, camera, geometry, material/*, group*/ ){
-
-    var u = material.uniforms;
-    var updateList = [];
-
-    if( u.objectId ){
-        u.objectId.value = SupportsReadPixelsFloat ? this.id : this.id / 255;
-        updateList.push( &quot;objectId&quot; );
-    }
-
-    if( u.modelViewMatrixInverse || u.modelViewMatrixInverseTranspose ||
+  if (u.modelViewMatrixInverse || u.modelViewMatrixInverseTranspose ||
         u.modelViewProjectionMatrix || u.modelViewProjectionMatrixInverse
-    ){
-        this.modelViewMatrix.multiplyMatrices( camera.matrixWorldInverse, this.matrixWorld );
-    }
+    ) {
+    this.modelViewMatrix.multiplyMatrices(camera.matrixWorldInverse, this.matrixWorld)
+  }
 
-    if( u.modelViewMatrixInverse ){
-        u.modelViewMatrixInverse.value.getInverse( this.modelViewMatrix );
-        updateList.push( &quot;modelViewMatrixInverse&quot; );
-    }
+  if (u.modelViewMatrixInverse) {
+    u.modelViewMatrixInverse.value.getInverse(this.modelViewMatrix)
+    updateList.push(&apos;modelViewMatrixInverse&apos;)
+  }
 
-    if( u.modelViewMatrixInverseTranspose ){
-        if( u.modelViewMatrixInverse ){
-            u.modelViewMatrixInverseTranspose.value.copy(
+  if (u.modelViewMatrixInverseTranspose) {
+    if (u.modelViewMatrixInverse) {
+      u.modelViewMatrixInverseTranspose.value.copy(
                 u.modelViewMatrixInverse.value
-            ).transpose();
-        }else{
-            u.modelViewMatrixInverseTranspose.value
-                .getInverse( this.modelViewMatrix )
-                .transpose();
-        }
-        updateList.push( &quot;modelViewMatrixInverseTranspose&quot; );
+            ).transpose()
+    } else {
+      u.modelViewMatrixInverseTranspose.value
+                .getInverse(this.modelViewMatrix)
+                .transpose()
     }
+    updateList.push(&apos;modelViewMatrixInverseTranspose&apos;)
+  }
 
-    if( u.modelViewProjectionMatrix ){
-        camera.updateProjectionMatrix();
-        u.modelViewProjectionMatrix.value.multiplyMatrices(
+  if (u.modelViewProjectionMatrix) {
+    camera.updateProjectionMatrix()
+    u.modelViewProjectionMatrix.value.multiplyMatrices(
             camera.projectionMatrix, this.modelViewMatrix
-        );
-        updateList.push( &quot;modelViewProjectionMatrix&quot; );
-    }
+        )
+    updateList.push(&apos;modelViewProjectionMatrix&apos;)
+  }
 
-    if( u.modelViewProjectionMatrixInverse ){
-        if( u.modelViewProjectionMatrix ){
-            tmpMatrix.copy(
+  if (u.modelViewProjectionMatrixInverse) {
+    if (u.modelViewProjectionMatrix) {
+      tmpMatrix.copy(
                 u.modelViewProjectionMatrix.value
-            );
-            u.modelViewProjectionMatrixInverse.value.getInverse(
+            )
+      u.modelViewProjectionMatrixInverse.value.getInverse(
                 tmpMatrix
-            );
-        }else{
-            camera.updateProjectionMatrix();
-            tmpMatrix.multiplyMatrices(
+            )
+    } else {
+      camera.updateProjectionMatrix()
+      tmpMatrix.multiplyMatrices(
                 camera.projectionMatrix, this.modelViewMatrix
-            );
-            u.modelViewProjectionMatrixInverse.value.getInverse(
+            )
+      u.modelViewProjectionMatrixInverse.value.getInverse(
                 tmpMatrix
-            );
-        }
-        updateList.push( &quot;modelViewProjectionMatrixInverse&quot; );
+            )
     }
+    updateList.push(&apos;modelViewProjectionMatrixInverse&apos;)
+  }
 
-    if( updateList.length ){
+  if (updateList.length) {
+    var materialProperties = renderer.properties.get(material)
 
-        var materialProperties = renderer.properties.get( material );
+    if (materialProperties.program) {
+      var gl = renderer.getContext()
+      var p = materialProperties.program
+      gl.useProgram(p.program)
+      var pu = p.getUniforms()
 
-        if( materialProperties.program ){
-
-            var gl = renderer.getContext();
-            var p = materialProperties.program;
-            gl.useProgram( p.program );
-            var pu = p.getUniforms();
-
-            updateList.forEach( function( name ){
-                pu.setValue( gl, name, u[ name ].value );
-            } );
-
-        }
-
+      updateList.forEach(function (name) {
+        pu.setValue(gl, name, u[ name ].value)
+      })
     }
-
+  }
 }
-
 
 /**
  * Viewer class
  * @class
  * @param {String|Element} [idOrElement] - dom id or element
  */
-function Viewer( idOrElement ){
+function Viewer (idOrElement) {
+  var signals = {
+    ticked: new Signal()
+  }
 
-    var signals = {
-        ticked: new Signal()
-    };
+  var container
+  if (typeof idOrElement === &apos;string&apos;) {
+    container = document.getElementById(idOrElement)
+  } else if (idOrElement instanceof window.Element) {
+    container = idOrElement
+  } else {
+    container = document.createElement(&apos;div&apos;)
+  }
 
-    var container;
-    if( typeof idOrElement === &quot;string&quot; ){
-        container = document.getElementById( idOrElement );
-    }else if( idOrElement instanceof Element ){
-        container = idOrElement;
-    }else{
-        container = document.createElement( &apos;div&apos; );
-    }
+  var width, height
+  if (container === document.body) {
+    width = window.innerWidth || 1
+    height = window.innerHeight || 1
+  } else {
+    var box = container.getBoundingClientRect()
+    width = box.width || 1
+    height = box.height || 1
+  }
 
-    var width, height;
-    if ( container === document.body ) {
-        width = window.innerWidth || 1;
-        height = window.innerHeight || 1;
-    } else {
-        var box = container.getBoundingClientRect();
-        width = box.width || 1;
-        height = box.height || 1;
-    }
+  var rendering, renderPending, lastRenderedPicking, isStill
+  var sampleLevel, cDist, bRadius
 
-    var rendering, renderPending, lastRenderedPicking, isStill;
-    var sampleLevel, cDist, bRadius;
+  var parameters
+  initParams()
 
-    var parameters;
-    initParams();
+  var stats
+  initStats()
 
-    var stats;
-    initStats();
+  var perspectiveCamera, orthographicCamera, camera
+  initCamera()
 
-    var perspectiveCamera, orthographicCamera, camera;
-    initCamera();
+  var scene, pointLight, ambientLight
+  var rotationGroup, translationGroup, modelGroup, pickingGroup, backgroundGroup, helperGroup
+  initScene()
 
-    var scene, pointLight, ambientLight;
-    var rotationGroup, translationGroup, modelGroup, pickingGroup, backgroundGroup, helperGroup;
-    initScene();
+  var renderer, supportsHalfFloat
+  var pickingTarget, sampleTarget, holdTarget
+  var compositeUniforms, compositeMaterial, compositeCamera, compositeScene
+  if (initRenderer() === false) {
+    this.container = container
+    Log.error(&apos;Viewer: could not initialize renderer&apos;)
+    return
+  }
 
-    var renderer, supportsHalfFloat;
-    var pickingTarget, sampleTarget, holdTarget;
-    var compositeUniforms, compositeMaterial, compositeCamera, compositeScene;
-    if( initRenderer() === false ){
-        this.container = container;
-        Log.error( &quot;Viewer: could not initialize renderer&quot; );
-        return;
-    }
-
-    var boundingBoxMesh;
-    var boundingBox = new Box3();
-    var boundingBoxSize = new Vector3();
-    var boundingBoxLength = 0;
-    initHelper();
+  var boundingBoxMesh
+  var boundingBox = new Box3()
+  var boundingBoxSize = new Vector3()
+  var boundingBoxLength = 0
+  initHelper()
 
     // fog &amp; background
-    setBackground();
-    setFog();
+  setBackground()
+  setFog()
 
-    var distVector = new Vector3();
+  var distVector = new Vector3()
 
-    var info = {
-        memory: {
-            programs: 0,
-            geometries: 0,
-            textures: 0
-        },
-        render: {
-            calls: 0,
-            vertices: 0,
-            faces: 0,
-            points: 0
-        }
-    };
+  var info = {
+    memory: {
+      programs: 0,
+      geometries: 0,
+      textures: 0
+    },
+    render: {
+      calls: 0,
+      vertices: 0,
+      faces: 0,
+      points: 0
+    }
+  }
 
-    function initParams(){
+  function initParams () {
+    parameters = {
 
-        parameters = {
+      fogColor: new Color(0x000000),
+      fogNear: 50,
+      fogFar: 100,
 
-            fogColor: new Color( 0x000000 ),
-            fogNear: 50,
-            fogFar: 100,
+      backgroundColor: new Color(0x000000),
 
-            backgroundColor: new Color( 0x000000 ),
+      cameraType: &apos;perspective&apos;,
+      cameraFov: 40,
+      cameraZ: -80, // FIXME initial value should be automatically determined
 
-            cameraType: &quot;perspective&quot;,
-            cameraFov: 40,
-            cameraZ: -80, // FIXME initial value should be automatically determined
+      clipNear: 0,
+      clipFar: 100,
+      clipDist: 10,
 
-            clipNear: 0,
-            clipFar: 100,
-            clipDist: 10,
+      lightColor: new Color(0xdddddd),
+      lightIntensity: 1.0,
+      ambientColor: new Color(0xdddddd),
+      ambientIntensity: 0.2,
 
-            lightColor: new Color( 0xdddddd ),
-            lightIntensity: 1.0,
-            ambientColor: new Color( 0xdddddd ),
-            ambientIntensity: 0.2,
-
-            sampleLevel: 0
-
-        };
+      sampleLevel: 0
 
     }
+  }
 
-    function initCamera(){
+  function initCamera () {
+    var lookAt = new Vector3(0, 0, 0)
 
-        var lookAt = new Vector3( 0, 0, 0 );
-
-        perspectiveCamera = new PerspectiveCamera(
+    perspectiveCamera = new PerspectiveCamera(
             parameters.cameraFov, width / height
-        );
-        perspectiveCamera.position.z = parameters.cameraZ;
-        perspectiveCamera.lookAt( lookAt );
+        )
+    perspectiveCamera.position.z = parameters.cameraZ
+    perspectiveCamera.lookAt(lookAt)
 
-        orthographicCamera = new OrthographicCamera(
+    orthographicCamera = new OrthographicCamera(
             width / -2, width / 2,
             height / 2, height / -2
-        );
-        orthographicCamera.position.z = parameters.cameraZ;
-        orthographicCamera.lookAt( lookAt );
+        )
+    orthographicCamera.position.z = parameters.cameraZ
+    orthographicCamera.lookAt(lookAt)
 
-        if( parameters.cameraType === &quot;orthographic&quot; ){
-            camera = orthographicCamera;
-        }else{  // parameters.cameraType === &quot;perspective&quot;
-            camera = perspectiveCamera;
-        }
-        camera.updateProjectionMatrix();
-
+    if (parameters.cameraType === &apos;orthographic&apos;) {
+      camera = orthographicCamera
+    } else {  // parameters.cameraType === &quot;perspective&quot;
+      camera = perspectiveCamera
     }
+    camera.updateProjectionMatrix()
+  }
 
-    function initRenderer(){
+  function initRenderer () {
+    var dpr = window.devicePixelRatio
 
-        var dpr = window.devicePixelRatio;
-
-        try{
-            renderer = new WebGLRenderer( {
-                preserveDrawingBuffer: true,
-                alpha: true,
-                antialias: true
-            } );
-        }catch( e ){
-            container.innerHTML = WebglErrorMessage;
-            return false;
-        }
-        renderer.setPixelRatio( dpr );
-        renderer.setSize( width, height );
-        renderer.autoClear = false;
-        renderer.sortObjects = true;
+    try {
+      renderer = new WebGLRenderer({
+        preserveDrawingBuffer: true,
+        alpha: true,
+        antialias: true
+      })
+    } catch (e) {
+      container.innerHTML = WebglErrorMessage
+      return false
+    }
+    renderer.setPixelRatio(dpr)
+    renderer.setSize(width, height)
+    renderer.autoClear = false
+    renderer.sortObjects = true
 
         // var gl = renderer.getContext();
         // console.log( gl.getContextAttributes().antialias );
         // console.log( gl.getParameter(gl.SAMPLES) );
 
-        setExtensionFragDepth( renderer.extensions.get( &quot;EXT_frag_depth&quot; ) );
-        renderer.extensions.get( &apos;OES_element_index_uint&apos; );
+    setExtensionFragDepth(renderer.extensions.get(&apos;EXT_frag_depth&apos;))
+    renderer.extensions.get(&apos;OES_element_index_uint&apos;)
 
-        setSupportsReadPixelsFloat(
-            ( renderer.extensions.get( &apos;OES_texture_float&apos; ) &amp;&amp;
-                renderer.extensions.get( &quot;WEBGL_color_buffer_float&quot; ) ) ||
-            ( Browser === &quot;Chrome&quot; &amp;&amp;
-                renderer.extensions.get( &apos;OES_texture_float&apos; ) )
-        );
+    setSupportsReadPixelsFloat(
+            (renderer.extensions.get(&apos;OES_texture_float&apos;) &amp;&amp;
+                renderer.extensions.get(&apos;WEBGL_color_buffer_float&apos;)) ||
+            (Browser === &apos;Chrome&apos; &amp;&amp;
+                renderer.extensions.get(&apos;OES_texture_float&apos;))
+        )
 
-        container.appendChild( renderer.domElement );
+    container.appendChild(renderer.domElement)
 
-        var dprWidth = width * dpr;
-        var dprHeight = height * dpr;
+    var dprWidth = width * dpr
+    var dprHeight = height * dpr
 
         // picking texture
 
-        renderer.extensions.get( &apos;OES_texture_float&apos; );
-        supportsHalfFloat = renderer.extensions.get( &apos;OES_texture_half_float&apos; );
-        renderer.extensions.get( &quot;WEBGL_color_buffer_float&quot; );
+    renderer.extensions.get(&apos;OES_texture_float&apos;)
+    supportsHalfFloat = renderer.extensions.get(&apos;OES_texture_half_float&apos;)
+    renderer.extensions.get(&apos;WEBGL_color_buffer_float&apos;)
 
-        pickingTarget = new WebGLRenderTarget(
+    pickingTarget = new WebGLRenderTarget(
             dprWidth, dprHeight,
-            {
-                minFilter: NearestFilter,
-                magFilter: NearestFilter,
-                stencilBuffer: false,
-                format: RGBAFormat,
-                type: SupportsReadPixelsFloat ? FloatType : UnsignedByteType
-            }
-        );
-        pickingTarget.texture.generateMipmaps = false;
+      {
+        minFilter: NearestFilter,
+        magFilter: NearestFilter,
+        stencilBuffer: false,
+        format: RGBAFormat,
+        type: SupportsReadPixelsFloat ? FloatType : UnsignedByteType
+      }
+        )
+    pickingTarget.texture.generateMipmaps = false
 
         // ssaa textures
 
-        sampleTarget = new WebGLRenderTarget(
+    sampleTarget = new WebGLRenderTarget(
             dprWidth, dprHeight,
-            {
-                minFilter: LinearFilter,
-                magFilter: LinearFilter,
-                format: RGBAFormat,
-            }
-        );
+      {
+        minFilter: LinearFilter,
+        magFilter: LinearFilter,
+        format: RGBAFormat
+      }
+        )
 
-        holdTarget = new WebGLRenderTarget(
+    holdTarget = new WebGLRenderTarget(
             dprWidth, dprHeight,
-            {
-                minFilter: NearestFilter,
-                magFilter: NearestFilter,
-                format: RGBAFormat,
+      {
+        minFilter: NearestFilter,
+        magFilter: NearestFilter,
+        format: RGBAFormat,
                 // problems on mobile so use UnsignedByteType there
                 // see https://github.com/arose/ngl/issues/191
-                type: Mobile ? UnsignedByteType : (
-                    supportsHalfFloat ? HalfFloatType :
-                        ( SupportsReadPixelsFloat ? FloatType : UnsignedByteType )
+        type: Mobile ? UnsignedByteType : (
+                    supportsHalfFloat ? HalfFloatType
+                        : (SupportsReadPixelsFloat ? FloatType : UnsignedByteType)
                 )
 
-            }
-        );
+      }
+        )
 
-        compositeUniforms = {
-            &quot;tForeground&quot;: { type: &quot;t&quot;, value: null },
-            &quot;scale&quot;: { type: &quot;f&quot;, value: 1.0 }
-        };
-
-        compositeMaterial = new ShaderMaterial( {
-            uniforms: compositeUniforms,
-            vertexShader: getShader( &quot;Quad.vert&quot; ),
-            fragmentShader: getShader( &quot;Quad.frag&quot; ),
-            premultipliedAlpha: true,
-            transparent: true,
-            blending: AdditiveBlending,
-            depthTest: false,
-            depthWrite: false
-        } );
-
-        compositeCamera = new OrthographicCamera( -1, 1, 1, -1, 0, 1 );
-        compositeScene = new Scene().add( new Mesh(
-            new PlaneGeometry( 2, 2 ), compositeMaterial
-        ) );
-
+    compositeUniforms = {
+      &apos;tForeground&apos;: { type: &apos;t&apos;, value: null },
+      &apos;scale&apos;: { type: &apos;f&apos;, value: 1.0 }
     }
 
-    function initScene(){
+    compositeMaterial = new ShaderMaterial({
+      uniforms: compositeUniforms,
+      vertexShader: getShader(&apos;Quad.vert&apos;),
+      fragmentShader: getShader(&apos;Quad.frag&apos;),
+      premultipliedAlpha: true,
+      transparent: true,
+      blending: AdditiveBlending,
+      depthTest: false,
+      depthWrite: false
+    })
 
-        if( !scene ){
-            scene = new Scene();
-        }
+    compositeCamera = new OrthographicCamera(-1, 1, 1, -1, 0, 1)
+    compositeScene = new Scene().add(new Mesh(
+            new PlaneGeometry(2, 2), compositeMaterial
+        ))
+  }
 
-        rotationGroup = new Group();
-        rotationGroup.name = &quot;rotationGroup&quot;;
-        scene.add( rotationGroup );
+  function initScene () {
+    if (!scene) {
+      scene = new Scene()
+    }
 
-        translationGroup = new Group();
-        translationGroup.name = &quot;translationGroup&quot;;
-        rotationGroup.add( translationGroup );
+    rotationGroup = new Group()
+    rotationGroup.name = &apos;rotationGroup&apos;
+    scene.add(rotationGroup)
 
-        modelGroup = new Group();
-        modelGroup.name = &quot;modelGroup&quot;;
-        translationGroup.add( modelGroup );
+    translationGroup = new Group()
+    translationGroup.name = &apos;translationGroup&apos;
+    rotationGroup.add(translationGroup)
 
-        pickingGroup = new Group();
-        pickingGroup.name = &quot;pickingGroup&quot;;
-        translationGroup.add( pickingGroup );
+    modelGroup = new Group()
+    modelGroup.name = &apos;modelGroup&apos;
+    translationGroup.add(modelGroup)
 
-        backgroundGroup = new Group();
-        backgroundGroup.name = &quot;backgroundGroup&quot;;
-        translationGroup.add( backgroundGroup );
+    pickingGroup = new Group()
+    pickingGroup.name = &apos;pickingGroup&apos;
+    translationGroup.add(pickingGroup)
 
-        helperGroup = new Group();
-        helperGroup.name = &quot;helperGroup&quot;;
-        translationGroup.add( helperGroup );
+    backgroundGroup = new Group()
+    backgroundGroup.name = &apos;backgroundGroup&apos;
+    translationGroup.add(backgroundGroup)
+
+    helperGroup = new Group()
+    helperGroup.name = &apos;helperGroup&apos;
+    translationGroup.add(helperGroup)
 
         // fog
 
-        scene.fog = new Fog();
+    scene.fog = new Fog()
 
         // light
 
-        pointLight = new SpotLight(
+    pointLight = new SpotLight(
             parameters.lightColor, parameters.lightIntensity
-        );
-        scene.add( pointLight );
+        )
+    scene.add(pointLight)
 
-        ambientLight = new AmbientLight(
+    ambientLight = new AmbientLight(
             parameters.ambientLight, parameters.ambientIntensity
-        );
-        scene.add( ambientLight );
+        )
+    scene.add(ambientLight)
+  }
 
+  function initHelper () {
+    var indices = new Uint16Array([
+      0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 6,
+      6, 7, 7, 4, 0, 4, 1, 5, 2, 6, 3, 7
+    ])
+    var positions = new Float32Array(8 * 3)
+
+    var bbGeometry = new BufferGeometry()
+    bbGeometry.setIndex(new BufferAttribute(indices, 1))
+    bbGeometry.addAttribute(&apos;position&apos;, new BufferAttribute(positions, 3))
+    var bbMaterial = new ShaderMaterial({
+      uniforms: { &apos;uColor&apos;: { value: new Color(&apos;skyblue&apos;) } },
+      vertexShader: getShader(&apos;BasicLine.vert&apos;),
+      fragmentShader: getShader(&apos;BasicLine.frag&apos;),
+      linewidth: 2
+    })
+
+    boundingBoxMesh = new LineSegments(bbGeometry, bbMaterial)
+    helperGroup.add(boundingBoxMesh)
+  }
+
+  function updateHelper () {
+    var position = boundingBoxMesh.geometry.attributes.position
+    var array = position.array
+
+    var min = boundingBox.min
+    var max = boundingBox.max
+
+    array[ 0 ] = max.x; array[ 1 ] = max.y; array[ 2 ] = max.z
+    array[ 3 ] = min.x; array[ 4 ] = max.y; array[ 5 ] = max.z
+    array[ 6 ] = min.x; array[ 7 ] = min.y; array[ 8 ] = max.z
+    array[ 9 ] = max.x; array[ 10 ] = min.y; array[ 11 ] = max.z
+    array[ 12 ] = max.x; array[ 13 ] = max.y; array[ 14 ] = min.z
+    array[ 15 ] = min.x; array[ 16 ] = max.y; array[ 17 ] = min.z
+    array[ 18 ] = min.x; array[ 19 ] = min.y; array[ 20 ] = min.z
+    array[ 21 ] = max.x; array[ 22 ] = min.y; array[ 23 ] = min.z
+
+    position.needsUpdate = true
+
+    if (!boundingBox.isEmpty()) {
+      boundingBoxMesh.geometry.computeBoundingSphere()
     }
+  }
 
-    function initHelper(){
+  function initStats () {
+    stats = new Stats()
+  }
 
-        var indices = new Uint16Array( [
-            0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 6,
-            6, 7, 7, 4, 0, 4, 1, 5, 2, 6, 3, 7
-        ] );
-        var positions = new Float32Array( 8 * 3 );
-
-        var bbGeometry = new BufferGeometry();
-        bbGeometry.setIndex( new BufferAttribute( indices, 1 ) );
-        bbGeometry.addAttribute( &apos;position&apos;, new BufferAttribute( positions, 3 ) );
-        var bbMaterial = new ShaderMaterial( {
-            uniforms: { &quot;uColor&quot;: { value: new Color( &quot;skyblue&quot; ) } },
-            vertexShader: getShader( &quot;BasicLine.vert&quot; ),
-            fragmentShader: getShader( &quot;BasicLine.frag&quot; ),
-            linewidth: 2
-        } );
-
-        boundingBoxMesh = new LineSegments( bbGeometry, bbMaterial );
-        helperGroup.add( boundingBoxMesh );
-
-    }
-
-    function updateHelper(){
-
-        var position = boundingBoxMesh.geometry.attributes.position;
-        var array = position.array;
-
-        var min = boundingBox.min;
-        var max = boundingBox.max;
-
-        array[  0 ] = max.x; array[  1 ] = max.y; array[  2 ] = max.z;
-        array[  3 ] = min.x; array[  4 ] = max.y; array[  5 ] = max.z;
-        array[  6 ] = min.x; array[  7 ] = min.y; array[  8 ] = max.z;
-        array[  9 ] = max.x; array[ 10 ] = min.y; array[ 11 ] = max.z;
-        array[ 12 ] = max.x; array[ 13 ] = max.y; array[ 14 ] = min.z;
-        array[ 15 ] = min.x; array[ 16 ] = max.y; array[ 17 ] = min.z;
-        array[ 18 ] = min.x; array[ 19 ] = min.y; array[ 20 ] = min.z;
-        array[ 21 ] = max.x; array[ 22 ] = min.y; array[ 23 ] = min.z;
-
-        position.needsUpdate = true;
-
-        if( !boundingBox.isEmpty() ){
-            boundingBoxMesh.geometry.computeBoundingSphere();
-        }
-
-    }
-
-    function initStats(){
-
-        stats = new Stats();
-
-    }
-
-    function add( buffer, instanceList ){
-
+  function add (buffer, instanceList) {
         // Log.time( &quot;Viewer.add&quot; );
 
-        if( instanceList ){
-            instanceList.forEach( function( instance ){
-                addBuffer( buffer, instance );
-            } );
-        }else{
-            addBuffer( buffer );
-        }
+    if (instanceList) {
+      instanceList.forEach(function (instance) {
+        addBuffer(buffer, instance)
+      })
+    } else {
+      addBuffer(buffer)
+    }
 
-        if( buffer.background ){
-            backgroundGroup.add( buffer.group );
-            backgroundGroup.add( buffer.wireframeGroup );
-        }else{
-            modelGroup.add( buffer.group );
-            modelGroup.add( buffer.wireframeGroup );
-        }
+    if (buffer.background) {
+      backgroundGroup.add(buffer.group)
+      backgroundGroup.add(buffer.wireframeGroup)
+    } else {
+      modelGroup.add(buffer.group)
+      modelGroup.add(buffer.wireframeGroup)
+    }
 
-        if( buffer.pickable ){
-            pickingGroup.add( buffer.pickingGroup );
-        }
+    if (buffer.pickable) {
+      pickingGroup.add(buffer.pickingGroup)
+    }
 
-        if( Debug ) updateHelper();
+    if (Debug) updateHelper()
 
         // Log.timeEnd( &quot;Viewer.add&quot; );
+  }
 
-    }
-
-    function addBuffer( buffer, instance ){
-
+  function addBuffer (buffer, instance) {
         // Log.time( &quot;Viewer.addBuffer&quot; );
 
-        function setUserData( object ){
-            if( object instanceof Group ){
-                object.children.forEach( setUserData );
-            }else{
-                object.userData.buffer = buffer;
-                object.userData.instance = instance;
-                object.onBeforeRender = onBeforeRender;
-            }
-        }
+    function setUserData (object) {
+      if (object instanceof Group) {
+        object.children.forEach(setUserData)
+      } else {
+        object.userData.buffer = buffer
+        object.userData.instance = instance
+        object.onBeforeRender = onBeforeRender
+      }
+    }
 
-        var mesh = buffer.getMesh();
-        if( instance ){
-            mesh.applyMatrix( instance.matrix );
-        }
-        setUserData( mesh );
-        buffer.group.add( mesh );
+    var mesh = buffer.getMesh()
+    if (instance) {
+      mesh.applyMatrix(instance.matrix)
+    }
+    setUserData(mesh)
+    buffer.group.add(mesh)
 
-        var wireframeMesh = buffer.getWireframeMesh();
-        if( instance ){
+    var wireframeMesh = buffer.getWireframeMesh()
+    if (instance) {
             // wireframeMesh.applyMatrix( instance.matrix );
-            wireframeMesh.matrix.copy( mesh.matrix );
-            wireframeMesh.position.copy( mesh.position );
-            wireframeMesh.quaternion.copy( mesh.quaternion );
-            wireframeMesh.scale.copy( mesh.scale );
-        }
-        setUserData( wireframeMesh );
-        buffer.wireframeGroup.add( wireframeMesh );
+      wireframeMesh.matrix.copy(mesh.matrix)
+      wireframeMesh.position.copy(mesh.position)
+      wireframeMesh.quaternion.copy(mesh.quaternion)
+      wireframeMesh.scale.copy(mesh.scale)
+    }
+    setUserData(wireframeMesh)
+    buffer.wireframeGroup.add(wireframeMesh)
 
-        if( buffer.pickable ){
-
-            var pickingMesh = buffer.getPickingMesh();
-            if( instance ){
+    if (buffer.pickable) {
+      var pickingMesh = buffer.getPickingMesh()
+      if (instance) {
                 // pickingMesh.applyMatrix( instance.matrix );
-                pickingMesh.matrix.copy( mesh.matrix );
-                pickingMesh.position.copy( mesh.position );
-                pickingMesh.quaternion.copy( mesh.quaternion );
-                pickingMesh.scale.copy( mesh.scale );
-            }
-            setUserData( pickingMesh );
-            buffer.pickingGroup.add( pickingMesh );
+        pickingMesh.matrix.copy(mesh.matrix)
+        pickingMesh.position.copy(mesh.position)
+        pickingMesh.quaternion.copy(mesh.quaternion)
+        pickingMesh.scale.copy(mesh.scale)
+      }
+      setUserData(pickingMesh)
+      buffer.pickingGroup.add(pickingMesh)
+    }
 
-        }
-
-        if( instance ){
-            updateBoundingBox( buffer.geometry, buffer.matrix, instance.matrix );
-        }else{
-            updateBoundingBox( buffer.geometry, buffer.matrix );
-        }
+    if (instance) {
+      updateBoundingBox(buffer.geometry, buffer.matrix, instance.matrix)
+    } else {
+      updateBoundingBox(buffer.geometry, buffer.matrix)
+    }
 
         // Log.timeEnd( &quot;Viewer.addBuffer&quot; );
+  }
 
+  function remove (buffer) {
+    translationGroup.children.forEach(function (group) {
+      group.remove(buffer.group)
+      group.remove(buffer.wireframeGroup)
+    })
+
+    if (buffer.pickable) {
+      pickingGroup.remove(buffer.pickingGroup)
     }
 
-    function remove( buffer ){
-
-        translationGroup.children.forEach( function( group ){
-            group.remove( buffer.group );
-            group.remove( buffer.wireframeGroup );
-        } );
-
-        if( buffer.pickable ){
-            pickingGroup.remove( buffer.pickingGroup );
-        }
-
-        updateBoundingBox();
-        if( Debug ) updateHelper();
+    updateBoundingBox()
+    if (Debug) updateHelper()
 
         // requestRender();
+  }
 
-    }
+  function updateBoundingBox (geometry, matrix, instanceMatrix) {
+    function updateGeometry (geometry, matrix, instanceMatrix) {
+      if (!geometry.boundingBox) {
+        geometry.computeBoundingBox()
+      }
 
-    function updateBoundingBox( geometry, matrix, instanceMatrix ){
+      var geoBoundingBox = geometry.boundingBox.clone()
 
-        function updateGeometry( geometry, matrix, instanceMatrix ){
+      if (matrix) {
+        geoBoundingBox.applyMatrix4(matrix)
+      }
+      if (instanceMatrix) {
+        geoBoundingBox.applyMatrix4(instanceMatrix)
+      }
 
-            if( !geometry.boundingBox ){
-                geometry.computeBoundingBox();
-            }
-
-            var geoBoundingBox = geometry.boundingBox.clone();
-
-            if( matrix ){
-                geoBoundingBox.applyMatrix4( matrix );
-            }
-            if( instanceMatrix ){
-                geoBoundingBox.applyMatrix4( instanceMatrix );
-            }
-
-            if( geoBoundingBox.min.equals( geoBoundingBox.max ) ){
+      if (geoBoundingBox.min.equals(geoBoundingBox.max)) {
                 // mainly to give a single impostor geometry some volume
                 // as it is only expanded in the shader on the GPU
-                geoBoundingBox.expandByScalar( 5 );
-            }
+        geoBoundingBox.expandByScalar(5)
+      }
 
-            boundingBox.union( geoBoundingBox );
+      boundingBox.union(geoBoundingBox)
+    }
 
+    function updateNode (node) {
+      if (node.geometry !== undefined) {
+        var matrix, instanceMatrix
+        if (node.userData.buffer) {
+          matrix = node.userData.buffer.matrix
+        }
+        if (node.userData.instance) {
+          instanceMatrix = node.userData.instance.matrix
+        }
+        updateGeometry(node.geometry, matrix, instanceMatrix)
+      }
+    }
+
+    if (geometry) {
+      updateGeometry(geometry, matrix, instanceMatrix)
+    } else {
+      boundingBox.makeEmpty()
+      modelGroup.traverse(updateNode)
+      backgroundGroup.traverse(updateNode)
+    }
+
+    boundingBox.getSize(boundingBoxSize)
+    boundingBoxLength = boundingBoxSize.length()
+  }
+
+  function getPickingPixels () {
+    const n = width * height * 4
+    const imgBuffer = SupportsReadPixelsFloat ? new Float32Array(n) : new Uint8Array(n)
+
+    render(true)
+    renderer.readRenderTargetPixels(
+            pickingTarget, 0, 0, width, height, imgBuffer
+        )
+
+    return imgBuffer
+  }
+
+  function getImage (picking) {
+    return new Promise(function (resolve) {
+      if (picking) {
+        const n = width * height * 4
+        let imgBuffer = getPickingPixels()
+
+        if (SupportsReadPixelsFloat) {
+          const imgBuffer2 = new Uint8Array(n)
+          for (let i = 0; i &lt; n; ++i) {
+            imgBuffer2[ i ] = Math.round(imgBuffer[ i ] * 255)
+          }
+          imgBuffer = imgBuffer2
         }
 
-        function updateNode( node ){
+        const canvas = document.createElement(&apos;canvas&apos;)
+        canvas.width = width
+        canvas.height = height
+        const ctx = canvas.getContext(&apos;2d&apos;)
+        const imgData = ctx.getImageData(0, 0, width, height)
+        imgData.data.set(imgBuffer)
+        ctx.putImageData(imgData, 0, 0)
+        canvas.toBlob(resolve, &apos;image/png&apos;)
+      } else {
+        renderer.domElement.toBlob(resolve, &apos;image/png&apos;)
+      }
+    })
+  }
 
-            if( node.geometry !== undefined ){
-                var matrix, instanceMatrix;
-                if( node.userData.buffer ){
-                    matrix = node.userData.buffer.matrix;
-                }
-                if( node.userData.instance ){
-                    instanceMatrix = node.userData.instance.matrix;
-                }
-                updateGeometry( node.geometry, matrix, instanceMatrix );
-            }
+  function makeImage (params) {
+    return _makeImage(this, params)
+  }
 
-        }
+  function setLight (color, intensity, ambientColor, ambientIntensity) {
+    var p = parameters
 
-        if( geometry ){
-            updateGeometry( geometry, matrix, instanceMatrix );
-        }else{
-            boundingBox.makeEmpty();
-            modelGroup.traverse( updateNode );
-            backgroundGroup.traverse( updateNode );
-        }
+    if (color !== undefined) p.lightColor.set(color)
+    if (intensity !== undefined) p.lightIntensity = intensity
+    if (ambientColor !== undefined) p.ambientColor.set(ambientColor)
+    if (ambientIntensity !== undefined) p.ambientIntensity = ambientIntensity
 
-        boundingBox.getSize( boundingBoxSize );
-        boundingBoxLength = boundingBoxSize.length();
+    requestRender()
+  }
 
+  function setFog (color, near, far) {
+    var p = parameters
+
+    if (color !== undefined) p.fogColor.set(color)
+    if (near !== undefined) p.fogNear = near
+    if (far !== undefined) p.fogFar = far
+
+    requestRender()
+  }
+
+  function setBackground (color) {
+    var p = parameters
+
+    if (color) p.backgroundColor.set(color)
+
+    setFog(p.backgroundColor)
+    renderer.setClearColor(p.backgroundColor, 0)
+    renderer.domElement.style.backgroundColor = p.backgroundColor.getStyle()
+
+    requestRender()
+  }
+
+  function setSampling (level) {
+    if (level !== undefined) {
+      parameters.sampleLevel = level
+      sampleLevel = level
     }
 
-    function getImage(){
+    requestRender()
+  }
 
-        return new Promise( function( resolve ){
-            renderer.domElement.toBlob( resolve, &quot;image/png&quot; );
-        } );
+  function setCamera (type, fov) {
+    var p = parameters
 
+    if (type) p.cameraType = type
+    if (fov) p.cameraFov = fov
+
+    if (p.cameraType === &apos;orthographic&apos;) {
+      if (camera !== orthographicCamera) {
+        camera = orthographicCamera
+        camera.position.copy(perspectiveCamera.position)
+        camera.up.copy(perspectiveCamera.up)
+        updateZoom()
+      }
+    } else {  // p.cameraType === &quot;perspective&quot;
+      if (camera !== perspectiveCamera) {
+        camera = perspectiveCamera
+        camera.position.copy(orthographicCamera.position)
+        camera.up.copy(orthographicCamera.up)
+      }
     }
 
-    function makeImage( params ){
+    perspectiveCamera.fov = p.cameraFov
+    camera.updateProjectionMatrix()
 
-        return _makeImage( this, params );
+    requestRender()
+  }
 
+  function setClip (near, far, dist) {
+    var p = parameters
+
+    if (near !== undefined) p.clipNear = near
+    if (far !== undefined) p.clipFar = far
+    if (dist !== undefined) p.clipDist = dist
+
+    requestRender()
+  }
+
+  function setSize (_width, _height) {
+    width = _width || 1
+    height = _height || 1
+
+    perspectiveCamera.aspect = width / height
+    orthographicCamera.left = -width / 2
+    orthographicCamera.right = width / 2
+    orthographicCamera.top = height / 2
+    orthographicCamera.bottom = -height / 2
+    camera.updateProjectionMatrix()
+
+    var dpr = window.devicePixelRatio
+
+    renderer.setPixelRatio(dpr)
+    renderer.setSize(width, height)
+
+    var dprWidth = width * dpr
+    var dprHeight = height * dpr
+
+    pickingTarget.setSize(dprWidth, dprHeight)
+    sampleTarget.setSize(dprWidth, dprHeight)
+    holdTarget.setSize(dprWidth, dprHeight)
+
+    requestRender()
+  }
+
+  function handleResize () {
+    if (container === document.body) {
+      setSize(window.innerWidth, window.innerHeight)
+    } else {
+      var box = container.getBoundingClientRect()
+      setSize(box.width, box.height)
+    }
+  }
+
+  function updateInfo (reset) {
+    var memory = info.memory
+    var render = info.render
+
+    if (reset) {
+      memory.programs = 0
+      memory.geometries = 0
+      memory.textures = 0
+
+      render.calls = 0
+      render.vertices = 0
+      render.faces = 0
+      render.points = 0
+    } else {
+      var rInfo = renderer.info
+      var rMemory = rInfo.memory
+      var rRender = rInfo.render
+
+      memory.programs = rMemory.programs
+      memory.geometries = rMemory.geometries
+      memory.textures = rMemory.textures
+
+      render.calls += rRender.calls
+      render.vertices += rRender.vertices
+      render.faces += rRender.faces
+      render.points += rRender.points
+    }
+  }
+
+  function animate () {
+    signals.ticked.dispatch(stats)
+    var delta = window.performance.now() - stats.startTime
+
+    if (delta &gt; 500 &amp;&amp; !isStill &amp;&amp; sampleLevel &lt; 3 &amp;&amp; sampleLevel !== -1) {
+      var currentSampleLevel = sampleLevel
+      sampleLevel = 3
+      renderPending = true
+      render()
+      isStill = true
+      sampleLevel = currentSampleLevel
+      if (Debug) Log.log(&apos;rendered still frame&apos;)
     }
 
-    function setLight( color, intensity, ambientColor, ambientIntensity ){
+    window.requestAnimationFrame(animate)
+  }
 
-        var p = parameters;
+  function pick (x, y) {
+    x *= window.devicePixelRatio
+    y *= window.devicePixelRatio
 
-        if( color !== undefined ) p.lightColor.set( color );
-        if( intensity !== undefined ) p.lightIntensity = intensity;
-        if( ambientColor !== undefined ) p.ambientColor.set( ambientColor );
-        if( ambientIntensity !== undefined ) p.ambientIntensity = ambientIntensity;
+    let pid, instance, picker
+    const pixelBuffer = SupportsReadPixelsFloat ? pixelBufferFloat : pixelBufferUint
 
-        requestRender();
-
-    }
-
-    function setFog( color, near, far ){
-
-        var p = parameters;
-
-        if( color !== undefined ) p.fogColor.set( color );
-        if( near !== undefined ) p.fogNear = near;
-        if( far !== undefined ) p.fogFar = far;
-
-        requestRender();
-
-    }
-
-    function setBackground( color ){
-
-        var p = parameters;
-
-        if( color ) p.backgroundColor.set( color );
-
-        setFog( p.backgroundColor );
-        renderer.setClearColor( p.backgroundColor, 0 );
-        renderer.domElement.style.backgroundColor = p.backgroundColor.getStyle();
-
-        requestRender();
-
-    }
-
-    function setSampling( level ){
-
-        if( level !== undefined ){
-            parameters.sampleLevel = level;
-            sampleLevel = level;
-        }
-
-        requestRender();
-
-    }
-
-    function setCamera( type, fov ){
-
-        var p = parameters;
-
-        if( type ) p.cameraType = type;
-        if( fov ) p.cameraFov = fov;
-
-        if( p.cameraType === &quot;orthographic&quot; ){
-            if( camera !== orthographicCamera ){
-                camera = orthographicCamera;
-                camera.position.copy( perspectiveCamera.position );
-                camera.up.copy( perspectiveCamera.up );
-                updateZoom();
-            }
-        }else{  // p.cameraType === &quot;perspective&quot;
-            if( camera !== perspectiveCamera ){
-                camera = perspectiveCamera;
-                camera.position.copy( orthographicCamera.position );
-                camera.up.copy( orthographicCamera.up );
-            }
-        }
-
-        perspectiveCamera.fov = p.cameraFov;
-        camera.updateProjectionMatrix();
-
-        requestRender();
-
-    }
-
-    function setClip( near, far, dist ){
-
-        var p = parameters;
-
-        if( near !== undefined ) p.clipNear = near;
-        if( far !== undefined ) p.clipFar = far;
-        if( dist !== undefined ) p.clipDist = dist;
-
-        requestRender();
-
-    }
-
-    function setSize( _width, _height ){
-
-        width = _width || 1;
-        height = _height || 1;
-
-        perspectiveCamera.aspect = width / height;
-        orthographicCamera.left = -width / 2;
-        orthographicCamera.right = width / 2;
-        orthographicCamera.top = height / 2;
-        orthographicCamera.bottom = -height / 2;
-        camera.updateProjectionMatrix();
-
-        var dpr = window.devicePixelRatio;
-
-        renderer.setPixelRatio( dpr );
-        renderer.setSize( width, height );
-
-        var dprWidth = width * dpr;
-        var dprHeight = height * dpr;
-
-        pickingTarget.setSize( dprWidth, dprHeight );
-        sampleTarget.setSize( dprWidth, dprHeight );
-        holdTarget.setSize( dprWidth, dprHeight );
-
-        requestRender();
-
-    }
-
-    function handleResize(){
-
-        if( container === document.body ){
-            setSize( window.innerWidth, window.innerHeight );
-        }else{
-            var box = container.getBoundingClientRect();
-            setSize( box.width, box.height );
-        }
-
-    }
-
-    function updateInfo( reset ){
-
-        var memory = info.memory;
-        var render = info.render;
-
-        if( reset ){
-
-            memory.programs = 0;
-            memory.geometries = 0;
-            memory.textures = 0;
-
-            render.calls = 0;
-            render.vertices = 0;
-            render.faces = 0;
-            render.points = 0;
-
-        }else{
-
-            var rInfo = renderer.info;
-            var rMemory = rInfo.memory;
-            var rRender = rInfo.render;
-
-            memory.programs = rMemory.programs;
-            memory.geometries = rMemory.geometries;
-            memory.textures = rMemory.textures;
-
-            render.calls += rRender.calls;
-            render.vertices += rRender.vertices;
-            render.faces += rRender.faces;
-            render.points += rRender.points;
-
-        }
-
-    }
-
-    function animate(){
-
-        signals.ticked.dispatch( stats );
-        var delta = performance.now() - stats.startTime;
-
-        if( delta &gt; 500 &amp;&amp; !isStill &amp;&amp; sampleLevel &lt; 3 &amp;&amp; sampleLevel !== -1 ){
-            var currentSampleLevel = sampleLevel;
-            sampleLevel = 3;
-            renderPending = true;
-            render();
-            isStill = true;
-            sampleLevel = currentSampleLevel;
-            if( Debug ) Log.log( &quot;rendered still frame&quot; );
-        }
-
-        requestAnimationFrame( animate );
-
-    }
-
-    function pick( x, y ){
-
-        x *= window.devicePixelRatio;
-        y *= window.devicePixelRatio;
-
-        let pid, instance, picker;
-        const pixelBuffer = SupportsReadPixelsFloat ? pixelBufferFloat : pixelBufferUint;
-
-        render( true );
-        renderer.readRenderTargetPixels(
+    render(true)
+    renderer.readRenderTargetPixels(
             pickingTarget, x, y, 1, 1, pixelBuffer
-        );
+        )
 
-        if( SupportsReadPixelsFloat ){
-            pid =
-                ( ( Math.round( pixelBuffer[0] * 255 ) &lt;&lt; 16 ) &amp; 0xFF0000 ) |
-                ( ( Math.round( pixelBuffer[1] * 255 ) &lt;&lt; 8 ) &amp; 0x00FF00 ) |
-                ( ( Math.round( pixelBuffer[2] * 255 ) ) &amp; 0x0000FF );
-        }else{
-            pid =
-                ( pixelBuffer[0] &lt;&lt; 16 ) |
-                ( pixelBuffer[1] &lt;&lt; 8 ) |
-                ( pixelBuffer[2] );
-        }
+    if (SupportsReadPixelsFloat) {
+      pid =
+                ((Math.round(pixelBuffer[0] * 255) &lt;&lt; 16) &amp; 0xFF0000) |
+                ((Math.round(pixelBuffer[1] * 255) &lt;&lt; 8) &amp; 0x00FF00) |
+                ((Math.round(pixelBuffer[2] * 255)) &amp; 0x0000FF)
+    } else {
+      pid =
+                (pixelBuffer[0] &lt;&lt; 16) |
+                (pixelBuffer[1] &lt;&lt; 8) |
+                (pixelBuffer[2])
+    }
 
-        const oid = Math.round( pixelBuffer[ 3 ] );
-        const object = pickingGroup.getObjectById( oid );
-        if( object ){
-            instance = object.userData.instance;
-            picker = object.userData.buffer.picking;
-        }
+    const oid = Math.round(pixelBuffer[ 3 ])
+    const object = pickingGroup.getObjectById(oid)
+    if (object) {
+      instance = object.userData.instance
+      picker = object.userData.buffer.picking
+    }
 
         // if( Debug ){
         //     const rgba = Array.apply( [], pixelBuffer );
@@ -1112,138 +1095,124 @@ function Viewer( idOrElement ){
         //     Log.log( &quot;devicePixelRatio&quot;, window.devicePixelRatio );
         // }
 
-        return {
-            &quot;pid&quot;: pid,
-            &quot;instance&quot;: instance,
-            &quot;picker&quot;: picker
-        };
-
+    return {
+      &apos;pid&apos;: pid,
+      &apos;instance&apos;: instance,
+      &apos;picker&apos;: picker
     }
+  }
 
-    function requestRender(){
-
-        if( renderPending ){
+  function requestRender () {
+    if (renderPending) {
             // Log.info( &quot;there is still a &apos;render&apos; call pending&quot; );
-            return;
-        }
+      return
+    }
 
         // start gathering stats anew after inactivity
-        if( performance.now() - stats.startTime &gt; 22 ){
-            stats.begin();
-            isStill = false;
-        }
-
-        renderPending = true;
-
-        requestAnimationFrame( function requestRenderAnimation(){
-            render();
-            stats.update();
-        } );
-
+    if (window.performance.now() - stats.startTime &gt; 22) {
+      stats.begin()
+      isStill = false
     }
 
-    function updateZoom(){
+    renderPending = true
 
-        var fov = degToRad( perspectiveCamera.fov );
-        var _height = 2 * Math.tan( fov / 2 ) * -camera.position.z;
-        orthographicCamera.zoom = height / _height;
+    window.requestAnimationFrame(function requestRenderAnimation () {
+      render()
+      stats.update()
+    })
+  }
 
-    }
+  function updateZoom () {
+    var fov = degToRad(perspectiveCamera.fov)
+    var _height = 2 * Math.tan(fov / 2) * -camera.position.z
+    orthographicCamera.zoom = height / _height
+  }
 
-    function __updateClipping(){
-
-        var p = parameters;
+  function __updateClipping () {
+    var p = parameters
 
         // clipping
 
         // cDist = distVector.copy( camera.position )
         //             .sub( controls.target ).length();
-        cDist = distVector.copy( camera.position ).length();
+    cDist = distVector.copy(camera.position).length()
         // console.log( &quot;cDist&quot;, cDist )
-        if( !cDist ){
+    if (!cDist) {
             // recover from a broken (NaN) camera position
-            camera.position.set( 0, 0, p.cameraZ );
-            cDist = Math.abs( p.cameraZ );
-        }
+      camera.position.set(0, 0, p.cameraZ)
+      cDist = Math.abs(p.cameraZ)
+    }
 
-        bRadius = Math.max( 10, boundingBoxLength * 0.5 );
-        bRadius += boundingBox.getCenter( distVector ).length();
+    bRadius = Math.max(10, boundingBoxLength * 0.5)
+    bRadius += boundingBox.getCenter(distVector).length()
         // console.log( &quot;bRadius&quot;, bRadius )
-        if( bRadius === Infinity || bRadius === -Infinity || isNaN( bRadius ) ){
+    if (bRadius === Infinity || bRadius === -Infinity || isNaN(bRadius)) {
             // console.warn( &quot;something wrong with bRadius&quot; );
-            bRadius = 50;
-        }
+      bRadius = 50
+    }
 
-        var nearFactor = ( 50 - p.clipNear ) / 50;
-        var farFactor = - ( 50 - p.clipFar ) / 50;
-        camera.near = cDist - ( bRadius * nearFactor );
-        camera.far = cDist + ( bRadius * farFactor );
+    var nearFactor = (50 - p.clipNear) / 50
+    var farFactor = -(50 - p.clipFar) / 50
+    camera.near = cDist - (bRadius * nearFactor)
+    camera.far = cDist + (bRadius * farFactor)
 
         // fog
 
-        var fogNearFactor = ( 50 - p.fogNear ) / 50;
-        var fogFarFactor = - ( 50 - p.fogFar ) / 50;
-        var fog = scene.fog;
-        fog.color.set( p.fogColor );
-        fog.near = cDist - ( bRadius * fogNearFactor );
-        fog.far = cDist + ( bRadius * fogFarFactor );
+    var fogNearFactor = (50 - p.fogNear) / 50
+    var fogFarFactor = -(50 - p.fogFar) / 50
+    var fog = scene.fog
+    fog.color.set(p.fogColor)
+    fog.near = cDist - (bRadius * fogNearFactor)
+    fog.far = cDist + (bRadius * fogFarFactor)
 
-        if( camera.type === &quot;PerspectiveCamera&quot; ){
-            camera.near = Math.max( 0.1, p.clipDist, camera.near );
-            camera.far = Math.max( 1, camera.far );
-            fog.near = Math.max( 0.1, fog.near );
-            fog.far = Math.max( 1, fog.far );
-        }else if( camera.type === &quot;OrthographicCamera&quot; ){
-            if( p.clipNear === 0 &amp;&amp; p.clipDist &gt; 0 &amp;&amp; cDist + camera.zoom &gt; 2 * -p.clipDist ){
-                camera.near += camera.zoom + p.clipDist;
-            }
-        }
-
+    if (camera.type === &apos;PerspectiveCamera&apos;) {
+      camera.near = Math.max(0.1, p.clipDist, camera.near)
+      camera.far = Math.max(1, camera.far)
+      fog.near = Math.max(0.1, fog.near)
+      fog.far = Math.max(1, fog.far)
+    } else if (camera.type === &apos;OrthographicCamera&apos;) {
+      if (p.clipNear === 0 &amp;&amp; p.clipDist &gt; 0 &amp;&amp; cDist + camera.zoom &gt; 2 * -p.clipDist) {
+        camera.near += camera.zoom + p.clipDist
+      }
     }
+  }
 
-    function __updateCamera(){
+  function __updateCamera () {
+    camera.updateMatrix()
+    camera.updateMatrixWorld(true)
+    camera.matrixWorldInverse.getInverse(camera.matrixWorld)
+    camera.updateProjectionMatrix()
 
-        camera.updateMatrix();
-        camera.updateMatrixWorld( true );
-        camera.matrixWorldInverse.getInverse( camera.matrixWorld );
-        camera.updateProjectionMatrix();
+    updateMaterialUniforms(scene, camera, renderer, cDist, bRadius)
+    sortProjectedPosition(scene, camera)
+  }
 
-        updateMaterialUniforms( scene, camera, renderer, cDist, bRadius );
-        sortProjectedPosition( scene, camera );
+  function __setVisibility (model, picking, background, helper) {
+    modelGroup.visible = model
+    pickingGroup.visible = picking
+    backgroundGroup.visible = background
+    helperGroup.visible = helper
+  }
 
-    }
-
-    function __setVisibility( model, picking, background, helper ){
-
-        modelGroup.visible = model;
-        pickingGroup.visible = picking;
-        backgroundGroup.visible = background;
-        helperGroup.visible = helper;
-
-    }
-
-    function __updateLights(){
-
+  function __updateLights () {
         // distVector.copy( camera.position ).sub( controls.target )
         //     .setLength( boundingBoxLength * 100 );
-        distVector.copy( camera.position ).setLength( boundingBoxLength * 100 );
+    distVector.copy(camera.position).setLength(boundingBoxLength * 100)
 
-        pointLight.position.copy( camera.position ).add( distVector );
-        pointLight.color.set( parameters.lightColor );
-        pointLight.intensity = parameters.lightIntensity;
+    pointLight.position.copy(camera.position).add(distVector)
+    pointLight.color.set(parameters.lightColor)
+    pointLight.intensity = parameters.lightIntensity
 
-        ambientLight.color.set( parameters.ambientColor );
-        ambientLight.intensity = parameters.ambientIntensity;
+    ambientLight.color.set(parameters.ambientColor)
+    ambientLight.intensity = parameters.ambientIntensity
+  }
 
-    }
-
-    function __renderPickingGroup(){
-
-        renderer.clearTarget( pickingTarget );
-        __setVisibility( false, true, false, false );
-        renderer.render( scene, camera, pickingTarget );
-        updateInfo();
-        renderer.setRenderTarget( null );  // back to standard render target
+  function __renderPickingGroup () {
+    renderer.clearTarget(pickingTarget)
+    __setVisibility(false, true, false, false)
+    renderer.render(scene, camera, pickingTarget)
+    updateInfo()
+    renderer.setRenderTarget(null)  // back to standard render target
 
         // if( Debug ){
         //     __setVisibility( false, true, false, true );
@@ -1251,34 +1220,30 @@ function Viewer( idOrElement ){
         //     renderer.clear();
         //     renderer.render( scene, camera );
         // }
+  }
 
+  function __renderModelGroup (renderTarget) {
+    if (renderTarget) {
+      renderer.clearTarget(renderTarget)
+    } else {
+      renderer.clear()
     }
 
-    function __renderModelGroup( renderTarget ){
-
-        if( renderTarget ){
-            renderer.clearTarget( renderTarget );
-        }else{
-            renderer.clear();
-        }
-
-        __setVisibility( false, false, true, false );
-        renderer.render( scene, camera, renderTarget );
-        if( renderTarget ){
-            renderer.clearTarget( renderTarget, false, true, false );
-        }else{
-            renderer.clearDepth();
-        }
-        updateInfo();
-
-        __setVisibility( true, false, false, Debug );
-        renderer.render( scene, camera, renderTarget );
-        updateInfo();
-
+    __setVisibility(false, false, true, false)
+    renderer.render(scene, camera, renderTarget)
+    if (renderTarget) {
+      renderer.clearTarget(renderTarget, false, true, false)
+    } else {
+      renderer.clearDepth()
     }
+    updateInfo()
 
-    function __renderSuperSample(){
+    __setVisibility(true, false, false, Debug)
+    renderer.render(scene, camera, renderTarget)
+    updateInfo()
+  }
 
+  function __renderSuperSample () {
         // based on the Supersample Anti-Aliasing Render Pass
         // contributed to three.js by bhouston / http://clara.io/
         //
@@ -1286,151 +1251,143 @@ function Viewer( idOrElement ){
         // each sample with camera jitter and accumulates the results.
         // References: https://en.wikipedia.org/wiki/Supersampling
 
-        var offsetList = JitterVectors[ Math.max( 0, Math.min( sampleLevel, 5 ) ) ];
+    var offsetList = JitterVectors[ Math.max(0, Math.min(sampleLevel, 5)) ]
 
-        var baseSampleWeight = 1.0 / offsetList.length;
-        var roundingRange = 1 / 32;
+    var baseSampleWeight = 1.0 / offsetList.length
+    var roundingRange = 1 / 32
 
-        compositeUniforms.tForeground.value = sampleTarget.texture;
+    compositeUniforms.tForeground.value = sampleTarget.texture
 
-        var _width = sampleTarget.width;
-        var _height = sampleTarget.height;
+    var _width = sampleTarget.width
+    var _height = sampleTarget.height
 
         // render the scene multiple times, each slightly jitter offset
         // from the last and accumulate the results.
-        for ( var i = 0; i &lt; offsetList.length; ++i ){
-
-            var offset = offsetList[ i ];
-            camera.setViewOffset(
+    for (var i = 0; i &lt; offsetList.length; ++i) {
+      var offset = offsetList[ i ]
+      camera.setViewOffset(
                 _width, _height, offset[ 0 ], offset[ 1 ], _width, _height
-            );
-            __updateCamera();
+            )
+      __updateCamera()
 
-            var sampleWeight = baseSampleWeight;
+      var sampleWeight = baseSampleWeight
             // the theory is that equal weights for each sample lead to an
             // accumulation of rounding errors.
             // The following equation varies the sampleWeight per sample
             // so that it is uniformly distributed across a range of values
             // whose rounding errors cancel each other out.
-            var uniformCenteredDistribution = ( -0.5 + ( i + 0.5 ) / offsetList.length );
-            sampleWeight += roundingRange * uniformCenteredDistribution;
-            compositeUniforms.scale.value = sampleWeight;
+      var uniformCenteredDistribution = (-0.5 + (i + 0.5) / offsetList.length)
+      sampleWeight += roundingRange * uniformCenteredDistribution
+      compositeUniforms.scale.value = sampleWeight
 
-            __renderModelGroup( sampleTarget );
-            renderer.render(
-                compositeScene, compositeCamera, holdTarget, ( i === 0 )
-            );
-
-        }
-
-        compositeUniforms.scale.value = 1.0;
-        compositeUniforms.tForeground.value = holdTarget.texture;
-
-        renderer.render( compositeScene, compositeCamera, null, true );
-
-        camera.view = null;
-
+      __renderModelGroup(sampleTarget)
+      renderer.render(
+                compositeScene, compositeCamera, holdTarget, (i === 0)
+            )
     }
 
-    function render( picking ){
+    compositeUniforms.scale.value = 1.0
+    compositeUniforms.tForeground.value = holdTarget.texture
 
-        if( rendering ){
-            Log.warn( &quot;tried to call &apos;render&apos; from within &apos;render&apos;&quot; );
-            return;
-        }
+    renderer.render(compositeScene, compositeCamera, null, true)
+
+    camera.view = null
+  }
+
+  function render (picking) {
+    if (rendering) {
+      Log.warn(&quot;tried to call &apos;render&apos; from within &apos;render&apos;&quot;)
+      return
+    }
 
         // Log.time( &quot;Viewer.render&quot; );
 
-        rendering = true;
+    rendering = true
 
-        __updateClipping();
-        __updateCamera();
-        __updateLights();
+    __updateClipping()
+    __updateCamera()
+    __updateLights()
 
         // render
 
-        updateInfo( true );
+    updateInfo(true)
 
-        if( picking ){
-            if( !lastRenderedPicking ) __renderPickingGroup();
-        }else if( sampleLevel &gt; 0 ){
-            __renderSuperSample();
-        }else{
-            __renderModelGroup();
-        }
-        lastRenderedPicking = picking;
+    if (picking) {
+      if (!lastRenderedPicking) __renderPickingGroup()
+    } else if (sampleLevel &gt; 0) {
+      __renderSuperSample()
+    } else {
+      __renderModelGroup()
+    }
+    lastRenderedPicking = picking
 
-        rendering = false;
-        renderPending = false;
+    rendering = false
+    renderPending = false
 
         // Log.timeEnd( &quot;Viewer.render&quot; );
         // Log.log( info.memory, info.render );
+  }
 
-    }
-
-    function clear(){
-
-        Log.log( &quot;scene cleared&quot; );
-        scene.remove( rotationGroup );
-        initScene();
-        renderer.clear();
-
-    }
+  function clear () {
+    Log.log(&apos;scene cleared&apos;)
+    scene.remove(rotationGroup)
+    initScene()
+    renderer.clear()
+  }
 
     // API
 
-    this.container = container;
-    this.stats = stats;
-    this.signals = signals;
+  this.container = container
+  this.stats = stats
+  this.signals = signals
 
-    this.rotationGroup = rotationGroup;
-    this.translationGroup = translationGroup;
+  this.rotationGroup = rotationGroup
+  this.translationGroup = translationGroup
 
-    this.add = add;
-    this.remove = remove;
-    this.clear = clear;
+  this.add = add
+  this.remove = remove
+  this.clear = clear
 
-    this.getImage = getImage;
-    this.makeImage = makeImage;
+  this.getPickingPixels = getPickingPixels
+  this.getImage = getImage
+  this.makeImage = makeImage
 
-    this.setLight = setLight;
-    this.setFog = setFog;
-    this.setBackground = setBackground;
-    this.setSampling = setSampling;
-    this.setCamera = setCamera;
-    this.setClip = setClip;
-    this.setSize = setSize;
-    this.handleResize = handleResize;
+  this.setLight = setLight
+  this.setFog = setFog
+  this.setBackground = setBackground
+  this.setSampling = setSampling
+  this.setCamera = setCamera
+  this.setClip = setClip
+  this.setSize = setSize
+  this.handleResize = handleResize
 
-    this.pick = pick;
-    this.requestRender = requestRender;
-    this.render = render;
-    this.animate = animate;
-    this.updateZoom = updateZoom;
-    this.updateHelper = updateHelper;
+  this.pick = pick
+  this.requestRender = requestRender
+  this.render = render
+  this.animate = animate
+  this.updateZoom = updateZoom
+  this.updateHelper = updateHelper
 
-    this.renderer = renderer;
-    this.scene = scene;
-    this.perspectiveCamera = perspectiveCamera;
-    this.boundingBox = boundingBox;
-    this.updateBoundingBox = function(){
-        updateBoundingBox();
-        if( Debug ) updateHelper();
-    }
+  this.renderer = renderer
+  this.scene = scene
+  this.perspectiveCamera = perspectiveCamera
+  this.boundingBox = boundingBox
+  this.updateBoundingBox = function () {
+    updateBoundingBox()
+    if (Debug) updateHelper()
+  }
 
-    Object.defineProperties( this, {
-        camera: { get: function(){ return camera; } },
-        width: { get: function(){ return width; } },
-        height: { get: function(){ return height; } },
-        sampleLevel: { get: function(){ return sampleLevel; } }
-    } );
-
+  Object.defineProperties(this, {
+    camera: { get: function () { return camera } },
+    width: { get: function () { return width } },
+    height: { get: function () { return height } },
+    sampleLevel: { get: function () { return sampleLevel } }
+  })
 }
 
-Viewer.prototype.constructor = Viewer;
+Viewer.prototype.constructor = Viewer
 
-
-export default Viewer;
+export default Viewer
 </code></pre>
 
 </div>

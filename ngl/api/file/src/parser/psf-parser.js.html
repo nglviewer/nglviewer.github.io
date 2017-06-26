@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,172 +255,143 @@
  * @private
  */
 
-
-import { Debug, Log, ParserRegistry } from &quot;../globals.js&quot;;
-import StructureParser from &quot;./structure-parser.js&quot;;
+import { Debug, Log, ParserRegistry } from &apos;../globals.js&apos;
+import StructureParser from &apos;./structure-parser.js&apos;
 import {
     assignResidueTypeBonds, calculateChainnames
-} from &quot;../structure/structure-utils.js&quot;;
+} from &apos;../structure/structure-utils.js&apos;
 
+const TitleMode = 1
+const AtomMode = 2
+const BondMode = 3
+const AngleMode = 4
+const DihedralMode = 5
+const ImproperMode = 6
 
-const TitleMode = 1;
-const AtomMode = 2;
-const BondMode = 3;
-const AngleMode = 4;
-const DihedralMode = 5;
-const ImproperMode = 6;
+const reWhitespace = /\s+/
+const reTitle = /(^\*|REMARK)*/
 
+class PsfParser extends StructureParser {
+  get type () { return &apos;psf&apos; }
 
-const reWhitespace = /\s+/;
-const reTitle = /(^\*|REMARK)*/;
+  _parse () {
+    // http://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html
 
+    if (Debug) Log.time(&apos;PsfParser._parse &apos; + this.name)
 
-class PsfParser extends StructureParser{
+    const s = this.structure
+    const sb = this.structureBuilder
 
-    get type (){ return &quot;psf&quot;; }
+    //
 
-    _parse(){
+    const atomMap = s.atomMap
+    const atomStore = s.atomStore
 
-        // http://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html
+    const title = []
 
-        if( Debug ) Log.time( &quot;PsfParser._parse &quot; + this.name );
+    let mode
+    let idx = 0
+    let bondIdx = 0
+    let bAtomIndex1, bAtomIndex2, bBondOrder
 
-        const s = this.structure;
-        const sb = this.structureBuilder;
+    function _parseChunkOfLines (_i, _n, lines) {
+      for (let i = _i; i &lt; _n; ++i) {
+        const line = lines[ i ].trim()
 
-        //
-
-        const atomMap = s.atomMap;
-        const atomStore = s.atomStore;
-
-        const title = [];
-
-        let mode, idx = 0, bondIdx = 0;
-        let bAtomIndex1, bAtomIndex2, bBondOrder;
-
-        function _parseChunkOfLines( _i, _n, lines ){
-
-            for( let i = _i; i &lt; _n; ++i ){
-
-                const line = lines[ i ].trim();
-
-                if( !line ){
-                    mode = undefined;
-                    continue;
-                }
-
-                if( mode === AtomMode ){
-
-                    const ls = line.split( reWhitespace );
-
-                    const serial = parseInt( ls[ 0 ] );
-                    // const segid = ls[ 1 ];
-                    const resno = parseInt( ls[ 2 ] );
-                    const resname = ls[ 3 ];
-                    const atomname = ls[ 4 ];
-
-                    atomStore.growIfFull();
-                    atomStore.atomTypeId[ idx ] = atomMap.add( atomname );
-
-                    atomStore.serial[ idx ] = serial;
-
-                    sb.addAtom( 0, &quot;&quot;, &quot;&quot;, resname, resno, 1 );
-
-                    idx += 1;
-
-                }else if( mode === BondMode ){
-
-                    const ls = line.split( reWhitespace );
-
-                    for( let j = 0, m = ls.length; j &lt; m; j += 2 ){
-                        bAtomIndex1[ bondIdx ] = parseInt( ls[ j ] ) - 1;
-                        bAtomIndex2[ bondIdx ] = parseInt( ls[ j + 1 ] ) - 1;
-                        bBondOrder[ bondIdx ] = 1;
-                        bondIdx += 1;
-                    }
-
-                }else if( mode === TitleMode ){
-
-                    title.push( line.replace( reTitle, &quot;&quot; ).trim() );
-
-                }else if( mode === AngleMode ){
-
-                    // not currently used
-
-                }else if( mode === DihedralMode ){
-
-                    // not currently used
-
-                }else if( mode === ImproperMode ){
-
-                    // not currently used
-
-                }else if( line.includes( &quot;!NATOM&quot; ) ){
-
-                    mode = AtomMode;
-
-                    const numAtoms = parseInt( line.split( reWhitespace )[ 0 ] )
-                    atomStore.resize( numAtoms );
-
-                }else if( line.includes( &quot;!NBOND&quot; ) ){
-
-                    mode = BondMode;
-
-                    const numBonds = parseInt( line.split( reWhitespace )[ 0 ] );
-                    bAtomIndex1 = new Uint32Array( numBonds );
-                    bAtomIndex2 = new Uint32Array( numBonds );
-                    bBondOrder = new Uint8Array( numBonds );
-
-                }else if( line.includes( &quot;!NTITLE&quot; ) ){
-
-                    mode = TitleMode;
-
-                }else if( line.includes( &quot;!NTHETA&quot; ) ){
-
-                    mode = AngleMode;
-
-                }else if( line.includes( &quot;!NPHI&quot; ) ){
-
-                    mode = DihedralMode;
-
-                }else if( line.includes( &quot;!NIMPHI&quot; ) ){
-
-                    mode = ImproperMode;
-
-                }
-
-            }
-
+        if (!line) {
+          mode = undefined
+          continue
         }
 
-        this.streamer.eachChunkOfLines( function( lines/*, chunkNo, chunkCount*/ ){
-            _parseChunkOfLines( 0, lines.length, lines );
-        } );
+        if (mode === AtomMode) {
+          const ls = line.split(reWhitespace)
 
-        s.title = title.join( &quot; &quot; );
+          const serial = parseInt(ls[ 0 ])
+                    // const segid = ls[ 1 ];
+          const resno = parseInt(ls[ 2 ])
+          const resname = ls[ 3 ]
+          const atomname = ls[ 4 ]
 
-        s.bondStore.length = bBondOrder.length;
-        s.bondStore.count = bondIdx;
-        s.bondStore.atomIndex1 = bAtomIndex1;
-        s.bondStore.atomIndex2 = bAtomIndex2;
-        s.bondStore.bondOrder = bBondOrder;
+          atomStore.growIfFull()
+          atomStore.atomTypeId[ idx ] = atomMap.add(atomname)
 
-        sb.finalize();
-        s.finalizeAtoms();
-        calculateChainnames( s );
-        s.finalizeBonds();
-        assignResidueTypeBonds( s );
+          atomStore.serial[ idx ] = serial
 
-        if( Debug ) Log.timeEnd( &quot;PsfParser._parse &quot; + this.name );
+          sb.addAtom(0, &apos;&apos;, &apos;&apos;, resname, resno, 1)
 
+          idx += 1
+        } else if (mode === BondMode) {
+          const ls = line.split(reWhitespace)
+
+          for (let j = 0, m = ls.length; j &lt; m; j += 2) {
+            bAtomIndex1[ bondIdx ] = parseInt(ls[ j ]) - 1
+            bAtomIndex2[ bondIdx ] = parseInt(ls[ j + 1 ]) - 1
+            bBondOrder[ bondIdx ] = 1
+            bondIdx += 1
+          }
+        } else if (mode === TitleMode) {
+          title.push(line.replace(reTitle, &apos;&apos;).trim())
+        } else if (mode === AngleMode) {
+
+          // not currently used
+
+        } else if (mode === DihedralMode) {
+
+          // not currently used
+
+        } else if (mode === ImproperMode) {
+
+          // not currently used
+
+        } else if (line.includes(&apos;!NATOM&apos;)) {
+          mode = AtomMode
+
+          const numAtoms = parseInt(line.split(reWhitespace)[ 0 ])
+          atomStore.resize(numAtoms)
+        } else if (line.includes(&apos;!NBOND&apos;)) {
+          mode = BondMode
+
+          const numBonds = parseInt(line.split(reWhitespace)[ 0 ])
+          bAtomIndex1 = new Uint32Array(numBonds)
+          bAtomIndex2 = new Uint32Array(numBonds)
+          bBondOrder = new Uint8Array(numBonds)
+        } else if (line.includes(&apos;!NTITLE&apos;)) {
+          mode = TitleMode
+        } else if (line.includes(&apos;!NTHETA&apos;)) {
+          mode = AngleMode
+        } else if (line.includes(&apos;!NPHI&apos;)) {
+          mode = DihedralMode
+        } else if (line.includes(&apos;!NIMPHI&apos;)) {
+          mode = ImproperMode
+        }
+      }
     }
 
+    this.streamer.eachChunkOfLines(function (lines/*, chunkNo, chunkCount */) {
+      _parseChunkOfLines(0, lines.length, lines)
+    })
+
+    s.title = title.join(&apos; &apos;)
+
+    s.bondStore.length = bBondOrder.length
+    s.bondStore.count = bondIdx
+    s.bondStore.atomIndex1 = bAtomIndex1
+    s.bondStore.atomIndex2 = bAtomIndex2
+    s.bondStore.bondOrder = bBondOrder
+
+    sb.finalize()
+    s.finalizeAtoms()
+    calculateChainnames(s)
+    s.finalizeBonds()
+    assignResidueTypeBonds(s)
+
+    if (Debug) Log.timeEnd(&apos;PsfParser._parse &apos; + this.name)
+  }
 }
 
-ParserRegistry.add( &quot;psf&quot;, PsfParser );
+ParserRegistry.add(&apos;psf&apos;, PsfParser)
 
-
-export default PsfParser;
+export default PsfParser
 </code></pre>
 
 </div>

@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,330 +255,302 @@
  * @private
  */
 
+import { Vector3, Color } from &apos;../../lib/three.es6.js&apos;
 
-import { Vector3, Color } from &quot;../../lib/three.es6.js&quot;;
+import { Debug, Log } from &apos;../globals.js&apos;
+import { defaults } from &apos;../utils.js&apos;
+import { ClashPicker } from &apos;../utils/picker.js&apos;
+import { uniformArray3 } from &apos;../math/array-utils.js&apos;
+import { guessElement } from &apos;../structure/structure-utils.js&apos;
 
-import { Debug, Log } from &quot;../globals.js&quot;;
-import { defaults } from &quot;../utils.js&quot;;
-import { ClashPicker } from &quot;../utils/picker.js&quot;;
-import { uniformArray3 } from &quot;../math/array-utils.js&quot;;
-import { guessElement } from &quot;../structure/structure-utils.js&quot;;
-
-
-function getSele( a, atomname, useAltcode ){
-    const icode = a.icode.value;
-    const chain = a.chain.value;
-    const altcode = a.altcode.value;
-    let sele = a.resnum.value;
-    if( icode.trim() ) sele += &quot;^&quot; + icode;
-    if( chain.trim() ) sele += &quot;:&quot; + chain;
-    if( atomname ) sele += &quot;.&quot; + atomname;
-    if( useAltcode &amp;&amp; altcode.trim() ) sele += &quot;%&quot; + altcode;
-    sele += &quot;/&quot; + ( parseInt( a.model.value ) - 1 );
-    return sele;
+function getSele (a, atomname, useAltcode) {
+  const icode = a.icode.value
+  const chain = a.chain.value
+  const altcode = a.altcode.value
+  let sele = a.resnum.value
+  if (icode.trim()) sele += &apos;^&apos; + icode
+  if (chain.trim()) sele += &apos;:&apos; + chain
+  if (atomname) sele += &apos;.&apos; + atomname
+  if (useAltcode &amp;&amp; altcode.trim()) sele += &apos;%&apos; + altcode
+  sele += &apos;/&apos; + (parseInt(a.model.value) - 1)
+  return sele
 }
 
-function setBitDict( dict, key, bit ){
-    if( dict[ key ] === undefined ){
-        dict[ key ] = bit;
-    }else{
-        dict[ key ] |= bit;
+function setBitDict (dict, key, bit) {
+  if (dict[ key ] === undefined) {
+    dict[ key ] = bit
+  } else {
+    dict[ key ] |= bit
+  }
+}
+
+function hasAttrValue (attr, value) {
+  return attr !== undefined &amp;&amp; attr.value === value
+}
+
+function getAtomSele (ap) {
+  const icode = ap.inscode
+  const chain = ap.chainname
+  const atomname = ap.atomname
+  const altcode = ap.altloc
+  let sele = ap.resno
+  if (icode) sele += &apos;^&apos; + icode
+  if (chain) sele += &apos;:&apos; + chain
+  if (atomname) sele += &apos;.&apos; + atomname
+  if (altcode) sele += &apos;%&apos; + altcode
+  sele += &apos;/&apos; + ap.modelIndex
+  return sele
+}
+
+function getProblemCount (clashDict, g, ga) {
+  let geoProblemCount = 0
+
+  const clashes = g.getElementsByTagName(&apos;clash&apos;)
+  for (let j = 0, jl = clashes.length; j &lt; jl; ++j) {
+    if (clashDict[ clashes[ j ].attributes.cid.value ]) {
+      geoProblemCount += 1
+      break
     }
+  }
+
+  const angleOutliers = g.getElementsByTagName(&apos;angle-outlier&apos;)
+  if (angleOutliers.length &gt; 0) {
+    geoProblemCount += 1
+  }
+
+  const bondOutliers = g.getElementsByTagName(&apos;bond-outlier&apos;)
+  if (bondOutliers.length &gt; 0) {
+    geoProblemCount += 1
+  }
+
+  const planeOutliers = g.getElementsByTagName(&apos;plane-outlier&apos;)
+  if (planeOutliers.length &gt; 0) {
+    geoProblemCount += 1
+  }
+
+  if (hasAttrValue(ga.rota, &apos;OUTLIER&apos;)) {
+    geoProblemCount += 1
+  }
+
+  if (hasAttrValue(ga.rama, &apos;OUTLIER&apos;)) {
+    geoProblemCount += 1
+  }
+
+  if (hasAttrValue(ga.RNApucker, &apos;outlier&apos;)) {
+    geoProblemCount += 1
+  }
+
+  return geoProblemCount
 }
 
-function hasAttrValue( attr, value ){
-    return attr !== undefined &amp;&amp; attr.value === value;
-}
+class Validation {
+  constructor (name, path) {
+    this.name = name
+    this.path = path
 
-function getAtomSele( ap ){
-    const icode = ap.inscode;
-    const chain = ap.chainname;
-    const atomname = ap.atomname;
-    const altcode = ap.altloc;
-    let sele = ap.resno;
-    if( icode ) sele += &quot;^&quot; + icode;
-    if( chain ) sele += &quot;:&quot; + chain;
-    if( atomname ) sele += &quot;.&quot; + atomname;
-    if( altcode ) sele += &quot;%&quot; + altcode;
-    sele += &quot;/&quot; + ap.modelIndex;
-    return sele;
-}
+    this.rsrzDict = {}
+    this.rsccDict = {}
+    this.clashDict = {}
+    this.clashArray = []
+    this.geoDict = {}
+    this.geoAtomDict = {}
+    this.atomDict = {}
+    this.clashSele = &apos;NONE&apos;
+  }
 
-function getProblemCount( clashDict, g, ga ){
-    let geoProblemCount = 0;
+  get type () { return &apos;validation&apos; }
 
-    const clashes = g.getElementsByTagName( &quot;clash&quot; );
-    for( let j = 0, jl = clashes.length; j &lt; jl; ++j ){
-        if( clashDict[ clashes[ j ].attributes.cid.value ] ){
-            geoProblemCount += 1;
-            break;
+  fromXml (xml) {
+    if (Debug) Log.time(&apos;Validation.fromXml&apos;)
+
+    const rsrzDict = this.rsrzDict
+    const rsccDict = this.rsccDict
+    const clashDict = this.clashDict
+    const clashArray = this.clashArray
+    const geoDict = this.geoDict
+    const geoAtomDict = this.geoAtomDict
+    const atomDict = this.atomDict
+
+    const groups = xml.getElementsByTagName(&apos;ModelledSubgroup&apos;)
+
+    const _clashDict = {}
+    const clashList = []
+
+    if (Debug) Log.time(&apos;Validation.fromXml#clashDict&apos;)
+
+    for (let i = 0, il = groups.length; i &lt; il; ++i) {
+      const g = groups[ i ]
+      const ga = g.attributes
+
+      const sele = getSele(ga)
+      if (ga.rsrz !== undefined) {
+        rsrzDict[ sele ] = parseFloat(ga.rsrz.value)
+      }
+      if (ga.rscc !== undefined) {
+        rsccDict[ sele ] = parseFloat(ga.rscc.value)
+      }
+      ga.sele = sele
+
+      const clashes = g.getElementsByTagName(&apos;clash&apos;)
+
+      for (let j = 0, jl = clashes.length; j &lt; jl; ++j) {
+        const ca = clashes[ j ].attributes
+        const atom = ca.atom.value
+
+        if (guessElement(atom) !== &apos;H&apos;) {
+          const cid = ca.cid.value
+          const atomSele = getSele(ga, atom, true)
+          atomDict[ atomSele ] = true
+
+          if (_clashDict[ cid ] === undefined) {
+            _clashDict[ cid ] = {
+              sele1: atomSele,
+              res1: sele
+            }
+          } else {
+            const c = _clashDict[ cid ]
+            if (c.res1 !== sele) {
+              c.sele2 = atomSele
+              c.res2 = sele
+              clashList.push(c.res1, sele)
+              clashDict[ cid ] = c
+              clashArray.push(c)
+            }
+          }
         }
+      }
     }
 
-    const angleOutliers = g.getElementsByTagName( &quot;angle-outlier&quot; );
-    if( angleOutliers.length &gt; 0 ){
-        geoProblemCount += 1;
+    if (Debug) Log.timeEnd(&apos;Validation.fromXml#clashDict&apos;)
+
+    for (let i = 0, il = groups.length; i &lt; il; ++i) {
+      const g = groups[ i ]
+      const ga = g.attributes
+
+      const sele = ga.sele
+      const isPolymer = ga.seq.value !== &apos;.&apos;
+
+      if (isPolymer) {
+        const geoProblemCount = getProblemCount(clashDict, g, ga)
+        if (geoProblemCount &gt; 0) {
+          geoDict[ sele ] = geoProblemCount
+        }
+      } else {
+        const clashes = g.getElementsByTagName(&apos;clash&apos;)
+        const mogBondOutliers = g.getElementsByTagName(&apos;mog-bond-outlier&apos;)
+        const mogAngleOutliers = g.getElementsByTagName(&apos;mog-angle-outlier&apos;)
+
+        if (mogBondOutliers.length &gt; 0 || mogAngleOutliers.length &gt; 0 || clashes.length &gt; 0) {
+          const atomDict = {}
+          geoAtomDict[ sele ] = atomDict
+
+          for (let j = 0, jl = clashes.length; j &lt; jl; ++j) {
+            const ca = clashes[ j ].attributes
+            if (clashDict[ ca.cid.value ]) {
+              setBitDict(atomDict, ca.atom.value, 1)
+            }
+          }
+
+          for (let j = 0, jl = mogBondOutliers.length; j &lt; jl; ++j) {
+            const mbo = mogBondOutliers[ j ].attributes
+            mbo.atoms.value.split(&apos;,&apos;).forEach(function (atomname) {
+              setBitDict(atomDict, atomname, 2)
+            })
+          }
+
+          for (let j = 0, jl = mogAngleOutliers.length; j &lt; jl; ++j) {
+            const mao = mogAngleOutliers[ j ].attributes
+            mao.atoms.value.split(&apos;,&apos;).forEach(function (atomname) {
+              setBitDict(atomDict, atomname, 4)
+            })
+          }
+        }
+      }
     }
 
-    const bondOutliers = g.getElementsByTagName( &quot;bond-outlier&quot; );
-    if( bondOutliers.length &gt; 0 ){
-        geoProblemCount += 1;
-    }
+    this.clashSele = clashList.length ? clashList.join(&apos; OR &apos;) : &apos;NONE&apos;
 
-    const planeOutliers = g.getElementsByTagName( &quot;plane-outlier&quot; );
-    if( planeOutliers.length &gt; 0 ){
-        geoProblemCount += 1;
-    }
+    if (Debug) Log.timeEnd(&apos;Validation.fromXml&apos;)
+  }
 
-    if( hasAttrValue( ga.rota, &quot;OUTLIER&quot; ) ){
-        geoProblemCount += 1;
-    }
+  getClashData (params) {
+    if (Debug) Log.time(&apos;Validation.getClashData&apos;)
 
-    if( hasAttrValue( ga.rama, &quot;OUTLIER&quot; ) ){
-        geoProblemCount += 1;
-    }
+    const p = params || {}
 
-    if( hasAttrValue( ga.RNApucker, &quot;outlier&quot; ) ){
-        geoProblemCount += 1;
-    }
+    const s = p.structure
+    const atomSet = s.atomSet
+    const c = new Color(defaults(p.color, &apos;#f0027f&apos;))
 
-    return geoProblemCount;
+    const ap1 = s.getAtomProxy()
+    const ap2 = s.getAtomProxy()
+    const vDir = new Vector3()
+    const vPos1 = new Vector3()
+    const vPos2 = new Vector3()
+
+    const clashArray = this.clashArray
+    const n = clashArray.length
+
+    const position1 = new Float32Array(n * 3)
+    const position2 = new Float32Array(n * 3)
+    const color = uniformArray3(n, c.r, c.g, c.b)
+    const radius = new Float32Array(n)
+    const picking = new Float32Array(n)
+
+    if (Debug) Log.time(&apos;Validation.getClashData#atomDict&apos;)
+
+    const atomDict = this.atomDict
+
+    s.eachAtom(function (ap) {
+      const sele = getAtomSele(ap)
+      if (atomDict[ sele ] === true) {
+        atomDict[ sele ] = ap.index
+      }
+    })
+
+    if (Debug) Log.timeEnd(&apos;Validation.getClashData#atomDict&apos;)
+
+    let i = 0
+
+    clashArray.forEach(function (c, idx) {
+      ap1.index = atomDict[ c.sele1 ]
+      ap2.index = atomDict[ c.sele2 ]
+
+      if (ap1.index === undefined || ap2.index === undefined ||
+                !atomSet.isSet(ap1.index, ap2.index)) return
+
+      vDir.subVectors(ap2, ap1).setLength(ap1.vdw)
+      vPos1.copy(ap1).add(vDir)
+
+      vDir.subVectors(ap1, ap2).setLength(ap2.vdw)
+      vPos2.copy(ap2).add(vDir)
+
+      const dHalf = ap1.distanceTo(ap2) / 2
+      const r1 = Math.sqrt(ap1.vdw * ap1.vdw - dHalf * dHalf)
+      const r2 = Math.sqrt(ap2.vdw * ap2.vdw - dHalf * dHalf)
+
+      vPos1.toArray(position1, i * 3)
+      vPos2.toArray(position2, i * 3)
+      radius[ i ] = (r1 + r2) / 2
+      picking[ i ] = idx
+
+      ++i
+    })
+
+    if (Debug) Log.timeEnd(&apos;Validation.getClashData&apos;)
+
+    return {
+      position1: position1.subarray(0, i * 3),
+      position2: position2.subarray(0, i * 3),
+      color: color.subarray(0, i * 3),
+      color2: color.subarray(0, i * 3),
+      radius: radius.subarray(0, i),
+      picking: new ClashPicker(picking.subarray(0, i), this, s)
+    }
+  }
 }
 
-
-class Validation{
-
-    constructor( name, path ){
-
-        this.name = name;
-        this.path = path;
-
-        this.rsrzDict = {};
-        this.rsccDict = {};
-        this.clashDict = {};
-        this.clashArray = [];
-        this.geoDict = {};
-        this.geoAtomDict = {};
-        this.atomDict = {};
-        this.clashSele = &quot;NONE&quot;;
-
-    }
-
-    get type (){ return &quot;validation&quot;; }
-
-    fromXml( xml ){
-
-        if( Debug ) Log.time( &quot;Validation.fromXml&quot; );
-
-        const rsrzDict = this.rsrzDict;
-        const rsccDict = this.rsccDict;
-        const clashDict = this.clashDict;
-        const clashArray = this.clashArray;
-        const geoDict = this.geoDict;
-        const geoAtomDict = this.geoAtomDict;
-        const atomDict = this.atomDict;
-
-        const groups = xml.getElementsByTagName( &quot;ModelledSubgroup&quot; );
-
-        const _clashDict = {};
-        const clashList = [];
-
-        if( Debug ) Log.time( &quot;Validation.fromXml#clashDict&quot; );
-
-        for( let i = 0, il = groups.length; i &lt; il; ++i ){
-
-            const g = groups[ i ];
-            const ga = g.attributes;
-
-            const sele = getSele( ga );
-            if( ga.rsrz !== undefined ){
-                rsrzDict[ sele ] = parseFloat( ga.rsrz.value );
-            }
-            if( ga.rscc !== undefined ){
-                rsccDict[ sele ] = parseFloat( ga.rscc.value );
-            }
-            ga.sele = sele;
-
-            const clashes = g.getElementsByTagName( &quot;clash&quot; );
-
-            for( let j = 0, jl = clashes.length; j &lt; jl; ++j ){
-
-                const ca = clashes[ j ].attributes;
-                const atom = ca.atom.value;
-
-                if( guessElement( atom ) !== &quot;H&quot; ){
-
-                    const cid = ca.cid.value;
-                    const atomSele = getSele( ga, atom, true );
-                    atomDict[ atomSele ] = true;
-
-                    if( _clashDict[ cid ] === undefined ){
-                        _clashDict[ cid ] = {
-                            sele1: atomSele,
-                            res1: sele
-                        };
-                    }else{
-                        const c = _clashDict[ cid ];
-                        if( c.res1 !== sele ){
-                            c.sele2 = atomSele;
-                            c.res2 = sele;
-                            clashList.push( c.res1, sele );
-                            clashDict[ cid ] = c;
-                            clashArray.push( c );
-                        }
-                    }
-
-                }
-
-            }
-
-        }
-
-        if( Debug ) Log.timeEnd( &quot;Validation.fromXml#clashDict&quot; );
-
-        for( let i = 0, il = groups.length; i &lt; il; ++i ){
-
-            const g = groups[ i ];
-            const ga = g.attributes;
-
-            const sele = ga.sele;
-            const isPolymer = ga.seq.value !== &quot;.&quot;;
-
-            if( isPolymer ){
-
-                const geoProblemCount = getProblemCount( clashDict, g, ga );
-                if( geoProblemCount &gt; 0 ){
-                    geoDict[ sele ] = geoProblemCount;
-                }
-
-            }else{
-
-                const clashes = g.getElementsByTagName( &quot;clash&quot; );
-                const mogBondOutliers = g.getElementsByTagName( &quot;mog-bond-outlier&quot; );
-                const mogAngleOutliers = g.getElementsByTagName( &quot;mog-angle-outlier&quot; );
-
-                if( mogBondOutliers.length &gt; 0 || mogAngleOutliers.length &gt; 0 || clashes.length &gt; 0 ){
-
-                    const atomDict = {};
-                    geoAtomDict[ sele ] = atomDict;
-
-                    for( let j = 0, jl = clashes.length; j &lt; jl; ++j ){
-                        const ca = clashes[ j ].attributes;
-                        if( clashDict[ ca.cid.value ] ){
-                            setBitDict( atomDict, ca.atom.value, 1 );
-                        }
-                    }
-
-                    for( let j = 0, jl = mogBondOutliers.length; j &lt; jl; ++j ){
-                        const mbo = mogBondOutliers[ j ].attributes;
-                        mbo.atoms.value.split( &quot;,&quot; ).forEach( function( atomname ){
-                            setBitDict( atomDict, atomname, 2 );
-                        } );
-                    }
-
-                    for( let j = 0, jl = mogAngleOutliers.length; j &lt; jl; ++j ){
-                        const mao = mogAngleOutliers[ j ].attributes;
-                        mao.atoms.value.split( &quot;,&quot; ).forEach( function( atomname ){
-                            setBitDict( atomDict, atomname, 4 );
-                        } );
-                    }
-
-                }
-
-            }
-
-        }
-
-        this.clashSele = clashList.length ? clashList.join( &quot; OR &quot; ) : &quot;NONE&quot;;
-
-        if( Debug ) Log.timeEnd( &quot;Validation.fromXml&quot; );
-
-    }
-
-    getClashData( params ){
-
-        if( Debug ) Log.time( &quot;Validation.getClashData&quot; );
-
-        const p = params || {};
-
-        const s = p.structure;
-        const atomSet = s.atomSet;
-        const c = new Color( defaults( p.color, &quot;#f0027f&quot; ) );
-
-        const ap1 = s.getAtomProxy();
-        const ap2 = s.getAtomProxy();
-        const vDir = new Vector3();
-        const vPos1 = new Vector3();
-        const vPos2 = new Vector3();
-
-        const clashArray = this.clashArray;
-        const n = clashArray.length;
-
-        const position1 = new Float32Array( n * 3 );
-        const position2 = new Float32Array( n * 3 );
-        const color = uniformArray3( n, c.r, c.g, c.b );
-        const radius = new Float32Array( n );
-        const picking = new Float32Array( n );
-
-        if( Debug ) Log.time( &quot;Validation.getClashData#atomDict&quot; );
-
-        const atomDict = this.atomDict;
-
-        s.eachAtom( function( ap ){
-            const sele = getAtomSele( ap );
-            if( atomDict[ sele ] === true ){
-                atomDict[ sele ] = ap.index;
-            }
-        } );
-
-        if( Debug ) Log.timeEnd( &quot;Validation.getClashData#atomDict&quot; );
-
-        let i = 0;
-
-        clashArray.forEach( function( c, idx ){
-
-            ap1.index = atomDict[ c.sele1 ];
-            ap2.index = atomDict[ c.sele2 ];
-
-            if( ap1.index === undefined || ap2.index === undefined ||
-                !atomSet.isSet( ap1.index, ap2.index ) ) return;
-
-            vDir.subVectors( ap2, ap1 ).setLength( ap1.vdw );
-            vPos1.copy( ap1 ).add( vDir );
-
-            vDir.subVectors( ap1, ap2 ).setLength( ap2.vdw );
-            vPos2.copy( ap2 ).add( vDir );
-
-            const dHalf = ap1.distanceTo( ap2 ) / 2;
-            const r1 = Math.sqrt( ap1.vdw * ap1.vdw - dHalf * dHalf );
-            const r2 = Math.sqrt( ap2.vdw * ap2.vdw - dHalf * dHalf );
-
-            vPos1.toArray( position1, i * 3 );
-            vPos2.toArray( position2, i * 3 );
-            radius[ i ] = ( r1 + r2 ) / 2;
-            picking[ i ] = idx;
-
-            ++i;
-
-        } );
-
-        if( Debug ) Log.timeEnd( &quot;Validation.getClashData&quot; );
-
-        return {
-            position1: position1.subarray( 0, i * 3 ),
-            position2: position2.subarray( 0, i * 3 ),
-            color: color.subarray( 0, i * 3 ),
-            color2: color.subarray( 0, i * 3 ),
-            radius: radius.subarray( 0, i ),
-            picking: new ClashPicker( picking.subarray( 0, i ), this, s )
-        };
-
-    }
-
-}
-
-
-export default Validation;
+export default Validation
 </code></pre>
 
 </div>

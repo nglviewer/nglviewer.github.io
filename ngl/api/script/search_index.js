@@ -228,6 +228,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/representation/contact-representation.js~contactrepresentation",
+    "class/src/representation/contact-representation.js~ContactRepresentation.html",
+    "<span>ContactRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/contact-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/contour-buffer.js~contourbuffer",
     "class/src/buffer/contour-buffer.js~ContourBuffer.html",
     "<span>ContourBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/contour-buffer.js</span>",
@@ -273,6 +279,12 @@ window.esdocSearchIndex = [
     "ngl/src/representation/distance-representation.js~distancerepresentation",
     "class/src/representation/distance-representation.js~DistanceRepresentation.html",
     "<span>DistanceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/distance-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/dot-representation.js~dotrepresentation",
+    "class/src/representation/dot-representation.js~DotRepresentation.html",
+    "<span>DotRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/dot-representation.js</span>",
     "class"
   ],
   [
@@ -342,9 +354,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/representation/helixorient-representation.js~helixorientrepresentation",
+    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html",
+    "<span>HelixorientRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/helixorient-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/hydrophobicity-colormaker.js~hydrophobicitycolormaker",
     "class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html",
     "<span>HydrophobicityColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/hydrophobicity-colormaker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/hyperball-representation.js~hyperballrepresentation",
+    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html",
+    "<span>HyperballRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/hyperball-representation.js</span>",
     "class"
   ],
   [
@@ -444,6 +468,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/representation/molecularsurface-representation.js~molecularsurfacerepresentation",
+    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html",
+    "<span>MolecularSurfaceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/molecularsurface-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/moleculetype-colormaker.js~moleculetypecolormaker",
     "class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html",
     "<span>MoleculetypeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/moleculetype-colormaker.js</span>",
@@ -513,6 +543,12 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/point-buffer.js~pointbuffer",
     "class/src/buffer/point-buffer.js~PointBuffer.html",
     "<span>PointBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/point-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/point-representation.js~pointrepresentation",
+    "class/src/representation/point-representation.js~PointRepresentation.html",
+    "<span>PointRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/point-representation.js</span>",
     "class"
   ],
   [
@@ -588,9 +624,27 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/representation/ribbon-representation.js~ribbonrepresentation",
+    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html",
+    "<span>RibbonRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/ribbon-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/animation/animation.js~rockanimation",
     "class/src/animation/animation.js~RockAnimation.html",
     "<span>RockAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/rocket-representation.js~rocketrepresentation",
+    "class/src/representation/rocket-representation.js~RocketRepresentation.html",
+    "<span>RocketRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/rocket-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/rope-representation.js~roperepresentation",
+    "class/src/representation/rope-representation.js~RopeRepresentation.html",
+    "<span>RopeRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/rope-representation.js</span>",
     "class"
   ],
   [
@@ -645,6 +699,18 @@ window.esdocSearchIndex = [
     "ngl/src/utils/picker.js~shapepicker",
     "class/src/utils/picker.js~ShapePicker.html",
     "<span>ShapePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/slice-representation.js~slicerepresentation",
+    "class/src/representation/slice-representation.js~SliceRepresentation.html",
+    "<span>SliceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/slice-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/spacefill-representation.js~spacefillrepresentation",
+    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html",
+    "<span>SpacefillRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/spacefill-representation.js</span>",
     "class"
   ],
   [
@@ -744,9 +810,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/animation/animation.js~timeoutanimation",
+    "class/src/animation/animation.js~TimeoutAnimation.html",
+    "<span>TimeoutAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/trace-buffer.js~tracebuffer",
     "class/src/buffer/trace-buffer.js~TraceBuffer.html",
     "<span>TraceBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/trace-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/trace-representation.js~tracerepresentation",
+    "class/src/representation/trace-representation.js~TraceRepresentation.html",
+    "<span>TraceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/trace-representation.js</span>",
     "class"
   ],
   [
@@ -786,6 +864,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/representation/tube-representation.js~tuberepresentation",
+    "class/src/representation/tube-representation.js~TubeRepresentation.html",
+    "<span>TubeRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/tube-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/uniform-colormaker.js~uniformcolormaker",
     "class/src/color/uniform-colormaker.js~UniformColormaker.html",
     "<span>UniformColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/uniform-colormaker.js</span>",
@@ -795,6 +879,12 @@ window.esdocSearchIndex = [
     "ngl/src/symmetry/unitcell.js~unitcell",
     "class/src/symmetry/unitcell.js~Unitcell.html",
     "<span>Unitcell</span> <span class=\"search-result-import-path\">ngl/src/symmetry/unitcell.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/unitcell-representation.js~unitcellrepresentation",
+    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html",
+    "<span>UnitcellRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/unitcell-representation.js</span>",
     "class"
   ],
   [
@@ -1266,9 +1356,33 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/animation/animation.js~animation#pause",
+    "class/src/animation/animation.js~Animation.html#instance-method-pause",
+    "src/animation/animation.js~Animation#pause",
+    "method"
+  ],
+  [
+    "src/animation/animation.js~animation#paused",
+    "class/src/animation/animation.js~Animation.html#instance-get-paused",
+    "src/animation/animation.js~Animation#paused",
+    "member"
+  ],
+  [
+    "src/animation/animation.js~animation#resume",
+    "class/src/animation/animation.js~Animation.html#instance-method-resume",
+    "src/animation/animation.js~Animation#resume",
+    "method"
+  ],
+  [
     "src/animation/animation.js~animation#then",
     "class/src/animation/animation.js~Animation.html#instance-method-then",
     "src/animation/animation.js~Animation#then",
+    "method"
+  ],
+  [
+    "src/animation/animation.js~animation#toggle",
+    "class/src/animation/animation.js~Animation.html#instance-method-toggle",
+    "src/animation/animation.js~Animation#toggle",
     "method"
   ],
   [
@@ -2484,9 +2598,27 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/animation-controls.js~animationcontrols#pause",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-pause",
+    "src/controls/animation-controls.js~AnimationControls#pause",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#paused",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-get-paused",
+    "src/controls/animation-controls.js~AnimationControls#paused",
+    "member"
+  ],
+  [
     "src/controls/animation-controls.js~animationcontrols#remove",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-remove",
     "src/controls/animation-controls.js~AnimationControls#remove",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#resume",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-resume",
+    "src/controls/animation-controls.js~AnimationControls#resume",
     "method"
   ],
   [
@@ -2523,6 +2655,18 @@ window.esdocSearchIndex = [
     "src/controls/animation-controls.js~animationcontrols#spincomponent",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-spinComponent",
     "src/controls/animation-controls.js~AnimationControls#spinComponent",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#timeout",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-timeout",
+    "src/controls/animation-controls.js~AnimationControls#timeout",
+    "method"
+  ],
+  [
+    "src/controls/animation-controls.js~animationcontrols#toggle",
+    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-toggle",
+    "src/controls/animation-controls.js~AnimationControls#toggle",
     "method"
   ],
   [
@@ -4590,6 +4734,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/representation/dot-representation.js~dotrepresentation#constructor",
+    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-constructor-constructor",
+    "src/representation/dot-representation.js~DotRepresentation#constructor",
+    "method"
+  ],
+  [
+    "src/representation/dot-representation.js~dotrepresentationparameters",
+    "typedef/index.html#static-typedef-DotRepresentationParameters",
+    "src/representation/dot-representation.js~DotRepresentationParameters",
+    "typedef"
+  ],
+  [
     "src/representation/helixorient-representation.js",
     "file/src/representation/helixorient-representation.js.html",
     "src/representation/helixorient-representation.js",
@@ -4720,6 +4876,18 @@ window.esdocSearchIndex = [
     "file/src/representation/slice-representation.js.html",
     "src/representation/slice-representation.js",
     "file"
+  ],
+  [
+    "src/representation/slice-representation.js~slicerepresentation#constructor",
+    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-constructor-constructor",
+    "src/representation/slice-representation.js~SliceRepresentation#constructor",
+    "method"
+  ],
+  [
+    "src/representation/slice-representation.js~slicerepresentationparameters",
+    "typedef/index.html#static-typedef-SliceRepresentationParameters",
+    "src/representation/slice-representation.js~SliceRepresentationParameters",
+    "typedef"
   ],
   [
     "src/representation/spacefill-representation.js",
@@ -4881,6 +5049,12 @@ window.esdocSearchIndex = [
     "src/stage/animation-behavior.js",
     "file/src/stage/animation-behavior.js.html",
     "src/stage/animation-behavior.js",
+    "file"
+  ],
+  [
+    "src/stage/key-behavior.js",
+    "file/src/stage/key-behavior.js.html",
+    "src/stage/key-behavior.js",
     "file"
   ],
   [
@@ -5142,6 +5316,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/stage/stage.js~stage#rockanimation",
+    "class/src/stage/stage.js~Stage.html#instance-member-rockAnimation",
+    "src/stage/stage.js~Stage#rockAnimation",
+    "member"
+  ],
+  [
     "src/stage/stage.js~stage#setparameters",
     "class/src/stage/stage.js~Stage.html#instance-method-setParameters",
     "src/stage/stage.js~Stage#setParameters",
@@ -5172,6 +5352,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/stage/stage.js~stage#spinanimation",
+    "class/src/stage/stage.js~Stage.html#instance-member-spinAnimation",
+    "src/stage/stage.js~Stage#spinAnimation",
+    "member"
+  ],
+  [
     "src/stage/stage.js~stage#tasks",
     "class/src/stage/stage.js~Stage.html#instance-member-tasks",
     "src/stage/stage.js~Stage#tasks",
@@ -5181,6 +5367,18 @@ window.esdocSearchIndex = [
     "src/stage/stage.js~stage#togglefullscreen",
     "class/src/stage/stage.js~Stage.html#instance-method-toggleFullscreen",
     "src/stage/stage.js~Stage#toggleFullscreen",
+    "method"
+  ],
+  [
+    "src/stage/stage.js~stage#togglerock",
+    "class/src/stage/stage.js~Stage.html#instance-method-toggleRock",
+    "src/stage/stage.js~Stage#toggleRock",
+    "method"
+  ],
+  [
+    "src/stage/stage.js~stage#togglespin",
+    "class/src/stage/stage.js~Stage.html#instance-method-toggleSpin",
+    "src/stage/stage.js~Stage#toggleSpin",
     "method"
   ],
   [
@@ -5302,6 +5500,54 @@ window.esdocSearchIndex = [
     "file/src/store/store.js.html",
     "src/store/store.js",
     "file"
+  ],
+  [
+    "src/store/store.js~store#clear",
+    "class/src/store/store.js~Store.html#instance-method-clear",
+    "src/store/store.js~Store#clear",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#constructor",
+    "class/src/store/store.js~Store.html#instance-constructor-constructor",
+    "src/store/store.js~Store#constructor",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#copyfrom",
+    "class/src/store/store.js~Store.html#instance-method-copyFrom",
+    "src/store/store.js~Store#copyFrom",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#copywithin",
+    "class/src/store/store.js~Store.html#instance-method-copyWithin",
+    "src/store/store.js~Store#copyWithin",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#dispose",
+    "class/src/store/store.js~Store.html#instance-method-dispose",
+    "src/store/store.js~Store#dispose",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#growiffull",
+    "class/src/store/store.js~Store.html#instance-method-growIfFull",
+    "src/store/store.js~Store#growIfFull",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#resize",
+    "class/src/store/store.js~Store.html#instance-method-resize",
+    "src/store/store.js~Store#resize",
+    "method"
+  ],
+  [
+    "src/store/store.js~store#sort",
+    "class/src/store/store.js~Store.html#instance-method-sort",
+    "src/store/store.js~Store#sort",
+    "method"
   ],
   [
     "src/streamer/binary-streamer.js",

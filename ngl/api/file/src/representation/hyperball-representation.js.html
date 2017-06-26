@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,128 +255,115 @@
  * @private
  */
 
+import { RepresentationRegistry } from &apos;../globals.js&apos;
+import { defaults } from &apos;../utils.js&apos;
+import { calculateCenterArray } from &apos;../math/array-utils.js&apos;
+import LicoriceRepresentation from &apos;./licorice-representation.js&apos;
+import SphereBuffer from &apos;../buffer/sphere-buffer.js&apos;
+import HyperballStickBuffer from &apos;../buffer/hyperballstick-buffer.js&apos;
 
-import { RepresentationRegistry } from &quot;../globals.js&quot;;
-import { defaults } from &quot;../utils.js&quot;;
-import { calculateCenterArray } from &quot;../math/array-utils.js&quot;;
-import LicoriceRepresentation from &quot;./licorice-representation.js&quot;;
-import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
-import HyperballStickBuffer from &quot;../buffer/hyperballstick-buffer.js&quot;;
+/**
+ * Hyperball Representation
+ */
+class HyperballRepresentation extends LicoriceRepresentation {
+  constructor (structure, viewer, params) {
+    super(structure, viewer, params)
 
+    this.type = &apos;hyperball&apos;
 
-class HyperballRepresentation extends LicoriceRepresentation{
+    this.parameters = Object.assign({
 
-    constructor( structure, viewer, params ){
+      shrink: {
+        type: &apos;number&apos;, precision: 3, max: 1.0, min: 0.001, buffer: true
+      }
 
-        super( structure, viewer, params );
+    }, this.parameters, {
 
-        this.type = &quot;hyperball&quot;;
+      multipleBond: null,
+      bondSpacing: null
 
-        this.parameters = Object.assign( {
+    })
+  }
 
-            shrink: {
-                type: &quot;number&quot;, precision: 3, max: 1.0, min: 0.001, buffer: true
-            }
+  init (params) {
+    var p = params || {}
+    p.scale = defaults(p.scale, 0.2)
+    p.radius = defaults(p.radius, &apos;vdw&apos;)
 
-        }, this.parameters, {
+    this.shrink = defaults(p.shrink, 0.12)
 
-            multipleBond: null,
-            bondSpacing: null,
+    super.init(p)
+  }
 
-        } );
-
+  getBondParams (what, params) {
+    if (!what || what.radius) {
+      params = Object.assign({ radius2: true }, params)
     }
 
-    init( params ){
+    return super.getBondParams(what, params)
+  }
 
-        var p = params || {};
-        p.scale = defaults( p.scale, 0.2 );
-        p.radius = defaults( p.radius, &quot;vdw&quot; );
+  createData (sview) {
+    var sphereBuffer = new SphereBuffer(
+            sview.getAtomData(this.getAtomParams()),
+            this.getBufferParams({
+              sphereDetail: this.sphereDetail,
+              disableImpostor: this.disableImpostor,
+              dullInterior: true
+            })
+        )
 
-        this.shrink = defaults( p.shrink, 0.12 );
+    this.__center = new Float32Array(sview.bondCount * 3)
 
-        super.init( p );
+    var stickBuffer = new HyperballStickBuffer(
+            sview.getBondData(this.getBondParams()),
+            this.getBufferParams({
+              shrink: this.shrink,
+              radialSegments: this.radialSegments,
+              dullInterior: true
+            })
+        )
 
+    return {
+      bufferList: [ sphereBuffer, stickBuffer ]
+    }
+  }
+
+  updateData (what, data) {
+    var atomData = data.sview.getAtomData(this.getAtomParams())
+    var bondData = data.sview.getBondData(this.getBondParams())
+    var sphereData = {}
+    var stickData = {}
+
+    if (!what || what.position) {
+      sphereData.position = atomData.position
+      var from = bondData.position1
+      var to = bondData.position2
+      stickData.position = calculateCenterArray(from, to, this.__center)
+      stickData.position1 = from
+      stickData.position2 = to
     }
 
-    getBondParams( what, params ){
-
-        if( !what || what.radius ){
-            params = Object.assign( { radius2: true }, params );
-        }
-
-        return super.getBondParams( what, params );
-
+    if (!what || what.color) {
+      sphereData.color = atomData.color
+      stickData.color = bondData.color
+      stickData.color2 = bondData.color2
     }
 
-    createData( sview ){
-
-        var sphereBuffer = new SphereBuffer(
-            sview.getAtomData( this.getAtomParams() ),
-            this.getBufferParams( {
-                sphereDetail: this.sphereDetail,
-                disableImpostor: this.disableImpostor,
-                dullInterior: true
-            } )
-        );
-
-        this.__center = new Float32Array( sview.bondCount * 3 );
-
-        var stickBuffer = new HyperballStickBuffer(
-            sview.getBondData( this.getBondParams() ),
-            this.getBufferParams( {
-                shrink: this.shrink,
-                radialSegments: this.radialSegments,
-                dullInterior: true
-            } )
-        );
-
-        return {
-            bufferList: [ sphereBuffer, stickBuffer ]
-        };
-
+    if (!what || what.radius) {
+      sphereData.radius = atomData.radius
+      stickData.radius = bondData.radius
+      stickData.radius2 = bondData.radius2
     }
 
-    updateData( what, data ){
-
-        var atomData = data.sview.getAtomData( this.getAtomParams() );
-        var bondData = data.sview.getBondData( this.getBondParams() );
-        var sphereData = {};
-        var stickData = {};
-
-        if( !what || what.position ){
-            sphereData.position = atomData.position;
-            var from = bondData.position1;
-            var to = bondData.position2;
-            stickData.position = calculateCenterArray( from, to, this.__center );
-            stickData.position1 = from;
-            stickData.position2 = to;
-        }
-
-        if( !what || what.color ){
-            sphereData.color = atomData.color;
-            stickData.color = bondData.color1;
-            stickData.color2 = bondData.color2;
-        }
-
-        if( !what || what.radius ){
-            sphereData.radius = atomData.radius;
-            stickData.radius = bondData.radius1;
-            stickData.radius2 = bondData.radius2;
-        }
-
-        data.bufferList[ 0 ].setAttributes( sphereData );
-        data.bufferList[ 1 ].setAttributes( stickData );
-
-    }
-
+    data.bufferList[ 0 ].setAttributes(sphereData)
+    data.bufferList[ 1 ].setAttributes(stickData)
+  }
 }
 
+RepresentationRegistry.add(&apos;hyperball&apos;, HyperballRepresentation)
 
-RepresentationRegistry.add( &quot;hyperball&quot;, HyperballRepresentation );
-
-
-export default HyperballRepresentation;
+export default HyperballRepresentation
 </code></pre>
 
 </div>

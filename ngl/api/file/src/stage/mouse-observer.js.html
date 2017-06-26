@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,13 +255,11 @@
  * @private
  */
 
+import { Vector2 } from &apos;../../lib/three.es6.js&apos;
+import Signal from &apos;../../lib/signals.es6.js&apos;
 
-import { Vector2 } from &quot;../../lib/three.es6.js&quot;;
-import Signal from &quot;../../lib/signals.es6.js&quot;;
-
-import { RightMouseButton } from &quot;../constants.js&quot;;
-import { defaults } from &quot;../utils.js&quot;;
-
+import { RightMouseButton } from &apos;../constants.js&apos;
+import { defaults } from &apos;../utils.js&apos;
 
 /**
  * @example
@@ -259,41 +274,38 @@ import { defaults } from &quot;../utils.js&quot;;
  * @property {Signal} hovered - on hover
  */
 
-
-function getTouchDistance( event ){
-    const dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX;
-    const dy = event.touches[ 0 ].pageY - event.touches[ 1 ].pageY;
-    return Math.sqrt( dx * dx + dy * dy );
+function getTouchDistance (event) {
+  const dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX
+  const dy = event.touches[ 0 ].pageY - event.touches[ 1 ].pageY
+  return Math.sqrt(dx * dx + dy * dy)
 }
 
-
-function getMouseButtons( event ){
-    if( typeof event === &apos;object&apos; ){
-        if( &apos;buttons&apos; in event ){
-            return event.buttons;
-        }else if( &apos;which&apos; in event ){
-            const b = event.which;
-            if( b === 2 ){
-                return 4;
-            } else if( b === 3 ){
-                return 2;
-            } else if( b &gt; 0 ){
-                return 1 &lt;&lt; ( b - 1 );
-            }
-        }else if( &apos;button&apos; in event ){
-            const b = event.button
-            if( b === 1 ){
-                return 4;
-            } else if( b === 2 ){
-                return 2;
-            } else if( b &gt;= 0 ){
-                return 1&lt;&lt;b;
-            }
-        }
+function getMouseButtons (event) {
+  if (typeof event === &apos;object&apos;) {
+    if (&apos;buttons&apos; in event) {
+      return event.buttons
+    } else if (&apos;which&apos; in event) {
+      const b = event.which
+      if (b === 2) {
+        return 4
+      } else if (b === 3) {
+        return 2
+      } else if (b &gt; 0) {
+        return 1 &lt;&lt; (b - 1)
+      }
+    } else if (&apos;button&apos; in event) {
+      const b = event.button
+      if (b === 1) {
+        return 4
+      } else if (b === 2) {
+        return 2
+      } else if (b &gt;= 0) {
+        return 1 &lt;&lt; b
+      }
     }
-    return 0;
+  }
+  return 0
 }
-
 
 /**
  * Mouse observer
@@ -318,173 +330,170 @@ function getMouseButtons( event ){
  * // listen to hovering events
  * mouseObserver.signals.hovered.add( function(){ ... } );
  */
-class MouseObserver{
-
+class MouseObserver {
     /**
      * @param  {Element} domElement - the dom element to observe mouse events in
      * @param  {Object} params - parameters object
      * @param  {Integer} params.hoverTimeout - timeout until the {@link MouseSignals.hovered}
      *                                         signal is fired, set to -1 to ignore hovering
      */
-    constructor( domElement, params ){
-
+  constructor (domElement, params) {
         /**
          * Events emitted by the mouse observer
          * @type {MouseSignals}
          */
-        this.signals = {
-            moved: new Signal(),
-            scrolled: new Signal(),
-            dragged: new Signal(),
-            dropped: new Signal(),
-            clicked: new Signal(),
-            hovered: new Signal()
-        };
+    this.signals = {
+      moved: new Signal(),
+      scrolled: new Signal(),
+      dragged: new Signal(),
+      dropped: new Signal(),
+      clicked: new Signal(),
+      hovered: new Signal()
+    }
 
-        var p = Object.assign( {}, params );
+    var p = Object.assign({}, params)
 
-        this.hoverTimeout = defaults( p.hoverTimeout, 50 );
-        this.handleScroll = defaults( p.handleScroll, true );
+    this.hoverTimeout = defaults(p.hoverTimeout, 50)
+    this.handleScroll = defaults(p.handleScroll, true)
 
-        this.domElement = domElement;
+    this.domElement = domElement
 
         /**
          * Position on page
          * @type {Vector2}
          */
-        this.position = new Vector2();
+    this.position = new Vector2()
         /**
          * Previous position on page
          * @type {Vector2}
          */
-        this.prevPosition = new Vector2();
+    this.prevPosition = new Vector2()
         /**
          * Position on page when clicked
          * @type {Vector2}
          */
-        this.down = new Vector2();
+    this.down = new Vector2()
         /**
          * Position on dom element
          * @type {Vector2}
          */
-        this.canvasPosition = new Vector2();
+    this.canvasPosition = new Vector2()
         /**
          * Flag indicating if the mouse is moving
          * @type {Boolean}
          */
-        this.moving = false;
+    this.moving = false
         /**
          * Flag indicating if the mouse is hovering
          * @type {Boolean}
          */
-        this.hovering = true;
+    this.hovering = true
         /**
          * Flag indicating if there was a scolling event
          * since the last mouse move
          * @type {Boolean}
          */
-        this.scrolled = false;
+    this.scrolled = false
         /**
          * Timestamp of last mouse move
          * @type {Number}
          */
-        this.lastMoved = Infinity;
+    this.lastMoved = Infinity
         /**
          * Indicates which mouse button was pressed:
          * 0: No button; 1: Left button; 2: Middle button; 3: Right button
          * @type {Integer}
          */
-        this.which = undefined;
+    this.which = undefined
         /**
          * Indicates which mouse buttons were pressed:
          * 0: No button; 1: Left button; 2: Right button; 4: Middle button
          * @type {Integer}
          */
-        this.buttons = undefined;
+    this.buttons = undefined
         /**
          * Flag indicating if the mouse is pressed down
          * @type {Boolean}
          */
-        this.pressed = undefined;
+    this.pressed = undefined
         /**
          * Flag indicating if the alt key is pressed
          * @type {Boolean}
          */
-        this.altKey = undefined;
+    this.altKey = undefined
         /**
          * Flag indicating if the ctrl key is pressed
          * @type {Boolean}
          */
-        this.ctrlKey = undefined;
+    this.ctrlKey = undefined
         /**
          * Flag indicating if the meta key is pressed
          * @type {Boolean}
          */
-        this.metaKey = undefined;
+    this.metaKey = undefined
         /**
          * Flag indicating if the shift key is pressed
          * @type {Boolean}
          */
-        this.shiftKey = undefined;
+    this.shiftKey = undefined
 
-        this._listen = this._listen.bind( this );
-        this._onMousewheel = this._onMousewheel.bind( this );
-        this._onMousemove = this._onMousemove.bind( this );
-        this._onMousedown = this._onMousedown.bind( this );
-        this._onMouseup = this._onMouseup.bind( this );
-        this._onContextmenu = this._onContextmenu.bind( this );
-        this._onTouchstart = this._onTouchstart.bind( this );
-        this._onTouchend = this._onTouchend.bind( this );
-        this._onTouchmove = this._onTouchmove.bind( this );
+    this._listen = this._listen.bind(this)
+    this._onMousewheel = this._onMousewheel.bind(this)
+    this._onMousemove = this._onMousemove.bind(this)
+    this._onMousedown = this._onMousedown.bind(this)
+    this._onMouseup = this._onMouseup.bind(this)
+    this._onContextmenu = this._onContextmenu.bind(this)
+    this._onTouchstart = this._onTouchstart.bind(this)
+    this._onTouchend = this._onTouchend.bind(this)
+    this._onTouchmove = this._onTouchmove.bind(this)
 
-        this._listen();
+    this._listen()
 
-        document.addEventListener( &apos;mousewheel&apos;, this._onMousewheel );
-        document.addEventListener( &apos;wheel&apos;, this._onMousewheel );
-        document.addEventListener( &apos;MozMousePixelScroll&apos;, this._onMousewheel );
-        document.addEventListener( &apos;mousemove&apos;, this._onMousemove );
-        document.addEventListener( &apos;mousedown&apos;, this._onMousedown );
-        document.addEventListener( &apos;mouseup&apos;, this._onMouseup );
-        document.addEventListener( &apos;contextmenu&apos;, this._onContextmenu );
-        document.addEventListener( &apos;touchstart&apos;, this._onTouchstart );
-        document.addEventListener( &apos;touchend&apos;, this._onTouchend );
-        document.addEventListener( &apos;touchmove&apos;, this._onTouchmove );
+    document.addEventListener(&apos;mousewheel&apos;, this._onMousewheel)
+    document.addEventListener(&apos;wheel&apos;, this._onMousewheel)
+    document.addEventListener(&apos;MozMousePixelScroll&apos;, this._onMousewheel)
+    document.addEventListener(&apos;mousemove&apos;, this._onMousemove)
+    document.addEventListener(&apos;mousedown&apos;, this._onMousedown)
+    document.addEventListener(&apos;mouseup&apos;, this._onMouseup)
+    document.addEventListener(&apos;contextmenu&apos;, this._onContextmenu)
+    document.addEventListener(&apos;touchstart&apos;, this._onTouchstart)
+    document.addEventListener(&apos;touchend&apos;, this._onTouchend)
+    document.addEventListener(&apos;touchmove&apos;, this._onTouchmove)
+  }
 
-    }
+  get key () {
+    let key = 0
+    if (this.altKey) key += 1
+    if (this.ctrlKey) key += 2
+    if (this.metaKey) key += 4
+    if (this.shiftKey) key += 8
+    return key
+  }
 
-    get key(){
-        let key = 0;
-        if( this.altKey ) key += 1;
-        if( this.ctrlKey ) key += 2;
-        if( this.metaKey ) key += 4;
-        if( this.shiftKey ) key += 8;
-        return key;
-    }
-
-    setParameters( params ){
-        var p = Object.assign( {}, params );
-        this.hoverTimeout = defaults( p.hoverTimeout, this.hoverTimeout );
-    }
+  setParameters (params) {
+    var p = Object.assign({}, params)
+    this.hoverTimeout = defaults(p.hoverTimeout, this.hoverTimeout)
+  }
 
     /**
      * listen to mouse actions
      * @emits {MouseSignals.hovered} when hovered
      * @return {undefined}
      */
-    _listen(){
-        if( performance.now() - this.lastMoved &gt; this.hoverTimeout ){
-            this.moving = false;
-        }
-        if( this.scrolled || ( !this.moving &amp;&amp; !this.hovering ) ){
-            this.scrolled = false;
-            if( this.hoverTimeout !== -1 &amp;&amp; this.overElement ){
-                this.hovering = true;
-                const cp = this.canvasPosition;
-                this.signals.hovered.dispatch( cp.x, cp.y );
-            }
-        }
-        requestAnimationFrame( this._listen );
+  _listen () {
+    if (window.performance.now() - this.lastMoved &gt; this.hoverTimeout) {
+      this.moving = false
     }
+    if (this.scrolled || (!this.moving &amp;&amp; !this.hovering)) {
+      this.scrolled = false
+      if (this.hoverTimeout !== -1 &amp;&amp; this.overElement) {
+        this.hovering = true
+        const cp = this.canvasPosition
+        this.signals.hovered.dispatch(cp.x, cp.y)
+      }
+    }
+    window.requestAnimationFrame(this._listen)
+  }
 
     /**
      * handle mouse scroll
@@ -492,30 +501,30 @@ class MouseObserver{
      * @param  {Event} event - mouse event
      * @return {undefined}
      */
-    _onMousewheel( event ){
-        if( event.target !== this.domElement || !this.handleScroll ){
-            return;
-        }
-        event.preventDefault();
-        this._setKeys( event );
-
-        var delta = 0;
-        if( event.wheelDelta ){
-            // WebKit / Opera / Explorer 9
-            delta = event.wheelDelta / 40;
-        }else if( event.detail ){
-            // Firefox
-            delta = - event.detail / 3;
-        }else{
-            // Firefox or IE 11
-            delta = - event.deltaY / ( event.deltaMode ? 0.33 : 30 );
-        }
-        this.signals.scrolled.dispatch( delta );
-
-        setTimeout( () =&gt; {
-            this.scrolled = true;
-        }, this.hoverTimeout );
+  _onMousewheel (event) {
+    if (event.target !== this.domElement || !this.handleScroll) {
+      return
     }
+    event.preventDefault()
+    this._setKeys(event)
+
+    var delta = 0
+    if (event.wheelDelta) {
+            // WebKit / Opera / Explorer 9
+      delta = event.wheelDelta / 40
+    } else if (event.detail) {
+            // Firefox
+      delta = -event.detail / 3
+    } else {
+            // Firefox or IE 11
+      delta = -event.deltaY / (event.deltaMode ? 0.33 : 30)
+    }
+    this.signals.scrolled.dispatch(delta)
+
+    setTimeout(() =&gt; {
+      this.scrolled = true
+    }, this.hoverTimeout)
+  }
 
     /**
      * handle mouse move
@@ -524,43 +533,43 @@ class MouseObserver{
      * @param  {Event} event - mouse event
      * @return {undefined}
      */
-    _onMousemove( event ){
-        if( event.target === this.domElement ){
-            event.preventDefault();
-            this.overElement = true;
-        }else{
-            this.overElement = false;
-        }
-        this._setKeys( event );
-        this.moving = true;
-        this.hovering = false;
-        this.lastMoved = performance.now();
-        this.prevPosition.copy( this.position );
-        this.position.set( event.clientX, event.clientY );
-        this._setCanvasPosition( event );
-        const dx = this.prevPosition.x - this.position.x;
-        const dy = this.prevPosition.y - this.position.y;
-        this.signals.moved.dispatch( dx, dy );
-        if( this.pressed ){
-            this.signals.dragged.dispatch( dx, dy );
-        }
+  _onMousemove (event) {
+    if (event.target === this.domElement) {
+      event.preventDefault()
+      this.overElement = true
+    } else {
+      this.overElement = false
     }
+    this._setKeys(event)
+    this.moving = true
+    this.hovering = false
+    this.lastMoved = window.performance.now()
+    this.prevPosition.copy(this.position)
+    this.position.set(event.clientX, event.clientY)
+    this._setCanvasPosition(event)
+    const dx = this.prevPosition.x - this.position.x
+    const dy = this.prevPosition.y - this.position.y
+    this.signals.moved.dispatch(dx, dy)
+    if (this.pressed) {
+      this.signals.dragged.dispatch(dx, dy)
+    }
+  }
 
-    _onMousedown( event ){
-        if( event.target !== this.domElement ){
-            return;
-        }
-        event.preventDefault();
-        this._setKeys( event );
-        this.moving = false;
-        this.hovering = false;
-        this.down.set( event.clientX, event.clientY );
-        this.position.set( event.clientX, event.clientY );
-        this.which = event.which;
-        this.buttons = getMouseButtons( event );
-        this.pressed = true;
-        this._setCanvasPosition( event );
+  _onMousedown (event) {
+    if (event.target !== this.domElement) {
+      return
     }
+    event.preventDefault()
+    this._setKeys(event)
+    this.moving = false
+    this.hovering = false
+    this.down.set(event.clientX, event.clientY)
+    this.position.set(event.clientX, event.clientY)
+    this.which = event.which
+    this.buttons = getMouseButtons(event)
+    this.pressed = true
+    this._setCanvasPosition(event)
+  }
 
     /**
      * handle mouse up
@@ -569,171 +578,164 @@ class MouseObserver{
      * @param  {Event} event - mouse event
      * @return {undefined}
      */
-    _onMouseup( event ){
-        if( event.target === this.domElement ){
-            event.preventDefault();
-        }
-        this._setKeys( event );
-        const cp = this.canvasPosition;
-        this.signals.clicked.dispatch( cp.x, cp.y );
+  _onMouseup (event) {
+    if (event.target === this.domElement) {
+      event.preventDefault()
+    }
+    this._setKeys(event)
+    const cp = this.canvasPosition
+    this.signals.clicked.dispatch(cp.x, cp.y)
         // if( this.distance() &gt; 3 || event.which === RightMouseButton ){
         //     this.signals.dropped.dispatch();
         // }
-        this.which = undefined;
-        this.buttons = undefined;
-        this.pressed = undefined;
+    this.which = undefined
+    this.buttons = undefined
+    this.pressed = undefined
+  }
+
+  _onContextmenu (event) {
+    if (event.target === this.domElement) {
+      event.preventDefault()
     }
+  }
 
-    _onContextmenu( event ){
-        if( event.target === this.domElement ){
-            event.preventDefault();
-        }
+  _onTouchstart (event) {
+    if (event.target !== this.domElement) {
+      return
     }
-
-    _onTouchstart( event ){
-        if( event.target !== this.domElement ){
-            return;
-        }
-        event.preventDefault();
-        this.pressed = true;
-        switch( event.touches.length ){
-
-            case 1: {
-                this.moving = false;
-                this.hovering = false;
-                this.down.set(
+    event.preventDefault()
+    this.pressed = true
+    switch (event.touches.length) {
+      case 1: {
+        this.moving = false
+        this.hovering = false
+        this.down.set(
                     event.touches[ 0 ].pageX,
                     event.touches[ 0 ].pageY
-                );
-                this.position.set(
+                )
+        this.position.set(
                     event.touches[ 0 ].pageX,
                     event.touches[ 0 ].pageY
-                );
-                this._setCanvasPosition( event.touches[ 0 ] );
-                break;
-            }
+                )
+        this._setCanvasPosition(event.touches[ 0 ])
+        break
+      }
 
-            case 2: {
-                this.down.set(
-                    ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX ) / 2,
-                    ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY ) / 2
-                );
-                this.position.set(
-                    ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX ) / 2,
-                    ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY ) / 2
-                );
-                this.lastTouchDistance = getTouchDistance( event );
-            }
-
-        }
+      case 2: {
+        this.down.set(
+                    (event.touches[ 0 ].pageX + event.touches[ 1 ].pageX) / 2,
+                    (event.touches[ 0 ].pageY + event.touches[ 1 ].pageY) / 2
+                )
+        this.position.set(
+                    (event.touches[ 0 ].pageX + event.touches[ 1 ].pageX) / 2,
+                    (event.touches[ 0 ].pageY + event.touches[ 1 ].pageY) / 2
+                )
+        this.lastTouchDistance = getTouchDistance(event)
+      }
     }
+  }
 
-    _onTouchend( event ){
-        if( event.target === this.domElement ){
-            event.preventDefault();
-        }
-        this.pressed = false;
+  _onTouchend (event) {
+    if (event.target === this.domElement) {
+      event.preventDefault()
     }
+    this.pressed = false
+  }
 
-    _onTouchmove( event ){
-        if( event.target === this.domElement ){
-            event.preventDefault();
-            this.overElement = true;
-        }else{
-            this.overElement = false;
-        }
-        switch( event.touches.length ){
-
-            case 1: {
-                this._setKeys( event );
-                this.which = undefined;
-                this.buttons = undefined;
-                this.moving = true;
-                this.hovering = false;
-                this.lastMoved = performance.now();
-                this.prevPosition.copy( this.position );
-                this.position.set(
+  _onTouchmove (event) {
+    if (event.target === this.domElement) {
+      event.preventDefault()
+      this.overElement = true
+    } else {
+      this.overElement = false
+    }
+    switch (event.touches.length) {
+      case 1: {
+        this._setKeys(event)
+        this.which = undefined
+        this.buttons = undefined
+        this.moving = true
+        this.hovering = false
+        this.lastMoved = window.performance.now()
+        this.prevPosition.copy(this.position)
+        this.position.set(
                     event.touches[ 0 ].pageX,
                     event.touches[ 0 ].pageY
-                );
-                this._setCanvasPosition( event.touches[ 0 ] );
-                const dx = this.prevPosition.x - this.position.x;
-                const dy = this.prevPosition.y - this.position.y;
-                this.signals.moved.dispatch( dx, dy );
-                if( this.pressed ){
-                    this.signals.dragged.dispatch( dx, dy );
-                }
-                break;
-            }
-
-            case 2: {
-                this.which = RightMouseButton;
-                this.buttons = 2;
-                const touchDistance = getTouchDistance( event );
-                const delta = touchDistance - this.lastTouchDistance;
-                this.lastTouchDistance = touchDistance;
-                if( Math.abs( delta ) &gt; 1 ){
-                    this.signals.scrolled.dispatch( delta / 2 );
-                }else{
-                    this.prevPosition.copy( this.position );
-                    this.position.set(
-                        ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX ) / 2,
-                        ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY ) / 2
-                    );
-                    const dx = this.prevPosition.x - this.position.x;
-                    const dy = this.prevPosition.y - this.position.y;
-                    this.signals.moved.dispatch( dx, dy );
-                    if( this.pressed ){
-                        this.signals.dragged.dispatch( dx, dy );
-                    }
-                }
-
-            }
-
+                )
+        this._setCanvasPosition(event.touches[ 0 ])
+        const dx = this.prevPosition.x - this.position.x
+        const dy = this.prevPosition.y - this.position.y
+        this.signals.moved.dispatch(dx, dy)
+        if (this.pressed) {
+          this.signals.dragged.dispatch(dx, dy)
         }
-    }
+        break
+      }
 
-    _distance(){
-        return this.position.distanceTo( this.down );
-    }
-
-    _setCanvasPosition( event ){
-        const box = this.domElement.getBoundingClientRect();
-        let offsetX, offsetY;
-        if( &apos;offsetX&apos; in event &amp;&amp; &apos;offsetY&apos; in event ){
-            offsetX = event.offsetX;
-            offsetY = event.offsetY;
-        }else{
-            offsetX = event.clientX - box.left;
-            offsetY = event.clientY - box.top;
+      case 2: {
+        this.which = RightMouseButton
+        this.buttons = 2
+        const touchDistance = getTouchDistance(event)
+        const delta = touchDistance - this.lastTouchDistance
+        this.lastTouchDistance = touchDistance
+        if (Math.abs(delta) &gt; 1) {
+          this.signals.scrolled.dispatch(delta / 2)
+        } else {
+          this.prevPosition.copy(this.position)
+          this.position.set(
+                        (event.touches[ 0 ].pageX + event.touches[ 1 ].pageX) / 2,
+                        (event.touches[ 0 ].pageY + event.touches[ 1 ].pageY) / 2
+                    )
+          const dx = this.prevPosition.x - this.position.x
+          const dy = this.prevPosition.y - this.position.y
+          this.signals.moved.dispatch(dx, dy)
+          if (this.pressed) {
+            this.signals.dragged.dispatch(dx, dy)
+          }
         }
-        this.canvasPosition.set( offsetX, box.height - offsetY );
+      }
     }
+  }
 
-    _setKeys( event ){
-        this.altKey = event.altKey;
-        this.ctrlKey = event.ctrlKey;
-        this.metaKey = event.metaKey;
-        this.shiftKey = event.shiftKey;
+  _distance () {
+    return this.position.distanceTo(this.down)
+  }
+
+  _setCanvasPosition (event) {
+    const box = this.domElement.getBoundingClientRect()
+    let offsetX, offsetY
+    if (&apos;offsetX&apos; in event &amp;&amp; &apos;offsetY&apos; in event) {
+      offsetX = event.offsetX
+      offsetY = event.offsetY
+    } else {
+      offsetX = event.clientX - box.left
+      offsetY = event.clientY - box.top
     }
+    this.canvasPosition.set(offsetX, box.height - offsetY)
+  }
 
-    dispose(){
-        document.removeEventListener( &apos;mousewheel&apos;, this._onMousewheel );
-        document.removeEventListener( &apos;wheel&apos;, this._onMousewheel );
-        document.removeEventListener( &apos;MozMousePixelScroll&apos;, this._onMousewheel );
-        document.removeEventListener( &apos;mousemove&apos;, this._onMousemove );
-        document.removeEventListener( &apos;mousedown&apos;, this._onMousedown );
-        document.removeEventListener( &apos;mouseup&apos;, this._onMouseup );
-        document.removeEventListener( &apos;contextmenu&apos;, this._onContextmenu );
-        document.removeEventListener( &apos;touchstart&apos;, this._onTouchstart );
-        document.removeEventListener( &apos;touchend&apos;, this._onTouchend );
-        document.removeEventListener( &apos;touchmove&apos;, this._onTouchmove );
-    }
+  _setKeys (event) {
+    this.altKey = event.altKey
+    this.ctrlKey = event.ctrlKey
+    this.metaKey = event.metaKey
+    this.shiftKey = event.shiftKey
+  }
 
+  dispose () {
+    document.removeEventListener(&apos;mousewheel&apos;, this._onMousewheel)
+    document.removeEventListener(&apos;wheel&apos;, this._onMousewheel)
+    document.removeEventListener(&apos;MozMousePixelScroll&apos;, this._onMousewheel)
+    document.removeEventListener(&apos;mousemove&apos;, this._onMousemove)
+    document.removeEventListener(&apos;mousedown&apos;, this._onMousedown)
+    document.removeEventListener(&apos;mouseup&apos;, this._onMouseup)
+    document.removeEventListener(&apos;contextmenu&apos;, this._onContextmenu)
+    document.removeEventListener(&apos;touchstart&apos;, this._onTouchstart)
+    document.removeEventListener(&apos;touchend&apos;, this._onTouchend)
+    document.removeEventListener(&apos;touchmove&apos;, this._onTouchmove)
+  }
 }
 
-
-export default MouseObserver;
+export default MouseObserver
 </code></pre>
 
 </div>

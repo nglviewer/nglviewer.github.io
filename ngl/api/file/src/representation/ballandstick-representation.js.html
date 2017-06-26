@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.3</span>
+<header><span>NGL@0.10.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -61,6 +61,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
@@ -172,19 +173,35 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
@@ -200,7 +217,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
@@ -238,18 +255,17 @@
  * @private
  */
 
-
-import { defaults } from &quot;../utils.js&quot;;
-import { ExtensionFragDepth, RepresentationRegistry } from &quot;../globals.js&quot;;
-import StructureRepresentation from &quot;./structure-representation.js&quot;;
-import SphereBuffer from &quot;../buffer/sphere-buffer.js&quot;;
-import CylinderBuffer from &quot;../buffer/cylinder-buffer.js&quot;;
-import LineBuffer from &quot;../buffer/line-buffer.js&quot;;
-
+import { defaults } from &apos;../utils.js&apos;
+import { ExtensionFragDepth, RepresentationRegistry } from &apos;../globals.js&apos;
+import StructureRepresentation from &apos;./structure-representation.js&apos;
+import SphereBuffer from &apos;../buffer/sphere-buffer.js&apos;
+import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
+import LineBuffer from &apos;../buffer/line-buffer.js&apos;
 
 /**
  * Ball And Stick representation parameter object. Extends {@link RepresentationParameters} and
  * {@link StructureRepresentationParameters}.
+ *
  * @typedef {Object} BallAndStickRepresentationParameters - ball and stick representation parameters
  *
  * @property {Integer} sphereDetail - sphere quality (icosahedron subdivisions)
@@ -264,7 +280,6 @@ import LineBuffer from &quot;../buffer/line-buffer.js&quot;;
  * @property {Float} bondScale - scale/radius for multiple bond rendering
  */
 
-
 /**
  * Ball And Stick representation. Show atoms as spheres and bonds as cylinders.
  *
@@ -276,254 +291,219 @@ import LineBuffer from &quot;../buffer/line-buffer.js&quot;;
  *     o.autoView();
  * } );
  */
-class BallAndStickRepresentation extends StructureRepresentation{
-
+class BallAndStickRepresentation extends StructureRepresentation {
     /**
      * Create Ball And Stick representation object
      * @param {Structure} structure - the structure to be represented
      * @param {Viewer} viewer - a viewer object
      * @param {BallAndStickRepresentationParameters} params - ball and stick representation parameters
      */
-    constructor( structure, viewer, params ){
+  constructor (structure, viewer, params) {
+    super(structure, viewer, params)
 
-        super( structure, viewer, params );
+    this.type = &apos;ball+stick&apos;
 
-        this.type = &quot;ball+stick&quot;;
+    this.parameters = Object.assign({
 
-        this.parameters = Object.assign( {
+      sphereDetail: true,
+      radialSegments: true,
+      openEnded: true,
+      disableImpostor: true,
+      aspectRatio: {
+        type: &apos;number&apos;, precision: 1, max: 10.0, min: 1.0
+      },
+      lineOnly: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      cylinderOnly: {
+        type: &apos;boolean&apos;, rebuild: true
+      },
+      multipleBond: {
+        type: &apos;select&apos;,
+        rebuild: true,
+        options: {
+          &apos;off&apos;: &apos;off&apos;,
+          &apos;symmetric&apos;: &apos;symmetric&apos;,
+          &apos;offset&apos;: &apos;offset&apos;
+        }
+      },
+      bondScale: {
+        type: &apos;number&apos;, precision: 2, max: 1.0, min: 0.01
+      },
+      bondSpacing: {
+        type: &apos;number&apos;, precision: 2, max: 2.0, min: 0.5
+      }
 
-            sphereDetail: true,
-            radialSegments: true,
-            openEnded: true,
-            disableImpostor: true,
-            aspectRatio: {
-                type: &quot;number&quot;, precision: 1, max: 10.0, min: 1.0
-            },
-            lineOnly: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            cylinderOnly: {
-                type: &quot;boolean&quot;, rebuild: true
-            },
-            multipleBond: {
-                type: &quot;select&quot;, rebuild: true,
-                options: {
-                    &quot;off&quot; : &quot;off&quot;,
-                    &quot;symmetric&quot; : &quot;symmetric&quot;,
-                    &quot;offset&quot;: &quot;offset&quot;
-                }
-            },
-            bondScale: {
-                type: &quot;number&quot;, precision: 2, max: 1.0, min: 0.01
-            },
-            bondSpacing: {
-                type: &quot;number&quot;, precision: 2, max: 2.0, min: 0.5
-            }
+    }, this.parameters)
 
-        }, this.parameters );
+    this.init(params)
+  }
 
-        this.init( params );
+  init (params) {
+    var p = params || {}
+    p.radius = defaults(p.radius, 0.15)
 
-    }
+    this.aspectRatio = defaults(p.aspectRatio, 2.0)
+    this.lineOnly = defaults(p.lineOnly, false)
+    this.cylinderOnly = defaults(p.cylinderOnly, false)
+    this.multipleBond = defaults(p.multipleBond, &apos;off&apos;)
+    this.bondSpacing = defaults(p.bondSpacing, 1.0)
+    this.bondScale = defaults(p.bondScale, 0.4)
 
-    init( params ){
+    super.init(p)
+  }
 
-        var p = params || {};
-        p.radius = defaults( p.radius, 0.15 );
+  getAtomParams (what, params) {
+    params = Object.assign({
+      radiusParams: { &apos;radius&apos;: this.radius, &apos;scale&apos;: this.scale * this.aspectRatio }
+    }, params)
 
-        this.aspectRatio = defaults( p.aspectRatio, 2.0 );
-        this.lineOnly = defaults( p.lineOnly, false );
-        this.cylinderOnly = defaults( p.cylinderOnly, false );
-        this.multipleBond = defaults( p.multipleBond, &quot;off&quot; );
-        this.bondSpacing = defaults( p.bondSpacing, 1.0 );
-        this.bondScale = defaults( p.bondScale, 0.4 );
+    return super.getAtomParams(what, params)
+  }
 
-        super.init( p );
+  getAtomData (sview, what, params) {
+    return sview.getAtomData(this.getAtomParams(what, params))
+  }
 
-    }
+  getBondParams (what, params) {
+    params = Object.assign({
+      multipleBond: this.multipleBond,
+      bondSpacing: this.bondSpacing,
+      bondScale: this.bondScale
+    }, params)
 
-    getAtomParams( what, params ){
+    return super.getBondParams(what, params)
+  }
 
-        params = Object.assign( {
-            radiusParams: { &quot;radius&quot;: this.radius, &quot;scale&quot;: this.scale * this.aspectRatio }
-        }, params );
+  getBondData (sview, what, params) {
+    return sview.getBondData(this.getBondParams(what, params))
+  }
 
-        return super.getAtomParams( what, params );
+  createData (sview) {
+    var bondData = this.getBondData(sview)
+    var bufferList = []
 
-    }
-
-    getAtomData( sview, what, params ){
-
-        return sview.getAtomData( this.getAtomParams( what, params ) );
-
-    }
-
-    getBondParams( what, params ){
-
-        params = Object.assign( {
-            multipleBond: this.multipleBond,
-            bondSpacing: this.bondSpacing,
-            bondScale:  this.bondScale
-        }, params );
-
-        return super.getBondParams( what, params );
-
-    }
-
-    getBondData( sview, what, params ){
-
-        return sview.getBondData( this.getBondParams( what, params ) );
-
-    }
-
-    createData( sview ){
-
-        var bondData = this.getBondData( sview );
-        var bufferList = [];
-
-        if( this.lineOnly ){
-
-            this.lineBuffer = new LineBuffer(
+    if (this.lineOnly) {
+      this.lineBuffer = new LineBuffer(
                 bondData,
                 this.getBufferParams()
-            );
+            )
 
-            bufferList.push( this.lineBuffer );
-
-        }else{
-
-            var cylinderBuffer = new CylinderBuffer(
+      bufferList.push(this.lineBuffer)
+    } else {
+      var cylinderBuffer = new CylinderBuffer(
                 bondData,
-                this.getBufferParams( {
-                    openEnded: this.openEnded,
-                    radialSegments: this.radialSegments,
-                    disableImpostor: this.disableImpostor,
-                    dullInterior: true
-                } )
-            );
+                this.getBufferParams({
+                  openEnded: this.openEnded,
+                  radialSegments: this.radialSegments,
+                  disableImpostor: this.disableImpostor,
+                  dullInterior: true
+                })
+            )
 
-            bufferList.push( cylinderBuffer );
+      bufferList.push(cylinderBuffer)
 
-            if( !this.cylinderOnly ){
+      if (!this.cylinderOnly) {
+        var sphereBuffer = new SphereBuffer(
+                    this.getAtomData(sview),
+                    this.getBufferParams({
+                      sphereDetail: this.sphereDetail,
+                      disableImpostor: this.disableImpostor,
+                      dullInterior: true
+                    })
+                )
 
-                var sphereBuffer = new SphereBuffer(
-                    this.getAtomData( sview ),
-                    this.getBufferParams( {
-                        sphereDetail: this.sphereDetail,
-                        disableImpostor: this.disableImpostor,
-                        dullInterior: true
-                    } )
-                );
-
-                bufferList.push( sphereBuffer );
-
-            }
-
-        }
-
-        return {
-            bufferList: bufferList
-        };
-
+        bufferList.push(sphereBuffer)
+      }
     }
 
-    updateData( what, data ){
+    return {
+      bufferList: bufferList
+    }
+  }
 
-        if( this.multipleBond !== &quot;off&quot; &amp;&amp; what &amp;&amp; what.radius ){
-            what.position = true;
-        }
-
-        var bondData = this.getBondData( data.sview, what );
-
-        if( this.lineOnly ){
-
-            var lineData = {};
-
-            if( !what || what.position ){
-                lineData.position1 = bondData.position1;
-                lineData.position2 = bondData.position2;
-            }
-
-            if( !what || what.color ){
-                lineData.color = bondData.color;
-                lineData.color2 = bondData.color2;
-            }
-
-            data.bufferList[ 0 ].setAttributes( lineData );
-
-        }else{
-
-            var cylinderData = {};
-
-            if( !what || what.position ){
-                cylinderData.position1 = bondData.position1;
-                cylinderData.position2 = bondData.position2;
-            }
-
-            if( !what || what.color ){
-                cylinderData.color = bondData.color;
-                cylinderData.color2 = bondData.color2;
-            }
-
-            if( !what || what.radius ){
-                cylinderData.radius = bondData.radius;
-            }
-
-            data.bufferList[ 0 ].setAttributes( cylinderData );
-
-            if( !this.cylinderOnly ){
-
-                var atomData = this.getAtomData( data.sview, what );
-
-                var sphereData = {};
-
-                if( !what || what.position ){
-                    sphereData.position = atomData.position;
-                }
-
-                if( !what || what.color ){
-                    sphereData.color = atomData.color;
-                }
-
-                if( !what || what.radius ){
-                    sphereData.radius = atomData.radius;
-                }
-
-                data.bufferList[ 1 ].setAttributes( sphereData );
-
-            }
-
-        }
-
+  updateData (what, data) {
+    if (this.multipleBond !== &apos;off&apos; &amp;&amp; what &amp;&amp; what.radius) {
+      what.position = true
     }
 
-    setParameters( params ){
+    var bondData = this.getBondData(data.sview, what)
 
-        var rebuild = false;
-        var what = {};
+    if (this.lineOnly) {
+      var lineData = {}
 
-        if( params &amp;&amp; ( params.aspectRatio || params.bondSpacing || params.bondScale ) ){
+      if (!what || what.position) {
+        lineData.position1 = bondData.position1
+        lineData.position2 = bondData.position2
+      }
 
-            what.radius = true;
-            if( !ExtensionFragDepth || this.disableImpostor ){
-                rebuild = true;
-            }
+      if (!what || what.color) {
+        lineData.color = bondData.color
+        lineData.color2 = bondData.color2
+      }
 
+      data.bufferList[ 0 ].setAttributes(lineData)
+    } else {
+      var cylinderData = {}
+
+      if (!what || what.position) {
+        cylinderData.position1 = bondData.position1
+        cylinderData.position2 = bondData.position2
+      }
+
+      if (!what || what.color) {
+        cylinderData.color = bondData.color
+        cylinderData.color2 = bondData.color2
+      }
+
+      if (!what || what.radius) {
+        cylinderData.radius = bondData.radius
+      }
+
+      data.bufferList[ 0 ].setAttributes(cylinderData)
+
+      if (!this.cylinderOnly) {
+        var atomData = this.getAtomData(data.sview, what)
+
+        var sphereData = {}
+
+        if (!what || what.position) {
+          sphereData.position = atomData.position
         }
 
-        super.setParameters( params, what, rebuild );
+        if (!what || what.color) {
+          sphereData.color = atomData.color
+        }
 
-        return this;
+        if (!what || what.radius) {
+          sphereData.radius = atomData.radius
+        }
 
+        data.bufferList[ 1 ].setAttributes(sphereData)
+      }
+    }
+  }
+
+  setParameters (params) {
+    var rebuild = false
+    var what = {}
+
+    if (params &amp;&amp; (params.aspectRatio || params.bondSpacing || params.bondScale)) {
+      what.radius = true
+      if (!ExtensionFragDepth || this.disableImpostor) {
+        rebuild = true
+      }
     }
 
+    super.setParameters(params, what, rebuild)
+
+    return this
+  }
 }
 
+RepresentationRegistry.add(&apos;ball+stick&apos;, BallAndStickRepresentation)
 
-RepresentationRegistry.add( &quot;ball+stick&quot;, BallAndStickRepresentation );
-
-
-export default BallAndStickRepresentation;
+export default BallAndStickRepresentation
 </code></pre>
 
 </div>
