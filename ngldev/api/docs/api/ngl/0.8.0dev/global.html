@@ -1,0 +1,5439 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Global</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-NGL.html">NGL</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="ArrowBuffer.html">ArrowBuffer</a></li><li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="Color.html">Color</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="File.html">File</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Representation.html">Representation</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Shape.html">Shape</a></li><li><a href="ShapeComponent.html">ShapeComponent</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="ShapeComponent.html#event:representationAdded">ShapeComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Global</h1>
+<section>
+
+<header>
+    
+        <h2>
+        
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="autoLoad"><span class="type-signature"></span>autoLoad(file, params)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Load a file
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>file</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type"><a href="File.html">File</a></span>
+|
+
+<span class="param-type"><a href="Blob.html">Blob</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">either a URL or an object containing the file data</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">loading parameters
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ext</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">file extension, determines file type</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Promise resolves to the loaded data
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Promise.html">Promise</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="sunlight-highlight-javascript">// load from URL
+NGL.autoLoad( &quot;http://files.rcsb.org/download/5IOS.cif&quot; );</pre>
+
+    <pre class="sunlight-highlight-javascript">// load binary data in CCP4 format via a Blob
+var binaryBlob = new Blob( [ ccp4Data ], { type: &#x27;application/octet-binary&#x27;} );
+NGL.autoLoad( binaryBlob, { ext: &quot;ccp4&quot; } );</pre>
+
+    <pre class="sunlight-highlight-javascript">// load string data in PDB format via a Blob
+var stringBlob = new Blob( [ pdbData ], { type: &#x27;text/plain&#x27;} );
+NGL.autoLoad( stringBlob, { ext: &quot;pdb&quot; } );</pre>
+
+    <pre class="sunlight-highlight-javascript">// load a File object
+NGL.autoLoad( file );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="lineLineIntersect"><span class="type-signature"></span>lineLineIntersect(p1, p2, p3, p4)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Converted to JavaScript from
+<a href="http://paulbourke.net/geometry/pointlineplane/lineline.c">http://paulbourke.net/geometry/pointlineplane/lineline.c</a>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>p1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>p2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>p3</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>p4</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="Vector3.html">Vector3</a>, <a href="Vector3.html">Vector3</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="quicksortIP"><span class="type-signature"></span>quicksortIP(arr, eleSize, orderElement, <span class="optional">begin</span>, <span class="optional">end</span>)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        In-place quicksort for typed arrays (e.g. for Float32Array)
+provides fast sorting
+useful e.g. for a custom shader and/or BufferGeometry
+Complexity: http://bigocheatsheet.com/ see Quicksort
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TypedArray</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">array to be sorted</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eleSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">element size</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>orderElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">index of element used for sorting, < eleSize</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>begin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">start index for range to be sorted</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">end index for range to be sorted</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Roman Bolzern &lt;roman.bolzern@fhnw.ch>, 2013</li>
+			
+			<li>I4DS http://www.fhnw.ch/i4ds, 2013</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-license method-doc-label method-doc-details-label">License:</dt>
+	<dd class="tag-license">
+		<ul class="dummy">
+			<li>MIT License <http://www.opensource.org/licenses/mit-license.php></li>
+		</ul>
+	</dd>
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">points: [x, y, z, x, y, z, x, y, z, ...]
+eleSize: 3 //because of (x, y, z)
+orderElement: 0 //order according to x</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        <dl>
+                
+<hr>
+<dt>
+    <h4 class="name" id="atomCallback"><span class="type-signature"></span>atomCallback(atomProxy)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Atom iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>atomProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AtomProxy.html">AtomProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">current atom proxy</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="BallAndStickRepresentationParameters">
+    <h4>BallAndStickRepresentationParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Ball And Stick representation parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sphereDetail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">sphere quality (icosahedron subdivisions)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radialSegments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">cylinder quality (number of segments)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>openEnded</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">capped or not</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>disableImpostor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">disable use of raycasted impostors for rendering</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>aspectRatio</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">size difference between atom and bond radii</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lineOnly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render only bonds, and only as lines</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cylinderOnly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render only bonds (no atoms)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>multipleBond</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">whether or not to render multiple bonds</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bondSpacing</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">spacing for multiple bond rendering</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+        <dt class="mixes">Mixes In:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="global.html#RepresentationParameters">RepresentationParameters</a></li>
+        
+            <li><a href="global.html#StructureRepresentationParameters">StructureRepresentationParameters</a></li>
+        
+        </ul></dd>
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    <h4 class="name" id="bondCallback"><span class="type-signature"></span>bondCallback(bondProxy)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Bond iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>bondProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="BondProxy.html">BondProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">current bond proxy</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="BufferParameters">
+    <h4>BufferParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Buffer parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opaqueBack</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render back-side opaque</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dullInterior</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render back-side with dull lighting</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>side</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">which triangle sides to render, "front" front-side,
+                           "back" back-side, "double" front- and back-side</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">translucency: 1 is fully opaque, 0 is fully transparent</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clipNear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of camera near/front clipping plane
+                               in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flatShaded</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render flat shaded</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>linewidth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">width of lines (when applicable)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wireframe</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render as wireframe</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wireframeLinewidth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">width of wireframe lines</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roughness</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">how rough the material is, between 0 and 1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>metalness</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">how metallic the material is, between 0 and 1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>diffuse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">diffuse color for lighting</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forceTransparent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">force the material to allow transparency</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    <h4 class="name" id="chainCallback"><span class="type-signature"></span>chainCallback(chainProxy)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Chain iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>chainProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ChainProxy.html">ChainProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">current chain proxy</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="ComponentParameters">
+    <h4>ComponentParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Component parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">component name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>visible</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">component visibility</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="DistanceRepresentationParameters">
+    <h4>DistanceRepresentationParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Distance representation parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>labelSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">size of the distance label</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">color of the distance label</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelVisible</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">visibility of the distance label</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelZOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in z-direction (i.e. in camera direction)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>atomPair</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">list of pairs of selection strings, see <a href="Selection.html">Selection</a></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radialSegments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">cylinder quality (number of segments)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>disableImpostor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">disable use of raycasted impostors for rendering</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+        <dt class="mixes">Mixes In:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="global.html#RepresentationParameters">RepresentationParameters</a></li>
+        
+            <li><a href="global.html#StructureRepresentationParameters">StructureRepresentationParameters</a></li>
+        
+        </ul></dd>
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="LabelRepresentationParameters">
+    <h4>LabelRepresentationParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Label representation parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>clipNear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of camera near/front clipping plane
+                               in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">translucency: 1 is fully opaque, 0 is fully transparent</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">type of the label, one of:
+                                "atomname", "atomindex", "occupancy", "bfactor",
+                                "serial", "element", "atom", "resname", "resno",
+                                "res", "text", "qualified". When set to "text", the
+                                `labelText` list is used.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">list of label strings, must set `labelType` to "text"
+                                  to take effect</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fontFamily</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">font family, one of: "sans-serif", "monospace", "serif"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fontStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">font style, "normal" or "italic"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fontWeight</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">font weight, "normal" or "bold"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sdf</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">use "signed distance field"-based rendering for sharper edges</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>xOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in x-direction</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>yOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in y-direction</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>zOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in z-direction (i.e. in camera direction)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    <h4 class="name" id="modelCallback"><span class="type-signature"></span>modelCallback(modelProxy)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Model iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>modelProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ModelProxy.html">ModelProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">current model proxy</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="PickingData">
+    <h4>PickingData</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Picking data object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pickedAtom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AtomProxy.html">AtomProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">picked atom</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pickedBond</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="BondProxy.html">BondProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">picked bond</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pickedVolume</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Volume.html">Volume</a></span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">picked volume</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>instance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">instance data
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">instance id</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">instance name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>matrix</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Matrix4.html">Matrix4</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">transformation matrix of the instance</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    <h4 class="name" id="polymerCallback"><span class="type-signature"></span>polymerCallback(polymer)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Polymer iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>polymer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Polymer.html">Polymer</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">current polymer object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="RepresentationParameters">
+    <h4>RepresentationParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Representation parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>clipNear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of camera near/front clipping plane
+                               in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flatShaded</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render flat shaded</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">translucency: 1 is fully opaque, 0 is fully transparent</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>side</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">which triangle sides to render, "front" front-side,
+                           "back" back-side, "double" front- and back-side</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wireframe</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">render as wireframe</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>linewidth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">width of lines (when applicable)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colorScheme</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">color scheme</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colorScale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">color scale</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colorValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">color value</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colorDomain</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Integer></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">scale value range
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">min value</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">max value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colorMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">color mode</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roughness</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">how rough the material is, between 0 and 1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>metalness</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">how metallic the material is, between 0 and 1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>diffuse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">diffuse color for lighting</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    <h4 class="name" id="residueCallback"><span class="type-signature"></span>residueCallback(residueProxy)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Residue iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>residueProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ResidueProxy.html">ResidueProxy</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">current residue proxy</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt>
+    <h4 class="name" id="residueListCallback"><span class="type-signature"></span>residueListCallback(residueProxyList)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Residue-list iterator callback
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>residueProxyList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="ResidueProxy.html">ResidueProxy</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">list of current residue proxies</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="StageParameters">
+    <h4>StageParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Stage parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>backgroundColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">background color</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sampleLevel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">sampling level for antialiasing, between -1 and 5;
+                                  -1: no sampling, 0: only sampling when not moving</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rotateSpeed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">camera-controls rotation speed, between 0 and 10</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>zoomSpeed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">camera-controls zoom speed, between 0 and 10</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>panSpeed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">camera-controls pan speed, between 0 and 10</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clipNear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of camera near/front clipping plane
+                               in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clipFar</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of camera far/back clipping plane
+                              in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clipDist</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">camera clipping distance in Angstrom</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fogNear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of the start of the fog effect
+                              in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fogFar</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position where the fog is in full effect
+                             in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cameraType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">type of camera, either 'persepective' or 'orthographic'</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cameraFov</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">camera field of view in degree, between 15 and 120</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lightColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">point light color</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lightIntensity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">point light intensity</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ambientColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Color.html">Color</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ambient light color</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ambientIntensity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ambient light intensity</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hoverTimeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">timeout until the <a href="Stage.html#event:hovered">hovered</a> signal is fired</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="StructureRepresentationParameters">
+    <h4>StructureRepresentationParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Structure representation parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>radiusType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A list of possible sources of the radius used for rendering the representation. The radius can be based on the *vdW radius*, the *covalent radius* or the *B-factor* value of the corresponding atom. Additionally the radius can be based on the *secondary structure*. Alternatively, when set to *size*, the value from the *radius* parameter is used for all atoms.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A number providing a fixed radius used for rendering the representation.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A number that scales the value defined by the *radius* or the *radiusType* parameter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>assembly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of an assembly object. Included are the asymmetric unit (*AU*) corresponding to the coordinates given in the structure file, biological assemblies from *PDB*, *mmCIF* or *MMTF* files (*BU1*, *BU2*, ...), a filled (crystallographic) unitcell of a given space group (*UNITCELL*), a supercell consisting of a center unitcell and its 26 direct neighbors (*SUPERCELL*). Set to *default* to use the default asemmbly of the structure object.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+        <dt class="mixes">Mixes In:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="global.html#RepresentationParameters">RepresentationParameters</a></li>
+        
+        </ul></dd>
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="TextBufferParameters">
+    <h4>TextBufferParameters</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Text buffer parameter object.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">translucency: 1 is fully opaque, 0 is fully transparent</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clipNear</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">position of camera near/front clipping plane
+                               in percent of scene bounding box</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">type of the label, one of:
+                                "atomname", "atomindex", "occupancy", "bfactor",
+                                "serial", "element", "atom", "resname", "resno",
+                                "res", "text", "qualified". When set to "text", the
+                                `labelText` list is used.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">list of label strings, must set `labelType` to "text"
+                                  to take effect</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fontFamily</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">font family, one of: "sans-serif", "monospace", "serif"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fontStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">font style, "normal" or "italic"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fontWeight</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">font weight, "normal" or "bold"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sdf</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">use "signed distance field"-based rendering for sharper edges</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>xOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in x-direction</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>yOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in y-direction</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>zOffset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">offset in z-direction (i.e. in camera direction)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            </dl>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	
+		on July 13th 2016, 9:23:27 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/structure/structure-constants.js | NGL Viewer API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header><span>NGL@0.10.5-2</span>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a href="./../gallery/index.html">Gallery</a><a data-ice="repoURL" href="https://github.com/arose/ngl.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/script.js~Script.html">Script</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/selection.js~Selection.html">Selection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-binarySearchIndexOf">binarySearchIndexOf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Browser">Browser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ColormakerRegistry">ColormakerRegistry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ExtensionFragDepth">ExtensionFragDepth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Mobile">Mobile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Version">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Box3">Box3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/core/BufferGeometry">BufferGeometry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Char</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Color">Color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Euler">Euler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Float</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Matrix3">Matrix3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Matrix4">Matrix4</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Plane">Plane</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Quaternion">Quaternion</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://millermedeiros.github.io/js-signals/docs/symbols/Signal.html">Signal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector2">Vector2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">align</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">animation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~AnimationList.html">AnimationList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~MoveAnimation.html">MoveAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~TimeoutAnimation.html">TimeoutAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ValueAnimation.html">ValueAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">buffer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/arrow-buffer.js~ArrowBuffer.html">ArrowBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cone-buffer.js~ConeBuffer.html">ConeBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html">ConeGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/contour-buffer.js~ContourBuffer.html">ContourBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cylinder-buffer.js~CylinderBuffer.html">CylinderBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html">CylinderGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html">CylinderImpostorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html">DoubleSidedBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/ellipsoid-buffer.js~EllipsoidBuffer.html">EllipsoidBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html">EllipsoidGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/hyperballstick-buffer.js~HyperballStickBuffer.html">HyperballStickBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html">HyperballStickImpostorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/image-buffer.js~ImageBuffer.html">ImageBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/line-buffer.js~LineBuffer.html">LineBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/mesh-buffer.js~MeshBuffer.html">MeshBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/point-buffer.js~PointBuffer.html">PointBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/ribbon-buffer.js~RibbonBuffer.html">RibbonBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/sphere-buffer.js~SphereBuffer.html">SphereBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html">SphereGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html">SphereImpostorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/surface-buffer.js~SurfaceBuffer.html">SurfaceBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/text-buffer.js~TextBuffer.html">TextBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/trace-buffer.js~TraceBuffer.html">TraceBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html">TubeMeshBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/vector-buffer.js~VectorBuffer.html">VectorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/alignedbox-buffer.js~AlignedBoxBuffer.html">AlignedBoxBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/box-buffer.js~BoxBuffer.html">BoxBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/geometry-buffer.js~GeometryBuffer.html">GeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/mapped-buffer.js~MappedBuffer.html">MappedBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/quad-buffer.js~QuadBuffer.html">QuadBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BufferParameters">BufferParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TextBufferParameters">TextBufferParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">color</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/atomindex-colormaker.js~AtomindexColormaker.html">AtomindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/bfactor-colormaker.js~BfactorColormaker.html">BfactorColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainid-colormaker.js~ChainidColormaker.html">ChainidColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainindex-colormaker.js~ChainindexColormaker.html">ChainindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainname-colormaker.js~ChainnameColormaker.html">ChainnameColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/colormaker-registry.js~ColormakerRegistry.html">ColormakerRegistry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">DensityfitColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html">ElectrostaticColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/element-colormaker.js~ElementColormaker.html">ElementColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">EntityindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html">EntitytypeColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html">GeoqualityColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html">HydrophobicityColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">OccupancyColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">ResidueindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/resname-colormaker.js~ResnameColormaker.html">ResnameColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/selection-colormaker.js~SelectionColormaker.html">SelectionColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/sstruc-colormaker.js~SstrucColormaker.html">SstrucColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/uniform-colormaker.js~UniformColormaker.html">UniformColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/value-colormaker.js~ValueColormaker.html">ValueColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/volume-colormaker.js~VolumeColormaker.html">VolumeColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html">Colormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/annotation.js~Annotation.html">Annotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/script-component.js~ScriptComponent.html">ScriptComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/shape-component.js~ShapeComponent.html">ShapeComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/surface-component.js~SurfaceComponent.html">SurfaceComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/trajectory-component.js~TrajectoryComponent.html">TrajectoryComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/volume-component.js~VolumeComponent.html">VolumeComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/component/component.js~Component.html">Component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ComponentParameters">ComponentParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ComponentSignals">ComponentSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationComponentSignals">RepresentationComponentSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureComponentSignals">StructureComponentSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/component-controls.js~ComponentControls.html">ComponentControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TriggerString">TriggerString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/script-loader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-autoLoad">autoLoad</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoaderParameters">LoaderParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">math</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/math/principal-axes.js~PrincipalAxes.html">PrincipalAxes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-quicksortIP">quicksortIP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lineLineIntersect">lineLineIntersect</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">parser</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parser/csv-parser.js~CsvParser.html">CsvParser</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">proxy</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html">AtomProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/bond-proxy.js~BondProxy.html">BondProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/chain-proxy.js~ChainProxy.html">ChainProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/model-proxy.js~ModelProxy.html">ModelProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/polymer.js~Polymer.html">Polymer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html">ResidueProxy</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">representation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/axes-representation.js~AxesRepresentation.html">AxesRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/backbone-representation.js~BackboneRepresentation.html">BackboneRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/hyperball-representation.js~HyperballRepresentation.html">HyperballRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rocket-representation.js~RocketRepresentation.html">RocketRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/rope-representation.js~RopeRepresentation.html">RopeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/slice-representation.js~SliceRepresentation.html">SliceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">SpacefillRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trace-representation.js~TraceRepresentation.html">TraceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/tube-representation.js~TubeRepresentation.html">TubeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">UnitcellRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">stage</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html">Stage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-store.js~AtomStore.html">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/atom-type.js~AtomType.html">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/bond-store.js~BondStore.html">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/chain-store.js~ChainStore.html">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/model-store.js~ModelStore.html">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-store.js~ResidueStore.html">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/store/residue-type.js~ResidueType.html">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/store/store.js~Store.html">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureExtraData">StructureExtraData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/molecular-surface.js~MolecularSurface.html">MolecularSurface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/surface.js~Surface.html">Surface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/netcdf-reader.js~NetcdfReader.html">NetcdfReader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~Picker.html">Picker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html">ShapePicker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Kdtree">Kdtree</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">viewer</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-makeImage">makeImage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/structure/structure-constants.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Structure Constants
+ * @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
+ * @private
+ */
+
+// entity types
+const UnknownEntity = 0
+const PolymerEntity = 1
+const NonPolymerEntity = 2
+const MacrolideEntity = 3
+const WaterEntity = 4
+
+// molecule types
+const UnknownType = 0
+const WaterType = 1
+const IonType = 2
+const ProteinType = 3
+const RnaType = 4
+const DnaType = 5
+const SaccharideType = 6
+
+// backbone types
+const UnknownBackboneType = 0
+const ProteinBackboneType = 1
+const RnaBackboneType = 2
+const DnaBackboneType = 3
+const CgProteinBackboneType = 4
+const CgRnaBackboneType = 5
+const CgDnaBackboneType = 6
+
+// chemical component types
+const ChemCompProtein = [
+  &apos;D-BETA-PEPTIDE, C-GAMMA LINKING&apos;, &apos;D-GAMMA-PEPTIDE, C-DELTA LINKING&apos;,
+  &apos;D-PEPTIDE COOH CARBOXY TERMINUS&apos;, &apos;D-PEPTIDE NH3 AMINO TERMINUS&apos;, &apos;D-PEPTIDE LINKING&apos;,
+  &apos;L-BETA-PEPTIDE, C-GAMMA LINKING&apos;, &apos;L-GAMMA-PEPTIDE, C-DELTA LINKING&apos;,
+  &apos;L-PEPTIDE COOH CARBOXY TERMINUS&apos;, &apos;L-PEPTIDE NH3 AMINO TERMINUS&apos;, &apos;L-PEPTIDE LINKING&apos;,
+  &apos;PEPTIDE LINKING&apos;, &apos;PEPTIDE-LIKE&apos;
+]
+const ChemCompRna = [
+  &apos;RNA OH 3 PRIME TERMINUS&apos;, &apos;RNA OH 5 PRIME TERMINUS&apos;, &apos;RNA LINKING&apos;
+]
+const ChemCompDna = [
+  &apos;DNA OH 3 PRIME TERMINUS&apos;, &apos;DNA OH 5 PRIME TERMINUS&apos;, &apos;DNA LINKING&apos;,
+  &apos;L-DNA LINKING&apos;, &apos;L-RNA LINKING&apos;
+]
+const ChemCompSaccharide = [
+  &apos;D-SACCHARIDE&apos;, &apos;D-SACCHARIDE 1,4 AND 1,4 LINKING&apos;, &apos;D-SACCHARIDE 1,4 AND 1,6 LINKING&apos;,
+  &apos;L-SACCHARIDE&apos;, &apos;L-SACCHARIDE 1,4 AND 1,4 LINKING&apos;, &apos;L-SACCHARIDE 1,4 AND 1,6 LINKING&apos;,
+  &apos;SACCHARIDE&apos;
+]
+const ChemCompOther = [
+  &apos;OTHER&apos;
+]
+const ChemCompNonPolymer = [
+  &apos;NON-POLYMER&apos;
+]
+const ChemCompHetero = ChemCompNonPolymer.concat(ChemCompOther, ChemCompSaccharide)
+
+// secondary structure
+const SecStrucHelix = [ &apos;h&apos;, &apos;g&apos;, &apos;i&apos; ]
+const SecStrucSheet = [ &apos;e&apos;, &apos;b&apos; ]
+const SecStrucTurn = [ &apos;s&apos;, &apos;t&apos;, &apos;l&apos;, &apos;&apos; ]
+
+// http://dx.doi.org/10.1021/jp8111556 (or 2.0)
+const VdwRadii = {
+  &apos;H&apos;: 1.1,
+  &apos;HE&apos;: 1.4,
+  &apos;LI&apos;: 1.81,
+  &apos;BE&apos;: 1.53,
+  &apos;B&apos;: 1.92,
+  &apos;C&apos;: 1.7,
+  &apos;N&apos;: 1.55,
+  &apos;O&apos;: 1.52,
+  &apos;F&apos;: 1.47,
+  &apos;NE&apos;: 1.54,
+  &apos;NA&apos;: 2.27,
+  &apos;MG&apos;: 1.73,
+  &apos;AL&apos;: 1.84,
+  &apos;SI&apos;: 2.1,
+  &apos;P&apos;: 1.8,
+  &apos;S&apos;: 1.8,
+  &apos;CL&apos;: 1.75,
+  &apos;AR&apos;: 1.88,
+  &apos;K&apos;: 2.75,
+  &apos;CA&apos;: 2.31,
+  &apos;SC&apos;: 2.3,
+  &apos;TI&apos;: 2.15,
+  &apos;V&apos;: 2.05,
+  &apos;CR&apos;: 2.05,
+  &apos;MN&apos;: 2.05,
+  &apos;FE&apos;: 2.05,
+  &apos;CO&apos;: 2.0,
+  &apos;NI&apos;: 2.0,
+  &apos;CU&apos;: 2.0,
+  &apos;ZN&apos;: 2.1,
+  &apos;GA&apos;: 1.87,
+  &apos;GE&apos;: 2.11,
+  &apos;AS&apos;: 1.85,
+  &apos;SE&apos;: 1.9,
+  &apos;BR&apos;: 1.83,
+  &apos;KR&apos;: 2.02,
+  &apos;RB&apos;: 3.03,
+  &apos;SR&apos;: 2.49,
+  &apos;Y&apos;: 2.4,
+  &apos;ZR&apos;: 2.3,
+  &apos;NB&apos;: 2.15,
+  &apos;MO&apos;: 2.1,
+  &apos;TC&apos;: 2.05,
+  &apos;RU&apos;: 2.05,
+  &apos;RH&apos;: 2.0,
+  &apos;PD&apos;: 2.05,
+  &apos;AG&apos;: 2.1,
+  &apos;CD&apos;: 2.2,
+  &apos;IN&apos;: 2.2,
+  &apos;SN&apos;: 1.93,
+  &apos;SB&apos;: 2.17,
+  &apos;TE&apos;: 2.06,
+  &apos;I&apos;: 1.98,
+  &apos;XE&apos;: 2.16,
+  &apos;CS&apos;: 3.43,
+  &apos;BA&apos;: 2.68,
+  &apos;LA&apos;: 2.5,
+  &apos;CE&apos;: 2.48,
+  &apos;PR&apos;: 2.47,
+  &apos;ND&apos;: 2.45,
+  &apos;PM&apos;: 2.43,
+  &apos;SM&apos;: 2.42,
+  &apos;EU&apos;: 2.4,
+  &apos;GD&apos;: 2.38,
+  &apos;TB&apos;: 2.37,
+  &apos;DY&apos;: 2.35,
+  &apos;HO&apos;: 2.33,
+  &apos;ER&apos;: 2.32,
+  &apos;TM&apos;: 2.3,
+  &apos;YB&apos;: 2.28,
+  &apos;LU&apos;: 2.27,
+  &apos;HF&apos;: 2.25,
+  &apos;TA&apos;: 2.2,
+  &apos;W&apos;: 2.1,
+  &apos;RE&apos;: 2.05,
+  &apos;OS&apos;: 2.0,
+  &apos;IR&apos;: 2.0,
+  &apos;PT&apos;: 2.05,
+  &apos;AU&apos;: 2.1,
+  &apos;HG&apos;: 2.05,
+  &apos;TL&apos;: 1.96,
+  &apos;PB&apos;: 2.02,
+  &apos;BI&apos;: 2.07,
+  &apos;PO&apos;: 1.97,
+  &apos;AT&apos;: 2.02,
+  &apos;RN&apos;: 2.2,
+  &apos;FR&apos;: 3.48,
+  &apos;RA&apos;: 2.83,
+  &apos;AC&apos;: 2.0,
+  &apos;TH&apos;: 2.4,
+  &apos;PA&apos;: 2.0,
+  &apos;U&apos;: 2.3,
+  &apos;NP&apos;: 2.0,
+  &apos;PU&apos;: 2.0,
+  &apos;AM&apos;: 2.0,
+  &apos;CM&apos;: 2.0,
+  &apos;BK&apos;: 2.0,
+  &apos;CF&apos;: 2.0,
+  &apos;ES&apos;: 2.0,
+  &apos;FM&apos;: 2.0,
+  &apos;MD&apos;: 2.0,
+  &apos;NO&apos;: 2.0,
+  &apos;LR&apos;: 2.0,
+  &apos;RF&apos;: 2.0,
+  &apos;DB&apos;: 2.0,
+  &apos;SG&apos;: 2.0,
+  &apos;BH&apos;: 2.0,
+  &apos;HS&apos;: 2.0,
+  &apos;MT&apos;: 2.0,
+  &apos;DS&apos;: 2.0,
+  &apos;RG&apos;: 2.0,
+  &apos;CN&apos;: 2.0,
+  &apos;UUT&apos;: 2.0,
+  &apos;FL&apos;: 2.0,
+  &apos;UUP&apos;: 2.0,
+  &apos;LV&apos;: 2.0,
+  &apos;UUH&apos;: 2.0
+}
+const DefaultVdwRadius = 2.0
+
+// Peter Rose (peter.rose@rcsb.org), private communication, average accross PDB
+const ResidueRadii = {
+  &apos;2QY&apos;: 6.58,
+  &apos;CY0&apos;: 11.98,
+  &apos;2QZ&apos;: 2.52,
+  &apos;CY1&apos;: 6.59,
+  &apos;HHK&apos;: 5.11,
+  &apos;CXM&apos;: 4.69,
+  &apos;HHI&apos;: 4.58,
+  &apos;CY4&apos;: 4.57,
+  &apos;S12&apos;: 18.57,
+  &apos;CY3&apos;: 2.79,
+  &apos;C5C&apos;: 5.35,
+  &apos;PFX&apos;: 11.84,
+  &apos;2R3&apos;: 6.94,
+  &apos;2R1&apos;: 3.78,
+  &apos;ILX&apos;: 4.99,
+  &apos;32S&apos;: 5.68,
+  &apos;BTK&apos;: 8.59,
+  &apos;32T&apos;: 5.72,
+  &apos;FAK&apos;: 9.8,
+  &apos;B27&apos;: 2.78,
+  &apos;ILM&apos;: 3.84,
+  &apos;C4R&apos;: 5.63,
+  &apos;32L&apos;: 6.75,
+  &apos;SYS&apos;: 3.01,
+  &apos;1MH&apos;: 5.04,
+  &apos;ILE&apos;: 3.65,
+  &apos;YNM&apos;: 6.39,
+  &apos;2RX&apos;: 4.91,
+  &apos;B3A&apos;: 2.48,
+  &apos;GEE&apos;: 4.76,
+  &apos;7MN&apos;: 7.34,
+  &apos;B3E&apos;: 5.4,
+  &apos;ARG&apos;: 6.33,
+  &apos;200&apos;: 6.89,
+  &apos;HIP&apos;: 5.47,
+  &apos;HIA&apos;: 4.64,
+  &apos;B3K&apos;: 5.89,
+  &apos;HIC&apos;: 5.76,
+  &apos;B3L&apos;: 4.96,
+  &apos;B3M&apos;: 5.07,
+  &apos;ARM&apos;: 6.86,
+  &apos;ARO&apos;: 7.35,
+  &apos;AR4&apos;: 8.42,
+  &apos;PG1&apos;: 10.67,
+  &apos;YOF&apos;: 6.44,
+  &apos;IML&apos;: 3.74,
+  &apos;SXE&apos;: 6.65,
+  &apos;HIQ&apos;: 7.98,
+  &apos;PFF&apos;: 6.31,
+  &apos;HIS&apos;: 4.52,
+  &apos;0TD&apos;: 3.62,
+  &apos;C3Y&apos;: 5.24,
+  &apos;1OP&apos;: 11.55,
+  &apos;02Y&apos;: 4.77,
+  &apos;02V&apos;: 4.83,
+  &apos;ASB&apos;: 5.59,
+  &apos;30V&apos;: 8.53,
+  &apos;S2P&apos;: 4.81,
+  &apos;ASP&apos;: 3.55,
+  &apos;ASN&apos;: 3.54,
+  &apos;2OR&apos;: 6.91,
+  &apos;QMM&apos;: 6.13,
+  &apos;2P0&apos;: 8.52,
+  &apos;ASL&apos;: 5.36,
+  &apos;HFA&apos;: 5.14,
+  &apos;5PG&apos;: 5.69,
+  &apos;B3X&apos;: 4.38,
+  &apos;AS9&apos;: 4.1,
+  &apos;ARV&apos;: 7.59,
+  &apos;B3U&apos;: 6.06,
+  &apos;S2C&apos;: 7.54,
+  &apos;B3T&apos;: 3.34,
+  &apos;175&apos;: 5.64,
+  &apos;GFT&apos;: 8.18,
+  &apos;HG7&apos;: 6.8,
+  &apos;B3Q&apos;: 4.48,
+  &apos;ASA&apos;: 3.64,
+  &apos;02K&apos;: 2.94,
+  &apos;B3Y&apos;: 7.45,
+  &apos;PHD&apos;: 5.35,
+  &apos;C6C&apos;: 6.42,
+  &apos;BUC&apos;: 5.8,
+  &apos;HGL&apos;: 8.07,
+  &apos;PHE&apos;: 5.06,
+  &apos;03Y&apos;: 2.6,
+  &apos;PHA&apos;: 5.11,
+  &apos;OCY&apos;: 5.0,
+  &apos;4PH&apos;: 6.79,
+  &apos;5OH&apos;: 4.7,
+  &apos;31Q&apos;: 10.46,
+  &apos;BTR&apos;: 7.98,
+  &apos;3PX&apos;: 4.7,
+  &apos;1PA&apos;: 8.07,
+  &apos;ASX&apos;: 3.54,
+  &apos;IOR&apos;: 7.23,
+  &apos;03E&apos;: 3.38,
+  &apos;PHL&apos;: 5.17,
+  &apos;KWS&apos;: 5.09,
+  &apos;PHI&apos;: 7.12,
+  &apos;NAL&apos;: 7.22,
+  &apos;S1H&apos;: 19.21,
+  &apos;2ML&apos;: 3.86,
+  &apos;2MR&apos;: 7.35,
+  &apos;GHG&apos;: 4.83,
+  &apos;TYY&apos;: 6.54,
+  &apos;2MT&apos;: 3.67,
+  &apos;56A&apos;: 13.01,
+  &apos;SVA&apos;: 5.46,
+  &apos;TYX&apos;: 8.31,
+  &apos;TYS&apos;: 8.59,
+  &apos;TYR&apos;: 6.38,
+  &apos;TYQ&apos;: 6.43,
+  &apos;HLU&apos;: 3.99,
+  &apos;MYK&apos;: 19.47,
+  &apos;TYO&apos;: 7.71,
+  &apos;HLX&apos;: 4.98,
+  &apos;TYN&apos;: 9.87,
+  &apos;TYJ&apos;: 6.25,
+  &apos;TYI&apos;: 6.49,
+  &apos;LYH&apos;: 5.13,
+  &apos;LYF&apos;: 12.19,
+  &apos;SUN&apos;: 6.73,
+  &apos;LYR&apos;: 18.28,
+  &apos;TYB&apos;: 6.46,
+  &apos;11W&apos;: 14.39,
+  &apos;LYS&apos;: 5.54,
+  &apos;LYN&apos;: 4.8,
+  &apos;11Q&apos;: 4.85,
+  &apos;LYO&apos;: 4.71,
+  &apos;LYZ&apos;: 1.76,
+  &apos;TXY&apos;: 6.44,
+  &apos;MYN&apos;: 4.71,
+  &apos;TY5&apos;: 10.6,
+  &apos;HMR&apos;: 5.09,
+  &apos;01W&apos;: 8.55,
+  &apos;LYX&apos;: 13.36,
+  &apos;TY8&apos;: 7.22,
+  &apos;TY2&apos;: 6.49,
+  &apos;KYN&apos;: 6.18,
+  &apos;KYQ&apos;: 9.75,
+  &apos;CZZ&apos;: 5.14,
+  &apos;IIL&apos;: 3.81,
+  &apos;HNC&apos;: 10.41,
+  &apos;OIC&apos;: 4.62,
+  &apos;LVN&apos;: 2.89,
+  &apos;QIL&apos;: 3.84,
+  &apos;JJL&apos;: 8.3,
+  &apos;VAH&apos;: 3.88,
+  &apos;JJJ&apos;: 7.5,
+  &apos;JJK&apos;: 7.43,
+  &apos;VAD&apos;: 2.56,
+  &apos;CYW&apos;: 4.65,
+  &apos;0QL&apos;: 5.72,
+  &apos;143&apos;: 8.22,
+  &apos;SVX&apos;: 7.04,
+  &apos;CYJ&apos;: 11.64,
+  &apos;SVY&apos;: 7.1,
+  &apos;SVZ&apos;: 6.6,
+  &apos;CYG&apos;: 8.03,
+  &apos;CYF&apos;: 13.54,
+  &apos;SVV&apos;: 5.09,
+  &apos;GL3&apos;: 2.72,
+  &apos;8SP&apos;: 14.26,
+  &apos;CYS&apos;: 2.78,
+  &apos;004&apos;: 4.33,
+  &apos;CYR&apos;: 10.33,
+  &apos;PLJ&apos;: 3.71,
+  &apos;EXY&apos;: 7.37,
+  &apos;HL2&apos;: 3.75,
+  &apos;A5N&apos;: 5.21,
+  &apos;CYQ&apos;: 5.67,
+  &apos;CZ2&apos;: 5.16,
+  &apos;LWY&apos;: 4.12,
+  &apos;PM3&apos;: 8.78,
+  &apos;OHS&apos;: 6.98,
+  &apos;OHI&apos;: 5.35,
+  &apos;3TY&apos;: 8.42,
+  &apos;CYD&apos;: 8.55,
+  &apos;DYS&apos;: 7.87,
+  &apos;DAH&apos;: 6.47,
+  &apos;4IK&apos;: 11.81,
+  &apos;3EG&apos;: 3.66,
+  &apos;AYA&apos;: 3.65,
+  &apos;4IN&apos;: 6.31,
+  &apos;DAB&apos;: 3.48,
+  &apos;4HT&apos;: 6.03,
+  &apos;RGL&apos;: 7.03,
+  &apos;DAM&apos;: 2.49,
+  &apos;NFA&apos;: 5.04,
+  &apos;WFP&apos;: 6.07,
+  &apos;2JC&apos;: 2.97,
+  &apos;HAR&apos;: 7.55,
+  &apos;2JG&apos;: 5.67,
+  &apos;MH6&apos;: 1.72,
+  &apos;2JF&apos;: 9.13,
+  &apos;3FG&apos;: 4.96,
+  &apos;MGN&apos;: 4.84,
+  &apos;AZH&apos;: 5.36,
+  &apos;AZK&apos;: 6.03,
+  &apos;ZBZ&apos;: 7.79,
+  &apos;TBG&apos;: 2.58,
+  &apos;VAL&apos;: 2.51,
+  &apos;MGG&apos;: 7.34,
+  &apos;AZS&apos;: 5.61,
+  &apos;FHL&apos;: 9.75,
+  &apos;2JH&apos;: 4.56,
+  &apos;IEL&apos;: 7.07,
+  &apos;FHO&apos;: 6.75,
+  &apos;DA2&apos;: 7.79,
+  &apos;FH7&apos;: 6.99,
+  &apos;ME0&apos;: 4.52,
+  &apos;3GL&apos;: 4.84,
+  &apos;MDO&apos;: 5.03,
+  &apos;AZY&apos;: 7.37,
+  &apos;A8E&apos;: 3.76,
+  &apos;ZCL&apos;: 6.71,
+  &apos;MDH&apos;: 2.58,
+  &apos;LA2&apos;: 14.07,
+  &apos;4FW&apos;: 6.1,
+  &apos;YCM&apos;: 5.32,
+  &apos;MDF&apos;: 4.95,
+  &apos;YCP&apos;: 3.01,
+  &apos;TEF&apos;: 8.63,
+  &apos;FGP&apos;: 4.34,
+  &apos;UF0&apos;: 19.72,
+  &apos;XCN&apos;: 4.57,
+  &apos;FGL&apos;: 2.56,
+  &apos;MF3&apos;: 6.37,
+  &apos;MEQ&apos;: 5.13,
+  &apos;LAA&apos;: 3.23,
+  &apos;IGL&apos;: 5.52,
+  &apos;MET&apos;: 4.49,
+  &apos;NIY&apos;: 6.81,
+  &apos;QCS&apos;: 5.18,
+  &apos;TCQ&apos;: 8.56,
+  &apos;MEN&apos;: 4.33,
+  &apos;4HL&apos;: 8.79,
+  &apos;MEA&apos;: 4.95,
+  &apos;EFC&apos;: 5.28,
+  &apos;LAL&apos;: 2.41,
+  &apos;2HF&apos;: 5.52,
+  &apos;KBE&apos;: 5.64,
+  &apos;OCS&apos;: 3.94,
+  &apos;CAF&apos;: 5.46,
+  &apos;NC1&apos;: 11.4,
+  &apos;NBQ&apos;: 9.82,
+  &apos;CAB&apos;: 4.19,
+  &apos;MBQ&apos;: 9.55,
+  &apos;193&apos;: 7.38,
+  &apos;192&apos;: 2.44,
+  &apos;0WZ&apos;: 7.61,
+  &apos;CAS&apos;: 5.35,
+  &apos;NB8&apos;: 11.98,
+  &apos;OBS&apos;: 11.71,
+  &apos;1AC&apos;: 2.42,
+  &apos;PCA&apos;: 3.48,
+  &apos;MCL&apos;: 9.73,
+  &apos;LBY&apos;: 7.75,
+  &apos;GAU&apos;: 4.67,
+  &apos;PBF&apos;: 9.75,
+  &apos;MCG&apos;: 6.46,
+  &apos;DDE&apos;: 6.86,
+  &apos;19W&apos;: 3.94,
+  &apos;MD5&apos;: 9.33,
+  &apos;MD6&apos;: 6.44,
+  &apos;MD3&apos;: 8.41,
+  &apos;MCS&apos;: 7.56,
+  &apos;OBF&apos;: 3.64,
+  &apos;UAL&apos;: 4.68,
+  &apos;PAT&apos;: 6.05,
+  &apos;IAM&apos;: 8.88,
+  &apos;PAQ&apos;: 8.77,
+  &apos;FDL&apos;: 9.49,
+  &apos;NCB&apos;: 3.45,
+  &apos;LCK&apos;: 9.81,
+  &apos;DDZ&apos;: 2.52,
+  &apos;2FM&apos;: 5.54,
+  &apos;IAR&apos;: 6.77,
+  &apos;OAS&apos;: 4.8,
+  &apos;HBN&apos;: 8.8,
+  &apos;TA4&apos;: 5.55,
+  &apos;1C3&apos;: 7.43,
+  &apos;ECX&apos;: 5.51,
+  &apos;PF5&apos;: 6.28,
+  &apos;RE3&apos;: 5.29,
+  &apos;FCL&apos;: 6.25,
+  &apos;ECC&apos;: 4.79,
+  &apos;LDH&apos;: 7.06,
+  &apos;NCY&apos;: 2.91,
+  &apos;CCS&apos;: 4.58,
+  &apos;PEC&apos;: 6.54,
+  &apos;2CO&apos;: 4.45,
+  &apos;LE1&apos;: 2.72,
+  &apos;HCM&apos;: 5.53,
+  &apos;07O&apos;: 8.05,
+  &apos;HCL&apos;: 4.96,
+  &apos;NEP&apos;: 6.94,
+  &apos;PE1&apos;: 8.01,
+  &apos;LEF&apos;: 4.37,
+  &apos;FC0&apos;: 5.18,
+  &apos;LED&apos;: 4.34,
+  &apos;HCS&apos;: 4.09,
+  &apos;DBU&apos;: 2.49,
+  &apos;RE0&apos;: 5.53,
+  &apos;LEN&apos;: 3.82,
+  &apos;1E3&apos;: 8.71,
+  &apos;BB9&apos;: 2.56,
+  &apos;BB8&apos;: 5.14,
+  &apos;PCS&apos;: 5.05,
+  &apos;BB7&apos;: 4.56,
+  &apos;BB6&apos;: 2.62,
+  &apos;LEU&apos;: 3.83,
+  &apos;DBZ&apos;: 7.08,
+  &apos;LET&apos;: 11.29,
+  &apos;DBY&apos;: 6.46,
+  &apos;ICY&apos;: 7.76,
+  &apos;MAA&apos;: 2.4,
+  &apos;CGA&apos;: 7.91,
+  &apos;5CS&apos;: 8.34,
+  &apos;UGY&apos;: 3.7,
+  &apos;LGY&apos;: 11.71,
+  &apos;N10&apos;: 8.96,
+  &apos;AAR&apos;: 6.39,
+  &apos;FT6&apos;: 7.5,
+  &apos;MOD&apos;: 12.62,
+  &apos;5CW&apos;: 7.21,
+  &apos;PVH&apos;: 4.58,
+  &apos;BBC&apos;: 6.42,
+  &apos;YYA&apos;: 7.3,
+  &apos;O12&apos;: 14.08,
+  &apos;NOT&apos;: 7.15,
+  &apos;KGC&apos;: 9.88,
+  &apos;MP4&apos;: 5.86,
+  &apos;0CS&apos;: 4.07,
+  &apos;MP8&apos;: 3.75,
+  &apos;VLL&apos;: 2.54,
+  &apos;VLM&apos;: 2.51,
+  &apos;BCS&apos;: 8.03,
+  &apos;MNL&apos;: 4.9,
+  &apos;AA4&apos;: 4.47,
+  &apos;SAC&apos;: 3.49,
+  &apos;BCX&apos;: 2.99,
+  &apos;3CF&apos;: 6.47,
+  &apos;SAH&apos;: 11.7,
+  &apos;NNH&apos;: 6.86,
+  &apos;CGU&apos;: 4.71,
+  &apos;SIB&apos;: 12.41,
+  &apos;TLY&apos;: 8.78,
+  &apos;SIC&apos;: 4.81,
+  &apos;VMS&apos;: 8.82,
+  &apos;TMD&apos;: 6.76,
+  &apos;MMO&apos;: 6.53,
+  &apos;PXU&apos;: 2.46,
+  &apos;4AW&apos;: 6.22,
+  &apos;OTH&apos;: 3.6,
+  &apos;DLS&apos;: 6.84,
+  &apos;MME&apos;: 4.99,
+  &apos;DM0&apos;: 6.99,
+  &apos;0FL&apos;: 2.76,
+  &apos;SBL&apos;: 8.96,
+  &apos;CDV&apos;: 3.72,
+  &apos;OTY&apos;: 6.51,
+  &apos;PYA&apos;: 7.75,
+  &apos;2AS&apos;: 3.57,
+  &apos;DMH&apos;: 4.92,
+  &apos;ELY&apos;: 7.42,
+  &apos;GVL&apos;: 9.6,
+  &apos;FVA&apos;: 2.9,
+  &apos;SAR&apos;: 2.48,
+  &apos;4BF&apos;: 6.92,
+  &apos;EME&apos;: 4.69,
+  &apos;CDE&apos;: 2.51,
+  &apos;3AR&apos;: 7.86,
+  &apos;3AH&apos;: 9.11,
+  &apos;AC5&apos;: 2.44,
+  &apos;FTR&apos;: 6.08,
+  &apos;MLL&apos;: 3.76,
+  &apos;NPH&apos;: 11.66,
+  &apos;NPI&apos;: 6.9,
+  &apos;DMT&apos;: 6.67,
+  &apos;PYX&apos;: 11.3,
+  &apos;MLE&apos;: 3.87,
+  &apos;PYL&apos;: 9.67,
+  &apos;ZZU&apos;: 6.94,
+  &apos;H5M&apos;: 3.61,
+  &apos;SCH&apos;: 4.46,
+  &apos;DMK&apos;: 3.52,
+  &apos;FTY&apos;: 9.07,
+  &apos;2AG&apos;: 3.7,
+  &apos;ABA&apos;: 2.55,
+  &apos;ZZJ&apos;: 2.44,
+  &apos;MLZ&apos;: 6.8,
+  &apos;MLY&apos;: 6.88,
+  &apos;KCX&apos;: 7.28,
+  &apos;ZZD&apos;: 8.16,
+  &apos;3A5&apos;: 5.37,
+  &apos;LHC&apos;: 7.75,
+  &apos;9AT&apos;: 2.47,
+  &apos;OZT&apos;: 3.4,
+  &apos;THO&apos;: 2.62,
+  &apos;THR&apos;: 2.5,
+  &apos;DFI&apos;: 3.93,
+  &apos;MKD&apos;: 6.42,
+  &apos;4CY&apos;: 4.6,
+  &apos;SDP&apos;: 6.07,
+  &apos;DFO&apos;: 3.94,
+  &apos;0A0&apos;: 3.45,
+  &apos;4DB&apos;: 9.73,
+  &apos;ML3&apos;: 6.26,
+  &apos;BG1&apos;: 8.02,
+  &apos;SD4&apos;: 4.57,
+  &apos;THC&apos;: 3.8,
+  &apos;SCS&apos;: 5.48,
+  &apos;TH5&apos;: 4.65,
+  &apos;BFD&apos;: 5.33,
+  &apos;AEI&apos;: 6.34,
+  &apos;TH6&apos;: 2.85,
+  &apos;SCY&apos;: 4.53,
+  &apos;TIS&apos;: 4.81,
+  &apos;SEE&apos;: 4.53,
+  &apos;BHD&apos;: 3.48,
+  &apos;SEB&apos;: 8.18,
+  &apos;SEC&apos;: 2.96,
+  &apos;SEP&apos;: 4.8,
+  &apos;CLH&apos;: 7.13,
+  &apos;TIH&apos;: 5.02,
+  &apos;CLG&apos;: 13.62,
+  &apos;SEN&apos;: 6.43,
+  &apos;XXA&apos;: 7.34,
+  &apos;SEL&apos;: 2.46,
+  &apos;SE7&apos;: 4.19,
+  &apos;4CF&apos;: 7.72,
+  &apos;G8M&apos;: 3.57,
+  &apos;BH2&apos;: 3.51,
+  &apos;UN2&apos;: 3.22,
+  &apos;VR0&apos;: 10.51,
+  &apos;MK8&apos;: 4.76,
+  &apos;DHA&apos;: 2.32,
+  &apos;LMQ&apos;: 4.69,
+  &apos;SFE&apos;: 5.01,
+  &apos;AHB&apos;: 3.47,
+  &apos;OXX&apos;: 7.05,
+  &apos;BIF&apos;: 9.63,
+  &apos;IZO&apos;: 4.47,
+  &apos;NMM&apos;: 8.25,
+  &apos;0BN&apos;: 7.0,
+  &apos;HZP&apos;: 3.12,
+  &apos;NMC&apos;: 4.23,
+  &apos;DHL&apos;: 2.69,
+  &apos;9DS&apos;: 9.29,
+  &apos;SER&apos;: 2.41,
+  &apos;CHG&apos;: 4.2,
+  &apos;MIR&apos;: 6.54,
+  &apos;AGQ&apos;: 7.79,
+  &apos;SET&apos;: 2.46,
+  &apos;MIS&apos;: 6.32,
+  &apos;4FB&apos;: 3.08,
+  &apos;0AR&apos;: 8.46,
+  &apos;LME&apos;: 3.99,
+  &apos;FZN&apos;: 24.42,
+  &apos;AGT&apos;: 9.04,
+  &apos;IYR&apos;: 6.46,
+  &apos;9DN&apos;: 9.31,
+  &apos;CHP&apos;: 5.75,
+  &apos;UNK&apos;: 1.64,
+  &apos;XX1&apos;: 9.92,
+  &apos;AGM&apos;: 6.57,
+  &apos;0AH&apos;: 5.78,
+  &apos;LLP&apos;: 10.22,
+  &apos;0AF&apos;: 6.72,
+  &apos;4DP&apos;: 9.28,
+  &apos;HYP&apos;: 2.25,
+  &apos;DIR&apos;: 5.8,
+  &apos;LLY&apos;: 8.71,
+  &apos;0AK&apos;: 6.11,
+  &apos;NLE&apos;: 4.67,
+  &apos;OYL&apos;: 6.42,
+  &apos;WVL&apos;: 4.69,
+  &apos;0A8&apos;: 8.1,
+  &apos;NLY&apos;: 6.37,
+  &apos;MHO&apos;: 4.89,
+  &apos;VOL&apos;: 2.55,
+  &apos;0A1&apos;: 7.1,
+  &apos;MHL&apos;: 3.92,
+  &apos;NLP&apos;: 4.81,
+  &apos;NLQ&apos;: 4.65,
+  &apos;MHW&apos;: 2.74,
+  &apos;BIL&apos;: 4.7,
+  &apos;NLO&apos;: 4.8,
+  &apos;MHU&apos;: 7.51,
+  &apos;XW1&apos;: 9.36,
+  &apos;LLO&apos;: 10.13,
+  &apos;SGB&apos;: 6.88,
+  &apos;MHV&apos;: 3.6,
+  &apos;MHS&apos;: 4.51,
+  &apos;0A9&apos;: 5.17,
+  &apos;0LF&apos;: 9.96,
+  &apos;HT7&apos;: 6.82,
+  &apos;X2W&apos;: 6.6,
+  &apos;YPZ&apos;: 9.38,
+  &apos;I58&apos;: 6.73,
+  &apos;FLA&apos;: 2.4,
+  &apos;M0H&apos;: 4.83,
+  &apos;HSL&apos;: 2.46,
+  &apos;FLE&apos;: 6.17,
+  &apos;KOR&apos;: 10.1,
+  &apos;1VR&apos;: 3.89,
+  &apos;HSO&apos;: 4.56,
+  &apos;TTS&apos;: 9.41,
+  &apos;RVX&apos;: 7.01,
+  &apos;TTQ&apos;: 7.71,
+  &apos;H14&apos;: 5.27,
+  &apos;HTI&apos;: 7.8,
+  &apos;ONH&apos;: 6.14,
+  &apos;LP6&apos;: 8.58,
+  &apos;ONL&apos;: 4.83,
+  &apos;AHH&apos;: 5.06,
+  &apos;HS8&apos;: 7.4,
+  &apos;HS9&apos;: 4.71,
+  &apos;BL2&apos;: 5.82,
+  &apos;AHP&apos;: 5.26,
+  &apos;6HN&apos;: 7.34,
+  &apos;HRP&apos;: 5.46,
+  &apos;POM&apos;: 3.6,
+  &apos;WPA&apos;: 5.11,
+  &apos;2ZC&apos;: 4.29,
+  &apos;CPC&apos;: 2.65,
+  &apos;AIB&apos;: 2.4,
+  &apos;XSN&apos;: 3.47,
+  &apos;M2S&apos;: 5.28,
+  &apos;GND&apos;: 6.67,
+  &apos;GNC&apos;: 4.6,
+  &apos;MVA&apos;: 2.56,
+  &apos;OLZ&apos;: 5.32,
+  &apos;M2L&apos;: 6.15,
+  &apos;TRF&apos;: 6.69,
+  &apos;NZH&apos;: 7.66,
+  &apos;SRZ&apos;: 5.27,
+  &apos;OLD&apos;: 10.47,
+  &apos;CME&apos;: 5.86,
+  &apos;CMH&apos;: 5.3,
+  &apos;ALA&apos;: 2.38,
+  &apos;TRQ&apos;: 7.36,
+  &apos;PPN&apos;: 7.24,
+  &apos;TRP&apos;: 6.07,
+  &apos;TRO&apos;: 5.82,
+  &apos;TRN&apos;: 5.95,
+  &apos;NYS&apos;: 8.1,
+  &apos;ALC&apos;: 5.26,
+  &apos;U3X&apos;: 11.7,
+  &apos;HVA&apos;: 2.58,
+  &apos;TS9&apos;: 3.92,
+  &apos;TRX&apos;: 7.27,
+  &apos;TRW&apos;: 11.8,
+  &apos;LPL&apos;: 7.51,
+  &apos;GMA&apos;: 4.4,
+  &apos;OMT&apos;: 5.07,
+  &apos;CMT&apos;: 3.54,
+  &apos;GME&apos;: 4.66,
+  &apos;NYB&apos;: 6.07,
+  &apos;PR3&apos;: 5.12,
+  &apos;LPD&apos;: 2.48,
+  &apos;GLU&apos;: 4.49,
+  &apos;1X6&apos;: 6.84,
+  &apos;LPG&apos;: 2.39,
+  &apos;GLX&apos;: 4.52,
+  &apos;PR4&apos;: 4.52,
+  &apos;CML&apos;: 6.16,
+  &apos;FME&apos;: 4.52,
+  &apos;HTR&apos;: 6.48,
+  &apos;PR7&apos;: 4.66,
+  &apos;Z3E&apos;: 7.2,
+  &apos;GLZ&apos;: 2.39,
+  &apos;BMT&apos;: 6.37,
+  &apos;WRP&apos;: 8.16,
+  &apos;GLY&apos;: 2.37,
+  &apos;OMY&apos;: 6.11,
+  &apos;MTY&apos;: 5.46,
+  &apos;OMX&apos;: 6.15,
+  &apos;GLN&apos;: 4.46,
+  &apos;2XA&apos;: 8.25,
+  &apos;28X&apos;: 7.84,
+  &apos;7JA&apos;: 9.46,
+  &apos;FLT&apos;: 9.65,
+  &apos;GLJ&apos;: 3.7,
+  &apos;OMH&apos;: 5.26,
+  &apos;TSY&apos;: 4.26,
+  &apos;PRV&apos;: 4.28,
+  &apos;CS4&apos;: 11.21,
+  &apos;DOA&apos;: 12.33,
+  &apos;23P&apos;: 5.42,
+  &apos;CS3&apos;: 8.24,
+  &apos;6CL&apos;: 6.47,
+  &apos;PRR&apos;: 5.58,
+  &apos;KST&apos;: 11.58,
+  &apos;CS1&apos;: 7.23,
+  &apos;PRS&apos;: 2.63,
+  &apos;ZYJ&apos;: 11.4,
+  &apos;IT1&apos;: 9.75,
+  &apos;UU5&apos;: 4.98,
+  &apos;ESB&apos;: 6.69,
+  &apos;UU4&apos;: 2.49,
+  &apos;ESC&apos;: 5.65,
+  &apos;LSO&apos;: 10.58,
+  &apos;ZYK&apos;: 11.45,
+  &apos;9NV&apos;: 8.99,
+  &apos;23F&apos;: 5.27,
+  &apos;ORN&apos;: 4.25,
+  &apos;HOX&apos;: 6.61,
+  &apos;CSD&apos;: 3.95,
+  &apos;FP9&apos;: 3.03,
+  &apos;DO2&apos;: 4.44,
+  &apos;SLL&apos;: 11.53,
+  &apos;P3Q&apos;: 9.54,
+  &apos;ORQ&apos;: 6.04,
+  &apos;MSL&apos;: 5.21,
+  &apos;DNP&apos;: 2.45,
+  &apos;CSB&apos;: 3.51,
+  &apos;WLU&apos;: 4.24,
+  &apos;CSA&apos;: 5.7,
+  &apos;MT2&apos;: 5.51,
+  &apos;CSO&apos;: 3.53,
+  &apos;TPO&apos;: 4.73,
+  &apos;MSP&apos;: 13.11,
+  &apos;23S&apos;: 6.09,
+  &apos;MSO&apos;: 4.96,
+  &apos;PRO&apos;: 2.41,
+  &apos;TPL&apos;: 5.41,
+  &apos;DNS&apos;: 8.79,
+  &apos;CSK&apos;: 3.91,
+  &apos;Z70&apos;: 7.4,
+  &apos;CSJ&apos;: 7.51,
+  &apos;DNW&apos;: 7.97,
+  &apos;PRK&apos;: 9.15,
+  &apos;GSU&apos;: 11.81,
+  &apos;LTA&apos;: 6.57,
+  &apos;HPE&apos;: 6.63,
+  &apos;TPQ&apos;: 6.48,
+  &apos;PRJ&apos;: 5.26,
+  &apos;PSW&apos;: 4.65,
+  &apos;L3O&apos;: 3.89,
+  &apos;CSU&apos;: 4.89,
+  &apos;ALY&apos;: 7.38,
+  &apos;M3L&apos;: 7.12,
+  &apos;CSW&apos;: 3.68,
+  &apos;XPR&apos;: 7.68,
+  &apos;D4P&apos;: 5.66,
+  &apos;FOE&apos;: 8.17,
+  &apos;SLZ&apos;: 5.69,
+  &apos;CSP&apos;: 5.26,
+  &apos;TQI&apos;: 7.68,
+  &apos;ALT&apos;: 2.72,
+  &apos;CSR&apos;: 5.42,
+  &apos;CSS&apos;: 3.61,
+  &apos;M3R&apos;: 7.18,
+  &apos;ALO&apos;: 2.57,
+  &apos;R4K&apos;: 4.67,
+  &apos;SMF&apos;: 9.0,
+  &apos;MSA&apos;: 2.73,
+  &apos;SMC&apos;: 3.39,
+  &apos;CSX&apos;: 3.47,
+  &apos;SME&apos;: 4.8,
+  &apos;ETA&apos;: 2.4,
+  &apos;CSZ&apos;: 3.6,
+  &apos;22G&apos;: 8.8,
+  &apos;MSE&apos;: 4.62,
+  &apos;ALN&apos;: 6.16,
+  &apos;PSH&apos;: 7.26,
+  &apos;CTE&apos;: 7.27,
+  &apos;DON&apos;: 6.72,
+  &apos;CTH&apos;: 3.45,
+  &apos;U2X&apos;: 11.54,
+  &apos;6CW&apos;: 7.56,
+  &apos;TQZ&apos;: 6.97,
+  &apos;3YM&apos;: 6.52,
+  &apos;OSE&apos;: 4.49,
+  &apos;2VA&apos;: 9.82,
+  &apos;TQQ&apos;: 7.76,
+  &apos;NRG&apos;: 8.35,
+  &apos;BPE&apos;: 7.24,
+  &apos;F2F&apos;: 6.25,
+  &apos;1TQ&apos;: 8.58,
+  &apos;I2M&apos;: 3.13,
+  &apos;NVA&apos;: 3.76,
+  &apos;R1A&apos;: 8.2,
+  &apos;QPA&apos;: 6.95,
+  &apos;C1X&apos;: 11.63,
+  &apos;FRD&apos;: 5.05,
+  &apos;HR7&apos;: 6.98,
+  &apos;SNC&apos;: 3.93,
+  &apos;QPH&apos;: 5.15,
+  &apos;26B&apos;: 8.39,
+  &apos;DPQ&apos;: 6.54,
+  &apos;DPP&apos;: 2.51,
+  &apos;2TY&apos;: 8.65,
+  &apos;TNR&apos;: 6.88,
+  &apos;PTH&apos;: 8.35,
+  &apos;DPL&apos;: 3.58,
+  &apos;APK&apos;: 8.79,
+  &apos;1TY&apos;: 8.84,
+  &apos;HRG&apos;: 7.36,
+  &apos;PTM&apos;: 8.74,
+  &apos;1U8&apos;: 3.62,
+  &apos;PTR&apos;: 8.64,
+  &apos;LVG&apos;: 3.01,
+  &apos;6FL&apos;: 4.85,
+  &apos;SOC&apos;: 4.05,
+  &apos;KPI&apos;: 9.79,
+  &apos;IPG&apos;: 2.91,
+  &apos;P2Y&apos;: 2.51,
+  &apos;N2C&apos;: 3.55,
+  &apos;T0I&apos;: 7.34,
+  &apos;MPH&apos;: 5.29,
+  &apos;R2T&apos;: 4.71,
+  &apos;TOX&apos;: 6.78,
+  &apos;P2Q&apos;: 9.8,
+  &apos;GPL&apos;: 10.77,
+  &apos;MPJ&apos;: 5.07,
+  &apos;F2Y&apos;: 6.2,
+  &apos;T11&apos;: 8.58,
+  &apos;9NR&apos;: 9.33,
+  &apos;FPR&apos;: 8.85,
+  &apos;9NF&apos;: 8.93,
+  &apos;KPY&apos;: 10.17,
+  &apos;9NE&apos;: 9.77,
+  &apos;TOQ&apos;: 7.5,
+  &apos;MPQ&apos;: 4.2,
+  &apos;FPK&apos;: 3.08,
+  &apos;HQA&apos;: 7.25,
+  &apos;SOY&apos;: 10.94
+}
+const DefaultResidueRadius = 5.0
+
+// http://dx.doi.org/10.1039/b801115j (or 1.6)
+const CovalentRadii = {
+  &apos;H&apos;: 0.31,
+  &apos;HE&apos;: 0.28,
+  &apos;LI&apos;: 1.28,
+  &apos;BE&apos;: 0.96,
+  &apos;B&apos;: 0.84,
+  &apos;C&apos;: 0.76,
+  &apos;N&apos;: 0.71,
+  &apos;O&apos;: 0.66,
+  &apos;F&apos;: 0.57,
+  &apos;NE&apos;: 0.58,
+  &apos;NA&apos;: 1.66,
+  &apos;MG&apos;: 1.41,
+  &apos;AL&apos;: 1.21,
+  &apos;SI&apos;: 1.11,
+  &apos;P&apos;: 1.07,
+  &apos;S&apos;: 1.05,
+  &apos;CL&apos;: 1.02,
+  &apos;AR&apos;: 1.06,
+  &apos;K&apos;: 2.03,
+  &apos;CA&apos;: 1.76,
+  &apos;SC&apos;: 1.7,
+  &apos;TI&apos;: 1.6,
+  &apos;V&apos;: 1.53,
+  &apos;CR&apos;: 1.39,
+  &apos;MN&apos;: 1.39,
+  &apos;FE&apos;: 1.32,
+  &apos;CO&apos;: 1.26,
+  &apos;NI&apos;: 1.24,
+  &apos;CU&apos;: 1.32,
+  &apos;ZN&apos;: 1.22,
+  &apos;GA&apos;: 1.22,
+  &apos;GE&apos;: 1.2,
+  &apos;AS&apos;: 1.19,
+  &apos;SE&apos;: 1.2,
+  &apos;BR&apos;: 1.2,
+  &apos;KR&apos;: 1.16,
+  &apos;RB&apos;: 2.2,
+  &apos;SR&apos;: 1.95,
+  &apos;Y&apos;: 1.9,
+  &apos;ZR&apos;: 1.75,
+  &apos;NB&apos;: 1.64,
+  &apos;MO&apos;: 1.54,
+  &apos;TC&apos;: 1.47,
+  &apos;RU&apos;: 1.46,
+  &apos;RH&apos;: 1.42,
+  &apos;PD&apos;: 1.39,
+  &apos;AG&apos;: 1.45,
+  &apos;CD&apos;: 1.44,
+  &apos;IN&apos;: 1.42,
+  &apos;SN&apos;: 1.39,
+  &apos;SB&apos;: 1.39,
+  &apos;TE&apos;: 1.38,
+  &apos;I&apos;: 1.39,
+  &apos;XE&apos;: 1.4,
+  &apos;CS&apos;: 2.44,
+  &apos;BA&apos;: 2.15,
+  &apos;LA&apos;: 2.07,
+  &apos;CE&apos;: 2.04,
+  &apos;PR&apos;: 2.03,
+  &apos;ND&apos;: 2.01,
+  &apos;PM&apos;: 1.99,
+  &apos;SM&apos;: 1.98,
+  &apos;EU&apos;: 1.98,
+  &apos;GD&apos;: 1.96,
+  &apos;TB&apos;: 1.94,
+  &apos;DY&apos;: 1.92,
+  &apos;HO&apos;: 1.92,
+  &apos;ER&apos;: 1.89,
+  &apos;TM&apos;: 1.9,
+  &apos;YB&apos;: 1.87,
+  &apos;LU&apos;: 1.87,
+  &apos;HF&apos;: 1.75,
+  &apos;TA&apos;: 1.7,
+  &apos;W&apos;: 1.62,
+  &apos;RE&apos;: 1.51,
+  &apos;OS&apos;: 1.44,
+  &apos;IR&apos;: 1.41,
+  &apos;PT&apos;: 1.36,
+  &apos;AU&apos;: 1.36,
+  &apos;HG&apos;: 1.32,
+  &apos;TL&apos;: 1.45,
+  &apos;PB&apos;: 1.46,
+  &apos;BI&apos;: 1.48,
+  &apos;PO&apos;: 1.4,
+  &apos;AT&apos;: 1.5,
+  &apos;RN&apos;: 1.5,
+  &apos;FR&apos;: 2.6,
+  &apos;RA&apos;: 2.21,
+  &apos;AC&apos;: 2.15,
+  &apos;TH&apos;: 2.06,
+  &apos;PA&apos;: 2.0,
+  &apos;U&apos;: 1.96,
+  &apos;NP&apos;: 1.9,
+  &apos;PU&apos;: 1.87,
+  &apos;AM&apos;: 1.8,
+  &apos;CM&apos;: 1.69,
+  &apos;BK&apos;: 1.6,
+  &apos;CF&apos;: 1.6,
+  &apos;ES&apos;: 1.6,
+  &apos;FM&apos;: 1.6,
+  &apos;MD&apos;: 1.6,
+  &apos;NO&apos;: 1.6,
+  &apos;LR&apos;: 1.6,
+  &apos;RF&apos;: 1.6,
+  &apos;DB&apos;: 1.6,
+  &apos;SG&apos;: 1.6,
+  &apos;BH&apos;: 1.6,
+  &apos;HS&apos;: 1.6,
+  &apos;MT&apos;: 1.6,
+  &apos;DS&apos;: 1.6,
+  &apos;RG&apos;: 1.6,
+  &apos;CN&apos;: 1.6,
+  &apos;UUT&apos;: 1.6,
+  &apos;FL&apos;: 1.6,
+  &apos;UUP&apos;: 1.6,
+  &apos;LV&apos;: 1.6,
+  &apos;UUH&apos;: 1.6
+}
+const DefaultCovalentRadius = 1.6
+
+// http://blanco.biomol.uci.edu/Whole_residue_HFscales.txt
+const ResidueHydrophobicity = {
+    // AA  DGwif   DGwoct  Oct-IF
+  &apos;ALA&apos;: [ 0.17, 0.50, 0.33 ],
+  &apos;ARG&apos;: [ 0.81, 1.81, 1.00 ],
+  &apos;ASN&apos;: [ 0.42, 0.85, 0.43 ],
+  &apos;ASP&apos;: [ 1.23, 3.64, 2.41 ],
+  &apos;ASH&apos;: [ -0.07, 0.43, 0.50 ],
+  &apos;CYS&apos;: [ -0.24, -0.02, 0.22 ],
+  &apos;GLN&apos;: [ 0.58, 0.77, 0.19 ],
+  &apos;GLU&apos;: [ 2.02, 3.63, 1.61 ],
+  &apos;GLH&apos;: [ -0.01, 0.11, 0.12 ],
+  &apos;GLY&apos;: [ 0.01, 1.15, 1.14 ],
+    // &quot;His+&quot;: [  0.96,  2.33,  1.37 ],
+  &apos;HIS&apos;: [ 0.17, 0.11, -0.06 ],
+  &apos;ILE&apos;: [ -0.31, -1.12, -0.81 ],
+  &apos;LEU&apos;: [ -0.56, -1.25, -0.69 ],
+  &apos;LYS&apos;: [ 0.99, 2.80, 1.81 ],
+  &apos;MET&apos;: [ -0.23, -0.67, -0.44 ],
+  &apos;PHE&apos;: [ -1.13, -1.71, -0.58 ],
+  &apos;PRO&apos;: [ 0.45, 0.14, -0.31 ],
+  &apos;SER&apos;: [ 0.13, 0.46, 0.33 ],
+  &apos;THR&apos;: [ 0.14, 0.25, 0.11 ],
+  &apos;TRP&apos;: [ -1.85, -2.09, -0.24 ],
+  &apos;TYR&apos;: [ -0.94, -0.71, 0.23 ],
+  &apos;VAL&apos;: [ 0.07, -0.46, -0.53 ]
+}
+const DefaultResidueHydrophobicity = [ 0.00, 0.00, 0.00 ]
+
+const AA1 = {
+  &apos;HIS&apos;: &apos;H&apos;,
+  &apos;ARG&apos;: &apos;R&apos;,
+  &apos;LYS&apos;: &apos;K&apos;,
+  &apos;ILE&apos;: &apos;I&apos;,
+  &apos;PHE&apos;: &apos;F&apos;,
+  &apos;LEU&apos;: &apos;L&apos;,
+  &apos;TRP&apos;: &apos;W&apos;,
+  &apos;ALA&apos;: &apos;A&apos;,
+  &apos;MET&apos;: &apos;M&apos;,
+  &apos;PRO&apos;: &apos;P&apos;,
+  &apos;CYS&apos;: &apos;C&apos;,
+  &apos;ASN&apos;: &apos;N&apos;,
+  &apos;VAL&apos;: &apos;V&apos;,
+  &apos;GLY&apos;: &apos;G&apos;,
+  &apos;SER&apos;: &apos;S&apos;,
+  &apos;GLN&apos;: &apos;Q&apos;,
+  &apos;TYR&apos;: &apos;Y&apos;,
+  &apos;ASP&apos;: &apos;D&apos;,
+  &apos;GLU&apos;: &apos;E&apos;,
+  &apos;THR&apos;: &apos;T&apos;,
+
+  &apos;ASH&apos;: &apos;D&apos;,
+  &apos;GLH&apos;: &apos;E&apos;,
+
+  &apos;UNK&apos;: &apos;&apos;
+}
+
+const AA3 = Object.keys(AA1)
+
+const RnaBases = [ &apos;A&apos;, &apos;C&apos;, &apos;T&apos;, &apos;G&apos;, &apos;U&apos; ]
+
+const DnaBases = [ &apos;DA&apos;, &apos;DC&apos;, &apos;DT&apos;, &apos;DG&apos;, &apos;DU&apos;, &apos;TCY&apos;, &apos;MCY&apos;, &apos;5CM&apos; ]
+
+const PurinBases = [ &apos;A&apos;, &apos;G&apos;, &apos;DA&apos;, &apos;DG&apos; ]
+
+const WaterNames = [
+  &apos;SOL&apos;, &apos;WAT&apos;, &apos;HOH&apos;, &apos;H2O&apos;, &apos;W&apos;, &apos;DOD&apos;, &apos;D3O&apos;, &apos;TIP3&apos;, &apos;TIP4&apos;
+]
+
+// all chemical components with the word &quot;ion&quot; in their name, Sep 2016
+//
+// SET SESSION group_concat_max_len = 1000000;
+// SELECT GROUP_CONCAT(id_ ORDER BY id_ ASC SEPARATOR &apos;&quot;, &quot;&apos;) from
+// (
+//     SELECT count(obj_id) as c, id_
+//     FROM pdb.chem_comp WHERE name LIKE &quot;% ION%&quot;
+//     GROUP BY id_
+// ) AS t1;
+const IonNames = [
+  &apos;118&apos;, &apos;119&apos;, &apos;1AL&apos;, &apos;1CU&apos;, &apos;2FK&apos;, &apos;2HP&apos;, &apos;2OF&apos;, &apos;3CO&apos;,
+  &apos;3MT&apos;, &apos;3NI&apos;, &apos;3OF&apos;, &apos;3P8&apos;, &apos;4MO&apos;, &apos;4PU&apos;, &apos;543&apos;, &apos;6MO&apos;, &apos;ACT&apos;, &apos;AG&apos;, &apos;AL&apos;,
+  &apos;ALF&apos;, &apos;AM&apos;, &apos;ATH&apos;, &apos;AU&apos;, &apos;AU3&apos;, &apos;AUC&apos;, &apos;AZI&apos;, &apos;BA&apos;, &apos;BCT&apos;, &apos;BEF&apos;, &apos;BF4&apos;, &apos;BO4&apos;,
+  &apos;BR&apos;, &apos;BS3&apos;, &apos;BSY&apos;, &apos;CA&apos;, &apos;CAC&apos;, &apos;CD&apos;, &apos;CD1&apos;, &apos;CD3&apos;, &apos;CD5&apos;, &apos;CE&apos;, &apos;CHT&apos;, &apos;CL&apos;,
+  &apos;CO&apos;, &apos;CO3&apos;, &apos;CO5&apos;, &apos;CON&apos;, &apos;CR&apos;, &apos;CS&apos;, &apos;CSB&apos;, &apos;CU&apos;, &apos;CU1&apos;, &apos;CU3&apos;, &apos;CUA&apos;, &apos;CUZ&apos;,
+  &apos;CYN&apos;, &apos;DME&apos;, &apos;DMI&apos;, &apos;DSC&apos;, &apos;DTI&apos;, &apos;DY&apos;, &apos;E4N&apos;, &apos;EDR&apos;, &apos;EMC&apos;, &apos;ER3&apos;, &apos;EU&apos;,
+  &apos;EU3&apos;, &apos;F&apos;, &apos;FE&apos;, &apos;FE2&apos;, &apos;FPO&apos;, &apos;GA&apos;, &apos;GD3&apos;, &apos;GEP&apos;, &apos;HAI&apos;, &apos;HG&apos;, &apos;HGC&apos;, &apos;IN&apos;,
+  &apos;IOD&apos;, &apos;IR&apos;, &apos;IR3&apos;, &apos;IRI&apos;, &apos;IUM&apos;, &apos;K&apos;, &apos;KO4&apos;, &apos;LA&apos;, &apos;LCO&apos;, &apos;LCP&apos;, &apos;LI&apos;, &apos;LU&apos;,
+  &apos;MAC&apos;, &apos;MG&apos;, &apos;MH2&apos;, &apos;MH3&apos;, &apos;MLI&apos;, &apos;MLT&apos;, &apos;MMC&apos;, &apos;MN&apos;, &apos;MN3&apos;, &apos;MN5&apos;, &apos;MN6&apos;,
+  &apos;MO1&apos;, &apos;MO2&apos;, &apos;MO3&apos;, &apos;MO4&apos;, &apos;MO5&apos;, &apos;MO6&apos;, &apos;MOO&apos;, &apos;MOS&apos;, &apos;MOW&apos;, &apos;MW1&apos;, &apos;MW2&apos;,
+  &apos;MW3&apos;, &apos;NA&apos;, &apos;NA2&apos;, &apos;NA5&apos;, &apos;NA6&apos;, &apos;NAO&apos;, &apos;NAW&apos;, &apos;NCO&apos;, &apos;NET&apos;, &apos;NH4&apos;, &apos;NI&apos;,
+  &apos;NI1&apos;, &apos;NI2&apos;, &apos;NI3&apos;, &apos;NO2&apos;, &apos;NO3&apos;, &apos;NRU&apos;, &apos;O4M&apos;, &apos;OAA&apos;, &apos;OC1&apos;, &apos;OC2&apos;, &apos;OC3&apos;,
+  &apos;OC4&apos;, &apos;OC5&apos;, &apos;OC6&apos;, &apos;OC7&apos;, &apos;OC8&apos;, &apos;OCL&apos;, &apos;OCM&apos;, &apos;OCN&apos;, &apos;OCO&apos;, &apos;OF1&apos;, &apos;OF2&apos;,
+  &apos;OF3&apos;, &apos;OH&apos;, &apos;OS&apos;, &apos;OS4&apos;, &apos;OXL&apos;, &apos;PB&apos;, &apos;PBM&apos;, &apos;PD&apos;, &apos;PDV&apos;, &apos;PER&apos;, &apos;PI&apos;, &apos;PO3&apos;,
+  &apos;PO4&apos;, &apos;PR&apos;, &apos;PT&apos;, &apos;PT4&apos;, &apos;PTN&apos;, &apos;RB&apos;, &apos;RH3&apos;, &apos;RHD&apos;, &apos;RU&apos;, &apos;SB&apos;, &apos;SCN&apos;, &apos;SE4&apos;,
+  &apos;SEK&apos;, &apos;SM&apos;, &apos;SMO&apos;, &apos;SO3&apos;, &apos;SO4&apos;, &apos;SR&apos;, &apos;T1A&apos;, &apos;TB&apos;, &apos;TBA&apos;, &apos;TCN&apos;, &apos;TEA&apos;, &apos;TH&apos;,
+  &apos;THE&apos;, &apos;TL&apos;, &apos;TMA&apos;, &apos;TRA&apos;, &apos;UNX&apos;, &apos;V&apos;, &apos;VN3&apos;, &apos;VO4&apos;, &apos;W&apos;, &apos;WO5&apos;, &apos;Y1&apos;, &apos;YB&apos;,
+  &apos;YB2&apos;, &apos;YH&apos;, &apos;YT3&apos;, &apos;ZCM&apos;, &apos;ZN&apos;, &apos;ZN2&apos;, &apos;ZN3&apos;, &apos;ZNO&apos;, &apos;ZO3&apos;,
+    // additional ion names
+  &apos;OHX&apos;
+]
+
+// all chemical components with the word &quot;%saccharide%&quot; in their type, Sep 2016
+//
+// SET SESSION group_concat_max_len = 1000000;
+// select GROUP_CONCAT(id_ ORDER BY id_ ASC SEPARATOR &apos;&quot;, &quot;&apos;) from
+// (
+//     SELECT count(obj_id), id_
+//     FROM pdb.chem_comp WHERE type like &quot;%SACCHARIDE%&quot;
+//     GROUP BY id_
+// ) AS t1;
+const SaccharideNames = [
+  &apos;045&apos;, &apos;0AT&apos;, &apos;0BD&apos;, &apos;0MK&apos;, &apos;0NZ&apos;, &apos;0TS&apos;, &apos;0V4&apos;, &apos;0XY&apos;, &apos;0YT&apos;, &apos;10M&apos;,
+  &apos;147&apos;, &apos;149&apos;, &apos;14T&apos;, &apos;15L&apos;, &apos;16G&apos;, &apos;18T&apos;, &apos;18Y&apos;, &apos;1AR&apos;, &apos;1BW&apos;, &apos;1GL&apos;, &apos;1GN&apos;,
+  &apos;1JB&apos;, &apos;1LL&apos;, &apos;1NA&apos;, &apos;1S3&apos;, &apos;26M&apos;, &apos;26Q&apos;, &apos;26R&apos;, &apos;26V&apos;, &apos;26W&apos;, &apos;26Y&apos;, &apos;27C&apos;,
+  &apos;289&apos;, &apos;291&apos;, &apos;293&apos;, &apos;2DG&apos;, &apos;2F8&apos;, &apos;2FG&apos;, &apos;2FL&apos;, &apos;2FP&apos;, &apos;2GL&apos;, &apos;2M4&apos;, &apos;2M5&apos;,
+  &apos;32O&apos;, &apos;34V&apos;, &apos;3CM&apos;, &apos;3DO&apos;, &apos;3DY&apos;, &apos;3FM&apos;, &apos;3LR&apos;, &apos;3MF&apos;, &apos;3MG&apos;, &apos;3SA&apos;, &apos;3ZW&apos;,
+  &apos;46D&apos;, &apos;46M&apos;, &apos;46Z&apos;, &apos;48Z&apos;, &apos;4CQ&apos;, &apos;4GC&apos;, &apos;4NN&apos;, &apos;50A&apos;, &apos;5DI&apos;, &apos;5GF&apos;, &apos;5MM&apos;,
+  &apos;5RP&apos;, &apos;5SA&apos;, &apos;5SP&apos;, &apos;64K&apos;, &apos;6PG&apos;, &apos;6SA&apos;, &apos;7JZ&apos;, &apos;7SA&apos;, &apos;A1Q&apos;, &apos;A2G&apos;, &apos;AAB&apos;,
+  &apos;AAL&apos;, &apos;AAO&apos;, &apos;ABC&apos;, &apos;ABD&apos;, &apos;ABE&apos;, &apos;ABF&apos;, &apos;ABL&apos;, &apos;ACG&apos;, &apos;ACI&apos;, &apos;ACR&apos;, &apos;ACX&apos;,
+  &apos;ADA&apos;, &apos;ADG&apos;, &apos;ADR&apos;, &apos;AF1&apos;, &apos;AFD&apos;, &apos;AFL&apos;, &apos;AFO&apos;, &apos;AFP&apos;, &apos;AFR&apos;, &apos;AGC&apos;, &apos;AGH&apos;,
+  &apos;AGL&apos;, &apos;AHR&apos;, &apos;AIG&apos;, &apos;ALL&apos;, &apos;ALX&apos;, &apos;AMU&apos;, &apos;AOG&apos;, &apos;AOS&apos;, &apos;ARA&apos;, &apos;ARB&apos;, &apos;ARE&apos;,
+  &apos;ARI&apos;, &apos;ASG&apos;, &apos;ASO&apos;, &apos;AXP&apos;, &apos;AXR&apos;, &apos;B0D&apos;, &apos;B16&apos;, &apos;B2G&apos;, &apos;B4G&apos;, &apos;B6D&apos;, &apos;B8D&apos;,
+  &apos;B9D&apos;, &apos;BBK&apos;, &apos;BCD&apos;, &apos;BDG&apos;, &apos;BDP&apos;, &apos;BDR&apos;, &apos;BEM&apos;, &apos;BFP&apos;, &apos;BGC&apos;, &apos;BGL&apos;, &apos;BGP&apos;,
+  &apos;BGS&apos;, &apos;BHG&apos;, &apos;BMA&apos;, &apos;BMX&apos;, &apos;BNG&apos;, &apos;BNX&apos;, &apos;BOG&apos;, &apos;BRI&apos;, &apos;BXF&apos;, &apos;BXP&apos;, &apos;BXX&apos;,
+  &apos;BXY&apos;, &apos;C3X&apos;, &apos;C4X&apos;, &apos;C5X&apos;, &apos;CAP&apos;, &apos;CBI&apos;, &apos;CBK&apos;, &apos;CBS&apos;, &apos;CDR&apos;, &apos;CEG&apos;, &apos;CGF&apos;,
+  &apos;CHO&apos;, &apos;CR1&apos;, &apos;CR6&apos;, &apos;CRA&apos;, &apos;CT3&apos;, &apos;CTO&apos;, &apos;CTR&apos;, &apos;CTT&apos;, &apos;D6G&apos;, &apos;DAF&apos;, &apos;DAG&apos;,
+  &apos;DDA&apos;, &apos;DDB&apos;, &apos;DDL&apos;, &apos;DEL&apos;, &apos;DFR&apos;, &apos;DFX&apos;, &apos;DG0&apos;, &apos;DGC&apos;, &apos;DGD&apos;, &apos;DGM&apos;, &apos;DGS&apos;,
+  &apos;DIG&apos;, &apos;DLF&apos;, &apos;DLG&apos;, &apos;DMU&apos;, &apos;DNO&apos;, &apos;DOM&apos;, &apos;DP5&apos;, &apos;DQQ&apos;, &apos;DQR&apos;, &apos;DR2&apos;, &apos;DR3&apos;,
+  &apos;DR4&apos;, &apos;DRI&apos;, &apos;DSR&apos;, &apos;DT6&apos;, &apos;DVC&apos;, &apos;E4P&apos;, &apos;E5G&apos;, &apos;EAG&apos;, &apos;EBG&apos;, &apos;EBQ&apos;, &apos;EGA&apos;,
+  &apos;EJT&apos;, &apos;EPG&apos;, &apos;ERE&apos;, &apos;ERI&apos;, &apos;F1P&apos;, &apos;F1X&apos;, &apos;F6P&apos;, &apos;FBP&apos;, &apos;FCA&apos;, &apos;FCB&apos;, &apos;FCT&apos;,
+  &apos;FDP&apos;, &apos;FDQ&apos;, &apos;FFC&apos;, &apos;FIX&apos;, &apos;FMO&apos;, &apos;FRU&apos;, &apos;FSI&apos;, &apos;FU4&apos;, &apos;FUB&apos;, &apos;FUC&apos;, &apos;FUD&apos;,
+  &apos;FUL&apos;, &apos;FXP&apos;, &apos;G16&apos;, &apos;G1P&apos;, &apos;G2F&apos;, &apos;G3I&apos;, &apos;G4D&apos;, &apos;G4S&apos;, &apos;G6D&apos;, &apos;G6P&apos;, &apos;G6S&apos;,
+  &apos;GAC&apos;, &apos;GAD&apos;, &apos;GAL&apos;, &apos;GC1&apos;, &apos;GC4&apos;, &apos;GCD&apos;, &apos;GCN&apos;, &apos;GCO&apos;, &apos;GCS&apos;, &apos;GCT&apos;, &apos;GCU&apos;,
+  &apos;GCV&apos;, &apos;GCW&apos;, &apos;GCX&apos;, &apos;GE1&apos;, &apos;GFG&apos;, &apos;GFP&apos;, &apos;GIV&apos;, &apos;GL0&apos;, &apos;GL2&apos;, &apos;GL5&apos;, &apos;GL6&apos;,
+  &apos;GL7&apos;, &apos;GL9&apos;, &apos;GLA&apos;, &apos;GLB&apos;, &apos;GLC&apos;, &apos;GLD&apos;, &apos;GLF&apos;, &apos;GLG&apos;, &apos;GLO&apos;, &apos;GLP&apos;, &apos;GLS&apos;,
+  &apos;GLT&apos;, &apos;GLW&apos;, &apos;GMH&apos;, &apos;GN1&apos;, &apos;GNX&apos;, &apos;GP1&apos;, &apos;GP4&apos;, &apos;GPH&apos;, &apos;GPM&apos;, &apos;GQ1&apos;, &apos;GQ2&apos;,
+  &apos;GQ4&apos;, &apos;GS1&apos;, &apos;GS4&apos;, &apos;GSA&apos;, &apos;GSD&apos;, &apos;GTE&apos;, &apos;GTH&apos;, &apos;GTK&apos;, &apos;GTR&apos;, &apos;GTZ&apos;, &apos;GU0&apos;,
+  &apos;GU1&apos;, &apos;GU2&apos;, &apos;GU3&apos;, &apos;GU4&apos;, &apos;GU5&apos;, &apos;GU6&apos;, &apos;GU8&apos;, &apos;GU9&apos;, &apos;GUF&apos;, &apos;GUP&apos;, &apos;GUZ&apos;,
+  &apos;GYP&apos;, &apos;GYV&apos;, &apos;H2P&apos;, &apos;HDL&apos;, &apos;HMS&apos;, &apos;HS2&apos;, &apos;HSD&apos;, &apos;HSG&apos;, &apos;HSH&apos;, &apos;HSJ&apos;, &apos;HSQ&apos;,
+  &apos;HSR&apos;, &apos;HSU&apos;, &apos;HSX&apos;, &apos;HSY&apos;, &apos;HSZ&apos;, &apos;IAB&apos;, &apos;IDG&apos;, &apos;IDR&apos;, &apos;IDS&apos;, &apos;IDT&apos;, &apos;IDU&apos;,
+  &apos;IDX&apos;, &apos;IDY&apos;, &apos;IMK&apos;, &apos;IN1&apos;, &apos;IPT&apos;, &apos;ISL&apos;, &apos;KBG&apos;, &apos;KD2&apos;, &apos;KDA&apos;, &apos;KDM&apos;, &apos;KDO&apos;,
+  &apos;KFN&apos;, &apos;KO1&apos;, &apos;KO2&apos;, &apos;KTU&apos;, &apos;L6S&apos;, &apos;LAG&apos;, &apos;LAI&apos;, &apos;LAK&apos;, &apos;LAO&apos;, &apos;LAT&apos;, &apos;LB2&apos;,
+  &apos;LBT&apos;, &apos;LCN&apos;, &apos;LDY&apos;, &apos;LGC&apos;, &apos;LGU&apos;, &apos;LM2&apos;, &apos;LMT&apos;, &apos;LMU&apos;, &apos;LOG&apos;, &apos;LOX&apos;, &apos;LPK&apos;,
+  &apos;LSM&apos;, &apos;LTM&apos;, &apos;LVZ&apos;, &apos;LXB&apos;, &apos;LXZ&apos;, &apos;M1F&apos;, &apos;M3M&apos;, &apos;M6P&apos;, &apos;M8C&apos;, &apos;MA1&apos;, &apos;MA2&apos;,
+  &apos;MA3&apos;, &apos;MAB&apos;, &apos;MAG&apos;, &apos;MAL&apos;, &apos;MAN&apos;, &apos;MAT&apos;, &apos;MAV&apos;, &apos;MAW&apos;, &apos;MBG&apos;, &apos;MCU&apos;, &apos;MDA&apos;,
+  &apos;MDM&apos;, &apos;MDP&apos;, &apos;MFA&apos;, &apos;MFB&apos;, &apos;MFU&apos;, &apos;MG5&apos;, &apos;MGA&apos;, &apos;MGL&apos;, &apos;MLB&apos;, &apos;MMA&apos;, &apos;MMN&apos;,
+  &apos;MN0&apos;, &apos;MRP&apos;, &apos;MTT&apos;, &apos;MUG&apos;, &apos;MVP&apos;, &apos;MXY&apos;, &apos;N1L&apos;, &apos;N9S&apos;, &apos;NAA&apos;, &apos;NAG&apos;, &apos;NBG&apos;,
+  &apos;NDG&apos;, &apos;NED&apos;, &apos;NG1&apos;, &apos;NG6&apos;, &apos;NGA&apos;, &apos;NGB&apos;, &apos;NGC&apos;, &apos;NGE&apos;, &apos;NGF&apos;, &apos;NGL&apos;, &apos;NGS&apos;,
+  &apos;NGY&apos;, &apos;NHF&apos;, &apos;NM6&apos;, &apos;NM9&apos;, &apos;NTF&apos;, &apos;NTO&apos;, &apos;NTP&apos;, &apos;NXD&apos;, &apos;NYT&apos;, &apos;OPG&apos;, &apos;OPM&apos;,
+  &apos;ORP&apos;, &apos;OX2&apos;, &apos;P3M&apos;, &apos;P53&apos;, &apos;P6P&apos;, &apos;PA5&apos;, &apos;PNA&apos;, &apos;PNG&apos;, &apos;PNW&apos;, &apos;PRP&apos;, &apos;PSJ&apos;,
+  &apos;PSV&apos;, &apos;PTQ&apos;, &apos;QDK&apos;, &apos;QPS&apos;, &apos;QV4&apos;, &apos;R1P&apos;, &apos;R1X&apos;, &apos;R2B&apos;, &apos;R5P&apos;, &apos;RAA&apos;, &apos;RAE&apos;,
+  &apos;RAF&apos;, &apos;RAM&apos;, &apos;RAO&apos;, &apos;RAT&apos;, &apos;RB5&apos;, &apos;RBL&apos;, &apos;RCD&apos;, &apos;RDP&apos;, &apos;REL&apos;, &apos;RER&apos;, &apos;RF5&apos;,
+  &apos;RG1&apos;, &apos;RGG&apos;, &apos;RHA&apos;, &apos;RIB&apos;, &apos;RIP&apos;, &apos;RNS&apos;, &apos;RNT&apos;, &apos;ROB&apos;, &apos;ROR&apos;, &apos;RPA&apos;, &apos;RST&apos;,
+  &apos;RUB&apos;, &apos;RUU&apos;, &apos;RZM&apos;, &apos;S6P&apos;, &apos;S7P&apos;, &apos;SA0&apos;, &apos;SCR&apos;, &apos;SDD&apos;, &apos;SF6&apos;, &apos;SF9&apos;, &apos;SG4&apos;,
+  &apos;SG5&apos;, &apos;SG6&apos;, &apos;SG7&apos;, &apos;SGA&apos;, &apos;SGC&apos;, &apos;SGD&apos;, &apos;SGN&apos;, &apos;SGS&apos;, &apos;SHB&apos;, &apos;SHG&apos;, &apos;SI3&apos;,
+  &apos;SIO&apos;, &apos;SOE&apos;, &apos;SOL&apos;, &apos;SSG&apos;, &apos;SUC&apos;, &apos;SUP&apos;, &apos;SUS&apos;, &apos;T6P&apos;, &apos;T6T&apos;, &apos;TAG&apos;, &apos;TCB&apos;,
+  &apos;TDG&apos;, &apos;TGK&apos;, &apos;TGY&apos;, &apos;TH1&apos;, &apos;TIA&apos;, &apos;TM5&apos;, &apos;TM6&apos;, &apos;TM9&apos;, &apos;TMR&apos;, &apos;TMX&apos;, &apos;TOA&apos;,
+  &apos;TOC&apos;, &apos;TRE&apos;, &apos;TYV&apos;, &apos;UCD&apos;, &apos;UDC&apos;, &apos;VG1&apos;, &apos;X0X&apos;, &apos;X1X&apos;, &apos;X2F&apos;, &apos;X4S&apos;, &apos;X5S&apos;,
+  &apos;X6X&apos;, &apos;XBP&apos;, &apos;XDN&apos;, &apos;XDP&apos;, &apos;XIF&apos;, &apos;XIM&apos;, &apos;XLF&apos;, &apos;XLS&apos;, &apos;XMM&apos;, &apos;XUL&apos;, &apos;XXR&apos;,
+  &apos;XYP&apos;, &apos;XYS&apos;, &apos;YO5&apos;, &apos;Z3Q&apos;, &apos;Z6J&apos;, &apos;Z9M&apos;, &apos;ZDC&apos;, &apos;ZDM&apos;
+]
+
+const ProteinBackboneAtoms = [
+  &apos;CA&apos;, &apos;C&apos;, &apos;N&apos;, &apos;O&apos;,
+  &apos;O1&apos;, &apos;O2&apos;, &apos;OC1&apos;, &apos;OC2&apos;, &apos;OX1&apos;, &apos;OXT&apos;,
+  &apos;H&apos;, &apos;H1&apos;, &apos;H2&apos;, &apos;H3&apos;, &apos;HA&apos;,
+  &apos;BB&apos;
+]
+
+const NucleicBackboneAtoms = [
+  &apos;P&apos;, &quot;O3&apos;&quot;, &quot;O5&apos;&quot;, &quot;C5&apos;&quot;, &quot;C4&apos;&quot;, &quot;C3&apos;&quot;, &apos;OP1&apos;, &apos;OP2&apos;,
+  &apos;O3*&apos;, &apos;O5*&apos;, &apos;C5*&apos;, &apos;C4*&apos;, &apos;C3*&apos;
+]
+
+const ResidueTypeAtoms = {}
+
+ResidueTypeAtoms[ ProteinBackboneType ] = {
+  trace: &apos;CA&apos;,
+  direction1: &apos;C&apos;,
+  direction2: [ &apos;O&apos;, &apos;OC1&apos;, &apos;O1&apos;, &apos;OX1&apos;, &apos;OXT&apos; ],
+  backboneStart: &apos;N&apos;,
+  backboneEnd: &apos;C&apos;
+}
+
+ResidueTypeAtoms[ RnaBackboneType ] = {
+  trace: [ &quot;C4&apos;&quot;, &apos;C4*&apos; ],
+  direction1: [ &quot;C1&apos;&quot;, &apos;C1*&apos; ],
+  direction2: [ &quot;C3&apos;&quot;, &apos;C3*&apos; ],
+  backboneStart: &apos;P&apos;,
+  backboneEnd: [ &quot;O3&apos;&quot;, &apos;O3*&apos; ]
+}
+
+ResidueTypeAtoms[ DnaBackboneType ] = {
+  trace: [ &quot;C3&apos;&quot;, &apos;C3*&apos; ],
+  direction1: [ &quot;C2&apos;&quot;, &apos;C2*&apos; ],
+  direction2: [ &quot;O4&apos;&quot;, &apos;O4*&apos; ],
+  backboneStart: &apos;P&apos;,
+  backboneEnd: [ &quot;O3&apos;&quot;, &apos;O3*&apos; ]
+}
+
+ResidueTypeAtoms[ CgProteinBackboneType ] = {
+  trace: [ &apos;CA&apos;, &apos;BB&apos; ],
+  backboneStart: [ &apos;CA&apos;, &apos;BB&apos; ],
+  backboneEnd: [ &apos;CA&apos;, &apos;BB&apos; ]
+}
+
+ResidueTypeAtoms[ CgRnaBackboneType ] = {
+  trace: [ &quot;C4&apos;&quot;, &apos;C4*&apos;, &apos;P&apos; ],
+  backboneStart: [ &quot;C4&apos;&quot;, &apos;C4*&apos;, &apos;P&apos; ],
+  backboneEnd: [ &quot;C4&apos;&quot;, &apos;C4*&apos;, &apos;P&apos; ]
+}
+
+ResidueTypeAtoms[ CgDnaBackboneType ] = {
+  trace: [ &quot;C3&apos;&quot;, &apos;C3*&apos;, &quot;C2&apos;&quot;, &apos;P&apos; ],  // C2&apos; is used in martini ff
+  backboneStart: [ &quot;C3&apos;&quot;, &apos;C3*&apos;, &quot;C2&apos;&quot;, &apos;P&apos; ],
+  backboneEnd: [ &quot;C3&apos;&quot;, &apos;C3*&apos;, &quot;C2&apos;&quot;, &apos;P&apos; ]
+}
+
+ResidueTypeAtoms[ UnknownBackboneType ] = {}
+
+export {
+    UnknownEntity,
+    PolymerEntity,
+    NonPolymerEntity,
+    MacrolideEntity,
+    WaterEntity,
+
+    UnknownType,
+    WaterType,
+    IonType,
+    ProteinType,
+    RnaType,
+    DnaType,
+    SaccharideType,
+
+    UnknownBackboneType,
+    ProteinBackboneType,
+    RnaBackboneType,
+    DnaBackboneType,
+    CgProteinBackboneType,
+    CgRnaBackboneType,
+    CgDnaBackboneType,
+
+    ChemCompProtein,
+    ChemCompRna,
+    ChemCompDna,
+    ChemCompSaccharide,
+    ChemCompOther,
+    ChemCompNonPolymer,
+    ChemCompHetero,
+
+    SecStrucHelix,
+    SecStrucSheet,
+    SecStrucTurn,
+
+    VdwRadii,
+    DefaultVdwRadius,
+    ResidueRadii,
+    DefaultResidueRadius,
+    CovalentRadii,
+    DefaultCovalentRadius,
+    ResidueHydrophobicity,
+    DefaultResidueHydrophobicity,
+
+    AA1,
+    AA3,
+    RnaBases,
+    DnaBases,
+    PurinBases,
+    WaterNames,
+    IonNames,
+    SaccharideNames,
+
+    ProteinBackboneAtoms,
+    NucleicBackboneAtoms,
+
+    ResidueTypeAtoms
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69549173-1', 'auto');
+    ga('send', 'pageview');
+</script></body></html>
