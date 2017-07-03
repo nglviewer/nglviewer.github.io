@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
   <title data-ice="title">src/globals.js | NGL Viewer API Document</title>
@@ -13,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-1</span>
+<header><span>NGL@0.10.5-2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -237,6 +235,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/netcdf-reader.js~NetcdfReader.html">NetcdfReader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~Picker.html">Picker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html">ShapePicker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span></li>
@@ -257,8 +257,9 @@
 
 import { getBrowser, getQuery, boolean } from &apos;./utils.js&apos;
 import Registry from &apos;./utils/registry.js&apos;
-import _WorkerRegistry from &apos;./worker/worker-registry.js&apos;
 import _ColormakerRegistry from &apos;./color/colormaker-registry.js&apos;
+import _ParserRegistry from &apos;./parser/parser-registry.js&apos;
+import _WorkerRegistry from &apos;./worker/worker-registry.js&apos;
 
 /**
  * The browser name: &quot;Opera&quot;, &quot;Chrome&quot;, &quot;Firefox&quot;, &quot;Mobile Safari&quot;,
@@ -311,7 +312,7 @@ const WorkerRegistry = new _WorkerRegistry()
 const ColormakerRegistry = new _ColormakerRegistry()
 const DatasourceRegistry = new Registry(&apos;datasource&apos;)
 const RepresentationRegistry = new Registry(&apos;representatation&apos;)
-const ParserRegistry = new Registry(&apos;parser&apos;)
+const ParserRegistry = new _ParserRegistry()
 const ShaderRegistry = new Registry(&apos;shader&apos;)
 const DecompressorRegistry = new Registry(&apos;decompressor&apos;)
 const ComponentRegistry = new Registry(&apos;component&apos;)
@@ -351,6 +352,8 @@ export {
 <script src="script/test-summary.js"></script>
 <script src="script/inner-link.js"></script>
 <script src="script/patch-for-local.js"></script>
+
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -359,5 +362,4 @@ export {
 
     ga('create', 'UA-69549173-1', 'auto');
     ga('send', 'pageview');
-</script></body>
-</html>
+</script></body></html>

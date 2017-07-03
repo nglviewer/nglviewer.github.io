@@ -384,6 +384,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/utils/io-buffer.js~iobuffer",
+    "class/src/utils/io-buffer.js~IOBuffer.html",
+    "<span>IOBuffer</span> <span class=\"search-result-import-path\">ngl/src/utils/io-buffer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/image-buffer.js~imagebuffer",
     "class/src/buffer/image-buffer.js~ImageBuffer.html",
     "<span>ImageBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/image-buffer.js</span>",
@@ -501,6 +507,12 @@ window.esdocSearchIndex = [
     "ngl/src/animation/animation.js~moveanimation",
     "class/src/animation/animation.js~MoveAnimation.html",
     "<span>MoveAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/utils/netcdf-reader.js~netcdfreader",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html",
+    "<span>NetcdfReader</span> <span class=\"search-result-import-path\">ngl/src/utils/netcdf-reader.js</span>",
     "class"
   ],
   [
@@ -3618,9 +3630,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/parser/msgpack-parser.js",
+    "file/src/parser/msgpack-parser.js.html",
+    "src/parser/msgpack-parser.js",
+    "file"
+  ],
+  [
+    "src/parser/nctraj-parser.js",
+    "file/src/parser/nctraj-parser.js.html",
+    "src/parser/nctraj-parser.js",
+    "file"
+  ],
+  [
+    "src/parser/netcdf-parser.js",
+    "file/src/parser/netcdf-parser.js.html",
+    "src/parser/netcdf-parser.js",
+    "file"
+  ],
+  [
     "src/parser/obj-parser.js",
     "file/src/parser/obj-parser.js.html",
     "src/parser/obj-parser.js",
+    "file"
+  ],
+  [
+    "src/parser/parser-registry.js",
+    "file/src/parser/parser-registry.js.html",
+    "src/parser/parser-registry.js",
     "file"
   ],
   [
@@ -3645,6 +3681,12 @@ window.esdocSearchIndex = [
     "src/parser/pqr-parser.js",
     "file/src/parser/pqr-parser.js.html",
     "src/parser/pqr-parser.js",
+    "file"
+  ],
+  [
+    "src/parser/prmtop-parser.js",
+    "file/src/parser/prmtop-parser.js.html",
+    "src/parser/prmtop-parser.js",
     "file"
   ],
   [
@@ -6180,6 +6222,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/trajectory/trajectory.js~trajectory#getframetime",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-getFrameTime",
+    "src/trajectory/trajectory.js~Trajectory#getFrameTime",
+    "method"
+  ],
+  [
     "src/trajectory/trajectory.js~trajectoryparameters",
     "typedef/index.html#static-typedef-TrajectoryParameters",
     "src/trajectory/trajectory.js~TrajectoryParameters",
@@ -6438,6 +6486,258 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/utils/io-buffer.js",
+    "file/src/utils/io-buffer.js.html",
+    "src/utils/io-buffer.js",
+    "file"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#available",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-available",
+    "src/utils/io-buffer.js~IOBuffer#available",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#ensureavailable",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-ensureAvailable",
+    "src/utils/io-buffer.js~IOBuffer#ensureAvailable",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#getbuffer",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-getBuffer",
+    "src/utils/io-buffer.js~IOBuffer#getBuffer",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#isbigendian",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-isBigEndian",
+    "src/utils/io-buffer.js~IOBuffer#isBigEndian",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#islittleendian",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-isLittleEndian",
+    "src/utils/io-buffer.js~IOBuffer#isLittleEndian",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#mark",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-mark",
+    "src/utils/io-buffer.js~IOBuffer#mark",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#popmark",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-popMark",
+    "src/utils/io-buffer.js~IOBuffer#popMark",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#pushmark",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-pushMark",
+    "src/utils/io-buffer.js~IOBuffer#pushMark",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readboolean",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readBoolean",
+    "src/utils/io-buffer.js~IOBuffer#readBoolean",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readbyte",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readByte",
+    "src/utils/io-buffer.js~IOBuffer#readByte",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readbytes",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readBytes",
+    "src/utils/io-buffer.js~IOBuffer#readBytes",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readchar",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readChar",
+    "src/utils/io-buffer.js~IOBuffer#readChar",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readchars",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readChars",
+    "src/utils/io-buffer.js~IOBuffer#readChars",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readfloat32",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readFloat32",
+    "src/utils/io-buffer.js~IOBuffer#readFloat32",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readfloat64",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readFloat64",
+    "src/utils/io-buffer.js~IOBuffer#readFloat64",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readint16",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readInt16",
+    "src/utils/io-buffer.js~IOBuffer#readInt16",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readint32",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readInt32",
+    "src/utils/io-buffer.js~IOBuffer#readInt32",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readint8",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readInt8",
+    "src/utils/io-buffer.js~IOBuffer#readInt8",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readuint16",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readUint16",
+    "src/utils/io-buffer.js~IOBuffer#readUint16",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readuint32",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readUint32",
+    "src/utils/io-buffer.js~IOBuffer#readUint32",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#readuint8",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-readUint8",
+    "src/utils/io-buffer.js~IOBuffer#readUint8",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#reset",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-reset",
+    "src/utils/io-buffer.js~IOBuffer#reset",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#rewind",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-rewind",
+    "src/utils/io-buffer.js~IOBuffer#rewind",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#seek",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-seek",
+    "src/utils/io-buffer.js~IOBuffer#seek",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#setbigendian",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-setBigEndian",
+    "src/utils/io-buffer.js~IOBuffer#setBigEndian",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#setlittleendian",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-setLittleEndian",
+    "src/utils/io-buffer.js~IOBuffer#setLittleEndian",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#skip",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-skip",
+    "src/utils/io-buffer.js~IOBuffer#skip",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#toarray",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-toArray",
+    "src/utils/io-buffer.js~IOBuffer#toArray",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeboolean",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeBoolean",
+    "src/utils/io-buffer.js~IOBuffer#writeBoolean",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writebyte",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeByte",
+    "src/utils/io-buffer.js~IOBuffer#writeByte",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writebytes",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeBytes",
+    "src/utils/io-buffer.js~IOBuffer#writeBytes",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writechar",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeChar",
+    "src/utils/io-buffer.js~IOBuffer#writeChar",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writechars",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeChars",
+    "src/utils/io-buffer.js~IOBuffer#writeChars",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writefloat32",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeFloat32",
+    "src/utils/io-buffer.js~IOBuffer#writeFloat32",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writefloat64",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeFloat64",
+    "src/utils/io-buffer.js~IOBuffer#writeFloat64",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeint16",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeInt16",
+    "src/utils/io-buffer.js~IOBuffer#writeInt16",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeint32",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeInt32",
+    "src/utils/io-buffer.js~IOBuffer#writeInt32",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeint8",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeInt8",
+    "src/utils/io-buffer.js~IOBuffer#writeInt8",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeuint16",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeUint16",
+    "src/utils/io-buffer.js~IOBuffer#writeUint16",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeuint32",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeUint32",
+    "src/utils/io-buffer.js~IOBuffer#writeUint32",
+    "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#writeuint8",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-writeUint8",
+    "src/utils/io-buffer.js~IOBuffer#writeUint8",
+    "method"
+  ],
+  [
     "src/utils/kdtree.js",
     "file/src/utils/kdtree.js.html",
     "src/utils/kdtree.js",
@@ -6448,6 +6748,60 @@ window.esdocSearchIndex = [
     "file/src/utils/label-factory.js.html",
     "src/utils/label-factory.js",
     "file"
+  ],
+  [
+    "src/utils/netcdf-reader.js",
+    "file/src/utils/netcdf-reader.js.html",
+    "src/utils/netcdf-reader.js",
+    "file"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#constructor",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-constructor-constructor",
+    "src/utils/netcdf-reader.js~NetcdfReader#constructor",
+    "method"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#dimensions",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-get-dimensions",
+    "src/utils/netcdf-reader.js~NetcdfReader#dimensions",
+    "member"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#getdatavariable",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-method-getDataVariable",
+    "src/utils/netcdf-reader.js~NetcdfReader#getDataVariable",
+    "method"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#globalattributes",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-get-globalAttributes",
+    "src/utils/netcdf-reader.js~NetcdfReader#globalAttributes",
+    "member"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#hasdatavariable",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-method-hasDataVariable",
+    "src/utils/netcdf-reader.js~NetcdfReader#hasDataVariable",
+    "method"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#recorddimension",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-get-recordDimension",
+    "src/utils/netcdf-reader.js~NetcdfReader#recordDimension",
+    "member"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#variables",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-get-variables",
+    "src/utils/netcdf-reader.js~NetcdfReader#variables",
+    "member"
+  ],
+  [
+    "src/utils/netcdf-reader.js~netcdfreader#version",
+    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-get-version",
+    "src/utils/netcdf-reader.js~NetcdfReader#version",
+    "member"
   ],
   [
     "src/utils/parse-xml.js",
