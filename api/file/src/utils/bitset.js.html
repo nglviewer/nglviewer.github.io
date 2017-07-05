@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/utils/bitset.js | NGL Viewer API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header><span>NGL@0.10.0-dev.20</span>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a href="./../gallery/index.html">Gallery</a><a data-ice="repoURL" href="https://github.com/arose/ngl.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/script.js~Script.html">Script</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/selection.js~Selection.html">Selection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-binarySearchIndexOf">binarySearchIndexOf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Browser">Browser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ColormakerRegistry">ColormakerRegistry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ExtensionFragDepth">ExtensionFragDepth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Mobile">Mobile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Version">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Box3">Box3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/core/BufferGeometry">BufferGeometry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Char</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Color">Color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Euler">Euler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Float</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Matrix3">Matrix3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Matrix4">Matrix4</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Plane">Plane</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Quaternion">Quaternion</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://millermedeiros.github.io/js-signals/docs/symbols/Signal.html">Signal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector2">Vector2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Vector3">Vector3</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">align</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-superpose">superpose</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">animation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~MoveAnimation.html">MoveAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RockAnimation.html">RockAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~RotateAnimation.html">RotateAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~SpinAnimation.html">SpinAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animation/animation.js~ZoomAnimation.html">ZoomAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/animation/animation.js~Animation.html">Animation</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">buffer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/arrow-buffer.js~ArrowBuffer.html">ArrowBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cone-buffer.js~ConeBuffer.html">ConeBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html">ConeGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/contour-buffer.js~ContourBuffer.html">ContourBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cylinder-buffer.js~CylinderBuffer.html">CylinderBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html">CylinderGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html">CylinderImpostorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html">DoubleSidedBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/ellipsoid-buffer.js~EllipsoidBuffer.html">EllipsoidBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html">EllipsoidGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/hyperballstick-buffer.js~HyperballStickBuffer.html">HyperballStickBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html">HyperballStickImpostorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/image-buffer.js~ImageBuffer.html">ImageBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/line-buffer.js~LineBuffer.html">LineBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/mesh-buffer.js~MeshBuffer.html">MeshBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/point-buffer.js~PointBuffer.html">PointBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/ribbon-buffer.js~RibbonBuffer.html">RibbonBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/sphere-buffer.js~SphereBuffer.html">SphereBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html">SphereGeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html">SphereImpostorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/surface-buffer.js~SurfaceBuffer.html">SurfaceBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/text-buffer.js~TextBuffer.html">TextBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/trace-buffer.js~TraceBuffer.html">TraceBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html">TubeMeshBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/vector-buffer.js~VectorBuffer.html">VectorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/alignedbox-buffer.js~AlignedBoxBuffer.html">AlignedBoxBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/box-buffer.js~BoxBuffer.html">BoxBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/geometry-buffer.js~GeometryBuffer.html">GeometryBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/mapped-buffer.js~MappedBuffer.html">MappedBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/quad-buffer.js~QuadBuffer.html">QuadBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BufferParameters">BufferParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TextBufferParameters">TextBufferParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">color</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/atomindex-colormaker.js~AtomindexColormaker.html">AtomindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/bfactor-colormaker.js~BfactorColormaker.html">BfactorColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainid-colormaker.js~ChainidColormaker.html">ChainidColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainindex-colormaker.js~ChainindexColormaker.html">ChainindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/chainname-colormaker.js~ChainnameColormaker.html">ChainnameColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/colormaker-registry.js~ColormakerRegistry.html">ColormakerRegistry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">DensityfitColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/element-colormaker.js~ElementColormaker.html">ElementColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">EntityindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html">EntitytypeColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html">GeoqualityColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html">HydrophobicityColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">OccupancyColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">ResidueindexColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/resname-colormaker.js~ResnameColormaker.html">ResnameColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/selection-colormaker.js~SelectionColormaker.html">SelectionColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/sstruc-colormaker.js~SstrucColormaker.html">SstrucColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/uniform-colormaker.js~UniformColormaker.html">UniformColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/value-colormaker.js~ValueColormaker.html">ValueColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/volume-colormaker.js~VolumeColormaker.html">VolumeColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/color/colormaker.js~Colormaker.html">Colormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ColormakerParameters">ColormakerParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">component</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/representation-component.js~RepresentationComponent.html">RepresentationComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/script-component.js~ScriptComponent.html">ScriptComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/shape-component.js~ShapeComponent.html">ShapeComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/structure-component.js~StructureComponent.html">StructureComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/surface-component.js~SurfaceComponent.html">SurfaceComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/trajectory-component.js~TrajectoryComponent.html">TrajectoryComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/component/volume-component.js~VolumeComponent.html">VolumeComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/component/component.js~Component.html">Component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ComponentParameters">ComponentParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ComponentSignals">ComponentSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationComponentSignals">RepresentationComponentSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureComponentSignals">StructureComponentSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentParameters">TrajectoryComponentParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryComponentSignals">TrajectoryComponentSignals</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controls</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-controls.js~PickingControls.html">PickingControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/trackball-controls.js~TrackballControls.html">TrackballControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/script-loader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-autoLoad">autoLoad</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoaderParameters">LoaderParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">math</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/math/principal-axes.js~PrincipalAxes.html">PrincipalAxes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-quicksortIP">quicksortIP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lineLineIntersect">lineLineIntersect</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">parser</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/parser/csv-parser.js~CsvParser.html">CsvParser</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">proxy</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/atom-proxy.js~AtomProxy.html">AtomProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/bond-proxy.js~BondProxy.html">BondProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/chain-proxy.js~ChainProxy.html">ChainProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/model-proxy.js~ModelProxy.html">ModelProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/polymer.js~Polymer.html">Polymer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html">ResidueProxy</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">representation</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/axes-representation.js~AxesRepresentation.html">AxesRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/backbone-representation.js~BackboneRepresentation.html">BackboneRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/surface-representation.js~SurfaceRepresentation.html">SurfaceRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html">TrajectoryRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SurfaceRepresentationParameters">SurfaceRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryRepresentationParameters">TrajectoryRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">stage</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stage/stage.js~Stage.html">Stage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MouseSignals">MouseSignals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageParameters">StageParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StageSignals">StageSignals</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">store</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomStore">AtomStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AtomType">AtomType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BondStore">BondStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ChainStore">ChainStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModelStore">ModelStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueStore">ResidueStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ResidueType">ResidueType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Store">Store</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structure</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/entity.js~Entity.html">Entity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure-view.js~StructureView.html">StructureView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/structure/structure.js~Structure.html">Structure</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignResidueTypeBonds">assignResidueTypeBonds</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureHeader">StructureHeader</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">surface</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/surface/volume.js~Volume.html">Volume</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AVHash">AVHash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Surface">Surface</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~Picker.html">Picker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/utils/picker.js~ShapePicker.html">ShapePicker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BinaryHeap">BinaryHeap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Kdtree">Kdtree</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">viewer</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-makeImage">makeImage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils/bitset.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Bitset
+ * @private
+ *
+ * @description
+ * FastBitSet.js : a fast bit set implementation in JavaScript.
+ * (c) the authors
+ * Licensed under the Apache License, Version 2.0.
+ *
+ * Speed-optimized BitSet implementation for modern browsers and JavaScript engines.
+ *
+ * A BitSet is an ideal data structure to implement a Set when values being stored are
+ * reasonably small integers. It can be orders of magnitude faster than a generic set implementation.
+ * The FastBitSet implementation optimizes for speed, leveraging commonly available features
+ * like typed arrays.
+ *
+ * Simple usage :
+ *  var b = new TypedFastBitSet();// initially empty
+ *         // will throw exception if typed arrays are not supported
+ *  b.add(1);// add the value &quot;1&quot;
+ *  b.has(1); // check that the value is present! (will return true)
+ *  b.add(2);
+ *  console.log(&quot;&quot;+b);// should display {1,2}
+ *  b.add(10);
+ *  b.array(); // would return [1,2,10]
+ *
+ *  var c = new TypedFastBitSet([1,2,3,10]); // create bitset initialized with values 1,2,3,10
+ *  c.difference(b); // from c, remove elements that are in b
+ *  var su = c.union_size(b);// compute the size of the union (bitsets are unchanged)
+ * c.union(b); // c will contain all elements that are in c and b
+ * var s1 = c.intersection_size(b);// compute the size of the intersection (bitsets are unchanged)
+ * c.intersection(b); // c will only contain elements that are in both c and b
+ * c = b.clone(); // create a (deep) copy of b and assign it to c.
+ * c.equals(b); // check whether c and b are equal
+ *
+ *   See README.md file for a more complete description.
+ *
+ * You can install the library under node with the command line
+ *   npm install fastbitset
+ */
+
+
+// you can provide an iterable
+// an exception is thrown if typed arrays are not supported
+// - added size argument, ASR
+// - added flip argument, ASR
+/**
+ * Bitset
+ * @class
+ * @param {Integer} size - how many element to store
+ * @param {Boolean} [flip] - set to true to set all bits to 1
+ */
+function TypedFastBitSet( size, flip ) {
+  this.count = 0 | 0;
+  this.words = new Uint32Array( 8 );
+  this.resize( size );
+  if ( flip ) {
+    this.flip_all();
+  }
+}
+
+// Add the value (Set the bit at index to true)
+TypedFastBitSet.prototype.add = function( index ) {
+  if ( ( this.count &lt;&lt; 5 ) &lt;= index ) {
+    this.resize( index );
+  }
+  this.words[index &gt;&gt;&gt; 5] |= 1 &lt;&lt; index ;
+};
+
+// Add the value (Set the bit at index to true)
+// - unsafe because size is not checked, added by ASR
+TypedFastBitSet.prototype.add_unsafe = function( index ) {
+  this.words[index &gt;&gt;&gt; 5] |= 1 &lt;&lt; index ;
+};
+
+// If the value was not in the set, add it, otherwise remove it (flip bit at index)
+TypedFastBitSet.prototype.flip = function( index ) {
+  if ( ( this.count &lt;&lt; 5 ) &lt;= index ) {
+    this.resize( index );
+  }
+  this.words[index &gt;&gt;&gt; 5] ^= 1 &lt;&lt; index ;
+};
+
+// If the value was not in the set, add it, otherwise remove it (flip bit at index)
+// - unsafe because size is not checked, added by ASR
+TypedFastBitSet.prototype.flip_unsafe = function( index ) {
+  this.words[index &gt;&gt;&gt; 5] ^= 1 &lt;&lt; index ;
+};
+
+// Flip all bits, added by ASR
+TypedFastBitSet.prototype.flip_all = function() {
+  var count = this.count;
+  var k = 0 | 0;
+  var bs = 32 - this.length % 32;
+  for ( ; k + 7 &lt; count; k += 8 ) {
+    this.words[k    ] = ~this.words[k    ];
+    this.words[k + 1] = ~this.words[k + 1];
+    this.words[k + 2] = ~this.words[k + 2];
+    this.words[k + 3] = ~this.words[k + 3];
+    this.words[k + 4] = ~this.words[k + 4];
+    this.words[k + 5] = ~this.words[k + 5];
+    this.words[k + 6] = ~this.words[k + 6];
+    this.words[k + 7] = ~this.words[k + 7];
+  }
+  for ( ; k &lt; count-1; ++k ) {
+    this.words[k] = ~this.words[k];
+  }
+  this.words[count-1] = ( ~( this.words[count-1] &lt;&lt; bs ) ) &gt;&gt;&gt; bs
+  return this;
+};
+
+// Set all bits to value, added by ASR
+TypedFastBitSet.prototype.set_all = function( value ) {
+  if ( this.length &lt;= 0 ) return this;
+  this.set_range( 0, this.length-1, value );
+  return this;
+};
+
+// Set all bits in range to value, added by ASR
+TypedFastBitSet.prototype.set_range = function( from, to, value ) {
+  // set complete words when applicable
+  value = value ? 0xFFFFFFFF : 0x00000000;
+  var wordStart = ( from &gt;&gt;&gt; 5 ) + 1;
+  var wordEnd = ( to &gt;&gt;&gt; 5 ) - 1;
+  var k = wordStart | 0;
+  for ( ; k + 7 &lt; wordEnd; k += 8 ) {
+    this.words[k    ] = value;
+    this.words[k + 1] = value;
+    this.words[k + 2] = value;
+    this.words[k + 3] = value;
+    this.words[k + 4] = value;
+    this.words[k + 5] = value;
+    this.words[k + 6] = value;
+    this.words[k + 7] = value;
+  }
+  for ( ; k &lt; wordEnd; ++k ) {
+    this.words[k] = value;
+  }
+  // set parts of the range not spanning complete words
+  var i, n;
+  if ( value ){
+    for ( i = from, n = ( wordStart &lt;&lt; 5 ) + 1; i &lt; n; ++i ) {
+      this.words[i &gt;&gt;&gt; 5] |= 1 &lt;&lt; i ;
+    }
+    for ( i = ( wordEnd &lt;&lt; 5 ), n = to + 1; i &lt; n; ++i ) {
+      this.words[i &gt;&gt;&gt; 5] |= 1 &lt;&lt; i ;
+    }
+  }else{
+    for ( i = from, n = ( wordStart &lt;&lt; 5 ) + 1; i &lt; n; ++i ) {
+      this.words[i &gt;&gt;&gt; 5] &amp;= ~( 1 &lt;&lt; i );
+    }
+    for ( i = ( wordEnd &lt;&lt; 5 ), n = to + 1; i &lt; n; ++i ) {
+      this.words[i &gt;&gt;&gt; 5] &amp;= ~( 1 &lt;&lt; i );
+    }
+  }
+  return this;
+};
+
+// Remove all values, reset memory usage
+TypedFastBitSet.prototype.clear = function() {
+  this.count = 0 | 0;
+  this.length = 0 | 0;
+  this.words = new Uint32Array( this.count );
+  return this;
+};
+
+// Set the bit at index to false
+TypedFastBitSet.prototype.remove = function( index ) {
+  if ( ( this.count &lt;&lt; 5 ) &lt;= index ) {
+    this.resize( index );
+  }
+  this.words[index &gt;&gt;&gt; 5] &amp;= ~( 1 &lt;&lt; index );
+};
+
+// Set the bit at index to false
+// - unsafe because size is not checked, added by ASR
+TypedFastBitSet.prototype.remove_unsafe = function( index ) {
+  this.words[index &gt;&gt;&gt; 5] &amp;= ~( 1 &lt;&lt; index );
+};
+
+// Return true if no bit is set
+TypedFastBitSet.prototype.isEmpty = function() {
+  var c = this.count;
+  for ( var  i = 0; i &lt; c; i++ ) {
+    if ( this.words[i] !== 0 ) return false;
+  }
+  return true;
+};
+
+// Is the value contained in the set? Is the bit at index true or false? Returns a boolean
+TypedFastBitSet.prototype.has = function( index ) {
+  return ( this.words[index &gt;&gt;&gt; 5] &amp; ( 1 &lt;&lt; index ) ) !== 0;
+};
+
+// Reduce the memory usage to a minimum
+TypedFastBitSet.prototype.trim = function() {
+  while ( this.count &gt; 0 ) {
+    if ( this.words[this.count - 1] === 0 )
+      this.count--;
+  }
+  this.words = this.words.slice( 0,this.count );
+};
+
+// Resize the bitset so that we can write a value at index
+TypedFastBitSet.prototype.resize = function( index ) {
+  this.length = index;
+  if ( ( this.count &lt;&lt; 5 ) &gt; index ) {
+    return; //nothing to do
+  }
+  this.count = ( index + 32 ) &gt;&gt;&gt; 5;// just what is needed
+  if ( ( this.words.length &lt;&lt; 5 ) &lt;= index ) {
+    var newwords = new Uint32Array( this.count &lt;&lt; 1 );
+    newwords.set( this.words );// hopefully, this copy is fast
+    this.words = newwords;
+  }
+};
+
+// fast function to compute the Hamming weight of a 32-bit unsigned integer
+TypedFastBitSet.prototype.hammingWeight = function( v ) {
+  v -= ( ( v &gt;&gt;&gt; 1 ) &amp; 0x55555555 );// works with signed or unsigned shifts
+  v = ( v &amp; 0x33333333 ) + ( ( v &gt;&gt;&gt; 2 ) &amp; 0x33333333 );
+  return ( ( v + ( v &gt;&gt;&gt; 4 ) &amp; 0xF0F0F0F ) * 0x1010101 ) &gt;&gt;&gt; 24;
+};
+
+
+// How many values stored in the set? How many set bits?
+TypedFastBitSet.prototype.size = function() {
+  var answer = 0;
+  var c = this.count;
+  for ( var i = 0; i &lt; c; i++ ) {
+    answer += this.hammingWeight( this.words[i] | 0 );
+  }
+  return Math.min( answer, this.length );
+};
+
+// How many bits are set in the given range of the set?
+// - added by ASR
+TypedFastBitSet.prototype.sizeRange = function( offset, count ) {
+  var size = 0;
+  var end = offset + count;
+  this.forEach( function( index ){
+      if( index &gt;= offset &amp;&amp; index &lt; end ) ++size;
+  } );
+  return size;
+};
+
+// Return an array with the set bit locations (values)
+TypedFastBitSet.prototype.array = function() {
+  var answer = new Array( this.size() );
+  var pos = 0 | 0;
+  var c = this.count | 0;
+  for ( var k = 0; k &lt; c; ++k ) {
+    var w =  this.words[k];
+    while ( w !== 0 ) {
+      var t = w &amp; -w;
+      answer[pos++] = ( k &lt;&lt; 5 ) + this.hammingWeight( ( t - 1 ) | 0 );
+      w ^= t;
+    }
+  }
+  return answer;
+};
+
+
+// Call fnc with the set bit locations (values)
+// - fixed method description, ASR
+TypedFastBitSet.prototype.forEach = function( fnc ) {
+  var c = this.count | 0;
+  var i = 0 | 0;
+  for ( var k = 0; k &lt; c; ++k ) {
+    var w = this.words[k];
+    while ( w !== 0 ) {
+      var t = w &amp; -w;
+      var index = ( k &lt;&lt; 5 ) + this.hammingWeight( ( t - 1 ) | 0 );
+      // FIXME workaround, it should not be required to check the length
+      if( index &lt; this.length ) fnc( index,i );
+      w ^= t;
+      i += 1;
+    }
+  }
+};
+
+TypedFastBitSet.forEach = function( fnc, bitmap1, bitmap2 ) {
+  var c = Math.min( bitmap1.count, bitmap2.count ) | 0;
+  for ( var k = 0; k &lt; c; ++k ) {
+    var w1 = bitmap1.words[k];
+    var w2 = bitmap2.words[k];
+    while ( w1 !== 0 &amp;&amp; w2 !== 0 ) {
+      var t1 = w1 &amp; -w1;
+      var t2 = w2 &amp; -w2;
+      var kShift = k &lt;&lt; 5;
+      fnc(
+        kShift + bitmap1.hammingWeight( ( t1 - 1 ) | 0 ),
+        kShift + bitmap2.hammingWeight( ( t2 - 1 ) | 0 )
+      );
+      w1 ^= t1;
+      w2 ^= t2;
+    }
+  }
+};
+
+// Creates a copy of this bitmap
+TypedFastBitSet.prototype.clone = function() {
+  var clone = Object.create( TypedFastBitSet.prototype );
+  clone.count = this.count;
+  clone.length = this.length;
+  clone.words = new Uint32Array( this.words );
+  return clone;
+};
+
+// Check if this bitset intersects with another one,
+// no bitmap is modified
+TypedFastBitSet.prototype.intersects = function( otherbitmap ) {
+  var newcount = Math.min( this.count,otherbitmap.count );
+  for ( var k = 0 | 0; k &lt; newcount; ++k ) {
+    if ( ( this.words[k] &amp; otherbitmap.words[k] ) !== 0 ) return true;
+  }
+  return false;
+};
+
+// Computes the intersection between this bitset and another one,
+// the current bitmap is modified  (and returned by the function)
+TypedFastBitSet.prototype.intersection = function( otherbitmap ) {
+  var newcount = Math.min( this.count,otherbitmap.count );
+  var k = 0 | 0;
+  for ( ; k + 7 &lt; newcount; k += 8 ) {
+    this.words[k    ] &amp;= otherbitmap.words[k    ];
+    this.words[k + 1] &amp;= otherbitmap.words[k + 1];
+    this.words[k + 2] &amp;= otherbitmap.words[k + 2];
+    this.words[k + 3] &amp;= otherbitmap.words[k + 3];
+    this.words[k + 4] &amp;= otherbitmap.words[k + 4];
+    this.words[k + 5] &amp;= otherbitmap.words[k + 5];
+    this.words[k + 6] &amp;= otherbitmap.words[k + 6];
+    this.words[k + 7] &amp;= otherbitmap.words[k + 7];
+  }
+  for ( ; k &lt; newcount; ++k ) {
+    this.words[k] &amp;= otherbitmap.words[k];
+  }
+  var c = this.count;
+  for ( k = newcount; k &lt; c; ++k ) {
+    this.words[k] = 0;
+  }
+  this.count = newcount;
+  return this;
+};
+
+// Computes the size of the intersection between this bitset and another one
+TypedFastBitSet.prototype.intersection_size = function( otherbitmap ) {
+  var newcount = Math.min( this.count,otherbitmap.count );
+  var answer = 0 | 0;
+  for ( var k = 0 | 0; k &lt; newcount; ++k ) {
+    answer += this.hammingWeight( this.words[k] &amp; otherbitmap.words[k] );
+  }
+  return answer;
+};
+
+// Computes the intersection between this bitset and another one,
+// a new bitmap is generated
+TypedFastBitSet.prototype.new_intersection = function( otherbitmap ) {
+  var answer = Object.create( TypedFastBitSet.prototype );
+  answer.count = Math.min( this.count,otherbitmap.count );
+  answer.words = new Uint32Array( answer.count );
+  answer.length = Math.min( this.length,otherbitmap.length );
+  var c = answer.count;
+  for ( var k = 0 | 0; k &lt; c; ++k ) {
+    answer.words[k] = this.words[k] &amp; otherbitmap.words[k];
+  }
+  return answer;
+};
+
+// Computes the intersection between this bitset and another one,
+// the current bitmap is modified
+TypedFastBitSet.prototype.equals = function( otherbitmap ) {
+  var mcount = Math.min( this.count , otherbitmap.count );
+  var k, c;
+  for ( k = 0 | 0; k &lt; mcount; ++k ) {
+    if ( this.words[k] != otherbitmap.words[k] ) return false;
+  }
+  if ( this.count &lt; otherbitmap.count ) {
+    c = otherbitmap.count;
+    for ( k = this.count; k &lt; c; ++k ) {
+      if ( otherbitmap.words[k] !== 0 ) return false;
+    }
+  } else if ( otherbitmap.count &lt; this.count ) {
+    c = this.count;
+    for ( k = otherbitmap.count; k &lt; c; ++k ) {
+      if ( this.words[k] !== 0 ) return false;
+    }
+  }
+  return true;
+};
+
+// Computes the difference between this bitset and another one,
+// the current bitset is modified (and returned by the function)
+TypedFastBitSet.prototype.difference = function( otherbitmap ) {
+  var newcount = Math.min( this.count,otherbitmap.count );
+  var k = 0 | 0;
+  for ( ; k + 7 &lt; newcount; k += 8 ) {
+    this.words[k    ] &amp;= ~otherbitmap.words[k    ];
+    this.words[k + 1] &amp;= ~otherbitmap.words[k + 1];
+    this.words[k + 2] &amp;= ~otherbitmap.words[k + 2];
+    this.words[k + 3] &amp;= ~otherbitmap.words[k + 3];
+    this.words[k + 4] &amp;= ~otherbitmap.words[k + 4];
+    this.words[k + 5] &amp;= ~otherbitmap.words[k + 5];
+    this.words[k + 6] &amp;= ~otherbitmap.words[k + 6];
+    this.words[k + 7] &amp;= ~otherbitmap.words[k + 7];
+  }
+  for ( ; k &lt; newcount; ++k ) {
+    this.words[k] &amp;= ~otherbitmap.words[k];
+  }
+  return this;
+};
+
+// Computes the size of the difference between this bitset and another one
+TypedFastBitSet.prototype.difference_size = function( otherbitmap ) {
+  var newcount = Math.min( this.count,otherbitmap.count );
+  var answer = 0 | 0;
+  var k = 0 | 0;
+  for ( ; k &lt; newcount; ++k ) {
+    answer += this.hammingWeight( this.words[k] &amp; ( ~otherbitmap.words[k] ) );
+  }
+  var c = this.count;
+  for ( ; k &lt; c; ++k ) {
+    answer += this.hammingWeight( this.words[k] );
+  }
+  return answer;
+};
+
+// Returns a string representation
+TypedFastBitSet.prototype.toString = function() {
+  return &apos;{&apos; + this.array().join( &apos;,&apos; ) + &apos;}&apos;;
+};
+
+// Computes the union between this bitset and another one,
+// the current bitset is modified  (and returned by the function)
+TypedFastBitSet.prototype.union = function( otherbitmap ) {
+  var mcount = Math.min( this.count,otherbitmap.count );
+  var k = 0 | 0;
+  for ( ; k + 7  &lt; mcount; k += 8 ) {
+    this.words[k    ] |= otherbitmap.words[k    ];
+    this.words[k + 1] |= otherbitmap.words[k + 1];
+    this.words[k + 2] |= otherbitmap.words[k + 2];
+    this.words[k + 3] |= otherbitmap.words[k + 3];
+    this.words[k + 4] |= otherbitmap.words[k + 4];
+    this.words[k + 5] |= otherbitmap.words[k + 5];
+    this.words[k + 6] |= otherbitmap.words[k + 6];
+    this.words[k + 7] |= otherbitmap.words[k + 7];
+  }
+  for ( ; k &lt; mcount; ++k ) {
+    this.words[k] |= otherbitmap.words[k];
+  }
+  if ( this.count &lt; otherbitmap.count ) {
+    this.resize( ( otherbitmap.count  &lt;&lt; 5 ) - 1 );
+    var c = otherbitmap.count;
+    for ( k = mcount; k &lt; c; ++k ) {
+      this.words[k] = otherbitmap.words[k];
+    }
+    this.count = otherbitmap.count;
+  }
+  return this;
+};
+
+// Computes the union between this bitset and another one,
+// a new bitmap is generated
+TypedFastBitSet.prototype.new_union = function( otherbitmap ) {
+  var answer = Object.create( TypedFastBitSet.prototype );
+  answer.count = Math.max( this.count,otherbitmap.count );
+  answer.words = new Uint32Array( answer.count );
+  var mcount = Math.min( this.count,otherbitmap.count );
+  var k;
+  for ( k = 0; k &lt; mcount; ++k ) {
+      answer.words[k] = this.words[k] | otherbitmap.words[k];
+  }
+  var c = this.count;
+  for ( k = mcount; k &lt; c; ++k ) {
+      answer.words[k] = this.words[k] ;
+  }
+  var c2 = otherbitmap.count;
+  for ( k = mcount; k &lt; c2; ++k ) {
+      answer.words[k] = otherbitmap.words[k] ;
+  }
+  return answer;
+};
+
+// Computes the difference between this bitset and another one,
+// a new bitmap is generated
+TypedFastBitSet.prototype.new_difference = function( otherbitmap ) {
+  return this.clone().difference( otherbitmap );// should be fast enough
+};
+
+// Computes the size union between this bitset and another one
+TypedFastBitSet.prototype.union_size = function( otherbitmap ) {
+  var mcount = Math.min( this.count,otherbitmap.count );
+  var answer = 0 | 0;
+  var k, c;
+  for ( k = 0 | 0; k &lt; mcount; ++k ) {
+    answer += this.hammingWeight( this.words[k] | otherbitmap.words[k] );
+  }
+  if ( this.count &lt; otherbitmap.count ) {
+    c = otherbitmap.count;
+    for ( k = this.count ; k &lt; c; ++k ) {
+      answer += this.hammingWeight( otherbitmap.words[k] | 0 );
+    }
+  } else {
+    c = this.count;
+    for ( k = otherbitmap.count ; k &lt; c; ++k ) {
+      answer += this.hammingWeight( this.words[k] | 0 );
+    }
+  }
+  return answer;
+};
+
+// Get transferable objects, added by ASR
+TypedFastBitSet.prototype.getTransferable = function() {
+  return [ this.words ];
+};
+
+// Serialize to JSON, added by ASR
+TypedFastBitSet.prototype.toJSON = function() {
+  return {
+    count: this.count,
+    length: this.length,
+    words: this.words
+  };
+};
+
+// De-serialize from JSON, added by ASR
+TypedFastBitSet.prototype.fromJSON = function( input ) {
+  this.count = input.count;
+  this.length = input.length;
+  this.words = input.words;
+  return this;
+};
+
+TypedFastBitSet.prototype.toSeleString = function() {
+  var sele = this.array().join( &apos;,&apos; );
+  return sele ? &quot;@&quot; + sele : &quot;NONE&quot;;
+};
+
+TypedFastBitSet.prototype.type = &quot;Bitset&quot;;
+
+
+var Bitset = TypedFastBitSet;
+
+export default Bitset;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
