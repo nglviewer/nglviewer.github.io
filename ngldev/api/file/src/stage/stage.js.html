@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-3</span>
+<header><span>NGL@0.10.5-4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -572,8 +572,8 @@ class Stage {
     viewer.setSampling(p.sampleLevel)
     viewer.setBackground(p.backgroundColor)
     viewer.setLight(
-            p.lightColor, p.lightIntensity, p.ambientColor, p.ambientIntensity
-        )
+      p.lightColor, p.lightIntensity, p.ambientColor, p.ambientIntensity
+    )
 
     this.signals.parametersChanged.dispatch(
       this.getParameters()
@@ -1056,8 +1056,8 @@ class Stage {
     const aspectFactor = (height &lt; width ? 1 : aspect)
 
     distance = Math.abs(
-            ((distance * 0.5) / aspectFactor) / Math.sin(fov / 2)
-        )
+      ((distance * 0.5) / aspectFactor) / Math.sin(fov / 2)
+    )
     distance += this.parameters.clipDist.value
     return -distance
   }
@@ -1081,10 +1081,10 @@ class Stage {
    */
   autoView (duration) {
     this.animationControls.zoomMove(
-            this.getCenter(),
-            this.getZoom(),
-            defaults(duration, 0)
-        )
+      this.getCenter(),
+      this.getZoom(),
+      defaults(duration, 0)
+    )
   }
 
   /**

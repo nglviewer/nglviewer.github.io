@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-3</span>
+<header><span>NGL@0.10.5-4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -277,6 +277,7 @@ class NctrajParser extends TrajectoryParser {
     const f = this.frames
     const coordinates = f.coordinates
     const boxes = f.boxes
+    const times = f.times
     // const header = {}
 
     netcdfReader.getDataVariable(&apos;coordinates&apos;).forEach(function (c) {
@@ -287,6 +288,19 @@ class NctrajParser extends TrajectoryParser {
       netcdfReader.getDataVariable(&apos;cell_lengths&apos;).forEach(function (b) {
         boxes.push(new Float32Array(b))
       })
+    }
+
+    if (netcdfReader.hasDataVariable(&apos;time&apos;)) {
+      netcdfReader.getDataVariable(&apos;time&apos;).forEach(function (t) {
+        times.push(t)
+      })
+    }
+
+    if (times.length &gt;= 1) {
+      f.timeOffset = times[0]
+    }
+    if (times.length &gt;= 2) {
+      f.deltaTime = times[1] - times[0]
     }
 
     if (Debug) Log.timeEnd(&apos;NctrajParser._parse &apos; + this.name)

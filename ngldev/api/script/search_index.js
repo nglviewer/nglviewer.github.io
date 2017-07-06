@@ -5820,9 +5820,33 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/structure/structure.js~structure#getatomset",
+    "class/src/structure/structure.js~Structure.html#instance-method-getAtomSet",
+    "src/structure/structure.js~Structure#getAtomSet",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#getatomsetwithingroup",
+    "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinGroup",
+    "src/structure/structure.js~Structure#getAtomSetWithinGroup",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#getatomsetwithinpoint",
+    "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinPoint",
+    "src/structure/structure.js~Structure#getAtomSetWithinPoint",
+    "method"
+  ],
+  [
     "src/structure/structure.js~structure#getatomsetwithinselection",
     "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinSelection",
     "src/structure/structure.js~Structure#getAtomSetWithinSelection",
+    "method"
+  ],
+  [
+    "src/structure/structure.js~structure#getatomsetwithinvolume",
+    "class/src/structure/structure.js~Structure.html#instance-method-getAtomSetWithinVolume",
+    "src/structure/structure.js~Structure#getAtomSetWithinVolume",
     "method"
   ],
   [

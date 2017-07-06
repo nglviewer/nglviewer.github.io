@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-3</span>
+<header><span>NGL@0.10.5-4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -259,11 +259,16 @@
  * @private
  */
 
+import { defaults } from &apos;../utils.js&apos;
 import Trajectory from &apos;./trajectory.js&apos;
 
 class FramesTrajectory extends Trajectory {
   constructor (frames, structure, params) {
-    super(&apos;&apos;, structure, params)
+    const p = params || {}
+    p.timeOffset = defaults(p.timeOffset, frames.timeOffset)
+    p.deltaTime = defaults(p.deltaTime, frames.deltaTime)
+
+    super(&apos;&apos;, structure, p)
 
     this.name = frames.name
     this.path = frames.path
