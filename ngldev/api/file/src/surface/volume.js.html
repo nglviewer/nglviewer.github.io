@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -381,6 +382,21 @@ class Volume {
     delete this._rms
 
     if (this.worker) this.worker.terminate()
+  }
+
+  /**
+   * Set statistics, which can be different from the data in this volume,
+   * if this volume is a slice of a bigger volume
+   * @param {Number|undefined} min - minimum value of the whole data set
+   * @param {Number|undefined} max - maximum value of the whole data set
+   * @param {Number|undefined} mean - average value of the whole data set
+   * @param {Number|undefined} rms - sigma value of the whole data set
+   */
+  setStats (min, max, mean, rms) {
+    this._min = min
+    this._max = max
+    this._mean = mean
+    this._rms = rms
   }
 
   /**

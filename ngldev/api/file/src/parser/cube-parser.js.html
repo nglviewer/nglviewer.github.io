@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -267,20 +268,23 @@ import VolumeParser from &apos;./volume-parser.js&apos;
 // @author Johanna Tiemann &lt;johanna.tiemann@googlemail.com&gt;
 // @author Alexander Rose &lt;alexander.rose@weirdbyte.de&gt;
 
+const reWhitespace = /\s+/
+const reScientificNotation = /-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?/g
+const bohrToAngstromFactor = 0.529177210859
+
 class CubeParser extends VolumeParser {
   get type () { return &apos;cube&apos; }
 
   _parse () {
-        // http://paulbourke.net/dataformats/cube/
+    // http://paulbourke.net/dataformats/cube/
 
     if (Debug) Log.time(&apos;CubeParser._parse &apos; + this.name)
 
-    var v = this.volume
-    var headerLines = this.streamer.peekLines(6)
-    var header = {}
-    var reWhitespace = /\s+/
-    var bohrToAngstromFactor = 0.529177210859
-    var scaleFactor = bohrToAngstromFactor * this.voxelSize
+    const v = this.volume
+    const headerLines = this.streamer.peekLines(6)
+    const header = {}
+
+    const scaleFactor = bohrToAngstromFactor * this.voxelSize
 
     function h (k, l) {
       var field = headerLines[ k ].trim().split(reWhitespace)[ l ]
@@ -295,29 +299,27 @@ class CubeParser extends VolumeParser {
     header.NVY = h(4, 0)
     header.NVZ = h(5, 0)
 
-    header.basisX = new Vector3(
-            h(3, 1), h(3, 2), h(3, 3)).multiplyScalar(scaleFactor)
-    header.basisY = new Vector3(
-            h(4, 1), h(4, 2), h(4, 3)).multiplyScalar(scaleFactor)
-    header.basisZ = new Vector3(
-            h(5, 1), h(5, 2), h(5, 3)).multiplyScalar(scaleFactor)
+    header.basisX = new Vector3(h(3, 1), h(3, 2), h(3, 3))
+      .multiplyScalar(scaleFactor)
+    header.basisY = new Vector3(h(4, 1), h(4, 2), h(4, 3))
+      .multiplyScalar(scaleFactor)
+    header.basisZ = new Vector3(h(5, 1), h(5, 2), h(5, 3))
+      .multiplyScalar(scaleFactor)
 
-    var data = new Float32Array(header.NVX * header.NVY * header.NVZ)
-    var count = 0
-    var lineNo = 0
-    var oribitalFlag = h(2, 0) &gt; 0 ? 0 : 1
+    const data = new Float32Array(header.NVX * header.NVY * header.NVZ)
+    let count = 0
+    let lineNo = 0
+    const oribitalFlag = h(2, 0) &gt; 0 ? 0 : 1
 
     function _parseChunkOfLines (_i, _n, lines) {
-      for (var i = _i; i &lt; _n; ++i) {
-        var line = lines[ i ].trim()
+      for (let i = _i; i &lt; _n; ++i) {
+        const line = lines[ i ].trim()
 
         if (line !== &apos;&apos; &amp;&amp; lineNo &gt;= header.atomCount + 6 + oribitalFlag) {
-          line = line.split(reWhitespace)
-          for (var j = 0, lj = line.length; j &lt; lj; ++j) {
-            if (line.length !== 1) {
-              data[ count ] = parseFloat(line[ j ])
-              ++count
-            }
+          const m = line.match(reScientificNotation)
+          for (let j = 0, lj = m.length; j &lt; lj; ++j) {
+            data[ count ] = parseFloat(m[ j ])
+            ++count
           }
         }
 
@@ -336,22 +338,20 @@ class CubeParser extends VolumeParser {
   }
 
   getMatrix () {
-    var h = this.volume.header
-    var matrix = new Matrix4()
+    const h = this.volume.header
+    const matrix = new Matrix4()
 
     matrix.multiply(
-            new Matrix4().makeTranslation(
-                h.originX, h.originY, h.originZ
-            )
-        )
+      new Matrix4().makeTranslation(
+        h.originX, h.originY, h.originZ
+      )
+    )
 
     matrix.multiply(
-            new Matrix4().makeBasis(
-                h.basisZ,
-                h.basisY,
-                h.basisX
-            )
-        )
+      new Matrix4().makeBasis(
+        h.basisZ, h.basisY, h.basisX
+      )
+    )
 
     return matrix
   }

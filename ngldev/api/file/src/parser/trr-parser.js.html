@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -260,6 +261,7 @@
  */
 
 import { Debug, Log, ParserRegistry } from &apos;../globals.js&apos;
+import { ensureBuffer } from &apos;../utils.js&apos;
 import TrajectoryParser from &apos;./trajectory-parser.js&apos;
 
 class TrrParser extends TrajectoryParser {
@@ -271,23 +273,17 @@ class TrrParser extends TrajectoryParser {
 
     if (Debug) Log.time(&apos;TrrParser._parse &apos; + this.name)
 
-    var bin = this.streamer.data
-    if (bin instanceof Uint8Array) {
-      bin = bin.buffer
-    }
-    var dv = new DataView(bin)
+    const bin = ensureBuffer(this.streamer.data)
+    const dv = new DataView(bin)
 
-    var f = this.frames
-    var coordinates = f.coordinates
-    var boxes = f.boxes
-    // var header = {}
+    const f = this.frames
+    const coordinates = f.coordinates
+    const boxes = f.boxes
+    const times = f.times
 
     let offset = 0
-    // const frameInfo = []
 
     while (true) {
-      // const frame = {}
-
       // const magicnum = dv.getInt32(offset)
       // const i1 = dv.getFloat32(offset + 4)
       offset += 8
@@ -307,22 +303,21 @@ class TrrParser extends TrajectoryParser {
       const velocitySize = dv.getInt32(offset + 32)
       const forceSize = dv.getInt32(offset + 36)
       const natoms = dv.getInt32(offset + 40)
-      // frame.natoms = natoms
-      // frame.step = dv.getInt32(offset + 44)
+      // const step = dv.getInt32(offset + 44)
       // const nre = dv.getInt32(offset + 48)
       offset += 52
 
       const floatSize = boxSize / 9
       const natoms3 = natoms * 3
 
-      // TODO
-      // if (floatSize === 8) {
-      //   frame.time = dv.getFloat64(offset)
-      //   frame.lambda = dv.getFloat64(offset + 8)
-      // } else {
-      //   frame.time = dv.getFloat32(offset)
-      //   frame.lambda = dv.getFloat32(offset + 4)
-      // }
+      // let lambda
+      if (floatSize === 8) {
+        times.push(dv.getFloat64(offset))
+        // lambda = dv.getFloat64(offset + 8)
+      } else {
+        times.push(dv.getFloat32(offset))
+        // lambda = dv.getFloat32(offset + 4)
+      }
       offset += 2 * floatSize
 
       if (boxSize) {
@@ -379,9 +374,14 @@ class TrrParser extends TrajectoryParser {
       // ignore, unused
       offset += forceSize
 
-      // frameInfo.push(frame)
-
       if (offset &gt;= bin.byteLength) break
+    }
+
+    if (times.length &gt;= 1) {
+      f.timeOffset = times[0]
+    }
+    if (times.length &gt;= 2) {
+      f.deltaTime = times[1] - times[0]
     }
 
     if (Debug) Log.timeEnd(&apos;TrrParser._parse &apos; + this.name)

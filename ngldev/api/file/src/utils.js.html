@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -360,7 +361,7 @@ function deepCopy (src) {
 }
 
 function download (data, downloadName) {
-    // using ideas from https://github.com/eligrey/FileSaver.js/blob/master/FileSaver.js
+  // using ideas from https://github.com/eligrey/FileSaver.js/blob/master/FileSaver.js
 
   if (!data) return
 
@@ -383,11 +384,11 @@ function download (data, downloadName) {
   }
 
   if (typeof navigator !== &apos;undefined&apos; &amp;&amp; navigator.msSaveOrOpenBlob) {
-        // native saveAs in IE 10+
+    // native saveAs in IE 10+
     navigator.msSaveOrOpenBlob(data, downloadName)
   } else if ((isSafari || isChromeIos) &amp;&amp; window.FileReader) {
     if (data instanceof window.Blob) {
-            // no downloading of blob urls in Safari
+      // no downloading of blob urls in Safari
       var reader = new window.FileReader()
       reader.onloadend = function () {
         open(reader.result)
@@ -402,7 +403,7 @@ function download (data, downloadName) {
     }
 
     if (&apos;download&apos; in a) {
-            // download link available
+      // download link available
       a.style.display = &apos;hidden&apos;
       document.body.appendChild(a)
       a.href = data
@@ -463,8 +464,8 @@ function getFileInfo (file) {
   var path, compressed, protocol
 
   if ((typeof window !== &apos;undefined&apos; &amp;&amp; file instanceof window.File) ||
-        (typeof window !== &apos;undefined&apos; &amp;&amp; file instanceof window.Blob)
-    ) {
+      (typeof window !== &apos;undefined&apos; &amp;&amp; file instanceof window.Blob)
+  ) {
     path = file.name || &apos;&apos;
   } else {
     path = file
@@ -509,7 +510,7 @@ function getFileInfo (file) {
 }
 
 function throttle (func, wait, options) {
-    // from http://underscorejs.org/docs/underscore.html
+  // from http://underscorejs.org/docs/underscore.html
 
   var context, args, result
   var timeout = null
@@ -646,8 +647,8 @@ function uint8ToString (u8a) {
 
     for (var i = 0; i &lt; u8a.length; i += chunkSize) {
       c.push(String.fromCharCode.apply(
-          null, u8a.subarray(i, i + chunkSize)
-        ))
+        null, u8a.subarray(i, i + chunkSize)
+      ))
     }
 
     return c.join(&apos;&apos;)
@@ -718,6 +719,10 @@ function ensureArray (value) {
   return Array.isArray(value) ? value : [value]
 }
 
+function ensureBuffer (a) {
+  return (a.buffer &amp;&amp; a.buffer instanceof ArrayBuffer) ? a.buffer : a
+}
+
 function _ensureClassFromArg (arg, constructor) {
   return arg instanceof constructor ? arg : new constructor(arg)
 }
@@ -752,34 +757,35 @@ function ensureFloat32Array (a) {
 }
 
 export {
-    getQuery,
-    boolean,
-    defaults,
-    pick,
-    flatten,
-    getProtocol,
-    getBrowser,
-    getAbsolutePath,
-    deepCopy,
-    download,
-    submit,
-    open,
-    getFileInfo,
-    throttle,
-    binarySearchIndexOf,
-    rangeInSortedArray,
-    dataURItoImage,
-    uniqueArray,
-    uint8ToString,
-    uint8ToLines,
-    getTypedArray,
-    getUintArray,
-    ensureArray,
-    ensureVector2,
-    ensureVector3,
-    ensureMatrix4,
-    ensureQuaternion,
-    ensureFloat32Array
+  getQuery,
+  boolean,
+  defaults,
+  pick,
+  flatten,
+  getProtocol,
+  getBrowser,
+  getAbsolutePath,
+  deepCopy,
+  download,
+  submit,
+  open,
+  getFileInfo,
+  throttle,
+  binarySearchIndexOf,
+  rangeInSortedArray,
+  dataURItoImage,
+  uniqueArray,
+  uint8ToString,
+  uint8ToLines,
+  getTypedArray,
+  getUintArray,
+  ensureArray,
+  ensureBuffer,
+  ensureVector2,
+  ensureVector3,
+  ensureMatrix4,
+  ensureQuaternion,
+  ensureFloat32Array
 }
 </code></pre>
 

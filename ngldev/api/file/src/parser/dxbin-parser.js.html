@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -260,7 +261,7 @@
  */
 
 import { Debug, Log, ParserRegistry } from &apos;../globals.js&apos;
-import { uint8ToLines } from &apos;../utils.js&apos;
+import { uint8ToLines, ensureBuffer } from &apos;../utils.js&apos;
 import DxParser from &apos;./dx-parser.js&apos;
 
 class DxbinParser extends DxParser {
@@ -268,25 +269,21 @@ class DxbinParser extends DxParser {
   get isBinary () { return true }
 
   _parse () {
-        // https://github.com/Electrostatics/apbs-pdb2pqr/issues/216
+    // https://github.com/Electrostatics/apbs-pdb2pqr/issues/216
 
     if (Debug) Log.time(&apos;DxbinParser._parse &apos; + this.name)
 
-    var bin = this.streamer.data
-    if (bin instanceof Uint8Array) {
-      bin = bin.buffer
-    }
+    const bin = ensureBuffer(this.streamer.data)
+    const headerLines = uint8ToLines(new Uint8Array(bin, 0, 1000))
+    const headerInfo = this.parseHeaderLines(headerLines)
+    const header = this.volume.header
+    const headerByteCount = headerInfo.headerByteCount
 
-    var headerLines = uint8ToLines(new Uint8Array(bin, 0, 1000))
-    var headerInfo = this.parseHeaderLines(headerLines)
-    var header = this.volume.header
-    var headerByteCount = headerInfo.headerByteCount
+    const size = header.nx * header.ny * header.nz
+    const dv = new DataView(bin)
+    const data = new Float32Array(size)
 
-    var size = header.nx * header.ny * header.nz
-    var dv = new DataView(bin)
-    var data = new Float32Array(size)
-
-    for (var i = 0; i &lt; size; ++i) {
+    for (let i = 0; i &lt; size; ++i) {
       data[ i ] = dv.getFloat64(i * 8 + headerByteCount, true)
     }
 

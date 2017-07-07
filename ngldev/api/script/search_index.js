@@ -768,6 +768,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/writer/stl-writer.js~stlwriter",
+    "class/src/writer/stl-writer.js~StlWriter.html",
+    "<span>StlWriter</span> <span class=\"search-result-import-path\">ngl/src/writer/stl-writer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/store/store.js~store",
     "class/src/store/store.js~Store.html",
     "<span>Store</span> <span class=\"search-result-import-path\">ngl/src/store/store.js</span>",
@@ -6063,6 +6069,12 @@ window.esdocSearchIndex = [
     "src/surface/volume.js~volume#setmatrix",
     "class/src/surface/volume.js~Volume.html#instance-method-setMatrix",
     "src/surface/volume.js~Volume#setMatrix",
+    "method"
+  ],
+  [
+    "src/surface/volume.js~volume#setstats",
+    "class/src/surface/volume.js~Volume.html#instance-method-setStats",
+    "src/surface/volume.js~Volume#setStats",
     "method"
   ],
   [

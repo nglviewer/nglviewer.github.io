@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -265,35 +266,36 @@ import { Debug, Log, ParserRegistry } from &apos;../globals.js&apos;
 import { degToRad } from &apos;../math/math-utils.js&apos;
 import VolumeParser from &apos;./volume-parser.js&apos;
 
+const reWhitespace = /\s+/
+
 class DxParser extends VolumeParser {
   get type () { return &apos;dx&apos; }
 
   _parse () {
-        // http://www.poissonboltzmann.org/docs/file-format-info/
+    // http://apbs-pdb2pqr.readthedocs.io/en/latest/formats/opendx.html
 
     if (Debug) Log.time(&apos;DxParser._parse &apos; + this.name)
 
-    var v = this.volume
-    var headerLines = this.streamer.peekLines(30)
-    var headerInfo = this.parseHeaderLines(headerLines)
-    var header = this.volume.header
-    var dataLineStart = headerInfo.dataLineStart
+    const v = this.volume
+    const headerLines = this.streamer.peekLines(30)
+    const headerInfo = this.parseHeaderLines(headerLines)
+    const header = this.volume.header
+    const dataLineStart = headerInfo.dataLineStart
 
-    var reWhitespace = /\s+/
-    var size = header.nx * header.ny * header.nz
-    var data = new Float32Array(size)
-    var count = 0
-    var lineNo = 0
+    const size = header.nx * header.ny * header.nz
+    const data = new Float32Array(size)
+    let count = 0
+    let lineNo = 0
 
     function _parseChunkOfLines (_i, _n, lines) {
-      for (var i = _i; i &lt; _n; ++i) {
+      for (let i = _i; i &lt; _n; ++i) {
         if (count &lt; size &amp;&amp; lineNo &gt; dataLineStart) {
-          var line = lines[ i ].trim()
+          const line = lines[ i ].trim()
 
           if (line !== &apos;&apos;) {
-            var ls = line.split(reWhitespace)
+            const ls = line.split(reWhitespace)
 
-            for (var j = 0, lj = ls.length; j &lt; lj; ++j) {
+            for (let j = 0, lj = ls.length; j &lt; lj; ++j) {
               data[ count ] = parseFloat(ls[ j ])
               ++count
             }
@@ -314,17 +316,16 @@ class DxParser extends VolumeParser {
   }
 
   parseHeaderLines (headerLines) {
-    var header = {}
-    var reWhitespace = /\s+/
-    var n = headerLines.length
+    const header = {}
+    const n = headerLines.length
 
-    var dataLineStart = 0
-    var headerByteCount = 0
-    var deltaLineCount = 0
+    let dataLineStart = 0
+    let headerByteCount = 0
+    let deltaLineCount = 0
 
-    for (var i = 0; i &lt; n; ++i) {
-      var ls
-      var line = headerLines[ i ]
+    for (let i = 0; i &lt; n; ++i) {
+      let ls
+      const line = headerLines[ i ]
 
       if (line.startsWith(&apos;object 1&apos;)) {
         ls = line.split(reWhitespace)
@@ -368,24 +369,24 @@ class DxParser extends VolumeParser {
   }
 
   getMatrix () {
-    var h = this.volume.header
-    var matrix = new Matrix4()
+    const h = this.volume.header
+    const matrix = new Matrix4()
 
     matrix.multiply(
-            new Matrix4().makeRotationY(degToRad(90))
-        )
+      new Matrix4().makeRotationY(degToRad(90))
+    )
 
     matrix.multiply(
-            new Matrix4().makeTranslation(
-                -h.zmin, h.ymin, h.xmin
-            )
-        )
+      new Matrix4().makeTranslation(
+        -h.zmin, h.ymin, h.xmin
+      )
+    )
 
     matrix.multiply(
-            new Matrix4().makeScale(
-                -h.hz, h.hy, h.hx
-            )
-        )
+      new Matrix4().makeScale(
+        -h.hz, h.hy, h.hx
+      )
+    )
 
     return matrix
   }

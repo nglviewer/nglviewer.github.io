@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-4</span>
+<header><span>NGL@0.10.5-5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -247,6 +247,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Viewer">Viewer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ImageParameters">ImageParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">writer</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/pdb-writer.js~PdbWriter.html">PdbWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/writer/stl-writer.js~StlWriter.html">StlWriter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/writer/writer.js~Writer.html">Writer</a></span></span></li>
 </ul>
 </div>
@@ -270,9 +271,9 @@ function getSymmetryOperations (spacegroup) {
 
   if (encodedSymopList === undefined) {
     console.warn(
-            &quot;getSymmetryOperations: spacegroup &apos;&quot; +
-            spacegroup + &quot;&apos; not found in symop library&quot;
-        )
+      &quot;getSymmetryOperations: spacegroup &apos;&quot; +
+      spacegroup + &quot;&apos; not found in symop library&quot;
+    )
     return matrixDict
   }
 
@@ -289,7 +290,7 @@ function getSymmetryOperations (spacegroup) {
   var reInteger = /^[1-9]$/
 
   symopList.forEach(function (symop) {
-        // console.log( &quot;symop&quot;, symop );
+    // console.log( &quot;symop&quot;, symop );
 
     var row = 0
     var matrix = new Matrix4().set(
