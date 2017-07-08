@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-6</span>
+<header><span>NGL@0.10.5-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -114,6 +114,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">OccupancyColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html">PartialchargeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">ResidueindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/resname-colormaker.js~ResnameColormaker.html">ResnameColormaker</a></span></span></li>
@@ -268,6 +269,8 @@ import {
     calculateBondsWithin, calculateChainnames
 } from &apos;../structure/structure-utils.js&apos;
 
+const amberChargeUnitFactor = 18.2223
+
 const TitleMode = 1
 const PointersMode = 2
 const AtomNameMode = 3
@@ -299,6 +302,8 @@ class PrmtopParser extends StructureParser {
 
     const atomMap = s.atomMap
     const atomStore = s.atomStore
+    atomStore.addField(&apos;partialCharge&apos;, 1, &apos;float32&apos;)
+    atomStore.addField(&apos;radius&apos;, 1, &apos;float32&apos;)
 
     const title = []
     const pointersDict = {}
@@ -313,6 +318,8 @@ class PrmtopParser extends StructureParser {
     pointers.forEach(name =&gt; { pointersDict[ name ] = 0 })
 
     let atomNames
+    let charges
+    let radii
     let bAtomIndex1
     let bAtomIndex2
     let bBondOrder
@@ -372,6 +379,8 @@ class PrmtopParser extends StructureParser {
             )
           }
           atomNames = new Array(pointersDict.NATOM)
+          charges = new Float32Array(pointersDict.NATOM)
+          radii = new Float32Array(pointersDict.NATOM)
           atomStore.resize(pointersDict.NATOM)
           const bondCount = pointersDict.NBONH + pointersDict.MBONA
           bAtomIndex1 = new Uint32Array(bondCount)
@@ -385,9 +394,10 @@ class PrmtopParser extends StructureParser {
             atomNames[curIdx] = line.substr(i * 4, 4).trim()
           }
         } else if (mode === ChargeMode) {
-
-          // not currently used
-
+          const n = Math.min(curIdx + 5, pointersDict.NATOM)
+          for (let i = 0; curIdx &lt; n; ++i, ++curIdx) {
+            charges[curIdx] = parseFloat(line.substr(i * 16, 16)) / amberChargeUnitFactor
+          }
         } else if (mode === MassMode) {
 
           // not currently used
@@ -427,9 +437,10 @@ class PrmtopParser extends StructureParser {
             }
           }
         } else if (mode === RadiiMode) {
-
-          // not currently used
-
+          const n = Math.min(curIdx + 5, pointersDict.NATOM)
+          for (let i = 0; curIdx &lt; n; ++i, ++curIdx) {
+            radii[curIdx] = parseFloat(line.substr(i * 16, 16))
+          }
         }
       }
     }
@@ -454,6 +465,9 @@ class PrmtopParser extends StructureParser {
       atomStore.serial[i] = i + 1
       sb.addAtom(0, &apos;&apos;, &apos;&apos;, curResname, curResno)
     }
+
+    atomStore.partialCharge.set(charges)
+    atomStore.radius.set(radii)
 
     s.bondStore.length = bBondOrder.length
     s.bondStore.count = bBondOrder.length

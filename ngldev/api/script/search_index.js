@@ -534,6 +534,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/color/partialcharge-colormaker.js~partialchargecolormaker",
+    "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html",
+    "<span>PartialchargeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/partialcharge-colormaker.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/writer/pdb-writer.js~pdbwriter",
     "class/src/writer/pdb-writer.js~PdbWriter.html",
     "<span>PdbWriter</span> <span class=\"search-result-import-path\">ngl/src/writer/pdb-writer.js</span>",
@@ -2043,6 +2049,12 @@ window.esdocSearchIndex = [
     "src/color/occupancy-colormaker.js",
     "file/src/color/occupancy-colormaker.js.html",
     "src/color/occupancy-colormaker.js",
+    "file"
+  ],
+  [
+    "src/color/partialcharge-colormaker.js",
+    "file/src/color/partialcharge-colormaker.js.html",
+    "src/color/partialcharge-colormaker.js",
     "file"
   ],
   [
@@ -4071,6 +4083,12 @@ window.esdocSearchIndex = [
     "src/proxy/atom-proxy.js~atomproxy#occupancy",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-occupancy",
     "src/proxy/atom-proxy.js~AtomProxy#occupancy",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#partialcharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-partialCharge",
+    "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
   ],
   [

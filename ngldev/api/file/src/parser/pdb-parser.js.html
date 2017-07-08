@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-6</span>
+<header><span>NGL@0.10.5-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -114,6 +114,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">OccupancyColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html">PartialchargeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">ResidueindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/resname-colormaker.js~ResnameColormaker.html">ResnameColormaker</a></span></span></li>
@@ -394,6 +395,10 @@ class PdbParser extends StructureParser {
     var atomMap = s.atomMap
     var atomStore = s.atomStore
     atomStore.resize(Math.round(this.streamer.data.length / 80))
+    if (isPqr) {
+      atomStore.addField(&apos;partialCharge&apos;, 1, &apos;float32&apos;)
+      atomStore.addField(&apos;radius&apos;, 1, &apos;float32&apos;)
+    }
 
     var ap1 = s.getAtomProxy()
     var ap2 = s.getAtomProxy()
@@ -476,10 +481,8 @@ class PdbParser extends StructureParser {
             resno = parseInt(ls[ 5 - dd ])
             inscode = &apos;&apos;
             resname = ls[ 3 ]
-            bfactor = parseFloat(ls[ 9 - dd ])  // charge FIXME should be its own field
             altloc = &apos;&apos;
             occupancy = 0.0
-            // FIXME radius field not supported
           } else {
             serial = parseInt(line.substr(6, 5), serialRadix)
             if (hex &amp;&amp; serial === 99999) {
@@ -512,9 +515,15 @@ class PdbParser extends StructureParser {
           atomStore.y[ idx ] = y
           atomStore.z[ idx ] = z
           atomStore.serial[ idx ] = serial
-          atomStore.bfactor[ idx ] = isNaN(bfactor) ? 0 : bfactor
           atomStore.altloc[ idx ] = altloc.charCodeAt(0)
           atomStore.occupancy[ idx ] = isNaN(occupancy) ? 0 : occupancy
+
+          if (isPqr) {
+            atomStore.partialCharge[ idx ] = parseFloat(ls[ 9 - dd ])
+            atomStore.radius[ idx ] = parseFloat(ls[ 10 - dd ])
+          } else {
+            atomStore.bfactor[ idx ] = isNaN(bfactor) ? 0 : bfactor
+          }
 
           if (hetero) {
             if (currentChainname !== chainname || currentResname !== resname ||

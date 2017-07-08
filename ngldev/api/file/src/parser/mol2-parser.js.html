@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-6</span>
+<header><span>NGL@0.10.5-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -114,6 +114,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">OccupancyColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html">PartialchargeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">ResidueindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/resname-colormaker.js~ResnameColormaker.html">ResnameColormaker</a></span></span></li>
@@ -263,9 +264,9 @@
 
 import { Debug, Log, ParserRegistry } from &apos;../globals.js&apos;
 import {
-    assignResidueTypeBonds,
-    calculateChainnames, calculateSecondaryStructure,
-    calculateBondsBetween, calculateBondsWithin
+  assignResidueTypeBonds,
+  calculateChainnames, calculateSecondaryStructure,
+  calculateBondsBetween, calculateBondsWithin
 } from &apos;../structure/structure-utils.js&apos;
 import StructureParser from &apos;./structure-parser.js&apos;
 
@@ -275,7 +276,7 @@ class Mol2Parser extends StructureParser {
   get type () { return &apos;mol2&apos; }
 
   _parse () {
-        // http://www.tripos.com/data/support/mol2.pdf
+    // http://paulbourke.net/dataformats/mol2/
 
     if (Debug) Log.time(&apos;Mol2Parser._parse &apos; + this.name)
 
@@ -292,6 +293,7 @@ class Mol2Parser extends StructureParser {
     var atomMap = s.atomMap
     var atomStore = s.atomStore
     atomStore.resize(Math.round(this.streamer.data.length / 60))
+    atomStore.addField(&apos;partialCharge&apos;, 1, &apos;float32&apos;)
 
     var idx = 0
     var moleculeLineNo = 0
@@ -406,7 +408,7 @@ class Mol2Parser extends StructureParser {
           var element = ls[ 5 ].split(&apos;.&apos;)[ 0 ]
           var resno = ls[ 6 ] ? parseInt(ls[ 6 ]) : 1
           var resname = ls[ 7 ] ? ls[ 7 ] : &apos;&apos;
-          var bfactor = ls[ 8 ] ? parseFloat(ls[ 8 ]) : 0.0
+          var partialCharge = ls[ 8 ] ? parseFloat(ls[ 8 ]) : 0.0
 
           atomStore.growIfFull()
           atomStore.atomTypeId[ idx ] = atomMap.add(atomname, element)
@@ -415,7 +417,7 @@ class Mol2Parser extends StructureParser {
           atomStore.y[ idx ] = y
           atomStore.z[ idx ] = z
           atomStore.serial[ idx ] = serial
-          atomStore.bfactor[ idx ] = bfactor
+          atomStore.partialCharge[ idx ] = partialCharge
 
           sb.addAtom(modelIdx, &apos;&apos;, &apos;&apos;, resname, resno, 1)
 

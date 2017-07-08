@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-6</span>
+<header><span>NGL@0.10.5-7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -114,6 +114,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">ModelindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">MoleculetypeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">OccupancyColormaker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html">PartialchargeColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/random-colormaker.js~RandomColormaker.html">RandomColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">ResidueindexColormaker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/color/resname-colormaker.js~ResnameColormaker.html">ResnameColormaker</a></span></span></li>
@@ -292,8 +293,10 @@ class TopParser extends StructureParser {
     //
 
     const atomMap = s.atomMap
-    const atomStore = s.atomStore
     const bondStore = s.bondStore
+
+    const atomStore = s.atomStore
+    atomStore.addField(&apos;partialCharge&apos;, 1, &apos;float32&apos;)
 
     const molecules = []
     const moleculetypeDict = {}
@@ -347,9 +350,10 @@ class TopParser extends StructureParser {
         } else if (mode === AtomsMode) {
           const ls = lt.split(reWhitespace)
           currentMoleculetype.atoms.push([
-            parseInt(ls[2]),  // resnr
-            ls[3],            // residue
-            ls[4]             // atom
+            parseInt(ls[2]),   // resnr
+            ls[3],             // residue
+            ls[4],             // atom
+            parseFloat(ls[6])  // charge
           ])
         } else if (mode === BondsMode) {
           const ls = lt.split(reWhitespace)
@@ -401,12 +405,13 @@ class TopParser extends StructureParser {
         lastResno = -1
         const chainid = WaterNames.includes(name) ? chainname : getChainname(chainidIdx)
         molType.atoms.forEach(function (atomData) {
-          const [resno, resname, atomname] = atomData
+          const [resno, resname, atomname, charge] = atomData
           if (resno !== lastResno) {
             ++resIdx
           }
           atomStore.atomTypeId[atomIdx] = atomMap.add(atomname)
           atomStore.serial[atomIdx] = atomIdx + 1
+          atomStore.partialCharge[atomIdx] = charge
           sb.addAtom(0, chainname, chainid, resname, resIdx + 1)
           ++atomIdx
           lastResno = resno
