@@ -13,7 +13,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-5</span>
+<header><span>NGL@0.10.5-6</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -150,6 +150,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TriggerString">TriggerString</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">datasource</div><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/datasource/datasource.js~Datasource.html">Datasource</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
@@ -262,23 +263,24 @@
 
 import { Log, DatasourceRegistry } from &apos;../globals.js&apos;
 import { getFileInfo, getProtocol } from &apos;../utils.js&apos;
+import Datasource from &apos;./datasource.js&apos;
 
-var baseUrl = &apos;//files.rcsb.org/download/&apos;
-var mmtfBaseUrl = &apos;//mmtf.rcsb.org/v1.0/&apos;
-var mmtfFullUrl = mmtfBaseUrl + &apos;full/&apos;
-var mmtfReducedUrl = mmtfBaseUrl + &apos;reduced/&apos;
+const baseUrl = &apos;//files.rcsb.org/download/&apos;
+const mmtfBaseUrl = &apos;//mmtf.rcsb.org/v1.0/&apos;
+const mmtfFullUrl = mmtfBaseUrl + &apos;full/&apos;
+const mmtfReducedUrl = mmtfBaseUrl + &apos;reduced/&apos;
 
-function RcsbDatasource () {
-  this.getUrl = function (src) {
-        // valid path are
-        // XXXX.pdb, XXXX.pdb.gz, XXXX.cif, XXXX.cif.gz, XXXX.mmtf, XXXX.bb.mmtf
-        // XXXX defaults to XXXX.cif
-    var info = getFileInfo(src)
-    var pdbid = info.name.substr(0, 4)
-    var url
+class RcsbDatasource extends Datasource {
+  getUrl (src) {
+    // valid path are
+    // XXXX.pdb, XXXX.pdb.gz, XXXX.cif, XXXX.cif.gz, XXXX.mmtf, XXXX.bb.mmtf
+    // XXXX defaults to XXXX.cif
+    const info = getFileInfo(src)
+    const pdbid = info.name.substr(0, 4)
+    let url
     if ([ &apos;pdb&apos;, &apos;cif&apos; ].includes(info.ext) &amp;&amp;
-            (info.compressed === false || info.compressed === &apos;gz&apos;)
-        ) {
+        (info.compressed === false || info.compressed === &apos;gz&apos;)
+    ) {
       url = baseUrl + info.path
     } else if (info.ext === &apos;mmtf&apos;) {
       if (info.base.endsWith(&apos;.bb&apos;)) {
@@ -295,8 +297,8 @@ function RcsbDatasource () {
     return getProtocol() + url
   }
 
-  this.getExt = function (src) {
-    var info = getFileInfo(src)
+  getExt (src) {
+    const info = getFileInfo(src)
     if (info.ext === &apos;mmtf&apos; || !info.ext) {
       return &apos;mmtf&apos;
     }

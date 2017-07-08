@@ -270,6 +270,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/datasource/datasource.js~datasource",
+    "class/src/datasource/datasource.js~Datasource.html",
+    "<span>Datasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/datasource.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/color/densityfit-colormaker.js~densityfitcolormaker",
     "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html",
     "<span>DensityfitColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/densityfit-colormaker.js</span>",
@@ -3204,6 +3210,30 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/datasource/datasource.js",
+    "file/src/datasource/datasource.js.html",
+    "src/datasource/datasource.js",
+    "file"
+  ],
+  [
+    "src/datasource/datasource.js~datasource#getext",
+    "class/src/datasource/datasource.js~Datasource.html#instance-method-getExt",
+    "src/datasource/datasource.js~Datasource#getExt",
+    "method"
+  ],
+  [
+    "src/datasource/datasource.js~datasource#geturl",
+    "class/src/datasource/datasource.js~Datasource.html#instance-method-getUrl",
+    "src/datasource/datasource.js~Datasource#getUrl",
+    "method"
+  ],
+  [
+    "src/datasource/mdsrv-datasource.js",
+    "file/src/datasource/mdsrv-datasource.js.html",
+    "src/datasource/mdsrv-datasource.js",
+    "file"
+  ],
+  [
     "src/datasource/passthrough-datasource.js",
     "file/src/datasource/passthrough-datasource.js.html",
     "src/datasource/passthrough-datasource.js",
@@ -5584,6 +5614,12 @@ window.esdocSearchIndex = [
     "file/src/store/store.js.html",
     "src/store/store.js",
     "file"
+  ],
+  [
+    "src/store/store.js~store#addfield",
+    "class/src/store/store.js~Store.html#instance-method-addField",
+    "src/store/store.js~Store#addField",
+    "method"
   ],
   [
     "src/store/store.js~store#clear",
