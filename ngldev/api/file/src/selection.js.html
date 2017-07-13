@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-8</span>
+<header><span>NGL@0.10.5-9</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -759,7 +759,19 @@ class Selection {
             {
               operator: &apos;OR&apos;,
               rules: [
-                { keyword: kwd.HETERO },
+                {
+                  operator: &apos;AND&apos;,
+                  rules: [
+                    { keyword: kwd.HETERO },
+                    {
+                      negate: true,
+                      operator: undefined,
+                      rules: [
+                        { keyword: kwd.POLYMER }
+                      ]
+                    }
+                  ]
+                },
                 {
                   negate: true,
                   operator: undefined,

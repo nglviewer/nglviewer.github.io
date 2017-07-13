@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-8</span>
+<header><span>NGL@0.10.5-9</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -395,25 +395,25 @@ class Representation {
     }
 
     /**
-     * @member {Viewer}
+     * @type {Viewer}
      */
     this.viewer = viewer
 
     /**
      * Counter that keeps track of tasks related to the creation of
      * the representation, including surface calculations.
-     * @member {Counter}
+     * @type {Counter}
      */
     this.tasks = new Counter()
 
     /**
-     * @member {Queue}
+     * @type {Queue}
      * @private
      */
     this.queue = new Queue(this.make.bind(this))
 
     /**
-     * @member {Array}
+     * @type {Array}
      * @private
      */
     this.bufferList = []
