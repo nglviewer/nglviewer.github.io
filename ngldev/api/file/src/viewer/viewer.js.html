@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-9</span>
+<header><span>NGL@0.10.5-10</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -261,17 +261,17 @@
  */
 
 import {
-    PerspectiveCamera, OrthographicCamera,
-    Box3, Vector3, Matrix4, Color,
-    WebGLRenderer, WebGLRenderTarget,
-    NearestFilter, LinearFilter, AdditiveBlending,
-    RGBAFormat, FloatType, HalfFloatType, UnsignedByteType,
-    ShaderMaterial,
-    PlaneGeometry,
-    Scene, Mesh, Group,
-    Fog, SpotLight, AmbientLight,
-    BufferGeometry, BufferAttribute,
-    LineSegments
+  PerspectiveCamera, OrthographicCamera,
+  Box3, Vector3, Matrix4, Color,
+  WebGLRenderer, WebGLRenderTarget,
+  NearestFilter, LinearFilter, AdditiveBlending,
+  RGBAFormat, FloatType, HalfFloatType, UnsignedByteType,
+  ShaderMaterial,
+  PlaneGeometry,
+  Scene, Mesh, Group,
+  Fog, SpotLight, AmbientLight,
+  BufferGeometry, BufferAttribute,
+  LineSegments
 } from &apos;../../lib/three.es6.js&apos;
 
 import &apos;../shader/BasicLine.vert&apos;
@@ -280,15 +280,15 @@ import &apos;../shader/Quad.vert&apos;
 import &apos;../shader/Quad.frag&apos;
 
 import {
-    Debug, Log, Browser, Mobile, WebglErrorMessage,
-    setExtensionFragDepth, SupportsReadPixelsFloat, setSupportsReadPixelsFloat
+  Debug, Log, Browser, Mobile, WebglErrorMessage,
+  setExtensionFragDepth, SupportsReadPixelsFloat, setSupportsReadPixelsFloat
 } from &apos;../globals.js&apos;
 import { degToRad } from &apos;../math/math-utils.js&apos;
 import Stats from &apos;./stats.js&apos;
 import { getShader } from &apos;../shader/shader-utils.js&apos;
 import { JitterVectors } from &apos;./viewer-constants.js&apos;
 import {
-    makeImage as _makeImage, sortProjectedPosition, updateMaterialUniforms
+  makeImage as _makeImage, sortProjectedPosition, updateMaterialUniforms
 } from &apos;./viewer-utils&apos;
 
 import Signal from &apos;../../lib/signals.es6.js&apos;
@@ -308,8 +308,8 @@ function onBeforeRender (renderer, scene, camera, geometry, material/*, group */
   }
 
   if (u.modelViewMatrixInverse || u.modelViewMatrixInverseTranspose ||
-        u.modelViewProjectionMatrix || u.modelViewProjectionMatrixInverse
-    ) {
+      u.modelViewProjectionMatrix || u.modelViewProjectionMatrixInverse
+  ) {
     this.modelViewMatrix.multiplyMatrices(camera.matrixWorldInverse, this.matrixWorld)
   }
 
@@ -321,12 +321,12 @@ function onBeforeRender (renderer, scene, camera, geometry, material/*, group */
   if (u.modelViewMatrixInverseTranspose) {
     if (u.modelViewMatrixInverse) {
       u.modelViewMatrixInverseTranspose.value.copy(
-                u.modelViewMatrixInverse.value
-            ).transpose()
+        u.modelViewMatrixInverse.value
+      ).transpose()
     } else {
       u.modelViewMatrixInverseTranspose.value
-                .getInverse(this.modelViewMatrix)
-                .transpose()
+        .getInverse(this.modelViewMatrix)
+        .transpose()
     }
     updateList.push(&apos;modelViewMatrixInverseTranspose&apos;)
   }
@@ -334,27 +334,27 @@ function onBeforeRender (renderer, scene, camera, geometry, material/*, group */
   if (u.modelViewProjectionMatrix) {
     camera.updateProjectionMatrix()
     u.modelViewProjectionMatrix.value.multiplyMatrices(
-            camera.projectionMatrix, this.modelViewMatrix
-        )
+      camera.projectionMatrix, this.modelViewMatrix
+    )
     updateList.push(&apos;modelViewProjectionMatrix&apos;)
   }
 
   if (u.modelViewProjectionMatrixInverse) {
     if (u.modelViewProjectionMatrix) {
       tmpMatrix.copy(
-                u.modelViewProjectionMatrix.value
-            )
+        u.modelViewProjectionMatrix.value
+      )
       u.modelViewProjectionMatrixInverse.value.getInverse(
-                tmpMatrix
-            )
+        tmpMatrix
+      )
     } else {
       camera.updateProjectionMatrix()
       tmpMatrix.multiplyMatrices(
-                camera.projectionMatrix, this.modelViewMatrix
-            )
+        camera.projectionMatrix, this.modelViewMatrix
+      )
       u.modelViewProjectionMatrixInverse.value.getInverse(
-                tmpMatrix
-            )
+        tmpMatrix
+      )
     }
     updateList.push(&apos;modelViewProjectionMatrixInverse&apos;)
   }
@@ -486,15 +486,14 @@ function Viewer (idOrElement) {
     var lookAt = new Vector3(0, 0, 0)
 
     perspectiveCamera = new PerspectiveCamera(
-            parameters.cameraFov, width / height
-        )
+      parameters.cameraFov, width / height
+    )
     perspectiveCamera.position.z = parameters.cameraZ
     perspectiveCamera.lookAt(lookAt)
 
     orthographicCamera = new OrthographicCamera(
-            width / -2, width / 2,
-            height / 2, height / -2
-        )
+      width / -2, width / 2, height / 2, height / -2
+    )
     orthographicCamera.position.z = parameters.cameraZ
     orthographicCamera.lookAt(lookAt)
 
@@ -524,33 +523,33 @@ function Viewer (idOrElement) {
     renderer.autoClear = false
     renderer.sortObjects = true
 
-        // var gl = renderer.getContext();
-        // console.log( gl.getContextAttributes().antialias );
-        // console.log( gl.getParameter(gl.SAMPLES) );
+    // var gl = renderer.getContext();
+    // console.log( gl.getContextAttributes().antialias );
+    // console.log( gl.getParameter(gl.SAMPLES) );
 
     setExtensionFragDepth(renderer.extensions.get(&apos;EXT_frag_depth&apos;))
     renderer.extensions.get(&apos;OES_element_index_uint&apos;)
 
     setSupportsReadPixelsFloat(
-            (renderer.extensions.get(&apos;OES_texture_float&apos;) &amp;&amp;
-                renderer.extensions.get(&apos;WEBGL_color_buffer_float&apos;)) ||
-            (Browser === &apos;Chrome&apos; &amp;&amp;
-                renderer.extensions.get(&apos;OES_texture_float&apos;))
-        )
+      (renderer.extensions.get(&apos;OES_texture_float&apos;) &amp;&amp;
+        renderer.extensions.get(&apos;WEBGL_color_buffer_float&apos;)) ||
+      (Browser === &apos;Chrome&apos; &amp;&amp;
+        renderer.extensions.get(&apos;OES_texture_float&apos;))
+    )
 
     container.appendChild(renderer.domElement)
 
     var dprWidth = width * dpr
     var dprHeight = height * dpr
 
-        // picking texture
+    // picking texture
 
     renderer.extensions.get(&apos;OES_texture_float&apos;)
     supportsHalfFloat = renderer.extensions.get(&apos;OES_texture_half_float&apos;)
     renderer.extensions.get(&apos;WEBGL_color_buffer_float&apos;)
 
     pickingTarget = new WebGLRenderTarget(
-            dprWidth, dprHeight,
+      dprWidth, dprHeight,
       {
         minFilter: NearestFilter,
         magFilter: NearestFilter,
@@ -558,35 +557,34 @@ function Viewer (idOrElement) {
         format: RGBAFormat,
         type: SupportsReadPixelsFloat ? FloatType : UnsignedByteType
       }
-        )
+    )
     pickingTarget.texture.generateMipmaps = false
 
-        // ssaa textures
+    // ssaa textures
 
     sampleTarget = new WebGLRenderTarget(
-            dprWidth, dprHeight,
+      dprWidth, dprHeight,
       {
         minFilter: LinearFilter,
         magFilter: LinearFilter,
         format: RGBAFormat
       }
-        )
+    )
 
     holdTarget = new WebGLRenderTarget(
-            dprWidth, dprHeight,
+      dprWidth, dprHeight,
       {
         minFilter: NearestFilter,
         magFilter: NearestFilter,
         format: RGBAFormat,
-                // problems on mobile so use UnsignedByteType there
-                // see https://github.com/arose/ngl/issues/191
+        // problems on mobile so use UnsignedByteType there
+        // see https://github.com/arose/ngl/issues/191
         type: Mobile ? UnsignedByteType : (
-                    supportsHalfFloat ? HalfFloatType
-                        : (SupportsReadPixelsFloat ? FloatType : UnsignedByteType)
-                )
-
-      }
+          supportsHalfFloat ? HalfFloatType
+            : (SupportsReadPixelsFloat ? FloatType : UnsignedByteType)
         )
+      }
+    )
 
     compositeUniforms = {
       &apos;tForeground&apos;: { type: &apos;t&apos;, value: null },
@@ -606,8 +604,8 @@ function Viewer (idOrElement) {
 
     compositeCamera = new OrthographicCamera(-1, 1, 1, -1, 0, 1)
     compositeScene = new Scene().add(new Mesh(
-            new PlaneGeometry(2, 2), compositeMaterial
-        ))
+      new PlaneGeometry(2, 2), compositeMaterial
+    ))
   }
 
   function initScene () {
@@ -646,13 +644,13 @@ function Viewer (idOrElement) {
         // light
 
     pointLight = new SpotLight(
-            parameters.lightColor, parameters.lightIntensity
-        )
+      parameters.lightColor, parameters.lightIntensity
+    )
     scene.add(pointLight)
 
     ambientLight = new AmbientLight(
-            parameters.ambientLight, parameters.ambientIntensity
-        )
+      parameters.ambientLight, parameters.ambientIntensity
+    )
     scene.add(ambientLight)
   }
 
@@ -705,7 +703,7 @@ function Viewer (idOrElement) {
   }
 
   function add (buffer, instanceList) {
-        // Log.time( &quot;Viewer.add&quot; );
+    // Log.time( &quot;Viewer.add&quot; );
 
     if (instanceList) {
       instanceList.forEach(function (instance) {
@@ -729,11 +727,11 @@ function Viewer (idOrElement) {
 
     if (Debug) updateHelper()
 
-        // Log.timeEnd( &quot;Viewer.add&quot; );
+    // Log.timeEnd( &quot;Viewer.add&quot; );
   }
 
   function addBuffer (buffer, instance) {
-        // Log.time( &quot;Viewer.addBuffer&quot; );
+    // Log.time( &quot;Viewer.addBuffer&quot; );
 
     function setUserData (object) {
       if (object instanceof Group) {
@@ -754,7 +752,7 @@ function Viewer (idOrElement) {
 
     var wireframeMesh = buffer.getWireframeMesh()
     if (instance) {
-            // wireframeMesh.applyMatrix( instance.matrix );
+      // wireframeMesh.applyMatrix( instance.matrix );
       wireframeMesh.matrix.copy(mesh.matrix)
       wireframeMesh.position.copy(mesh.position)
       wireframeMesh.quaternion.copy(mesh.quaternion)
@@ -766,7 +764,7 @@ function Viewer (idOrElement) {
     if (buffer.pickable) {
       var pickingMesh = buffer.getPickingMesh()
       if (instance) {
-                // pickingMesh.applyMatrix( instance.matrix );
+        // pickingMesh.applyMatrix( instance.matrix );
         pickingMesh.matrix.copy(mesh.matrix)
         pickingMesh.position.copy(mesh.position)
         pickingMesh.quaternion.copy(mesh.quaternion)
@@ -782,7 +780,7 @@ function Viewer (idOrElement) {
       updateBoundingBox(buffer.geometry, buffer.matrix)
     }
 
-        // Log.timeEnd( &quot;Viewer.addBuffer&quot; );
+    // Log.timeEnd( &quot;Viewer.addBuffer&quot; );
   }
 
   function remove (buffer) {
@@ -798,7 +796,7 @@ function Viewer (idOrElement) {
     updateBoundingBox()
     if (Debug) updateHelper()
 
-        // requestRender();
+    // requestRender();
   }
 
   function updateBoundingBox (geometry, matrix, instanceMatrix) {
@@ -817,8 +815,8 @@ function Viewer (idOrElement) {
       }
 
       if (geoBoundingBox.min.equals(geoBoundingBox.max)) {
-                // mainly to give a single impostor geometry some volume
-                // as it is only expanded in the shader on the GPU
+        // mainly to give a single impostor geometry some volume
+        // as it is only expanded in the shader on the GPU
         geoBoundingBox.expandByScalar(5)
       }
 
@@ -856,8 +854,8 @@ function Viewer (idOrElement) {
 
     render(true)
     renderer.readRenderTargetPixels(
-            pickingTarget, 0, 0, width, height, imgBuffer
-        )
+      pickingTarget, 0, 0, width, height, imgBuffer
+    )
 
     return imgBuffer
   }
@@ -1063,19 +1061,19 @@ function Viewer (idOrElement) {
 
     render(true)
     renderer.readRenderTargetPixels(
-            pickingTarget, x, y, 1, 1, pixelBuffer
-        )
+      pickingTarget, x, y, 1, 1, pixelBuffer
+    )
 
     if (SupportsReadPixelsFloat) {
       pid =
-                ((Math.round(pixelBuffer[0] * 255) &lt;&lt; 16) &amp; 0xFF0000) |
-                ((Math.round(pixelBuffer[1] * 255) &lt;&lt; 8) &amp; 0x00FF00) |
-                ((Math.round(pixelBuffer[2] * 255)) &amp; 0x0000FF)
+        ((Math.round(pixelBuffer[0] * 255) &lt;&lt; 16) &amp; 0xFF0000) |
+        ((Math.round(pixelBuffer[1] * 255) &lt;&lt; 8) &amp; 0x00FF00) |
+        ((Math.round(pixelBuffer[2] * 255)) &amp; 0x0000FF)
     } else {
       pid =
-                (pixelBuffer[0] &lt;&lt; 16) |
-                (pixelBuffer[1] &lt;&lt; 8) |
-                (pixelBuffer[2])
+        (pixelBuffer[0] &lt;&lt; 16) |
+        (pixelBuffer[1] &lt;&lt; 8) |
+        (pixelBuffer[2])
     }
 
     const oid = Math.round(pixelBuffer[ 3 ])
@@ -1085,20 +1083,20 @@ function Viewer (idOrElement) {
       picker = object.userData.buffer.picking
     }
 
-        // if( Debug ){
-        //     const rgba = Array.apply( [], pixelBuffer );
-        //     Log.log( pixelBuffer );
-        //     Log.log(
-        //         &quot;picked color&quot;,
-        //         rgba.map( c =&gt; { return c.toPrecision( 2 ) } )
-        //     );
-        //     Log.log( &quot;picked pid&quot;, pid );
-        //     Log.log( &quot;picked oid&quot;, oid );
-        //     Log.log( &quot;picked object&quot;, object );
-        //     Log.log( &quot;picked instance&quot;, instance );
-        //     Log.log( &quot;picked position&quot;, x, y );
-        //     Log.log( &quot;devicePixelRatio&quot;, window.devicePixelRatio );
-        // }
+    // if( Debug ){
+    //   const rgba = Array.apply( [], pixelBuffer );
+    //   Log.log( pixelBuffer );
+    //   Log.log(
+    //     &quot;picked color&quot;,
+    //     rgba.map( c =&gt; { return c.toPrecision( 2 ) } )
+    //   );
+    //   Log.log( &quot;picked pid&quot;, pid );
+    //   Log.log( &quot;picked oid&quot;, oid );
+    //   Log.log( &quot;picked object&quot;, object );
+    //   Log.log( &quot;picked instance&quot;, instance );
+    //   Log.log( &quot;picked position&quot;, x, y );
+    //   Log.log( &quot;devicePixelRatio&quot;, window.devicePixelRatio );
+    // }
 
     return {
       &apos;pid&apos;: pid,
@@ -1109,11 +1107,11 @@ function Viewer (idOrElement) {
 
   function requestRender () {
     if (renderPending) {
-            // Log.info( &quot;there is still a &apos;render&apos; call pending&quot; );
+      // Log.info( &quot;there is still a &apos;render&apos; call pending&quot; );
       return
     }
 
-        // start gathering stats anew after inactivity
+    // start gathering stats anew after inactivity
     if (window.performance.now() - stats.startTime &gt; 22) {
       stats.begin()
       isStill = false
@@ -1136,23 +1134,23 @@ function Viewer (idOrElement) {
   function __updateClipping () {
     var p = parameters
 
-        // clipping
+    // clipping
 
-        // cDist = distVector.copy( camera.position )
-        //             .sub( controls.target ).length();
+    // cDist = distVector.copy( camera.position )
+    //           .sub( controls.target ).length();
     cDist = distVector.copy(camera.position).length()
-        // console.log( &quot;cDist&quot;, cDist )
+    // console.log( &quot;cDist&quot;, cDist )
     if (!cDist) {
-            // recover from a broken (NaN) camera position
+      // recover from a broken (NaN) camera position
       camera.position.set(0, 0, p.cameraZ)
       cDist = Math.abs(p.cameraZ)
     }
 
     bRadius = Math.max(10, boundingBoxLength * 0.5)
     bRadius += boundingBox.getCenter(distVector).length()
-        // console.log( &quot;bRadius&quot;, bRadius )
+    // console.log( &quot;bRadius&quot;, bRadius )
     if (bRadius === Infinity || bRadius === -Infinity || isNaN(bRadius)) {
-            // console.warn( &quot;something wrong with bRadius&quot; );
+      // console.warn( &quot;something wrong with bRadius&quot; );
       bRadius = 50
     }
 
@@ -1161,7 +1159,7 @@ function Viewer (idOrElement) {
     camera.near = cDist - (bRadius * nearFactor)
     camera.far = cDist + (bRadius * farFactor)
 
-        // fog
+    // fog
 
     var fogNearFactor = (50 - p.fogNear) / 50
     var fogFarFactor = -(50 - p.fogFar) / 50
@@ -1200,8 +1198,8 @@ function Viewer (idOrElement) {
   }
 
   function __updateLights () {
-        // distVector.copy( camera.position ).sub( controls.target )
-        //     .setLength( boundingBoxLength * 100 );
+    // distVector.copy( camera.position ).sub( controls.target )
+    //   .setLength( boundingBoxLength * 100 );
     distVector.copy(camera.position).setLength(boundingBoxLength * 100)
 
     pointLight.position.copy(camera.position).add(distVector)
@@ -1219,12 +1217,12 @@ function Viewer (idOrElement) {
     updateInfo()
     renderer.setRenderTarget(null)  // back to standard render target
 
-        // if( Debug ){
-        //     __setVisibility( false, true, false, true );
+    // if( Debug ){
+    //   __setVisibility( false, true, false, true );
 
-        //     renderer.clear();
-        //     renderer.render( scene, camera );
-        // }
+    //   renderer.clear();
+    //   renderer.render( scene, camera );
+    // }
   }
 
   function __renderModelGroup (renderTarget) {
@@ -1249,12 +1247,12 @@ function Viewer (idOrElement) {
   }
 
   function __renderSuperSample () {
-        // based on the Supersample Anti-Aliasing Render Pass
-        // contributed to three.js by bhouston / http://clara.io/
-        //
-        // This manual approach to SSAA re-renders the scene ones for
-        // each sample with camera jitter and accumulates the results.
-        // References: https://en.wikipedia.org/wiki/Supersampling
+    // based on the Supersample Anti-Aliasing Render Pass
+    // contributed to three.js by bhouston / http://clara.io/
+    //
+    // This manual approach to SSAA re-renders the scene ones for
+    // each sample with camera jitter and accumulates the results.
+    // References: https://en.wikipedia.org/wiki/Supersampling
 
     var offsetList = JitterVectors[ Math.max(0, Math.min(sampleLevel, 5)) ]
 
@@ -1266,29 +1264,29 @@ function Viewer (idOrElement) {
     var _width = sampleTarget.width
     var _height = sampleTarget.height
 
-        // render the scene multiple times, each slightly jitter offset
-        // from the last and accumulate the results.
+    // render the scene multiple times, each slightly jitter offset
+    // from the last and accumulate the results.
     for (var i = 0; i &lt; offsetList.length; ++i) {
       var offset = offsetList[ i ]
       camera.setViewOffset(
-                _width, _height, offset[ 0 ], offset[ 1 ], _width, _height
-            )
+        _width, _height, offset[ 0 ], offset[ 1 ], _width, _height
+      )
       __updateCamera()
 
       var sampleWeight = baseSampleWeight
-            // the theory is that equal weights for each sample lead to an
-            // accumulation of rounding errors.
-            // The following equation varies the sampleWeight per sample
-            // so that it is uniformly distributed across a range of values
-            // whose rounding errors cancel each other out.
+      // the theory is that equal weights for each sample lead to an
+      // accumulation of rounding errors.
+      // The following equation varies the sampleWeight per sample
+      // so that it is uniformly distributed across a range of values
+      // whose rounding errors cancel each other out.
       var uniformCenteredDistribution = (-0.5 + (i + 0.5) / offsetList.length)
       sampleWeight += roundingRange * uniformCenteredDistribution
       compositeUniforms.scale.value = sampleWeight
 
       __renderModelGroup(sampleTarget)
       renderer.render(
-                compositeScene, compositeCamera, holdTarget, (i === 0)
-            )
+        compositeScene, compositeCamera, holdTarget, (i === 0)
+      )
     }
 
     compositeUniforms.scale.value = 1.0
@@ -1305,7 +1303,7 @@ function Viewer (idOrElement) {
       return
     }
 
-        // Log.time( &quot;Viewer.render&quot; );
+    // Log.time( &quot;Viewer.render&quot; );
 
     rendering = true
 
@@ -1313,7 +1311,7 @@ function Viewer (idOrElement) {
     __updateCamera()
     __updateLights()
 
-        // render
+    // render
 
     updateInfo(true)
 
@@ -1329,8 +1327,8 @@ function Viewer (idOrElement) {
     rendering = false
     renderPending = false
 
-        // Log.timeEnd( &quot;Viewer.render&quot; );
-        // Log.log( info.memory, info.render );
+    // Log.timeEnd( &quot;Viewer.render&quot; );
+    // Log.log( info.memory, info.render );
   }
 
   function clear () {
@@ -1340,7 +1338,7 @@ function Viewer (idOrElement) {
     renderer.clear()
   }
 
-    // API
+  // API
 
   this.container = container
   this.stats = stats

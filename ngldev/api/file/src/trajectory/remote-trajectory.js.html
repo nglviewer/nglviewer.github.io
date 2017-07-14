@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-9</span>
+<header><span>NGL@0.10.5-10</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -264,6 +264,11 @@ import { Log, DatasourceRegistry } from &apos;../globals.js&apos;
 import Trajectory from &apos;./trajectory.js&apos;
 
 class RemoteTrajectory extends Trajectory {
+  constructor (trajPath, structure, params) {
+    super(trajPath, structure, params)
+    this.saveInitialCoords()
+  }
+
   get type () { return &apos;remote&apos; }
 
   makeAtomIndices () {

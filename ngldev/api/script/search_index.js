@@ -6306,6 +6306,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/trajectory/trajectory-player.js~trajectoryplayer#setparameters",
+    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-setParameters",
+    "src/trajectory/trajectory-player.js~TrajectoryPlayer#setParameters",
+    "method"
+  ],
+  [
     "src/trajectory/trajectory-player.js~trajectoryplayer#stop",
     "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-stop",
     "src/trajectory/trajectory-player.js~TrajectoryPlayer#stop",

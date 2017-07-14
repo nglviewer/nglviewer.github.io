@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-9</span>
+<header><span>NGL@0.10.5-10</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -278,6 +278,7 @@ class FramesTrajectory extends Trajectory {
     this.boxes = frames.boxes
 
     this.getNumframes()
+    this.saveInitialCoords()
   }
 
   get type () { return &apos;frames&apos; }
