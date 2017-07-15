@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-10</span>
+<header><span>NGL@0.10.5-11</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -37,6 +37,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ColormakerRegistry">ColormakerRegistry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ExtensionFragDepth">ExtensionFragDepth</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Mobile">Mobile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScriptExtensions">ScriptExtensions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Version">Version</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Box3">Box3</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/core/BufferGeometry">BufferGeometry</a></span></span></li>
@@ -309,6 +310,12 @@ function setDebug (value) {
 
 const WebglErrorMessage = &apos;&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;&quot;&gt;&lt;p style=&quot;padding:15px;text-align:center;&quot;&gt;Your browser/graphics card does not seem to support &lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/WebGL&quot;&gt;WebGL&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;Find out how to get it &lt;a target=&quot;_blank&quot; href=&quot;http://get.webgl.org/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&apos;
 
+/**
+ * List of file extensions to be recognized as scripts
+ * @type {String[]}
+ */
+const ScriptExtensions = [ &apos;ngl&apos;, &apos;js&apos; ]
+
 const WorkerRegistry = new _WorkerRegistry()
 /**
  * Global instance of {@link src/color/colormaker-registry.js~ColormakerRegistry}
@@ -333,6 +340,7 @@ export {
     Debug,
     setDebug,
     WebglErrorMessage,
+    ScriptExtensions,
     WorkerRegistry,
     ColormakerRegistry,
     DatasourceRegistry,

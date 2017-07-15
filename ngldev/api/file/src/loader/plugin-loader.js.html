@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-10</span>
+<header><span>NGL@0.10.5-11</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -37,6 +37,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ColormakerRegistry">ColormakerRegistry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ExtensionFragDepth">ExtensionFragDepth</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Mobile">Mobile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScriptExtensions">ScriptExtensions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Version">Version</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/math/Box3">Box3</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://threejs.org/docs/#api/core/BufferGeometry">BufferGeometry</a></span></span></li>
@@ -269,10 +270,10 @@ import Script from &apos;../script.js&apos;
  * @extends Loader
  */
 class PluginLoader extends Loader {
-    /**
-     * Load plugin
-     * @return {Promise} resolves to the loaded plugin {@link Script}
-     */
+  /**
+   * Load plugin
+   * @return {Promise} resolves to the loaded plugin {@link Script}
+   */
   load () {
     var basePath
     if (this.protocol) {
@@ -287,10 +288,10 @@ class PluginLoader extends Loader {
 
       manifest.files.map(function (name) {
         promiseList.push(
-                    autoLoad(basePath + name, {
-                      ext: &apos;text&apos;, useWorker: false
-                    })
-                )
+          autoLoad(basePath + name, {
+            ext: &apos;text&apos;, useWorker: false
+          })
+        )
       })
 
       return Promise.all(promiseList).then(dataList =&gt; {

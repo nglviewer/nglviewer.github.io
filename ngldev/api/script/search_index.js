@@ -696,6 +696,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/globals.js~scriptextensions",
+    "variable/index.html#static-variable-ScriptExtensions",
+    "<span>ScriptExtensions</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
+    "variable"
+  ],
+  [
     "ngl/src/loader/script-loader.js~scriptloader",
     "class/src/loader/script-loader.js~ScriptLoader.html",
     "<span>ScriptLoader</span> <span class=\"search-result-import-path\">ngl/src/loader/script-loader.js</span>",
