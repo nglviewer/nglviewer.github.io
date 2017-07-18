@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-11</span>
+<header><span>NGL@0.10.5-12</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -232,10 +232,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/frames-trajectory.js~FramesTrajectory.html">FramesTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html">RemoteTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/structure-trajectory.js~StructureTrajectory.html">StructureTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectorySignals">TrajectorySignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span></span></li>
@@ -264,15 +268,18 @@
 import { Log, DatasourceRegistry } from &apos;../globals.js&apos;
 import Trajectory from &apos;./trajectory.js&apos;
 
+/**
+ * Remote trajectory class. Gets data from an MDsrv instance.
+ */
 class RemoteTrajectory extends Trajectory {
   constructor (trajPath, structure, params) {
     super(trajPath, structure, params)
-    this.saveInitialCoords()
+    this._init(structure)
   }
 
   get type () { return &apos;remote&apos; }
 
-  makeAtomIndices () {
+  _makeAtomIndices () {
     const atomIndices = []
 
     if (this.structure.type === &apos;StructureView&apos;) {
@@ -323,12 +330,12 @@ class RemoteTrajectory extends Trajectory {
         return
       }
 
-      const numframes = new Int32Array(arrayBuffer, 0, 1)[ 0 ]
+      const frameCount = new Int32Array(arrayBuffer, 0, 1)[ 0 ]
       // const time = new Float32Array( arrayBuffer, 1 * 4, 1 )[ 0 ];
       const box = new Float32Array(arrayBuffer, 2 * 4, 9)
       const coords = new Float32Array(arrayBuffer, 11 * 4)
 
-      this.process(i, box, coords, numframes)
+      this._process(i, box, coords, frameCount)
       if (typeof callback === &apos;function&apos;) {
         callback()
       }
@@ -337,15 +344,15 @@ class RemoteTrajectory extends Trajectory {
     request.send(params)
   }
 
-  getNumframes () {
+  _loadFrameCount () {
     const request = new window.XMLHttpRequest()
 
     const ds = DatasourceRegistry.trajectory
-    const url = ds.getNumframesUrl(this.trajPath)
+    const url = ds.getCountUrl(this.trajPath)
 
     request.open(&apos;GET&apos;, url, true)
     request.addEventListener(&apos;load&apos;, () =&gt; {
-      this.setNumframes(parseInt(request.response))
+      this._setFrameCount(parseInt(request.response))
     }, false)
     request.send(null)
   }

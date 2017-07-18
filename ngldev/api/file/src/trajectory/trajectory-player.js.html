@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-11</span>
+<header><span>NGL@0.10.5-12</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -232,10 +232,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/frames-trajectory.js~FramesTrajectory.html">FramesTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html">RemoteTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/structure-trajectory.js~StructureTrajectory.html">StructureTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectorySignals">TrajectorySignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span></span></li>
@@ -304,7 +308,7 @@ class TrajectoryPlayer {
     }, this)
 
     const p = Object.assign({}, params)
-    const n = defaults(traj.numframes, 1)
+    const n = defaults(traj.frameCount, 1)
 
     this.traj = traj
     this.start = defaults(p.start, 0)
@@ -324,7 +328,7 @@ class TrajectoryPlayer {
     this._currentFrame = this.start
     this._direction = this.direction === &apos;bounce&apos; ? &apos;forward&apos; : this.direction
 
-    traj.signals.gotNumframes.add(function (n) {
+    traj.signals.countChanged.add(function (n) {
       this.end = Math.min(defaults(this.end, n - 1), n - 1)
     }, this)
 
@@ -366,7 +370,7 @@ class TrajectoryPlayer {
     const timeout = this.timeout / step
     const traj = this.traj
 
-    if (traj &amp;&amp; traj.numframes &amp;&amp; !traj.inProgress &amp;&amp; dt &gt;= timeout) {
+    if (traj &amp;&amp; traj.frameCount &amp;&amp; !traj.inProgress &amp;&amp; dt &gt;= timeout) {
       if (this.interpolateType) {
         if (this._currentStep &gt; this.interpolateStep) {
           this._currentStep = 1

@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-11</span>
+<header><span>NGL@0.10.5-12</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -232,10 +232,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/frames-trajectory.js~FramesTrajectory.html">FramesTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html">RemoteTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/structure-trajectory.js~StructureTrajectory.html">StructureTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectorySignals">TrajectorySignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span></span></li>
@@ -283,12 +287,12 @@ import RadiusFactory from &apos;../utils/radius-factory.js&apos;
  * @interface
  */
 class StructureRepresentation extends Representation {
-    /**
-     * Create Structure representation object
-     * @param {Structure} structure - the structure to be represented
-     * @param {Viewer} viewer - a viewer object
-     * @param {StructureRepresentationParameters} params - structure representation parameters
-     */
+  /**
+   * Create Structure representation object
+   * @param {Structure} structure - the structure to be represented
+   * @param {Viewer} viewer - a viewer object
+   * @param {StructureRepresentationParameters} params - structure representation parameters
+   */
   constructor (structure, viewer, params) {
     const p = params || {}
 
@@ -297,7 +301,6 @@ class StructureRepresentation extends Representation {
     this.type = &apos;structure&apos;
 
     this.parameters = Object.assign({
-
       radiusType: {
         type: &apos;select&apos;, options: RadiusFactory.types
       },
@@ -311,29 +314,28 @@ class StructureRepresentation extends Representation {
       defaultAssembly: {
         type: &apos;hidden&apos;
       }
-
     }, this.parameters)
 
-        /**
-         * @type {Selection}
-         * @private
-         */
+    /**
+     * @type {Selection}
+     * @private
+     */
     this.selection = new Selection(p.sele)
 
-        /**
-         * @type {Array}
-         * @private
-         */
+    /**
+     * @type {Array}
+     * @private
+     */
     this.dataList = []
 
-        /**
-         * @type {Structure}
-         */
+    /**
+     * @type {Structure}
+     */
     this.structure = structure
 
-        /**
-         * @type {StructureView}
-         */
+    /**
+     * @type {StructureView}
+     */
     this.structureView = this.structure.getView(this.selection)
 
     if (structure.biomolDict) {
@@ -485,33 +487,33 @@ class StructureRepresentation extends Representation {
     }, params)
   }
 
-    /**
-     * Set representation parameters
-     * @alias StructureRepresentation#setSelection
-     * @param {String} string - selection string, see {@tutorial selection-language}
-     * @param {Boolean} [silent] - don&apos;t trigger a change event in the selection
-     * @return {StructureRepresentation} this object
-     */
+  /**
+   * Set representation parameters
+   * @alias StructureRepresentation#setSelection
+   * @param {String} string - selection string, see {@tutorial selection-language}
+   * @param {Boolean} [silent] - don&apos;t trigger a change event in the selection
+   * @return {StructureRepresentation} this object
+   */
   setSelection (string, silent) {
     this.selection.setString(string, silent)
 
     return this
   }
 
-    /**
-     * Set representation parameters
-     * @alias StructureRepresentation#setParameters
-     * @param {StructureRepresentationParameters} params - structure parameter object
-     * @param {Object} [what] - buffer data attributes to be updated,
-     *                        note that this needs to be implemented in the
-     *                        derived classes. Generally it allows more
-     *                        fine-grained control over updating than
-     *                        forcing a rebuild.
-     * @param {Boolean} what.position - update position data
-     * @param {Boolean} what.color - update color data
-     * @param {Boolean} [rebuild] - whether or not to rebuild the representation
-     * @return {StructureRepresentation} this object
-     */
+  /**
+   * Set representation parameters
+   * @alias StructureRepresentation#setParameters
+   * @param {StructureRepresentationParameters} params - structure parameter object
+   * @param {Object} [what] - buffer data attributes to be updated,
+   *                        note that this needs to be implemented in the
+   *                        derived classes. Generally it allows more
+   *                        fine-grained control over updating than
+   *                        forcing a rebuild.
+   * @param {Boolean} what.position - update position data
+   * @param {Boolean} what.color - update color data
+   * @param {Boolean} [rebuild] - whether or not to rebuild the representation
+   * @return {StructureRepresentation} this object
+   */
   setParameters (params, what, rebuild) {
     what = what || {}
 
@@ -553,12 +555,12 @@ class StructureRepresentation extends Representation {
 
   getParameters () {
     const params = Object.assign(
-            super.getParameters(),
+      super.getParameters(),
       {
         sele: this.selection ? this.selection.string : undefined,
         defaultAssembly: this.defaultAssembly
       }
-        )
+    )
 
     return params
   }

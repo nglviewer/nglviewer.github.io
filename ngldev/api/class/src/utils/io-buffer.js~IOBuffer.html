@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-11</span>
+<header><span>NGL@0.10.5-12</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -232,10 +232,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MolecularSurfaceParameters">MolecularSurfaceParameters</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">symmetry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/assembly.js~Assembly.html">Assembly</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/symmetry/unitcell.js~Unitcell.html">Unitcell</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">trajectory</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/frames-trajectory.js~FramesTrajectory.html">FramesTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html">RemoteTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/structure-trajectory.js~StructureTrajectory.html">StructureTrajectory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html">TrajectoryPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/trajectory/trajectory.js~Trajectory.html">Trajectory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryPlayerParameters">TrajectoryPlayerParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectoryParameters">TrajectoryParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TrajectorySignals">TrajectorySignals</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/bitarray.js~BitArray.html">BitArray</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/counter.js~Counter.html">Counter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span></span></li>
@@ -255,13 +259,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import IOBuffer from &apos;<span><a href="file/src/utils/io-buffer.js.html#lineNumber31">ngl/src/utils/io-buffer.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import IOBuffer from &apos;<span><a href="file/src/utils/io-buffer.js.html#lineNumber16">ngl/src/utils/io-buffer.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/utils/io-buffer.js.html#lineNumber31">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/utils/io-buffer.js.html#lineNumber16">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -281,7 +285,7 @@
 
   
   
-  <div class="description" data-ice="description"><p>IOBuffer</p>
+  <div class="description" data-ice="description"><p>Class for writing and reading binary data</p>
 </div>
   
 
@@ -296,8 +300,187 @@
 
 
 
-
-
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span> | <span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span> | <span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span>, params: <span><a href="class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-object">object</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html#instance-member-buffer">buffer</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Reference to the internal ArrayBuffer object</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html#instance-member-byteLength">byteLength</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Byte length of the internal ArrayBuffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html#instance-member-byteOffset">byteOffset</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Byte offset of the internal ArrayBuffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html#instance-member-length">length</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Byte length of the internal ArrayBuffer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/utils/io-buffer.js~IOBuffer.html#instance-member-offset">offset</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The current offset of the buffer&apos;s pointer</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 <div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
   <tbody>
@@ -1461,8 +1644,311 @@ Moves pointer forward</p>
 
 
 
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
 
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">constructor</span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span> | <span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span> | <span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span>, params: <span><a href="class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-object">object</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber28">source</a></span></span>
+    </span>
+  </h3>
 
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">data</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">TypedArray</a></span> | <span><a href="class/src/utils/io-buffer.js~IOBuffer.html">IOBuffer</a></span> | <span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The data to construct the IOBuffer with.</p>
+<p>If it&apos;s a number, it will initialize the buffer with the number as
+the buffer&apos;s length. If it&apos;s undefined, it will initialize the buffer
+with a default length of 8 Kb. If its an ArrayBuffer, a TypedArray,
+an IOBuffer instance, or a Node.js Buffer, it will create a view over
+the underlying ArrayBuffer.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">params</td>
+      <td data-ice="type"><span><a href="class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">params.offset</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: 0</li></ul></td>
+      <td data-ice="description"><p>Ignore the first n bytes of the ArrayBuffer</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-buffer">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">buffer</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber60">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Reference to the internal ArrayBuffer object</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-byteLength">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">byteLength</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber70">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Byte length of the internal ArrayBuffer</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-byteOffset">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">byteOffset</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber75">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Byte offset of the internal ArrayBuffer</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-length">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">length</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber65">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Byte length of the internal ArrayBuffer</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-offset">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">offset</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber80">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The current offset of the buffer&apos;s pointer</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
@@ -1477,7 +1963,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber93">source</a></span></span>
     </span>
   </h3>
 
@@ -1552,7 +2038,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber193">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber211">source</a></span></span>
     </span>
   </h3>
 
@@ -1627,7 +2113,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber506">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber524">source</a></span></span>
     </span>
   </h3>
 
@@ -1683,7 +2169,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber101">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber119">source</a></span></span>
     </span>
   </h3>
 
@@ -1740,7 +2226,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber84">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber102">source</a></span></span>
     </span>
   </h3>
 
@@ -1797,7 +2283,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber140">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber158">source</a></span></span>
     </span>
   </h3>
 
@@ -1853,7 +2339,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber170">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber188">source</a></span></span>
     </span>
   </h3>
 
@@ -1909,7 +2395,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber160">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber178">source</a></span></span>
     </span>
   </h3>
 
@@ -1965,7 +2451,7 @@ that is twice (byteLength + current offset)</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber212">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber230">source</a></span></span>
     </span>
   </h3>
 
@@ -2022,7 +2508,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber236">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber254">source</a></span></span>
     </span>
   </h3>
 
@@ -2078,7 +2564,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber245">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber263">source</a></span></span>
     </span>
   </h3>
 
@@ -2150,7 +2636,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber318">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber336">source</a></span></span>
     </span>
   </h3>
 
@@ -2206,7 +2692,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber327">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber345">source</a></span></span>
     </span>
   </h3>
 
@@ -2278,7 +2764,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber298">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber316">source</a></span></span>
     </span>
   </h3>
 
@@ -2334,7 +2820,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber308">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber326">source</a></span></span>
     </span>
   </h3>
 
@@ -2390,7 +2876,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber258">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber276">source</a></span></span>
     </span>
   </h3>
 
@@ -2446,7 +2932,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber278">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber296">source</a></span></span>
     </span>
   </h3>
 
@@ -2502,7 +2988,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber220">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber238">source</a></span></span>
     </span>
   </h3>
 
@@ -2558,7 +3044,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber268">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber286">source</a></span></span>
     </span>
   </h3>
 
@@ -2614,7 +3100,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber288">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber306">source</a></span></span>
     </span>
   </h3>
 
@@ -2670,7 +3156,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber228">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber246">source</a></span></span>
     </span>
   </h3>
 
@@ -2726,7 +3212,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber150">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber168">source</a></span></span>
     </span>
   </h3>
 
@@ -2782,7 +3268,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber181">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber199">source</a></span></span>
     </span>
   </h3>
 
@@ -2838,7 +3324,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber130">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber148">source</a></span></span>
     </span>
   </h3>
 
@@ -2910,7 +3396,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber109">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber127">source</a></span></span>
     </span>
   </h3>
 
@@ -2966,7 +3452,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber92">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber110">source</a></span></span>
     </span>
   </h3>
 
@@ -3022,7 +3508,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber119">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber137">source</a></span></span>
     </span>
   </h3>
 
@@ -3094,7 +3580,7 @@ Moves pointer forward</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber498">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber516">source</a></span></span>
     </span>
   </h3>
 
@@ -3152,7 +3638,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber341">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber359">source</a></span></span>
     </span>
   </h3>
 
@@ -3224,7 +3710,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber375">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber393">source</a></span></span>
     </span>
   </h3>
 
@@ -3296,7 +3782,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber384">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber402">source</a></span></span>
     </span>
   </h3>
 
@@ -3368,7 +3854,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber476">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber494">source</a></span></span>
     </span>
   </h3>
 
@@ -3441,7 +3927,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber485">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber503">source</a></span></span>
     </span>
   </h3>
 
@@ -3513,7 +3999,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber450">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber468">source</a></span></span>
     </span>
   </h3>
 
@@ -3586,7 +4072,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber463">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber481">source</a></span></span>
     </span>
   </h3>
 
@@ -3658,7 +4144,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber398">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber416">source</a></span></span>
     </span>
   </h3>
 
@@ -3730,7 +4216,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber424">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber442">source</a></span></span>
     </span>
   </h3>
 
@@ -3802,7 +4288,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber351">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber369">source</a></span></span>
     </span>
   </h3>
 
@@ -3874,7 +4360,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber411">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber429">source</a></span></span>
     </span>
   </h3>
 
@@ -3946,7 +4432,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber437">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber455">source</a></span></span>
     </span>
   </h3>
 
@@ -4019,7 +4505,7 @@ is calculated to stop at the last written byte or the original length.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber363">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/io-buffer.js.html#lineNumber381">source</a></span></span>
     </span>
   </h3>
 

@@ -348,6 +348,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "ngl/src/trajectory/frames-trajectory.js~framestrajectory",
+    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html",
+    "<span>FramesTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/frames-trajectory.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/geometry-buffer.js~geometrybuffer",
     "class/src/buffer/geometry-buffer.js~GeometryBuffer.html",
     "<span>GeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/geometry-buffer.js</span>",
@@ -606,6 +612,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/trajectory/remote-trajectory.js~remotetrajectory",
+    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html",
+    "<span>RemoteTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/remote-trajectory.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/representation.js~representation",
     "class/src/representation/representation.js~Representation.html",
     "<span>Representation</span> <span class=\"search-result-import-path\">ngl/src/representation/representation.js</span>",
@@ -813,6 +825,12 @@ window.esdocSearchIndex = [
     "ngl/src/representation/structure-representation.js~structurerepresentation",
     "class/src/representation/structure-representation.js~StructureRepresentation.html",
     "<span>StructureRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/structure-representation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/trajectory/structure-trajectory.js~structuretrajectory",
+    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html",
+    "<span>StructureTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/structure-trajectory.js</span>",
     "class"
   ],
   [
@@ -6348,15 +6366,93 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/trajectory/trajectory.js~trajectory#constructor",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-constructor-constructor",
+    "src/trajectory/trajectory.js~Trajectory#constructor",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#currentframe",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-get-currentFrame",
+    "src/trajectory/trajectory.js~Trajectory#currentFrame",
+    "member"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#dispose",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-dispose",
+    "src/trajectory/trajectory.js~Trajectory#dispose",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#framecount",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-get-frameCount",
+    "src/trajectory/trajectory.js~Trajectory#frameCount",
+    "member"
+  ],
+  [
     "src/trajectory/trajectory.js~trajectory#getframetime",
     "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-getFrameTime",
     "src/trajectory/trajectory.js~Trajectory#getFrameTime",
     "method"
   ],
   [
+    "src/trajectory/trajectory.js~trajectory#getpath",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-getPath",
+    "src/trajectory/trajectory.js~Trajectory#getPath",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#hasframe",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-hasFrame",
+    "src/trajectory/trajectory.js~Trajectory#hasFrame",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#loadframe",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-loadFrame",
+    "src/trajectory/trajectory.js~Trajectory#loadFrame",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#selection",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-selection",
+    "src/trajectory/trajectory.js~Trajectory#selection",
+    "member"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#setframe",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setFrame",
+    "src/trajectory/trajectory.js~Trajectory#setFrame",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#setframeinterpolated",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setFrameInterpolated",
+    "src/trajectory/trajectory.js~Trajectory#setFrameInterpolated",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#setplayer",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setPlayer",
+    "src/trajectory/trajectory.js~Trajectory#setPlayer",
+    "method"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectory#signals",
+    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-signals",
+    "src/trajectory/trajectory.js~Trajectory#signals",
+    "member"
+  ],
+  [
     "src/trajectory/trajectory.js~trajectoryparameters",
     "typedef/index.html#static-typedef-TrajectoryParameters",
     "src/trajectory/trajectory.js~TrajectoryParameters",
+    "typedef"
+  ],
+  [
+    "src/trajectory/trajectory.js~trajectorysignals",
+    "typedef/index.html#static-typedef-TrajectorySignals",
+    "src/trajectory/trajectory.js~TrajectorySignals",
     "typedef"
   ],
   [
@@ -6624,6 +6720,30 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/utils/io-buffer.js~iobuffer#buffer",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-buffer",
+    "src/utils/io-buffer.js~IOBuffer#buffer",
+    "member"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#bytelength",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-byteLength",
+    "src/utils/io-buffer.js~IOBuffer#byteLength",
+    "member"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#byteoffset",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-byteOffset",
+    "src/utils/io-buffer.js~IOBuffer#byteOffset",
+    "member"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#constructor",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-constructor-constructor",
+    "src/utils/io-buffer.js~IOBuffer#constructor",
+    "method"
+  ],
+  [
     "src/utils/io-buffer.js~iobuffer#ensureavailable",
     "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-ensureAvailable",
     "src/utils/io-buffer.js~IOBuffer#ensureAvailable",
@@ -6648,10 +6768,22 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/utils/io-buffer.js~iobuffer#length",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-length",
+    "src/utils/io-buffer.js~IOBuffer#length",
+    "member"
+  ],
+  [
     "src/utils/io-buffer.js~iobuffer#mark",
     "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-mark",
     "src/utils/io-buffer.js~IOBuffer#mark",
     "method"
+  ],
+  [
+    "src/utils/io-buffer.js~iobuffer#offset",
+    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-offset",
+    "src/utils/io-buffer.js~IOBuffer#offset",
+    "member"
   ],
   [
     "src/utils/io-buffer.js~iobuffer#popmark",
@@ -7084,6 +7216,12 @@ window.esdocSearchIndex = [
     "file/src/writer/stl-writer.js.html",
     "src/writer/stl-writer.js",
     "file"
+  ],
+  [
+    "src/writer/stl-writer.js~stlwriter#constructor",
+    "class/src/writer/stl-writer.js~StlWriter.html#instance-constructor-constructor",
+    "src/writer/stl-writer.js~StlWriter#constructor",
+    "method"
   ],
   [
     "src/writer/writer.js",
