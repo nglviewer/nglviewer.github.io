@@ -6,12 +6,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ngl/src/buffer/alignedbox-buffer.js~alignedboxbuffer",
-    "class/src/buffer/alignedbox-buffer.js~AlignedBoxBuffer.html",
-    "<span>AlignedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/alignedbox-buffer.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/animation/animation.js~animation",
     "class/src/animation/animation.js~Animation.html",
     "<span>Animation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
@@ -414,6 +408,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/controls/key-actions.js~keyactions",
+    "class/src/controls/key-actions.js~KeyActions.html",
+    "<span>KeyActions</span> <span class=\"search-result-import-path\">ngl/src/controls/key-actions.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/controls/key-controls.js~keycontrols",
+    "class/src/controls/key-controls.js~KeyControls.html",
+    "<span>KeyControls</span> <span class=\"search-result-import-path\">ngl/src/controls/key-controls.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/label-representation.js~labelrepresentation",
     "class/src/representation/label-representation.js~LabelRepresentation.html",
     "<span>LabelRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/label-representation.js</span>",
@@ -444,9 +450,27 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer",
+    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html",
+    "<span>MappedAlignedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mappedalignedbox-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/mappedbox-buffer.js~mappedboxbuffer",
+    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html",
+    "<span>MappedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mappedbox-buffer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/mapped-buffer.js~mappedbuffer",
     "class/src/buffer/mapped-buffer.js~MappedBuffer.html",
     "<span>MappedBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mapped-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/mappedquad-buffer.js~mappedquadbuffer",
+    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html",
+    "<span>MappedQuadBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mappedquad-buffer.js</span>",
     "class"
   ],
   [
@@ -600,12 +624,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/buffer/quad-buffer.js~quadbuffer",
-    "class/src/buffer/quad-buffer.js~QuadBuffer.html",
-    "<span>QuadBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/quad-buffer.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/color/random-colormaker.js~randomcolormaker",
     "class/src/color/random-colormaker.js~RandomColormaker.html",
     "<span>RandomColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/random-colormaker.js</span>",
@@ -720,9 +738,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/selection.js~selection",
-    "class/src/selection.js~Selection.html",
-    "<span>Selection</span> <span class=\"search-result-import-path\">ngl/src/selection.js</span>",
+    "ngl/src/selection/selection.js~selection",
+    "class/src/selection/selection.js~Selection.html",
+    "<span>Selection</span> <span class=\"search-result-import-path\">ngl/src/selection/selection.js</span>",
     "class"
   ],
   [
@@ -1464,12 +1482,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/alignedbox-buffer.js",
-    "file/src/buffer/alignedbox-buffer.js.html",
-    "src/buffer/alignedbox-buffer.js",
-    "file"
-  ],
-  [
     "src/buffer/arrow-buffer.js",
     "file/src/buffer/arrow-buffer.js.html",
     "src/buffer/arrow-buffer.js",
@@ -1740,6 +1752,24 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/buffer/mappedalignedbox-buffer.js",
+    "file/src/buffer/mappedalignedbox-buffer.js.html",
+    "src/buffer/mappedalignedbox-buffer.js",
+    "file"
+  ],
+  [
+    "src/buffer/mappedbox-buffer.js",
+    "file/src/buffer/mappedbox-buffer.js.html",
+    "src/buffer/mappedbox-buffer.js",
+    "file"
+  ],
+  [
+    "src/buffer/mappedquad-buffer.js",
+    "file/src/buffer/mappedquad-buffer.js.html",
+    "src/buffer/mappedquad-buffer.js",
+    "file"
+  ],
+  [
     "src/buffer/mesh-buffer.js",
     "file/src/buffer/mesh-buffer.js.html",
     "src/buffer/mesh-buffer.js",
@@ -1762,12 +1792,6 @@ window.esdocSearchIndex = [
     "class/src/buffer/point-buffer.js~PointBuffer.html#instance-constructor-constructor",
     "src/buffer/point-buffer.js~PointBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/quad-buffer.js",
-    "file/src/buffer/quad-buffer.js.html",
-    "src/buffer/quad-buffer.js",
-    "file"
   ],
   [
     "src/buffer/ribbon-buffer.js",
@@ -2802,6 +2826,72 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/key-actions.js",
+    "file/src/controls/key-actions.js.html",
+    "src/controls/key-actions.js",
+    "file"
+  ],
+  [
+    "src/controls/key-actions.js~keyactions.toggleanimations",
+    "class/src/controls/key-actions.js~KeyActions.html#static-method-toggleAnimations",
+    "src/controls/key-actions.js~KeyActions.toggleAnimations",
+    "method"
+  ],
+  [
+    "src/controls/key-actions.js~keyactions.togglerock",
+    "class/src/controls/key-actions.js~KeyActions.html#static-method-toggleRock",
+    "src/controls/key-actions.js~KeyActions.toggleRock",
+    "method"
+  ],
+  [
+    "src/controls/key-actions.js~keyactions.togglespin",
+    "class/src/controls/key-actions.js~KeyActions.html#static-method-toggleSpin",
+    "src/controls/key-actions.js~KeyActions.toggleSpin",
+    "method"
+  ],
+  [
+    "src/controls/key-controls.js",
+    "file/src/controls/key-controls.js.html",
+    "src/controls/key-controls.js",
+    "file"
+  ],
+  [
+    "src/controls/key-controls.js~keycontrols#add",
+    "class/src/controls/key-controls.js~KeyControls.html#instance-method-add",
+    "src/controls/key-controls.js~KeyControls#add",
+    "method"
+  ],
+  [
+    "src/controls/key-controls.js~keycontrols#clear",
+    "class/src/controls/key-controls.js~KeyControls.html#instance-method-clear",
+    "src/controls/key-controls.js~KeyControls#clear",
+    "method"
+  ],
+  [
+    "src/controls/key-controls.js~keycontrols#constructor",
+    "class/src/controls/key-controls.js~KeyControls.html#instance-constructor-constructor",
+    "src/controls/key-controls.js~KeyControls#constructor",
+    "method"
+  ],
+  [
+    "src/controls/key-controls.js~keycontrols#disabled",
+    "class/src/controls/key-controls.js~KeyControls.html#instance-member-disabled",
+    "src/controls/key-controls.js~KeyControls#disabled",
+    "member"
+  ],
+  [
+    "src/controls/key-controls.js~keycontrols#preset",
+    "class/src/controls/key-controls.js~KeyControls.html#instance-method-preset",
+    "src/controls/key-controls.js~KeyControls#preset",
+    "method"
+  ],
+  [
+    "src/controls/key-controls.js~keycontrols#remove",
+    "class/src/controls/key-controls.js~KeyControls.html#instance-method-remove",
+    "src/controls/key-controls.js~KeyControls#remove",
+    "method"
+  ],
+  [
     "src/controls/mouse-actions.js",
     "file/src/controls/mouse-actions.js.html",
     "src/controls/mouse-actions.js",
@@ -2904,6 +2994,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/mouse-controls.js~mousecontrols#disabled",
+    "class/src/controls/mouse-controls.js~MouseControls.html#instance-member-disabled",
+    "src/controls/mouse-controls.js~MouseControls#disabled",
+    "member"
+  ],
+  [
     "src/controls/mouse-controls.js~mousecontrols#preset",
     "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-preset",
     "src/controls/mouse-controls.js~MouseControls#preset",
@@ -2973,6 +3069,12 @@ window.esdocSearchIndex = [
     "src/controls/picking-proxy.js~pickingproxy#bond",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-bond",
     "src/controls/picking-proxy.js~PickingProxy#bond",
+    "member"
+  ],
+  [
+    "src/controls/picking-proxy.js~pickingproxy#box",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-box",
+    "src/controls/picking-proxy.js~PickingProxy#box",
     "member"
   ],
   [
@@ -3435,6 +3537,12 @@ window.esdocSearchIndex = [
     "src/geometry/shape.js~shape#addarrow",
     "class/src/geometry/shape.js~Shape.html#instance-method-addArrow",
     "src/geometry/shape.js~Shape#addArrow",
+    "method"
+  ],
+  [
+    "src/geometry/shape.js~shape#addbox",
+    "class/src/geometry/shape.js~Shape.html#instance-method-addBox",
+    "src/geometry/shape.js~Shape#addBox",
     "method"
   ],
   [
@@ -5184,15 +5292,33 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/selection.js",
-    "file/src/selection.js.html",
-    "src/selection.js",
+    "src/selection/selection-constants.js",
+    "file/src/selection/selection-constants.js.html",
+    "src/selection/selection-constants.js",
     "file"
   ],
   [
-    "src/selection.js~selection#constructor",
-    "class/src/selection.js~Selection.html#instance-constructor-constructor",
-    "src/selection.js~Selection#constructor",
+    "src/selection/selection-parser.js",
+    "file/src/selection/selection-parser.js.html",
+    "src/selection/selection-parser.js",
+    "file"
+  ],
+  [
+    "src/selection/selection-test.js",
+    "file/src/selection/selection-test.js.html",
+    "src/selection/selection-test.js",
+    "file"
+  ],
+  [
+    "src/selection/selection.js",
+    "file/src/selection/selection.js.html",
+    "src/selection/selection.js",
+    "file"
+  ],
+  [
+    "src/selection/selection.js~selection#constructor",
+    "class/src/selection/selection.js~Selection.html#instance-constructor-constructor",
+    "src/selection/selection.js~Selection#constructor",
     "method"
   ],
   [
@@ -5434,6 +5560,12 @@ window.esdocSearchIndex = [
     "class/src/stage/stage.js~Stage.html#instance-method-handleResize",
     "src/stage/stage.js~Stage#handleResize",
     "method"
+  ],
+  [
+    "src/stage/stage.js~stage#keycontrols",
+    "class/src/stage/stage.js~Stage.html#instance-member-keyControls",
+    "src/stage/stage.js~Stage#keyControls",
+    "member"
   ],
   [
     "src/stage/stage.js~stage#loadfile",
