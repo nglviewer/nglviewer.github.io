@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-13</span>
+<header><span>NGL@0.10.5-14</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -153,7 +153,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">datasource</div><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/datasource/datasource.js~Datasource.html">Datasource</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ArrowPrimitive.html">ArrowPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~BoxPrimitive.html">BoxPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ConePrimitive.html">ConePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~CylinderPrimitive.html">CylinderPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~EllipsoidPrimitive.html">EllipsoidPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~SpherePrimitive.html">SpherePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~TextPrimitive.html">TextPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~Primitive.html">Primitive</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
@@ -273,7 +281,7 @@ import { Color, CanvasTexture } from &apos;../../lib/three.es6.js&apos;
 import &apos;../shader/SDFFont.vert&apos;
 import &apos;../shader/SDFFont.frag&apos;
 
-import { Browser } from &apos;../globals.js&apos;
+import { Browser, BufferRegistry } from &apos;../globals.js&apos;
 import { defaults } from &apos;../utils.js&apos;
 import MappedQuadBuffer from &apos;./mappedquad-buffer.js&apos;
 import { IgnorePicker } from &apos;../utils/picker.js&apos;
@@ -879,6 +887,8 @@ class TextBuffer extends MappedQuadBuffer {
   get vertexShader () { return &apos;SDFFont.vert&apos; }
   get fragmentShader () { return &apos;SDFFont.frag&apos; }
 }
+
+BufferRegistry.add(&apos;text&apos;, TextBuffer)
 
 export default TextBuffer
 </code></pre>

@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-13</span>
+<header><span>NGL@0.10.5-14</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -153,7 +153,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">datasource</div><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/datasource/datasource.js~Datasource.html">Datasource</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ArrowPrimitive.html">ArrowPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~BoxPrimitive.html">BoxPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ConePrimitive.html">ConePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~CylinderPrimitive.html">CylinderPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~EllipsoidPrimitive.html">EllipsoidPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~SpherePrimitive.html">SpherePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~TextPrimitive.html">TextPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~Primitive.html">Primitive</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
@@ -351,8 +359,10 @@ class MouseObserver {
   /**
    * @param  {Element} domElement - the dom element to observe mouse events in
    * @param  {Object} params - parameters object
-   * @param  {Integer} params.hoverTimeout - timeout until the {@link MouseSignals.hovered}
+   * @param  {Integer} params.hoverTimeout - timeout in ms until the {@link MouseSignals.hovered}
    *                                         signal is fired, set to -1 to ignore hovering
+   * @param  {Boolean} params.handleScroll - whether or not to handle scroll events
+   * @param  {Integer} params.doubleClickSpeed - max time in ms to trigger double click
    */
   constructor (domElement, params) {
     /**
@@ -373,6 +383,7 @@ class MouseObserver {
 
     this.hoverTimeout = defaults(p.hoverTimeout, 50)
     this.handleScroll = defaults(p.handleScroll, true)
+    this.doubleClickSpeed = defaults(p.doubleClickSpeed, 200)
 
     this.domElement = domElement
 
@@ -504,9 +515,12 @@ class MouseObserver {
   _listen () {
     const now = window.performance.now()
     const cp = this.canvasPosition
-    if (this.clickPending &amp;&amp; now - this.lastClicked &gt; 200) {
+    if (this.clickPending &amp;&amp; now - this.lastClicked &gt; this.doubleClickSpeed) {
       this.signals.clicked.dispatch(cp.x, cp.y)
       this.clickPending = false
+      this.which = undefined
+      this.buttons = undefined
+      this.pressed = undefined
     }
     if (now - this.lastMoved &gt; this.hoverTimeout) {
       this.moving = false
@@ -615,17 +629,21 @@ class MouseObserver {
       if (this.clickPending &amp;&amp; this.prevClickCP.distanceTo(cp) &lt; 4) {
         this.signals.doubleClicked.dispatch(cp.x, cp.y)
         this.clickPending = false
+        this.which = undefined
+        this.buttons = undefined
+        this.pressed = undefined
       } else {
         this.clickPending = true
       }
       this.prevClickCP.copy(cp)
+    } else {
+      this.which = undefined
+      this.buttons = undefined
+      this.pressed = undefined
     }
     // if (this._distance() &gt; 3 || event.which === RightMouseButton) {
     //   this.signals.dropped.dispatch();
     // }
-    this.which = undefined
-    this.buttons = undefined
-    this.pressed = undefined
   }
 
   _onContextmenu (event) {

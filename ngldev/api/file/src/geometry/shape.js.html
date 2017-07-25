@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-13</span>
+<header><span>NGL@0.10.5-14</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -153,7 +153,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">datasource</div><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/datasource/datasource.js~Datasource.html">Datasource</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ArrowPrimitive.html">ArrowPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~BoxPrimitive.html">BoxPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ConePrimitive.html">ConePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~CylinderPrimitive.html">CylinderPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~EllipsoidPrimitive.html">EllipsoidPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~SpherePrimitive.html">SpherePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~TextPrimitive.html">TextPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~Primitive.html">Primitive</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
@@ -268,35 +276,22 @@
  * @private
  */
 
-import { Vector3, Box3 } from &apos;../../lib/three.es6.js&apos;
+import { Box3 } from &apos;../../lib/three.es6.js&apos;
 
 import { defaults, ensureFloat32Array, getUintArray } from &apos;../utils.js&apos;
 import {
-    ArrowPicker, BoxPicker, ConePicker, CylinderPicker,
-    EllipsoidPicker, MeshPicker, SpherePicker
-} from &apos;../utils/picker.js&apos;
-import ArrowBuffer from &apos;../buffer/arrow-buffer.js&apos;
-import BoxBuffer from &apos;../buffer/box-buffer.js&apos;
-import ConeBuffer from &apos;../buffer/cone-buffer.js&apos;
-import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
-import EllipsoidBuffer from &apos;../buffer/ellipsoid-buffer.js&apos;
+  ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive,
+  EllipsoidPrimitive, TextPrimitive, SpherePrimitive
+} from &apos;../geometry/primitive.js&apos;
+import { MeshPicker } from &apos;../utils/picker.js&apos;
 import MeshBuffer from &apos;../buffer/mesh-buffer.js&apos;
-import SphereBuffer from &apos;../buffer/sphere-buffer.js&apos;
-import TextBuffer from &apos;../buffer/text-buffer.js&apos;
 
-function addElement (elm, array) {
-  if (elm.toArray !== undefined) {
-    elm = elm.toArray()
-  } else if (elm.x !== undefined) {
-    elm = [ elm.x, elm.y, elm.z ]
-  } else if (elm.r !== undefined) {
-    elm = [ elm.r, elm.g, elm.b ]
-  }
-  array.push.apply(array, elm)
-}
-
-const tmpVec = new Vector3()
 const tmpBox = new Box3()
+
+const Primitives = [
+  ArrowPrimitive, BoxPrimitive, ConePrimitive, CylinderPrimitive,
+  EllipsoidPrimitive, TextPrimitive, SpherePrimitive
+]
 
 /**
  * Class for building custom shapes.
@@ -340,47 +335,12 @@ class Shape {
     this.bufferList = []
     this.meshCount = 0
 
-    this.spherePosition = []
-    this.sphereColor = []
-    this.sphereRadius = []
-    this.sphereName = []
-
-    this.ellipsoidPosition = []
-    this.ellipsoidColor = []
-    this.ellipsoidRadius = []
-    this.ellipsoidMajorAxis = []
-    this.ellipsoidMinorAxis = []
-    this.ellipsoidName = []
-
-    this.cylinderPosition1 = []
-    this.cylinderPosition2 = []
-    this.cylinderColor = []
-    this.cylinderRadius = []
-    this.cylinderName = []
-
-    this.conePosition1 = []
-    this.conePosition2 = []
-    this.coneColor = []
-    this.coneRadius = []
-    this.coneName = []
-
-    this.arrowPosition1 = []
-    this.arrowPosition2 = []
-    this.arrowColor = []
-    this.arrowRadius = []
-    this.arrowName = []
-
-    this.boxPosition = []
-    this.boxColor = []
-    this.boxSize = []
-    this.boxHeightAxis = []
-    this.boxDepthAxis = []
-    this.boxName = []
-
-    this.labelPosition = []
-    this.labelColor = []
-    this.labelSize = []
-    this.labelText = []
+    Primitives.forEach(P =&gt; {
+      Object.keys(P.fields).forEach(name =&gt; {
+        this[ P.getShapeKey(name) ] = []
+      })
+      this[ P.getShapeKey(&apos;name&apos;) ] = []
+    })
   }
 
   /**
@@ -453,13 +413,9 @@ class Shape {
    * @return {Shape} this object
    */
   addSphere (position, color, radius, name) {
-    addElement(position, this.spherePosition)
-    addElement(color, this.sphereColor)
-    this.sphereRadius.push(radius)
-    this.sphereName.push(name)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position))
-
+    SpherePrimitive.objectToShape(
+      this, { position, color, radius, name }
+    )
     return this
   }
 
@@ -477,15 +433,9 @@ class Shape {
    * @return {Shape} this object
    */
   addEllipsoid (position, color, radius, majorAxis, minorAxis, name) {
-    addElement(position, this.ellipsoidPosition)
-    addElement(color, this.ellipsoidColor)
-    this.ellipsoidRadius.push(radius)
-    addElement(majorAxis, this.ellipsoidMajorAxis)
-    addElement(minorAxis, this.ellipsoidMinorAxis)
-    this.ellipsoidName.push(name)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position))
-
+    EllipsoidPrimitive.objectToShape(
+      this, { position, color, radius, majorAxis, minorAxis, name }
+    )
     return this
   }
 
@@ -502,15 +452,9 @@ class Shape {
    * @return {Shape} this object
    */
   addCylinder (position1, position2, color, radius, name) {
-    addElement(position1, this.cylinderPosition1)
-    addElement(position2, this.cylinderPosition2)
-    addElement(color, this.cylinderColor)
-    this.cylinderRadius.push(radius)
-    this.cylinderName.push(name)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position1))
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position2))
-
+    CylinderPrimitive.objectToShape(
+      this, { position1, position2, color, radius, name }
+    )
     return this
   }
 
@@ -527,15 +471,9 @@ class Shape {
    * @return {Shape} this object
    */
   addCone (position1, position2, color, radius, name) {
-    addElement(position1, this.conePosition1)
-    addElement(position2, this.conePosition2)
-    addElement(color, this.coneColor)
-    this.coneRadius.push(radius)
-    this.coneName.push(name)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position1))
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position2))
-
+    ConePrimitive.objectToShape(
+      this, { position1, position2, color, radius, name }
+    )
     return this
   }
 
@@ -552,15 +490,9 @@ class Shape {
    * @return {Shape} this object
    */
   addArrow (position1, position2, color, radius, name) {
-    addElement(position1, this.arrowPosition1)
-    addElement(position2, this.arrowPosition2)
-    addElement(color, this.arrowColor)
-    this.arrowRadius.push(radius)
-    this.arrowName.push(name)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position1))
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position2))
-
+    ArrowPrimitive.objectToShape(
+      this, { position1, position2, color, radius, name }
+    )
     return this
   }
 
@@ -578,22 +510,16 @@ class Shape {
    * @return {Shape} this object
    */
   addBox (position, color, size, heightAxis, depthAxis, name) {
-    addElement(position, this.boxPosition)
-    addElement(color, this.boxColor)
-    this.boxSize.push(size)
-    addElement(heightAxis, this.boxHeightAxis)
-    addElement(depthAxis, this.boxDepthAxis)
-    this.boxName.push(name)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position))
-
+    BoxPrimitive.objectToShape(
+      this, { position, color, size, heightAxis, depthAxis, name }
+    )
     return this
   }
 
   /**
-   * Add a label
+   * Add text
    * @example
-   * shape.addLabel([ 10, -2, 4 ], [ 0.2, 0.5, 0.8 ], 0.5, &quot;Hello&quot;);
+   * shape.addText([ 10, -2, 4 ], [ 0.2, 0.5, 0.8 ], 0.5, &quot;Hello&quot;);
    *
    * @param {Vector3|Array} position - from position vector or array
    * @param {Color|Array} color - color object or array
@@ -601,136 +527,38 @@ class Shape {
    * @param {String} text - text value
    * @return {Shape} this object
    */
-  addLabel (position, color, size, text) {
-    addElement(position, this.labelPosition)
-    addElement(color, this.labelColor)
-    this.labelSize.push(size)
-    this.labelText.push(text)
-
-    this.boundingBox.expandByPoint(tmpVec.fromArray(position))
-
+  addText (position, color, size, text) {
+    TextPrimitive.objectToShape(
+      this, { position, color, size, text }
+    )
     return this
+  }
+
+  /**
+   * Deprecated, use `.addText`
+   */
+  addLabel (position, color, size, text) {
+    console.warn(&apos;Shape.addLabel is deprecated, use .addText instead&apos;)
+    return this.addText(position, color, size, text)
   }
 
   getBufferList () {
     const buffers = []
 
-    if (this.spherePosition.length) {
-      const sphereBuffer = new SphereBuffer(
-        {
-          position: new Float32Array(this.spherePosition),
-          color: new Float32Array(this.sphereColor),
-          radius: new Float32Array(this.sphereRadius),
-          picking: new SpherePicker(this)
-        },
-        {
-          sphereDetail: this.sphereDetail,
-          disableImpostor: this.disableImpostor
-        }
-      )
-      buffers.push(sphereBuffer)
+    const params = {
+      aspectRatio: this.aspectRatio,
+      sphereDetail: this.sphereDetail,
+      radialSegments: this.radialSegments,
+      disableImpostor: this.disableImpostor,
+      openEnded: this.openEnded,
+      labelParams: this.labelParams
     }
 
-    if (this.ellipsoidPosition.length) {
-      const ellipsoidBuffer = new EllipsoidBuffer(
-        {
-          position: new Float32Array(this.ellipsoidPosition),
-          color: new Float32Array(this.ellipsoidColor),
-          radius: new Float32Array(this.ellipsoidRadius),
-          majorAxis: new Float32Array(this.ellipsoidMajorAxis),
-          minorAxis: new Float32Array(this.ellipsoidMinorAxis),
-          picking: new EllipsoidPicker(this)
-        },
-        {
-          sphereDetail: this.sphereDetail,
-          disableImpostor: this.disableImpostor
-        }
-      )
-      buffers.push(ellipsoidBuffer)
-    }
-
-    if (this.cylinderPosition1.length) {
-      const cylinderBuffer = new CylinderBuffer(
-        {
-          position1: new Float32Array(this.cylinderPosition1),
-          position2: new Float32Array(this.cylinderPosition2),
-          color: new Float32Array(this.cylinderColor),
-          color2: new Float32Array(this.cylinderColor),
-          radius: new Float32Array(this.cylinderRadius),
-          picking: new CylinderPicker(this)
-        },
-        {
-          radialSegments: this.radialSegments,
-          disableImpostor: this.disableImpostor,
-          openEnded: this.openEnded
-        }
-      )
-      buffers.push(cylinderBuffer)
-    }
-
-    if (this.conePosition1.length) {
-      const coneBuffer = new ConeBuffer(
-        {
-          position1: new Float32Array(this.conePosition1),
-          position2: new Float32Array(this.conePosition2),
-          color: new Float32Array(this.coneColor),
-          radius: new Float32Array(this.coneRadius),
-          picking: new ConePicker(this)
-        },
-        {
-          radialSegments: this.radialSegments,
-          disableImpostor: this.disableImpostor,
-          openEnded: this.openEnded
-        }
-      )
-      buffers.push(coneBuffer)
-    }
-
-    if (this.arrowPosition1.length) {
-      const arrowBuffer = new ArrowBuffer(
-        {
-          position1: new Float32Array(this.arrowPosition1),
-          position2: new Float32Array(this.arrowPosition2),
-          color: new Float32Array(this.arrowColor),
-          radius: new Float32Array(this.arrowRadius),
-          picking: new ArrowPicker(this)
-        },
-        {
-          aspectRatio: this.aspectRatio,
-          radialSegments: this.radialSegments,
-          disableImpostor: this.disableImpostor,
-          openEnded: this.openEnded
-        }
-      )
-      buffers.push(arrowBuffer)
-    }
-
-    if (this.boxPosition.length) {
-      const boxBuffer = new BoxBuffer(
-        {
-          position: new Float32Array(this.boxPosition),
-          color: new Float32Array(this.boxColor),
-          size: new Float32Array(this.boxSize),
-          heightAxis: new Float32Array(this.boxHeightAxis),
-          depthAxis: new Float32Array(this.boxDepthAxis),
-          picking: new BoxPicker(this)
-        }
-      )
-      buffers.push(boxBuffer)
-    }
-
-    if (this.labelPosition.length) {
-      const labelBuffer = new TextBuffer(
-        {
-          position: new Float32Array(this.labelPosition),
-          color: new Float32Array(this.labelColor),
-          size: new Float32Array(this.labelSize),
-          text: this.labelText
-        },
-        this.labelParams
-      )
-      buffers.push(labelBuffer)
-    }
+    Primitives.forEach(P =&gt; {
+      if (this[ P.getShapeKey(&apos;color&apos;) ].length) {
+        buffers.push(P.bufferFromShape(this, params))
+      }
+    })
 
     return this.bufferList.concat(buffers)
   }
@@ -741,47 +569,12 @@ class Shape {
     })
     this.bufferList.length = 0
 
-    this.spherePosition.length = 0
-    this.sphereColor.length = 0
-    this.sphereRadius.length = 0
-    this.sphereName.length = 0
-
-    this.ellipsoidPosition.length = 0
-    this.ellipsoidColor.length = 0
-    this.ellipsoidRadius.length = 0
-    this.ellipsoidMajorAxis.length = 0
-    this.ellipsoidMinorAxis.length = 0
-    this.ellipsoidName.length = 0
-
-    this.cylinderPosition1.length = 0
-    this.cylinderPosition2.length = 0
-    this.cylinderColor.length = 0
-    this.cylinderRadius.length = 0
-    this.cylinderName.length = 0
-
-    this.conePosition1.length = 0
-    this.conePosition2.length = 0
-    this.coneColor.length = 0
-    this.coneRadius.length = 0
-    this.coneName.length = 0
-
-    this.arrowPosition1.length = 0
-    this.arrowPosition2.length = 0
-    this.arrowColor.length = 0
-    this.arrowRadius.length = 0
-    this.arrowName.length = 0
-
-    this.boxPosition.length = 0
-    this.boxColor.length = 0
-    this.boxSize.length = 0
-    this.boxHeightAxis.length = 0
-    this.boxDepthAxis.length = 0
-    this.boxName.length = 0
-
-    this.labelPosition.length = 0
-    this.labelColor.length = 0
-    this.labelSize.length = 0
-    this.labelText.length = 0
+    Primitives.forEach(P =&gt; {
+      Object.keys(P.fields).forEach(name =&gt; {
+        this[ P.getShapeKey(name) ].length = 0
+      })
+      this[ P.getShapeKey(&apos;name&apos;) ].length = 0
+    })
   }
 
   get center () {

@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-13</span>
+<header><span>NGL@0.10.5-14</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -153,7 +153,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">datasource</div><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/datasource/datasource.js~Datasource.html">Datasource</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ArrowPrimitive.html">ArrowPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~BoxPrimitive.html">BoxPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ConePrimitive.html">ConePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~CylinderPrimitive.html">CylinderPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~EllipsoidPrimitive.html">EllipsoidPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~SpherePrimitive.html">SpherePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~TextPrimitive.html">TextPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~Primitive.html">Primitive</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
@@ -274,40 +282,40 @@ import { Log } from &apos;../globals.js&apos;
  * Polymer
  */
 class Polymer {
-    /**
-     * @param {Structure} structure - the structure
-     * @param {Integer} residueIndexStart - the index of the first residue
-     * @param {Integer} residueIndexEnd - the index of the last residue
-     */
+  /**
+   * @param {Structure} structure - the structure
+   * @param {Integer} residueIndexStart - the index of the first residue
+   * @param {Integer} residueIndexEnd - the index of the last residue
+   */
   constructor (structure, residueIndexStart, residueIndexEnd) {
-        /**
-         * @type {Structure}
-         */
+    /**
+     * @type {Structure}
+     */
     this.structure = structure
-        /**
-         * @type {ChainStore}
-         */
+    /**
+     * @type {ChainStore}
+     */
     this.chainStore = structure.chainStore
-        /**
-         * @type {ResidueStore}
-         */
+    /**
+     * @type {ResidueStore}
+     */
     this.residueStore = structure.residueStore
-        /**
-         * @type {AtomStore}
-         */
+    /**
+     * @type {AtomStore}
+     */
     this.atomStore = structure.atomStore
 
-        /**
-         * @type {Integer}
-         */
+    /**
+     * @type {Integer}
+     */
     this.residueIndexStart = residueIndexStart
-        /**
-         * @type {Integer}
-         */
+    /**
+     * @type {Integer}
+     */
     this.residueIndexEnd = residueIndexEnd
-        /**
-         * @type {Integer}
-         */
+    /**
+     * @type {Integer}
+     */
     this.residueCount = residueIndexEnd - residueIndexStart + 1
 
     var rpStart = this.structure.getResidueProxy(this.residueIndexStart)
@@ -320,7 +328,7 @@ class Polymer {
 
     this.__residueProxy = this.structure.getResidueProxy()
 
-        // console.log( this.qualifiedName(), this );
+    // console.log( this.qualifiedName(), this );
   }
 
   get chainIndex () {
@@ -330,37 +338,37 @@ class Polymer {
     return this.chainStore.modelIndex[ this.chainIndex ]
   }
 
-    /**
-     * @type {String}
-     */
+  /**
+   * @type {String}
+   */
   get chainname () {
     return this.chainStore.getChainname(this.chainIndex)
   }
 
-    //
+  //
 
-    /**
-     * If first residue is from aprotein
-     * @return {Boolean} flag
-     */
+  /**
+   * If first residue is from aprotein
+   * @return {Boolean} flag
+   */
   isProtein () {
     this.__residueProxy.index = this.residueIndexStart
     return this.__residueProxy.isProtein()
   }
 
-    /**
-     * If atom is part of a coarse-grain group
-     * @return {Boolean} flag
-     */
+  /**
+   * If atom is part of a coarse-grain group
+   * @return {Boolean} flag
+   */
   isCg () {
     this.__residueProxy.index = this.residueIndexStart
     return this.__residueProxy.isCg()
   }
 
-    /**
-     * If atom is part of a nucleic molecule
-     * @return {Boolean} flag
-     */
+  /**
+   * If atom is part of a nucleic molecule
+   * @return {Boolean} flag
+   */
   isNucleic () {
     this.__residueProxy.index = this.residueIndexStart
     return this.__residueProxy.isNucleic()
@@ -377,7 +385,7 @@ class Polymer {
   }
 
   getAtomIndexByType (index, type) {
-        // TODO pre-calculate, add to residueStore???
+    // TODO pre-calculate, add to residueStore???
 
     if (this.isCyclic) {
       if (index === -1) {
@@ -388,7 +396,7 @@ class Polymer {
     } else {
       if (index === -1 &amp;&amp; !this.isPrevConnected) index += 1
       if (index === this.residueCount &amp;&amp; !this.isNextNextConnected) index -= 1
-            // if( index === this.residueCount - 1 &amp;&amp; !this.isNextConnected ) index -= 1;
+      // if( index === this.residueCount - 1 &amp;&amp; !this.isNextConnected ) index -= 1;
     }
 
     var rp = this.__residueProxy
@@ -410,24 +418,24 @@ class Polymer {
         aIndex = ap ? ap.index : undefined
     }
 
-        // if( !ap ){
-        //     console.log( this, type, rp.residueType )
-        //     // console.log( rp.qualifiedName(), rp.index, index, this.residueCount - 1 )
-        //     // rp.index = this.residueIndexStart;
-        //     // console.log( rp.qualifiedName(), this.residueIndexStart )
-        //     // rp.index = this.residueIndexEnd;
-        //     // console.log( rp.qualifiedName(), this.residueIndexEnd )
-        // }
+    // if( !ap ){
+    //     console.log( this, type, rp.residueType )
+    //     // console.log( rp.qualifiedName(), rp.index, index, this.residueCount - 1 )
+    //     // rp.index = this.residueIndexStart;
+    //     // console.log( rp.qualifiedName(), this.residueIndexStart )
+    //     // rp.index = this.residueIndexEnd;
+    //     // console.log( rp.qualifiedName(), this.residueIndexEnd )
+    // }
 
     return aIndex
   }
 
-    /**
-     * Atom iterator
-     * @param  {function(atom: AtomProxy)} callback - the callback
-     * @param  {Selection} [selection] - the selection
-     * @return {undefined}
-     */
+  /**
+   * Atom iterator
+   * @param  {function(atom: AtomProxy)} callback - the callback
+   * @param  {Selection} [selection] - the selection
+   * @return {undefined}
+   */
   eachAtom (callback, selection) {
     this.eachResidue(function (rp) {
       rp.eachAtom(callback, selection)
@@ -454,7 +462,7 @@ class Polymer {
   }
 
   eachAtomN2 (n, callback, type) {
-        // console.log(this.residueOffset,this.residueCount)
+    // console.log(this.residueOffset,this.residueCount)
 
     var offset = this.atomOffset
     var count = this.atomCount
@@ -465,7 +473,7 @@ class Polymer {
     for (var i = 0; i &lt; n; ++i) {
       array[ i ] = this.structure.getAtomProxy()
     }
-        // console.log( array, offset, end, count )
+    // console.log( array, offset, end, count )
 
     let atomSet = this.structure.atomSetCache[ &apos;__&apos; + type ]
     if (atomSet === undefined) {
@@ -492,11 +500,11 @@ class Polymer {
     })
   }
 
-    /**
-     * Residue iterator
-     * @param  {function(residue: ResidueProxy)} callback - the callback
-     * @return {undefined}
-     */
+  /**
+   * Residue iterator
+   * @param  {function(residue: ResidueProxy)} callback - the callback
+   * @return {undefined}
+   */
   eachResidue (callback) {
     var rp = this.structure.getResidueProxy()
     var n = this.residueCount

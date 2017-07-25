@@ -11,7 +11,7 @@
 </head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-13</span>
+<header><span>NGL@0.10.5-14</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -153,7 +153,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PickingData">PickingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-OrientationMatrix">OrientationMatrix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">datasource</div><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/datasource/datasource.js~Datasource.html">Datasource</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">geometry</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ArrowPrimitive.html">ArrowPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~BoxPrimitive.html">BoxPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~ConePrimitive.html">ConePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~CylinderPrimitive.html">CylinderPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~EllipsoidPrimitive.html">EllipsoidPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~SpherePrimitive.html">SpherePrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~TextPrimitive.html">TextPrimitive</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/shape.js~Shape.html">Shape</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/geometry/primitive.js~Primitive.html">Primitive</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">loader</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/parser-loader.js~ParserLoader.html">ParserLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loader/plugin-loader.js~PluginLoader.html">PluginLoader</a></span></span></li>
@@ -848,7 +856,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber93">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber95">source</a></span></span>
     </span>
   </h3>
 
@@ -885,8 +893,22 @@ since the last mouse move</p>
       <td data-ice="name" data-depth="1">params.hoverTimeout</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>timeout until the <span>MouseSignals.hovered</span>
+      <td data-ice="description"><p>timeout in ms until the <span>MouseSignals.hovered</span>
                                         signal is fired, set to -1 to ignore hovering</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">params.handleScroll</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>whether or not to handle scroll events</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">params.doubleClickSpeed</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Integer</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>max time in ms to trigger double click</p>
 </td>
     </tr>
 </tbody>
@@ -926,7 +948,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber177">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber180">source</a></span></span>
     </span>
   </h3>
 
@@ -970,7 +992,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber167">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber170">source</a></span></span>
     </span>
   </h3>
 
@@ -1015,7 +1037,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber134">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber137">source</a></span></span>
     </span>
   </h3>
 
@@ -1059,7 +1081,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber182">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber185">source</a></span></span>
     </span>
   </h3>
 
@@ -1103,7 +1125,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber129">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber132">source</a></span></span>
     </span>
   </h3>
 
@@ -1147,7 +1169,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber144">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber147">source</a></span></span>
     </span>
   </h3>
 
@@ -1191,7 +1213,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber155">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber158">source</a></span></span>
     </span>
   </h3>
 
@@ -1235,7 +1257,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber187">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber190">source</a></span></span>
     </span>
   </h3>
 
@@ -1279,7 +1301,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber139">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
@@ -1323,7 +1345,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber119">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber122">source</a></span></span>
     </span>
   </h3>
 
@@ -1367,7 +1389,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber172">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber175">source</a></span></span>
     </span>
   </h3>
 
@@ -1411,7 +1433,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber124">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber127">source</a></span></span>
     </span>
   </h3>
 
@@ -1455,7 +1477,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber150">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber153">source</a></span></span>
     </span>
   </h3>
 
@@ -1500,7 +1522,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber192">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber195">source</a></span></span>
     </span>
   </h3>
 
@@ -1544,7 +1566,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber98">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber100">source</a></span></span>
     </span>
   </h3>
 
@@ -1588,7 +1610,7 @@ since the last mouse move</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber161">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/stage/mouse-observer.js.html#lineNumber164">source</a></span></span>
     </span>
   </h3>
 

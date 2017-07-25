@@ -36,6 +36,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/geometry/primitive.js~arrowprimitive",
+    "class/src/geometry/primitive.js~ArrowPrimitive.html",
+    "<span>ArrowPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/symmetry/assembly.js~assembly",
     "class/src/symmetry/assembly.js~Assembly.html",
     "<span>Assembly</span> <span class=\"search-result-import-path\">ngl/src/symmetry/assembly.js</span>",
@@ -123,6 +129,12 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/box-buffer.js~boxbuffer",
     "class/src/buffer/box-buffer.js~BoxBuffer.html",
     "<span>BoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/box-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~boxprimitive",
+    "class/src/geometry/primitive.js~BoxPrimitive.html",
+    "<span>BoxPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -222,6 +234,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/geometry/primitive.js~coneprimitive",
+    "class/src/geometry/primitive.js~ConePrimitive.html",
+    "<span>ConePrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/representation/contact-representation.js~contactrepresentation",
     "class/src/representation/contact-representation.js~ContactRepresentation.html",
     "<span>ContactRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/contact-representation.js</span>",
@@ -261,6 +279,12 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer",
     "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html",
     "<span>CylinderImpostorBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/cylinderimpostor-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~cylinderprimitive",
+    "class/src/geometry/primitive.js~CylinderPrimitive.html",
+    "<span>CylinderPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -315,6 +339,12 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer",
     "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html",
     "<span>EllipsoidGeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/ellipsoidgeometry-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~ellipsoidprimitive",
+    "class/src/geometry/primitive.js~EllipsoidPrimitive.html",
+    "<span>EllipsoidPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -618,6 +648,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/geometry/primitive.js~primitive",
+    "class/src/geometry/primitive.js~Primitive.html",
+    "<span>Primitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/math/principal-axes.js~principalaxes",
     "class/src/math/principal-axes.js~PrincipalAxes.html",
     "<span>PrincipalAxes</span> <span class=\"search-result-import-path\">ngl/src/math/principal-axes.js</span>",
@@ -798,6 +834,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/geometry/primitive.js~sphereprimitive",
+    "class/src/geometry/primitive.js~SpherePrimitive.html",
+    "<span>SpherePrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/animation/animation.js~spinanimation",
     "class/src/animation/animation.js~SpinAnimation.html",
     "<span>SpinAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
@@ -885,6 +927,12 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/text-buffer.js~textbuffer",
     "class/src/buffer/text-buffer.js~TextBuffer.html",
     "<span>TextBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/text-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~textprimitive",
+    "class/src/geometry/primitive.js~TextPrimitive.html",
+    "<span>TextPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -2922,6 +2970,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controls/mouse-actions.js~mouseactions.panatomdrag",
+    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-panAtomDrag",
+    "src/controls/mouse-actions.js~MouseActions.panAtomDrag",
+    "method"
+  ],
+  [
     "src/controls/mouse-actions.js~mouseactions.pancomponentdrag",
     "class/src/controls/mouse-actions.js~MouseActions.html#static-method-panComponentDrag",
     "src/controls/mouse-actions.js~MouseActions.panComponentDrag",
@@ -3528,6 +3582,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/geometry/primitive.js",
+    "file/src/geometry/primitive.js.html",
+    "src/geometry/primitive.js",
+    "file"
+  ],
+  [
     "src/geometry/shape.js",
     "file/src/geometry/shape.js.html",
     "src/geometry/shape.js",
@@ -3585,6 +3645,12 @@ window.esdocSearchIndex = [
     "src/geometry/shape.js~shape#addsphere",
     "class/src/geometry/shape.js~Shape.html#instance-method-addSphere",
     "src/geometry/shape.js~Shape#addSphere",
+    "method"
+  ],
+  [
+    "src/geometry/shape.js~shape#addtext",
+    "class/src/geometry/shape.js~Shape.html#instance-method-addText",
+    "src/geometry/shape.js~Shape#addText",
     "method"
   ],
   [
@@ -4224,6 +4290,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/proxy/atom-proxy.js~atomproxy#positionadd",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionAdd",
+    "src/proxy/atom-proxy.js~AtomProxy#positionAdd",
+    "method"
+  ],
+  [
     "src/proxy/atom-proxy.js~atomproxy#positionfromarray",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionFromArray",
     "src/proxy/atom-proxy.js~AtomProxy#positionFromArray",
@@ -4233,6 +4305,12 @@ window.esdocSearchIndex = [
     "src/proxy/atom-proxy.js~atomproxy#positionfromvector3",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionFromVector3",
     "src/proxy/atom-proxy.js~AtomProxy#positionFromVector3",
+    "method"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#positionsub",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionSub",
+    "src/proxy/atom-proxy.js~AtomProxy#positionSub",
     "method"
   ],
   [
