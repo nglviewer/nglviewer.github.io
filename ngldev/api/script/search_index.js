@@ -588,6 +588,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/buffer/octahedron-buffer.js~octahedronbuffer",
+    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html",
+    "<span>OctahedronBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/octahedron-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~octahedronprimitive",
+    "class/src/geometry/primitive.js~OctahedronPrimitive.html",
+    "<span>OctahedronPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/loader/parser-loader.js~parserloader",
     "class/src/loader/parser-loader.js~ParserLoader.html",
     "<span>ParserLoader</span> <span class=\"search-result-import-path\">ngl/src/loader/parser-loader.js</span>",
@@ -924,6 +936,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/buffer/tetrahedron-buffer.js~tetrahedronbuffer",
+    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html",
+    "<span>TetrahedronBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/tetrahedron-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~tetrahedronprimitive",
+    "class/src/geometry/primitive.js~TetrahedronPrimitive.html",
+    "<span>TetrahedronPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/buffer/text-buffer.js~textbuffer",
     "class/src/buffer/text-buffer.js~TextBuffer.html",
     "<span>TextBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/text-buffer.js</span>",
@@ -939,6 +963,18 @@ window.esdocSearchIndex = [
     "ngl/src/animation/animation.js~timeoutanimation",
     "class/src/animation/animation.js~TimeoutAnimation.html",
     "<span>TimeoutAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/buffer/torus-buffer.js~torusbuffer",
+    "class/src/buffer/torus-buffer.js~TorusBuffer.html",
+    "<span>TorusBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/torus-buffer.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/geometry/primitive.js~torusprimitive",
+    "class/src/geometry/primitive.js~TorusPrimitive.html",
+    "<span>TorusPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -1830,6 +1866,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/buffer/octahedron-buffer.js",
+    "file/src/buffer/octahedron-buffer.js.html",
+    "src/buffer/octahedron-buffer.js",
+    "file"
+  ],
+  [
     "src/buffer/point-buffer.js",
     "file/src/buffer/point-buffer.js.html",
     "src/buffer/point-buffer.js",
@@ -1896,6 +1938,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/buffer/tetrahedron-buffer.js",
+    "file/src/buffer/tetrahedron-buffer.js.html",
+    "src/buffer/tetrahedron-buffer.js",
+    "file"
+  ],
+  [
     "src/buffer/text-buffer.js",
     "file/src/buffer/text-buffer.js.html",
     "src/buffer/text-buffer.js",
@@ -1912,6 +1960,12 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-TextBufferParameters",
     "src/buffer/text-buffer.js~TextBufferParameters",
     "typedef"
+  ],
+  [
+    "src/buffer/torus-buffer.js",
+    "file/src/buffer/torus-buffer.js.html",
+    "src/buffer/torus-buffer.js",
+    "file"
   ],
   [
     "src/buffer/trace-buffer.js",
@@ -3234,6 +3288,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/controls/picking-proxy.js~pickingproxy#octahedron",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-octahedron",
+    "src/controls/picking-proxy.js~PickingProxy#octahedron",
+    "member"
+  ],
+  [
     "src/controls/picking-proxy.js~pickingproxy#position",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-position",
     "src/controls/picking-proxy.js~PickingProxy#position",
@@ -3267,6 +3327,18 @@ window.esdocSearchIndex = [
     "src/controls/picking-proxy.js~pickingproxy#surface",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-surface",
     "src/controls/picking-proxy.js~PickingProxy#surface",
+    "member"
+  ],
+  [
+    "src/controls/picking-proxy.js~pickingproxy#tetrahedron",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-tetrahedron",
+    "src/controls/picking-proxy.js~PickingProxy#tetrahedron",
+    "member"
+  ],
+  [
+    "src/controls/picking-proxy.js~pickingproxy#torus",
+    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-torus",
+    "src/controls/picking-proxy.js~PickingProxy#torus",
     "member"
   ],
   [
@@ -3642,15 +3714,33 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/geometry/shape.js~shape#addoctahedron",
+    "class/src/geometry/shape.js~Shape.html#instance-method-addOctahedron",
+    "src/geometry/shape.js~Shape#addOctahedron",
+    "method"
+  ],
+  [
     "src/geometry/shape.js~shape#addsphere",
     "class/src/geometry/shape.js~Shape.html#instance-method-addSphere",
     "src/geometry/shape.js~Shape#addSphere",
     "method"
   ],
   [
+    "src/geometry/shape.js~shape#addtetrahedron",
+    "class/src/geometry/shape.js~Shape.html#instance-method-addTetrahedron",
+    "src/geometry/shape.js~Shape#addTetrahedron",
+    "method"
+  ],
+  [
     "src/geometry/shape.js~shape#addtext",
     "class/src/geometry/shape.js~Shape.html#instance-method-addText",
     "src/geometry/shape.js~Shape#addText",
+    "method"
+  ],
+  [
+    "src/geometry/shape.js~shape#addtorus",
+    "class/src/geometry/shape.js~Shape.html#instance-method-addTorus",
+    "src/geometry/shape.js~Shape#addTorus",
     "method"
   ],
   [
