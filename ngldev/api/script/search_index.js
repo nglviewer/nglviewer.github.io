@@ -1,62 +1,20 @@
 window.esdocSearchIndex = [
   [
-    "ngl/src/structure/structure-constants.js~aa1",
-    "variable/index.html#static-variable-AA1",
-    "<span>AA1</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~aa3",
-    "variable/index.html#static-variable-AA3",
-    "<span>AA3</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/surface/av-surface.js~avhash",
     "function/index.html#static-function-AVHash",
     "<span>AVHash</span> <span class=\"search-result-import-path\">ngl/src/surface/av-surface.js</span>",
     "function"
   ],
   [
-    "ngl/src/surface/av-surface.js~avsurface",
-    "function/index.html#static-function-AVSurface",
-    "<span>AVSurface</span> <span class=\"search-result-import-path\">ngl/src/surface/av-surface.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~acidicresname",
-    "variable/index.html#static-variable-AcidicResname",
-    "<span>AcidicResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/align/alignment.js~alignment",
-    "class/src/align/alignment.js~Alignment.html",
-    "<span>Alignment</span> <span class=\"search-result-import-path\">ngl/src/align/alignment.js</span>",
+    "ngl/src/buffer/alignedbox-buffer.js~alignedboxbuffer",
+    "class/src/buffer/alignedbox-buffer.js~AlignedBoxBuffer.html",
+    "<span>AlignedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/alignedbox-buffer.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~aliphaticresname",
-    "variable/index.html#static-variable-AliphaticResname",
-    "<span>AliphaticResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~amideresname",
-    "variable/index.html#static-variable-AmideResname",
-    "<span>AmideResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/animation/animation.js~animation",
     "class/src/animation/animation.js~Animation.html",
     "<span>Animation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/stage/animation-behavior.js~animationbehavior",
-    "class/src/stage/animation-behavior.js~AnimationBehavior.html",
-    "<span>AnimationBehavior</span> <span class=\"search-result-import-path\">ngl/src/stage/animation-behavior.js</span>",
     "class"
   ],
   [
@@ -78,51 +36,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/selection/selection-constants.js~aromaticresname",
-    "variable/index.html#static-variable-AromaticResname",
-    "<span>AromaticResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/buffer/arrow-buffer.js~arrowbuffer",
     "class/src/buffer/arrow-buffer.js~ArrowBuffer.html",
     "<span>ArrowBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/arrow-buffer.js</span>",
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~arrowpicker",
-    "class/src/utils/picker.js~ArrowPicker.html",
-    "<span>ArrowPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~arrowprimitive",
-    "class/src/geometry/primitive.js~ArrowPrimitive.html",
-    "<span>ArrowPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/symmetry/assembly.js~assembly",
     "class/src/symmetry/assembly.js~Assembly.html",
     "<span>Assembly</span> <span class=\"search-result-import-path\">ngl/src/symmetry/assembly.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/store/atom-map.js~atommap",
-    "class/src/store/atom-map.js~AtomMap.html",
-    "<span>AtomMap</span> <span class=\"search-result-import-path\">ngl/src/store/atom-map.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~atomonlykeywords",
-    "variable/index.html#static-variable-AtomOnlyKeywords",
-    "<span>AtomOnlyKeywords</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/utils/picker.js~atompicker",
-    "class/src/utils/picker.js~AtomPicker.html",
-    "<span>AtomPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
     "class"
   ],
   [
@@ -150,12 +72,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~axespicker",
-    "class/src/utils/picker.js~AxesPicker.html",
-    "<span>AxesPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/representation/axes-representation.js~axesrepresentation",
     "class/src/representation/axes-representation.js~AxesRepresentation.html",
     "<span>AxesRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/axes-representation.js</span>",
@@ -180,12 +96,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/selection/selection-constants.js~basicresname",
-    "variable/index.html#static-variable-BasicResname",
-    "<span>BasicResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/color/bfactor-colormaker.js~bfactorcolormaker",
     "class/src/color/bfactor-colormaker.js~BfactorColormaker.html",
     "<span>BfactorColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/bfactor-colormaker.js</span>",
@@ -198,27 +108,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ngl/src/streamer/binary-streamer.js~binarystreamer",
-    "class/src/streamer/binary-streamer.js~BinaryStreamer.html",
-    "<span>BinaryStreamer</span> <span class=\"search-result-import-path\">ngl/src/streamer/binary-streamer.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/utils/bitarray.js~bitarray",
     "class/src/utils/bitarray.js~BitArray.html",
     "<span>BitArray</span> <span class=\"search-result-import-path\">ngl/src/utils/bitarray.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/store/bond-hash.js~bondhash",
-    "class/src/store/bond-hash.js~BondHash.html",
-    "<span>BondHash</span> <span class=\"search-result-import-path\">ngl/src/store/bond-hash.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~bondpicker",
-    "class/src/utils/picker.js~BondPicker.html",
-    "<span>BondPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
     "class"
   ],
   [
@@ -240,18 +132,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~boxpicker",
-    "class/src/utils/picker.js~BoxPicker.html",
-    "<span>BoxPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~boxprimitive",
-    "class/src/geometry/primitive.js~BoxPrimitive.html",
-    "<span>BoxPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/globals.js~browser",
     "variable/index.html#static-variable-Browser",
     "<span>Browser</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
@@ -264,12 +144,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/globals.js~bufferregistry",
-    "variable/index.html#static-variable-BufferRegistry",
-    "<span>BufferRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/representation/buffer-representation.js~bufferrepresentation",
     "class/src/representation/buffer-representation.js~BufferRepresentation.html",
     "<span>BufferRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/buffer-representation.js</span>",
@@ -280,30 +154,6 @@ window.esdocSearchIndex = [
     "class/src/representation/cartoon-representation.js~CartoonRepresentation.html",
     "<span>CartoonRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/cartoon-representation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~cgdnabackbonetype",
-    "variable/index.html#static-variable-CgDnaBackboneType",
-    "<span>CgDnaBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~cgproteinbackbonetype",
-    "variable/index.html#static-variable-CgProteinBackboneType",
-    "<span>CgProteinBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~cgrnabackbonetype",
-    "variable/index.html#static-variable-CgRnaBackboneType",
-    "<span>CgRnaBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~chainkeywords",
-    "variable/index.html#static-variable-ChainKeywords",
-    "<span>ChainKeywords</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/proxy/chain-proxy.js~chainproxy",
@@ -336,72 +186,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/selection/selection-constants.js~chargedresname",
-    "variable/index.html#static-variable-ChargedResname",
-    "<span>ChargedResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcompdna",
-    "variable/index.html#static-variable-ChemCompDna",
-    "<span>ChemCompDna</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcomphetero",
-    "variable/index.html#static-variable-ChemCompHetero",
-    "<span>ChemCompHetero</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcompnonpolymer",
-    "variable/index.html#static-variable-ChemCompNonPolymer",
-    "<span>ChemCompNonPolymer</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcompother",
-    "variable/index.html#static-variable-ChemCompOther",
-    "<span>ChemCompOther</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcompprotein",
-    "variable/index.html#static-variable-ChemCompProtein",
-    "<span>ChemCompProtein</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcomprna",
-    "variable/index.html#static-variable-ChemCompRna",
-    "<span>ChemCompRna</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~chemcompsaccharide",
-    "variable/index.html#static-variable-ChemCompSaccharide",
-    "<span>ChemCompSaccharide</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/cif-parser.js~cifparser",
-    "class/src/parser/cif-parser.js~CifParser.html",
-    "<span>CifParser</span> <span class=\"search-result-import-path\">ngl/src/parser/cif-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~clashpicker",
-    "class/src/utils/picker.js~ClashPicker.html",
-    "<span>ClashPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/component/collection.js~collection",
-    "class/src/component/collection.js~Collection.html",
-    "<span>Collection</span> <span class=\"search-result-import-path\">ngl/src/component/collection.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/color/colormaker.js~colormaker",
     "class/src/color/colormaker.js~Colormaker.html",
     "<span>Colormaker</span> <span class=\"search-result-import-path\">ngl/src/color/colormaker.js</span>",
@@ -426,22 +210,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/component/component-collection.js~componentcollection",
-    "class/src/component/component-collection.js~ComponentCollection.html",
-    "<span>ComponentCollection</span> <span class=\"search-result-import-path\">ngl/src/component/component-collection.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/controls/component-controls.js~componentcontrols",
     "class/src/controls/component-controls.js~ComponentControls.html",
     "<span>ComponentControls</span> <span class=\"search-result-import-path\">ngl/src/controls/component-controls.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/globals.js~componentregistry",
-    "variable/index.html#static-variable-ComponentRegistry",
-    "<span>ComponentRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
   ],
   [
     "ngl/src/buffer/cone-buffer.js~conebuffer",
@@ -453,30 +225,6 @@ window.esdocSearchIndex = [
     "ngl/src/buffer/conegeometry-buffer.js~conegeometrybuffer",
     "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html",
     "<span>ConeGeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/conegeometry-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~conepicker",
-    "class/src/utils/picker.js~ConePicker.html",
-    "<span>ConePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~coneprimitive",
-    "class/src/geometry/primitive.js~ConePrimitive.html",
-    "<span>ConePrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/contact.js~contact",
-    "class/src/geometry/contact.js~Contact.html",
-    "<span>Contact</span> <span class=\"search-result-import-path\">ngl/src/geometry/contact.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~contactpicker",
-    "class/src/utils/picker.js~ContactPicker.html",
-    "<span>ContactPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
     "class"
   ],
   [
@@ -498,28 +246,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/structure/structure-constants.js~covalentradii",
-    "variable/index.html#static-variable-CovalentRadii",
-    "<span>CovalentRadii</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/parser/csv-parser.js~csvparser",
     "class/src/parser/csv-parser.js~CsvParser.html",
     "<span>CsvParser</span> <span class=\"search-result-import-path\">ngl/src/parser/csv-parser.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/parser/cube-parser.js~cubeparser",
-    "class/src/parser/cube-parser.js~CubeParser.html",
-    "<span>CubeParser</span> <span class=\"search-result-import-path\">ngl/src/parser/cube-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~cyclicresname",
-    "variable/index.html#static-variable-CyclicResname",
-    "<span>CyclicResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/buffer/cylinder-buffer.js~cylinderbuffer",
@@ -540,76 +270,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~cylinderpicker",
-    "class/src/utils/picker.js~CylinderPicker.html",
-    "<span>CylinderPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~cylinderprimitive",
-    "class/src/geometry/primitive.js~CylinderPrimitive.html",
-    "<span>CylinderPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/math/math-constants.js~deg2rad",
-    "variable/index.html#static-variable-DEG2RAD",
-    "<span>DEG2RAD</span> <span class=\"search-result-import-path\">ngl/src/math/math-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/datasource/datasource.js~datasource",
     "class/src/datasource/datasource.js~Datasource.html",
     "<span>Datasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/datasource.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/globals.js~datasourceregistry",
-    "variable/index.html#static-variable-DatasourceRegistry",
-    "<span>DatasourceRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/dcd-parser.js~dcdparser",
-    "class/src/parser/dcd-parser.js~DcdParser.html",
-    "<span>DcdParser</span> <span class=\"search-result-import-path\">ngl/src/parser/dcd-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/globals.js~debug",
-    "variable/index.html#static-variable-Debug",
-    "<span>Debug</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/globals.js~decompressorregistry",
-    "variable/index.html#static-variable-DecompressorRegistry",
-    "<span>DecompressorRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~defaultcovalentradius",
-    "variable/index.html#static-variable-DefaultCovalentRadius",
-    "<span>DefaultCovalentRadius</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~defaultresiduehydrophobicity",
-    "variable/index.html#static-variable-DefaultResidueHydrophobicity",
-    "<span>DefaultResidueHydrophobicity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~defaultresidueradius",
-    "variable/index.html#static-variable-DefaultResidueRadius",
-    "<span>DefaultResidueRadius</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~defaultvdwradius",
-    "variable/index.html#static-variable-DefaultVdwRadius",
-    "<span>DefaultVdwRadius</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/color/densityfit-colormaker.js~densityfitcolormaker",
@@ -618,34 +282,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~distancepicker",
-    "class/src/utils/picker.js~DistancePicker.html",
-    "<span>DistancePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/representation/distance-representation.js~distancerepresentation",
     "class/src/representation/distance-representation.js~DistanceRepresentation.html",
     "<span>DistanceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/distance-representation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~dnabackbonetype",
-    "variable/index.html#static-variable-DnaBackboneType",
-    "<span>DnaBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~dnabases",
-    "variable/index.html#static-variable-DnaBases",
-    "<span>DnaBases</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~dnatype",
-    "variable/index.html#static-variable-DnaType",
-    "<span>DnaType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/representation/dot-representation.js~dotrepresentation",
@@ -658,36 +298,6 @@ window.esdocSearchIndex = [
     "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html",
     "<span>DoubleSidedBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/doublesided-buffer.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/parser/dsn6-parser.js~dsn6parser",
-    "class/src/parser/dsn6-parser.js~Dsn6Parser.html",
-    "<span>Dsn6Parser</span> <span class=\"search-result-import-path\">ngl/src/parser/dsn6-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/dx-parser.js~dxparser",
-    "class/src/parser/dx-parser.js~DxParser.html",
-    "<span>DxParser</span> <span class=\"search-result-import-path\">ngl/src/parser/dx-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/dxbin-parser.js~dxbinparser",
-    "class/src/parser/dxbin-parser.js~DxbinParser.html",
-    "<span>DxbinParser</span> <span class=\"search-result-import-path\">ngl/src/parser/dxbin-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/surface/edt-surface.js~edtsurface",
-    "function/index.html#static-function-EDTSurface",
-    "<span>EDTSurface</span> <span class=\"search-result-import-path\">ngl/src/surface/edt-surface.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-constants.js~eps",
-    "variable/index.html#static-variable-EPS",
-    "<span>EPS</span> <span class=\"search-result-import-path\">ngl/src/math/math-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/color/electrostatic-colormaker.js~electrostaticcolormaker",
@@ -714,24 +324,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~ellipsoidpicker",
-    "class/src/utils/picker.js~EllipsoidPicker.html",
-    "<span>EllipsoidPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~ellipsoidprimitive",
-    "class/src/geometry/primitive.js~EllipsoidPrimitive.html",
-    "<span>EllipsoidPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/symmetry/symmetry-constants.js~encodedsymop",
-    "variable/index.html#static-variable-EncodedSymOp",
-    "<span>EncodedSymOp</span> <span class=\"search-result-import-path\">ngl/src/symmetry/symmetry-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/structure/entity.js~entity",
     "class/src/structure/entity.js~Entity.html",
     "<span>Entity</span> <span class=\"search-result-import-path\">ngl/src/structure/entity.js</span>",
@@ -756,39 +348,9 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "ngl/src/streamer/file-streamer.js~filestreamer",
-    "class/src/streamer/file-streamer.js~FileStreamer.html",
-    "<span>FileStreamer</span> <span class=\"search-result-import-path\">ngl/src/streamer/file-streamer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/surface/filtered-volume.js~filteredvolume",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html",
-    "<span>FilteredVolume</span> <span class=\"search-result-import-path\">ngl/src/surface/filtered-volume.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/trajectory/frames.js~frames",
-    "class/src/trajectory/frames.js~Frames.html",
-    "<span>Frames</span> <span class=\"search-result-import-path\">ngl/src/trajectory/frames.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/trajectory/frames-trajectory.js~framestrajectory",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html",
-    "<span>FramesTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/frames-trajectory.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/buffer/geometry-buffer.js~geometrybuffer",
     "class/src/buffer/geometry-buffer.js~GeometryBuffer.html",
     "<span>GeometryBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/geometry-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/viewer/geometry-group.js~geometrygroup",
-    "class/src/viewer/geometry-group.js~GeometryGroup.html",
-    "<span>GeometryGroup</span> <span class=\"search-result-import-path\">ngl/src/viewer/geometry-group.js</span>",
     "class"
   ],
   [
@@ -798,46 +360,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/geometry/grid.js~grid",
-    "function/index.html#static-function-Grid",
-    "<span>Grid</span> <span class=\"search-result-import-path\">ngl/src/geometry/grid.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/parser/gro-parser.js~groparser",
-    "class/src/parser/gro-parser.js~GroParser.html",
-    "<span>GroParser</span> <span class=\"search-result-import-path\">ngl/src/parser/gro-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/pdb-parser.js~helixtypes",
-    "variable/index.html#static-variable-HelixTypes",
-    "<span>HelixTypes</span> <span class=\"search-result-import-path\">ngl/src/parser/pdb-parser.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/geometry/helixbundle.js~helixbundle",
-    "function/index.html#static-function-Helixbundle",
-    "<span>Helixbundle</span> <span class=\"search-result-import-path\">ngl/src/geometry/helixbundle.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/geometry/helixorient.js~helixorient",
-    "function/index.html#static-function-Helixorient",
-    "<span>Helixorient</span> <span class=\"search-result-import-path\">ngl/src/geometry/helixorient.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/representation/helixorient-representation.js~helixorientrepresentation",
     "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html",
     "<span>HelixorientRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/helixorient-representation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~hydrophobicresname",
-    "variable/index.html#static-variable-HydrophobicResname",
-    "<span>HydrophobicResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/color/hydrophobicity-colormaker.js~hydrophobicitycolormaker",
@@ -870,46 +396,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~ignorepicker",
-    "class/src/utils/picker.js~IgnorePicker.html",
-    "<span>IgnorePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/buffer/image-buffer.js~imagebuffer",
     "class/src/buffer/image-buffer.js~ImageBuffer.html",
     "<span>ImageBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/image-buffer.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~ionnames",
-    "variable/index.html#static-variable-IonNames",
-    "<span>IonNames</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~iontype",
-    "variable/index.html#static-variable-IonType",
-    "<span>IonType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/viewer/viewer-constants.js~jittervectors",
-    "variable/index.html#static-variable-JitterVectors",
-    "<span>JitterVectors</span> <span class=\"search-result-import-path\">ngl/src/viewer/viewer-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/json-parser.js~jsonparser",
-    "class/src/parser/json-parser.js~JsonParser.html",
-    "<span>JsonParser</span> <span class=\"search-result-import-path\">ngl/src/parser/json-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/kdtree.js~kdtree",
-    "function/index.html#static-function-Kdtree",
-    "<span>Kdtree</span> <span class=\"search-result-import-path\">ngl/src/geometry/kdtree.js</span>",
-    "function"
   ],
   [
     "ngl/src/utils/kdtree.js~kdtree",
@@ -918,46 +408,10 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ngl/src/controls/key-actions.js~keyactionpresets",
-    "variable/index.html#static-variable-KeyActionPresets",
-    "<span>KeyActionPresets</span> <span class=\"search-result-import-path\">ngl/src/controls/key-actions.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/controls/key-actions.js~keyactions",
-    "class/src/controls/key-actions.js~KeyActions.html",
-    "<span>KeyActions</span> <span class=\"search-result-import-path\">ngl/src/controls/key-actions.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/stage/key-behavior.js~keybehavior",
-    "class/src/stage/key-behavior.js~KeyBehavior.html",
-    "<span>KeyBehavior</span> <span class=\"search-result-import-path\">ngl/src/stage/key-behavior.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/controls/key-controls.js~keycontrols",
-    "class/src/controls/key-controls.js~KeyControls.html",
-    "<span>KeyControls</span> <span class=\"search-result-import-path\">ngl/src/controls/key-controls.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/label-factory.js~labelfactory",
-    "function/index.html#static-function-LabelFactory",
-    "<span>LabelFactory</span> <span class=\"search-result-import-path\">ngl/src/utils/label-factory.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/representation/label-representation.js~labelrepresentation",
     "class/src/representation/label-representation.js~LabelRepresentation.html",
     "<span>LabelRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/label-representation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/constants.js~leftmousebutton",
-    "variable/index.html#static-variable-LeftMouseButton",
-    "<span>LeftMouseButton</span> <span class=\"search-result-import-path\">ngl/src/constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/representation/licorice-representation.js~licoricerepresentation",
@@ -984,81 +438,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/globals.js~log",
-    "variable/index.html#static-variable-Log",
-    "<span>Log</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~macrolideentity",
-    "variable/index.html#static-variable-MacrolideEntity",
-    "<span>MacrolideEntity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html",
-    "<span>MappedAlignedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mappedalignedbox-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/buffer/mappedbox-buffer.js~mappedboxbuffer",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html",
-    "<span>MappedBoxBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mappedbox-buffer.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/buffer/mapped-buffer.js~mappedbuffer",
     "class/src/buffer/mapped-buffer.js~MappedBuffer.html",
     "<span>MappedBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mapped-buffer.js</span>",
     "class"
   ],
   [
-    "ngl/src/buffer/mappedquad-buffer.js~mappedquadbuffer",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html",
-    "<span>MappedQuadBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mappedquad-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/surface/marching-cubes.js~marchingcubes",
-    "function/index.html#static-function-MarchingCubes",
-    "<span>MarchingCubes</span> <span class=\"search-result-import-path\">ngl/src/surface/marching-cubes.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~matrix",
-    "function/index.html#static-function-Matrix",
-    "<span>Matrix</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/datasource/mdsrv-datasource.js~mdsrvdatasource",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html",
-    "<span>MdsrvDatasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/mdsrv-datasource.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/buffer/mesh-buffer.js~meshbuffer",
     "class/src/buffer/mesh-buffer.js~MeshBuffer.html",
     "<span>MeshBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/mesh-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~meshpicker",
-    "class/src/utils/picker.js~MeshPicker.html",
-    "<span>MeshPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/constants.js~middlemousebutton",
-    "variable/index.html#static-variable-MiddleMouseButton",
-    "<span>MiddleMouseButton</span> <span class=\"search-result-import-path\">ngl/src/constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/mmtf-parser.js~mmtfparser",
-    "class/src/parser/mmtf-parser.js~MmtfParser.html",
-    "<span>MmtfParser</span> <span class=\"search-result-import-path\">ngl/src/parser/mmtf-parser.js</span>",
     "class"
   ],
   [
@@ -1086,12 +474,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/mol2-parser.js~mol2parser",
-    "class/src/parser/mol2-parser.js~Mol2Parser.html",
-    "<span>Mol2Parser</span> <span class=\"search-result-import-path\">ngl/src/parser/mol2-parser.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/surface/molecular-surface.js~molecularsurface",
     "class/src/surface/molecular-surface.js~MolecularSurface.html",
     "<span>MolecularSurface</span> <span class=\"search-result-import-path\">ngl/src/surface/molecular-surface.js</span>",
@@ -1110,21 +492,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/controls/mouse-actions.js~mouseactionpresets",
-    "variable/index.html#static-variable-MouseActionPresets",
-    "<span>MouseActionPresets</span> <span class=\"search-result-import-path\">ngl/src/controls/mouse-actions.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/controls/mouse-actions.js~mouseactions",
     "class/src/controls/mouse-actions.js~MouseActions.html",
     "<span>MouseActions</span> <span class=\"search-result-import-path\">ngl/src/controls/mouse-actions.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/stage/mouse-behavior.js~mousebehavior",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html",
-    "<span>MouseBehavior</span> <span class=\"search-result-import-path\">ngl/src/stage/mouse-behavior.js</span>",
     "class"
   ],
   [
@@ -1146,69 +516,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/mrc-parser.js~mrcparser",
-    "class/src/parser/mrc-parser.js~MrcParser.html",
-    "<span>MrcParser</span> <span class=\"search-result-import-path\">ngl/src/parser/mrc-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/msgpack-parser.js~msgpackparser",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html",
-    "<span>MsgpackParser</span> <span class=\"search-result-import-path\">ngl/src/parser/msgpack-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/nctraj-parser.js~nctrajparser",
-    "class/src/parser/nctraj-parser.js~NctrajParser.html",
-    "<span>NctrajParser</span> <span class=\"search-result-import-path\">ngl/src/parser/nctraj-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/netcdf-parser.js~netcdfparser",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html",
-    "<span>NetcdfParser</span> <span class=\"search-result-import-path\">ngl/src/parser/netcdf-parser.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/utils/netcdf-reader.js~netcdfreader",
     "class/src/utils/netcdf-reader.js~NetcdfReader.html",
     "<span>NetcdfReader</span> <span class=\"search-result-import-path\">ngl/src/utils/netcdf-reader.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/streamer/network-streamer.js~networkstreamer",
-    "class/src/streamer/network-streamer.js~NetworkStreamer.html",
-    "<span>NetworkStreamer</span> <span class=\"search-result-import-path\">ngl/src/streamer/network-streamer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~nonpolymerentity",
-    "variable/index.html#static-variable-NonPolymerEntity",
-    "<span>NonPolymerEntity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~nonpolarresname",
-    "variable/index.html#static-variable-NonpolarResname",
-    "<span>NonpolarResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~nucleicbackboneatoms",
-    "variable/index.html#static-variable-NucleicBackboneAtoms",
-    "<span>NucleicBackboneAtoms</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~nucleophilicresname",
-    "variable/index.html#static-variable-NucleophilicResname",
-    "<span>NucleophilicResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/obj-parser.js~objparser",
-    "class/src/parser/obj-parser.js~ObjParser.html",
-    "<span>ObjParser</span> <span class=\"search-result-import-path\">ngl/src/parser/obj-parser.js</span>",
     "class"
   ],
   [
@@ -1218,63 +528,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/buffer/octahedron-buffer.js~octahedronbuffer",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html",
-    "<span>OctahedronBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/octahedron-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~octahedronpicker",
-    "class/src/utils/picker.js~OctahedronPicker.html",
-    "<span>OctahedronPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~octahedronprimitive",
-    "class/src/geometry/primitive.js~OctahedronPrimitive.html",
-    "<span>OctahedronPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/parser.js~parser",
-    "class/src/parser/parser.js~Parser.html",
-    "<span>Parser</span> <span class=\"search-result-import-path\">ngl/src/parser/parser.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/loader/parser-loader.js~parserloader",
     "class/src/loader/parser-loader.js~ParserLoader.html",
     "<span>ParserLoader</span> <span class=\"search-result-import-path\">ngl/src/loader/parser-loader.js</span>",
     "class"
   ],
   [
-    "ngl/src/globals.js~parserregistry",
-    "variable/index.html#static-variable-ParserRegistry",
-    "<span>ParserRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/parser-registry.js~parserregistry",
-    "class/src/parser/parser-registry.js~ParserRegistry.html",
-    "<span>ParserRegistry</span> <span class=\"search-result-import-path\">ngl/src/parser/parser-registry.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/color/partialcharge-colormaker.js~partialchargecolormaker",
     "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html",
     "<span>PartialchargeColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/partialcharge-colormaker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/datasource/passthrough-datasource.js~passthroughdatasource",
-    "class/src/datasource/passthrough-datasource.js~PassThroughDatasource.html",
-    "<span>PassThroughDatasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/passthrough-datasource.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/pdb-parser.js~pdbparser",
-    "class/src/parser/pdb-parser.js~PdbParser.html",
-    "<span>PdbParser</span> <span class=\"search-result-import-path\">ngl/src/parser/pdb-parser.js</span>",
     "class"
   ],
   [
@@ -1287,18 +549,6 @@ window.esdocSearchIndex = [
     "ngl/src/utils/picker.js~picker",
     "class/src/utils/picker.js~Picker.html",
     "<span>Picker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/globals.js~pickerregistry",
-    "variable/index.html#static-variable-PickerRegistry",
-    "<span>PickerRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/stage/picking-behavior.js~pickingbehavior",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html",
-    "<span>PickingBehavior</span> <span class=\"search-result-import-path\">ngl/src/stage/picking-behavior.js</span>",
     "class"
   ],
   [
@@ -1320,12 +570,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/ply-parser.js~plyparser",
-    "class/src/parser/ply-parser.js~PlyParser.html",
-    "<span>PlyParser</span> <span class=\"search-result-import-path\">ngl/src/parser/ply-parser.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/buffer/point-buffer.js~pointbuffer",
     "class/src/buffer/point-buffer.js~PointBuffer.html",
     "<span>PointBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/point-buffer.js</span>",
@@ -1338,33 +582,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/selection/selection-constants.js~polarresname",
-    "variable/index.html#static-variable-PolarResname",
-    "<span>PolarResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/proxy/polymer.js~polymer",
     "class/src/proxy/polymer.js~Polymer.html",
     "<span>Polymer</span> <span class=\"search-result-import-path\">ngl/src/proxy/polymer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~polymerentity",
-    "variable/index.html#static-variable-PolymerEntity",
-    "<span>PolymerEntity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/pqr-parser.js~pqrparser",
-    "class/src/parser/pqr-parser.js~PqrParser.html",
-    "<span>PqrParser</span> <span class=\"search-result-import-path\">ngl/src/parser/pqr-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~primitive",
-    "class/src/geometry/primitive.js~Primitive.html",
-    "<span>Primitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -1374,87 +594,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/prmtop-parser.js~prmtopparser",
-    "class/src/parser/prmtop-parser.js~PrmtopParser.html",
-    "<span>PrmtopParser</span> <span class=\"search-result-import-path\">ngl/src/parser/prmtop-parser.js</span>",
+    "ngl/src/buffer/quad-buffer.js~quadbuffer",
+    "class/src/buffer/quad-buffer.js~QuadBuffer.html",
+    "<span>QuadBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/quad-buffer.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~proteinbackboneatoms",
-    "variable/index.html#static-variable-ProteinBackboneAtoms",
-    "<span>ProteinBackboneAtoms</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~proteinbackbonetype",
-    "variable/index.html#static-variable-ProteinBackboneType",
-    "<span>ProteinBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~proteintype",
-    "variable/index.html#static-variable-ProteinType",
-    "<span>ProteinType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/parser/psf-parser.js~psfparser",
-    "class/src/parser/psf-parser.js~PsfParser.html",
-    "<span>PsfParser</span> <span class=\"search-result-import-path\">ngl/src/parser/psf-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/datasource/pubchem-datasource.js~pubchemdatasource",
-    "class/src/datasource/pubchem-datasource.js~PubchemDatasource.html",
-    "<span>PubchemDatasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/pubchem-datasource.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~purinbases",
-    "variable/index.html#static-variable-PurinBases",
-    "<span>PurinBases</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/utils/queue.js~queue",
-    "function/index.html#static-function-Queue",
-    "<span>Queue</span> <span class=\"search-result-import-path\">ngl/src/utils/queue.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-constants.js~rad2deg",
-    "variable/index.html#static-variable-RAD2DEG",
-    "<span>RAD2DEG</span> <span class=\"search-result-import-path\">ngl/src/math/math-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/utils/radius-factory.js~radiusfactory",
-    "function/index.html#static-function-RadiusFactory",
-    "<span>RadiusFactory</span> <span class=\"search-result-import-path\">ngl/src/utils/radius-factory.js</span>",
-    "function"
   ],
   [
     "ngl/src/color/random-colormaker.js~randomcolormaker",
     "class/src/color/random-colormaker.js~RandomColormaker.html",
     "<span>RandomColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/random-colormaker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/datasource/rcsb-datasource.js~rcsbdatasource",
-    "class/src/datasource/rcsb-datasource.js~RcsbDatasource.html",
-    "<span>RcsbDatasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/rcsb-datasource.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/registry.js~registry",
-    "class/src/utils/registry.js~Registry.html",
-    "<span>Registry</span> <span class=\"search-result-import-path\">ngl/src/utils/registry.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/trajectory/remote-trajectory.js~remotetrajectory",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html",
-    "<span>RemoteTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/remote-trajectory.js</span>",
     "class"
   ],
   [
@@ -1464,33 +612,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/component/representation-collection.js~representationcollection",
-    "class/src/component/representation-collection.js~RepresentationCollection.html",
-    "<span>RepresentationCollection</span> <span class=\"search-result-import-path\">ngl/src/component/representation-collection.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/component/representation-component.js~representationcomponent",
     "class/src/component/representation-component.js~RepresentationComponent.html",
     "<span>RepresentationComponent</span> <span class=\"search-result-import-path\">ngl/src/component/representation-component.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/globals.js~representationregistry",
-    "variable/index.html#static-variable-RepresentationRegistry",
-    "<span>RepresentationRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~residuehydrophobicity",
-    "variable/index.html#static-variable-ResidueHydrophobicity",
-    "<span>ResidueHydrophobicity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/store/residue-map.js~residuemap",
-    "class/src/store/residue-map.js~ResidueMap.html",
-    "<span>ResidueMap</span> <span class=\"search-result-import-path\">ngl/src/store/residue-map.js</span>",
     "class"
   ],
   [
@@ -1498,12 +622,6 @@ window.esdocSearchIndex = [
     "class/src/proxy/residue-proxy.js~ResidueProxy.html",
     "<span>ResidueProxy</span> <span class=\"search-result-import-path\">ngl/src/proxy/residue-proxy.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~residueradii",
-    "variable/index.html#static-variable-ResidueRadii",
-    "<span>ResidueRadii</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/store/residue-store.js~residuestore",
@@ -1516,12 +634,6 @@ window.esdocSearchIndex = [
     "class/src/store/residue-type.js~ResidueType.html",
     "<span>ResidueType</span> <span class=\"search-result-import-path\">ngl/src/store/residue-type.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~residuetypeatoms",
-    "variable/index.html#static-variable-ResidueTypeAtoms",
-    "<span>ResidueTypeAtoms</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/color/residueindex-colormaker.js~residueindexcolormaker",
@@ -1548,30 +660,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/constants.js~rightmousebutton",
-    "variable/index.html#static-variable-RightMouseButton",
-    "<span>RightMouseButton</span> <span class=\"search-result-import-path\">ngl/src/constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~rnabackbonetype",
-    "variable/index.html#static-variable-RnaBackboneType",
-    "<span>RnaBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~rnabases",
-    "variable/index.html#static-variable-RnaBases",
-    "<span>RnaBases</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~rnatype",
-    "variable/index.html#static-variable-RnaType",
-    "<span>RnaType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/animation/animation.js~rockanimation",
     "class/src/animation/animation.js~RockAnimation.html",
     "<span>RockAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
@@ -1594,18 +682,6 @@ window.esdocSearchIndex = [
     "class/src/animation/animation.js~RotateAnimation.html",
     "<span>RotateAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~saccharidenames",
-    "variable/index.html#static-variable-SaccharideNames",
-    "<span>SaccharideNames</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~saccharidetype",
-    "variable/index.html#static-variable-SaccharideType",
-    "<span>SaccharideType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/script.js~script",
@@ -1632,45 +708,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/sdf-parser.js~sdfparser",
-    "class/src/parser/sdf-parser.js~SdfParser.html",
-    "<span>SdfParser</span> <span class=\"search-result-import-path\">ngl/src/parser/sdf-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/writer/sdf-writer.js~sdfwriter",
-    "class/src/writer/sdf-writer.js~SdfWriter.html",
-    "<span>SdfWriter</span> <span class=\"search-result-import-path\">ngl/src/writer/sdf-writer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~secstruchelix",
-    "variable/index.html#static-variable-SecStrucHelix",
-    "<span>SecStrucHelix</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~secstrucsheet",
-    "variable/index.html#static-variable-SecStrucSheet",
-    "<span>SecStrucSheet</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~secstructurn",
-    "variable/index.html#static-variable-SecStrucTurn",
-    "<span>SecStrucTurn</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~selectallkeyword",
-    "variable/index.html#static-variable-SelectAllKeyword",
-    "<span>SelectAllKeyword</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/selection/selection.js~selection",
-    "class/src/selection/selection.js~Selection.html",
-    "<span>Selection</span> <span class=\"search-result-import-path\">ngl/src/selection/selection.js</span>",
+    "ngl/src/selection.js~selection",
+    "class/src/selection.js~Selection.html",
+    "<span>Selection</span> <span class=\"search-result-import-path\">ngl/src/selection.js</span>",
     "class"
   ],
   [
@@ -1678,12 +718,6 @@ window.esdocSearchIndex = [
     "class/src/color/selection-colormaker.js~SelectionColormaker.html",
     "<span>SelectionColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/selection-colormaker.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/globals.js~shaderregistry",
-    "variable/index.html#static-variable-ShaderRegistry",
-    "<span>ShaderRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
   ],
   [
     "ngl/src/geometry/shape.js~shape",
@@ -1704,34 +738,16 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~slicepicker",
-    "class/src/utils/picker.js~SlicePicker.html",
-    "<span>SlicePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/representation/slice-representation.js~slicerepresentation",
     "class/src/representation/slice-representation.js~SliceRepresentation.html",
     "<span>SliceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/slice-representation.js</span>",
     "class"
   ],
   [
-    "ngl/src/selection/selection-constants.js~smallresname",
-    "variable/index.html#static-variable-SmallResname",
-    "<span>SmallResname</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/representation/spacefill-representation.js~spacefillrepresentation",
     "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html",
     "<span>SpacefillRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/spacefill-representation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/geometry/spatial-hash.js~spatialhash",
-    "function/index.html#static-function-SpatialHash",
-    "<span>SpatialHash</span> <span class=\"search-result-import-path\">ngl/src/geometry/spatial-hash.js</span>",
-    "function"
   ],
   [
     "ngl/src/buffer/sphere-buffer.js~spherebuffer",
@@ -1752,28 +768,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~spherepicker",
-    "class/src/utils/picker.js~SpherePicker.html",
-    "<span>SpherePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~sphereprimitive",
-    "class/src/geometry/primitive.js~SpherePrimitive.html",
-    "<span>SpherePrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/animation/animation.js~spinanimation",
     "class/src/animation/animation.js~SpinAnimation.html",
     "<span>SpinAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/geometry/spline.js~spline",
-    "function/index.html#static-function-Spline",
-    "<span>Spline</span> <span class=\"search-result-import-path\">ngl/src/geometry/spline.js</span>",
-    "function"
   ],
   [
     "ngl/src/color/sstruc-colormaker.js~sstruccolormaker",
@@ -1788,18 +786,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/datasource/static-datasource.js~staticdatasource",
-    "class/src/datasource/static-datasource.js~StaticDatasource.html",
-    "<span>StaticDatasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/static-datasource.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/viewer/stats.js~stats",
-    "function/index.html#static-function-Stats",
-    "<span>Stats</span> <span class=\"search-result-import-path\">ngl/src/viewer/stats.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/writer/stl-writer.js~stlwriter",
     "class/src/writer/stl-writer.js~StlWriter.html",
     "<span>StlWriter</span> <span class=\"search-result-import-path\">ngl/src/writer/stl-writer.js</span>",
@@ -1812,39 +798,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/streamer/streamer.js~streamer",
-    "class/src/streamer/streamer.js~Streamer.html",
-    "<span>Streamer</span> <span class=\"search-result-import-path\">ngl/src/streamer/streamer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/streamer/string-streamer.js~stringstreamer",
-    "class/src/streamer/string-streamer.js~StringStreamer.html",
-    "<span>StringStreamer</span> <span class=\"search-result-import-path\">ngl/src/streamer/string-streamer.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/structure/structure.js~structure",
     "class/src/structure/structure.js~Structure.html",
     "<span>Structure</span> <span class=\"search-result-import-path\">ngl/src/structure/structure.js</span>",
     "class"
   ],
   [
-    "ngl/src/structure/structure-builder.js~structurebuilder",
-    "function/index.html#static-function-StructureBuilder",
-    "<span>StructureBuilder</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-builder.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/component/structure-component.js~structurecomponent",
     "class/src/component/structure-component.js~StructureComponent.html",
     "<span>StructureComponent</span> <span class=\"search-result-import-path\">ngl/src/component/structure-component.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/structure-parser.js~structureparser",
-    "class/src/parser/structure-parser.js~StructureParser.html",
-    "<span>StructureParser</span> <span class=\"search-result-import-path\">ngl/src/parser/structure-parser.js</span>",
     "class"
   ],
   [
@@ -1854,28 +816,10 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/trajectory/structure-trajectory.js~structuretrajectory",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html",
-    "<span>StructureTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/structure-trajectory.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/structure/structure-view.js~structureview",
     "class/src/structure/structure-view.js~StructureView.html",
     "<span>StructureView</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-view.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/align/superposition.js~superposition",
-    "class/src/align/superposition.js~Superposition.html",
-    "<span>Superposition</span> <span class=\"search-result-import-path\">ngl/src/align/superposition.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/globals.js~supportsreadpixelsfloat",
-    "variable/index.html#static-variable-SupportsReadPixelsFloat",
-    "<span>SupportsReadPixelsFloat</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
   ],
   [
     "ngl/src/surface/surface.js~surface",
@@ -1896,45 +840,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/surface-parser.js~surfaceparser",
-    "class/src/parser/surface-parser.js~SurfaceParser.html",
-    "<span>SurfaceParser</span> <span class=\"search-result-import-path\">ngl/src/parser/surface-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~surfacepicker",
-    "class/src/utils/picker.js~SurfacePicker.html",
-    "<span>SurfacePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/representation/surface-representation.js~surfacerepresentation",
     "class/src/representation/surface-representation.js~SurfaceRepresentation.html",
     "<span>SurfaceRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/surface-representation.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/symmetry/symmetry-constants.js~symopcode",
-    "variable/index.html#static-variable-SymOpCode",
-    "<span>SymOpCode</span> <span class=\"search-result-import-path\">ngl/src/symmetry/symmetry-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/buffer/tetrahedron-buffer.js~tetrahedronbuffer",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html",
-    "<span>TetrahedronBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/tetrahedron-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~tetrahedronpicker",
-    "class/src/utils/picker.js~TetrahedronPicker.html",
-    "<span>TetrahedronPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~tetrahedronprimitive",
-    "class/src/geometry/primitive.js~TetrahedronPrimitive.html",
-    "<span>TetrahedronPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -1944,51 +852,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/text-parser.js~textparser",
-    "class/src/parser/text-parser.js~TextParser.html",
-    "<span>TextParser</span> <span class=\"search-result-import-path\">ngl/src/parser/text-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~textprimitive",
-    "class/src/geometry/primitive.js~TextPrimitive.html",
-    "<span>TextPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/viewer/tiled-renderer.js~tiledrenderer",
-    "function/index.html#static-function-TiledRenderer",
-    "<span>TiledRenderer</span> <span class=\"search-result-import-path\">ngl/src/viewer/tiled-renderer.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/animation/animation.js~timeoutanimation",
     "class/src/animation/animation.js~TimeoutAnimation.html",
     "<span>TimeoutAnimation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/top-parser.js~topparser",
-    "class/src/parser/top-parser.js~TopParser.html",
-    "<span>TopParser</span> <span class=\"search-result-import-path\">ngl/src/parser/top-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/buffer/torus-buffer.js~torusbuffer",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html",
-    "<span>TorusBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/torus-buffer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~toruspicker",
-    "class/src/utils/picker.js~TorusPicker.html",
-    "<span>TorusPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/geometry/primitive.js~torusprimitive",
-    "class/src/geometry/primitive.js~TorusPrimitive.html",
-    "<span>TorusPrimitive</span> <span class=\"search-result-import-path\">ngl/src/geometry/primitive.js</span>",
     "class"
   ],
   [
@@ -2022,12 +888,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/trajectory-parser.js~trajectoryparser",
-    "class/src/parser/trajectory-parser.js~TrajectoryParser.html",
-    "<span>TrajectoryParser</span> <span class=\"search-result-import-path\">ngl/src/parser/trajectory-parser.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/trajectory/trajectory-player.js~trajectoryplayer",
     "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html",
     "<span>TrajectoryPlayer</span> <span class=\"search-result-import-path\">ngl/src/trajectory/trajectory-player.js</span>",
@@ -2037,12 +897,6 @@ window.esdocSearchIndex = [
     "ngl/src/representation/trajectory-representation.js~trajectoryrepresentation",
     "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html",
     "<span>TrajectoryRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/trajectory-representation.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/trr-parser.js~trrparser",
-    "class/src/parser/trr-parser.js~TrrParser.html",
-    "<span>TrrParser</span> <span class=\"search-result-import-path\">ngl/src/parser/trr-parser.js</span>",
     "class"
   ],
   [
@@ -2058,12 +912,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/math/math-constants.js~twopi",
-    "variable/index.html#static-variable-TwoPI",
-    "<span>TwoPI</span> <span class=\"search-result-import-path\">ngl/src/math/math-constants.js</span>",
-    "variable"
-  ],
-  [
     "ngl/src/color/uniform-colormaker.js~uniformcolormaker",
     "class/src/color/uniform-colormaker.js~UniformColormaker.html",
     "<span>UniformColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/uniform-colormaker.js</span>",
@@ -2076,51 +924,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/utils/picker.js~unitcellpicker",
-    "class/src/utils/picker.js~UnitcellPicker.html",
-    "<span>UnitcellPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/representation/unitcell-representation.js~unitcellrepresentation",
     "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html",
     "<span>UnitcellRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/unitcell-representation.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~unknownbackbonetype",
-    "variable/index.html#static-variable-UnknownBackboneType",
-    "<span>UnknownBackboneType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~unknownentity",
-    "variable/index.html#static-variable-UnknownEntity",
-    "<span>UnknownEntity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/utils/picker.js~unknownpicker",
-    "class/src/utils/picker.js~UnknownPicker.html",
-    "<span>UnknownPicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~unknowntype",
-    "variable/index.html#static-variable-UnknownType",
-    "<span>UnknownType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/validation.js~validation",
-    "class/src/structure/validation.js~Validation.html",
-    "<span>Validation</span> <span class=\"search-result-import-path\">ngl/src/structure/validation.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/validation-parser.js~validationparser",
-    "class/src/parser/validation-parser.js~ValidationParser.html",
-    "<span>ValidationParser</span> <span class=\"search-result-import-path\">ngl/src/parser/validation-parser.js</span>",
     "class"
   ],
   [
@@ -2140,12 +946,6 @@ window.esdocSearchIndex = [
     "class/src/color/value-colormaker.js~ValueColormaker.html",
     "<span>ValueColormaker</span> <span class=\"search-result-import-path\">ngl/src/color/value-colormaker.js</span>",
     "class"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~vdwradii",
-    "variable/index.html#static-variable-VdwRadii",
-    "<span>VdwRadii</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
   ],
   [
     "ngl/src/buffer/vector-buffer.js~vectorbuffer",
@@ -2190,99 +990,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/parser/volume-parser.js~volumeparser",
-    "class/src/parser/volume-parser.js~VolumeParser.html",
-    "<span>VolumeParser</span> <span class=\"search-result-import-path\">ngl/src/parser/volume-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/utils/picker.js~volumepicker",
-    "class/src/utils/picker.js~VolumePicker.html",
-    "<span>VolumePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/surface/volume-slice.js~volumeslice",
-    "class/src/surface/volume-slice.js~VolumeSlice.html",
-    "<span>VolumeSlice</span> <span class=\"search-result-import-path\">ngl/src/surface/volume-slice.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/surface/volume.js~volumesurface",
-    "function/index.html#static-function-VolumeSurface",
-    "<span>VolumeSurface</span> <span class=\"search-result-import-path\">ngl/src/surface/volume.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~waterentity",
-    "variable/index.html#static-variable-WaterEntity",
-    "<span>WaterEntity</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~waternames",
-    "variable/index.html#static-variable-WaterNames",
-    "<span>WaterNames</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/structure/structure-constants.js~watertype",
-    "variable/index.html#static-variable-WaterType",
-    "<span>WaterType</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/globals.js~webglerrormessage",
-    "variable/index.html#static-variable-WebglErrorMessage",
-    "<span>WebglErrorMessage</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/worker/worker.js~worker",
-    "function/index.html#static-function-Worker",
-    "<span>Worker</span> <span class=\"search-result-import-path\">ngl/src/worker/worker.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/worker/worker-pool.js~workerpool",
-    "function/index.html#static-function-WorkerPool",
-    "<span>WorkerPool</span> <span class=\"search-result-import-path\">ngl/src/worker/worker-pool.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/globals.js~workerregistry",
-    "variable/index.html#static-variable-WorkerRegistry",
-    "<span>WorkerRegistry</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/worker/worker-registry.js~workerregistry",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html",
-    "<span>WorkerRegistry</span> <span class=\"search-result-import-path\">ngl/src/worker/worker-registry.js</span>",
-    "class"
-  ],
-  [
     "ngl/src/writer/writer.js~writer",
     "class/src/writer/writer.js~Writer.html",
     "<span>Writer</span> <span class=\"search-result-import-path\">ngl/src/writer/writer.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/xml-parser.js~xmlparser",
-    "class/src/parser/xml-parser.js~XmlParser.html",
-    "<span>XmlParser</span> <span class=\"search-result-import-path\">ngl/src/parser/xml-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/xplor-parser.js~xplorparser",
-    "class/src/parser/xplor-parser.js~XplorParser.html",
-    "<span>XplorParser</span> <span class=\"search-result-import-path\">ngl/src/parser/xplor-parser.js</span>",
-    "class"
-  ],
-  [
-    "ngl/src/parser/xtc-parser.js~xtcparser",
-    "class/src/parser/xtc-parser.js~XtcParser.html",
-    "<span>XtcParser</span> <span class=\"search-result-import-path\">ngl/src/parser/xtc-parser.js</span>",
     "class"
   ],
   [
@@ -2292,87 +1002,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ngl/src/math/matrix-utils.js~addcols",
-    "function/index.html#static-function-addCols",
-    "<span>addCols</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~addrows",
-    "function/index.html#static-function-addRows",
-    "<span>addRows</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~almostidentity",
-    "function/index.html#static-function-almostIdentity",
-    "<span>almostIdentity</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~applymatrix3tovector3array",
-    "function/index.html#static-function-applyMatrix3toVector3array",
-    "<span>applyMatrix3toVector3array</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~applymatrix4tovector3array",
-    "function/index.html#static-function-applyMatrix4toVector3array",
-    "<span>applyMatrix4toVector3array</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arraymax",
-    "function/index.html#static-function-arrayMax",
-    "<span>arrayMax</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arraymean",
-    "function/index.html#static-function-arrayMean",
-    "<span>arrayMean</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arraymin",
-    "function/index.html#static-function-arrayMin",
-    "<span>arrayMin</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arrayrms",
-    "function/index.html#static-function-arrayRms",
-    "<span>arrayRms</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arraysorted",
-    "function/index.html#static-function-arraySorted",
-    "<span>arraySorted</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arraysortedcmp",
-    "function/index.html#static-function-arraySortedCmp",
-    "<span>arraySortedCmp</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~arraysum",
-    "function/index.html#static-function-arraySum",
-    "<span>arraySum</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/structure/structure-utils.js~assignresiduetypebonds",
     "function/index.html#static-function-assignResidueTypeBonds",
     "<span>assignResidueTypeBonds</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~assignsecondarystructure",
-    "function/index.html#static-function-assignSecondaryStructure",
-    "<span>assignSecondaryStructure</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
     "function"
   ],
   [
@@ -2388,393 +1020,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ngl/src/utils.js~boolean",
-    "function/index.html#static-function-boolean",
-    "<span>boolean</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~buildunitcellassembly",
-    "function/index.html#static-function-buildUnitcellAssembly",
-    "<span>buildUnitcellAssembly</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~calculatebonds",
-    "function/index.html#static-function-calculateBonds",
-    "<span>calculateBonds</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~calculatebondsbetween",
-    "function/index.html#static-function-calculateBondsBetween",
-    "<span>calculateBondsBetween</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~calculatebondswithin",
-    "function/index.html#static-function-calculateBondsWithin",
-    "<span>calculateBondsWithin</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~calculatecenterarray",
-    "function/index.html#static-function-calculateCenterArray",
-    "<span>calculateCenterArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~calculatechainnames",
-    "function/index.html#static-function-calculateChainnames",
-    "<span>calculateChainnames</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~calculatedirectionarray",
-    "function/index.html#static-function-calculateDirectionArray",
-    "<span>calculateDirectionArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~calculatemeanarray",
-    "function/index.html#static-function-calculateMeanArray",
-    "<span>calculateMeanArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~calculatemeanvector3",
-    "function/index.html#static-function-calculateMeanVector3",
-    "<span>calculateMeanVector3</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~calculateminarray",
-    "function/index.html#static-function-calculateMinArray",
-    "<span>calculateMinArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~calculateresiduebonds",
-    "function/index.html#static-function-calculateResidueBonds",
-    "<span>calculateResidueBonds</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~calculatesecondarystructure",
-    "variable/index.html#static-variable-calculateSecondaryStructure",
-    "<span>calculateSecondaryStructure</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/math/array-utils.js~centerarray3",
-    "function/index.html#static-function-centerArray3",
-    "<span>centerArray3</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~circularmean",
-    "function/index.html#static-function-circularMean",
-    "<span>circularMean</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~clamp",
-    "function/index.html#static-function-clamp",
-    "<span>clamp</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~computeboundingbox",
-    "function/index.html#static-function-computeBoundingBox",
-    "<span>computeBoundingBox</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/surface/surface-utils.js~computevertexnormals",
-    "function/index.html#static-function-computeVertexNormals",
-    "<span>computeVertexNormals</span> <span class=\"search-result-import-path\">ngl/src/surface/surface-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~copyarray",
-    "function/index.html#static-function-copyArray",
-    "<span>copyArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~copywithin",
-    "function/index.html#static-function-copyWithin",
-    "<span>copyWithin</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~countsetbits",
-    "function/index.html#static-function-countSetBits",
-    "<span>countSetBits</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~datauritoimage",
-    "function/index.html#static-function-dataURItoImage",
-    "<span>dataURItoImage</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~deepcopy",
-    "function/index.html#static-function-deepCopy",
-    "<span>deepCopy</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~defaults",
-    "function/index.html#static-function-defaults",
-    "<span>defaults</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~degtorad",
-    "function/index.html#static-function-degToRad",
-    "<span>degToRad</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~download",
-    "function/index.html#static-function-download",
-    "<span>download</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurearray",
-    "function/index.html#static-function-ensureArray",
-    "<span>ensureArray</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurebuffer",
-    "function/index.html#static-function-ensureBuffer",
-    "<span>ensureBuffer</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurefloat32array",
-    "function/index.html#static-function-ensureFloat32Array",
-    "<span>ensureFloat32Array</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurematrix4",
-    "function/index.html#static-function-ensureMatrix4",
-    "<span>ensureMatrix4</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurequaternion",
-    "function/index.html#static-function-ensureQuaternion",
-    "<span>ensureQuaternion</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurevector2",
-    "function/index.html#static-function-ensureVector2",
-    "<span>ensureVector2</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~ensurevector3",
-    "function/index.html#static-function-ensureVector3",
-    "<span>ensureVector3</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~flatten",
-    "function/index.html#static-function-flatten",
-    "<span>flatten</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~generateuuid",
-    "function/index.html#static-function-generateUUID",
-    "<span>generateUUID</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~getabsolutepath",
-    "function/index.html#static-function-getAbsolutePath",
-    "<span>getAbsolutePath</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~getbrowser",
-    "function/index.html#static-function-getBrowser",
-    "<span>getBrowser</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~getchainname",
-    "function/index.html#static-function-getChainname",
-    "<span>getChainname</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/loader/loader-utils.js~getdatainfo",
-    "function/index.html#static-function-getDataInfo",
-    "<span>getDataInfo</span> <span class=\"search-result-import-path\">ngl/src/loader/loader-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~getfileinfo",
-    "function/index.html#static-function-getFileInfo",
-    "<span>getFileInfo</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~getprotocol",
-    "function/index.html#static-function-getProtocol",
-    "<span>getProtocol</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~getquery",
-    "function/index.html#static-function-getQuery",
-    "<span>getQuery</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/surface/surface-utils.js~getradiusdict",
-    "function/index.html#static-function-getRadiusDict",
-    "<span>getRadiusDict</span> <span class=\"search-result-import-path\">ngl/src/surface/surface-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/shader/shader-utils.js~getshader",
-    "function/index.html#static-function-getShader",
-    "<span>getShader</span> <span class=\"search-result-import-path\">ngl/src/shader/shader-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/surface/surface-utils.js~getsurfacegrid",
-    "function/index.html#static-function-getSurfaceGrid",
-    "<span>getSurfaceGrid</span> <span class=\"search-result-import-path\">ngl/src/surface/surface-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/symmetry/symmetry-utils.js~getsymmetryoperations",
-    "function/index.html#static-function-getSymmetryOperations",
-    "<span>getSymmetryOperations</span> <span class=\"search-result-import-path\">ngl/src/symmetry/symmetry-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~gettypedarray",
-    "function/index.html#static-function-getTypedArray",
-    "<span>getTypedArray</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~getuintarray",
-    "function/index.html#static-function-getUintArray",
-    "<span>getUintArray</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~guesselement",
-    "function/index.html#static-function-guessElement",
-    "<span>guessElement</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~invert3x3",
-    "function/index.html#static-function-invert3x3",
-    "<span>invert3x3</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~ispointonsegment",
-    "function/index.html#static-function-isPointOnSegment",
-    "<span>isPointOnSegment</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/selection/selection-constants.js~kwd",
-    "variable/index.html#static-variable-kwd",
-    "<span>kwd</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-constants.js</span>",
-    "variable"
-  ],
-  [
-    "ngl/src/surface/surface-utils.js~laplaciansmooth",
-    "function/index.html#static-function-laplacianSmooth",
-    "<span>laplacianSmooth</span> <span class=\"search-result-import-path\">ngl/src/surface/surface-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~lerp",
-    "function/index.html#static-function-lerp",
-    "<span>lerp</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/math/vector-utils.js~linelineintersect",
     "function/index.html#static-function-lineLineIntersect",
     "<span>lineLineIntersect</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m3makenormal",
-    "function/index.html#static-function-m3makeNormal",
-    "<span>m3makeNormal</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m3new",
-    "function/index.html#static-function-m3new",
-    "<span>m3new</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m4identity",
-    "function/index.html#static-function-m4identity",
-    "<span>m4identity</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m4makerotationy",
-    "function/index.html#static-function-m4makeRotationY",
-    "<span>m4makeRotationY</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m4makescale",
-    "function/index.html#static-function-m4makeScale",
-    "<span>m4makeScale</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m4maketranslation",
-    "function/index.html#static-function-m4makeTranslation",
-    "<span>m4makeTranslation</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m4multiply",
-    "function/index.html#static-function-m4multiply",
-    "<span>m4multiply</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~m4new",
-    "function/index.html#static-function-m4new",
-    "<span>m4new</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/selection/selection-test.js~makeatomtest",
-    "function/index.html#static-function-makeAtomTest",
-    "<span>makeAtomTest</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-test.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/selection/selection-test.js~makechaintest",
-    "function/index.html#static-function-makeChainTest",
-    "<span>makeChainTest</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-test.js</span>",
     "function"
   ],
   [
@@ -2784,267 +1032,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ngl/src/selection/selection-test.js~makemodeltest",
-    "function/index.html#static-function-makeModelTest",
-    "<span>makeModelTest</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-test.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/representation/representation-utils.js~makerepresentation",
-    "function/index.html#static-function-makeRepresentation",
-    "<span>makeRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/representation-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/selection/selection-test.js~makeresiduetest",
-    "function/index.html#static-function-makeResidueTest",
-    "<span>makeResidueTest</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-test.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/trajectory/trajectory-utils.js~maketrajectory",
-    "function/index.html#static-function-makeTrajectory",
-    "<span>makeTrajectory</span> <span class=\"search-result-import-path\">ngl/src/trajectory/trajectory-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/worker/worker-utils.js~makeworkerblob",
-    "function/index.html#static-function-makeWorkerBlob",
-    "<span>makeWorkerBlob</span> <span class=\"search-result-import-path\">ngl/src/worker/worker-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~mat3x3determinant",
-    "function/index.html#static-function-mat3x3determinant",
-    "<span>mat3x3determinant</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~meancols",
-    "function/index.html#static-function-meanCols",
-    "<span>meanCols</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~meanrows",
-    "function/index.html#static-function-meanRows",
-    "<span>meanRows</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~multiply3x3",
-    "function/index.html#static-function-multiply3x3",
-    "<span>multiply3x3</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~multiply",
-    "function/index.html#static-function-multiply",
-    "<span>multiply</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~multiplyabt",
-    "function/index.html#static-function-multiplyABt",
-    "<span>multiplyABt</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~multiplyatb",
-    "function/index.html#static-function-multiplyAtB",
-    "<span>multiplyAtB</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~normalize",
-    "function/index.html#static-function-normalize",
-    "<span>normalize</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~normalizevector3array",
-    "function/index.html#static-function-normalizeVector3array",
-    "<span>normalizeVector3array</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~open",
-    "function/index.html#static-function-open",
-    "<span>open</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/selection/selection-parser.js~parsesele",
-    "function/index.html#static-function-parseSele",
-    "<span>parseSele</span> <span class=\"search-result-import-path\">ngl/src/selection/selection-parser.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils/parse-xml.js~parsexml",
-    "function/index.html#static-function-parseXml",
-    "<span>parseXml</span> <span class=\"search-result-import-path\">ngl/src/utils/parse-xml.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~pclamp",
-    "function/index.html#static-function-pclamp",
-    "<span>pclamp</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~pick",
-    "function/index.html#static-function-pick",
-    "<span>pick</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/geometry/contact-utils.js~polarbackbonecontacts",
-    "function/index.html#static-function-polarBackboneContacts",
-    "<span>polarBackboneContacts</span> <span class=\"search-result-import-path\">ngl/src/geometry/contact-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/geometry/contact-utils.js~polarcontacts",
-    "function/index.html#static-function-polarContacts",
-    "<span>polarContacts</span> <span class=\"search-result-import-path\">ngl/src/geometry/contact-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~projectpointonvector",
-    "function/index.html#static-function-projectPointOnVector",
-    "<span>projectPointOnVector</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~quickselectcmp",
-    "function/index.html#static-function-quickselectCmp",
-    "<span>quickselectCmp</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~quicksortcmp",
-    "function/index.html#static-function-quicksortCmp",
-    "<span>quicksortCmp</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
     "ngl/src/math/array-utils.js~quicksortip",
     "function/index.html#static-function-quicksortIP",
     "<span>quicksortIP</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~radtodeg",
-    "function/index.html#static-function-radToDeg",
-    "<span>radToDeg</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~randomcolorarray",
-    "function/index.html#static-function-randomColorArray",
-    "<span>randomColorArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~rangeinsortedarray",
-    "function/index.html#static-function-rangeInSortedArray",
-    "<span>rangeInSortedArray</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/structure/structure-utils.js~reorderatoms",
-    "function/index.html#static-function-reorderAtoms",
-    "<span>reorderAtoms</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~replicatearray3entries",
-    "function/index.html#static-function-replicateArray3Entries",
-    "<span>replicateArray3Entries</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~saturate",
-    "function/index.html#static-function-saturate",
-    "<span>saturate</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~serialarray",
-    "function/index.html#static-function-serialArray",
-    "<span>serialArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~serialblockarray",
-    "function/index.html#static-function-serialBlockArray",
-    "<span>serialBlockArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/globals.js~setdebug",
-    "function/index.html#static-function-setDebug",
-    "<span>setDebug</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/globals.js~setextensionfragdepth",
-    "function/index.html#static-function-setExtensionFragDepth",
-    "<span>setExtensionFragDepth</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/globals.js~setsupportsreadpixelsfloat",
-    "function/index.html#static-function-setSupportsReadPixelsFloat",
-    "<span>setSupportsReadPixelsFloat</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~smootherstep",
-    "function/index.html#static-function-smootherstep",
-    "<span>smootherstep</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~smootheststep",
-    "function/index.html#static-function-smootheststep",
-    "<span>smootheststep</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~smoothstep",
-    "function/index.html#static-function-smoothstep",
-    "<span>smoothstep</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/viewer/viewer-utils.js~sortprojectedposition",
-    "function/index.html#static-function-sortProjectedPosition",
-    "<span>sortProjectedPosition</span> <span class=\"search-result-import-path\">ngl/src/viewer/viewer-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/math-utils.js~spline",
-    "function/index.html#static-function-spline",
-    "<span>spline</span> <span class=\"search-result-import-path\">ngl/src/math/math-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~subcols",
-    "function/index.html#static-function-subCols",
-    "<span>subCols</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~subrows",
-    "function/index.html#static-function-subRows",
-    "<span>subRows</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~submit",
-    "function/index.html#static-function-submit",
-    "<span>submit</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
     "function"
   ],
   [
@@ -3054,465 +1044,333 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ngl/src/math/matrix-utils.js~svd",
-    "function/index.html#static-function-svd",
-    "<span>svd</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~throttle",
-    "function/index.html#static-function-throttle",
-    "<span>throttle</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/matrix-utils.js~transpose",
-    "function/index.html#static-function-transpose",
-    "<span>transpose</span> <span class=\"search-result-import-path\">ngl/src/math/matrix-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~uint8tolines",
-    "function/index.html#static-function-uint8ToLines",
-    "<span>uint8ToLines</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~uint8tostring",
-    "function/index.html#static-function-uint8ToString",
-    "<span>uint8ToString</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~uniformarray3",
-    "function/index.html#static-function-uniformArray3",
-    "<span>uniformArray3</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/array-utils.js~uniformarray",
-    "function/index.html#static-function-uniformArray",
-    "<span>uniformArray</span> <span class=\"search-result-import-path\">ngl/src/math/array-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/utils.js~uniquearray",
-    "function/index.html#static-function-uniqueArray",
-    "<span>uniqueArray</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/viewer/viewer-utils.js~updatematerialuniforms",
-    "function/index.html#static-function-updateMaterialUniforms",
-    "<span>updateMaterialUniforms</span> <span class=\"search-result-import-path\">ngl/src/viewer/viewer-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3add",
-    "function/index.html#static-function-v3add",
-    "<span>v3add</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3addscalar",
-    "function/index.html#static-function-v3addScalar",
-    "<span>v3addScalar</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3angle",
-    "function/index.html#static-function-v3angle",
-    "<span>v3angle</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3ceil",
-    "function/index.html#static-function-v3ceil",
-    "<span>v3ceil</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3cross",
-    "function/index.html#static-function-v3cross",
-    "<span>v3cross</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3divide",
-    "function/index.html#static-function-v3divide",
-    "<span>v3divide</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3dividescalar",
-    "function/index.html#static-function-v3divideScalar",
-    "<span>v3divideScalar</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3dot",
-    "function/index.html#static-function-v3dot",
-    "<span>v3dot</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3floor",
-    "function/index.html#static-function-v3floor",
-    "<span>v3floor</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3foreach",
-    "function/index.html#static-function-v3forEach",
-    "<span>v3forEach</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3fromarray",
-    "function/index.html#static-function-v3fromArray",
-    "<span>v3fromArray</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3length",
-    "function/index.html#static-function-v3length",
-    "<span>v3length</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3multiply",
-    "function/index.html#static-function-v3multiply",
-    "<span>v3multiply</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3multiplyscalar",
-    "function/index.html#static-function-v3multiplyScalar",
-    "<span>v3multiplyScalar</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3negate",
-    "function/index.html#static-function-v3negate",
-    "<span>v3negate</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3new",
-    "function/index.html#static-function-v3new",
-    "<span>v3new</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3normalize",
-    "function/index.html#static-function-v3normalize",
-    "<span>v3normalize</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3round",
-    "function/index.html#static-function-v3round",
-    "<span>v3round</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3sub",
-    "function/index.html#static-function-v3sub",
-    "<span>v3sub</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3subscalar",
-    "function/index.html#static-function-v3subScalar",
-    "<span>v3subScalar</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "ngl/src/math/vector-utils.js~v3toarray",
-    "function/index.html#static-function-v3toArray",
-    "<span>v3toArray</span> <span class=\"search-result-import-path\">ngl/src/math/vector-utils.js</span>",
-    "function"
-  ],
-  [
-    "src/.external-ecmascript.js~array",
+    "builtinexternal/ecmascriptexternal.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-    "src/.external-ecmascript.js~Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~arraybuffer",
+    "builtinexternal/ecmascriptexternal.js~arraybuffer",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
-    "src/.external-ecmascript.js~ArrayBuffer",
+    "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~boolean",
+    "builtinexternal/ecmascriptexternal.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "src/.external-ecmascript.js~Boolean",
+    "BuiltinExternal/ECMAScriptExternal.js~Boolean",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~dataview",
+    "builtinexternal/ecmascriptexternal.js~dataview",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
-    "src/.external-ecmascript.js~DataView",
+    "BuiltinExternal/ECMAScriptExternal.js~DataView",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~date",
+    "builtinexternal/ecmascriptexternal.js~date",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
-    "src/.external-ecmascript.js~Date",
+    "BuiltinExternal/ECMAScriptExternal.js~Date",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~error",
+    "builtinexternal/ecmascriptexternal.js~error",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-    "src/.external-ecmascript.js~Error",
+    "BuiltinExternal/ECMAScriptExternal.js~Error",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~evalerror",
+    "builtinexternal/ecmascriptexternal.js~evalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
-    "src/.external-ecmascript.js~EvalError",
+    "BuiltinExternal/ECMAScriptExternal.js~EvalError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~float32array",
+    "builtinexternal/ecmascriptexternal.js~float32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
-    "src/.external-ecmascript.js~Float32Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~float64array",
+    "builtinexternal/ecmascriptexternal.js~float64array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
-    "src/.external-ecmascript.js~Float64Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~function",
+    "builtinexternal/ecmascriptexternal.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "src/.external-ecmascript.js~Function",
+    "BuiltinExternal/ECMAScriptExternal.js~Function",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~generator",
+    "builtinexternal/ecmascriptexternal.js~generator",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
-    "src/.external-ecmascript.js~Generator",
+    "BuiltinExternal/ECMAScriptExternal.js~Generator",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~generatorfunction",
+    "builtinexternal/ecmascriptexternal.js~generatorfunction",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
-    "src/.external-ecmascript.js~GeneratorFunction",
+    "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~infinity",
+    "builtinexternal/ecmascriptexternal.js~infinity",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
-    "src/.external-ecmascript.js~Infinity",
+    "BuiltinExternal/ECMAScriptExternal.js~Infinity",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~int16array",
+    "builtinexternal/ecmascriptexternal.js~int16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
-    "src/.external-ecmascript.js~Int16Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~int32array",
+    "builtinexternal/ecmascriptexternal.js~int32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
-    "src/.external-ecmascript.js~Int32Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~int8array",
+    "builtinexternal/ecmascriptexternal.js~int8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
-    "src/.external-ecmascript.js~Int8Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~internalerror",
+    "builtinexternal/ecmascriptexternal.js~internalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
-    "src/.external-ecmascript.js~InternalError",
+    "BuiltinExternal/ECMAScriptExternal.js~InternalError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~json",
+    "builtinexternal/ecmascriptexternal.js~json",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
-    "src/.external-ecmascript.js~JSON",
+    "BuiltinExternal/ECMAScriptExternal.js~JSON",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~map",
+    "builtinexternal/ecmascriptexternal.js~map",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
-    "src/.external-ecmascript.js~Map",
+    "BuiltinExternal/ECMAScriptExternal.js~Map",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~nan",
+    "builtinexternal/ecmascriptexternal.js~nan",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
-    "src/.external-ecmascript.js~NaN",
+    "BuiltinExternal/ECMAScriptExternal.js~NaN",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~number",
+    "builtinexternal/ecmascriptexternal.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "src/.external-ecmascript.js~Number",
+    "BuiltinExternal/ECMAScriptExternal.js~Number",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~object",
+    "builtinexternal/ecmascriptexternal.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "src/.external-ecmascript.js~Object",
+    "BuiltinExternal/ECMAScriptExternal.js~Object",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~promise",
+    "builtinexternal/ecmascriptexternal.js~promise",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-    "src/.external-ecmascript.js~Promise",
+    "BuiltinExternal/ECMAScriptExternal.js~Promise",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~proxy",
+    "builtinexternal/ecmascriptexternal.js~proxy",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
-    "src/.external-ecmascript.js~Proxy",
+    "BuiltinExternal/ECMAScriptExternal.js~Proxy",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~rangeerror",
+    "builtinexternal/ecmascriptexternal.js~rangeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
-    "src/.external-ecmascript.js~RangeError",
+    "BuiltinExternal/ECMAScriptExternal.js~RangeError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~referenceerror",
+    "builtinexternal/ecmascriptexternal.js~referenceerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
-    "src/.external-ecmascript.js~ReferenceError",
+    "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~reflect",
+    "builtinexternal/ecmascriptexternal.js~reflect",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
-    "src/.external-ecmascript.js~Reflect",
+    "BuiltinExternal/ECMAScriptExternal.js~Reflect",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~regexp",
+    "builtinexternal/ecmascriptexternal.js~regexp",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
-    "src/.external-ecmascript.js~RegExp",
+    "BuiltinExternal/ECMAScriptExternal.js~RegExp",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~set",
+    "builtinexternal/ecmascriptexternal.js~set",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
-    "src/.external-ecmascript.js~Set",
+    "BuiltinExternal/ECMAScriptExternal.js~Set",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~string",
+    "builtinexternal/ecmascriptexternal.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "src/.external-ecmascript.js~String",
+    "BuiltinExternal/ECMAScriptExternal.js~String",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~symbol",
+    "builtinexternal/ecmascriptexternal.js~symbol",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
-    "src/.external-ecmascript.js~Symbol",
+    "BuiltinExternal/ECMAScriptExternal.js~Symbol",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~syntaxerror",
+    "builtinexternal/ecmascriptexternal.js~syntaxerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
-    "src/.external-ecmascript.js~SyntaxError",
+    "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~typeerror",
+    "builtinexternal/ecmascriptexternal.js~typeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
-    "src/.external-ecmascript.js~TypeError",
+    "BuiltinExternal/ECMAScriptExternal.js~TypeError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~urierror",
+    "builtinexternal/ecmascriptexternal.js~urierror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
-    "src/.external-ecmascript.js~URIError",
+    "BuiltinExternal/ECMAScriptExternal.js~URIError",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~uint16array",
+    "builtinexternal/ecmascriptexternal.js~uint16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
-    "src/.external-ecmascript.js~Uint16Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~uint32array",
+    "builtinexternal/ecmascriptexternal.js~uint32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
-    "src/.external-ecmascript.js~Uint32Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~uint8array",
+    "builtinexternal/ecmascriptexternal.js~uint8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
-    "src/.external-ecmascript.js~Uint8Array",
+    "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~uint8clampedarray",
+    "builtinexternal/ecmascriptexternal.js~uint8clampedarray",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
-    "src/.external-ecmascript.js~Uint8ClampedArray",
+    "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~weakmap",
+    "builtinexternal/ecmascriptexternal.js~weakmap",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-    "src/.external-ecmascript.js~WeakMap",
+    "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~weakset",
+    "builtinexternal/ecmascriptexternal.js~weakset",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
-    "src/.external-ecmascript.js~WeakSet",
+    "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~boolean",
+    "builtinexternal/ecmascriptexternal.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "src/.external-ecmascript.js~boolean",
+    "BuiltinExternal/ECMAScriptExternal.js~boolean",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~function",
+    "builtinexternal/ecmascriptexternal.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "src/.external-ecmascript.js~function",
+    "BuiltinExternal/ECMAScriptExternal.js~function",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~null",
+    "builtinexternal/ecmascriptexternal.js~null",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
-    "src/.external-ecmascript.js~null",
+    "BuiltinExternal/ECMAScriptExternal.js~null",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~number",
+    "builtinexternal/ecmascriptexternal.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "src/.external-ecmascript.js~number",
+    "BuiltinExternal/ECMAScriptExternal.js~number",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~object",
+    "builtinexternal/ecmascriptexternal.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "src/.external-ecmascript.js~object",
+    "BuiltinExternal/ECMAScriptExternal.js~object",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~string",
+    "builtinexternal/ecmascriptexternal.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "src/.external-ecmascript.js~string",
+    "BuiltinExternal/ECMAScriptExternal.js~string",
     "external"
   ],
   [
-    "src/.external-ecmascript.js~undefined",
+    "builtinexternal/ecmascriptexternal.js~undefined",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
-    "src/.external-ecmascript.js~undefined",
+    "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~audiocontext",
+    "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
+    "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~documentfragment",
+    "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~element",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "BuiltinExternal/WebAPIExternal.js~Element",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~event",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "BuiltinExternal/WebAPIExternal.js~Event",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~node",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "BuiltinExternal/WebAPIExternal.js~Node",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~nodelist",
+    "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "external"
+  ],
+  [
+    "builtinexternal/webapiexternal.js~xmlhttprequest",
+    "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "external"
   ],
   [
@@ -3528,226 +1386,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/align/alignment.js~alignment#h",
-    "class/src/align/alignment.js~Alignment.html#instance-member-H",
-    "src/align/alignment.js~Alignment#H",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#s",
-    "class/src/align/alignment.js~Alignment.html#instance-member-S",
-    "src/align/alignment.js~Alignment#S",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#v",
-    "class/src/align/alignment.js~Alignment.html#instance-member-V",
-    "src/align/alignment.js~Alignment#V",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#ali",
-    "class/src/align/alignment.js~Alignment.html#instance-member-ali",
-    "src/align/alignment.js~Alignment#ali",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#ali1",
-    "class/src/align/alignment.js~Alignment.html#instance-member-ali1",
-    "src/align/alignment.js~Alignment#ali1",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#ali2",
-    "class/src/align/alignment.js~Alignment.html#instance-member-ali2",
-    "src/align/alignment.js~Alignment#ali2",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#calc",
-    "class/src/align/alignment.js~Alignment.html#instance-method-calc",
-    "src/align/alignment.js~Alignment#calc",
-    "method"
-  ],
-  [
-    "src/align/alignment.js~alignment#constructor",
-    "class/src/align/alignment.js~Alignment.html#instance-constructor-constructor",
-    "src/align/alignment.js~Alignment#constructor",
-    "method"
-  ],
-  [
-    "src/align/alignment.js~alignment#gap",
-    "class/src/align/alignment.js~Alignment.html#instance-method-gap",
-    "src/align/alignment.js~Alignment#gap",
-    "method"
-  ],
-  [
-    "src/align/alignment.js~alignment#gapextensionpenalty",
-    "class/src/align/alignment.js~Alignment.html#instance-member-gapExtensionPenalty",
-    "src/align/alignment.js~Alignment#gapExtensionPenalty",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#gappenalty",
-    "class/src/align/alignment.js~Alignment.html#instance-member-gapPenalty",
-    "src/align/alignment.js~Alignment#gapPenalty",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#initmatrices",
-    "class/src/align/alignment.js~Alignment.html#instance-method-initMatrices",
-    "src/align/alignment.js~Alignment#initMatrices",
-    "method"
-  ],
-  [
-    "src/align/alignment.js~alignment#m",
-    "class/src/align/alignment.js~Alignment.html#instance-member-m",
-    "src/align/alignment.js~Alignment#m",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#makescorefn",
-    "class/src/align/alignment.js~Alignment.html#instance-method-makeScoreFn",
-    "src/align/alignment.js~Alignment#makeScoreFn",
-    "method"
-  ],
-  [
-    "src/align/alignment.js~alignment#n",
-    "class/src/align/alignment.js~Alignment.html#instance-member-n",
-    "src/align/alignment.js~Alignment#n",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#score",
-    "class/src/align/alignment.js~Alignment.html#instance-member-score",
-    "src/align/alignment.js~Alignment#score",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#seq1",
-    "class/src/align/alignment.js~Alignment.html#instance-member-seq1",
-    "src/align/alignment.js~Alignment#seq1",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#seq2",
-    "class/src/align/alignment.js~Alignment.html#instance-member-seq2",
-    "src/align/alignment.js~Alignment#seq2",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#substmatrix",
-    "class/src/align/alignment.js~Alignment.html#instance-member-substMatrix",
-    "src/align/alignment.js~Alignment#substMatrix",
-    "member"
-  ],
-  [
-    "src/align/alignment.js~alignment#trace",
-    "class/src/align/alignment.js~Alignment.html#instance-method-trace",
-    "src/align/alignment.js~Alignment#trace",
-    "method"
-  ],
-  [
     "src/align/superposition.js",
     "file/src/align/superposition.js.html",
     "src/align/superposition.js",
     "file"
-  ],
-  [
-    "src/align/superposition.js~superposition#a",
-    "class/src/align/superposition.js~Superposition.html#instance-member-A",
-    "src/align/superposition.js~Superposition#A",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#r",
-    "class/src/align/superposition.js~Superposition.html#instance-member-R",
-    "src/align/superposition.js~Superposition#R",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#u",
-    "class/src/align/superposition.js~Superposition.html#instance-member-U",
-    "src/align/superposition.js~Superposition#U",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#v",
-    "class/src/align/superposition.js~Superposition.html#instance-member-V",
-    "src/align/superposition.js~Superposition#V",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#vh",
-    "class/src/align/superposition.js~Superposition.html#instance-member-VH",
-    "src/align/superposition.js~Superposition#VH",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#w",
-    "class/src/align/superposition.js~Superposition.html#instance-member-W",
-    "src/align/superposition.js~Superposition#W",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#_superpose",
-    "class/src/align/superposition.js~Superposition.html#instance-method-_superpose",
-    "src/align/superposition.js~Superposition#_superpose",
-    "method"
-  ],
-  [
-    "src/align/superposition.js~superposition#c",
-    "class/src/align/superposition.js~Superposition.html#instance-member-c",
-    "src/align/superposition.js~Superposition#c",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#constructor",
-    "class/src/align/superposition.js~Superposition.html#instance-constructor-constructor",
-    "src/align/superposition.js~Superposition#constructor",
-    "method"
-  ],
-  [
-    "src/align/superposition.js~superposition#coords1t",
-    "class/src/align/superposition.js~Superposition.html#instance-member-coords1t",
-    "src/align/superposition.js~Superposition#coords1t",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#coords2t",
-    "class/src/align/superposition.js~Superposition.html#instance-member-coords2t",
-    "src/align/superposition.js~Superposition#coords2t",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#mean1",
-    "class/src/align/superposition.js~Superposition.html#instance-member-mean1",
-    "src/align/superposition.js~Superposition#mean1",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#mean2",
-    "class/src/align/superposition.js~Superposition.html#instance-member-mean2",
-    "src/align/superposition.js~Superposition#mean2",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#prepcoords",
-    "class/src/align/superposition.js~Superposition.html#instance-method-prepCoords",
-    "src/align/superposition.js~Superposition#prepCoords",
-    "method"
-  ],
-  [
-    "src/align/superposition.js~superposition#tmp",
-    "class/src/align/superposition.js~Superposition.html#instance-member-tmp",
-    "src/align/superposition.js~Superposition#tmp",
-    "member"
-  ],
-  [
-    "src/align/superposition.js~superposition#transform",
-    "class/src/align/superposition.js~Superposition.html#instance-method-transform",
-    "src/align/superposition.js~Superposition#transform",
-    "method"
   ],
   [
     "src/animation/animation.js",
@@ -3756,75 +1398,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/animation/animation.js~animation#_hold",
-    "class/src/animation/animation.js~Animation.html#instance-member-_hold",
-    "src/animation/animation.js~Animation#_hold",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#_init",
-    "class/src/animation/animation.js~Animation.html#instance-method-_init",
-    "src/animation/animation.js~Animation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~animation#_paused",
-    "class/src/animation/animation.js~Animation.html#instance-member-_paused",
-    "src/animation/animation.js~Animation#_paused",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#_resolvelist",
-    "class/src/animation/animation.js~Animation.html#instance-member-_resolveList",
-    "src/animation/animation.js~Animation#_resolveList",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#_tick",
-    "class/src/animation/animation.js~Animation.html#instance-method-_tick",
-    "src/animation/animation.js~Animation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~animation#alpha",
-    "class/src/animation/animation.js~Animation.html#instance-member-alpha",
-    "src/animation/animation.js~Animation#alpha",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#constructor",
-    "class/src/animation/animation.js~Animation.html#instance-constructor-constructor",
-    "src/animation/animation.js~Animation#constructor",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~animation#controls",
-    "class/src/animation/animation.js~Animation.html#instance-member-controls",
-    "src/animation/animation.js~Animation#controls",
-    "member"
-  ],
-  [
     "src/animation/animation.js~animation#done",
     "class/src/animation/animation.js~Animation.html#instance-get-done",
     "src/animation/animation.js~Animation#done",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#duration",
-    "class/src/animation/animation.js~Animation.html#instance-member-duration",
-    "src/animation/animation.js~Animation#duration",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#elapsedduration",
-    "class/src/animation/animation.js~Animation.html#instance-member-elapsedDuration",
-    "src/animation/animation.js~Animation#elapsedDuration",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#ignoreglobaltoggle",
-    "class/src/animation/animation.js~Animation.html#instance-member-ignoreGlobalToggle",
-    "src/animation/animation.js~Animation#ignoreGlobalToggle",
     "member"
   ],
   [
@@ -3840,28 +1416,10 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/animation/animation.js~animation#pausedduration",
-    "class/src/animation/animation.js~Animation.html#instance-member-pausedDuration",
-    "src/animation/animation.js~Animation#pausedDuration",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animation#pausedtime",
-    "class/src/animation/animation.js~Animation.html#instance-member-pausedTime",
-    "src/animation/animation.js~Animation#pausedTime",
-    "member"
-  ],
-  [
     "src/animation/animation.js~animation#resume",
     "class/src/animation/animation.js~Animation.html#instance-method-resume",
     "src/animation/animation.js~Animation#resume",
     "method"
-  ],
-  [
-    "src/animation/animation.js~animation#starttime",
-    "class/src/animation/animation.js~Animation.html#instance-member-startTime",
-    "src/animation/animation.js~Animation#startTime",
-    "member"
   ],
   [
     "src/animation/animation.js~animation#then",
@@ -3870,33 +1428,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/animation/animation.js~animation#tick",
-    "class/src/animation/animation.js~Animation.html#instance-method-tick",
-    "src/animation/animation.js~Animation#tick",
-    "method"
-  ],
-  [
     "src/animation/animation.js~animation#toggle",
     "class/src/animation/animation.js~Animation.html#instance-method-toggle",
     "src/animation/animation.js~Animation#toggle",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~animationlist#_list",
-    "class/src/animation/animation.js~AnimationList.html#instance-member-_list",
-    "src/animation/animation.js~AnimationList#_list",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animationlist#_resolvelist",
-    "class/src/animation/animation.js~AnimationList.html#instance-member-_resolveList",
-    "src/animation/animation.js~AnimationList#_resolveList",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~animationlist#constructor",
-    "class/src/animation/animation.js~AnimationList.html#instance-constructor-constructor",
-    "src/animation/animation.js~AnimationList#constructor",
     "method"
   ],
   [
@@ -3912,208 +1446,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/animation/animation.js~moveanimation#_init",
-    "class/src/animation/animation.js~MoveAnimation.html#instance-method-_init",
-    "src/animation/animation.js~MoveAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~moveanimation#_tick",
-    "class/src/animation/animation.js~MoveAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~MoveAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~moveanimation#movefrom",
-    "class/src/animation/animation.js~MoveAnimation.html#instance-member-moveFrom",
-    "src/animation/animation.js~MoveAnimation#moveFrom",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~moveanimation#moveto",
-    "class/src/animation/animation.js~MoveAnimation.html#instance-member-moveTo",
-    "src/animation/animation.js~MoveAnimation#moveTo",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#_init",
-    "class/src/animation/animation.js~RockAnimation.html#instance-method-_init",
-    "src/animation/animation.js~RockAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#_tick",
-    "class/src/animation/animation.js~RockAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~RockAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#angleend",
-    "class/src/animation/animation.js~RockAnimation.html#instance-member-angleEnd",
-    "src/animation/animation.js~RockAnimation#angleEnd",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#anglestep",
-    "class/src/animation/animation.js~RockAnimation.html#instance-member-angleStep",
-    "src/animation/animation.js~RockAnimation#angleStep",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#anglesum",
-    "class/src/animation/animation.js~RockAnimation.html#instance-member-angleSum",
-    "src/animation/animation.js~RockAnimation#angleSum",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#axis",
-    "class/src/animation/animation.js~RockAnimation.html#instance-member-axis",
-    "src/animation/animation.js~RockAnimation#axis",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#constructor",
-    "class/src/animation/animation.js~RockAnimation.html#instance-constructor-constructor",
-    "src/animation/animation.js~RockAnimation#constructor",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~rockanimation#direction",
-    "class/src/animation/animation.js~RockAnimation.html#instance-member-direction",
-    "src/animation/animation.js~RockAnimation#direction",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rotateanimation#_currentrotation",
-    "class/src/animation/animation.js~RotateAnimation.html#instance-member-_currentRotation",
-    "src/animation/animation.js~RotateAnimation#_currentRotation",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rotateanimation#_init",
-    "class/src/animation/animation.js~RotateAnimation.html#instance-method-_init",
-    "src/animation/animation.js~RotateAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~rotateanimation#_tick",
-    "class/src/animation/animation.js~RotateAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~RotateAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~rotateanimation#rotatefrom",
-    "class/src/animation/animation.js~RotateAnimation.html#instance-member-rotateFrom",
-    "src/animation/animation.js~RotateAnimation#rotateFrom",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~rotateanimation#rotateto",
-    "class/src/animation/animation.js~RotateAnimation.html#instance-member-rotateTo",
-    "src/animation/animation.js~RotateAnimation#rotateTo",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~spinanimation#_init",
-    "class/src/animation/animation.js~SpinAnimation.html#instance-method-_init",
-    "src/animation/animation.js~SpinAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~spinanimation#_tick",
-    "class/src/animation/animation.js~SpinAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~SpinAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~spinanimation#angle",
-    "class/src/animation/animation.js~SpinAnimation.html#instance-member-angle",
-    "src/animation/animation.js~SpinAnimation#angle",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~spinanimation#axis",
-    "class/src/animation/animation.js~SpinAnimation.html#instance-member-axis",
-    "src/animation/animation.js~SpinAnimation#axis",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~spinanimation#constructor",
-    "class/src/animation/animation.js~SpinAnimation.html#instance-constructor-constructor",
-    "src/animation/animation.js~SpinAnimation#constructor",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~timeoutanimation#_init",
-    "class/src/animation/animation.js~TimeoutAnimation.html#instance-method-_init",
-    "src/animation/animation.js~TimeoutAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~timeoutanimation#_tick",
-    "class/src/animation/animation.js~TimeoutAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~TimeoutAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~timeoutanimation#callback",
-    "class/src/animation/animation.js~TimeoutAnimation.html#instance-member-callback",
-    "src/animation/animation.js~TimeoutAnimation#callback",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~valueanimation#_init",
-    "class/src/animation/animation.js~ValueAnimation.html#instance-method-_init",
-    "src/animation/animation.js~ValueAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~valueanimation#_tick",
-    "class/src/animation/animation.js~ValueAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~ValueAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~valueanimation#callback",
-    "class/src/animation/animation.js~ValueAnimation.html#instance-member-callback",
-    "src/animation/animation.js~ValueAnimation#callback",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~valueanimation#valuefrom",
-    "class/src/animation/animation.js~ValueAnimation.html#instance-member-valueFrom",
-    "src/animation/animation.js~ValueAnimation#valueFrom",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~valueanimation#valueto",
-    "class/src/animation/animation.js~ValueAnimation.html#instance-member-valueTo",
-    "src/animation/animation.js~ValueAnimation#valueTo",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~zoomanimation#_init",
-    "class/src/animation/animation.js~ZoomAnimation.html#instance-method-_init",
-    "src/animation/animation.js~ZoomAnimation#_init",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~zoomanimation#_tick",
-    "class/src/animation/animation.js~ZoomAnimation.html#instance-method-_tick",
-    "src/animation/animation.js~ZoomAnimation#_tick",
-    "method"
-  ],
-  [
-    "src/animation/animation.js~zoomanimation#zoomfrom",
-    "class/src/animation/animation.js~ZoomAnimation.html#instance-member-zoomFrom",
-    "src/animation/animation.js~ZoomAnimation#zoomFrom",
-    "member"
-  ],
-  [
-    "src/animation/animation.js~zoomanimation#zoomto",
-    "class/src/animation/animation.js~ZoomAnimation.html#instance-member-zoomTo",
-    "src/animation/animation.js~ZoomAnimation#zoomTo",
-    "member"
+    "src/buffer/alignedbox-buffer.js",
+    "file/src/buffer/alignedbox-buffer.js.html",
+    "src/buffer/alignedbox-buffer.js",
+    "file"
   ],
   [
     "src/buffer/arrow-buffer.js",
@@ -4122,111 +1458,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/arrow-buffer.js~arrowbuffer#aspectratio",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-aspectRatio",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#aspectRatio",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#conebuffer",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-coneBuffer",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#coneBuffer",
-    "member"
-  ],
-  [
     "src/buffer/arrow-buffer.js~arrowbuffer#constructor",
     "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-constructor-constructor",
     "src/buffer/arrow-buffer.js~ArrowBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#cylinderbuffer",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-cylinderBuffer",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#cylinderBuffer",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#cylinderradius",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-cylinderRadius",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#cylinderRadius",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#dispose",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-dispose",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#dispose",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#geometry",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-geometry",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#geometry",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#getmesh",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-getMesh",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#getMesh",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#getpickingmesh",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-getPickingMesh",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#getPickingMesh",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#getwireframemesh",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-getWireframeMesh",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#getWireframeMesh",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#group",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-group",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#group",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#makeattributes",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-makeAttributes",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#makeAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#matrix",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-get-matrix",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#matrix",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#matrix",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-set-matrix",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#matrix",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#pickable",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-get-pickable",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#pickable",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#picking",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-picking",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#picking",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#pickinggroup",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-pickingGroup",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#pickingGroup",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#setattributes",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-setAttributes",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#setAttributes",
     "method"
   ],
   [
@@ -4236,76 +1470,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/arrow-buffer.js~arrowbuffer#setvisibility",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-method-setVisibility",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#setVisibility",
-    "method"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#splitposition",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-splitPosition",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#splitPosition",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#wireframe",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-wireframe",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#wireframe",
-    "member"
-  ],
-  [
-    "src/buffer/arrow-buffer.js~arrowbuffer#wireframegroup",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-member-wireframeGroup",
-    "src/buffer/arrow-buffer.js~ArrowBuffer#wireframeGroup",
-    "member"
-  ],
-  [
     "src/buffer/box-buffer.js",
     "file/src/buffer/box-buffer.js.html",
     "src/buffer/box-buffer.js",
     "file"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#_depthaxis",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-member-_depthAxis",
-    "src/buffer/box-buffer.js~BoxBuffer#_depthAxis",
-    "member"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#_heightaxis",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-member-_heightAxis",
-    "src/buffer/box-buffer.js~BoxBuffer#_heightAxis",
-    "member"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#_size",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-member-_size",
-    "src/buffer/box-buffer.js~BoxBuffer#_size",
-    "member"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#applypositiontransform",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/box-buffer.js~BoxBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#constructor",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-constructor-constructor",
-    "src/buffer/box-buffer.js~BoxBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#setattributes",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-method-setAttributes",
-    "src/buffer/box-buffer.js~BoxBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/box-buffer.js~boxbuffer#updatenormals",
-    "class/src/buffer/box-buffer.js~BoxBuffer.html#instance-get-updateNormals",
-    "src/buffer/box-buffer.js~BoxBuffer#updateNormals",
-    "member"
   ],
   [
     "src/buffer/buffer.js",
@@ -4314,88 +1482,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/buffer.js~buffer#[name]",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-[name]",
-    "src/buffer/buffer.js~Buffer#[name]",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#_getmesh",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-_getMesh",
-    "src/buffer/buffer.js~Buffer#_getMesh",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#_positiondatasize",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-_positionDataSize",
-    "src/buffer/buffer.js~Buffer#_positionDataSize",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#addattributes",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-addAttributes",
-    "src/buffer/buffer.js~Buffer#addAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#adduniforms",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-addUniforms",
-    "src/buffer/buffer.js~Buffer#addUniforms",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#attributesize",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-attributeSize",
-    "src/buffer/buffer.js~Buffer#attributeSize",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#background",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-background",
-    "src/buffer/buffer.js~Buffer#background",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#clipcenter",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-clipCenter",
-    "src/buffer/buffer.js~Buffer#clipCenter",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#clipnear",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-clipNear",
-    "src/buffer/buffer.js~Buffer#clipNear",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#clipradius",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-clipRadius",
-    "src/buffer/buffer.js~Buffer#clipRadius",
-    "member"
-  ],
-  [
     "src/buffer/buffer.js~buffer#constructor",
     "class/src/buffer/buffer.js~Buffer.html#instance-constructor-constructor",
     "src/buffer/buffer.js~Buffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#depthwrite",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-depthWrite",
-    "src/buffer/buffer.js~Buffer#depthWrite",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#diffuse",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-diffuse",
-    "src/buffer/buffer.js~Buffer#diffuse",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#disablepicking",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-disablePicking",
-    "src/buffer/buffer.js~Buffer#disablePicking",
-    "member"
   ],
   [
     "src/buffer/buffer.js~buffer#dispose",
@@ -4404,243 +1494,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/buffer.js~buffer#dullinterior",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-dullInterior",
-    "src/buffer/buffer.js~Buffer#dullInterior",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#dynamic",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-dynamic",
-    "src/buffer/buffer.js~Buffer#dynamic",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#flatshaded",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-flatShaded",
-    "src/buffer/buffer.js~Buffer#flatShaded",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#forcetransparent",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-forceTransparent",
-    "src/buffer/buffer.js~Buffer#forceTransparent",
-    "member"
-  ],
-  [
     "src/buffer/buffer.js~buffer#fragmentshader",
     "class/src/buffer/buffer.js~Buffer.html#instance-get-fragmentShader",
     "src/buffer/buffer.js~Buffer#fragmentShader",
     "member"
   ],
   [
-    "src/buffer/buffer.js~buffer#geometry",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-geometry",
-    "src/buffer/buffer.js~Buffer#geometry",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getdefines",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getDefines",
-    "src/buffer/buffer.js~Buffer#getDefines",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getfragmentshader",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getFragmentShader",
-    "src/buffer/buffer.js~Buffer#getFragmentShader",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getmesh",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getMesh",
-    "src/buffer/buffer.js~Buffer#getMesh",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getparameters",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getParameters",
-    "src/buffer/buffer.js~Buffer#getParameters",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getpickingmesh",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getPickingMesh",
-    "src/buffer/buffer.js~Buffer#getPickingMesh",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getrenderorder",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getRenderOrder",
-    "src/buffer/buffer.js~Buffer#getRenderOrder",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getshader",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getShader",
-    "src/buffer/buffer.js~Buffer#getShader",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getvertexshader",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getVertexShader",
-    "src/buffer/buffer.js~Buffer#getVertexShader",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#getwireframemesh",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-getWireframeMesh",
-    "src/buffer/buffer.js~Buffer#getWireframeMesh",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#group",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-group",
-    "src/buffer/buffer.js~Buffer#group",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#indexversion",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-indexVersion",
-    "src/buffer/buffer.js~Buffer#indexVersion",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#initindex",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-initIndex",
-    "src/buffer/buffer.js~Buffer#initIndex",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#linewidth",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-linewidth",
-    "src/buffer/buffer.js~Buffer#linewidth",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#makematerial",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-makeMaterial",
-    "src/buffer/buffer.js~Buffer#makeMaterial",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#makewireframegeometry",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-makeWireframeGeometry",
-    "src/buffer/buffer.js~Buffer#makeWireframeGeometry",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#makewireframeindex",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-makeWireframeIndex",
-    "src/buffer/buffer.js~Buffer#makeWireframeIndex",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#material",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-material",
-    "src/buffer/buffer.js~Buffer#material",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#matrix",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-matrix",
-    "src/buffer/buffer.js~Buffer#matrix",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#matrix",
-    "class/src/buffer/buffer.js~Buffer.html#instance-set-matrix",
-    "src/buffer/buffer.js~Buffer#matrix",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#metalness",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-metalness",
-    "src/buffer/buffer.js~Buffer#metalness",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#opacity",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-opacity",
-    "src/buffer/buffer.js~Buffer#opacity",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#opaqueback",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-opaqueBack",
-    "src/buffer/buffer.js~Buffer#opaqueBack",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#parameters",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-parameters",
-    "src/buffer/buffer.js~Buffer#parameters",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#pickable",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-pickable",
-    "src/buffer/buffer.js~Buffer#pickable",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#picking",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-picking",
-    "src/buffer/buffer.js~Buffer#picking",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#pickinggroup",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-pickingGroup",
-    "src/buffer/buffer.js~Buffer#pickingGroup",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#pickingmaterial",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-pickingMaterial",
-    "src/buffer/buffer.js~Buffer#pickingMaterial",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#pickinguniforms",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-pickingUniforms",
-    "src/buffer/buffer.js~Buffer#pickingUniforms",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#roughness",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-roughness",
-    "src/buffer/buffer.js~Buffer#roughness",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#setattributes",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-setAttributes",
-    "src/buffer/buffer.js~Buffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#setmatrix",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-setMatrix",
-    "src/buffer/buffer.js~Buffer#setMatrix",
-    "method"
-  ],
-  [
     "src/buffer/buffer.js~buffer#setparameters",
     "class/src/buffer/buffer.js~Buffer.html#instance-method-setParameters",
     "src/buffer/buffer.js~Buffer#setParameters",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#setproperties",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-setProperties",
-    "src/buffer/buffer.js~Buffer#setProperties",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#setuniforms",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-setUniforms",
-    "src/buffer/buffer.js~Buffer#setUniforms",
     "method"
   ],
   [
@@ -4650,105 +1512,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/buffer.js~buffer#side",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-side",
-    "src/buffer/buffer.js~Buffer#side",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#size",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-size",
-    "src/buffer/buffer.js~Buffer#size",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#transparent",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-transparent",
-    "src/buffer/buffer.js~Buffer#transparent",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#uniforms",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-uniforms",
-    "src/buffer/buffer.js~Buffer#uniforms",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#updaterenderorder",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-updateRenderOrder",
-    "src/buffer/buffer.js~Buffer#updateRenderOrder",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#updateshader",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-updateShader",
-    "src/buffer/buffer.js~Buffer#updateShader",
-    "method"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#updatewireframeindex",
-    "class/src/buffer/buffer.js~Buffer.html#instance-method-updateWireframeIndex",
-    "src/buffer/buffer.js~Buffer#updateWireframeIndex",
-    "method"
-  ],
-  [
     "src/buffer/buffer.js~buffer#vertexshader",
     "class/src/buffer/buffer.js~Buffer.html#instance-get-vertexShader",
     "src/buffer/buffer.js~Buffer#vertexShader",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#visible",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-visible",
-    "src/buffer/buffer.js~Buffer#visible",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframe",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframe",
-    "src/buffer/buffer.js~Buffer#wireframe",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframegeometry",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeGeometry",
-    "src/buffer/buffer.js~Buffer#wireframeGeometry",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframegroup",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeGroup",
-    "src/buffer/buffer.js~Buffer#wireframeGroup",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframeindex",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeIndex",
-    "src/buffer/buffer.js~Buffer#wireframeIndex",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframeindexcount",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeIndexCount",
-    "src/buffer/buffer.js~Buffer#wireframeIndexCount",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframeindexversion",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeIndexVersion",
-    "src/buffer/buffer.js~Buffer#wireframeIndexVersion",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframelinewidth",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeLinewidth",
-    "src/buffer/buffer.js~Buffer#wireframeLinewidth",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframematerial",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeMaterial",
-    "src/buffer/buffer.js~Buffer#wireframeMaterial",
     "member"
   ],
   [
@@ -4776,76 +1542,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#_position",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-member-_position",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#_position",
-    "member"
-  ],
-  [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#_position1",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-member-_position1",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#_position1",
-    "member"
-  ],
-  [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#_position2",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-member-_position2",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#_position2",
-    "member"
-  ],
-  [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#_radius",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-member-_radius",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#_radius",
-    "member"
-  ],
-  [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#applypositiontransform",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
     "src/buffer/conegeometry-buffer.js~conegeometrybuffer#constructor",
     "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-constructor-constructor",
     "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#constructor",
     "method"
   ],
   [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#setattributes",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-method-setAttributes",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/conegeometry-buffer.js~conegeometrybuffer#updatenormals",
-    "class/src/buffer/conegeometry-buffer.js~ConeGeometryBuffer.html#instance-get-updateNormals",
-    "src/buffer/conegeometry-buffer.js~ConeGeometryBuffer#updateNormals",
-    "member"
-  ],
-  [
     "src/buffer/contour-buffer.js",
     "file/src/buffer/contour-buffer.js.html",
     "src/buffer/contour-buffer.js",
     "file"
-  ],
-  [
-    "src/buffer/contour-buffer.js~contourbuffer#fragmentshader",
-    "class/src/buffer/contour-buffer.js~ContourBuffer.html#instance-get-fragmentShader",
-    "src/buffer/contour-buffer.js~ContourBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/contour-buffer.js~contourbuffer#isline",
-    "class/src/buffer/contour-buffer.js~ContourBuffer.html#instance-get-isLine",
-    "src/buffer/contour-buffer.js~ContourBuffer#isLine",
-    "member"
-  ],
-  [
-    "src/buffer/contour-buffer.js~contourbuffer#vertexshader",
-    "class/src/buffer/contour-buffer.js~ContourBuffer.html#instance-get-vertexShader",
-    "src/buffer/contour-buffer.js~ContourBuffer#vertexShader",
-    "member"
   ],
   [
     "src/buffer/cylinder-buffer.js",
@@ -4866,64 +1572,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#__center",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-member-__center",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#__center",
-    "member"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#_color",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-member-_color",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#_color",
-    "member"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#_from",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-member-_from",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#_from",
-    "member"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#_position",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-member-_position",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#_position",
-    "member"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#_radius",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-member-_radius",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#_radius",
-    "member"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#_to",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-member-_to",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#_to",
-    "member"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#applypositiontransform",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
     "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#constructor",
     "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-constructor-constructor",
     "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#setattributes",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-method-setAttributes",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/cylindergeometry-buffer.js~cylindergeometrybuffer#updatenormals",
-    "class/src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer.html#instance-get-updateNormals",
-    "src/buffer/cylindergeometry-buffer.js~CylinderGeometryBuffer#updateNormals",
-    "member"
   ],
   [
     "src/buffer/cylinderimpostor-buffer.js",
@@ -4938,202 +1590,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#fragmentshader",
-    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-get-fragmentShader",
-    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#getdefines",
-    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-method-getDefines",
-    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#getDefines",
-    "method"
-  ],
-  [
-    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#isimpostor",
-    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-get-isImpostor",
-    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#isImpostor",
-    "member"
-  ],
-  [
-    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#openended",
-    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-member-openEnded",
-    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#openEnded",
-    "member"
-  ],
-  [
-    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#parameters",
-    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-get-parameters",
-    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#parameters",
-    "member"
-  ],
-  [
-    "src/buffer/cylinderimpostor-buffer.js~cylinderimpostorbuffer#vertexshader",
-    "class/src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer.html#instance-get-vertexShader",
-    "src/buffer/cylinderimpostor-buffer.js~CylinderImpostorBuffer#vertexShader",
-    "member"
-  ],
-  [
     "src/buffer/doublesided-buffer.js",
     "file/src/buffer/doublesided-buffer.js.html",
     "src/buffer/doublesided-buffer.js",
     "file"
   ],
   [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#backbuffer",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-backBuffer",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#backBuffer",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#backmeshes",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-backMeshes",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#backMeshes",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#background",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-background",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#background",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#buffer",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-buffer",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#buffer",
-    "member"
-  ],
-  [
     "src/buffer/doublesided-buffer.js~doublesidedbuffer#constructor",
     "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-constructor-constructor",
     "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#disablepicking",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-disablePicking",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#disablePicking",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#dispose",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-method-dispose",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#dispose",
-    "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#frontbuffer",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-frontBuffer",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#frontBuffer",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#frontmeshes",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-frontMeshes",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#frontMeshes",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#geometry",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-geometry",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#geometry",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#getmesh",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-method-getMesh",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#getMesh",
-    "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#getpickingmesh",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-method-getPickingMesh",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#getPickingMesh",
-    "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#getwireframemesh",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-method-getWireframeMesh",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#getWireframeMesh",
-    "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#group",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-group",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#group",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#matrix",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-get-matrix",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#matrix",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#matrix",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-set-matrix",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#matrix",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#pickable",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-get-pickable",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#pickable",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#picking",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-picking",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#picking",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#pickinggroup",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-pickingGroup",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#pickingGroup",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#setattributes",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-method-setAttributes",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#setparameters",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-method-setParameters",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#setParameters",
-    "method"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#side",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-side",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#side",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#size",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-size",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#size",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#visible",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-visible",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#visible",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#wireframe",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-wireframe",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#wireframe",
-    "member"
-  ],
-  [
-    "src/buffer/doublesided-buffer.js~doublesidedbuffer#wireframegroup",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-member-wireframeGroup",
-    "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#wireframeGroup",
-    "member"
   ],
   [
     "src/buffer/ellipsoid-buffer.js",
@@ -5154,148 +1620,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#_majoraxis",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-member-_majorAxis",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#_majorAxis",
-    "member"
-  ],
-  [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#_minoraxis",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-member-_minorAxis",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#_minorAxis",
-    "member"
-  ],
-  [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#_radius",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-member-_radius",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#_radius",
-    "member"
-  ],
-  [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#applypositiontransform",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#constructor",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-constructor-constructor",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#setattributes",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-method-setAttributes",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/ellipsoidgeometry-buffer.js~ellipsoidgeometrybuffer#updatenormals",
-    "class/src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer.html#instance-get-updateNormals",
-    "src/buffer/ellipsoidgeometry-buffer.js~EllipsoidGeometryBuffer#updateNormals",
-    "member"
-  ],
-  [
     "src/buffer/geometry-buffer.js",
     "file/src/buffer/geometry-buffer.js.html",
     "src/buffer/geometry-buffer.js",
     "file"
   ],
   [
-    "src/buffer/geometry-buffer.js~geometrybuffer#applypositiontransform",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
     "src/buffer/geometry-buffer.js~geometrybuffer#constructor",
     "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-constructor-constructor",
     "src/buffer/geometry-buffer.js~GeometryBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#geoindex",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-geoIndex",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#geoIndex",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#geonormal",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-geoNormal",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#geoNormal",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#geoposition",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-geoPosition",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#geoPosition",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#geopositioncount",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-geoPositionCount",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#geoPositionCount",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#makeindex",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-method-makeIndex",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#makeIndex",
-    "method"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#meshcolor",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-meshColor",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#meshColor",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#meshindex",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-meshIndex",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#meshIndex",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#meshnormal",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-meshNormal",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#meshNormal",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#meshposition",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-meshPosition",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#meshPosition",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#positioncount",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-positionCount",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#positionCount",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#setattributes",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-method-setAttributes",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#transformedgeonormal",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-transformedGeoNormal",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#transformedGeoNormal",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#transformedgeoposition",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-member-transformedGeoPosition",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#transformedGeoPosition",
-    "member"
-  ],
-  [
-    "src/buffer/geometry-buffer.js~geometrybuffer#updatenormals",
-    "class/src/buffer/geometry-buffer.js~GeometryBuffer.html#instance-get-updateNormals",
-    "src/buffer/geometry-buffer.js~GeometryBuffer#updateNormals",
-    "member"
   ],
   [
     "src/buffer/hyperballstick-buffer.js",
@@ -5322,30 +1656,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/hyperballstickimpostor-buffer.js~hyperballstickimpostorbuffer#fragmentshader",
-    "class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html#instance-get-fragmentShader",
-    "src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/hyperballstickimpostor-buffer.js~hyperballstickimpostorbuffer#isimpostor",
-    "class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html#instance-get-isImpostor",
-    "src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer#isImpostor",
-    "member"
-  ],
-  [
-    "src/buffer/hyperballstickimpostor-buffer.js~hyperballstickimpostorbuffer#parameters",
-    "class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html#instance-get-parameters",
-    "src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer#parameters",
-    "member"
-  ],
-  [
-    "src/buffer/hyperballstickimpostor-buffer.js~hyperballstickimpostorbuffer#vertexshader",
-    "class/src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer.html#instance-get-vertexShader",
-    "src/buffer/hyperballstickimpostor-buffer.js~HyperballStickImpostorBuffer#vertexShader",
-    "member"
-  ],
-  [
     "src/buffer/image-buffer.js",
     "file/src/buffer/image-buffer.js.html",
     "src/buffer/image-buffer.js",
@@ -5356,72 +1666,6 @@ window.esdocSearchIndex = [
     "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-constructor-constructor",
     "src/buffer/image-buffer.js~ImageBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#filter",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-member-filter",
-    "src/buffer/image-buffer.js~ImageBuffer#filter",
-    "member"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#forcetransparent",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-member-forceTransparent",
-    "src/buffer/image-buffer.js~ImageBuffer#forceTransparent",
-    "member"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#fragmentshader",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-get-fragmentShader",
-    "src/buffer/image-buffer.js~ImageBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#getdefines",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-method-getDefines",
-    "src/buffer/image-buffer.js~ImageBuffer#getDefines",
-    "method"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#makematerial",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-method-makeMaterial",
-    "src/buffer/image-buffer.js~ImageBuffer#makeMaterial",
-    "method"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#parameters",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-get-parameters",
-    "src/buffer/image-buffer.js~ImageBuffer#parameters",
-    "member"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#pickingtex",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-member-pickingTex",
-    "src/buffer/image-buffer.js~ImageBuffer#pickingTex",
-    "member"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#setuniforms",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-method-setUniforms",
-    "src/buffer/image-buffer.js~ImageBuffer#setUniforms",
-    "method"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#tex",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-member-tex",
-    "src/buffer/image-buffer.js~ImageBuffer#tex",
-    "member"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#updatetexture",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-method-updateTexture",
-    "src/buffer/image-buffer.js~ImageBuffer#updateTexture",
-    "method"
-  ],
-  [
-    "src/buffer/image-buffer.js~imagebuffer#vertexshader",
-    "class/src/buffer/image-buffer.js~ImageBuffer.html#instance-get-vertexShader",
-    "src/buffer/image-buffer.js~ImageBuffer#vertexShader",
-    "member"
   ],
   [
     "src/buffer/line-buffer.js",
@@ -5436,82 +1680,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/line-buffer.js~linebuffer#fragmentshader",
-    "class/src/buffer/line-buffer.js~LineBuffer.html#instance-get-fragmentShader",
-    "src/buffer/line-buffer.js~LineBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/line-buffer.js~linebuffer#isline",
-    "class/src/buffer/line-buffer.js~LineBuffer.html#instance-get-isLine",
-    "src/buffer/line-buffer.js~LineBuffer#isLine",
-    "member"
-  ],
-  [
-    "src/buffer/line-buffer.js~linebuffer#setattributes",
-    "class/src/buffer/line-buffer.js~LineBuffer.html#instance-method-setAttributes",
-    "src/buffer/line-buffer.js~LineBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/line-buffer.js~linebuffer#vertexshader",
-    "class/src/buffer/line-buffer.js~LineBuffer.html#instance-get-vertexShader",
-    "src/buffer/line-buffer.js~LineBuffer#vertexShader",
-    "member"
-  ],
-  [
     "src/buffer/mapped-buffer.js",
     "file/src/buffer/mapped-buffer.js.html",
     "src/buffer/mapped-buffer.js",
     "file"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#addattributes",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-method-addAttributes",
-    "src/buffer/mapped-buffer.js~MappedBuffer#addAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#attributesize",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-attributeSize",
-    "src/buffer/mapped-buffer.js~MappedBuffer#attributeSize",
-    "member"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#constructor",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-constructor-constructor",
-    "src/buffer/mapped-buffer.js~MappedBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#getattributeindex",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-method-getAttributeIndex",
-    "src/buffer/mapped-buffer.js~MappedBuffer#getAttributeIndex",
-    "method"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#index",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-member-index",
-    "src/buffer/mapped-buffer.js~MappedBuffer#index",
-    "member"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#indexsize",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-get-indexSize",
-    "src/buffer/mapped-buffer.js~MappedBuffer#indexSize",
-    "member"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#makeindex",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-method-makeIndex",
-    "src/buffer/mapped-buffer.js~MappedBuffer#makeIndex",
-    "method"
-  ],
-  [
-    "src/buffer/mapped-buffer.js~mappedbuffer#makemapping",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-method-makeMapping",
-    "src/buffer/mapped-buffer.js~MappedBuffer#makeMapping",
-    "method"
   ],
   [
     "src/buffer/mapped-buffer.js~mappedbuffer#mapping",
@@ -5550,138 +1722,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/buffer/mapped-buffer.js~mappedbuffer#setattributes",
-    "class/src/buffer/mapped-buffer.js~MappedBuffer.html#instance-method-setAttributes",
-    "src/buffer/mapped-buffer.js~MappedBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js",
-    "file/src/buffer/mappedalignedbox-buffer.js.html",
-    "src/buffer/mappedalignedbox-buffer.js",
-    "file"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer#mapping",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html#instance-get-mapping",
-    "src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer#mapping",
-    "member"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer#mappingindices",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html#instance-get-mappingIndices",
-    "src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer#mappingIndices",
-    "member"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer#mappingindicessize",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html#instance-get-mappingIndicesSize",
-    "src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer#mappingIndicesSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer#mappingitemsize",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html#instance-get-mappingItemSize",
-    "src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer#mappingItemSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer#mappingsize",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html#instance-get-mappingSize",
-    "src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer#mappingSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedalignedbox-buffer.js~mappedalignedboxbuffer#mappingtype",
-    "class/src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer.html#instance-get-mappingType",
-    "src/buffer/mappedalignedbox-buffer.js~MappedAlignedBoxBuffer#mappingType",
-    "member"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js",
-    "file/src/buffer/mappedbox-buffer.js.html",
-    "src/buffer/mappedbox-buffer.js",
-    "file"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js~mappedboxbuffer#mapping",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html#instance-get-mapping",
-    "src/buffer/mappedbox-buffer.js~MappedBoxBuffer#mapping",
-    "member"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js~mappedboxbuffer#mappingindices",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html#instance-get-mappingIndices",
-    "src/buffer/mappedbox-buffer.js~MappedBoxBuffer#mappingIndices",
-    "member"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js~mappedboxbuffer#mappingindicessize",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html#instance-get-mappingIndicesSize",
-    "src/buffer/mappedbox-buffer.js~MappedBoxBuffer#mappingIndicesSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js~mappedboxbuffer#mappingitemsize",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html#instance-get-mappingItemSize",
-    "src/buffer/mappedbox-buffer.js~MappedBoxBuffer#mappingItemSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js~mappedboxbuffer#mappingsize",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html#instance-get-mappingSize",
-    "src/buffer/mappedbox-buffer.js~MappedBoxBuffer#mappingSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedbox-buffer.js~mappedboxbuffer#mappingtype",
-    "class/src/buffer/mappedbox-buffer.js~MappedBoxBuffer.html#instance-get-mappingType",
-    "src/buffer/mappedbox-buffer.js~MappedBoxBuffer#mappingType",
-    "member"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js",
-    "file/src/buffer/mappedquad-buffer.js.html",
-    "src/buffer/mappedquad-buffer.js",
-    "file"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js~mappedquadbuffer#mapping",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html#instance-get-mapping",
-    "src/buffer/mappedquad-buffer.js~MappedQuadBuffer#mapping",
-    "member"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js~mappedquadbuffer#mappingindices",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html#instance-get-mappingIndices",
-    "src/buffer/mappedquad-buffer.js~MappedQuadBuffer#mappingIndices",
-    "member"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js~mappedquadbuffer#mappingindicessize",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html#instance-get-mappingIndicesSize",
-    "src/buffer/mappedquad-buffer.js~MappedQuadBuffer#mappingIndicesSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js~mappedquadbuffer#mappingitemsize",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html#instance-get-mappingItemSize",
-    "src/buffer/mappedquad-buffer.js~MappedQuadBuffer#mappingItemSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js~mappedquadbuffer#mappingsize",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html#instance-get-mappingSize",
-    "src/buffer/mappedquad-buffer.js~MappedQuadBuffer#mappingSize",
-    "member"
-  ],
-  [
-    "src/buffer/mappedquad-buffer.js~mappedquadbuffer#mappingtype",
-    "class/src/buffer/mappedquad-buffer.js~MappedQuadBuffer.html#instance-get-mappingType",
-    "src/buffer/mappedquad-buffer.js~MappedQuadBuffer#mappingType",
-    "member"
-  ],
-  [
     "src/buffer/mesh-buffer.js",
     "file/src/buffer/mesh-buffer.js.html",
     "src/buffer/mesh-buffer.js",
@@ -5694,76 +1734,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/mesh-buffer.js~meshbuffer#fragmentshader",
-    "class/src/buffer/mesh-buffer.js~MeshBuffer.html#instance-get-fragmentShader",
-    "src/buffer/mesh-buffer.js~MeshBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/mesh-buffer.js~meshbuffer#vertexshader",
-    "class/src/buffer/mesh-buffer.js~MeshBuffer.html#instance-get-vertexShader",
-    "src/buffer/mesh-buffer.js~MeshBuffer#vertexShader",
-    "member"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js",
-    "file/src/buffer/octahedron-buffer.js.html",
-    "src/buffer/octahedron-buffer.js",
-    "file"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#_depthaxis",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-member-_depthAxis",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#_depthAxis",
-    "member"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#_heightaxis",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-member-_heightAxis",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#_heightAxis",
-    "member"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#_size",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-member-_size",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#_size",
-    "member"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#applypositiontransform",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#constructor",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-constructor-constructor",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#setattributes",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-method-setAttributes",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/octahedron-buffer.js~octahedronbuffer#updatenormals",
-    "class/src/buffer/octahedron-buffer.js~OctahedronBuffer.html#instance-get-updateNormals",
-    "src/buffer/octahedron-buffer.js~OctahedronBuffer#updateNormals",
-    "member"
-  ],
-  [
     "src/buffer/point-buffer.js",
     "file/src/buffer/point-buffer.js.html",
     "src/buffer/point-buffer.js",
     "file"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#alphatest",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-alphaTest",
-    "src/buffer/point-buffer.js~PointBuffer#alphaTest",
-    "member"
   ],
   [
     "src/buffer/point-buffer.js~pointbuffer#constructor",
@@ -5772,100 +1746,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/point-buffer.js~pointbuffer#dispose",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-method-dispose",
-    "src/buffer/point-buffer.js~PointBuffer#dispose",
-    "method"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#edgebleach",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-edgeBleach",
-    "src/buffer/point-buffer.js~PointBuffer#edgeBleach",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#forcetransparent",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-forceTransparent",
-    "src/buffer/point-buffer.js~PointBuffer#forceTransparent",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#fragmentshader",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-get-fragmentShader",
-    "src/buffer/point-buffer.js~PointBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#getdefines",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-method-getDefines",
-    "src/buffer/point-buffer.js~PointBuffer#getDefines",
-    "method"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#ispoint",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-get-isPoint",
-    "src/buffer/point-buffer.js~PointBuffer#isPoint",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#makematerial",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-method-makeMaterial",
-    "src/buffer/point-buffer.js~PointBuffer#makeMaterial",
-    "method"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#maketexture",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-method-makeTexture",
-    "src/buffer/point-buffer.js~PointBuffer#makeTexture",
-    "method"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#parameters",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-get-parameters",
-    "src/buffer/point-buffer.js~PointBuffer#parameters",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#pointsize",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-pointSize",
-    "src/buffer/point-buffer.js~PointBuffer#pointSize",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#setuniforms",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-method-setUniforms",
-    "src/buffer/point-buffer.js~PointBuffer#setUniforms",
-    "method"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#sizeattenuation",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-sizeAttenuation",
-    "src/buffer/point-buffer.js~PointBuffer#sizeAttenuation",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#sortparticles",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-sortParticles",
-    "src/buffer/point-buffer.js~PointBuffer#sortParticles",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#tex",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-tex",
-    "src/buffer/point-buffer.js~PointBuffer#tex",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#usetexture",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-member-useTexture",
-    "src/buffer/point-buffer.js~PointBuffer#useTexture",
-    "member"
-  ],
-  [
-    "src/buffer/point-buffer.js~pointbuffer#vertexshader",
-    "class/src/buffer/point-buffer.js~PointBuffer.html#instance-get-vertexShader",
-    "src/buffer/point-buffer.js~PointBuffer#vertexShader",
-    "member"
+    "src/buffer/quad-buffer.js",
+    "file/src/buffer/quad-buffer.js.html",
+    "src/buffer/quad-buffer.js",
+    "file"
   ],
   [
     "src/buffer/ribbon-buffer.js",
@@ -5878,30 +1762,6 @@ window.esdocSearchIndex = [
     "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html#instance-constructor-constructor",
     "src/buffer/ribbon-buffer.js~RibbonBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/ribbon-buffer.js~ribbonbuffer#makeindex",
-    "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html#instance-method-makeIndex",
-    "src/buffer/ribbon-buffer.js~RibbonBuffer#makeIndex",
-    "method"
-  ],
-  [
-    "src/buffer/ribbon-buffer.js~ribbonbuffer#meshindex",
-    "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html#instance-member-meshIndex",
-    "src/buffer/ribbon-buffer.js~RibbonBuffer#meshIndex",
-    "member"
-  ],
-  [
-    "src/buffer/ribbon-buffer.js~ribbonbuffer#setattributes",
-    "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html#instance-method-setAttributes",
-    "src/buffer/ribbon-buffer.js~RibbonBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/ribbon-buffer.js~ribbonbuffer#vertexshader",
-    "class/src/buffer/ribbon-buffer.js~RibbonBuffer.html#instance-get-vertexShader",
-    "src/buffer/ribbon-buffer.js~RibbonBuffer#vertexShader",
-    "member"
   ],
   [
     "src/buffer/sphere-buffer.js",
@@ -5922,27 +1782,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/spheregeometry-buffer.js~spheregeometrybuffer#_radius",
-    "class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html#instance-member-_radius",
-    "src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer#_radius",
-    "member"
-  ],
-  [
-    "src/buffer/spheregeometry-buffer.js~spheregeometrybuffer#applypositiontransform",
-    "class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
     "src/buffer/spheregeometry-buffer.js~spheregeometrybuffer#constructor",
     "class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html#instance-constructor-constructor",
     "src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/spheregeometry-buffer.js~spheregeometrybuffer#setattributes",
-    "class/src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer.html#instance-method-setAttributes",
-    "src/buffer/spheregeometry-buffer.js~SphereGeometryBuffer#setAttributes",
     "method"
   ],
   [
@@ -5958,82 +1800,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/sphereimpostor-buffer.js~sphereimpostorbuffer#fragmentshader",
-    "class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html#instance-get-fragmentShader",
-    "src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/sphereimpostor-buffer.js~sphereimpostorbuffer#isimpostor",
-    "class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html#instance-get-isImpostor",
-    "src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer#isImpostor",
-    "member"
-  ],
-  [
-    "src/buffer/sphereimpostor-buffer.js~sphereimpostorbuffer#vertexshader",
-    "class/src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer.html#instance-get-vertexShader",
-    "src/buffer/sphereimpostor-buffer.js~SphereImpostorBuffer#vertexShader",
-    "member"
-  ],
-  [
     "src/buffer/surface-buffer.js",
     "file/src/buffer/surface-buffer.js.html",
     "src/buffer/surface-buffer.js",
     "file"
-  ],
-  [
-    "src/buffer/surface-buffer.js~surfacebuffer#issurface",
-    "class/src/buffer/surface-buffer.js~SurfaceBuffer.html#instance-get-isSurface",
-    "src/buffer/surface-buffer.js~SurfaceBuffer#isSurface",
-    "member"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js",
-    "file/src/buffer/tetrahedron-buffer.js.html",
-    "src/buffer/tetrahedron-buffer.js",
-    "file"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#_depthaxis",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-member-_depthAxis",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#_depthAxis",
-    "member"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#_heightaxis",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-member-_heightAxis",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#_heightAxis",
-    "member"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#_size",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-member-_size",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#_size",
-    "member"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#applypositiontransform",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#constructor",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-constructor-constructor",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#setattributes",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-method-setAttributes",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/tetrahedron-buffer.js~tetrahedronbuffer#updatenormals",
-    "class/src/buffer/tetrahedron-buffer.js~TetrahedronBuffer.html#instance-get-updateNormals",
-    "src/buffer/tetrahedron-buffer.js~TetrahedronBuffer#updateNormals",
-    "member"
   ],
   [
     "src/buffer/text-buffer.js",
@@ -6042,256 +1812,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/buffer/text-buffer.js~textbuffer#attachment",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-attachment",
-    "src/buffer/text-buffer.js~TextBuffer#attachment",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#backgroundcolor",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-backgroundColor",
-    "src/buffer/text-buffer.js~TextBuffer#backgroundColor",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#backgroundmargin",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-backgroundMargin",
-    "src/buffer/text-buffer.js~TextBuffer#backgroundMargin",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#backgroundopacity",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-backgroundOpacity",
-    "src/buffer/text-buffer.js~TextBuffer#backgroundOpacity",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#bordercolor",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-borderColor",
-    "src/buffer/text-buffer.js~TextBuffer#borderColor",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#borderwidth",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-borderWidth",
-    "src/buffer/text-buffer.js~TextBuffer#borderWidth",
-    "member"
-  ],
-  [
     "src/buffer/text-buffer.js~textbuffer#constructor",
     "class/src/buffer/text-buffer.js~TextBuffer.html#instance-constructor-constructor",
     "src/buffer/text-buffer.js~TextBuffer#constructor",
     "method"
   ],
   [
-    "src/buffer/text-buffer.js~textbuffer#fontfamily",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-fontFamily",
-    "src/buffer/text-buffer.js~TextBuffer#fontFamily",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#fontsize",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-fontSize",
-    "src/buffer/text-buffer.js~TextBuffer#fontSize",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#fontstyle",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-fontStyle",
-    "src/buffer/text-buffer.js~TextBuffer#fontStyle",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#fontweight",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-fontWeight",
-    "src/buffer/text-buffer.js~TextBuffer#fontWeight",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#fragmentshader",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-fragmentShader",
-    "src/buffer/text-buffer.js~TextBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#getdefines",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-method-getDefines",
-    "src/buffer/text-buffer.js~TextBuffer#getDefines",
-    "method"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#istext",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-isText",
-    "src/buffer/text-buffer.js~TextBuffer#isText",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#makemapping",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-method-makeMapping",
-    "src/buffer/text-buffer.js~TextBuffer#makeMapping",
-    "method"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#makematerial",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-method-makeMaterial",
-    "src/buffer/text-buffer.js~TextBuffer#makeMaterial",
-    "method"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#maketexture",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-method-makeTexture",
-    "src/buffer/text-buffer.js~TextBuffer#makeTexture",
-    "method"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#parameters",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-parameters",
-    "src/buffer/text-buffer.js~TextBuffer#parameters",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#positioncount",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-positionCount",
-    "src/buffer/text-buffer.js~TextBuffer#positionCount",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#sdf",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-sdf",
-    "src/buffer/text-buffer.js~TextBuffer#sdf",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#setattributes",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-method-setAttributes",
-    "src/buffer/text-buffer.js~TextBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#setuniforms",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-method-setUniforms",
-    "src/buffer/text-buffer.js~TextBuffer#setUniforms",
-    "method"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#showbackground",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-showBackground",
-    "src/buffer/text-buffer.js~TextBuffer#showBackground",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#showborder",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-showBorder",
-    "src/buffer/text-buffer.js~TextBuffer#showBorder",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#text",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-text",
-    "src/buffer/text-buffer.js~TextBuffer#text",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#textatlas",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-textAtlas",
-    "src/buffer/text-buffer.js~TextBuffer#textAtlas",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#texture",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-texture",
-    "src/buffer/text-buffer.js~TextBuffer#texture",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#vertexshader",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-vertexShader",
-    "src/buffer/text-buffer.js~TextBuffer#vertexShader",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#wireframe",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-wireframe",
-    "src/buffer/text-buffer.js~TextBuffer#wireframe",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#wireframe",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-set-wireframe",
-    "src/buffer/text-buffer.js~TextBuffer#wireframe",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#xoffset",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-xOffset",
-    "src/buffer/text-buffer.js~TextBuffer#xOffset",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#yoffset",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-yOffset",
-    "src/buffer/text-buffer.js~TextBuffer#yOffset",
-    "member"
-  ],
-  [
-    "src/buffer/text-buffer.js~textbuffer#zoffset",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-member-zOffset",
-    "src/buffer/text-buffer.js~TextBuffer#zOffset",
-    "member"
-  ],
-  [
     "src/buffer/text-buffer.js~textbufferparameters",
     "typedef/index.html#static-typedef-TextBufferParameters",
     "src/buffer/text-buffer.js~TextBufferParameters",
     "typedef"
-  ],
-  [
-    "src/buffer/torus-buffer.js",
-    "file/src/buffer/torus-buffer.js.html",
-    "src/buffer/torus-buffer.js",
-    "file"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#_majoraxis",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-member-_majorAxis",
-    "src/buffer/torus-buffer.js~TorusBuffer#_majorAxis",
-    "member"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#_minoraxis",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-member-_minorAxis",
-    "src/buffer/torus-buffer.js~TorusBuffer#_minorAxis",
-    "member"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#_radius",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-member-_radius",
-    "src/buffer/torus-buffer.js~TorusBuffer#_radius",
-    "member"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#applypositiontransform",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-method-applyPositionTransform",
-    "src/buffer/torus-buffer.js~TorusBuffer#applyPositionTransform",
-    "method"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#constructor",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-constructor-constructor",
-    "src/buffer/torus-buffer.js~TorusBuffer#constructor",
-    "method"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#setattributes",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-method-setAttributes",
-    "src/buffer/torus-buffer.js~TorusBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/torus-buffer.js~torusbuffer#updatenormals",
-    "class/src/buffer/torus-buffer.js~TorusBuffer.html#instance-get-updateNormals",
-    "src/buffer/torus-buffer.js~TorusBuffer#updateNormals",
-    "member"
   ],
   [
     "src/buffer/trace-buffer.js",
@@ -6306,94 +1836,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/trace-buffer.js~tracebuffer#fragmentshader",
-    "class/src/buffer/trace-buffer.js~TraceBuffer.html#instance-get-fragmentShader",
-    "src/buffer/trace-buffer.js~TraceBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/trace-buffer.js~tracebuffer#isline",
-    "class/src/buffer/trace-buffer.js~TraceBuffer.html#instance-get-isLine",
-    "src/buffer/trace-buffer.js~TraceBuffer#isLine",
-    "member"
-  ],
-  [
-    "src/buffer/trace-buffer.js~tracebuffer#setattributes",
-    "class/src/buffer/trace-buffer.js~TraceBuffer.html#instance-method-setAttributes",
-    "src/buffer/trace-buffer.js~TraceBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/trace-buffer.js~tracebuffer#vertexshader",
-    "class/src/buffer/trace-buffer.js~TraceBuffer.html#instance-get-vertexShader",
-    "src/buffer/trace-buffer.js~TraceBuffer#vertexShader",
-    "member"
-  ],
-  [
     "src/buffer/tubemesh-buffer.js",
     "file/src/buffer/tubemesh-buffer.js.html",
     "src/buffer/tubemesh-buffer.js",
     "file"
   ],
   [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#aspectratio",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-aspectRatio",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#aspectRatio",
-    "member"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#captriangles",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-capTriangles",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#capTriangles",
-    "member"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#capvertices",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-capVertices",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#capVertices",
-    "member"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#capped",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-capped",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#capped",
-    "member"
-  ],
-  [
     "src/buffer/tubemesh-buffer.js~tubemeshbuffer#constructor",
     "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-constructor-constructor",
     "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#constructor",
     "method"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#makeindex",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-method-makeIndex",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#makeIndex",
-    "method"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#meshindex",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-meshIndex",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#meshIndex",
-    "member"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#radialsegments",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-radialSegments",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#radialSegments",
-    "member"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#setattributes",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-method-setAttributes",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/tubemesh-buffer.js~tubemeshbuffer#size2",
-    "class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html#instance-member-size2",
-    "src/buffer/tubemesh-buffer.js~TubeMeshBuffer#size2",
-    "member"
   ],
   [
     "src/buffer/vector-buffer.js",
@@ -6408,36 +1860,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/vector-buffer.js~vectorbuffer#fragmentshader",
-    "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-get-fragmentShader",
-    "src/buffer/vector-buffer.js~VectorBuffer#fragmentShader",
-    "member"
-  ],
-  [
-    "src/buffer/vector-buffer.js~vectorbuffer#isline",
-    "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-get-isLine",
-    "src/buffer/vector-buffer.js~VectorBuffer#isLine",
-    "member"
-  ],
-  [
-    "src/buffer/vector-buffer.js~vectorbuffer#scale",
-    "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-member-scale",
-    "src/buffer/vector-buffer.js~VectorBuffer#scale",
-    "member"
-  ],
-  [
-    "src/buffer/vector-buffer.js~vectorbuffer#setattributes",
-    "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-method-setAttributes",
-    "src/buffer/vector-buffer.js~VectorBuffer#setAttributes",
-    "method"
-  ],
-  [
-    "src/buffer/vector-buffer.js~vectorbuffer#vertexshader",
-    "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-get-vertexShader",
-    "src/buffer/vector-buffer.js~VectorBuffer#vertexShader",
-    "member"
-  ],
-  [
     "src/color/atomindex-colormaker.js",
     "file/src/color/atomindex-colormaker.js.html",
     "src/color/atomindex-colormaker.js",
@@ -6450,70 +1872,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/color/atomindex-colormaker.js~atomindexcolormaker#constructor",
-    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html#instance-constructor-constructor",
-    "src/color/atomindex-colormaker.js~AtomindexColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/atomindex-colormaker.js~atomindexcolormaker#domain",
-    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html#instance-member-domain",
-    "src/color/atomindex-colormaker.js~AtomindexColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/atomindex-colormaker.js~atomindexcolormaker#reverse",
-    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html#instance-member-reverse",
-    "src/color/atomindex-colormaker.js~AtomindexColormaker#reverse",
-    "member"
-  ],
-  [
-    "src/color/atomindex-colormaker.js~atomindexcolormaker#scale",
-    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html#instance-member-scale",
-    "src/color/atomindex-colormaker.js~AtomindexColormaker#scale",
-    "member"
-  ],
-  [
-    "src/color/atomindex-colormaker.js~atomindexcolormaker#scalepermodel",
-    "class/src/color/atomindex-colormaker.js~AtomindexColormaker.html#instance-member-scalePerModel",
-    "src/color/atomindex-colormaker.js~AtomindexColormaker#scalePerModel",
-    "member"
-  ],
-  [
     "src/color/bfactor-colormaker.js",
     "file/src/color/bfactor-colormaker.js.html",
     "src/color/bfactor-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/bfactor-colormaker.js~bfactorcolormaker#atomcolor",
-    "class/src/color/bfactor-colormaker.js~BfactorColormaker.html#instance-method-atomColor",
-    "src/color/bfactor-colormaker.js~BfactorColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/bfactor-colormaker.js~bfactorcolormaker#bfactorscale",
-    "class/src/color/bfactor-colormaker.js~BfactorColormaker.html#instance-member-bfactorScale",
-    "src/color/bfactor-colormaker.js~BfactorColormaker#bfactorScale",
-    "member"
-  ],
-  [
-    "src/color/bfactor-colormaker.js~bfactorcolormaker#constructor",
-    "class/src/color/bfactor-colormaker.js~BfactorColormaker.html#instance-constructor-constructor",
-    "src/color/bfactor-colormaker.js~BfactorColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/bfactor-colormaker.js~bfactorcolormaker#domain",
-    "class/src/color/bfactor-colormaker.js~BfactorColormaker.html#instance-member-domain",
-    "src/color/bfactor-colormaker.js~BfactorColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/bfactor-colormaker.js~bfactorcolormaker#scale",
-    "class/src/color/bfactor-colormaker.js~BfactorColormaker.html#instance-member-scale",
-    "src/color/bfactor-colormaker.js~BfactorColormaker#scale",
-    "member"
   ],
   [
     "src/color/chainid-colormaker.js",
@@ -6522,46 +1884,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/chainid-colormaker.js~chainidcolormaker#constructor",
-    "class/src/color/chainid-colormaker.js~ChainidColormaker.html#instance-constructor-constructor",
-    "src/color/chainid-colormaker.js~ChainidColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/chainid-colormaker.js~chainidcolormaker#domain",
-    "class/src/color/chainid-colormaker.js~ChainidColormaker.html#instance-member-domain",
-    "src/color/chainid-colormaker.js~ChainidColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/chainid-colormaker.js~chainidcolormaker#scale",
-    "class/src/color/chainid-colormaker.js~ChainidColormaker.html#instance-member-scale",
-    "src/color/chainid-colormaker.js~ChainidColormaker#scale",
-    "member"
-  ],
-  [
     "src/color/chainindex-colormaker.js",
     "file/src/color/chainindex-colormaker.js.html",
     "src/color/chainindex-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/chainindex-colormaker.js~chainindexcolormaker#constructor",
-    "class/src/color/chainindex-colormaker.js~ChainindexColormaker.html#instance-constructor-constructor",
-    "src/color/chainindex-colormaker.js~ChainindexColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/chainindex-colormaker.js~chainindexcolormaker#domain",
-    "class/src/color/chainindex-colormaker.js~ChainindexColormaker.html#instance-member-domain",
-    "src/color/chainindex-colormaker.js~ChainindexColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/chainindex-colormaker.js~chainindexcolormaker#scale",
-    "class/src/color/chainindex-colormaker.js~ChainindexColormaker.html#instance-member-scale",
-    "src/color/chainindex-colormaker.js~ChainindexColormaker#scale",
-    "member"
   ],
   [
     "src/color/chainname-colormaker.js",
@@ -6570,40 +1896,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/chainname-colormaker.js~chainnamecolormaker#constructor",
-    "class/src/color/chainname-colormaker.js~ChainnameColormaker.html#instance-constructor-constructor",
-    "src/color/chainname-colormaker.js~ChainnameColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/chainname-colormaker.js~chainnamecolormaker#domain",
-    "class/src/color/chainname-colormaker.js~ChainnameColormaker.html#instance-member-domain",
-    "src/color/chainname-colormaker.js~ChainnameColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/chainname-colormaker.js~chainnamecolormaker#scale",
-    "class/src/color/chainname-colormaker.js~ChainnameColormaker.html#instance-member-scale",
-    "src/color/chainname-colormaker.js~ChainnameColormaker#scale",
-    "member"
-  ],
-  [
     "src/color/colormaker-registry.js",
     "file/src/color/colormaker-registry.js.html",
     "src/color/colormaker-registry.js",
     "file"
-  ],
-  [
-    "src/color/colormaker-registry.js~colormakerregistry#_adduserscheme",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-_addUserScheme",
-    "src/color/colormaker-registry.js~ColormakerRegistry#_addUserScheme",
-    "method"
-  ],
-  [
-    "src/color/colormaker-registry.js~colormakerregistry#_createscheme",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-_createScheme",
-    "src/color/colormaker-registry.js~ColormakerRegistry#_createScheme",
-    "method"
   ],
   [
     "src/color/colormaker-registry.js~colormakerregistry#add",
@@ -6624,27 +1920,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/color/colormaker-registry.js~colormakerregistry#constructor",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-constructor-constructor",
-    "src/color/colormaker-registry.js~ColormakerRegistry#constructor",
-    "method"
-  ],
-  [
-    "src/color/colormaker-registry.js~colormakerregistry#getmodes",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-getModes",
-    "src/color/colormaker-registry.js~ColormakerRegistry#getModes",
-    "method"
-  ],
-  [
     "src/color/colormaker-registry.js~colormakerregistry#getscales",
     "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-getScales",
     "src/color/colormaker-registry.js~ColormakerRegistry#getScales",
-    "method"
-  ],
-  [
-    "src/color/colormaker-registry.js~colormakerregistry#getscheme",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-method-getScheme",
-    "src/color/colormaker-registry.js~ColormakerRegistry#getScheme",
     "method"
   ],
   [
@@ -6666,18 +1944,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/color/colormaker-registry.js~colormakerregistry#schemes",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-member-schemes",
-    "src/color/colormaker-registry.js~ColormakerRegistry#schemes",
-    "member"
-  ],
-  [
-    "src/color/colormaker-registry.js~colormakerregistry#userschemes",
-    "class/src/color/colormaker-registry.js~ColormakerRegistry.html#instance-member-userSchemes",
-    "src/color/colormaker-registry.js~ColormakerRegistry#userSchemes",
-    "member"
-  ],
-  [
     "src/color/colormaker.js",
     "file/src/color/colormaker.js.html",
     "src/color/colormaker.js",
@@ -6688,12 +1954,6 @@ window.esdocSearchIndex = [
     "class/src/color/colormaker.js~Colormaker.html#instance-method-atomColorToArray",
     "src/color/colormaker.js~Colormaker#atomColorToArray",
     "method"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#atomproxy",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-atomProxy",
-    "src/color/colormaker.js~Colormaker#atomProxy",
-    "member"
   ],
   [
     "src/color/colormaker.js~colormaker#bondcolor",
@@ -6720,64 +1980,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/color/colormaker.js~colormaker#domain",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-domain",
-    "src/color/colormaker.js~Colormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#getscale",
-    "class/src/color/colormaker.js~Colormaker.html#instance-method-getScale",
-    "src/color/colormaker.js~Colormaker#getScale",
-    "method"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#mode",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-mode",
-    "src/color/colormaker.js~Colormaker#mode",
-    "member"
-  ],
-  [
     "src/color/colormaker.js~colormaker#positioncolortoarray",
     "class/src/color/colormaker.js~Colormaker.html#instance-method-positionColorToArray",
     "src/color/colormaker.js~Colormaker#positionColorToArray",
     "method"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#reverse",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-reverse",
-    "src/color/colormaker.js~Colormaker#reverse",
-    "member"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#scale",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-scale",
-    "src/color/colormaker.js~Colormaker#scale",
-    "member"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#structure",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-structure",
-    "src/color/colormaker.js~Colormaker#structure",
-    "member"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#surface",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-surface",
-    "src/color/colormaker.js~Colormaker#surface",
-    "member"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#value",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-value",
-    "src/color/colormaker.js~Colormaker#value",
-    "member"
-  ],
-  [
-    "src/color/colormaker.js~colormaker#volume",
-    "class/src/color/colormaker.js~Colormaker.html#instance-member-volume",
-    "src/color/colormaker.js~Colormaker#volume",
-    "member"
   ],
   [
     "src/color/colormaker.js~colormaker#volumecolortoarray",
@@ -6798,70 +2004,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#atomcolor",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-method-atomColor",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#constructor",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-constructor-constructor",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#rsccdict",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-member-rsccDict",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#rsccDict",
-    "member"
-  ],
-  [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#rsccscale",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-member-rsccScale",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#rsccScale",
-    "member"
-  ],
-  [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#rsrzdict",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-member-rsrzDict",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#rsrzDict",
-    "member"
-  ],
-  [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#rsrzscale",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-member-rsrzScale",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#rsrzScale",
-    "member"
-  ],
-  [
-    "src/color/densityfit-colormaker.js~densityfitcolormaker#scale",
-    "class/src/color/densityfit-colormaker.js~DensityfitColormaker.html#instance-member-scale",
-    "src/color/densityfit-colormaker.js~DensityfitColormaker#scale",
-    "member"
-  ],
-  [
     "src/color/electrostatic-colormaker.js",
     "file/src/color/electrostatic-colormaker.js.html",
     "src/color/electrostatic-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/electrostatic-colormaker.js~electrostaticcolormaker#constructor",
-    "class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html#instance-constructor-constructor",
-    "src/color/electrostatic-colormaker.js~ElectrostaticColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/electrostatic-colormaker.js~electrostaticcolormaker#domain",
-    "class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html#instance-member-domain",
-    "src/color/electrostatic-colormaker.js~ElectrostaticColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/electrostatic-colormaker.js~electrostaticcolormaker#scale",
-    "class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html#instance-member-scale",
-    "src/color/electrostatic-colormaker.js~ElectrostaticColormaker#scale",
-    "member"
   ],
   [
     "src/color/element-colormaker.js",
@@ -6870,40 +2016,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/element-colormaker.js~elementcolormaker#atomcolor",
-    "class/src/color/element-colormaker.js~ElementColormaker.html#instance-method-atomColor",
-    "src/color/element-colormaker.js~ElementColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/element-colormaker.js~elementcolormaker#constructor",
-    "class/src/color/element-colormaker.js~ElementColormaker.html#instance-constructor-constructor",
-    "src/color/element-colormaker.js~ElementColormaker#constructor",
-    "method"
-  ],
-  [
     "src/color/entityindex-colormaker.js",
     "file/src/color/entityindex-colormaker.js.html",
     "src/color/entityindex-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/entityindex-colormaker.js~entityindexcolormaker#constructor",
-    "class/src/color/entityindex-colormaker.js~EntityindexColormaker.html#instance-constructor-constructor",
-    "src/color/entityindex-colormaker.js~EntityindexColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/entityindex-colormaker.js~entityindexcolormaker#domain",
-    "class/src/color/entityindex-colormaker.js~EntityindexColormaker.html#instance-member-domain",
-    "src/color/entityindex-colormaker.js~EntityindexColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/entityindex-colormaker.js~entityindexcolormaker#scale",
-    "class/src/color/entityindex-colormaker.js~EntityindexColormaker.html#instance-member-scale",
-    "src/color/entityindex-colormaker.js~EntityindexColormaker#scale",
-    "member"
   ],
   [
     "src/color/entitytype-colormaker.js",
@@ -6912,40 +2028,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/entitytype-colormaker.js~entitytypecolormaker#atomcolor",
-    "class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html#instance-method-atomColor",
-    "src/color/entitytype-colormaker.js~EntitytypeColormaker#atomColor",
-    "method"
-  ],
-  [
     "src/color/geoquality-colormaker.js",
     "file/src/color/geoquality-colormaker.js.html",
     "src/color/geoquality-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/geoquality-colormaker.js~geoqualitycolormaker#atomcolor",
-    "class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html#instance-method-atomColor",
-    "src/color/geoquality-colormaker.js~GeoqualityColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/geoquality-colormaker.js~geoqualitycolormaker#constructor",
-    "class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html#instance-constructor-constructor",
-    "src/color/geoquality-colormaker.js~GeoqualityColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/geoquality-colormaker.js~geoqualitycolormaker#geoatomdict",
-    "class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html#instance-member-geoAtomDict",
-    "src/color/geoquality-colormaker.js~GeoqualityColormaker#geoAtomDict",
-    "member"
-  ],
-  [
-    "src/color/geoquality-colormaker.js~geoqualitycolormaker#geodict",
-    "class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html#instance-member-geoDict",
-    "src/color/geoquality-colormaker.js~GeoqualityColormaker#geoDict",
-    "member"
   ],
   [
     "src/color/hydrophobicity-colormaker.js",
@@ -6954,46 +2040,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/hydrophobicity-colormaker.js~hydrophobicitycolormaker#constructor",
-    "class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html#instance-constructor-constructor",
-    "src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/hydrophobicity-colormaker.js~hydrophobicitycolormaker#domain",
-    "class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html#instance-member-domain",
-    "src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/hydrophobicity-colormaker.js~hydrophobicitycolormaker#scale",
-    "class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html#instance-member-scale",
-    "src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker#scale",
-    "member"
-  ],
-  [
     "src/color/modelindex-colormaker.js",
     "file/src/color/modelindex-colormaker.js.html",
     "src/color/modelindex-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/modelindex-colormaker.js~modelindexcolormaker#constructor",
-    "class/src/color/modelindex-colormaker.js~ModelindexColormaker.html#instance-constructor-constructor",
-    "src/color/modelindex-colormaker.js~ModelindexColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/modelindex-colormaker.js~modelindexcolormaker#domain",
-    "class/src/color/modelindex-colormaker.js~ModelindexColormaker.html#instance-member-domain",
-    "src/color/modelindex-colormaker.js~ModelindexColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/modelindex-colormaker.js~modelindexcolormaker#scale",
-    "class/src/color/modelindex-colormaker.js~ModelindexColormaker.html#instance-member-scale",
-    "src/color/modelindex-colormaker.js~ModelindexColormaker#scale",
-    "member"
   ],
   [
     "src/color/moleculetype-colormaker.js",
@@ -7002,70 +2052,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/moleculetype-colormaker.js~moleculetypecolormaker#atomcolor",
-    "class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html#instance-method-atomColor",
-    "src/color/moleculetype-colormaker.js~MoleculetypeColormaker#atomColor",
-    "method"
-  ],
-  [
     "src/color/occupancy-colormaker.js",
     "file/src/color/occupancy-colormaker.js.html",
     "src/color/occupancy-colormaker.js",
     "file"
   ],
   [
-    "src/color/occupancy-colormaker.js~occupancycolormaker#constructor",
-    "class/src/color/occupancy-colormaker.js~OccupancyColormaker.html#instance-constructor-constructor",
-    "src/color/occupancy-colormaker.js~OccupancyColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/occupancy-colormaker.js~occupancycolormaker#domain",
-    "class/src/color/occupancy-colormaker.js~OccupancyColormaker.html#instance-member-domain",
-    "src/color/occupancy-colormaker.js~OccupancyColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/occupancy-colormaker.js~occupancycolormaker#scale",
-    "class/src/color/occupancy-colormaker.js~OccupancyColormaker.html#instance-member-scale",
-    "src/color/occupancy-colormaker.js~OccupancyColormaker#scale",
-    "member"
-  ],
-  [
     "src/color/partialcharge-colormaker.js",
     "file/src/color/partialcharge-colormaker.js.html",
     "src/color/partialcharge-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/partialcharge-colormaker.js~partialchargecolormaker#atomcolor",
-    "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html#instance-method-atomColor",
-    "src/color/partialcharge-colormaker.js~PartialchargeColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/partialcharge-colormaker.js~partialchargecolormaker#constructor",
-    "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html#instance-constructor-constructor",
-    "src/color/partialcharge-colormaker.js~PartialchargeColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/partialcharge-colormaker.js~partialchargecolormaker#domain",
-    "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html#instance-member-domain",
-    "src/color/partialcharge-colormaker.js~PartialchargeColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/partialcharge-colormaker.js~partialchargecolormaker#partialchargescale",
-    "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html#instance-member-partialchargeScale",
-    "src/color/partialcharge-colormaker.js~PartialchargeColormaker#partialchargeScale",
-    "member"
-  ],
-  [
-    "src/color/partialcharge-colormaker.js~partialchargecolormaker#scale",
-    "class/src/color/partialcharge-colormaker.js~PartialchargeColormaker.html#instance-member-scale",
-    "src/color/partialcharge-colormaker.js~PartialchargeColormaker#scale",
-    "member"
   ],
   [
     "src/color/random-colormaker.js",
@@ -7098,40 +2094,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/residueindex-colormaker.js~residueindexcolormaker#constructor",
-    "class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html#instance-constructor-constructor",
-    "src/color/residueindex-colormaker.js~ResidueindexColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/residueindex-colormaker.js~residueindexcolormaker#domain",
-    "class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html#instance-member-domain",
-    "src/color/residueindex-colormaker.js~ResidueindexColormaker#domain",
-    "member"
-  ],
-  [
-    "src/color/residueindex-colormaker.js~residueindexcolormaker#reverse",
-    "class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html#instance-member-reverse",
-    "src/color/residueindex-colormaker.js~ResidueindexColormaker#reverse",
-    "member"
-  ],
-  [
-    "src/color/residueindex-colormaker.js~residueindexcolormaker#scale",
-    "class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html#instance-member-scale",
-    "src/color/residueindex-colormaker.js~ResidueindexColormaker#scale",
-    "member"
-  ],
-  [
     "src/color/resname-colormaker.js",
     "file/src/color/resname-colormaker.js.html",
     "src/color/resname-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/resname-colormaker.js~resnamecolormaker#atomcolor",
-    "class/src/color/resname-colormaker.js~ResnameColormaker.html#instance-method-atomColor",
-    "src/color/resname-colormaker.js~ResnameColormaker#atomColor",
-    "method"
   ],
   [
     "src/color/selection-colormaker.js",
@@ -7140,52 +2106,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/selection-colormaker.js~selectioncolormaker#atomcolor",
-    "class/src/color/selection-colormaker.js~SelectionColormaker.html#instance-method-atomColor",
-    "src/color/selection-colormaker.js~SelectionColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/selection-colormaker.js~selectioncolormaker#colormakerlist",
-    "class/src/color/selection-colormaker.js~SelectionColormaker.html#instance-member-colormakerList",
-    "src/color/selection-colormaker.js~SelectionColormaker#colormakerList",
-    "member"
-  ],
-  [
-    "src/color/selection-colormaker.js~selectioncolormaker#constructor",
-    "class/src/color/selection-colormaker.js~SelectionColormaker.html#instance-constructor-constructor",
-    "src/color/selection-colormaker.js~SelectionColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/selection-colormaker.js~selectioncolormaker#selectionlist",
-    "class/src/color/selection-colormaker.js~SelectionColormaker.html#instance-member-selectionList",
-    "src/color/selection-colormaker.js~SelectionColormaker#selectionList",
-    "member"
-  ],
-  [
     "src/color/sstruc-colormaker.js",
     "file/src/color/sstruc-colormaker.js.html",
     "src/color/sstruc-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/sstruc-colormaker.js~sstruccolormaker#atomcolor",
-    "class/src/color/sstruc-colormaker.js~SstrucColormaker.html#instance-method-atomColor",
-    "src/color/sstruc-colormaker.js~SstrucColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/sstruc-colormaker.js~sstruccolormaker#constructor",
-    "class/src/color/sstruc-colormaker.js~SstrucColormaker.html#instance-constructor-constructor",
-    "src/color/sstruc-colormaker.js~SstrucColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/sstruc-colormaker.js~sstruccolormaker#rp",
-    "class/src/color/sstruc-colormaker.js~SstrucColormaker.html#instance-member-rp",
-    "src/color/sstruc-colormaker.js~SstrucColormaker#rp",
-    "member"
   ],
   [
     "src/color/uniform-colormaker.js",
@@ -7194,46 +2118,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/uniform-colormaker.js~uniformcolormaker#atomcolor",
-    "class/src/color/uniform-colormaker.js~UniformColormaker.html#instance-method-atomColor",
-    "src/color/uniform-colormaker.js~UniformColormaker#atomColor",
-    "method"
-  ],
-  [
-    "src/color/uniform-colormaker.js~uniformcolormaker#bondcolor",
-    "class/src/color/uniform-colormaker.js~UniformColormaker.html#instance-method-bondColor",
-    "src/color/uniform-colormaker.js~UniformColormaker#bondColor",
-    "method"
-  ],
-  [
-    "src/color/uniform-colormaker.js~uniformcolormaker#valuecolor",
-    "class/src/color/uniform-colormaker.js~UniformColormaker.html#instance-method-valueColor",
-    "src/color/uniform-colormaker.js~UniformColormaker#valueColor",
-    "method"
-  ],
-  [
-    "src/color/uniform-colormaker.js~uniformcolormaker#volumecolor",
-    "class/src/color/uniform-colormaker.js~UniformColormaker.html#instance-method-volumeColor",
-    "src/color/uniform-colormaker.js~UniformColormaker#volumeColor",
-    "method"
-  ],
-  [
     "src/color/value-colormaker.js",
     "file/src/color/value-colormaker.js.html",
     "src/color/value-colormaker.js",
     "file"
-  ],
-  [
-    "src/color/value-colormaker.js~valuecolormaker#constructor",
-    "class/src/color/value-colormaker.js~ValueColormaker.html#instance-constructor-constructor",
-    "src/color/value-colormaker.js~ValueColormaker#constructor",
-    "method"
-  ],
-  [
-    "src/color/value-colormaker.js~valuecolormaker#valuescale",
-    "class/src/color/value-colormaker.js~ValueColormaker.html#instance-member-valueScale",
-    "src/color/value-colormaker.js~ValueColormaker#valueScale",
-    "member"
   ],
   [
     "src/color/value-colormaker.js~valuecolormaker#volumecolor",
@@ -7248,12 +2136,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/volume-colormaker.js~volumecolormaker#constructor",
-    "class/src/color/volume-colormaker.js~VolumeColormaker.html#instance-constructor-constructor",
-    "src/color/volume-colormaker.js~VolumeColormaker#constructor",
-    "method"
-  ],
-  [
     "src/color/volume-colormaker.js~volumecolormaker#positioncolor",
     "class/src/color/volume-colormaker.js~VolumeColormaker.html#instance-method-positionColor",
     "src/color/volume-colormaker.js~VolumeColormaker#positionColor",
@@ -7264,48 +2146,6 @@ window.esdocSearchIndex = [
     "file/src/component/annotation.js.html",
     "src/component/annotation.js",
     "file"
-  ],
-  [
-    "src/component/annotation.js~annotation#_cameraposition",
-    "class/src/component/annotation.js~Annotation.html#instance-member-_cameraPosition",
-    "src/component/annotation.js~Annotation#_cameraPosition",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#_canvasposition",
-    "class/src/component/annotation.js~Annotation.html#instance-member-_canvasPosition",
-    "src/component/annotation.js~Annotation#_canvasPosition",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#_clientrect",
-    "class/src/component/annotation.js~Annotation.html#instance-member-_clientRect",
-    "src/component/annotation.js~Annotation#_clientRect",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#_update",
-    "class/src/component/annotation.js~Annotation.html#instance-method-_update",
-    "src/component/annotation.js~Annotation#_update",
-    "method"
-  ],
-  [
-    "src/component/annotation.js~annotation#_updateviewerposition",
-    "class/src/component/annotation.js~Annotation.html#instance-method-_updateViewerPosition",
-    "src/component/annotation.js~Annotation#_updateViewerPosition",
-    "method"
-  ],
-  [
-    "src/component/annotation.js~annotation#_viewerposition",
-    "class/src/component/annotation.js~Annotation.html#instance-member-_viewerPosition",
-    "src/component/annotation.js~Annotation#_viewerPosition",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#component",
-    "class/src/component/annotation.js~Annotation.html#instance-member-component",
-    "src/component/annotation.js~Annotation#component",
-    "member"
   ],
   [
     "src/component/annotation.js~annotation#constructor",
@@ -7320,36 +2160,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/annotation.js~annotation#element",
-    "class/src/component/annotation.js~Annotation.html#instance-member-element",
-    "src/component/annotation.js~Annotation#element",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#getvisibility",
-    "class/src/component/annotation.js~Annotation.html#instance-method-getVisibility",
-    "src/component/annotation.js~Annotation#getVisibility",
-    "method"
-  ],
-  [
-    "src/component/annotation.js~annotation#offsetx",
-    "class/src/component/annotation.js~Annotation.html#instance-member-offsetX",
-    "src/component/annotation.js~Annotation#offsetX",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#offsety",
-    "class/src/component/annotation.js~Annotation.html#instance-member-offsetY",
-    "src/component/annotation.js~Annotation#offsetY",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#position",
-    "class/src/component/annotation.js~Annotation.html#instance-member-position",
-    "src/component/annotation.js~Annotation#position",
-    "member"
-  ],
-  [
     "src/component/annotation.js~annotation#setcontent",
     "class/src/component/annotation.js~Annotation.html#instance-method-setContent",
     "src/component/annotation.js~Annotation#setContent",
@@ -7362,94 +2172,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/annotation.js~annotation#stage",
-    "class/src/component/annotation.js~Annotation.html#instance-member-stage",
-    "src/component/annotation.js~Annotation#stage",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#updatevisibility",
-    "class/src/component/annotation.js~Annotation.html#instance-method-updateVisibility",
-    "src/component/annotation.js~Annotation#updateVisibility",
-    "method"
-  ],
-  [
-    "src/component/annotation.js~annotation#viewer",
-    "class/src/component/annotation.js~Annotation.html#instance-member-viewer",
-    "src/component/annotation.js~Annotation#viewer",
-    "member"
-  ],
-  [
-    "src/component/annotation.js~annotation#visible",
-    "class/src/component/annotation.js~Annotation.html#instance-member-visible",
-    "src/component/annotation.js~Annotation#visible",
-    "member"
-  ],
-  [
     "src/component/collection.js",
     "file/src/component/collection.js.html",
     "src/component/collection.js",
     "file"
   ],
   [
-    "src/component/collection.js~collection#_invoke",
-    "class/src/component/collection.js~Collection.html#instance-method-_invoke",
-    "src/component/collection.js~Collection#_invoke",
-    "method"
-  ],
-  [
-    "src/component/collection.js~collection#_remove",
-    "class/src/component/collection.js~Collection.html#instance-method-_remove",
-    "src/component/collection.js~Collection#_remove",
-    "method"
-  ],
-  [
-    "src/component/collection.js~collection#constructor",
-    "class/src/component/collection.js~Collection.html#instance-constructor-constructor",
-    "src/component/collection.js~Collection#constructor",
-    "method"
-  ],
-  [
-    "src/component/collection.js~collection#dispose",
-    "class/src/component/collection.js~Collection.html#instance-method-dispose",
-    "src/component/collection.js~Collection#dispose",
-    "method"
-  ],
-  [
-    "src/component/collection.js~collection#list",
-    "class/src/component/collection.js~Collection.html#instance-member-list",
-    "src/component/collection.js~Collection#list",
-    "member"
-  ],
-  [
-    "src/component/collection.js~collection#setselection",
-    "class/src/component/collection.js~Collection.html#instance-method-setSelection",
-    "src/component/collection.js~Collection#setSelection",
-    "method"
-  ],
-  [
-    "src/component/collection.js~collection#setvisibility",
-    "class/src/component/collection.js~Collection.html#instance-method-setVisibility",
-    "src/component/collection.js~Collection#setVisibility",
-    "method"
-  ],
-  [
     "src/component/component-collection.js",
     "file/src/component/component-collection.js.html",
     "src/component/component-collection.js",
     "file"
-  ],
-  [
-    "src/component/component-collection.js~componentcollection#addrepresentation",
-    "class/src/component/component-collection.js~ComponentCollection.html#instance-method-addRepresentation",
-    "src/component/component-collection.js~ComponentCollection#addRepresentation",
-    "method"
-  ],
-  [
-    "src/component/component-collection.js~componentcollection#autoview",
-    "class/src/component/component-collection.js~ComponentCollection.html#instance-method-autoView",
-    "src/component/component-collection.js~ComponentCollection#autoView",
-    "method"
   ],
   [
     "src/component/component.js",
@@ -7464,22 +2196,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/component.js~component#addbufferrepresentation",
-    "class/src/component/component.js~Component.html#instance-method-addBufferRepresentation",
-    "src/component/component.js~Component#addBufferRepresentation",
-    "method"
-  ],
-  [
     "src/component/component.js~component#addrepresentation",
     "class/src/component/component.js~Component.html#instance-method-addRepresentation",
     "src/component/component.js~Component#addRepresentation",
     "method"
-  ],
-  [
-    "src/component/component.js~component#annotationlist",
-    "class/src/component/component.js~Component.html#instance-member-annotationList",
-    "src/component/component.js~Component#annotationList",
-    "member"
   ],
   [
     "src/component/component.js~component#autoview",
@@ -7491,24 +2211,6 @@ window.esdocSearchIndex = [
     "src/component/component.js~component#constructor",
     "class/src/component/component.js~Component.html#instance-constructor-constructor",
     "src/component/component.js~Component#constructor",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#controls",
-    "class/src/component/component.js~Component.html#instance-member-controls",
-    "src/component/component.js~Component#controls",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#dispose",
-    "class/src/component/component.js~Component.html#instance-method-dispose",
-    "src/component/component.js~Component#dispose",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#eachrepresentation",
-    "class/src/component/component.js~Component.html#instance-method-eachRepresentation",
-    "src/component/component.js~Component#eachRepresentation",
     "method"
   ],
   [
@@ -7528,48 +2230,6 @@ window.esdocSearchIndex = [
     "class/src/component/component.js~Component.html#instance-method-getCenter",
     "src/component/component.js~Component#getCenter",
     "method"
-  ],
-  [
-    "src/component/component.js~component#getcenteruntransformed",
-    "class/src/component/component.js~Component.html#instance-method-getCenterUntransformed",
-    "src/component/component.js~Component#getCenterUntransformed",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#getzoom",
-    "class/src/component/component.js~Component.html#instance-method-getZoom",
-    "src/component/component.js~Component#getZoom",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#hasrepresentation",
-    "class/src/component/component.js~Component.html#instance-method-hasRepresentation",
-    "src/component/component.js~Component#hasRepresentation",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#matrix",
-    "class/src/component/component.js~Component.html#instance-member-matrix",
-    "src/component/component.js~Component#matrix",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#name",
-    "class/src/component/component.js~Component.html#instance-member-name",
-    "src/component/component.js~Component#name",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#position",
-    "class/src/component/component.js~Component.html#instance-member-position",
-    "src/component/component.js~Component#position",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#quaternion",
-    "class/src/component/component.js~Component.html#instance-member-quaternion",
-    "src/component/component.js~Component#quaternion",
-    "member"
   ],
   [
     "src/component/component.js~component#removeallannotations",
@@ -7596,24 +2256,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/component.js~component#reprlist",
-    "class/src/component/component.js~Component.html#instance-member-reprList",
-    "src/component/component.js~Component#reprList",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#scale",
-    "class/src/component/component.js~Component.html#instance-member-scale",
-    "src/component/component.js~Component#scale",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#setname",
-    "class/src/component/component.js~Component.html#instance-method-setName",
-    "src/component/component.js~Component#setName",
-    "method"
-  ],
-  [
     "src/component/component.js~component#setposition",
     "class/src/component/component.js~Component.html#instance-method-setPosition",
     "src/component/component.js~Component#setPosition",
@@ -7629,12 +2271,6 @@ window.esdocSearchIndex = [
     "src/component/component.js~component#setscale",
     "class/src/component/component.js~Component.html#instance-method-setScale",
     "src/component/component.js~Component#setScale",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#setstatus",
-    "class/src/component/component.js~Component.html#instance-method-setStatus",
-    "src/component/component.js~Component#setStatus",
     "method"
   ],
   [
@@ -7656,60 +2292,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/component/component.js~component#stage",
-    "class/src/component/component.js~Component.html#instance-member-stage",
-    "src/component/component.js~Component#stage",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#status",
-    "class/src/component/component.js~Component.html#instance-member-status",
-    "src/component/component.js~Component#status",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#transform",
-    "class/src/component/component.js~Component.html#instance-member-transform",
-    "src/component/component.js~Component#transform",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#type",
-    "class/src/component/component.js~Component.html#instance-get-type",
-    "src/component/component.js~Component#type",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#updatematrix",
-    "class/src/component/component.js~Component.html#instance-method-updateMatrix",
-    "src/component/component.js~Component#updateMatrix",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#updaterepresentations",
-    "class/src/component/component.js~Component.html#instance-method-updateRepresentations",
-    "src/component/component.js~Component#updateRepresentations",
-    "method"
-  ],
-  [
-    "src/component/component.js~component#uuid",
-    "class/src/component/component.js~Component.html#instance-member-uuid",
-    "src/component/component.js~Component#uuid",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#viewer",
-    "class/src/component/component.js~Component.html#instance-member-viewer",
-    "src/component/component.js~Component#viewer",
-    "member"
-  ],
-  [
-    "src/component/component.js~component#visible",
-    "class/src/component/component.js~Component.html#instance-member-visible",
-    "src/component/component.js~Component#visible",
-    "member"
-  ],
-  [
     "src/component/component.js~componentparameters",
     "typedef/index.html#static-typedef-ComponentParameters",
     "src/component/component.js~ComponentParameters",
@@ -7728,28 +2310,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/component/representation-collection.js~representationcollection#setcolor",
-    "class/src/component/representation-collection.js~RepresentationCollection.html#instance-method-setColor",
-    "src/component/representation-collection.js~RepresentationCollection#setColor",
-    "method"
-  ],
-  [
-    "src/component/representation-collection.js~representationcollection#setparameters",
-    "class/src/component/representation-collection.js~RepresentationCollection.html#instance-method-setParameters",
-    "src/component/representation-collection.js~RepresentationCollection#setParameters",
-    "method"
-  ],
-  [
     "src/component/representation-component.js",
     "file/src/component/representation-component.js.html",
     "src/component/representation-component.js",
     "file"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#build",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-build",
-    "src/component/representation-component.js~RepresentationComponent#build",
-    "method"
   ],
   [
     "src/component/representation-component.js~representationcomponent#constructor",
@@ -7758,46 +2322,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/representation-component.js~representationcomponent#dispose",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-dispose",
-    "src/component/representation-component.js~RepresentationComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#disposerepresentation",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-disposeRepresentation",
-    "src/component/representation-component.js~RepresentationComponent#disposeRepresentation",
-    "method"
-  ],
-  [
     "src/component/representation-component.js~representationcomponent#getparameters",
     "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-getParameters",
     "src/component/representation-component.js~RepresentationComponent#getParameters",
     "method"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#gettype",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-getType",
-    "src/component/representation-component.js~RepresentationComponent#getType",
-    "method"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#getvisibility",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-getVisibility",
-    "src/component/representation-component.js~RepresentationComponent#getVisibility",
-    "method"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#parent",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-member-parent",
-    "src/component/representation-component.js~RepresentationComponent#parent",
-    "member"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#repr",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-member-repr",
-    "src/component/representation-component.js~RepresentationComponent#repr",
-    "member"
   ],
   [
     "src/component/representation-component.js~representationcomponent#setcolor",
@@ -7809,12 +2337,6 @@ window.esdocSearchIndex = [
     "src/component/representation-component.js~representationcomponent#setparameters",
     "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-setParameters",
     "src/component/representation-component.js~RepresentationComponent#setParameters",
-    "method"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#setrepresentation",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-setRepresentation",
-    "src/component/representation-component.js~RepresentationComponent#setRepresentation",
     "method"
   ],
   [
@@ -7854,18 +2376,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/representation-component.js~representationcomponent#updatevisibility",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-method-updateVisibility",
-    "src/component/representation-component.js~RepresentationComponent#updateVisibility",
-    "method"
-  ],
-  [
-    "src/component/representation-component.js~representationcomponent#visible",
-    "class/src/component/representation-component.js~RepresentationComponent.html#instance-member-visible",
-    "src/component/representation-component.js~RepresentationComponent#visible",
-    "member"
-  ],
-  [
     "src/component/representation-component.js~representationcomponentsignals",
     "typedef/index.html#static-typedef-RepresentationComponentSignals",
     "src/component/representation-component.js~RepresentationComponentSignals",
@@ -7878,76 +2388,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/component/script-component.js~scriptcomponent#addrepresentation",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-addRepresentation",
-    "src/component/script-component.js~ScriptComponent#addRepresentation",
-    "method"
-  ],
-  [
     "src/component/script-component.js~scriptcomponent#constructor",
     "class/src/component/script-component.js~ScriptComponent.html#instance-constructor-constructor",
     "src/component/script-component.js~ScriptComponent#constructor",
     "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#dispose",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-dispose",
-    "src/component/script-component.js~ScriptComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#getbox",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-getBox",
-    "src/component/script-component.js~ScriptComponent#getBox",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#getcenter",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-getCenter",
-    "src/component/script-component.js~ScriptComponent#getCenter",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#getzoom",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-getZoom",
-    "src/component/script-component.js~ScriptComponent#getZoom",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#removerepresentation",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-removeRepresentation",
-    "src/component/script-component.js~ScriptComponent#removeRepresentation",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#run",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-run",
-    "src/component/script-component.js~ScriptComponent#run",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#script",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-member-script",
-    "src/component/script-component.js~ScriptComponent#script",
-    "member"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#setvisibility",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-method-setVisibility",
-    "src/component/script-component.js~ScriptComponent#setVisibility",
-    "method"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#status",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-member-status",
-    "src/component/script-component.js~ScriptComponent#status",
-    "member"
-  ],
-  [
-    "src/component/script-component.js~scriptcomponent#type",
-    "class/src/component/script-component.js~ScriptComponent.html#instance-get-type",
-    "src/component/script-component.js~ScriptComponent#type",
-    "member"
   ],
   [
     "src/component/shape-component.js",
@@ -7966,30 +2410,6 @@ window.esdocSearchIndex = [
     "class/src/component/shape-component.js~ShapeComponent.html#instance-constructor-constructor",
     "src/component/shape-component.js~ShapeComponent#constructor",
     "method"
-  ],
-  [
-    "src/component/shape-component.js~shapecomponent#dispose",
-    "class/src/component/shape-component.js~ShapeComponent.html#instance-method-dispose",
-    "src/component/shape-component.js~ShapeComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/shape-component.js~shapecomponent#getboxuntransformed",
-    "class/src/component/shape-component.js~ShapeComponent.html#instance-method-getBoxUntransformed",
-    "src/component/shape-component.js~ShapeComponent#getBoxUntransformed",
-    "method"
-  ],
-  [
-    "src/component/shape-component.js~shapecomponent#getcenteruntransformed",
-    "class/src/component/shape-component.js~ShapeComponent.html#instance-method-getCenterUntransformed",
-    "src/component/shape-component.js~ShapeComponent#getCenterUntransformed",
-    "method"
-  ],
-  [
-    "src/component/shape-component.js~shapecomponent#shape",
-    "class/src/component/shape-component.js~ShapeComponent.html#instance-member-shape",
-    "src/component/shape-component.js~ShapeComponent#shape",
-    "member"
   ],
   [
     "src/component/shape-component.js~shapecomponent#type",
@@ -8028,36 +2448,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/structure-component.js~structurecomponent#defaultassembly",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-member-defaultAssembly",
-    "src/component/structure-component.js~StructureComponent#defaultAssembly",
-    "member"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#dispose",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-dispose",
-    "src/component/structure-component.js~StructureComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#getboxuntransformed",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-getBoxUntransformed",
-    "src/component/structure-component.js~StructureComponent#getBoxUntransformed",
-    "method"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#getcenteruntransformed",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-getCenterUntransformed",
-    "src/component/structure-component.js~StructureComponent#getCenterUntransformed",
-    "method"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#initselection",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-initSelection",
-    "src/component/structure-component.js~StructureComponent#initSelection",
-    "method"
-  ],
-  [
     "src/component/structure-component.js~structurecomponent#rebuildrepresentations",
     "class/src/component/structure-component.js~StructureComponent.html#instance-method-rebuildRepresentations",
     "src/component/structure-component.js~StructureComponent#rebuildRepresentations",
@@ -8070,18 +2460,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/structure-component.js~structurecomponent#removetrajectory",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-removeTrajectory",
-    "src/component/structure-component.js~StructureComponent#removeTrajectory",
-    "method"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#selection",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-member-selection",
-    "src/component/structure-component.js~StructureComponent#selection",
-    "member"
-  ],
-  [
     "src/component/structure-component.js~structurecomponent#setdefaultassembly",
     "class/src/component/structure-component.js~StructureComponent.html#instance-method-setDefaultAssembly",
     "src/component/structure-component.js~StructureComponent#setDefaultAssembly",
@@ -8091,12 +2469,6 @@ window.esdocSearchIndex = [
     "src/component/structure-component.js~structurecomponent#setselection",
     "class/src/component/structure-component.js~StructureComponent.html#instance-method-setSelection",
     "src/component/structure-component.js~StructureComponent#setSelection",
-    "method"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#setvisibility",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-setVisibility",
-    "src/component/structure-component.js~StructureComponent#setVisibility",
     "method"
   ],
   [
@@ -8115,18 +2487,6 @@ window.esdocSearchIndex = [
     "src/component/structure-component.js~structurecomponent#structureview",
     "class/src/component/structure-component.js~StructureComponent.html#instance-member-structureView",
     "src/component/structure-component.js~StructureComponent#structureView",
-    "member"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#superpose",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-method-superpose",
-    "src/component/structure-component.js~StructureComponent#superpose",
-    "method"
-  ],
-  [
-    "src/component/structure-component.js~structurecomponent#trajlist",
-    "class/src/component/structure-component.js~StructureComponent.html#instance-member-trajList",
-    "src/component/structure-component.js~StructureComponent#trajList",
     "member"
   ],
   [
@@ -8160,30 +2520,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/surface-component.js~surfacecomponent#dispose",
-    "class/src/component/surface-component.js~SurfaceComponent.html#instance-method-dispose",
-    "src/component/surface-component.js~SurfaceComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/surface-component.js~surfacecomponent#getboxuntransformed",
-    "class/src/component/surface-component.js~SurfaceComponent.html#instance-method-getBoxUntransformed",
-    "src/component/surface-component.js~SurfaceComponent#getBoxUntransformed",
-    "method"
-  ],
-  [
-    "src/component/surface-component.js~surfacecomponent#getcenteruntransformed",
-    "class/src/component/surface-component.js~SurfaceComponent.html#instance-method-getCenterUntransformed",
-    "src/component/surface-component.js~SurfaceComponent#getCenterUntransformed",
-    "method"
-  ],
-  [
-    "src/component/surface-component.js~surfacecomponent#surface",
-    "class/src/component/surface-component.js~SurfaceComponent.html#instance-member-surface",
-    "src/component/surface-component.js~SurfaceComponent#surface",
-    "member"
-  ],
-  [
     "src/component/surface-component.js~surfacecomponent#type",
     "class/src/component/surface-component.js~SurfaceComponent.html#instance-get-type",
     "src/component/surface-component.js~SurfaceComponent#type",
@@ -8208,60 +2544,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/trajectory-component.js~trajectorycomponent#defaultdirection",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-defaultDirection",
-    "src/component/trajectory-component.js~TrajectoryComponent#defaultDirection",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#defaultinterpolatestep",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-defaultInterpolateStep",
-    "src/component/trajectory-component.js~TrajectoryComponent#defaultInterpolateStep",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#defaultinterpolatetype",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-defaultInterpolateType",
-    "src/component/trajectory-component.js~TrajectoryComponent#defaultInterpolateType",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#defaultmode",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-defaultMode",
-    "src/component/trajectory-component.js~TrajectoryComponent#defaultMode",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#defaultstep",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-defaultStep",
-    "src/component/trajectory-component.js~TrajectoryComponent#defaultStep",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#defaulttimeout",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-defaultTimeout",
-    "src/component/trajectory-component.js~TrajectoryComponent#defaultTimeout",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#dispose",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-method-dispose",
-    "src/component/trajectory-component.js~TrajectoryComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#getcenter",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-method-getCenter",
-    "src/component/trajectory-component.js~TrajectoryComponent#getCenter",
-    "method"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#parent",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-parent",
-    "src/component/trajectory-component.js~TrajectoryComponent#parent",
-    "member"
-  ],
-  [
     "src/component/trajectory-component.js~trajectorycomponent#setframe",
     "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-method-setFrame",
     "src/component/trajectory-component.js~TrajectoryComponent#setFrame",
@@ -8277,18 +2559,6 @@ window.esdocSearchIndex = [
     "src/component/trajectory-component.js~trajectorycomponent#signals",
     "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-signals",
     "src/component/trajectory-component.js~TrajectoryComponent#signals",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#status",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-status",
-    "src/component/trajectory-component.js~TrajectoryComponent#status",
-    "member"
-  ],
-  [
-    "src/component/trajectory-component.js~trajectorycomponent#trajectory",
-    "class/src/component/trajectory-component.js~TrajectoryComponent.html#instance-member-trajectory",
-    "src/component/trajectory-component.js~TrajectoryComponent#trajectory",
     "member"
   ],
   [
@@ -8328,33 +2598,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/component/volume-component.js~volumecomponent#dispose",
-    "class/src/component/volume-component.js~VolumeComponent.html#instance-method-dispose",
-    "src/component/volume-component.js~VolumeComponent#dispose",
-    "method"
-  ],
-  [
-    "src/component/volume-component.js~volumecomponent#getboxuntransformed",
-    "class/src/component/volume-component.js~VolumeComponent.html#instance-method-getBoxUntransformed",
-    "src/component/volume-component.js~VolumeComponent#getBoxUntransformed",
-    "method"
-  ],
-  [
-    "src/component/volume-component.js~volumecomponent#getcenteruntransformed",
-    "class/src/component/volume-component.js~VolumeComponent.html#instance-method-getCenterUntransformed",
-    "src/component/volume-component.js~VolumeComponent#getCenterUntransformed",
-    "method"
-  ],
-  [
     "src/component/volume-component.js~volumecomponent#type",
     "class/src/component/volume-component.js~VolumeComponent.html#instance-get-type",
     "src/component/volume-component.js~VolumeComponent#type",
-    "member"
-  ],
-  [
-    "src/component/volume-component.js~volumecomponent#volume",
-    "class/src/component/volume-component.js~VolumeComponent.html#instance-member-volume",
-    "src/component/volume-component.js~VolumeComponent#volume",
     "member"
   ],
   [
@@ -8376,12 +2622,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controls/animation-controls.js~animationcontrols#animationlist",
-    "class/src/controls/animation-controls.js~AnimationControls.html#instance-member-animationList",
-    "src/controls/animation-controls.js~AnimationControls#animationList",
-    "member"
-  ],
-  [
     "src/controls/animation-controls.js~animationcontrols#clear",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-clear",
     "src/controls/animation-controls.js~AnimationControls#clear",
@@ -8392,24 +2632,6 @@ window.esdocSearchIndex = [
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-constructor-constructor",
     "src/controls/animation-controls.js~AnimationControls#constructor",
     "method"
-  ],
-  [
-    "src/controls/animation-controls.js~animationcontrols#controls",
-    "class/src/controls/animation-controls.js~AnimationControls.html#instance-member-controls",
-    "src/controls/animation-controls.js~AnimationControls#controls",
-    "member"
-  ],
-  [
-    "src/controls/animation-controls.js~animationcontrols#dispose",
-    "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-dispose",
-    "src/controls/animation-controls.js~AnimationControls#dispose",
-    "method"
-  ],
-  [
-    "src/controls/animation-controls.js~animationcontrols#finishedlist",
-    "class/src/controls/animation-controls.js~AnimationControls.html#instance-member-finishedList",
-    "src/controls/animation-controls.js~AnimationControls#finishedList",
-    "member"
   ],
   [
     "src/controls/animation-controls.js~animationcontrols#move",
@@ -8490,12 +2712,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controls/animation-controls.js~animationcontrols#stage",
-    "class/src/controls/animation-controls.js~AnimationControls.html#instance-member-stage",
-    "src/controls/animation-controls.js~AnimationControls#stage",
-    "member"
-  ],
-  [
     "src/controls/animation-controls.js~animationcontrols#timeout",
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-timeout",
     "src/controls/animation-controls.js~AnimationControls#timeout",
@@ -8512,12 +2728,6 @@ window.esdocSearchIndex = [
     "class/src/controls/animation-controls.js~AnimationControls.html#instance-method-value",
     "src/controls/animation-controls.js~AnimationControls#value",
     "method"
-  ],
-  [
-    "src/controls/animation-controls.js~animationcontrols#viewer",
-    "class/src/controls/animation-controls.js~AnimationControls.html#instance-member-viewer",
-    "src/controls/animation-controls.js~AnimationControls#viewer",
-    "member"
   ],
   [
     "src/controls/animation-controls.js~animationcontrols#zoom",
@@ -8542,12 +2752,6 @@ window.esdocSearchIndex = [
     "class/src/controls/component-controls.js~ComponentControls.html#instance-method-changed",
     "src/controls/component-controls.js~ComponentControls#changed",
     "method"
-  ],
-  [
-    "src/controls/component-controls.js~componentcontrols#component",
-    "class/src/controls/component-controls.js~ComponentControls.html#instance-member-component",
-    "src/controls/component-controls.js~ComponentControls#component",
-    "member"
   ],
   [
     "src/controls/component-controls.js~componentcontrols#constructor",
@@ -8580,108 +2784,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controls/component-controls.js~componentcontrols#stage",
-    "class/src/controls/component-controls.js~ComponentControls.html#instance-member-stage",
-    "src/controls/component-controls.js~ComponentControls#stage",
-    "member"
-  ],
-  [
-    "src/controls/component-controls.js~componentcontrols#viewer",
-    "class/src/controls/component-controls.js~ComponentControls.html#instance-member-viewer",
-    "src/controls/component-controls.js~ComponentControls#viewer",
-    "member"
-  ],
-  [
-    "src/controls/key-actions.js",
-    "file/src/controls/key-actions.js.html",
-    "src/controls/key-actions.js",
-    "file"
-  ],
-  [
-    "src/controls/key-actions.js~keyactions.autoview",
-    "class/src/controls/key-actions.js~KeyActions.html#static-method-autoView",
-    "src/controls/key-actions.js~KeyActions.autoView",
-    "method"
-  ],
-  [
-    "src/controls/key-actions.js~keyactions.toggleanimations",
-    "class/src/controls/key-actions.js~KeyActions.html#static-method-toggleAnimations",
-    "src/controls/key-actions.js~KeyActions.toggleAnimations",
-    "method"
-  ],
-  [
-    "src/controls/key-actions.js~keyactions.togglerock",
-    "class/src/controls/key-actions.js~KeyActions.html#static-method-toggleRock",
-    "src/controls/key-actions.js~KeyActions.toggleRock",
-    "method"
-  ],
-  [
-    "src/controls/key-actions.js~keyactions.togglespin",
-    "class/src/controls/key-actions.js~KeyActions.html#static-method-toggleSpin",
-    "src/controls/key-actions.js~KeyActions.toggleSpin",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js",
-    "file/src/controls/key-controls.js.html",
-    "src/controls/key-controls.js",
-    "file"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#actionlist",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-member-actionList",
-    "src/controls/key-controls.js~KeyControls#actionList",
-    "member"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#add",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-method-add",
-    "src/controls/key-controls.js~KeyControls#add",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#clear",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-method-clear",
-    "src/controls/key-controls.js~KeyControls#clear",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#constructor",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-constructor-constructor",
-    "src/controls/key-controls.js~KeyControls#constructor",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#disabled",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-member-disabled",
-    "src/controls/key-controls.js~KeyControls#disabled",
-    "member"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#preset",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-method-preset",
-    "src/controls/key-controls.js~KeyControls#preset",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#remove",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-method-remove",
-    "src/controls/key-controls.js~KeyControls#remove",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#run",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-method-run",
-    "src/controls/key-controls.js~KeyControls#run",
-    "method"
-  ],
-  [
-    "src/controls/key-controls.js~keycontrols#stage",
-    "class/src/controls/key-controls.js~KeyControls.html#instance-member-stage",
-    "src/controls/key-controls.js~KeyControls#stage",
-    "member"
-  ],
-  [
     "src/controls/mouse-actions.js",
     "file/src/controls/mouse-actions.js.html",
     "src/controls/mouse-actions.js",
@@ -8709,12 +2811,6 @@ window.esdocSearchIndex = [
     "src/controls/mouse-actions.js~mouseactions.movepick",
     "class/src/controls/mouse-actions.js~MouseActions.html#static-method-movePick",
     "src/controls/mouse-actions.js~MouseActions.movePick",
-    "method"
-  ],
-  [
-    "src/controls/mouse-actions.js~mouseactions.panatomdrag",
-    "class/src/controls/mouse-actions.js~MouseActions.html#static-method-panAtomDrag",
-    "src/controls/mouse-actions.js~MouseActions.panAtomDrag",
     "method"
   ],
   [
@@ -8772,12 +2868,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/controls/mouse-controls.js~mousecontrols#actionlist",
-    "class/src/controls/mouse-controls.js~MouseControls.html#instance-member-actionList",
-    "src/controls/mouse-controls.js~MouseControls#actionList",
-    "member"
-  ],
-  [
     "src/controls/mouse-controls.js~mousecontrols#add",
     "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-add",
     "src/controls/mouse-controls.js~MouseControls#add",
@@ -8796,18 +2886,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controls/mouse-controls.js~mousecontrols#disabled",
-    "class/src/controls/mouse-controls.js~MouseControls.html#instance-member-disabled",
-    "src/controls/mouse-controls.js~MouseControls#disabled",
-    "member"
-  ],
-  [
-    "src/controls/mouse-controls.js~mousecontrols#mouse",
-    "class/src/controls/mouse-controls.js~MouseControls.html#instance-member-mouse",
-    "src/controls/mouse-controls.js~MouseControls#mouse",
-    "member"
-  ],
-  [
     "src/controls/mouse-controls.js~mousecontrols#preset",
     "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-preset",
     "src/controls/mouse-controls.js~MouseControls#preset",
@@ -8818,18 +2896,6 @@ window.esdocSearchIndex = [
     "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-remove",
     "src/controls/mouse-controls.js~MouseControls#remove",
     "method"
-  ],
-  [
-    "src/controls/mouse-controls.js~mousecontrols#run",
-    "class/src/controls/mouse-controls.js~MouseControls.html#instance-method-run",
-    "src/controls/mouse-controls.js~MouseControls#run",
-    "method"
-  ],
-  [
-    "src/controls/mouse-controls.js~mousecontrols#stage",
-    "class/src/controls/mouse-controls.js~MouseControls.html#instance-member-stage",
-    "src/controls/mouse-controls.js~MouseControls#stage",
-    "member"
   ],
   [
     "src/controls/mouse-controls.js~triggerstring",
@@ -8844,28 +2910,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/controls/picking-controls.js~pickingcontrols#constructor",
-    "class/src/controls/picking-controls.js~PickingControls.html#instance-constructor-constructor",
-    "src/controls/picking-controls.js~PickingControls#constructor",
-    "method"
-  ],
-  [
     "src/controls/picking-controls.js~pickingcontrols#pick",
     "class/src/controls/picking-controls.js~PickingControls.html#instance-method-pick",
     "src/controls/picking-controls.js~PickingControls#pick",
     "method"
-  ],
-  [
-    "src/controls/picking-controls.js~pickingcontrols#stage",
-    "class/src/controls/picking-controls.js~PickingControls.html#instance-member-stage",
-    "src/controls/picking-controls.js~PickingControls#stage",
-    "member"
-  ],
-  [
-    "src/controls/picking-controls.js~pickingcontrols#viewer",
-    "class/src/controls/picking-controls.js~PickingControls.html#instance-member-viewer",
-    "src/controls/picking-controls.js~PickingControls#viewer",
-    "member"
   ],
   [
     "src/controls/picking-proxy.js",
@@ -8878,12 +2926,6 @@ window.esdocSearchIndex = [
     "typedef/index.html#static-typedef-PickingData",
     "src/controls/picking-proxy.js~PickingData",
     "typedef"
-  ],
-  [
-    "src/controls/picking-proxy.js~pickingproxy#_objectiftype",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-method-_objectIfType",
-    "src/controls/picking-proxy.js~PickingProxy#_objectIfType",
-    "method"
   ],
   [
     "src/controls/picking-proxy.js~pickingproxy#altkey",
@@ -8913,12 +2955,6 @@ window.esdocSearchIndex = [
     "src/controls/picking-proxy.js~pickingproxy#bond",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-bond",
     "src/controls/picking-proxy.js~PickingProxy#bond",
-    "member"
-  ],
-  [
-    "src/controls/picking-proxy.js~pickingproxy#box",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-box",
-    "src/controls/picking-proxy.js~PickingProxy#box",
     "member"
   ],
   [
@@ -8994,12 +3030,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/controls/picking-proxy.js~pickingproxy#getlabel",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-method-getLabel",
-    "src/controls/picking-proxy.js~PickingProxy#getLabel",
-    "method"
-  ],
-  [
     "src/controls/picking-proxy.js~pickingproxy#instance",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-member-instance",
     "src/controls/picking-proxy.js~PickingProxy#instance",
@@ -9027,24 +3057,6 @@ window.esdocSearchIndex = [
     "src/controls/picking-proxy.js~pickingproxy#object",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-object",
     "src/controls/picking-proxy.js~PickingProxy#object",
-    "member"
-  ],
-  [
-    "src/controls/picking-proxy.js~pickingproxy#octahedron",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-octahedron",
-    "src/controls/picking-proxy.js~PickingProxy#octahedron",
-    "member"
-  ],
-  [
-    "src/controls/picking-proxy.js~pickingproxy#picker",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-member-picker",
-    "src/controls/picking-proxy.js~PickingProxy#picker",
-    "member"
-  ],
-  [
-    "src/controls/picking-proxy.js~pickingproxy#pid",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-member-pid",
-    "src/controls/picking-proxy.js~PickingProxy#pid",
     "member"
   ],
   [
@@ -9084,18 +3096,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/controls/picking-proxy.js~pickingproxy#tetrahedron",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-tetrahedron",
-    "src/controls/picking-proxy.js~PickingProxy#tetrahedron",
-    "member"
-  ],
-  [
-    "src/controls/picking-proxy.js~pickingproxy#torus",
-    "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-torus",
-    "src/controls/picking-proxy.js~PickingProxy#torus",
-    "member"
-  ],
-  [
     "src/controls/picking-proxy.js~pickingproxy#type",
     "class/src/controls/picking-proxy.js~PickingProxy.html#instance-get-type",
     "src/controls/picking-proxy.js~PickingProxy#type",
@@ -9124,120 +3124,6 @@ window.esdocSearchIndex = [
     "file/src/controls/trackball-controls.js.html",
     "src/controls/trackball-controls.js",
     "file"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#_getrotatexy",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-_getRotateXY",
-    "src/controls/trackball-controls.js~TrackballControls#_getRotateXY",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#_setpanvector",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-_setPanVector",
-    "src/controls/trackball-controls.js~TrackballControls#_setPanVector",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#_transformpanvector",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-_transformPanVector",
-    "src/controls/trackball-controls.js~TrackballControls#_transformPanVector",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#atom",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-get-atom",
-    "src/controls/trackball-controls.js~TrackballControls#atom",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#component",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-get-component",
-    "src/controls/trackball-controls.js~TrackballControls#component",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#constructor",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-constructor-constructor",
-    "src/controls/trackball-controls.js~TrackballControls#constructor",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#controls",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-controls",
-    "src/controls/trackball-controls.js~TrackballControls#controls",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#mouse",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-mouse",
-    "src/controls/trackball-controls.js~TrackballControls#mouse",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#pan",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-pan",
-    "src/controls/trackball-controls.js~TrackballControls#pan",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#panatom",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-panAtom",
-    "src/controls/trackball-controls.js~TrackballControls#panAtom",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#pancomponent",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-panComponent",
-    "src/controls/trackball-controls.js~TrackballControls#panComponent",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#panspeed",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-panSpeed",
-    "src/controls/trackball-controls.js~TrackballControls#panSpeed",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#rotate",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-rotate",
-    "src/controls/trackball-controls.js~TrackballControls#rotate",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#rotatecomponent",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-rotateComponent",
-    "src/controls/trackball-controls.js~TrackballControls#rotateComponent",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#rotatespeed",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-rotateSpeed",
-    "src/controls/trackball-controls.js~TrackballControls#rotateSpeed",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#stage",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-stage",
-    "src/controls/trackball-controls.js~TrackballControls#stage",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#viewer",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-viewer",
-    "src/controls/trackball-controls.js~TrackballControls#viewer",
-    "member"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#zoom",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-method-zoom",
-    "src/controls/trackball-controls.js~TrackballControls#zoom",
-    "method"
-  ],
-  [
-    "src/controls/trackball-controls.js~trackballcontrols#zoomspeed",
-    "class/src/controls/trackball-controls.js~TrackballControls.html#instance-member-zoomSpeed",
-    "src/controls/trackball-controls.js~TrackballControls#zoomSpeed",
-    "member"
   ],
   [
     "src/controls/viewer-controls.js",
@@ -9294,12 +3180,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controls/viewer-controls.js~viewercontrols#getpositiononcanvas",
-    "class/src/controls/viewer-controls.js~ViewerControls.html#instance-method-getPositionOnCanvas",
-    "src/controls/viewer-controls.js~ViewerControls#getPositionOnCanvas",
-    "method"
-  ],
-  [
     "src/controls/viewer-controls.js~viewercontrols#orient",
     "class/src/controls/viewer-controls.js~ViewerControls.html#instance-method-orient",
     "src/controls/viewer-controls.js~ViewerControls#orient",
@@ -9336,22 +3216,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/controls/viewer-controls.js~viewercontrols#stage",
-    "class/src/controls/viewer-controls.js~ViewerControls.html#instance-member-stage",
-    "src/controls/viewer-controls.js~ViewerControls#stage",
-    "member"
-  ],
-  [
     "src/controls/viewer-controls.js~viewercontrols#translate",
     "class/src/controls/viewer-controls.js~ViewerControls.html#instance-method-translate",
     "src/controls/viewer-controls.js~ViewerControls#translate",
     "method"
-  ],
-  [
-    "src/controls/viewer-controls.js~viewercontrols#viewer",
-    "class/src/controls/viewer-controls.js~ViewerControls.html#instance-member-viewer",
-    "src/controls/viewer-controls.js~ViewerControls#viewer",
-    "member"
   ],
   [
     "src/controls/viewer-controls.js~viewercontrols#zoom",
@@ -9384,64 +3252,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#baseurl",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-member-baseUrl",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#baseUrl",
-    "member"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#constructor",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-constructor-constructor",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#constructor",
-    "method"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#getcounturl",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-method-getCountUrl",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#getCountUrl",
-    "method"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#getframeparams",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-method-getFrameParams",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#getFrameParams",
-    "method"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#getframeurl",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-method-getFrameUrl",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#getFrameUrl",
-    "method"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#getlisting",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-method-getListing",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#getListing",
-    "method"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#getpathurl",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-method-getPathUrl",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#getPathUrl",
-    "method"
-  ],
-  [
-    "src/datasource/mdsrv-datasource.js~mdsrvdatasource#geturl",
-    "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html#instance-method-getUrl",
-    "src/datasource/mdsrv-datasource.js~MdsrvDatasource#getUrl",
-    "method"
-  ],
-  [
     "src/datasource/passthrough-datasource.js",
     "file/src/datasource/passthrough-datasource.js.html",
     "src/datasource/passthrough-datasource.js",
     "file"
-  ],
-  [
-    "src/datasource/passthrough-datasource.js~passthroughdatasource#geturl",
-    "class/src/datasource/passthrough-datasource.js~PassThroughDatasource.html#instance-method-getUrl",
-    "src/datasource/passthrough-datasource.js~PassThroughDatasource#getUrl",
-    "method"
   ],
   [
     "src/datasource/pubchem-datasource.js",
@@ -9450,58 +3264,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/datasource/pubchem-datasource.js~pubchemdatasource#getext",
-    "class/src/datasource/pubchem-datasource.js~PubchemDatasource.html#instance-method-getExt",
-    "src/datasource/pubchem-datasource.js~PubchemDatasource#getExt",
-    "method"
-  ],
-  [
-    "src/datasource/pubchem-datasource.js~pubchemdatasource#geturl",
-    "class/src/datasource/pubchem-datasource.js~PubchemDatasource.html#instance-method-getUrl",
-    "src/datasource/pubchem-datasource.js~PubchemDatasource#getUrl",
-    "method"
-  ],
-  [
     "src/datasource/rcsb-datasource.js",
     "file/src/datasource/rcsb-datasource.js.html",
     "src/datasource/rcsb-datasource.js",
     "file"
   ],
   [
-    "src/datasource/rcsb-datasource.js~rcsbdatasource#getext",
-    "class/src/datasource/rcsb-datasource.js~RcsbDatasource.html#instance-method-getExt",
-    "src/datasource/rcsb-datasource.js~RcsbDatasource#getExt",
-    "method"
-  ],
-  [
-    "src/datasource/rcsb-datasource.js~rcsbdatasource#geturl",
-    "class/src/datasource/rcsb-datasource.js~RcsbDatasource.html#instance-method-getUrl",
-    "src/datasource/rcsb-datasource.js~RcsbDatasource#getUrl",
-    "method"
-  ],
-  [
     "src/datasource/static-datasource.js",
     "file/src/datasource/static-datasource.js.html",
     "src/datasource/static-datasource.js",
     "file"
-  ],
-  [
-    "src/datasource/static-datasource.js~staticdatasource#baseurl",
-    "class/src/datasource/static-datasource.js~StaticDatasource.html#instance-member-baseUrl",
-    "src/datasource/static-datasource.js~StaticDatasource#baseUrl",
-    "member"
-  ],
-  [
-    "src/datasource/static-datasource.js~staticdatasource#constructor",
-    "class/src/datasource/static-datasource.js~StaticDatasource.html#instance-constructor-constructor",
-    "src/datasource/static-datasource.js~StaticDatasource#constructor",
-    "method"
-  ],
-  [
-    "src/datasource/static-datasource.js~staticdatasource#geturl",
-    "class/src/datasource/static-datasource.js~StaticDatasource.html#instance-method-getUrl",
-    "src/datasource/static-datasource.js~StaticDatasource#getUrl",
-    "method"
   ],
   [
     "src/externals.js",
@@ -9612,36 +3384,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/geometry/contact.js~contact#constructor",
-    "class/src/geometry/contact.js~Contact.html#instance-constructor-constructor",
-    "src/geometry/contact.js~Contact#constructor",
-    "method"
-  ],
-  [
-    "src/geometry/contact.js~contact#kdtree2",
-    "class/src/geometry/contact.js~Contact.html#instance-member-kdtree2",
-    "src/geometry/contact.js~Contact#kdtree2",
-    "member"
-  ],
-  [
-    "src/geometry/contact.js~contact#sview1",
-    "class/src/geometry/contact.js~Contact.html#instance-member-sview1",
-    "src/geometry/contact.js~Contact#sview1",
-    "member"
-  ],
-  [
-    "src/geometry/contact.js~contact#sview2",
-    "class/src/geometry/contact.js~Contact.html#instance-member-sview2",
-    "src/geometry/contact.js~Contact#sview2",
-    "member"
-  ],
-  [
-    "src/geometry/contact.js~contact#within",
-    "class/src/geometry/contact.js~Contact.html#instance-method-within",
-    "src/geometry/contact.js~Contact#within",
-    "method"
-  ],
-  [
     "src/geometry/grid.js",
     "file/src/geometry/grid.js.html",
     "src/geometry/grid.js",
@@ -9666,219 +3408,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/geometry/primitive.js",
-    "file/src/geometry/primitive.js.html",
-    "src/geometry/primitive.js",
-    "file"
-  ],
-  [
-    "src/geometry/primitive.js~arrowprimitive.type",
-    "class/src/geometry/primitive.js~ArrowPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~ArrowPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~boxprimitive.fields",
-    "class/src/geometry/primitive.js~BoxPrimitive.html#static-get-fields",
-    "src/geometry/primitive.js~BoxPrimitive.fields",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~boxprimitive.type",
-    "class/src/geometry/primitive.js~BoxPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~BoxPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~coneprimitive.type",
-    "class/src/geometry/primitive.js~ConePrimitive.html#static-get-type",
-    "src/geometry/primitive.js~ConePrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~cylinderprimitive.expandboundingbox",
-    "class/src/geometry/primitive.js~CylinderPrimitive.html#static-method-expandBoundingBox",
-    "src/geometry/primitive.js~CylinderPrimitive.expandBoundingBox",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~cylinderprimitive.fields",
-    "class/src/geometry/primitive.js~CylinderPrimitive.html#static-get-fields",
-    "src/geometry/primitive.js~CylinderPrimitive.fields",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~cylinderprimitive.positionfromshape",
-    "class/src/geometry/primitive.js~CylinderPrimitive.html#static-method-positionFromShape",
-    "src/geometry/primitive.js~CylinderPrimitive.positionFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~cylinderprimitive.type",
-    "class/src/geometry/primitive.js~CylinderPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~CylinderPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~ellipsoidprimitive.fields",
-    "class/src/geometry/primitive.js~EllipsoidPrimitive.html#static-get-fields",
-    "src/geometry/primitive.js~EllipsoidPrimitive.fields",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~ellipsoidprimitive.type",
-    "class/src/geometry/primitive.js~EllipsoidPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~EllipsoidPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~octahedronprimitive.type",
-    "class/src/geometry/primitive.js~OctahedronPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~OctahedronPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.buffer",
-    "class/src/geometry/primitive.js~Primitive.html#static-get-Buffer",
-    "src/geometry/primitive.js~Primitive.Buffer",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.picker",
-    "class/src/geometry/primitive.js~Primitive.html#static-get-Picker",
-    "src/geometry/primitive.js~Primitive.Picker",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.arrayfromshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-arrayFromShape",
-    "src/geometry/primitive.js~Primitive.arrayFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.bufferfromshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-bufferFromShape",
-    "src/geometry/primitive.js~Primitive.bufferFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.datafromshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-dataFromShape",
-    "src/geometry/primitive.js~Primitive.dataFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.getshapekey",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-getShapeKey",
-    "src/geometry/primitive.js~Primitive.getShapeKey",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.objectfromshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-objectFromShape",
-    "src/geometry/primitive.js~Primitive.objectFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.objecttoshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-objectToShape",
-    "src/geometry/primitive.js~Primitive.objectToShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.valuefromshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-valueFromShape",
-    "src/geometry/primitive.js~Primitive.valueFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~primitive.valuetoshape",
-    "class/src/geometry/primitive.js~Primitive.html#static-method-valueToShape",
-    "src/geometry/primitive.js~Primitive.valueToShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~sphereprimitive.expandboundingbox",
-    "class/src/geometry/primitive.js~SpherePrimitive.html#static-method-expandBoundingBox",
-    "src/geometry/primitive.js~SpherePrimitive.expandBoundingBox",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~sphereprimitive.fields",
-    "class/src/geometry/primitive.js~SpherePrimitive.html#static-get-fields",
-    "src/geometry/primitive.js~SpherePrimitive.fields",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~sphereprimitive.positionfromshape",
-    "class/src/geometry/primitive.js~SpherePrimitive.html#static-method-positionFromShape",
-    "src/geometry/primitive.js~SpherePrimitive.positionFromShape",
-    "method"
-  ],
-  [
-    "src/geometry/primitive.js~sphereprimitive.type",
-    "class/src/geometry/primitive.js~SpherePrimitive.html#static-get-type",
-    "src/geometry/primitive.js~SpherePrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~tetrahedronprimitive.type",
-    "class/src/geometry/primitive.js~TetrahedronPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~TetrahedronPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~textprimitive.fields",
-    "class/src/geometry/primitive.js~TextPrimitive.html#static-get-fields",
-    "src/geometry/primitive.js~TextPrimitive.fields",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~textprimitive.type",
-    "class/src/geometry/primitive.js~TextPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~TextPrimitive.type",
-    "member"
-  ],
-  [
-    "src/geometry/primitive.js~torusprimitive.type",
-    "class/src/geometry/primitive.js~TorusPrimitive.html#static-get-type",
-    "src/geometry/primitive.js~TorusPrimitive.type",
-    "member"
-  ],
-  [
     "src/geometry/shape.js",
     "file/src/geometry/shape.js.html",
     "src/geometry/shape.js",
     "file"
   ],
   [
-    "src/geometry/shape.js~shape#[p.getshapekey('name')]",
-    "class/src/geometry/shape.js~Shape.html#instance-member-[P.getShapeKey('name')]",
-    "src/geometry/shape.js~Shape#[P.getShapeKey('name')]",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#[p.getshapekey(name)]",
-    "class/src/geometry/shape.js~Shape.html#instance-member-[P.getShapeKey(name)]",
-    "src/geometry/shape.js~Shape#[P.getShapeKey(name)]",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#_center",
-    "class/src/geometry/shape.js~Shape.html#instance-member-_center",
-    "src/geometry/shape.js~Shape#_center",
-    "member"
-  ],
-  [
     "src/geometry/shape.js~shape#addarrow",
     "class/src/geometry/shape.js~Shape.html#instance-method-addArrow",
     "src/geometry/shape.js~Shape#addArrow",
-    "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#addbox",
-    "class/src/geometry/shape.js~Shape.html#instance-method-addBox",
-    "src/geometry/shape.js~Shape#addBox",
     "method"
   ],
   [
@@ -9918,124 +3456,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/geometry/shape.js~shape#addoctahedron",
-    "class/src/geometry/shape.js~Shape.html#instance-method-addOctahedron",
-    "src/geometry/shape.js~Shape#addOctahedron",
-    "method"
-  ],
-  [
     "src/geometry/shape.js~shape#addsphere",
     "class/src/geometry/shape.js~Shape.html#instance-method-addSphere",
     "src/geometry/shape.js~Shape#addSphere",
     "method"
   ],
   [
-    "src/geometry/shape.js~shape#addtetrahedron",
-    "class/src/geometry/shape.js~Shape.html#instance-method-addTetrahedron",
-    "src/geometry/shape.js~Shape#addTetrahedron",
-    "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#addtext",
-    "class/src/geometry/shape.js~Shape.html#instance-method-addText",
-    "src/geometry/shape.js~Shape#addText",
-    "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#addtorus",
-    "class/src/geometry/shape.js~Shape.html#instance-method-addTorus",
-    "src/geometry/shape.js~Shape#addTorus",
-    "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#aspectratio",
-    "class/src/geometry/shape.js~Shape.html#instance-member-aspectRatio",
-    "src/geometry/shape.js~Shape#aspectRatio",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#boundingbox",
-    "class/src/geometry/shape.js~Shape.html#instance-member-boundingBox",
-    "src/geometry/shape.js~Shape#boundingBox",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#bufferlist",
-    "class/src/geometry/shape.js~Shape.html#instance-member-bufferList",
-    "src/geometry/shape.js~Shape#bufferList",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#center",
-    "class/src/geometry/shape.js~Shape.html#instance-get-center",
-    "src/geometry/shape.js~Shape#center",
-    "member"
-  ],
-  [
     "src/geometry/shape.js~shape#constructor",
     "class/src/geometry/shape.js~Shape.html#instance-constructor-constructor",
     "src/geometry/shape.js~Shape#constructor",
     "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#disableimpostor",
-    "class/src/geometry/shape.js~Shape.html#instance-member-disableImpostor",
-    "src/geometry/shape.js~Shape#disableImpostor",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#dispose",
-    "class/src/geometry/shape.js~Shape.html#instance-method-dispose",
-    "src/geometry/shape.js~Shape#dispose",
-    "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#getbufferlist",
-    "class/src/geometry/shape.js~Shape.html#instance-method-getBufferList",
-    "src/geometry/shape.js~Shape#getBufferList",
-    "method"
-  ],
-  [
-    "src/geometry/shape.js~shape#labelparams",
-    "class/src/geometry/shape.js~Shape.html#instance-member-labelParams",
-    "src/geometry/shape.js~Shape#labelParams",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#meshcount",
-    "class/src/geometry/shape.js~Shape.html#instance-member-meshCount",
-    "src/geometry/shape.js~Shape#meshCount",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#name",
-    "class/src/geometry/shape.js~Shape.html#instance-member-name",
-    "src/geometry/shape.js~Shape#name",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#openended",
-    "class/src/geometry/shape.js~Shape.html#instance-member-openEnded",
-    "src/geometry/shape.js~Shape#openEnded",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#radialsegments",
-    "class/src/geometry/shape.js~Shape.html#instance-member-radialSegments",
-    "src/geometry/shape.js~Shape#radialSegments",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#spheredetail",
-    "class/src/geometry/shape.js~Shape.html#instance-member-sphereDetail",
-    "src/geometry/shape.js~Shape#sphereDetail",
-    "member"
-  ],
-  [
-    "src/geometry/shape.js~shape#type",
-    "class/src/geometry/shape.js~Shape.html#instance-get-type",
-    "src/geometry/shape.js~Shape#type",
-    "member"
   ],
   [
     "src/geometry/spatial-hash.js",
@@ -10068,70 +3498,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/loader/loader.js~loader#binary",
-    "class/src/loader/loader.js~Loader.html#instance-member-binary",
-    "src/loader/loader.js~Loader#binary",
-    "member"
-  ],
-  [
-    "src/loader/loader.js~loader#compressed",
-    "class/src/loader/loader.js~Loader.html#instance-member-compressed",
-    "src/loader/loader.js~Loader#compressed",
-    "member"
-  ],
-  [
     "src/loader/loader.js~loader#constructor",
     "class/src/loader/loader.js~Loader.html#instance-constructor-constructor",
     "src/loader/loader.js~Loader#constructor",
     "method"
   ],
   [
-    "src/loader/loader.js~loader#dir",
-    "class/src/loader/loader.js~Loader.html#instance-member-dir",
-    "src/loader/loader.js~Loader#dir",
-    "member"
-  ],
-  [
-    "src/loader/loader.js~loader#ext",
-    "class/src/loader/loader.js~Loader.html#instance-member-ext",
-    "src/loader/loader.js~Loader#ext",
-    "member"
-  ],
-  [
     "src/loader/loader.js~loader#load",
     "class/src/loader/loader.js~Loader.html#instance-method-load",
     "src/loader/loader.js~Loader#load",
     "method"
-  ],
-  [
-    "src/loader/loader.js~loader#name",
-    "class/src/loader/loader.js~Loader.html#instance-member-name",
-    "src/loader/loader.js~Loader#name",
-    "member"
-  ],
-  [
-    "src/loader/loader.js~loader#params",
-    "class/src/loader/loader.js~Loader.html#instance-member-params",
-    "src/loader/loader.js~Loader#params",
-    "member"
-  ],
-  [
-    "src/loader/loader.js~loader#path",
-    "class/src/loader/loader.js~Loader.html#instance-member-path",
-    "src/loader/loader.js~Loader#path",
-    "member"
-  ],
-  [
-    "src/loader/loader.js~loader#protocol",
-    "class/src/loader/loader.js~Loader.html#instance-member-protocol",
-    "src/loader/loader.js~Loader#protocol",
-    "member"
-  ],
-  [
-    "src/loader/loader.js~loader#streamer",
-    "class/src/loader/loader.js~Loader.html#instance-member-streamer",
-    "src/loader/loader.js~Loader#streamer",
-    "member"
   ],
   [
     "src/loader/loader.js~loaderparameters",
@@ -10206,52 +3582,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/math/principal-axes.js~principalaxes#bega",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-begA",
-    "src/math/principal-axes.js~PrincipalAxes#begA",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#begb",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-begB",
-    "src/math/principal-axes.js~PrincipalAxes#begB",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#begc",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-begC",
-    "src/math/principal-axes.js~PrincipalAxes#begC",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#center",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-center",
-    "src/math/principal-axes.js~PrincipalAxes#center",
-    "member"
-  ],
-  [
     "src/math/principal-axes.js~principalaxes#constructor",
     "class/src/math/principal-axes.js~PrincipalAxes.html#instance-constructor-constructor",
     "src/math/principal-axes.js~PrincipalAxes#constructor",
     "method"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#enda",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-endA",
-    "src/math/principal-axes.js~PrincipalAxes#endA",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#endb",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-endB",
-    "src/math/principal-axes.js~PrincipalAxes#endB",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#endc",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-endC",
-    "src/math/principal-axes.js~PrincipalAxes#endC",
-    "member"
   ],
   [
     "src/math/principal-axes.js~principalaxes#getbasismatrix",
@@ -10272,42 +3606,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/math/principal-axes.js~principalaxes#normveca",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-normVecA",
-    "src/math/principal-axes.js~PrincipalAxes#normVecA",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#normvecb",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-normVecB",
-    "src/math/principal-axes.js~PrincipalAxes#normVecB",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#normvecc",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-normVecC",
-    "src/math/principal-axes.js~PrincipalAxes#normVecC",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#veca",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-vecA",
-    "src/math/principal-axes.js~PrincipalAxes#vecA",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#vecb",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-vecB",
-    "src/math/principal-axes.js~PrincipalAxes#vecB",
-    "member"
-  ],
-  [
-    "src/math/principal-axes.js~principalaxes#vecc",
-    "class/src/math/principal-axes.js~PrincipalAxes.html#instance-member-vecC",
-    "src/math/principal-axes.js~PrincipalAxes#vecC",
-    "member"
-  ],
-  [
     "src/math/vector-utils.js",
     "file/src/math/vector-utils.js.html",
     "src/math/vector-utils.js",
@@ -10326,46 +3624,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/cif-parser.js~cifparser#_parse",
-    "class/src/parser/cif-parser.js~CifParser.html#instance-method-_parse",
-    "src/parser/cif-parser.js~CifParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/cif-parser.js~cifparser#type",
-    "class/src/parser/cif-parser.js~CifParser.html#instance-get-type",
-    "src/parser/cif-parser.js~CifParser#type",
-    "member"
-  ],
-  [
     "src/parser/csv-parser.js",
     "file/src/parser/csv-parser.js.html",
     "src/parser/csv-parser.js",
     "file"
-  ],
-  [
-    "src/parser/csv-parser.js~csvparser#__objname",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-get-__objName",
-    "src/parser/csv-parser.js~CsvParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/csv-parser.js~csvparser#_parse",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-method-_parse",
-    "src/parser/csv-parser.js~CsvParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/csv-parser.js~csvparser#columnnames",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-member-columnNames",
-    "src/parser/csv-parser.js~CsvParser#columnNames",
-    "member"
-  ],
-  [
-    "src/parser/csv-parser.js~csvparser#comment",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-member-comment",
-    "src/parser/csv-parser.js~CsvParser#comment",
-    "member"
   ],
   [
     "src/parser/csv-parser.js~csvparser#constructor",
@@ -10374,46 +3636,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/parser/csv-parser.js~csvparser#delimiter",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-member-delimiter",
-    "src/parser/csv-parser.js~CsvParser#delimiter",
-    "member"
-  ],
-  [
-    "src/parser/csv-parser.js~csvparser#table",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-member-table",
-    "src/parser/csv-parser.js~CsvParser#table",
-    "member"
-  ],
-  [
-    "src/parser/csv-parser.js~csvparser#type",
-    "class/src/parser/csv-parser.js~CsvParser.html#instance-get-type",
-    "src/parser/csv-parser.js~CsvParser#type",
-    "member"
-  ],
-  [
     "src/parser/cube-parser.js",
     "file/src/parser/cube-parser.js.html",
     "src/parser/cube-parser.js",
     "file"
-  ],
-  [
-    "src/parser/cube-parser.js~cubeparser#_parse",
-    "class/src/parser/cube-parser.js~CubeParser.html#instance-method-_parse",
-    "src/parser/cube-parser.js~CubeParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/cube-parser.js~cubeparser#getmatrix",
-    "class/src/parser/cube-parser.js~CubeParser.html#instance-method-getMatrix",
-    "src/parser/cube-parser.js~CubeParser#getMatrix",
-    "method"
-  ],
-  [
-    "src/parser/cube-parser.js~cubeparser#type",
-    "class/src/parser/cube-parser.js~CubeParser.html#instance-get-type",
-    "src/parser/cube-parser.js~CubeParser#type",
-    "member"
   ],
   [
     "src/parser/dcd-parser.js",
@@ -10422,52 +3648,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/dcd-parser.js~dcdparser#_parse",
-    "class/src/parser/dcd-parser.js~DcdParser.html#instance-method-_parse",
-    "src/parser/dcd-parser.js~DcdParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/dcd-parser.js~dcdparser#isbinary",
-    "class/src/parser/dcd-parser.js~DcdParser.html#instance-get-isBinary",
-    "src/parser/dcd-parser.js~DcdParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/dcd-parser.js~dcdparser#type",
-    "class/src/parser/dcd-parser.js~DcdParser.html#instance-get-type",
-    "src/parser/dcd-parser.js~DcdParser#type",
-    "member"
-  ],
-  [
     "src/parser/dsn6-parser.js",
     "file/src/parser/dsn6-parser.js.html",
     "src/parser/dsn6-parser.js",
     "file"
-  ],
-  [
-    "src/parser/dsn6-parser.js~dsn6parser#_parse",
-    "class/src/parser/dsn6-parser.js~Dsn6Parser.html#instance-method-_parse",
-    "src/parser/dsn6-parser.js~Dsn6Parser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/dsn6-parser.js~dsn6parser#getmatrix",
-    "class/src/parser/dsn6-parser.js~Dsn6Parser.html#instance-method-getMatrix",
-    "src/parser/dsn6-parser.js~Dsn6Parser#getMatrix",
-    "method"
-  ],
-  [
-    "src/parser/dsn6-parser.js~dsn6parser#isbinary",
-    "class/src/parser/dsn6-parser.js~Dsn6Parser.html#instance-get-isBinary",
-    "src/parser/dsn6-parser.js~Dsn6Parser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/dsn6-parser.js~dsn6parser#type",
-    "class/src/parser/dsn6-parser.js~Dsn6Parser.html#instance-get-type",
-    "src/parser/dsn6-parser.js~Dsn6Parser#type",
-    "member"
   ],
   [
     "src/parser/dx-parser.js",
@@ -10476,52 +3660,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/dx-parser.js~dxparser#_parse",
-    "class/src/parser/dx-parser.js~DxParser.html#instance-method-_parse",
-    "src/parser/dx-parser.js~DxParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/dx-parser.js~dxparser#getmatrix",
-    "class/src/parser/dx-parser.js~DxParser.html#instance-method-getMatrix",
-    "src/parser/dx-parser.js~DxParser#getMatrix",
-    "method"
-  ],
-  [
-    "src/parser/dx-parser.js~dxparser#parseheaderlines",
-    "class/src/parser/dx-parser.js~DxParser.html#instance-method-parseHeaderLines",
-    "src/parser/dx-parser.js~DxParser#parseHeaderLines",
-    "method"
-  ],
-  [
-    "src/parser/dx-parser.js~dxparser#type",
-    "class/src/parser/dx-parser.js~DxParser.html#instance-get-type",
-    "src/parser/dx-parser.js~DxParser#type",
-    "member"
-  ],
-  [
     "src/parser/dxbin-parser.js",
     "file/src/parser/dxbin-parser.js.html",
     "src/parser/dxbin-parser.js",
     "file"
-  ],
-  [
-    "src/parser/dxbin-parser.js~dxbinparser#_parse",
-    "class/src/parser/dxbin-parser.js~DxbinParser.html#instance-method-_parse",
-    "src/parser/dxbin-parser.js~DxbinParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/dxbin-parser.js~dxbinparser#isbinary",
-    "class/src/parser/dxbin-parser.js~DxbinParser.html#instance-get-isBinary",
-    "src/parser/dxbin-parser.js~DxbinParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/dxbin-parser.js~dxbinparser#type",
-    "class/src/parser/dxbin-parser.js~DxbinParser.html#instance-get-type",
-    "src/parser/dxbin-parser.js~DxbinParser#type",
-    "member"
   ],
   [
     "src/parser/gro-parser.js",
@@ -10530,64 +3672,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/gro-parser.js~groparser#_parse",
-    "class/src/parser/gro-parser.js~GroParser.html#instance-method-_parse",
-    "src/parser/gro-parser.js~GroParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/gro-parser.js~groparser#type",
-    "class/src/parser/gro-parser.js~GroParser.html#instance-get-type",
-    "src/parser/gro-parser.js~GroParser#type",
-    "member"
-  ],
-  [
     "src/parser/json-parser.js",
     "file/src/parser/json-parser.js.html",
     "src/parser/json-parser.js",
     "file"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#__objname",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-get-__objName",
-    "src/parser/json-parser.js~JsonParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#_parse",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-method-_parse",
-    "src/parser/json-parser.js~JsonParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#constructor",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-constructor-constructor",
-    "src/parser/json-parser.js~JsonParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#isjson",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-get-isJson",
-    "src/parser/json-parser.js~JsonParser#isJson",
-    "member"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#json",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-member-json",
-    "src/parser/json-parser.js~JsonParser#json",
-    "member"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#string",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-member-string",
-    "src/parser/json-parser.js~JsonParser#string",
-    "member"
-  ],
-  [
-    "src/parser/json-parser.js~jsonparser#type",
-    "class/src/parser/json-parser.js~JsonParser.html#instance-get-type",
-    "src/parser/json-parser.js~JsonParser#type",
-    "member"
   ],
   [
     "src/parser/mmtf-parser.js",
@@ -10596,40 +3684,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/mmtf-parser.js~mmtfparser#_parse",
-    "class/src/parser/mmtf-parser.js~MmtfParser.html#instance-method-_parse",
-    "src/parser/mmtf-parser.js~MmtfParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/mmtf-parser.js~mmtfparser#isbinary",
-    "class/src/parser/mmtf-parser.js~MmtfParser.html#instance-get-isBinary",
-    "src/parser/mmtf-parser.js~MmtfParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/mmtf-parser.js~mmtfparser#type",
-    "class/src/parser/mmtf-parser.js~MmtfParser.html#instance-get-type",
-    "src/parser/mmtf-parser.js~MmtfParser#type",
-    "member"
-  ],
-  [
     "src/parser/mol2-parser.js",
     "file/src/parser/mol2-parser.js.html",
     "src/parser/mol2-parser.js",
     "file"
-  ],
-  [
-    "src/parser/mol2-parser.js~mol2parser#_parse",
-    "class/src/parser/mol2-parser.js~Mol2Parser.html#instance-method-_parse",
-    "src/parser/mol2-parser.js~Mol2Parser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/mol2-parser.js~mol2parser#type",
-    "class/src/parser/mol2-parser.js~Mol2Parser.html#instance-get-type",
-    "src/parser/mol2-parser.js~Mol2Parser#type",
-    "member"
   ],
   [
     "src/parser/mrc-parser.js",
@@ -10638,70 +3696,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/mrc-parser.js~mrcparser#_parse",
-    "class/src/parser/mrc-parser.js~MrcParser.html#instance-method-_parse",
-    "src/parser/mrc-parser.js~MrcParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/mrc-parser.js~mrcparser#getmatrix",
-    "class/src/parser/mrc-parser.js~MrcParser.html#instance-method-getMatrix",
-    "src/parser/mrc-parser.js~MrcParser#getMatrix",
-    "method"
-  ],
-  [
-    "src/parser/mrc-parser.js~mrcparser#isbinary",
-    "class/src/parser/mrc-parser.js~MrcParser.html#instance-get-isBinary",
-    "src/parser/mrc-parser.js~MrcParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/mrc-parser.js~mrcparser#type",
-    "class/src/parser/mrc-parser.js~MrcParser.html#instance-get-type",
-    "src/parser/mrc-parser.js~MrcParser#type",
-    "member"
-  ],
-  [
     "src/parser/msgpack-parser.js",
     "file/src/parser/msgpack-parser.js.html",
     "src/parser/msgpack-parser.js",
     "file"
-  ],
-  [
-    "src/parser/msgpack-parser.js~msgpackparser#__objname",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html#instance-get-__objName",
-    "src/parser/msgpack-parser.js~MsgpackParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/msgpack-parser.js~msgpackparser#_parse",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html#instance-method-_parse",
-    "src/parser/msgpack-parser.js~MsgpackParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/msgpack-parser.js~msgpackparser#constructor",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html#instance-constructor-constructor",
-    "src/parser/msgpack-parser.js~MsgpackParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/msgpack-parser.js~msgpackparser#isbinary",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html#instance-get-isBinary",
-    "src/parser/msgpack-parser.js~MsgpackParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/msgpack-parser.js~msgpackparser#msgpack",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html#instance-member-msgpack",
-    "src/parser/msgpack-parser.js~MsgpackParser#msgpack",
-    "member"
-  ],
-  [
-    "src/parser/msgpack-parser.js~msgpackparser#type",
-    "class/src/parser/msgpack-parser.js~MsgpackParser.html#instance-get-type",
-    "src/parser/msgpack-parser.js~MsgpackParser#type",
-    "member"
   ],
   [
     "src/parser/nctraj-parser.js",
@@ -10710,64 +3708,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/nctraj-parser.js~nctrajparser#_parse",
-    "class/src/parser/nctraj-parser.js~NctrajParser.html#instance-method-_parse",
-    "src/parser/nctraj-parser.js~NctrajParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/nctraj-parser.js~nctrajparser#isbinary",
-    "class/src/parser/nctraj-parser.js~NctrajParser.html#instance-get-isBinary",
-    "src/parser/nctraj-parser.js~NctrajParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/nctraj-parser.js~nctrajparser#type",
-    "class/src/parser/nctraj-parser.js~NctrajParser.html#instance-get-type",
-    "src/parser/nctraj-parser.js~NctrajParser#type",
-    "member"
-  ],
-  [
     "src/parser/netcdf-parser.js",
     "file/src/parser/netcdf-parser.js.html",
     "src/parser/netcdf-parser.js",
     "file"
-  ],
-  [
-    "src/parser/netcdf-parser.js~netcdfparser#__objname",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html#instance-get-__objName",
-    "src/parser/netcdf-parser.js~NetcdfParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/netcdf-parser.js~netcdfparser#_parse",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html#instance-method-_parse",
-    "src/parser/netcdf-parser.js~NetcdfParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/netcdf-parser.js~netcdfparser#constructor",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html#instance-constructor-constructor",
-    "src/parser/netcdf-parser.js~NetcdfParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/netcdf-parser.js~netcdfparser#isbinary",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html#instance-get-isBinary",
-    "src/parser/netcdf-parser.js~NetcdfParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/netcdf-parser.js~netcdfparser#netcdf",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html#instance-member-netcdf",
-    "src/parser/netcdf-parser.js~NetcdfParser#netcdf",
-    "member"
-  ],
-  [
-    "src/parser/netcdf-parser.js~netcdfparser#type",
-    "class/src/parser/netcdf-parser.js~NetcdfParser.html#instance-get-type",
-    "src/parser/netcdf-parser.js~NetcdfParser#type",
-    "member"
   ],
   [
     "src/parser/obj-parser.js",
@@ -10776,100 +3720,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/obj-parser.js~objparser#getloader",
-    "class/src/parser/obj-parser.js~ObjParser.html#instance-method-getLoader",
-    "src/parser/obj-parser.js~ObjParser#getLoader",
-    "method"
-  ],
-  [
-    "src/parser/obj-parser.js~objparser#type",
-    "class/src/parser/obj-parser.js~ObjParser.html#instance-get-type",
-    "src/parser/obj-parser.js~ObjParser#type",
-    "member"
-  ],
-  [
     "src/parser/parser-registry.js",
     "file/src/parser/parser-registry.js.html",
     "src/parser/parser-registry.js",
     "file"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#__hasobjname",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-__hasObjName",
-    "src/parser/parser-registry.js~ParserRegistry#__hasObjName",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#constructor",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-constructor-constructor",
-    "src/parser/parser-registry.js~ParserRegistry#constructor",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#getstructureextensions",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-getStructureExtensions",
-    "src/parser/parser-registry.js~ParserRegistry#getStructureExtensions",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#getsurfaceextensions",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-getSurfaceExtensions",
-    "src/parser/parser-registry.js~ParserRegistry#getSurfaceExtensions",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#gettrajectoryextensions",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-getTrajectoryExtensions",
-    "src/parser/parser-registry.js~ParserRegistry#getTrajectoryExtensions",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#getvolumeextensions",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-getVolumeExtensions",
-    "src/parser/parser-registry.js~ParserRegistry#getVolumeExtensions",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#isbinary",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isBinary",
-    "src/parser/parser-registry.js~ParserRegistry#isBinary",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#isjson",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isJson",
-    "src/parser/parser-registry.js~ParserRegistry#isJson",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#isstructure",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isStructure",
-    "src/parser/parser-registry.js~ParserRegistry#isStructure",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#issurface",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isSurface",
-    "src/parser/parser-registry.js~ParserRegistry#isSurface",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#istrajectory",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isTrajectory",
-    "src/parser/parser-registry.js~ParserRegistry#isTrajectory",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#isvolume",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isVolume",
-    "src/parser/parser-registry.js~ParserRegistry#isVolume",
-    "method"
-  ],
-  [
-    "src/parser/parser-registry.js~parserregistry#isxml",
-    "class/src/parser/parser-registry.js~ParserRegistry.html#instance-method-isXml",
-    "src/parser/parser-registry.js~ParserRegistry#isXml",
-    "method"
   ],
   [
     "src/parser/parser.js",
@@ -10878,112 +3732,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/parser.js~parser#__objname",
-    "class/src/parser/parser.js~Parser.html#instance-get-__objName",
-    "src/parser/parser.js~Parser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#_afterparse",
-    "class/src/parser/parser.js~Parser.html#instance-method-_afterParse",
-    "src/parser/parser.js~Parser#_afterParse",
-    "method"
-  ],
-  [
-    "src/parser/parser.js~parser#_beforeparse",
-    "class/src/parser/parser.js~Parser.html#instance-method-_beforeParse",
-    "src/parser/parser.js~Parser#_beforeParse",
-    "method"
-  ],
-  [
-    "src/parser/parser.js~parser#_parse",
-    "class/src/parser/parser.js~Parser.html#instance-method-_parse",
-    "src/parser/parser.js~Parser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/parser.js~parser#constructor",
-    "class/src/parser/parser.js~Parser.html#instance-constructor-constructor",
-    "src/parser/parser.js~Parser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/parser.js~parser#isbinary",
-    "class/src/parser/parser.js~Parser.html#instance-get-isBinary",
-    "src/parser/parser.js~Parser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#isjson",
-    "class/src/parser/parser.js~Parser.html#instance-get-isJson",
-    "src/parser/parser.js~Parser#isJson",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#isxml",
-    "class/src/parser/parser.js~Parser.html#instance-get-isXml",
-    "src/parser/parser.js~Parser#isXml",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#name",
-    "class/src/parser/parser.js~Parser.html#instance-member-name",
-    "src/parser/parser.js~Parser#name",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#parse",
-    "class/src/parser/parser.js~Parser.html#instance-method-parse",
-    "src/parser/parser.js~Parser#parse",
-    "method"
-  ],
-  [
-    "src/parser/parser.js~parser#path",
-    "class/src/parser/parser.js~Parser.html#instance-member-path",
-    "src/parser/parser.js~Parser#path",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#streamer",
-    "class/src/parser/parser.js~Parser.html#instance-member-streamer",
-    "src/parser/parser.js~Parser#streamer",
-    "member"
-  ],
-  [
-    "src/parser/parser.js~parser#type",
-    "class/src/parser/parser.js~Parser.html#instance-get-type",
-    "src/parser/parser.js~Parser#type",
-    "member"
-  ],
-  [
     "src/parser/pdb-parser.js",
     "file/src/parser/pdb-parser.js.html",
     "src/parser/pdb-parser.js",
     "file"
-  ],
-  [
-    "src/parser/pdb-parser.js~pdbparser#_parse",
-    "class/src/parser/pdb-parser.js~PdbParser.html#instance-method-_parse",
-    "src/parser/pdb-parser.js~PdbParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/pdb-parser.js~pdbparser#constructor",
-    "class/src/parser/pdb-parser.js~PdbParser.html#instance-constructor-constructor",
-    "src/parser/pdb-parser.js~PdbParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/pdb-parser.js~pdbparser#hex",
-    "class/src/parser/pdb-parser.js~PdbParser.html#instance-member-hex",
-    "src/parser/pdb-parser.js~PdbParser#hex",
-    "member"
-  ],
-  [
-    "src/parser/pdb-parser.js~pdbparser#type",
-    "class/src/parser/pdb-parser.js~PdbParser.html#instance-get-type",
-    "src/parser/pdb-parser.js~PdbParser#type",
-    "member"
   ],
   [
     "src/parser/ply-parser.js",
@@ -10992,28 +3744,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/ply-parser.js~plyparser#getloader",
-    "class/src/parser/ply-parser.js~PlyParser.html#instance-method-getLoader",
-    "src/parser/ply-parser.js~PlyParser#getLoader",
-    "method"
-  ],
-  [
-    "src/parser/ply-parser.js~plyparser#type",
-    "class/src/parser/ply-parser.js~PlyParser.html#instance-get-type",
-    "src/parser/ply-parser.js~PlyParser#type",
-    "member"
-  ],
-  [
     "src/parser/pqr-parser.js",
     "file/src/parser/pqr-parser.js.html",
     "src/parser/pqr-parser.js",
     "file"
-  ],
-  [
-    "src/parser/pqr-parser.js~pqrparser#type",
-    "class/src/parser/pqr-parser.js~PqrParser.html#instance-get-type",
-    "src/parser/pqr-parser.js~PqrParser#type",
-    "member"
   ],
   [
     "src/parser/prmtop-parser.js",
@@ -11022,34 +3756,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/prmtop-parser.js~prmtopparser#_parse",
-    "class/src/parser/prmtop-parser.js~PrmtopParser.html#instance-method-_parse",
-    "src/parser/prmtop-parser.js~PrmtopParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/prmtop-parser.js~prmtopparser#type",
-    "class/src/parser/prmtop-parser.js~PrmtopParser.html#instance-get-type",
-    "src/parser/prmtop-parser.js~PrmtopParser#type",
-    "member"
-  ],
-  [
     "src/parser/psf-parser.js",
     "file/src/parser/psf-parser.js.html",
     "src/parser/psf-parser.js",
     "file"
-  ],
-  [
-    "src/parser/psf-parser.js~psfparser#_parse",
-    "class/src/parser/psf-parser.js~PsfParser.html#instance-method-_parse",
-    "src/parser/psf-parser.js~PsfParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/psf-parser.js~psfparser#type",
-    "class/src/parser/psf-parser.js~PsfParser.html#instance-get-type",
-    "src/parser/psf-parser.js~PsfParser#type",
-    "member"
   ],
   [
     "src/parser/sdf-parser.js",
@@ -11058,76 +3768,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/sdf-parser.js~sdfparser#_parse",
-    "class/src/parser/sdf-parser.js~SdfParser.html#instance-method-_parse",
-    "src/parser/sdf-parser.js~SdfParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/sdf-parser.js~sdfparser#_postprocess",
-    "class/src/parser/sdf-parser.js~SdfParser.html#instance-method-_postProcess",
-    "src/parser/sdf-parser.js~SdfParser#_postProcess",
-    "method"
-  ],
-  [
-    "src/parser/sdf-parser.js~sdfparser#type",
-    "class/src/parser/sdf-parser.js~SdfParser.html#instance-get-type",
-    "src/parser/sdf-parser.js~SdfParser#type",
-    "member"
-  ],
-  [
     "src/parser/structure-parser.js",
     "file/src/parser/structure-parser.js.html",
     "src/parser/structure-parser.js",
     "file"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#__objname",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-get-__objName",
-    "src/parser/structure-parser.js~StructureParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#astrajectory",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-member-asTrajectory",
-    "src/parser/structure-parser.js~StructureParser#asTrajectory",
-    "member"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#calphaonly",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-member-cAlphaOnly",
-    "src/parser/structure-parser.js~StructureParser#cAlphaOnly",
-    "member"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#constructor",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-constructor-constructor",
-    "src/parser/structure-parser.js~StructureParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#firstmodelonly",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-member-firstModelOnly",
-    "src/parser/structure-parser.js~StructureParser#firstModelOnly",
-    "member"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#structure",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-member-structure",
-    "src/parser/structure-parser.js~StructureParser#structure",
-    "member"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#structurebuilder",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-member-structureBuilder",
-    "src/parser/structure-parser.js~StructureParser#structureBuilder",
-    "member"
-  ],
-  [
-    "src/parser/structure-parser.js~structureparser#type",
-    "class/src/parser/structure-parser.js~StructureParser.html#instance-get-type",
-    "src/parser/structure-parser.js~StructureParser#type",
-    "member"
   ],
   [
     "src/parser/surface-parser.js",
@@ -11136,76 +3780,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/surface-parser.js~surfaceparser#__objname",
-    "class/src/parser/surface-parser.js~SurfaceParser.html#instance-get-__objName",
-    "src/parser/surface-parser.js~SurfaceParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/surface-parser.js~surfaceparser#_parse",
-    "class/src/parser/surface-parser.js~SurfaceParser.html#instance-method-_parse",
-    "src/parser/surface-parser.js~SurfaceParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/surface-parser.js~surfaceparser#constructor",
-    "class/src/parser/surface-parser.js~SurfaceParser.html#instance-constructor-constructor",
-    "src/parser/surface-parser.js~SurfaceParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/surface-parser.js~surfaceparser#loader",
-    "class/src/parser/surface-parser.js~SurfaceParser.html#instance-member-loader",
-    "src/parser/surface-parser.js~SurfaceParser#loader",
-    "member"
-  ],
-  [
-    "src/parser/surface-parser.js~surfaceparser#surface",
-    "class/src/parser/surface-parser.js~SurfaceParser.html#instance-member-surface",
-    "src/parser/surface-parser.js~SurfaceParser#surface",
-    "member"
-  ],
-  [
-    "src/parser/surface-parser.js~surfaceparser#type",
-    "class/src/parser/surface-parser.js~SurfaceParser.html#instance-get-type",
-    "src/parser/surface-parser.js~SurfaceParser#type",
-    "member"
-  ],
-  [
     "src/parser/text-parser.js",
     "file/src/parser/text-parser.js.html",
     "src/parser/text-parser.js",
     "file"
-  ],
-  [
-    "src/parser/text-parser.js~textparser#__objname",
-    "class/src/parser/text-parser.js~TextParser.html#instance-get-__objName",
-    "src/parser/text-parser.js~TextParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/text-parser.js~textparser#_parse",
-    "class/src/parser/text-parser.js~TextParser.html#instance-method-_parse",
-    "src/parser/text-parser.js~TextParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/text-parser.js~textparser#constructor",
-    "class/src/parser/text-parser.js~TextParser.html#instance-constructor-constructor",
-    "src/parser/text-parser.js~TextParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/text-parser.js~textparser#text",
-    "class/src/parser/text-parser.js~TextParser.html#instance-member-text",
-    "src/parser/text-parser.js~TextParser#text",
-    "member"
-  ],
-  [
-    "src/parser/text-parser.js~textparser#type",
-    "class/src/parser/text-parser.js~TextParser.html#instance-get-type",
-    "src/parser/text-parser.js~TextParser#type",
-    "member"
   ],
   [
     "src/parser/top-parser.js",
@@ -11214,46 +3792,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/top-parser.js~topparser#_parse",
-    "class/src/parser/top-parser.js~TopParser.html#instance-method-_parse",
-    "src/parser/top-parser.js~TopParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/top-parser.js~topparser#type",
-    "class/src/parser/top-parser.js~TopParser.html#instance-get-type",
-    "src/parser/top-parser.js~TopParser#type",
-    "member"
-  ],
-  [
     "src/parser/trajectory-parser.js",
     "file/src/parser/trajectory-parser.js.html",
     "src/parser/trajectory-parser.js",
     "file"
-  ],
-  [
-    "src/parser/trajectory-parser.js~trajectoryparser#__objname",
-    "class/src/parser/trajectory-parser.js~TrajectoryParser.html#instance-get-__objName",
-    "src/parser/trajectory-parser.js~TrajectoryParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/trajectory-parser.js~trajectoryparser#constructor",
-    "class/src/parser/trajectory-parser.js~TrajectoryParser.html#instance-constructor-constructor",
-    "src/parser/trajectory-parser.js~TrajectoryParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/trajectory-parser.js~trajectoryparser#frames",
-    "class/src/parser/trajectory-parser.js~TrajectoryParser.html#instance-member-frames",
-    "src/parser/trajectory-parser.js~TrajectoryParser#frames",
-    "member"
-  ],
-  [
-    "src/parser/trajectory-parser.js~trajectoryparser#type",
-    "class/src/parser/trajectory-parser.js~TrajectoryParser.html#instance-get-type",
-    "src/parser/trajectory-parser.js~TrajectoryParser#type",
-    "member"
   ],
   [
     "src/parser/trr-parser.js",
@@ -11262,64 +3804,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/trr-parser.js~trrparser#_parse",
-    "class/src/parser/trr-parser.js~TrrParser.html#instance-method-_parse",
-    "src/parser/trr-parser.js~TrrParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/trr-parser.js~trrparser#isbinary",
-    "class/src/parser/trr-parser.js~TrrParser.html#instance-get-isBinary",
-    "src/parser/trr-parser.js~TrrParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/trr-parser.js~trrparser#type",
-    "class/src/parser/trr-parser.js~TrrParser.html#instance-get-type",
-    "src/parser/trr-parser.js~TrrParser#type",
-    "member"
-  ],
-  [
     "src/parser/validation-parser.js",
     "file/src/parser/validation-parser.js.html",
     "src/parser/validation-parser.js",
     "file"
-  ],
-  [
-    "src/parser/validation-parser.js~validationparser#__objname",
-    "class/src/parser/validation-parser.js~ValidationParser.html#instance-get-__objName",
-    "src/parser/validation-parser.js~ValidationParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/validation-parser.js~validationparser#_parse",
-    "class/src/parser/validation-parser.js~ValidationParser.html#instance-method-_parse",
-    "src/parser/validation-parser.js~ValidationParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/validation-parser.js~validationparser#constructor",
-    "class/src/parser/validation-parser.js~ValidationParser.html#instance-constructor-constructor",
-    "src/parser/validation-parser.js~ValidationParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/validation-parser.js~validationparser#isxml",
-    "class/src/parser/validation-parser.js~ValidationParser.html#instance-get-isXml",
-    "src/parser/validation-parser.js~ValidationParser#isXml",
-    "member"
-  ],
-  [
-    "src/parser/validation-parser.js~validationparser#usedomparser",
-    "class/src/parser/validation-parser.js~ValidationParser.html#instance-member-useDomParser",
-    "src/parser/validation-parser.js~ValidationParser#useDomParser",
-    "member"
-  ],
-  [
-    "src/parser/validation-parser.js~validationparser#validation",
-    "class/src/parser/validation-parser.js~ValidationParser.html#instance-member-validation",
-    "src/parser/validation-parser.js~ValidationParser#validation",
-    "member"
   ],
   [
     "src/parser/volume-parser.js",
@@ -11328,106 +3816,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/volume-parser.js~volumeparser#__objname",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-get-__objName",
-    "src/parser/volume-parser.js~VolumeParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/volume-parser.js~volumeparser#_afterparse",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-method-_afterParse",
-    "src/parser/volume-parser.js~VolumeParser#_afterParse",
-    "method"
-  ],
-  [
-    "src/parser/volume-parser.js~volumeparser#constructor",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-constructor-constructor",
-    "src/parser/volume-parser.js~VolumeParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/volume-parser.js~volumeparser#getmatrix",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-method-getMatrix",
-    "src/parser/volume-parser.js~VolumeParser#getMatrix",
-    "method"
-  ],
-  [
-    "src/parser/volume-parser.js~volumeparser#type",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-get-type",
-    "src/parser/volume-parser.js~VolumeParser#type",
-    "member"
-  ],
-  [
-    "src/parser/volume-parser.js~volumeparser#volume",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-member-volume",
-    "src/parser/volume-parser.js~VolumeParser#volume",
-    "member"
-  ],
-  [
-    "src/parser/volume-parser.js~volumeparser#voxelsize",
-    "class/src/parser/volume-parser.js~VolumeParser.html#instance-member-voxelSize",
-    "src/parser/volume-parser.js~VolumeParser#voxelSize",
-    "member"
-  ],
-  [
     "src/parser/xml-parser.js",
     "file/src/parser/xml-parser.js.html",
     "src/parser/xml-parser.js",
     "file"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#__domparser",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-method-__domParser",
-    "src/parser/xml-parser.js~XmlParser#__domParser",
-    "method"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#__objname",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-get-__objName",
-    "src/parser/xml-parser.js~XmlParser#__objName",
-    "member"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#__xmlparser",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-method-__xmlParser",
-    "src/parser/xml-parser.js~XmlParser#__xmlParser",
-    "method"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#_parse",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-method-_parse",
-    "src/parser/xml-parser.js~XmlParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#constructor",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-constructor-constructor",
-    "src/parser/xml-parser.js~XmlParser#constructor",
-    "method"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#isxml",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-get-isXml",
-    "src/parser/xml-parser.js~XmlParser#isXml",
-    "member"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#type",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-get-type",
-    "src/parser/xml-parser.js~XmlParser#type",
-    "member"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#usedomparser",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-member-useDomParser",
-    "src/parser/xml-parser.js~XmlParser#useDomParser",
-    "member"
-  ],
-  [
-    "src/parser/xml-parser.js~xmlparser#xml",
-    "class/src/parser/xml-parser.js~XmlParser.html#instance-member-xml",
-    "src/parser/xml-parser.js~XmlParser#xml",
-    "member"
   ],
   [
     "src/parser/xplor-parser.js",
@@ -11436,46 +3828,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/parser/xplor-parser.js~xplorparser#_parse",
-    "class/src/parser/xplor-parser.js~XplorParser.html#instance-method-_parse",
-    "src/parser/xplor-parser.js~XplorParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/xplor-parser.js~xplorparser#getmatrix",
-    "class/src/parser/xplor-parser.js~XplorParser.html#instance-method-getMatrix",
-    "src/parser/xplor-parser.js~XplorParser#getMatrix",
-    "method"
-  ],
-  [
-    "src/parser/xplor-parser.js~xplorparser#type",
-    "class/src/parser/xplor-parser.js~XplorParser.html#instance-get-type",
-    "src/parser/xplor-parser.js~XplorParser#type",
-    "member"
-  ],
-  [
     "src/parser/xtc-parser.js",
     "file/src/parser/xtc-parser.js.html",
     "src/parser/xtc-parser.js",
     "file"
-  ],
-  [
-    "src/parser/xtc-parser.js~xtcparser#_parse",
-    "class/src/parser/xtc-parser.js~XtcParser.html#instance-method-_parse",
-    "src/parser/xtc-parser.js~XtcParser#_parse",
-    "method"
-  ],
-  [
-    "src/parser/xtc-parser.js~xtcparser#isbinary",
-    "class/src/parser/xtc-parser.js~XtcParser.html#instance-get-isBinary",
-    "src/parser/xtc-parser.js~XtcParser#isBinary",
-    "member"
-  ],
-  [
-    "src/parser/xtc-parser.js~xtcparser#type",
-    "class/src/parser/xtc-parser.js~XtcParser.html#instance-get-type",
-    "src/parser/xtc-parser.js~XtcParser#type",
-    "member"
   ],
   [
     "src/polyfills.js",
@@ -11492,12 +3848,6 @@ window.esdocSearchIndex = [
   [
     "src/proxy/atom-proxy.js~atomproxy#altloc",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-altloc",
-    "src/proxy/atom-proxy.js~AtomProxy#altloc",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#altloc",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-altloc",
     "src/proxy/atom-proxy.js~AtomProxy#altloc",
     "member"
   ],
@@ -11532,21 +3882,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#bfactor",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-bfactor",
-    "src/proxy/atom-proxy.js~AtomProxy#bfactor",
-    "member"
-  ],
-  [
     "src/proxy/atom-proxy.js~atomproxy#bondhash",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bondHash",
     "src/proxy/atom-proxy.js~AtomProxy#bondHash",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#chainindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-chainIndex",
-    "src/proxy/atom-proxy.js~AtomProxy#chainIndex",
     "member"
   ],
   [
@@ -11622,24 +3960,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#entityindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-entityIndex",
-    "src/proxy/atom-proxy.js~AtomProxy#entityIndex",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#formalcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-formalCharge",
-    "src/proxy/atom-proxy.js~AtomProxy#formalCharge",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#formalcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-formalCharge",
-    "src/proxy/atom-proxy.js~AtomProxy#formalCharge",
-    "member"
-  ],
-  [
     "src/proxy/atom-proxy.js~atomproxy#getresiduebonds",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-getResidueBonds",
     "src/proxy/atom-proxy.js~AtomProxy#getResidueBonds",
@@ -11673,12 +3993,6 @@ window.esdocSearchIndex = [
     "src/proxy/atom-proxy.js~atomproxy#isbackbone",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isBackbone",
     "src/proxy/atom-proxy.js~AtomProxy#isBackbone",
-    "method"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#isbonded",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-isBonded",
-    "src/proxy/atom-proxy.js~AtomProxy#isBonded",
     "method"
   ],
   [
@@ -11772,27 +4086,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#modelindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-modelIndex",
-    "src/proxy/atom-proxy.js~AtomProxy#modelIndex",
-    "member"
-  ],
-  [
     "src/proxy/atom-proxy.js~atomproxy#occupancy",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-occupancy",
     "src/proxy/atom-proxy.js~AtomProxy#occupancy",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#occupancy",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-occupancy",
-    "src/proxy/atom-proxy.js~AtomProxy#occupancy",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#partialcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-partialCharge",
-    "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
   ],
   [
@@ -11800,12 +4096,6 @@ window.esdocSearchIndex = [
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-partialCharge",
     "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#positionadd",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionAdd",
-    "src/proxy/atom-proxy.js~AtomProxy#positionAdd",
-    "method"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#positionfromarray",
@@ -11817,12 +4107,6 @@ window.esdocSearchIndex = [
     "src/proxy/atom-proxy.js~atomproxy#positionfromvector3",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionFromVector3",
     "src/proxy/atom-proxy.js~AtomProxy#positionFromVector3",
-    "method"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#positionsub",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-positionSub",
-    "src/proxy/atom-proxy.js~AtomProxy#positionSub",
     "method"
   ],
   [
@@ -11838,33 +4122,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#qualifiedname",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-qualifiedName",
-    "src/proxy/atom-proxy.js~AtomProxy#qualifiedName",
-    "method"
-  ],
-  [
     "src/proxy/atom-proxy.js~atomproxy#residue",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residue",
     "src/proxy/atom-proxy.js~AtomProxy#residue",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#residueatomoffset",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residueAtomOffset",
-    "src/proxy/atom-proxy.js~AtomProxy#residueAtomOffset",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#residueindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residueIndex",
-    "src/proxy/atom-proxy.js~AtomProxy#residueIndex",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#residueindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-residueIndex",
-    "src/proxy/atom-proxy.js~AtomProxy#residueIndex",
     "member"
   ],
   [
@@ -11904,12 +4164,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
-    "src/proxy/atom-proxy.js~AtomProxy#serial",
-    "member"
-  ],
-  [
     "src/proxy/atom-proxy.js~atomproxy#sstruc",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-sstruc",
     "src/proxy/atom-proxy.js~AtomProxy#sstruc",
@@ -11922,21 +4176,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#toobject",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-method-toObject",
-    "src/proxy/atom-proxy.js~AtomProxy#toObject",
-    "method"
-  ],
-  [
     "src/proxy/atom-proxy.js~atomproxy#vdw",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-vdw",
     "src/proxy/atom-proxy.js~AtomProxy#vdw",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#x",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-x",
-    "src/proxy/atom-proxy.js~AtomProxy#x",
     "member"
   ],
   [
@@ -11947,20 +4189,8 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#y",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-y",
-    "src/proxy/atom-proxy.js~AtomProxy#y",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#y",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-y",
     "src/proxy/atom-proxy.js~AtomProxy#y",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#z",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-z",
-    "src/proxy/atom-proxy.js~AtomProxy#z",
     "member"
   ],
   [
@@ -11976,36 +4206,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/proxy/bond-proxy.js~bondproxy#_ap1",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-_ap1",
-    "src/proxy/bond-proxy.js~BondProxy#_ap1",
-    "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#_ap2",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-_ap2",
-    "src/proxy/bond-proxy.js~BondProxy#_ap2",
-    "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#_ap3",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-_ap3",
-    "src/proxy/bond-proxy.js~BondProxy#_ap3",
-    "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#_v12",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-_v12",
-    "src/proxy/bond-proxy.js~BondProxy#_v12",
-    "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#_v13",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-_v13",
-    "src/proxy/bond-proxy.js~BondProxy#_v13",
-    "member"
-  ],
-  [
     "src/proxy/bond-proxy.js~bondproxy#atom1",
     "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atom1",
     "src/proxy/bond-proxy.js~BondProxy#atom1",
@@ -12015,12 +4215,6 @@ window.esdocSearchIndex = [
     "src/proxy/bond-proxy.js~bondproxy#atom2",
     "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atom2",
     "src/proxy/bond-proxy.js~BondProxy#atom2",
-    "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#atomindex1",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-atomIndex1",
-    "src/proxy/bond-proxy.js~BondProxy#atomIndex1",
     "member"
   ],
   [
@@ -12036,20 +4230,8 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/bond-proxy.js~bondproxy#atomindex2",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-atomIndex2",
-    "src/proxy/bond-proxy.js~BondProxy#atomIndex2",
-    "member"
-  ],
-  [
     "src/proxy/bond-proxy.js~bondproxy#bondorder",
     "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-bondOrder",
-    "src/proxy/bond-proxy.js~BondProxy#bondOrder",
-    "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#bondorder",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-bondOrder",
     "src/proxy/bond-proxy.js~BondProxy#bondOrder",
     "member"
   ],
@@ -12090,22 +4272,10 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/bond-proxy.js~bondproxy#qualifiedname",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-method-qualifiedName",
-    "src/proxy/bond-proxy.js~BondProxy#qualifiedName",
-    "method"
-  ],
-  [
     "src/proxy/bond-proxy.js~bondproxy#structure",
     "class/src/proxy/bond-proxy.js~BondProxy.html#instance-member-structure",
     "src/proxy/bond-proxy.js~BondProxy#structure",
     "member"
-  ],
-  [
-    "src/proxy/bond-proxy.js~bondproxy#toobject",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-method-toObject",
-    "src/proxy/bond-proxy.js~BondProxy#toObject",
-    "method"
   ],
   [
     "src/proxy/chain-proxy.js",
@@ -12117,18 +4287,6 @@ window.esdocSearchIndex = [
     "src/proxy/chain-proxy.js~chainproxy#atomcount",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-atomCount",
     "src/proxy/chain-proxy.js~ChainProxy#atomCount",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#atomend",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-atomEnd",
-    "src/proxy/chain-proxy.js~ChainProxy#atomEnd",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#atomoffset",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-atomOffset",
-    "src/proxy/chain-proxy.js~ChainProxy#atomOffset",
     "member"
   ],
   [
@@ -12144,20 +4302,8 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/chain-proxy.js~chainproxy#chainid",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-chainid",
-    "src/proxy/chain-proxy.js~ChainProxy#chainid",
-    "member"
-  ],
-  [
     "src/proxy/chain-proxy.js~chainproxy#chainname",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainname",
-    "src/proxy/chain-proxy.js~ChainProxy#chainname",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#chainname",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-chainname",
     "src/proxy/chain-proxy.js~ChainProxy#chainname",
     "member"
   ],
@@ -12204,18 +4350,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/chain-proxy.js~chainproxy#entityindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-entityIndex",
-    "src/proxy/chain-proxy.js~ChainProxy#entityIndex",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#entityindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-entityIndex",
-    "src/proxy/chain-proxy.js~ChainProxy#entityIndex",
-    "member"
-  ],
-  [
     "src/proxy/chain-proxy.js~chainproxy#index",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-member-index",
     "src/proxy/chain-proxy.js~ChainProxy#index",
@@ -12228,51 +4362,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
-    "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
-    "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#qualifiedname",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-qualifiedName",
-    "src/proxy/chain-proxy.js~ChainProxy#qualifiedName",
-    "method"
-  ],
-  [
     "src/proxy/chain-proxy.js~chainproxy#residuecount",
     "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueCount",
     "src/proxy/chain-proxy.js~ChainProxy#residueCount",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#residuecount",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-residueCount",
-    "src/proxy/chain-proxy.js~ChainProxy#residueCount",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#residueend",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueEnd",
-    "src/proxy/chain-proxy.js~ChainProxy#residueEnd",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#residueoffset",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-residueOffset",
-    "src/proxy/chain-proxy.js~ChainProxy#residueOffset",
-    "member"
-  ],
-  [
-    "src/proxy/chain-proxy.js~chainproxy#residueoffset",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueOffset",
-    "src/proxy/chain-proxy.js~ChainProxy#residueOffset",
     "member"
   ],
   [
@@ -12288,12 +4380,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/chain-proxy.js~chainproxy#toobject",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-method-toObject",
-    "src/proxy/chain-proxy.js~ChainProxy#toObject",
-    "method"
-  ],
-  [
     "src/proxy/model-proxy.js",
     "file/src/proxy/model-proxy.js.html",
     "src/proxy/model-proxy.js",
@@ -12303,48 +4389,6 @@ window.esdocSearchIndex = [
     "src/proxy/model-proxy.js~modelproxy#atomcount",
     "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-atomCount",
     "src/proxy/model-proxy.js~ModelProxy#atomCount",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#atomend",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-atomEnd",
-    "src/proxy/model-proxy.js~ModelProxy#atomEnd",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#atomoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-atomOffset",
-    "src/proxy/model-proxy.js~ModelProxy#atomOffset",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#chaincount",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainCount",
-    "src/proxy/model-proxy.js~ModelProxy#chainCount",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#chaincount",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainCount",
-    "src/proxy/model-proxy.js~ModelProxy#chainCount",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#chainend",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainEnd",
-    "src/proxy/model-proxy.js~ModelProxy#chainEnd",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#chainoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainOffset",
-    "src/proxy/model-proxy.js~ModelProxy#chainOffset",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#chainoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainOffset",
-    "src/proxy/model-proxy.js~ModelProxy#chainOffset",
     "member"
   ],
   [
@@ -12402,27 +4446,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/model-proxy.js~modelproxy#qualifiedname",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-qualifiedName",
-    "src/proxy/model-proxy.js~ModelProxy#qualifiedName",
-    "method"
-  ],
-  [
     "src/proxy/model-proxy.js~modelproxy#residuecount",
     "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-residueCount",
     "src/proxy/model-proxy.js~ModelProxy#residueCount",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#residueend",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-residueEnd",
-    "src/proxy/model-proxy.js~ModelProxy#residueEnd",
-    "member"
-  ],
-  [
-    "src/proxy/model-proxy.js~modelproxy#residueoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-residueOffset",
-    "src/proxy/model-proxy.js~ModelProxy#residueOffset",
     "member"
   ],
   [
@@ -12438,33 +4464,15 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/model-proxy.js~modelproxy#toobject",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-method-toObject",
-    "src/proxy/model-proxy.js~ModelProxy#toObject",
-    "method"
-  ],
-  [
     "src/proxy/polymer.js",
     "file/src/proxy/polymer.js.html",
     "src/proxy/polymer.js",
     "file"
   ],
   [
-    "src/proxy/polymer.js~polymer#__residueproxy",
-    "class/src/proxy/polymer.js~Polymer.html#instance-member-__residueProxy",
-    "src/proxy/polymer.js~Polymer#__residueProxy",
-    "member"
-  ],
-  [
     "src/proxy/polymer.js~polymer#atomstore",
     "class/src/proxy/polymer.js~Polymer.html#instance-member-atomStore",
     "src/proxy/polymer.js~Polymer#atomStore",
-    "member"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#chainindex",
-    "class/src/proxy/polymer.js~Polymer.html#instance-get-chainIndex",
-    "src/proxy/polymer.js~Polymer#chainIndex",
     "member"
   ],
   [
@@ -12492,39 +4500,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/proxy/polymer.js~polymer#eachatomn",
-    "class/src/proxy/polymer.js~Polymer.html#instance-method-eachAtomN",
-    "src/proxy/polymer.js~Polymer#eachAtomN",
-    "method"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#eachatomn2",
-    "class/src/proxy/polymer.js~Polymer.html#instance-method-eachAtomN2",
-    "src/proxy/polymer.js~Polymer#eachAtomN2",
-    "method"
-  ],
-  [
     "src/proxy/polymer.js~polymer#eachresidue",
     "class/src/proxy/polymer.js~Polymer.html#instance-method-eachResidue",
     "src/proxy/polymer.js~Polymer#eachResidue",
-    "method"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#getatomindexbytype",
-    "class/src/proxy/polymer.js~Polymer.html#instance-method-getAtomIndexByType",
-    "src/proxy/polymer.js~Polymer#getAtomIndexByType",
-    "method"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#getbackbonetype",
-    "class/src/proxy/polymer.js~Polymer.html#instance-method-getBackboneType",
-    "src/proxy/polymer.js~Polymer#getBackboneType",
-    "method"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#getmoleculetype",
-    "class/src/proxy/polymer.js~Polymer.html#instance-method-getMoleculeType",
-    "src/proxy/polymer.js~Polymer#getMoleculeType",
     "method"
   ],
   [
@@ -12534,51 +4512,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/proxy/polymer.js~polymer#iscyclic",
-    "class/src/proxy/polymer.js~Polymer.html#instance-member-isCyclic",
-    "src/proxy/polymer.js~Polymer#isCyclic",
-    "member"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#isnextconnected",
-    "class/src/proxy/polymer.js~Polymer.html#instance-member-isNextConnected",
-    "src/proxy/polymer.js~Polymer#isNextConnected",
-    "member"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#isnextnextconnected",
-    "class/src/proxy/polymer.js~Polymer.html#instance-member-isNextNextConnected",
-    "src/proxy/polymer.js~Polymer#isNextNextConnected",
-    "member"
-  ],
-  [
     "src/proxy/polymer.js~polymer#isnucleic",
     "class/src/proxy/polymer.js~Polymer.html#instance-method-isNucleic",
     "src/proxy/polymer.js~Polymer#isNucleic",
     "method"
   ],
   [
-    "src/proxy/polymer.js~polymer#isprevconnected",
-    "class/src/proxy/polymer.js~Polymer.html#instance-member-isPrevConnected",
-    "src/proxy/polymer.js~Polymer#isPrevConnected",
-    "member"
-  ],
-  [
     "src/proxy/polymer.js~polymer#isprotein",
     "class/src/proxy/polymer.js~Polymer.html#instance-method-isProtein",
     "src/proxy/polymer.js~Polymer#isProtein",
-    "method"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#modelindex",
-    "class/src/proxy/polymer.js~Polymer.html#instance-get-modelIndex",
-    "src/proxy/polymer.js~Polymer#modelIndex",
-    "member"
-  ],
-  [
-    "src/proxy/polymer.js~polymer#qualifiedname",
-    "class/src/proxy/polymer.js~Polymer.html#instance-method-qualifiedName",
-    "src/proxy/polymer.js~Polymer#qualifiedName",
     "method"
   ],
   [
@@ -12619,20 +4561,8 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomcount",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomCount",
-    "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#atomcount",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomCount",
     "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#atomend",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomEnd",
-    "src/proxy/residue-proxy.js~ResidueProxy#atomEnd",
     "member"
   ],
   [
@@ -12642,69 +4572,15 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#atomoffset",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomOffset",
-    "src/proxy/residue-proxy.js~ResidueProxy#atomOffset",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#atomoffset",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomOffset",
-    "src/proxy/residue-proxy.js~ResidueProxy#atomOffset",
-    "member"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#atomstore",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-atomStore",
     "src/proxy/residue-proxy.js~ResidueProxy#atomStore",
     "member"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#backboneendatomindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-backboneEndAtomIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#backboneEndAtomIndex",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#backboneendtype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-backboneEndType",
-    "src/proxy/residue-proxy.js~ResidueProxy#backboneEndType",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#backbonestartatomindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-backboneStartAtomIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#backboneStartAtomIndex",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#backbonestarttype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-backboneStartType",
-    "src/proxy/residue-proxy.js~ResidueProxy#backboneStartType",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#backbonetype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-backboneType",
-    "src/proxy/residue-proxy.js~ResidueProxy#backboneType",
-    "member"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#chain",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chain",
     "src/proxy/residue-proxy.js~ResidueProxy#chain",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#chainindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#chainIndex",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#chainindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-chainIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#chainIndex",
     "member"
   ],
   [
@@ -12744,18 +4620,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#direction1atomindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-direction1AtomIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#direction1AtomIndex",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#direction2atomindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-direction2AtomIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#direction2AtomIndex",
-    "member"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#eachatom",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-eachAtom",
     "src/proxy/residue-proxy.js~ResidueProxy#eachAtom",
@@ -12768,78 +4632,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#entityindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-entityIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#entityIndex",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getatombyname",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getAtomByName",
-    "src/proxy/residue-proxy.js~ResidueProxy#getAtomByName",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getatomindexbyname",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getAtomIndexByName",
-    "src/proxy/residue-proxy.js~ResidueProxy#getAtomIndexByName",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getatomtype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getAtomType",
-    "src/proxy/residue-proxy.js~ResidueProxy#getAtomType",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getatomnamelist",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getAtomnameList",
-    "src/proxy/residue-proxy.js~ResidueProxy#getAtomnameList",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getbackbonetype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getBackboneType",
-    "src/proxy/residue-proxy.js~ResidueProxy#getBackboneType",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getbonds",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getBonds",
-    "src/proxy/residue-proxy.js~ResidueProxy#getBonds",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getnextconnectedresidue",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getNextConnectedResidue",
-    "src/proxy/residue-proxy.js~ResidueProxy#getNextConnectedResidue",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getpreviousconnectedresidue",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getPreviousConnectedResidue",
-    "src/proxy/residue-proxy.js~ResidueProxy#getPreviousConnectedResidue",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getresname1",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getResname1",
-    "src/proxy/residue-proxy.js~ResidueProxy#getResname1",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#getrings",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-getRings",
-    "src/proxy/residue-proxy.js~ResidueProxy#getRings",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#hasatomwithname",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-hasAtomWithName",
-    "src/proxy/residue-proxy.js~ResidueProxy#hasAtomWithName",
-    "method"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#hetero",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-hetero",
     "src/proxy/residue-proxy.js~ResidueProxy#hetero",
@@ -12849,12 +4641,6 @@ window.esdocSearchIndex = [
     "src/proxy/residue-proxy.js~residueproxy#index",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-index",
     "src/proxy/residue-proxy.js~ResidueProxy#index",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#inscode",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-inscode",
-    "src/proxy/residue-proxy.js~ResidueProxy#inscode",
     "member"
   ],
   [
@@ -12942,24 +4728,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#modelindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-modelIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#modelIndex",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#moleculetype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-moleculeType",
-    "src/proxy/residue-proxy.js~ResidueProxy#moleculeType",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#qualifiedname",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-qualifiedName",
-    "src/proxy/residue-proxy.js~ResidueProxy#qualifiedName",
-    "method"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#residuemap",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-residueMap",
     "src/proxy/residue-proxy.js~ResidueProxy#residueMap",
@@ -12972,21 +4740,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#residuetype",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-residueType",
-    "src/proxy/residue-proxy.js~ResidueProxy#residueType",
-    "member"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#resname",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resname",
     "src/proxy/residue-proxy.js~ResidueProxy#resname",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#resno",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-resno",
-    "src/proxy/residue-proxy.js~ResidueProxy#resno",
     "member"
   ],
   [
@@ -12996,20 +4752,8 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/residue-proxy.js~residueproxy#rungendatomindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-rungEndAtomIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#rungEndAtomIndex",
-    "member"
-  ],
-  [
     "src/proxy/residue-proxy.js~residueproxy#sstruc",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-sstruc",
-    "src/proxy/residue-proxy.js~ResidueProxy#sstruc",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#sstruc",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-sstruc",
     "src/proxy/residue-proxy.js~ResidueProxy#sstruc",
     "member"
   ],
@@ -13017,18 +4761,6 @@ window.esdocSearchIndex = [
     "src/proxy/residue-proxy.js~residueproxy#structure",
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-member-structure",
     "src/proxy/residue-proxy.js~ResidueProxy#structure",
-    "member"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#toobject",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-method-toObject",
-    "src/proxy/residue-proxy.js~ResidueProxy#toObject",
-    "method"
-  ],
-  [
-    "src/proxy/residue-proxy.js~residueproxy#traceatomindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-traceAtomIndex",
-    "src/proxy/residue-proxy.js~ResidueProxy#traceAtomIndex",
     "member"
   ],
   [
@@ -13044,72 +4776,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/axes-representation.js~axesrepresentation#create",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-method-create",
-    "src/representation/axes-representation.js~AxesRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#cylinderbuffer",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-member-cylinderBuffer",
-    "src/representation/axes-representation.js~AxesRepresentation#cylinderBuffer",
-    "member"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#getaxesdata",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-method-getAxesData",
-    "src/representation/axes-representation.js~AxesRepresentation#getAxesData",
-    "method"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#getprincipalaxes",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-method-getPrincipalAxes",
-    "src/representation/axes-representation.js~AxesRepresentation#getPrincipalAxes",
-    "method"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#init",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-method-init",
-    "src/representation/axes-representation.js~AxesRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#parameters",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-member-parameters",
-    "src/representation/axes-representation.js~AxesRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#showaxes",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-member-showAxes",
-    "src/representation/axes-representation.js~AxesRepresentation#showAxes",
-    "member"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#showbox",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-member-showBox",
-    "src/representation/axes-representation.js~AxesRepresentation#showBox",
-    "member"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#spherebuffer",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-member-sphereBuffer",
-    "src/representation/axes-representation.js~AxesRepresentation#sphereBuffer",
-    "member"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#type",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-member-type",
-    "src/representation/axes-representation.js~AxesRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/axes-representation.js~axesrepresentation#updatedata",
-    "class/src/representation/axes-representation.js~AxesRepresentation.html#instance-method-updateData",
-    "src/representation/axes-representation.js~AxesRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/backbone-representation.js",
     "file/src/representation/backbone-representation.js.html",
     "src/representation/backbone-representation.js",
@@ -13122,147 +4788,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/backbone-representation.js~backbonerepresentation#getatomdata",
-    "class/src/representation/backbone-representation.js~BackboneRepresentation.html#instance-method-getAtomData",
-    "src/representation/backbone-representation.js~BackboneRepresentation#getAtomData",
-    "method"
-  ],
-  [
-    "src/representation/backbone-representation.js~backbonerepresentation#getbonddata",
-    "class/src/representation/backbone-representation.js~BackboneRepresentation.html#instance-method-getBondData",
-    "src/representation/backbone-representation.js~BackboneRepresentation#getBondData",
-    "method"
-  ],
-  [
-    "src/representation/backbone-representation.js~backbonerepresentation#init",
-    "class/src/representation/backbone-representation.js~BackboneRepresentation.html#instance-method-init",
-    "src/representation/backbone-representation.js~BackboneRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/backbone-representation.js~backbonerepresentation#parameters",
-    "class/src/representation/backbone-representation.js~BackboneRepresentation.html#instance-member-parameters",
-    "src/representation/backbone-representation.js~BackboneRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/backbone-representation.js~backbonerepresentation#type",
-    "class/src/representation/backbone-representation.js~BackboneRepresentation.html#instance-member-type",
-    "src/representation/backbone-representation.js~BackboneRepresentation#type",
-    "member"
-  ],
-  [
     "src/representation/ballandstick-representation.js",
     "file/src/representation/ballandstick-representation.js.html",
     "src/representation/ballandstick-representation.js",
     "file"
   ],
   [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#aspectratio",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-aspectRatio",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#aspectRatio",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#bondscale",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-bondScale",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#bondScale",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#bondspacing",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-bondSpacing",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#bondSpacing",
-    "member"
-  ],
-  [
     "src/representation/ballandstick-representation.js~ballandstickrepresentation#constructor",
     "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-constructor-constructor",
     "src/representation/ballandstick-representation.js~BallAndStickRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#createdata",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-createData",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#cylinderonly",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-cylinderOnly",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#cylinderOnly",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#getatomdata",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-getAtomData",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#getAtomData",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#getatomparams",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-getAtomParams",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#getAtomParams",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#getbonddata",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-getBondData",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#getBondData",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#getbondparams",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-getBondParams",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#getBondParams",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#init",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-init",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#linebuffer",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-lineBuffer",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#lineBuffer",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#lineonly",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-lineOnly",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#lineOnly",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#multiplebond",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-multipleBond",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#multipleBond",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#parameters",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-parameters",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#setparameters",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-setParameters",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#type",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-type",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/ballandstick-representation.js~ballandstickrepresentation#updatedata",
-    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-method-updateData",
-    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#updateData",
     "method"
   ],
   [
@@ -13284,52 +4818,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/base-representation.js~baserepresentation#getatomdata",
-    "class/src/representation/base-representation.js~BaseRepresentation.html#instance-method-getAtomData",
-    "src/representation/base-representation.js~BaseRepresentation#getAtomData",
-    "method"
-  ],
-  [
-    "src/representation/base-representation.js~baserepresentation#getbonddata",
-    "class/src/representation/base-representation.js~BaseRepresentation.html#instance-method-getBondData",
-    "src/representation/base-representation.js~BaseRepresentation#getBondData",
-    "method"
-  ],
-  [
-    "src/representation/base-representation.js~baserepresentation#init",
-    "class/src/representation/base-representation.js~BaseRepresentation.html#instance-method-init",
-    "src/representation/base-representation.js~BaseRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/base-representation.js~baserepresentation#parameters",
-    "class/src/representation/base-representation.js~BaseRepresentation.html#instance-member-parameters",
-    "src/representation/base-representation.js~BaseRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/base-representation.js~baserepresentation#type",
-    "class/src/representation/base-representation.js~BaseRepresentation.html#instance-member-type",
-    "src/representation/base-representation.js~BaseRepresentation#type",
-    "member"
-  ],
-  [
     "src/representation/buffer-representation.js",
     "file/src/representation/buffer-representation.js.html",
     "src/representation/buffer-representation.js",
     "file"
-  ],
-  [
-    "src/representation/buffer-representation.js~bufferrepresentation#attach",
-    "class/src/representation/buffer-representation.js~BufferRepresentation.html#instance-method-attach",
-    "src/representation/buffer-representation.js~BufferRepresentation#attach",
-    "method"
-  ],
-  [
-    "src/representation/buffer-representation.js~bufferrepresentation#buffer",
-    "class/src/representation/buffer-representation.js~BufferRepresentation.html#instance-member-buffer",
-    "src/representation/buffer-representation.js~BufferRepresentation#buffer",
-    "member"
   ],
   [
     "src/representation/buffer-representation.js~bufferrepresentation#constructor",
@@ -13338,135 +4830,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/buffer-representation.js~bufferrepresentation#create",
-    "class/src/representation/buffer-representation.js~BufferRepresentation.html#instance-method-create",
-    "src/representation/buffer-representation.js~BufferRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/buffer-representation.js~bufferrepresentation#init",
-    "class/src/representation/buffer-representation.js~BufferRepresentation.html#instance-method-init",
-    "src/representation/buffer-representation.js~BufferRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/buffer-representation.js~bufferrepresentation#parameters",
-    "class/src/representation/buffer-representation.js~BufferRepresentation.html#instance-member-parameters",
-    "src/representation/buffer-representation.js~BufferRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/buffer-representation.js~bufferrepresentation#type",
-    "class/src/representation/buffer-representation.js~BufferRepresentation.html#instance-member-type",
-    "src/representation/buffer-representation.js~BufferRepresentation#type",
-    "member"
-  ],
-  [
     "src/representation/cartoon-representation.js",
     "file/src/representation/cartoon-representation.js.html",
     "src/representation/cartoon-representation.js",
     "file"
   ],
   [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#aspectratio",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-aspectRatio",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#aspectRatio",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#capped",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-capped",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#capped",
-    "member"
-  ],
-  [
     "src/representation/cartoon-representation.js~cartoonrepresentation#constructor",
     "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-constructor-constructor",
     "src/representation/cartoon-representation.js~CartoonRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#createdata",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-createData",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#getaspectratio",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-getAspectRatio",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#getAspectRatio",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#getscale",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-getScale",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#getScale",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#getspline",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-getSpline",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#getSpline",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#getsplineparams",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-getSplineParams",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#getSplineParams",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#init",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-init",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#parameters",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-parameters",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#radialsegments",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-radialSegments",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#radialSegments",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#setparameters",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-setParameters",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#smoothsheet",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-smoothSheet",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#smoothSheet",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#subdiv",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-subdiv",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#subdiv",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#tension",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-tension",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#tension",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#type",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-member-type",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/cartoon-representation.js~cartoonrepresentation#updatedata",
-    "class/src/representation/cartoon-representation.js~CartoonRepresentation.html#instance-method-updateData",
-    "src/representation/cartoon-representation.js~CartoonRepresentation#updateData",
     "method"
   ],
   [
@@ -13476,213 +4848,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/contact-representation.js~contactrepresentation#constructor",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-constructor-constructor",
-    "src/representation/contact-representation.js~ContactRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#contacttype",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-member-contactType",
-    "src/representation/contact-representation.js~ContactRepresentation#contactType",
-    "member"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#createdata",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-method-createData",
-    "src/representation/contact-representation.js~ContactRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#getbonddata",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-method-getBondData",
-    "src/representation/contact-representation.js~ContactRepresentation#getBondData",
-    "method"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#getcontactdata",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-method-getContactData",
-    "src/representation/contact-representation.js~ContactRepresentation#getContactData",
-    "method"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#init",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-method-init",
-    "src/representation/contact-representation.js~ContactRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#maxangle",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-member-maxAngle",
-    "src/representation/contact-representation.js~ContactRepresentation#maxAngle",
-    "member"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#maxdistance",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-member-maxDistance",
-    "src/representation/contact-representation.js~ContactRepresentation#maxDistance",
-    "member"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#parameters",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-member-parameters",
-    "src/representation/contact-representation.js~ContactRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#type",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-member-type",
-    "src/representation/contact-representation.js~ContactRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/contact-representation.js~contactrepresentation#updatedata",
-    "class/src/representation/contact-representation.js~ContactRepresentation.html#instance-method-updateData",
-    "src/representation/contact-representation.js~ContactRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/distance-representation.js",
     "file/src/representation/distance-representation.js.html",
     "src/representation/distance-representation.js",
     "file"
   ],
   [
-    "src/representation/distance-representation.js~distancerepresentation#atompair",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-atomPair",
-    "src/representation/distance-representation.js~DistanceRepresentation#atomPair",
-    "member"
-  ],
-  [
     "src/representation/distance-representation.js~distancerepresentation#constructor",
     "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-constructor-constructor",
     "src/representation/distance-representation.js~DistanceRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#create",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-create",
-    "src/representation/distance-representation.js~DistanceRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#cylinderbuffer",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-cylinderBuffer",
-    "src/representation/distance-representation.js~DistanceRepresentation#cylinderBuffer",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#fontfamily",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontFamily",
-    "src/representation/distance-representation.js~DistanceRepresentation#fontFamily",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#fontstyle",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontStyle",
-    "src/representation/distance-representation.js~DistanceRepresentation#fontStyle",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#fontweight",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontWeight",
-    "src/representation/distance-representation.js~DistanceRepresentation#fontWeight",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#getbonddata",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-getBondData",
-    "src/representation/distance-representation.js~DistanceRepresentation#getBondData",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#getdistancedata",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-getDistanceData",
-    "src/representation/distance-representation.js~DistanceRepresentation#getDistanceData",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#init",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-init",
-    "src/representation/distance-representation.js~DistanceRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelcolor",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelColor",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelColor",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelsize",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelSize",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelSize",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelunit",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelUnit",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelUnit",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelvisible",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelVisible",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelVisible",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelzoffset",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelZOffset",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelZOffset",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#parameters",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-parameters",
-    "src/representation/distance-representation.js~DistanceRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#sdf",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-sdf",
-    "src/representation/distance-representation.js~DistanceRepresentation#sdf",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#setparameters",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-setParameters",
-    "src/representation/distance-representation.js~DistanceRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#setvisibility",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-setVisibility",
-    "src/representation/distance-representation.js~DistanceRepresentation#setVisibility",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#textbuffer",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-textBuffer",
-    "src/representation/distance-representation.js~DistanceRepresentation#textBuffer",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#type",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-type",
-    "src/representation/distance-representation.js~DistanceRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#update",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-update",
-    "src/representation/distance-representation.js~DistanceRepresentation#update",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#updatedata",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-updateData",
-    "src/representation/distance-representation.js~DistanceRepresentation#updateData",
     "method"
   ],
   [
@@ -13698,154 +4872,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/dot-representation.js~dotrepresentation#alphatest",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-alphaTest",
-    "src/representation/dot-representation.js~DotRepresentation#alphaTest",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#attach",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-method-attach",
-    "src/representation/dot-representation.js~DotRepresentation#attach",
-    "method"
-  ],
-  [
     "src/representation/dot-representation.js~dotrepresentation#constructor",
     "class/src/representation/dot-representation.js~DotRepresentation.html#instance-constructor-constructor",
     "src/representation/dot-representation.js~DotRepresentation#constructor",
     "method"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#create",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-method-create",
-    "src/representation/dot-representation.js~DotRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#dotbuffer",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-dotBuffer",
-    "src/representation/dot-representation.js~DotRepresentation#dotBuffer",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#dottype",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-dotType",
-    "src/representation/dot-representation.js~DotRepresentation#dotType",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#edgebleach",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-edgeBleach",
-    "src/representation/dot-representation.js~DotRepresentation#edgeBleach",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#forcetransparent",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-forceTransparent",
-    "src/representation/dot-representation.js~DotRepresentation#forceTransparent",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#init",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-method-init",
-    "src/representation/dot-representation.js~DotRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#parameters",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-parameters",
-    "src/representation/dot-representation.js~DotRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#pointsize",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-pointSize",
-    "src/representation/dot-representation.js~DotRepresentation#pointSize",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#radius",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-radius",
-    "src/representation/dot-representation.js~DotRepresentation#radius",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#scale",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-scale",
-    "src/representation/dot-representation.js~DotRepresentation#scale",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#setparameters",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-method-setParameters",
-    "src/representation/dot-representation.js~DotRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#sizeattenuation",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-sizeAttenuation",
-    "src/representation/dot-representation.js~DotRepresentation#sizeAttenuation",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#sortparticles",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-sortParticles",
-    "src/representation/dot-representation.js~DotRepresentation#sortParticles",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#surface",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-surface",
-    "src/representation/dot-representation.js~DotRepresentation#surface",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#thresholdmax",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-thresholdMax",
-    "src/representation/dot-representation.js~DotRepresentation#thresholdMax",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#thresholdmin",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-thresholdMin",
-    "src/representation/dot-representation.js~DotRepresentation#thresholdMin",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#thresholdout",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-thresholdOut",
-    "src/representation/dot-representation.js~DotRepresentation#thresholdOut",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#thresholdtype",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-thresholdType",
-    "src/representation/dot-representation.js~DotRepresentation#thresholdType",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#type",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-type",
-    "src/representation/dot-representation.js~DotRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#update",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-method-update",
-    "src/representation/dot-representation.js~DotRepresentation#update",
-    "method"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#usetexture",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-useTexture",
-    "src/representation/dot-representation.js~DotRepresentation#useTexture",
-    "member"
-  ],
-  [
-    "src/representation/dot-representation.js~dotrepresentation#volume",
-    "class/src/representation/dot-representation.js~DotRepresentation.html#instance-member-volume",
-    "src/representation/dot-representation.js~DotRepresentation#volume",
-    "member"
   ],
   [
     "src/representation/dot-representation.js~dotrepresentationparameters",
@@ -13860,100 +4890,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/helixorient-representation.js~helixorientrepresentation#constructor",
-    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html#instance-constructor-constructor",
-    "src/representation/helixorient-representation.js~HelixorientRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/helixorient-representation.js~helixorientrepresentation#createdata",
-    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html#instance-method-createData",
-    "src/representation/helixorient-representation.js~HelixorientRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/helixorient-representation.js~helixorientrepresentation#init",
-    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html#instance-method-init",
-    "src/representation/helixorient-representation.js~HelixorientRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/helixorient-representation.js~helixorientrepresentation#parameters",
-    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html#instance-member-parameters",
-    "src/representation/helixorient-representation.js~HelixorientRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/helixorient-representation.js~helixorientrepresentation#type",
-    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html#instance-member-type",
-    "src/representation/helixorient-representation.js~HelixorientRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/helixorient-representation.js~helixorientrepresentation#updatedata",
-    "class/src/representation/helixorient-representation.js~HelixorientRepresentation.html#instance-method-updateData",
-    "src/representation/helixorient-representation.js~HelixorientRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/hyperball-representation.js",
     "file/src/representation/hyperball-representation.js.html",
     "src/representation/hyperball-representation.js",
     "file"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#__center",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-member-__center",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#__center",
-    "member"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#constructor",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-constructor-constructor",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#createdata",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-method-createData",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#getbondparams",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-method-getBondParams",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#getBondParams",
-    "method"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#init",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-method-init",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#parameters",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-member-parameters",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#shrink",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-member-shrink",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#shrink",
-    "member"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#type",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-member-type",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/hyperball-representation.js~hyperballrepresentation#updatedata",
-    "class/src/representation/hyperball-representation.js~HyperballRepresentation.html#instance-method-updateData",
-    "src/representation/hyperball-representation.js~HyperballRepresentation#updateData",
-    "method"
   ],
   [
     "src/representation/label-representation.js",
@@ -13962,142 +4902,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/label-representation.js~labelrepresentation#attachment",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-attachment",
-    "src/representation/label-representation.js~LabelRepresentation#attachment",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#backgroundcolor",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-backgroundColor",
-    "src/representation/label-representation.js~LabelRepresentation#backgroundColor",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#backgroundmargin",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-backgroundMargin",
-    "src/representation/label-representation.js~LabelRepresentation#backgroundMargin",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#backgroundopacity",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-backgroundOpacity",
-    "src/representation/label-representation.js~LabelRepresentation#backgroundOpacity",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#bordercolor",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-borderColor",
-    "src/representation/label-representation.js~LabelRepresentation#borderColor",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#borderwidth",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-borderWidth",
-    "src/representation/label-representation.js~LabelRepresentation#borderWidth",
-    "member"
-  ],
-  [
     "src/representation/label-representation.js~labelrepresentation#constructor",
     "class/src/representation/label-representation.js~LabelRepresentation.html#instance-constructor-constructor",
     "src/representation/label-representation.js~LabelRepresentation#constructor",
     "method"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#createdata",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-method-createData",
-    "src/representation/label-representation.js~LabelRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#fontfamily",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-fontFamily",
-    "src/representation/label-representation.js~LabelRepresentation#fontFamily",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#fontstyle",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-fontStyle",
-    "src/representation/label-representation.js~LabelRepresentation#fontStyle",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#fontweight",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-fontWeight",
-    "src/representation/label-representation.js~LabelRepresentation#fontWeight",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#init",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-method-init",
-    "src/representation/label-representation.js~LabelRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#labeltext",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-labelText",
-    "src/representation/label-representation.js~LabelRepresentation#labelText",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#labeltype",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-labelType",
-    "src/representation/label-representation.js~LabelRepresentation#labelType",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#parameters",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-parameters",
-    "src/representation/label-representation.js~LabelRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#sdf",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-sdf",
-    "src/representation/label-representation.js~LabelRepresentation#sdf",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#showbackground",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-showBackground",
-    "src/representation/label-representation.js~LabelRepresentation#showBackground",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#showborder",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-showBorder",
-    "src/representation/label-representation.js~LabelRepresentation#showBorder",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#type",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-type",
-    "src/representation/label-representation.js~LabelRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#updatedata",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-method-updateData",
-    "src/representation/label-representation.js~LabelRepresentation#updateData",
-    "method"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#xoffset",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-xOffset",
-    "src/representation/label-representation.js~LabelRepresentation#xOffset",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#yoffset",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-yOffset",
-    "src/representation/label-representation.js~LabelRepresentation#yOffset",
-    "member"
-  ],
-  [
-    "src/representation/label-representation.js~labelrepresentation#zoffset",
-    "class/src/representation/label-representation.js~LabelRepresentation.html#instance-member-zOffset",
-    "src/representation/label-representation.js~LabelRepresentation#zOffset",
-    "member"
   ],
   [
     "src/representation/label-representation.js~labelrepresentationparameters",
@@ -14118,87 +4926,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/licorice-representation.js~licoricerepresentation#init",
-    "class/src/representation/licorice-representation.js~LicoriceRepresentation.html#instance-method-init",
-    "src/representation/licorice-representation.js~LicoriceRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/licorice-representation.js~licoricerepresentation#parameters",
-    "class/src/representation/licorice-representation.js~LicoriceRepresentation.html#instance-member-parameters",
-    "src/representation/licorice-representation.js~LicoriceRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/licorice-representation.js~licoricerepresentation#type",
-    "class/src/representation/licorice-representation.js~LicoriceRepresentation.html#instance-member-type",
-    "src/representation/licorice-representation.js~LicoriceRepresentation#type",
-    "member"
-  ],
-  [
     "src/representation/line-representation.js",
     "file/src/representation/line-representation.js.html",
     "src/representation/line-representation.js",
     "file"
   ],
   [
-    "src/representation/line-representation.js~linerepresentation#bondspacing",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-bondSpacing",
-    "src/representation/line-representation.js~LineRepresentation#bondSpacing",
-    "member"
-  ],
-  [
     "src/representation/line-representation.js~linerepresentation#constructor",
     "class/src/representation/line-representation.js~LineRepresentation.html#instance-constructor-constructor",
     "src/representation/line-representation.js~LineRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#createdata",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-createData",
-    "src/representation/line-representation.js~LineRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#getbondparams",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-getBondParams",
-    "src/representation/line-representation.js~LineRepresentation#getBondParams",
-    "method"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#init",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-init",
-    "src/representation/line-representation.js~LineRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#multiplebond",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-multipleBond",
-    "src/representation/line-representation.js~LineRepresentation#multipleBond",
-    "member"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#parameters",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-parameters",
-    "src/representation/line-representation.js~LineRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#setparameters",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-setParameters",
-    "src/representation/line-representation.js~LineRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#type",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-type",
-    "src/representation/line-representation.js~LineRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/line-representation.js~linerepresentation#updatedata",
-    "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-updateData",
-    "src/representation/line-representation.js~LineRepresentation#updateData",
     "method"
   ],
   [
@@ -14208,256 +4944,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#__forcenewmolsurf",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-__forceNewMolsurf",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#__forceNewMolsurf",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#__infolist",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-__infoList",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#__infoList",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#__sele",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-__sele",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#__sele",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#__surfaceparams",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-__surfaceParams",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#__surfaceParams",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#background",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-background",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#background",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#clear",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-clear",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#clear",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#colorvolume",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-colorVolume",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#colorVolume",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#constructor",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-constructor-constructor",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#contour",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-contour",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#contour",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#createdata",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-createData",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#cutoff",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-cutoff",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#cutoff",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#dispose",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-dispose",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#dispose",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#filtersele",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-filterSele",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#filterSele",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#getcolorparams",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-getColorParams",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#getColorParams",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#getsurfaceparams",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-getSurfaceParams",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#getSurfaceParams",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#init",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-init",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#opaqueback",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-opaqueBack",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#opaqueBack",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#parameters",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-parameters",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#prepare",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-prepare",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#prepare",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#preparedata",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-prepareData",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#prepareData",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#proberadius",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-probeRadius",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#probeRadius",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#scalefactor",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-scaleFactor",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#scaleFactor",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#setparameters",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-setParameters",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#smooth",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-smooth",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#smooth",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#surfacetype",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-surfaceType",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#surfaceType",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#type",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-type",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#updatedata",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-method-updateData",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#updateData",
-    "method"
-  ],
-  [
-    "src/representation/molecularsurface-representation.js~molecularsurfacerepresentation#useworker",
-    "class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html#instance-member-useWorker",
-    "src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation#useWorker",
-    "member"
-  ],
-  [
     "src/representation/point-representation.js",
     "file/src/representation/point-representation.js.html",
     "src/representation/point-representation.js",
     "file"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#alphatest",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-alphaTest",
-    "src/representation/point-representation.js~PointRepresentation#alphaTest",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#constructor",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-constructor-constructor",
-    "src/representation/point-representation.js~PointRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#createdata",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-method-createData",
-    "src/representation/point-representation.js~PointRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#edgebleach",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-edgeBleach",
-    "src/representation/point-representation.js~PointRepresentation#edgeBleach",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#forcetransparent",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-forceTransparent",
-    "src/representation/point-representation.js~PointRepresentation#forceTransparent",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#init",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-method-init",
-    "src/representation/point-representation.js~PointRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#parameters",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-parameters",
-    "src/representation/point-representation.js~PointRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#pointsize",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-pointSize",
-    "src/representation/point-representation.js~PointRepresentation#pointSize",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#sizeattenuation",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-sizeAttenuation",
-    "src/representation/point-representation.js~PointRepresentation#sizeAttenuation",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#sortparticles",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-sortParticles",
-    "src/representation/point-representation.js~PointRepresentation#sortParticles",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#type",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-type",
-    "src/representation/point-representation.js~PointRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#updatedata",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-method-updateData",
-    "src/representation/point-representation.js~PointRepresentation#updateData",
-    "method"
-  ],
-  [
-    "src/representation/point-representation.js~pointrepresentation#usetexture",
-    "class/src/representation/point-representation.js~PointRepresentation.html#instance-member-useTexture",
-    "src/representation/point-representation.js~PointRepresentation#useTexture",
-    "member"
   ],
   [
     "src/representation/representation-utils.js",
@@ -14472,252 +4962,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/representation.js~representation#[name]",
-    "class/src/representation/representation.js~Representation.html#instance-member-[name]",
-    "src/representation/representation.js~Representation#[name]",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#attach",
-    "class/src/representation/representation.js~Representation.html#instance-method-attach",
-    "src/representation/representation.js~Representation#attach",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#bufferlist",
-    "class/src/representation/representation.js~Representation.html#instance-member-bufferList",
-    "src/representation/representation.js~Representation#bufferList",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#build",
-    "class/src/representation/representation.js~Representation.html#instance-method-build",
-    "src/representation/representation.js~Representation#build",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#clear",
-    "class/src/representation/representation.js~Representation.html#instance-method-clear",
-    "src/representation/representation.js~Representation#clear",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#clipcenter",
-    "class/src/representation/representation.js~Representation.html#instance-member-clipCenter",
-    "src/representation/representation.js~Representation#clipCenter",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#clipnear",
-    "class/src/representation/representation.js~Representation.html#instance-member-clipNear",
-    "src/representation/representation.js~Representation#clipNear",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#clipradius",
-    "class/src/representation/representation.js~Representation.html#instance-member-clipRadius",
-    "src/representation/representation.js~Representation#clipRadius",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#colordomain",
-    "class/src/representation/representation.js~Representation.html#instance-member-colorDomain",
-    "src/representation/representation.js~Representation#colorDomain",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#colormode",
-    "class/src/representation/representation.js~Representation.html#instance-member-colorMode",
-    "src/representation/representation.js~Representation#colorMode",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#colorreverse",
-    "class/src/representation/representation.js~Representation.html#instance-member-colorReverse",
-    "src/representation/representation.js~Representation#colorReverse",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#colorscale",
-    "class/src/representation/representation.js~Representation.html#instance-member-colorScale",
-    "src/representation/representation.js~Representation#colorScale",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#colorscheme",
-    "class/src/representation/representation.js~Representation.html#instance-member-colorScheme",
-    "src/representation/representation.js~Representation#colorScheme",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#colorvalue",
-    "class/src/representation/representation.js~Representation.html#instance-member-colorValue",
-    "src/representation/representation.js~Representation#colorValue",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#constructor",
-    "class/src/representation/representation.js~Representation.html#instance-constructor-constructor",
-    "src/representation/representation.js~Representation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#create",
-    "class/src/representation/representation.js~Representation.html#instance-method-create",
-    "src/representation/representation.js~Representation#create",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#depthwrite",
-    "class/src/representation/representation.js~Representation.html#instance-member-depthWrite",
-    "src/representation/representation.js~Representation#depthWrite",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#diffuse",
-    "class/src/representation/representation.js~Representation.html#instance-member-diffuse",
-    "src/representation/representation.js~Representation#diffuse",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#disableimpostor",
-    "class/src/representation/representation.js~Representation.html#instance-member-disableImpostor",
-    "src/representation/representation.js~Representation#disableImpostor",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#disablepicking",
-    "class/src/representation/representation.js~Representation.html#instance-member-disablePicking",
-    "src/representation/representation.js~Representation#disablePicking",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#dispose",
-    "class/src/representation/representation.js~Representation.html#instance-method-dispose",
-    "src/representation/representation.js~Representation#dispose",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#disposed",
-    "class/src/representation/representation.js~Representation.html#instance-member-disposed",
-    "src/representation/representation.js~Representation#disposed",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#flatshaded",
-    "class/src/representation/representation.js~Representation.html#instance-member-flatShaded",
-    "src/representation/representation.js~Representation#flatShaded",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#getbufferparams",
-    "class/src/representation/representation.js~Representation.html#instance-method-getBufferParams",
-    "src/representation/representation.js~Representation#getBufferParams",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#getcolorparams",
-    "class/src/representation/representation.js~Representation.html#instance-method-getColorParams",
-    "src/representation/representation.js~Representation#getColorParams",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#getparameters",
-    "class/src/representation/representation.js~Representation.html#instance-method-getParameters",
-    "src/representation/representation.js~Representation#getParameters",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#init",
-    "class/src/representation/representation.js~Representation.html#instance-method-init",
-    "src/representation/representation.js~Representation#init",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#lazy",
-    "class/src/representation/representation.js~Representation.html#instance-member-lazy",
-    "src/representation/representation.js~Representation#lazy",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#lazyprops",
-    "class/src/representation/representation.js~Representation.html#instance-member-lazyProps",
-    "src/representation/representation.js~Representation#lazyProps",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#linewidth",
-    "class/src/representation/representation.js~Representation.html#instance-member-linewidth",
-    "src/representation/representation.js~Representation#linewidth",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#make",
-    "class/src/representation/representation.js~Representation.html#instance-method-make",
-    "src/representation/representation.js~Representation#make",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#matrix",
-    "class/src/representation/representation.js~Representation.html#instance-member-matrix",
-    "src/representation/representation.js~Representation#matrix",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#metalness",
-    "class/src/representation/representation.js~Representation.html#instance-member-metalness",
-    "src/representation/representation.js~Representation#metalness",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#opacity",
-    "class/src/representation/representation.js~Representation.html#instance-member-opacity",
-    "src/representation/representation.js~Representation#opacity",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#openended",
-    "class/src/representation/representation.js~Representation.html#instance-member-openEnded",
-    "src/representation/representation.js~Representation#openEnded",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#parameters",
-    "class/src/representation/representation.js~Representation.html#instance-member-parameters",
-    "src/representation/representation.js~Representation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#quality",
-    "class/src/representation/representation.js~Representation.html#instance-member-quality",
-    "src/representation/representation.js~Representation#quality",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#queue",
-    "class/src/representation/representation.js~Representation.html#instance-member-queue",
-    "src/representation/representation.js~Representation#queue",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#radialsegments",
-    "class/src/representation/representation.js~Representation.html#instance-member-radialSegments",
-    "src/representation/representation.js~Representation#radialSegments",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#roughness",
-    "class/src/representation/representation.js~Representation.html#instance-member-roughness",
-    "src/representation/representation.js~Representation#roughness",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#setcolor",
-    "class/src/representation/representation.js~Representation.html#instance-method-setColor",
-    "src/representation/representation.js~Representation#setColor",
-    "method"
-  ],
-  [
     "src/representation/representation.js~representation#setparameters",
     "class/src/representation/representation.js~Representation.html#instance-method-setParameters",
     "src/representation/representation.js~Representation#setParameters",
@@ -14730,57 +4974,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/representation.js~representation#side",
-    "class/src/representation/representation.js~Representation.html#instance-member-side",
-    "src/representation/representation.js~Representation#side",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#spheredetail",
-    "class/src/representation/representation.js~Representation.html#instance-member-sphereDetail",
-    "src/representation/representation.js~Representation#sphereDetail",
-    "member"
-  ],
-  [
     "src/representation/representation.js~representation#tasks",
     "class/src/representation/representation.js~Representation.html#instance-member-tasks",
     "src/representation/representation.js~Representation#tasks",
     "member"
   ],
   [
-    "src/representation/representation.js~representation#type",
-    "class/src/representation/representation.js~Representation.html#instance-member-type",
-    "src/representation/representation.js~Representation#type",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#update",
-    "class/src/representation/representation.js~Representation.html#instance-method-update",
-    "src/representation/representation.js~Representation#update",
-    "method"
-  ],
-  [
-    "src/representation/representation.js~representation#updateparameters",
-    "class/src/representation/representation.js~Representation.html#instance-method-updateParameters",
-    "src/representation/representation.js~Representation#updateParameters",
-    "method"
-  ],
-  [
     "src/representation/representation.js~representation#viewer",
     "class/src/representation/representation.js~Representation.html#instance-member-viewer",
     "src/representation/representation.js~Representation#viewer",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#visible",
-    "class/src/representation/representation.js~Representation.html#instance-member-visible",
-    "src/representation/representation.js~Representation#visible",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#wireframe",
-    "class/src/representation/representation.js~Representation.html#instance-member-wireframe",
-    "src/representation/representation.js~Representation#wireframe",
     "member"
   ],
   [
@@ -14796,136 +4998,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#constructor",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-constructor-constructor",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#createdata",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-method-createData",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#getsplineparams",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-method-getSplineParams",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#getSplineParams",
-    "method"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#init",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-method-init",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#parameters",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-member-parameters",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#setparameters",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-method-setParameters",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#smoothsheet",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-member-smoothSheet",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#smoothSheet",
-    "member"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#subdiv",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-member-subdiv",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#subdiv",
-    "member"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#tension",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-member-tension",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#tension",
-    "member"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#type",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-member-type",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/ribbon-representation.js~ribbonrepresentation#updatedata",
-    "class/src/representation/ribbon-representation.js~RibbonRepresentation.html#instance-method-updateData",
-    "src/representation/ribbon-representation.js~RibbonRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/rocket-representation.js",
     "file/src/representation/rocket-representation.js.html",
     "src/representation/rocket-representation.js",
     "file"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#centerdist",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-member-centerDist",
-    "src/representation/rocket-representation.js~RocketRepresentation#centerDist",
-    "member"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#constructor",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-constructor-constructor",
-    "src/representation/rocket-representation.js~RocketRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#createdata",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-method-createData",
-    "src/representation/rocket-representation.js~RocketRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#helixbundlelist",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-member-helixbundleList",
-    "src/representation/rocket-representation.js~RocketRepresentation#helixbundleList",
-    "member"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#init",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-method-init",
-    "src/representation/rocket-representation.js~RocketRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#localangle",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-member-localAngle",
-    "src/representation/rocket-representation.js~RocketRepresentation#localAngle",
-    "member"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#parameters",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-member-parameters",
-    "src/representation/rocket-representation.js~RocketRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#ssborder",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-member-ssBorder",
-    "src/representation/rocket-representation.js~RocketRepresentation#ssBorder",
-    "member"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#type",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-member-type",
-    "src/representation/rocket-representation.js~RocketRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/rocket-representation.js~rocketrepresentation#updatedata",
-    "class/src/representation/rocket-representation.js~RocketRepresentation.html#instance-method-updateData",
-    "src/representation/rocket-representation.js~RocketRepresentation#updateData",
-    "method"
   ],
   [
     "src/representation/rope-representation.js",
@@ -14934,142 +5010,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/rope-representation.js~roperepresentation#constructor",
-    "class/src/representation/rope-representation.js~RopeRepresentation.html#instance-constructor-constructor",
-    "src/representation/rope-representation.js~RopeRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/rope-representation.js~roperepresentation#getspline",
-    "class/src/representation/rope-representation.js~RopeRepresentation.html#instance-method-getSpline",
-    "src/representation/rope-representation.js~RopeRepresentation#getSpline",
-    "method"
-  ],
-  [
-    "src/representation/rope-representation.js~roperepresentation#init",
-    "class/src/representation/rope-representation.js~RopeRepresentation.html#instance-method-init",
-    "src/representation/rope-representation.js~RopeRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/rope-representation.js~roperepresentation#parameters",
-    "class/src/representation/rope-representation.js~RopeRepresentation.html#instance-member-parameters",
-    "src/representation/rope-representation.js~RopeRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/rope-representation.js~roperepresentation#smooth",
-    "class/src/representation/rope-representation.js~RopeRepresentation.html#instance-member-smooth",
-    "src/representation/rope-representation.js~RopeRepresentation#smooth",
-    "member"
-  ],
-  [
-    "src/representation/rope-representation.js~roperepresentation#type",
-    "class/src/representation/rope-representation.js~RopeRepresentation.html#instance-member-type",
-    "src/representation/rope-representation.js~RopeRepresentation#type",
-    "member"
-  ],
-  [
     "src/representation/slice-representation.js",
     "file/src/representation/slice-representation.js.html",
     "src/representation/slice-representation.js",
     "file"
   ],
   [
-    "src/representation/slice-representation.js~slicerepresentation#attach",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-method-attach",
-    "src/representation/slice-representation.js~SliceRepresentation#attach",
-    "method"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#colorscheme",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-colorScheme",
-    "src/representation/slice-representation.js~SliceRepresentation#colorScheme",
-    "member"
-  ],
-  [
     "src/representation/slice-representation.js~slicerepresentation#constructor",
     "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-constructor-constructor",
     "src/representation/slice-representation.js~SliceRepresentation#constructor",
     "method"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#create",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-method-create",
-    "src/representation/slice-representation.js~SliceRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#dimension",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-dimension",
-    "src/representation/slice-representation.js~SliceRepresentation#dimension",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#filter",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-filter",
-    "src/representation/slice-representation.js~SliceRepresentation#filter",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#init",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-method-init",
-    "src/representation/slice-representation.js~SliceRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#normalize",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-normalize",
-    "src/representation/slice-representation.js~SliceRepresentation#normalize",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#parameters",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-parameters",
-    "src/representation/slice-representation.js~SliceRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#position",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-position",
-    "src/representation/slice-representation.js~SliceRepresentation#position",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#positiontype",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-positionType",
-    "src/representation/slice-representation.js~SliceRepresentation#positionType",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#thresholdmax",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-thresholdMax",
-    "src/representation/slice-representation.js~SliceRepresentation#thresholdMax",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#thresholdmin",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-thresholdMin",
-    "src/representation/slice-representation.js~SliceRepresentation#thresholdMin",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#thresholdtype",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-thresholdType",
-    "src/representation/slice-representation.js~SliceRepresentation#thresholdType",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#type",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-type",
-    "src/representation/slice-representation.js~SliceRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/slice-representation.js~slicerepresentation#volume",
-    "class/src/representation/slice-representation.js~SliceRepresentation.html#instance-member-volume",
-    "src/representation/slice-representation.js~SliceRepresentation#volume",
-    "member"
   ],
   [
     "src/representation/slice-representation.js~slicerepresentationparameters",
@@ -15084,172 +5034,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/spacefill-representation.js~spacefillrepresentation#constructor",
-    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html#instance-constructor-constructor",
-    "src/representation/spacefill-representation.js~SpacefillRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/spacefill-representation.js~spacefillrepresentation#createdata",
-    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html#instance-method-createData",
-    "src/representation/spacefill-representation.js~SpacefillRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/spacefill-representation.js~spacefillrepresentation#init",
-    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html#instance-method-init",
-    "src/representation/spacefill-representation.js~SpacefillRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/spacefill-representation.js~spacefillrepresentation#parameters",
-    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html#instance-member-parameters",
-    "src/representation/spacefill-representation.js~SpacefillRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/spacefill-representation.js~spacefillrepresentation#type",
-    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html#instance-member-type",
-    "src/representation/spacefill-representation.js~SpacefillRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/spacefill-representation.js~spacefillrepresentation#updatedata",
-    "class/src/representation/spacefill-representation.js~SpacefillRepresentation.html#instance-method-updateData",
-    "src/representation/spacefill-representation.js~SpacefillRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/structure-representation.js",
     "file/src/representation/structure-representation.js.html",
     "src/representation/structure-representation.js",
     "file"
   ],
   [
-    "src/representation/structure-representation.js~structurerepresentation#assembly",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-assembly",
-    "src/representation/structure-representation.js~StructureRepresentation#assembly",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#attach",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-attach",
-    "src/representation/structure-representation.js~StructureRepresentation#attach",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#clear",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-clear",
-    "src/representation/structure-representation.js~StructureRepresentation#clear",
-    "method"
-  ],
-  [
     "src/representation/structure-representation.js~structurerepresentation#constructor",
     "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-constructor-constructor",
     "src/representation/structure-representation.js~StructureRepresentation#constructor",
     "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#create",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-create",
-    "src/representation/structure-representation.js~StructureRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#createdata",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-createData",
-    "src/representation/structure-representation.js~StructureRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#datalist",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-dataList",
-    "src/representation/structure-representation.js~StructureRepresentation#dataList",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#defaultassembly",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-defaultAssembly",
-    "src/representation/structure-representation.js~StructureRepresentation#defaultAssembly",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#defaultscale",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-get-defaultScale",
-    "src/representation/structure-representation.js~StructureRepresentation#defaultScale",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#dispose",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-dispose",
-    "src/representation/structure-representation.js~StructureRepresentation#dispose",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#getassembly",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-getAssembly",
-    "src/representation/structure-representation.js~StructureRepresentation#getAssembly",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#getatomparams",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-getAtomParams",
-    "src/representation/structure-representation.js~StructureRepresentation#getAtomParams",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#getbondparams",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-getBondParams",
-    "src/representation/structure-representation.js~StructureRepresentation#getBondParams",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#getcolorparams",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-getColorParams",
-    "src/representation/structure-representation.js~StructureRepresentation#getColorParams",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#getparameters",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-getParameters",
-    "src/representation/structure-representation.js~StructureRepresentation#getParameters",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#getquality",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-getQuality",
-    "src/representation/structure-representation.js~StructureRepresentation#getQuality",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#init",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-init",
-    "src/representation/structure-representation.js~StructureRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#parameters",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-parameters",
-    "src/representation/structure-representation.js~StructureRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#radius",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-radius",
-    "src/representation/structure-representation.js~StructureRepresentation#radius",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#scale",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-scale",
-    "src/representation/structure-representation.js~StructureRepresentation#scale",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#selection",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-selection",
-    "src/representation/structure-representation.js~StructureRepresentation#selection",
-    "member"
   ],
   [
     "src/representation/structure-representation.js~structurerepresentation#setparameters",
@@ -15276,24 +5070,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/representation/structure-representation.js~structurerepresentation#type",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-type",
-    "src/representation/structure-representation.js~StructureRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#update",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-update",
-    "src/representation/structure-representation.js~StructureRepresentation#update",
-    "method"
-  ],
-  [
-    "src/representation/structure-representation.js~structurerepresentation#updatedata",
-    "class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-updateData",
-    "src/representation/structure-representation.js~StructureRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/structure-representation.js~structurerepresentationparameters",
     "typedef/index.html#static-typedef-StructureRepresentationParameters",
     "src/representation/structure-representation.js~StructureRepresentationParameters",
@@ -15306,159 +5082,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/surface-representation.js~surfacerepresentation#__box",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__box",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__box",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#__boxcenter",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__boxCenter",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__boxCenter",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#__boxsize",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__boxSize",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__boxSize",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#__contour",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__contour",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__contour",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#__isolevel",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__isolevel",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__isolevel",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#__smooth",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__smooth",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__smooth",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#__wrap",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-__wrap",
-    "src/representation/surface-representation.js~SurfaceRepresentation#__wrap",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#_position",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-_position",
-    "src/representation/surface-representation.js~SurfaceRepresentation#_position",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#attach",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-attach",
-    "src/representation/surface-representation.js~SurfaceRepresentation#attach",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#background",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-background",
-    "src/representation/surface-representation.js~SurfaceRepresentation#background",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#box",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-box",
-    "src/representation/surface-representation.js~SurfaceRepresentation#box",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#boxcenter",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-boxCenter",
-    "src/representation/surface-representation.js~SurfaceRepresentation#boxCenter",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#boxsize",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-boxSize",
-    "src/representation/surface-representation.js~SurfaceRepresentation#boxSize",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#colorvolume",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-colorVolume",
-    "src/representation/surface-representation.js~SurfaceRepresentation#colorVolume",
-    "member"
-  ],
-  [
     "src/representation/surface-representation.js~surfacerepresentation#constructor",
     "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-constructor-constructor",
     "src/representation/surface-representation.js~SurfaceRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#contour",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-contour",
-    "src/representation/surface-representation.js~SurfaceRepresentation#contour",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#create",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-create",
-    "src/representation/surface-representation.js~SurfaceRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#dispose",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-dispose",
-    "src/representation/surface-representation.js~SurfaceRepresentation#dispose",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#getcolorparams",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-getColorParams",
-    "src/representation/surface-representation.js~SurfaceRepresentation#getColorParams",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#init",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-init",
-    "src/representation/surface-representation.js~SurfaceRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#isolevel",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-isolevel",
-    "src/representation/surface-representation.js~SurfaceRepresentation#isolevel",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#isoleveltype",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-isolevelType",
-    "src/representation/surface-representation.js~SurfaceRepresentation#isolevelType",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#negateisolevel",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-negateIsolevel",
-    "src/representation/surface-representation.js~SurfaceRepresentation#negateIsolevel",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#opaqueback",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-opaqueBack",
-    "src/representation/surface-representation.js~SurfaceRepresentation#opaqueBack",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#parameters",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-parameters",
-    "src/representation/surface-representation.js~SurfaceRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#prepare",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-prepare",
-    "src/representation/surface-representation.js~SurfaceRepresentation#prepare",
     "method"
   ],
   [
@@ -15466,48 +5092,6 @@ window.esdocSearchIndex = [
     "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-setParameters",
     "src/representation/surface-representation.js~SurfaceRepresentation#setParameters",
     "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#smooth",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-smooth",
-    "src/representation/surface-representation.js~SurfaceRepresentation#smooth",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#surface",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-surface",
-    "src/representation/surface-representation.js~SurfaceRepresentation#surface",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#type",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-type",
-    "src/representation/surface-representation.js~SurfaceRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#update",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-method-update",
-    "src/representation/surface-representation.js~SurfaceRepresentation#update",
-    "method"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#useworker",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-useWorker",
-    "src/representation/surface-representation.js~SurfaceRepresentation#useWorker",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#volume",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-volume",
-    "src/representation/surface-representation.js~SurfaceRepresentation#volume",
-    "member"
-  ],
-  [
-    "src/representation/surface-representation.js~surfacerepresentation#wrap",
-    "class/src/representation/surface-representation.js~SurfaceRepresentation.html#instance-member-wrap",
-    "src/representation/surface-representation.js~SurfaceRepresentation#wrap",
-    "member"
   ],
   [
     "src/representation/surface-representation.js~surfacerepresentationparameters",
@@ -15522,166 +5106,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/trace-representation.js~tracerepresentation#constructor",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-constructor-constructor",
-    "src/representation/trace-representation.js~TraceRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#createdata",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-method-createData",
-    "src/representation/trace-representation.js~TraceRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#getsplineparams",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-method-getSplineParams",
-    "src/representation/trace-representation.js~TraceRepresentation#getSplineParams",
-    "method"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#init",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-method-init",
-    "src/representation/trace-representation.js~TraceRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#parameters",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-member-parameters",
-    "src/representation/trace-representation.js~TraceRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#setparameters",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-method-setParameters",
-    "src/representation/trace-representation.js~TraceRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#smoothsheet",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-member-smoothSheet",
-    "src/representation/trace-representation.js~TraceRepresentation#smoothSheet",
-    "member"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#subdiv",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-member-subdiv",
-    "src/representation/trace-representation.js~TraceRepresentation#subdiv",
-    "member"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#tension",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-member-tension",
-    "src/representation/trace-representation.js~TraceRepresentation#tension",
-    "member"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#type",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-member-type",
-    "src/representation/trace-representation.js~TraceRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/trace-representation.js~tracerepresentation#updatedata",
-    "class/src/representation/trace-representation.js~TraceRepresentation.html#instance-method-updateData",
-    "src/representation/trace-representation.js~TraceRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/trajectory-representation.js",
     "file/src/representation/trajectory-representation.js.html",
     "src/representation/trajectory-representation.js",
     "file"
   ],
   [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#attach",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-method-attach",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#attach",
-    "method"
-  ],
-  [
     "src/representation/trajectory-representation.js~trajectoryrepresentation#constructor",
     "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-constructor-constructor",
     "src/representation/trajectory-representation.js~TrajectoryRepresentation#constructor",
     "method"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#create",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-method-create",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#drawcylinder",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-drawCylinder",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#drawCylinder",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#drawline",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-drawLine",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#drawLine",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#drawpoint",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-drawPoint",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#drawPoint",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#drawsphere",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-drawSphere",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#drawSphere",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#init",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-method-init",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#manualattach",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-manualAttach",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#manualAttach",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#parameters",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-parameters",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#pointsize",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-pointSize",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#pointSize",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#sizeattenuation",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-sizeAttenuation",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#sizeAttenuation",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#sort",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-sort",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#sort",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#trajectory",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-trajectory",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#trajectory",
-    "member"
-  ],
-  [
-    "src/representation/trajectory-representation.js~trajectoryrepresentation#type",
-    "class/src/representation/trajectory-representation.js~TrajectoryRepresentation.html#instance-member-type",
-    "src/representation/trajectory-representation.js~TrajectoryRepresentation#type",
-    "member"
   ],
   [
     "src/representation/trajectory-representation.js~trajectoryrepresentationparameters",
@@ -15696,136 +5130,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/representation/tube-representation.js~tuberepresentation#constructor",
-    "class/src/representation/tube-representation.js~TubeRepresentation.html#instance-constructor-constructor",
-    "src/representation/tube-representation.js~TubeRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/tube-representation.js~tuberepresentation#getsplineparams",
-    "class/src/representation/tube-representation.js~TubeRepresentation.html#instance-method-getSplineParams",
-    "src/representation/tube-representation.js~TubeRepresentation#getSplineParams",
-    "method"
-  ],
-  [
-    "src/representation/tube-representation.js~tuberepresentation#init",
-    "class/src/representation/tube-representation.js~TubeRepresentation.html#instance-method-init",
-    "src/representation/tube-representation.js~TubeRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/tube-representation.js~tuberepresentation#parameters",
-    "class/src/representation/tube-representation.js~TubeRepresentation.html#instance-member-parameters",
-    "src/representation/tube-representation.js~TubeRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/tube-representation.js~tuberepresentation#radialsegments",
-    "class/src/representation/tube-representation.js~TubeRepresentation.html#instance-member-radialSegments",
-    "src/representation/tube-representation.js~TubeRepresentation#radialSegments",
-    "member"
-  ],
-  [
-    "src/representation/tube-representation.js~tuberepresentation#type",
-    "class/src/representation/tube-representation.js~TubeRepresentation.html#instance-member-type",
-    "src/representation/tube-representation.js~TubeRepresentation#type",
-    "member"
-  ],
-  [
     "src/representation/unitcell-representation.js",
     "file/src/representation/unitcell-representation.js.html",
     "src/representation/unitcell-representation.js",
     "file"
   ],
   [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#constructor",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-constructor-constructor",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#create",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-method-create",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#create",
-    "method"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#cylinderbuffer",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-member-cylinderBuffer",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#cylinderBuffer",
-    "member"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#getunitcelldata",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-method-getUnitcellData",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#getUnitcellData",
-    "method"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#init",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-method-init",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#parameters",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-member-parameters",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#spherebuffer",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-member-sphereBuffer",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#sphereBuffer",
-    "member"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#type",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-member-type",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#type",
-    "member"
-  ],
-  [
-    "src/representation/unitcell-representation.js~unitcellrepresentation#updatedata",
-    "class/src/representation/unitcell-representation.js~UnitcellRepresentation.html#instance-method-updateData",
-    "src/representation/unitcell-representation.js~UnitcellRepresentation#updateData",
-    "method"
-  ],
-  [
     "src/representation/validation-representation.js",
     "file/src/representation/validation-representation.js.html",
     "src/representation/validation-representation.js",
     "file"
-  ],
-  [
-    "src/representation/validation-representation.js~validationrepresentation#constructor",
-    "class/src/representation/validation-representation.js~ValidationRepresentation.html#instance-constructor-constructor",
-    "src/representation/validation-representation.js~ValidationRepresentation#constructor",
-    "method"
-  ],
-  [
-    "src/representation/validation-representation.js~validationrepresentation#createdata",
-    "class/src/representation/validation-representation.js~ValidationRepresentation.html#instance-method-createData",
-    "src/representation/validation-representation.js~ValidationRepresentation#createData",
-    "method"
-  ],
-  [
-    "src/representation/validation-representation.js~validationrepresentation#init",
-    "class/src/representation/validation-representation.js~ValidationRepresentation.html#instance-method-init",
-    "src/representation/validation-representation.js~ValidationRepresentation#init",
-    "method"
-  ],
-  [
-    "src/representation/validation-representation.js~validationrepresentation#parameters",
-    "class/src/representation/validation-representation.js~ValidationRepresentation.html#instance-member-parameters",
-    "src/representation/validation-representation.js~ValidationRepresentation#parameters",
-    "member"
-  ],
-  [
-    "src/representation/validation-representation.js~validationrepresentation#type",
-    "class/src/representation/validation-representation.js~ValidationRepresentation.html#instance-member-type",
-    "src/representation/validation-representation.js~ValidationRepresentation#type",
-    "member"
   ],
   [
     "src/script.js",
@@ -15846,148 +5160,22 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/script.js~script#dir",
-    "class/src/script.js~Script.html#instance-member-dir",
-    "src/script.js~Script#dir",
-    "member"
-  ],
-  [
-    "src/script.js~script#fn",
-    "class/src/script.js~Script.html#instance-member-fn",
-    "src/script.js~Script#fn",
-    "member"
-  ],
-  [
-    "src/script.js~script#name",
-    "class/src/script.js~Script.html#instance-member-name",
-    "src/script.js~Script#name",
-    "member"
-  ],
-  [
-    "src/script.js~script#path",
-    "class/src/script.js~Script.html#instance-member-path",
-    "src/script.js~Script#path",
-    "member"
-  ],
-  [
-    "src/script.js~script#signals",
-    "class/src/script.js~Script.html#instance-member-signals",
-    "src/script.js~Script#signals",
-    "member"
-  ],
-  [
     "src/script.js~script#type",
     "class/src/script.js~Script.html#instance-get-type",
     "src/script.js~Script#type",
     "member"
   ],
   [
-    "src/selection/selection-constants.js",
-    "file/src/selection/selection-constants.js.html",
-    "src/selection/selection-constants.js",
+    "src/selection.js",
+    "file/src/selection.js.html",
+    "src/selection.js",
     "file"
   ],
   [
-    "src/selection/selection-parser.js",
-    "file/src/selection/selection-parser.js.html",
-    "src/selection/selection-parser.js",
-    "file"
-  ],
-  [
-    "src/selection/selection-test.js",
-    "file/src/selection/selection-test.js.html",
-    "src/selection/selection-test.js",
-    "file"
-  ],
-  [
-    "src/selection/selection.js",
-    "file/src/selection/selection.js.html",
-    "src/selection/selection.js",
-    "file"
-  ],
-  [
-    "src/selection/selection.js~selection#atomonlytest",
-    "class/src/selection/selection.js~Selection.html#instance-member-atomOnlyTest",
-    "src/selection/selection.js~Selection#atomOnlyTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#chainonlytest",
-    "class/src/selection/selection.js~Selection.html#instance-member-chainOnlyTest",
-    "src/selection/selection.js~Selection#chainOnlyTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#chaintest",
-    "class/src/selection/selection.js~Selection.html#instance-member-chainTest",
-    "src/selection/selection.js~Selection#chainTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#constructor",
-    "class/src/selection/selection.js~Selection.html#instance-constructor-constructor",
-    "src/selection/selection.js~Selection#constructor",
+    "src/selection.js~selection#constructor",
+    "class/src/selection.js~Selection.html#instance-constructor-constructor",
+    "src/selection.js~Selection#constructor",
     "method"
-  ],
-  [
-    "src/selection/selection.js~selection#modelonlytest",
-    "class/src/selection/selection.js~Selection.html#instance-member-modelOnlyTest",
-    "src/selection/selection.js~Selection#modelOnlyTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#modeltest",
-    "class/src/selection/selection.js~Selection.html#instance-member-modelTest",
-    "src/selection/selection.js~Selection#modelTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#residueonlytest",
-    "class/src/selection/selection.js~Selection.html#instance-member-residueOnlyTest",
-    "src/selection/selection.js~Selection#residueOnlyTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#residuetest",
-    "class/src/selection/selection.js~Selection.html#instance-member-residueTest",
-    "src/selection/selection.js~Selection#residueTest",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#selection",
-    "class/src/selection/selection.js~Selection.html#instance-member-selection",
-    "src/selection/selection.js~Selection#selection",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#setstring",
-    "class/src/selection/selection.js~Selection.html#instance-method-setString",
-    "src/selection/selection.js~Selection#setString",
-    "method"
-  ],
-  [
-    "src/selection/selection.js~selection#signals",
-    "class/src/selection/selection.js~Selection.html#instance-member-signals",
-    "src/selection/selection.js~Selection#signals",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#string",
-    "class/src/selection/selection.js~Selection.html#instance-member-string",
-    "src/selection/selection.js~Selection#string",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#test",
-    "class/src/selection/selection.js~Selection.html#instance-member-test",
-    "src/selection/selection.js~Selection#test",
-    "member"
-  ],
-  [
-    "src/selection/selection.js~selection#type",
-    "class/src/selection/selection.js~Selection.html#instance-get-type",
-    "src/selection/selection.js~Selection#type",
-    "member"
   ],
   [
     "src/shader/shader-utils.js",
@@ -16002,94 +5190,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/stage/animation-behavior.js~animationbehavior#_ontick",
-    "class/src/stage/animation-behavior.js~AnimationBehavior.html#instance-method-_onTick",
-    "src/stage/animation-behavior.js~AnimationBehavior#_onTick",
-    "method"
-  ],
-  [
-    "src/stage/animation-behavior.js~animationbehavior#animationcontrols",
-    "class/src/stage/animation-behavior.js~AnimationBehavior.html#instance-member-animationControls",
-    "src/stage/animation-behavior.js~AnimationBehavior#animationControls",
-    "member"
-  ],
-  [
-    "src/stage/animation-behavior.js~animationbehavior#constructor",
-    "class/src/stage/animation-behavior.js~AnimationBehavior.html#instance-constructor-constructor",
-    "src/stage/animation-behavior.js~AnimationBehavior#constructor",
-    "method"
-  ],
-  [
-    "src/stage/animation-behavior.js~animationbehavior#dispose",
-    "class/src/stage/animation-behavior.js~AnimationBehavior.html#instance-method-dispose",
-    "src/stage/animation-behavior.js~AnimationBehavior#dispose",
-    "method"
-  ],
-  [
-    "src/stage/animation-behavior.js~animationbehavior#viewer",
-    "class/src/stage/animation-behavior.js~AnimationBehavior.html#instance-member-viewer",
-    "src/stage/animation-behavior.js~AnimationBehavior#viewer",
-    "member"
-  ],
-  [
     "src/stage/key-behavior.js",
     "file/src/stage/key-behavior.js.html",
     "src/stage/key-behavior.js",
     "file"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#_focusdomelement",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-method-_focusDomElement",
-    "src/stage/key-behavior.js~KeyBehavior#_focusDomElement",
-    "method"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#_onkeydown",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-method-_onKeydown",
-    "src/stage/key-behavior.js~KeyBehavior#_onKeydown",
-    "method"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#_onkeypress",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-method-_onKeypress",
-    "src/stage/key-behavior.js~KeyBehavior#_onKeypress",
-    "method"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#_onkeyup",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-method-_onKeyup",
-    "src/stage/key-behavior.js~KeyBehavior#_onKeyup",
-    "method"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#constructor",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-constructor-constructor",
-    "src/stage/key-behavior.js~KeyBehavior#constructor",
-    "method"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#controls",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-member-controls",
-    "src/stage/key-behavior.js~KeyBehavior#controls",
-    "member"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#dispose",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-method-dispose",
-    "src/stage/key-behavior.js~KeyBehavior#dispose",
-    "method"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#domelement",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-member-domElement",
-    "src/stage/key-behavior.js~KeyBehavior#domElement",
-    "member"
-  ],
-  [
-    "src/stage/key-behavior.js~keybehavior#stage",
-    "class/src/stage/key-behavior.js~KeyBehavior.html#instance-member-stage",
-    "src/stage/key-behavior.js~KeyBehavior#stage",
-    "member"
   ],
   [
     "src/stage/mouse-behavior.js",
@@ -16098,148 +5202,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/stage/mouse-behavior.js~mousebehavior#_onclick",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-_onClick",
-    "src/stage/mouse-behavior.js~MouseBehavior#_onClick",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#_ondblclick",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-_onDblclick",
-    "src/stage/mouse-behavior.js~MouseBehavior#_onDblclick",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#_ondrag",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-_onDrag",
-    "src/stage/mouse-behavior.js~MouseBehavior#_onDrag",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#_onhover",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-_onHover",
-    "src/stage/mouse-behavior.js~MouseBehavior#_onHover",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#_onmove",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-_onMove",
-    "src/stage/mouse-behavior.js~MouseBehavior#_onMove",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#_onscroll",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-_onScroll",
-    "src/stage/mouse-behavior.js~MouseBehavior#_onScroll",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#constructor",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-constructor-constructor",
-    "src/stage/mouse-behavior.js~MouseBehavior#constructor",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#controls",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-member-controls",
-    "src/stage/mouse-behavior.js~MouseBehavior#controls",
-    "member"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#dispose",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-method-dispose",
-    "src/stage/mouse-behavior.js~MouseBehavior#dispose",
-    "method"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#mouse",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-member-mouse",
-    "src/stage/mouse-behavior.js~MouseBehavior#mouse",
-    "member"
-  ],
-  [
-    "src/stage/mouse-behavior.js~mousebehavior#stage",
-    "class/src/stage/mouse-behavior.js~MouseBehavior.html#instance-member-stage",
-    "src/stage/mouse-behavior.js~MouseBehavior#stage",
-    "member"
-  ],
-  [
     "src/stage/mouse-observer.js",
     "file/src/stage/mouse-observer.js.html",
     "src/stage/mouse-observer.js",
     "file"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_distance",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_distance",
-    "src/stage/mouse-observer.js~MouseObserver#_distance",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_listen",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_listen",
-    "src/stage/mouse-observer.js~MouseObserver#_listen",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_oncontextmenu",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onContextmenu",
-    "src/stage/mouse-observer.js~MouseObserver#_onContextmenu",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_onmousedown",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onMousedown",
-    "src/stage/mouse-observer.js~MouseObserver#_onMousedown",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_onmousemove",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onMousemove",
-    "src/stage/mouse-observer.js~MouseObserver#_onMousemove",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_onmouseup",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onMouseup",
-    "src/stage/mouse-observer.js~MouseObserver#_onMouseup",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_onmousewheel",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onMousewheel",
-    "src/stage/mouse-observer.js~MouseObserver#_onMousewheel",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_ontouchend",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onTouchend",
-    "src/stage/mouse-observer.js~MouseObserver#_onTouchend",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_ontouchmove",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onTouchmove",
-    "src/stage/mouse-observer.js~MouseObserver#_onTouchmove",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_ontouchstart",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_onTouchstart",
-    "src/stage/mouse-observer.js~MouseObserver#_onTouchstart",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_setcanvasposition",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_setCanvasPosition",
-    "src/stage/mouse-observer.js~MouseObserver#_setCanvasPosition",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#_setkeys",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-_setKeys",
-    "src/stage/mouse-observer.js~MouseObserver#_setKeys",
-    "method"
   ],
   [
     "src/stage/mouse-observer.js~mouseobserver#altkey",
@@ -16272,45 +5238,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#dispose",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-dispose",
-    "src/stage/mouse-observer.js~MouseObserver#dispose",
-    "method"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#domelement",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-domElement",
-    "src/stage/mouse-observer.js~MouseObserver#domElement",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#doubleclickpending",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-doubleClickPending",
-    "src/stage/mouse-observer.js~MouseObserver#doubleClickPending",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#doubleclickspeed",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-doubleClickSpeed",
-    "src/stage/mouse-observer.js~MouseObserver#doubleClickSpeed",
-    "member"
-  ],
-  [
     "src/stage/mouse-observer.js~mouseobserver#down",
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-down",
     "src/stage/mouse-observer.js~MouseObserver#down",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#handlescroll",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-handleScroll",
-    "src/stage/mouse-observer.js~MouseObserver#handleScroll",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#hovertimeout",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-hoverTimeout",
-    "src/stage/mouse-observer.js~MouseObserver#hoverTimeout",
     "member"
   ],
   [
@@ -16320,27 +5250,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#key",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-get-key",
-    "src/stage/mouse-observer.js~MouseObserver#key",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#lastclicked",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-lastClicked",
-    "src/stage/mouse-observer.js~MouseObserver#lastClicked",
-    "member"
-  ],
-  [
     "src/stage/mouse-observer.js~mouseobserver#lastmoved",
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-lastMoved",
     "src/stage/mouse-observer.js~MouseObserver#lastMoved",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#lasttouchdistance",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-lastTouchDistance",
-    "src/stage/mouse-observer.js~MouseObserver#lastTouchDistance",
     "member"
   ],
   [
@@ -16356,12 +5268,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/stage/mouse-observer.js~mouseobserver#overelement",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-overElement",
-    "src/stage/mouse-observer.js~MouseObserver#overElement",
-    "member"
-  ],
-  [
     "src/stage/mouse-observer.js~mouseobserver#position",
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-position",
     "src/stage/mouse-observer.js~MouseObserver#position",
@@ -16371,12 +5277,6 @@ window.esdocSearchIndex = [
     "src/stage/mouse-observer.js~mouseobserver#pressed",
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-pressed",
     "src/stage/mouse-observer.js~MouseObserver#pressed",
-    "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#prevclickcp",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-prevClickCP",
-    "src/stage/mouse-observer.js~MouseObserver#prevClickCP",
     "member"
   ],
   [
@@ -16390,12 +5290,6 @@ window.esdocSearchIndex = [
     "class/src/stage/mouse-observer.js~MouseObserver.html#instance-member-scrolled",
     "src/stage/mouse-observer.js~MouseObserver#scrolled",
     "member"
-  ],
-  [
-    "src/stage/mouse-observer.js~mouseobserver#setparameters",
-    "class/src/stage/mouse-observer.js~MouseObserver.html#instance-method-setParameters",
-    "src/stage/mouse-observer.js~MouseObserver#setParameters",
-    "method"
   ],
   [
     "src/stage/mouse-observer.js~mouseobserver#shiftkey",
@@ -16428,48 +5322,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/stage/picking-behavior.js~pickingbehavior#_onclick",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-method-_onClick",
-    "src/stage/picking-behavior.js~PickingBehavior#_onClick",
-    "method"
-  ],
-  [
-    "src/stage/picking-behavior.js~pickingbehavior#_onhover",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-method-_onHover",
-    "src/stage/picking-behavior.js~PickingBehavior#_onHover",
-    "method"
-  ],
-  [
-    "src/stage/picking-behavior.js~pickingbehavior#constructor",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-constructor-constructor",
-    "src/stage/picking-behavior.js~PickingBehavior#constructor",
-    "method"
-  ],
-  [
-    "src/stage/picking-behavior.js~pickingbehavior#controls",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-member-controls",
-    "src/stage/picking-behavior.js~PickingBehavior#controls",
-    "member"
-  ],
-  [
-    "src/stage/picking-behavior.js~pickingbehavior#dispose",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-method-dispose",
-    "src/stage/picking-behavior.js~PickingBehavior#dispose",
-    "method"
-  ],
-  [
-    "src/stage/picking-behavior.js~pickingbehavior#mouse",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-member-mouse",
-    "src/stage/picking-behavior.js~PickingBehavior#mouse",
-    "member"
-  ],
-  [
-    "src/stage/picking-behavior.js~pickingbehavior#stage",
-    "class/src/stage/picking-behavior.js~PickingBehavior.html#instance-member-stage",
-    "src/stage/picking-behavior.js~PickingBehavior#stage",
-    "member"
-  ],
-  [
     "src/stage/stage.js",
     "file/src/stage/stage.js.html",
     "src/stage/stage.js",
@@ -16488,12 +5340,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/stage/stage.js~stage#animationbehavior",
-    "class/src/stage/stage.js~Stage.html#instance-member-animationBehavior",
-    "src/stage/stage.js~Stage#animationBehavior",
-    "member"
-  ],
-  [
     "src/stage/stage.js~stage#animationcontrols",
     "class/src/stage/stage.js~Stage.html#instance-member-animationControls",
     "src/stage/stage.js~Stage#animationControls",
@@ -16506,22 +5352,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/stage/stage.js~stage#complist",
-    "class/src/stage/stage.js~Stage.html#instance-member-compList",
-    "src/stage/stage.js~Stage#compList",
-    "member"
-  ],
-  [
     "src/stage/stage.js~stage#constructor",
     "class/src/stage/stage.js~Stage.html#instance-constructor-constructor",
     "src/stage/stage.js~Stage#constructor",
     "method"
-  ],
-  [
-    "src/stage/stage.js~stage#defaultfileparams",
-    "class/src/stage/stage.js~Stage.html#instance-member-defaultFileParams",
-    "src/stage/stage.js~Stage#defaultFileParams",
-    "member"
   ],
   [
     "src/stage/stage.js~stage#defaultfilerepresentation",
@@ -16554,18 +5388,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/stage/stage.js~stage#getbox",
-    "class/src/stage/stage.js~Stage.html#instance-method-getBox",
-    "src/stage/stage.js~Stage#getBox",
-    "method"
-  ],
-  [
-    "src/stage/stage.js~stage#getcenter",
-    "class/src/stage/stage.js~Stage.html#instance-method-getCenter",
-    "src/stage/stage.js~Stage#getCenter",
-    "method"
-  ],
-  [
     "src/stage/stage.js~stage#getcomponentsbyname",
     "class/src/stage/stage.js~Stage.html#instance-method-getComponentsByName",
     "src/stage/stage.js~Stage#getComponentsByName",
@@ -16590,40 +5412,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/stage/stage.js~stage#getzoom",
-    "class/src/stage/stage.js~Stage.html#instance-method-getZoom",
-    "src/stage/stage.js~Stage#getZoom",
-    "method"
-  ],
-  [
-    "src/stage/stage.js~stage#getzoomforbox",
-    "class/src/stage/stage.js~Stage.html#instance-method-getZoomForBox",
-    "src/stage/stage.js~Stage#getZoomForBox",
-    "method"
-  ],
-  [
     "src/stage/stage.js~stage#handleresize",
     "class/src/stage/stage.js~Stage.html#instance-method-handleResize",
     "src/stage/stage.js~Stage#handleResize",
     "method"
-  ],
-  [
-    "src/stage/stage.js~stage#keybehavior",
-    "class/src/stage/stage.js~Stage.html#instance-member-keyBehavior",
-    "src/stage/stage.js~Stage#keyBehavior",
-    "member"
-  ],
-  [
-    "src/stage/stage.js~stage#keycontrols",
-    "class/src/stage/stage.js~Stage.html#instance-member-keyControls",
-    "src/stage/stage.js~Stage#keyControls",
-    "member"
-  ],
-  [
-    "src/stage/stage.js~stage#lastfullscreenelement",
-    "class/src/stage/stage.js~Stage.html#instance-member-lastFullscreenElement",
-    "src/stage/stage.js~Stage#lastFullscreenElement",
-    "member"
   ],
   [
     "src/stage/stage.js~stage#loadfile",
@@ -16638,12 +5430,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/stage/stage.js~stage#mousebehavior",
-    "class/src/stage/stage.js~Stage.html#instance-member-mouseBehavior",
-    "src/stage/stage.js~Stage#mouseBehavior",
-    "member"
-  ],
-  [
     "src/stage/stage.js~stage#mousecontrols",
     "class/src/stage/stage.js~Stage.html#instance-member-mouseControls",
     "src/stage/stage.js~Stage#mouseControls",
@@ -16653,24 +5439,6 @@ window.esdocSearchIndex = [
     "src/stage/stage.js~stage#mouseobserver",
     "class/src/stage/stage.js~Stage.html#instance-member-mouseObserver",
     "src/stage/stage.js~Stage#mouseObserver",
-    "member"
-  ],
-  [
-    "src/stage/stage.js~stage#parameters",
-    "class/src/stage/stage.js~Stage.html#instance-member-parameters",
-    "src/stage/stage.js~Stage#parameters",
-    "member"
-  ],
-  [
-    "src/stage/stage.js~stage#pickingbehavior",
-    "class/src/stage/stage.js~Stage.html#instance-member-pickingBehavior",
-    "src/stage/stage.js~Stage#pickingBehavior",
-    "member"
-  ],
-  [
-    "src/stage/stage.js~stage#pickingcontrols",
-    "class/src/stage/stage.js~Stage.html#instance-member-pickingControls",
-    "src/stage/stage.js~Stage#pickingControls",
     "member"
   ],
   [
@@ -16692,27 +5460,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/stage/stage.js~stage#setfocus",
-    "class/src/stage/stage.js~Stage.html#instance-method-setFocus",
-    "src/stage/stage.js~Stage#setFocus",
-    "method"
-  ],
-  [
-    "src/stage/stage.js~stage#setimpostor",
-    "class/src/stage/stage.js~Stage.html#instance-method-setImpostor",
-    "src/stage/stage.js~Stage#setImpostor",
-    "method"
-  ],
-  [
     "src/stage/stage.js~stage#setparameters",
     "class/src/stage/stage.js~Stage.html#instance-method-setParameters",
     "src/stage/stage.js~Stage#setParameters",
-    "method"
-  ],
-  [
-    "src/stage/stage.js~stage#setquality",
-    "class/src/stage/stage.js~Stage.html#instance-method-setQuality",
-    "src/stage/stage.js~Stage#setQuality",
     "method"
   ],
   [
@@ -16776,18 +5526,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/stage/stage.js~stage#trackballcontrols",
-    "class/src/stage/stage.js~Stage.html#instance-member-trackballControls",
-    "src/stage/stage.js~Stage#trackballControls",
-    "member"
-  ],
-  [
-    "src/stage/stage.js~stage#viewer",
-    "class/src/stage/stage.js~Stage.html#instance-member-viewer",
-    "src/stage/stage.js~Stage#viewer",
-    "member"
-  ],
-  [
     "src/stage/stage.js~stage#viewercontrols",
     "class/src/stage/stage.js~Stage.html#instance-member-viewerControls",
     "src/stage/stage.js~Stage#viewerControls",
@@ -16812,64 +5550,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/store/atom-map.js~atommap#add",
-    "class/src/store/atom-map.js~AtomMap.html#instance-method-add",
-    "src/store/atom-map.js~AtomMap#add",
-    "method"
-  ],
-  [
-    "src/store/atom-map.js~atommap#constructor",
-    "class/src/store/atom-map.js~AtomMap.html#instance-constructor-constructor",
-    "src/store/atom-map.js~AtomMap#constructor",
-    "method"
-  ],
-  [
-    "src/store/atom-map.js~atommap#dict",
-    "class/src/store/atom-map.js~AtomMap.html#instance-member-dict",
-    "src/store/atom-map.js~AtomMap#dict",
-    "member"
-  ],
-  [
-    "src/store/atom-map.js~atommap#get",
-    "class/src/store/atom-map.js~AtomMap.html#instance-method-get",
-    "src/store/atom-map.js~AtomMap#get",
-    "method"
-  ],
-  [
-    "src/store/atom-map.js~atommap#list",
-    "class/src/store/atom-map.js~AtomMap.html#instance-member-list",
-    "src/store/atom-map.js~AtomMap#list",
-    "member"
-  ],
-  [
-    "src/store/atom-map.js~atommap#structure",
-    "class/src/store/atom-map.js~AtomMap.html#instance-member-structure",
-    "src/store/atom-map.js~AtomMap#structure",
-    "member"
-  ],
-  [
     "src/store/atom-store.js",
     "file/src/store/atom-store.js.html",
     "src/store/atom-store.js",
     "file"
-  ],
-  [
-    "src/store/atom-store.js~atomstore#_defaultfields",
-    "class/src/store/atom-store.js~AtomStore.html#instance-get-_defaultFields",
-    "src/store/atom-store.js~AtomStore#_defaultFields",
-    "member"
-  ],
-  [
-    "src/store/atom-store.js~atomstore#getaltloc",
-    "class/src/store/atom-store.js~AtomStore.html#instance-method-getAltloc",
-    "src/store/atom-store.js~AtomStore#getAltloc",
-    "method"
-  ],
-  [
-    "src/store/atom-store.js~atomstore#setaltloc",
-    "class/src/store/atom-store.js~AtomStore.html#instance-method-setAltloc",
-    "src/store/atom-store.js~AtomStore#setAltloc",
-    "method"
   ],
   [
     "src/store/atom-type.js",
@@ -16878,40 +5562,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/store/atom-type.js~atomtype#atomname",
-    "class/src/store/atom-type.js~AtomType.html#instance-member-atomname",
-    "src/store/atom-type.js~AtomType#atomname",
-    "member"
-  ],
-  [
     "src/store/atom-type.js~atomtype#constructor",
     "class/src/store/atom-type.js~AtomType.html#instance-constructor-constructor",
     "src/store/atom-type.js~AtomType#constructor",
     "method"
-  ],
-  [
-    "src/store/atom-type.js~atomtype#covalent",
-    "class/src/store/atom-type.js~AtomType.html#instance-member-covalent",
-    "src/store/atom-type.js~AtomType#covalent",
-    "member"
-  ],
-  [
-    "src/store/atom-type.js~atomtype#element",
-    "class/src/store/atom-type.js~AtomType.html#instance-member-element",
-    "src/store/atom-type.js~AtomType#element",
-    "member"
-  ],
-  [
-    "src/store/atom-type.js~atomtype#structure",
-    "class/src/store/atom-type.js~AtomType.html#instance-member-structure",
-    "src/store/atom-type.js~AtomType#structure",
-    "member"
-  ],
-  [
-    "src/store/atom-type.js~atomtype#vdw",
-    "class/src/store/atom-type.js~AtomType.html#instance-member-vdw",
-    "src/store/atom-type.js~AtomType#vdw",
-    "member"
   ],
   [
     "src/store/bond-hash.js",
@@ -16920,58 +5574,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/store/bond-hash.js~bondhash#constructor",
-    "class/src/store/bond-hash.js~BondHash.html#instance-constructor-constructor",
-    "src/store/bond-hash.js~BondHash#constructor",
-    "method"
-  ],
-  [
-    "src/store/bond-hash.js~bondhash#countarray",
-    "class/src/store/bond-hash.js~BondHash.html#instance-member-countArray",
-    "src/store/bond-hash.js~BondHash#countArray",
-    "member"
-  ],
-  [
-    "src/store/bond-hash.js~bondhash#indexarray",
-    "class/src/store/bond-hash.js~BondHash.html#instance-member-indexArray",
-    "src/store/bond-hash.js~BondHash#indexArray",
-    "member"
-  ],
-  [
-    "src/store/bond-hash.js~bondhash#offsetarray",
-    "class/src/store/bond-hash.js~BondHash.html#instance-member-offsetArray",
-    "src/store/bond-hash.js~BondHash#offsetArray",
-    "member"
-  ],
-  [
     "src/store/bond-store.js",
     "file/src/store/bond-store.js.html",
     "src/store/bond-store.js",
     "file"
-  ],
-  [
-    "src/store/bond-store.js~bondstore#_defaultfields",
-    "class/src/store/bond-store.js~BondStore.html#instance-get-_defaultFields",
-    "src/store/bond-store.js~BondStore#_defaultFields",
-    "member"
-  ],
-  [
-    "src/store/bond-store.js~bondstore#addbond",
-    "class/src/store/bond-store.js~BondStore.html#instance-method-addBond",
-    "src/store/bond-store.js~BondStore#addBond",
-    "method"
-  ],
-  [
-    "src/store/bond-store.js~bondstore#addbondifconnected",
-    "class/src/store/bond-store.js~BondStore.html#instance-method-addBondIfConnected",
-    "src/store/bond-store.js~BondStore#addBondIfConnected",
-    "method"
-  ],
-  [
-    "src/store/bond-store.js~bondstore#count",
-    "class/src/store/bond-store.js~BondStore.html#instance-member-count",
-    "src/store/bond-store.js~BondStore#count",
-    "member"
   ],
   [
     "src/store/chain-store.js",
@@ -16980,46 +5586,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/store/chain-store.js~chainstore#_defaultfields",
-    "class/src/store/chain-store.js~ChainStore.html#instance-get-_defaultFields",
-    "src/store/chain-store.js~ChainStore#_defaultFields",
-    "member"
-  ],
-  [
-    "src/store/chain-store.js~chainstore#getchainid",
-    "class/src/store/chain-store.js~ChainStore.html#instance-method-getChainid",
-    "src/store/chain-store.js~ChainStore#getChainid",
-    "method"
-  ],
-  [
-    "src/store/chain-store.js~chainstore#getchainname",
-    "class/src/store/chain-store.js~ChainStore.html#instance-method-getChainname",
-    "src/store/chain-store.js~ChainStore#getChainname",
-    "method"
-  ],
-  [
-    "src/store/chain-store.js~chainstore#setchainid",
-    "class/src/store/chain-store.js~ChainStore.html#instance-method-setChainid",
-    "src/store/chain-store.js~ChainStore#setChainid",
-    "method"
-  ],
-  [
-    "src/store/chain-store.js~chainstore#setchainname",
-    "class/src/store/chain-store.js~ChainStore.html#instance-method-setChainname",
-    "src/store/chain-store.js~ChainStore#setChainname",
-    "method"
-  ],
-  [
     "src/store/model-store.js",
     "file/src/store/model-store.js.html",
     "src/store/model-store.js",
     "file"
-  ],
-  [
-    "src/store/model-store.js~modelstore#_defaultfields",
-    "class/src/store/model-store.js~ModelStore.html#instance-get-_defaultFields",
-    "src/store/model-store.js~ModelStore#_defaultFields",
-    "member"
   ],
   [
     "src/store/residue-map.js",
@@ -17028,76 +5598,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/store/residue-map.js~residuemap#add",
-    "class/src/store/residue-map.js~ResidueMap.html#instance-method-add",
-    "src/store/residue-map.js~ResidueMap#add",
-    "method"
-  ],
-  [
-    "src/store/residue-map.js~residuemap#constructor",
-    "class/src/store/residue-map.js~ResidueMap.html#instance-constructor-constructor",
-    "src/store/residue-map.js~ResidueMap#constructor",
-    "method"
-  ],
-  [
-    "src/store/residue-map.js~residuemap#dict",
-    "class/src/store/residue-map.js~ResidueMap.html#instance-member-dict",
-    "src/store/residue-map.js~ResidueMap#dict",
-    "member"
-  ],
-  [
-    "src/store/residue-map.js~residuemap#get",
-    "class/src/store/residue-map.js~ResidueMap.html#instance-method-get",
-    "src/store/residue-map.js~ResidueMap#get",
-    "method"
-  ],
-  [
-    "src/store/residue-map.js~residuemap#list",
-    "class/src/store/residue-map.js~ResidueMap.html#instance-member-list",
-    "src/store/residue-map.js~ResidueMap#list",
-    "member"
-  ],
-  [
-    "src/store/residue-map.js~residuemap#structure",
-    "class/src/store/residue-map.js~ResidueMap.html#instance-member-structure",
-    "src/store/residue-map.js~ResidueMap#structure",
-    "member"
-  ],
-  [
     "src/store/residue-store.js",
     "file/src/store/residue-store.js.html",
     "src/store/residue-store.js",
     "file"
-  ],
-  [
-    "src/store/residue-store.js~residuestore#_defaultfields",
-    "class/src/store/residue-store.js~ResidueStore.html#instance-get-_defaultFields",
-    "src/store/residue-store.js~ResidueStore#_defaultFields",
-    "member"
-  ],
-  [
-    "src/store/residue-store.js~residuestore#getinscode",
-    "class/src/store/residue-store.js~ResidueStore.html#instance-method-getInscode",
-    "src/store/residue-store.js~ResidueStore#getInscode",
-    "method"
-  ],
-  [
-    "src/store/residue-store.js~residuestore#getsstruc",
-    "class/src/store/residue-store.js~ResidueStore.html#instance-method-getSstruc",
-    "src/store/residue-store.js~ResidueStore#getSstruc",
-    "method"
-  ],
-  [
-    "src/store/residue-store.js~residuestore#setinscode",
-    "class/src/store/residue-store.js~ResidueStore.html#instance-method-setInscode",
-    "src/store/residue-store.js~ResidueStore#setInscode",
-    "method"
-  ],
-  [
-    "src/store/residue-store.js~residuestore#setsstruc",
-    "class/src/store/residue-store.js~ResidueStore.html#instance-method-setSstruc",
-    "src/store/residue-store.js~ResidueStore#setSstruc",
-    "method"
   ],
   [
     "src/store/residue-type.js",
@@ -17112,66 +5616,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/store/residue-type.js~residuetype#atomcount",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-atomCount",
-    "src/store/residue-type.js~ResidueType#atomCount",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#atomtypeidlist",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-atomTypeIdList",
-    "src/store/residue-type.js~ResidueType#atomTypeIdList",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#backboneendatomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-backboneEndAtomIndex",
-    "src/store/residue-type.js~ResidueType#backboneEndAtomIndex",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#backboneendtype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-backboneEndType",
-    "src/store/residue-type.js~ResidueType#backboneEndType",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#backboneindexlist",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-backboneIndexList",
-    "src/store/residue-type.js~ResidueType#backboneIndexList",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#backbonestartatomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-backboneStartAtomIndex",
-    "src/store/residue-type.js~ResidueType#backboneStartAtomIndex",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#backbonestarttype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-backboneStartType",
-    "src/store/residue-type.js~ResidueType#backboneStartType",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#backbonetype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-backboneType",
-    "src/store/residue-type.js~ResidueType#backboneType",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#bondreferenceatomindices",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-bondReferenceAtomIndices",
-    "src/store/residue-type.js~ResidueType#bondReferenceAtomIndices",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#bonds",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-bonds",
-    "src/store/residue-type.js~ResidueType#bonds",
-    "member"
-  ],
-  [
     "src/store/residue-type.js~residuetype#calculatebondgraph",
     "class/src/store/residue-type.js~ResidueType.html#instance-method-calculateBondGraph",
     "src/store/residue-type.js~ResidueType#calculateBondGraph",
@@ -17184,262 +5628,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/store/residue-type.js~residuetype#chemcomptype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-chemCompType",
-    "src/store/residue-type.js~ResidueType#chemCompType",
-    "member"
-  ],
-  [
     "src/store/residue-type.js~residuetype#constructor",
     "class/src/store/residue-type.js~ResidueType.html#instance-constructor-constructor",
     "src/store/residue-type.js~ResidueType#constructor",
     "method"
   ],
   [
-    "src/store/residue-type.js~residuetype#direction1atomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-direction1AtomIndex",
-    "src/store/residue-type.js~ResidueType#direction1AtomIndex",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#direction2atomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-direction2AtomIndex",
-    "src/store/residue-type.js~ResidueType#direction2AtomIndex",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getatomindexbyname",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getAtomIndexByName",
-    "src/store/residue-type.js~ResidueType#getAtomIndexByName",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getbackboneindexlist",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getBackboneIndexList",
-    "src/store/residue-type.js~ResidueType#getBackboneIndexList",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getbackbonetype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getBackboneType",
-    "src/store/residue-type.js~ResidueType#getBackboneType",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getbondgraph",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getBondGraph",
-    "src/store/residue-type.js~ResidueType#getBondGraph",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getbondindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getBondIndex",
-    "src/store/residue-type.js~ResidueType#getBondIndex",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getbondreferenceatomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getBondReferenceAtomIndex",
-    "src/store/residue-type.js~ResidueType#getBondReferenceAtomIndex",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getbonds",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getBonds",
-    "src/store/residue-type.js~ResidueType#getBonds",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getmoleculetype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getMoleculeType",
-    "src/store/residue-type.js~ResidueType#getMoleculeType",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#getrings",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-getRings",
-    "src/store/residue-type.js~ResidueType#getRings",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hasatomwithname",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasAtomWithName",
-    "src/store/residue-type.js~ResidueType#hasAtomWithName",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hasbackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasBackbone",
-    "src/store/residue-type.js~ResidueType#hasBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hasbackboneatoms",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasBackboneAtoms",
-    "src/store/residue-type.js~ResidueType#hasBackboneAtoms",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hascgdnabackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasCgDnaBackbone",
-    "src/store/residue-type.js~ResidueType#hasCgDnaBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hascgproteinbackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasCgProteinBackbone",
-    "src/store/residue-type.js~ResidueType#hasCgProteinBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hascgrnabackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasCgRnaBackbone",
-    "src/store/residue-type.js~ResidueType#hasCgRnaBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hasdnabackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasDnaBackbone",
-    "src/store/residue-type.js~ResidueType#hasDnaBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hasproteinbackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasProteinBackbone",
-    "src/store/residue-type.js~ResidueType#hasProteinBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hasrnabackbone",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-hasRnaBackbone",
-    "src/store/residue-type.js~ResidueType#hasRnaBackbone",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#hetero",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-hetero",
-    "src/store/residue-type.js~ResidueType#hetero",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#iscg",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isCg",
-    "src/store/residue-type.js~ResidueType#isCg",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#isdna",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isDna",
-    "src/store/residue-type.js~ResidueType#isDna",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#ishetero",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isHetero",
-    "src/store/residue-type.js~ResidueType#isHetero",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#ision",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isIon",
-    "src/store/residue-type.js~ResidueType#isIon",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#isnucleic",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isNucleic",
-    "src/store/residue-type.js~ResidueType#isNucleic",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#isprotein",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isProtein",
-    "src/store/residue-type.js~ResidueType#isProtein",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#isrna",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isRna",
-    "src/store/residue-type.js~ResidueType#isRna",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#issaccharide",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isSaccharide",
-    "src/store/residue-type.js~ResidueType#isSaccharide",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#iswater",
-    "class/src/store/residue-type.js~ResidueType.html#instance-method-isWater",
-    "src/store/residue-type.js~ResidueType#isWater",
-    "method"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#moleculetype",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-moleculeType",
-    "src/store/residue-type.js~ResidueType#moleculeType",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#resname",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-resname",
-    "src/store/residue-type.js~ResidueType#resname",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#rings",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-rings",
-    "src/store/residue-type.js~ResidueType#rings",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#rungendatomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-rungEndAtomIndex",
-    "src/store/residue-type.js~ResidueType#rungEndAtomIndex",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#structure",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-structure",
-    "src/store/residue-type.js~ResidueType#structure",
-    "member"
-  ],
-  [
-    "src/store/residue-type.js~residuetype#traceatomindex",
-    "class/src/store/residue-type.js~ResidueType.html#instance-member-traceAtomIndex",
-    "src/store/residue-type.js~ResidueType#traceAtomIndex",
-    "member"
-  ],
-  [
     "src/store/store.js",
     "file/src/store/store.js.html",
     "src/store/store.js",
     "file"
-  ],
-  [
-    "src/store/store.js~store#[name]",
-    "class/src/store/store.js~Store.html#instance-member-[name]",
-    "src/store/store.js~Store#[name]",
-    "member"
-  ],
-  [
-    "src/store/store.js~store#_fields",
-    "class/src/store/store.js~Store.html#instance-member-_fields",
-    "src/store/store.js~Store#_fields",
-    "member"
-  ],
-  [
-    "src/store/store.js~store#_init",
-    "class/src/store/store.js~Store.html#instance-method-_init",
-    "src/store/store.js~Store#_init",
-    "method"
-  ],
-  [
-    "src/store/store.js~store#_initfield",
-    "class/src/store/store.js~Store.html#instance-method-_initField",
-    "src/store/store.js~Store#_initField",
-    "method"
   ],
   [
     "src/store/store.js~store#addfield",
@@ -17472,12 +5670,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/store/store.js~store#count",
-    "class/src/store/store.js~Store.html#instance-member-count",
-    "src/store/store.js~Store#count",
-    "member"
-  ],
-  [
     "src/store/store.js~store#dispose",
     "class/src/store/store.js~Store.html#instance-method-dispose",
     "src/store/store.js~Store#dispose",
@@ -17488,12 +5680,6 @@ window.esdocSearchIndex = [
     "class/src/store/store.js~Store.html#instance-method-growIfFull",
     "src/store/store.js~Store#growIfFull",
     "method"
-  ],
-  [
-    "src/store/store.js~store#length",
-    "class/src/store/store.js~Store.html#instance-member-length",
-    "src/store/store.js~Store#length",
-    "member"
   ],
   [
     "src/store/store.js~store#resize",
@@ -17514,46 +5700,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/streamer/binary-streamer.js~binarystreamer#__srcname",
-    "class/src/streamer/binary-streamer.js~BinaryStreamer.html#instance-get-__srcName",
-    "src/streamer/binary-streamer.js~BinaryStreamer#__srcName",
-    "member"
-  ],
-  [
-    "src/streamer/binary-streamer.js~binarystreamer#constructor",
-    "class/src/streamer/binary-streamer.js~BinaryStreamer.html#instance-constructor-constructor",
-    "src/streamer/binary-streamer.js~BinaryStreamer#constructor",
-    "method"
-  ],
-  [
-    "src/streamer/binary-streamer.js~binarystreamer#type",
-    "class/src/streamer/binary-streamer.js~BinaryStreamer.html#instance-get-type",
-    "src/streamer/binary-streamer.js~BinaryStreamer#type",
-    "member"
-  ],
-  [
     "src/streamer/file-streamer.js",
     "file/src/streamer/file-streamer.js.html",
     "src/streamer/file-streamer.js",
     "file"
-  ],
-  [
-    "src/streamer/file-streamer.js~filestreamer#__srcname",
-    "class/src/streamer/file-streamer.js~FileStreamer.html#instance-get-__srcName",
-    "src/streamer/file-streamer.js~FileStreamer#__srcName",
-    "member"
-  ],
-  [
-    "src/streamer/file-streamer.js~filestreamer#_read",
-    "class/src/streamer/file-streamer.js~FileStreamer.html#instance-method-_read",
-    "src/streamer/file-streamer.js~FileStreamer#_read",
-    "method"
-  ],
-  [
-    "src/streamer/file-streamer.js~filestreamer#type",
-    "class/src/streamer/file-streamer.js~FileStreamer.html#instance-get-type",
-    "src/streamer/file-streamer.js~FileStreamer#type",
-    "member"
   ],
   [
     "src/streamer/network-streamer.js",
@@ -17562,214 +5712,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/streamer/network-streamer.js~networkstreamer#__srcname",
-    "class/src/streamer/network-streamer.js~NetworkStreamer.html#instance-get-__srcName",
-    "src/streamer/network-streamer.js~NetworkStreamer#__srcName",
-    "member"
-  ],
-  [
-    "src/streamer/network-streamer.js~networkstreamer#_read",
-    "class/src/streamer/network-streamer.js~NetworkStreamer.html#instance-method-_read",
-    "src/streamer/network-streamer.js~NetworkStreamer#_read",
-    "method"
-  ],
-  [
-    "src/streamer/network-streamer.js~networkstreamer#type",
-    "class/src/streamer/network-streamer.js~NetworkStreamer.html#instance-get-type",
-    "src/streamer/network-streamer.js~NetworkStreamer#type",
-    "member"
-  ],
-  [
     "src/streamer/streamer.js",
     "file/src/streamer/streamer.js.html",
     "src/streamer/streamer.js",
     "file"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#[.__srcname]",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-[.__srcName]",
-    "src/streamer/streamer.js~Streamer#[.__srcName]",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#__partialline",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-__partialLine",
-    "src/streamer/streamer.js~Streamer#__partialLine",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#__pointer",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-__pointer",
-    "src/streamer/streamer.js~Streamer#__pointer",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#__srcname",
-    "class/src/streamer/streamer.js~Streamer.html#instance-get-__srcName",
-    "src/streamer/streamer.js~Streamer#__srcName",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#_chunk",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-_chunk",
-    "src/streamer/streamer.js~Streamer#_chunk",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#_read",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-_read",
-    "src/streamer/streamer.js~Streamer#_read",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#astext",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-asText",
-    "src/streamer/streamer.js~Streamer#asText",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#binary",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-binary",
-    "src/streamer/streamer.js~Streamer#binary",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#chunk",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-chunk",
-    "src/streamer/streamer.js~Streamer#chunk",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#chunkcount",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-chunkCount",
-    "src/streamer/streamer.js~Streamer#chunkCount",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#chunksize",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-chunkSize",
-    "src/streamer/streamer.js~Streamer#chunkSize",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#chunktolines",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-chunkToLines",
-    "src/streamer/streamer.js~Streamer#chunkToLines",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#compressed",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-compressed",
-    "src/streamer/streamer.js~Streamer#compressed",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#constructor",
-    "class/src/streamer/streamer.js~Streamer.html#instance-constructor-constructor",
-    "src/streamer/streamer.js~Streamer#constructor",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#data",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-data",
-    "src/streamer/streamer.js~Streamer#data",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#dispose",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-dispose",
-    "src/streamer/streamer.js~Streamer#dispose",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#eachchunk",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-eachChunk",
-    "src/streamer/streamer.js~Streamer#eachChunk",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#eachchunkoflines",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-eachChunkOfLines",
-    "src/streamer/streamer.js~Streamer#eachChunkOfLines",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#isbinary",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-isBinary",
-    "src/streamer/streamer.js~Streamer#isBinary",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#json",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-json",
-    "src/streamer/streamer.js~Streamer#json",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#newline",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-newline",
-    "src/streamer/streamer.js~Streamer#newline",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#nextchunk",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-nextChunk",
-    "src/streamer/streamer.js~Streamer#nextChunk",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#nextchunkoflines",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-nextChunkOfLines",
-    "src/streamer/streamer.js~Streamer#nextChunkOfLines",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#onerror",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-onerror",
-    "src/streamer/streamer.js~Streamer#onerror",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#onload",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-onload",
-    "src/streamer/streamer.js~Streamer#onload",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#onprogress",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-onprogress",
-    "src/streamer/streamer.js~Streamer#onprogress",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#peeklines",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-peekLines",
-    "src/streamer/streamer.js~Streamer#peekLines",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#read",
-    "class/src/streamer/streamer.js~Streamer.html#instance-method-read",
-    "src/streamer/streamer.js~Streamer#read",
-    "method"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#src",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-src",
-    "src/streamer/streamer.js~Streamer#src",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#type",
-    "class/src/streamer/streamer.js~Streamer.html#instance-get-type",
-    "src/streamer/streamer.js~Streamer#type",
-    "member"
-  ],
-  [
-    "src/streamer/streamer.js~streamer#xml",
-    "class/src/streamer/streamer.js~Streamer.html#instance-member-xml",
-    "src/streamer/streamer.js~Streamer#xml",
-    "member"
   ],
   [
     "src/streamer/string-streamer.js",
@@ -17778,106 +5724,16 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/streamer/string-streamer.js~stringstreamer#__srcname",
-    "class/src/streamer/string-streamer.js~StringStreamer.html#instance-get-__srcName",
-    "src/streamer/string-streamer.js~StringStreamer#__srcName",
-    "member"
-  ],
-  [
-    "src/streamer/string-streamer.js~stringstreamer#_chunk",
-    "class/src/streamer/string-streamer.js~StringStreamer.html#instance-method-_chunk",
-    "src/streamer/string-streamer.js~StringStreamer#_chunk",
-    "method"
-  ],
-  [
-    "src/streamer/string-streamer.js~stringstreamer#type",
-    "class/src/streamer/string-streamer.js~StringStreamer.html#instance-get-type",
-    "src/streamer/string-streamer.js~StringStreamer#type",
-    "member"
-  ],
-  [
     "src/structure/entity.js",
     "file/src/structure/entity.js.html",
     "src/structure/entity.js",
     "file"
   ],
   [
-    "src/structure/entity.js~entity#chainindexlist",
-    "class/src/structure/entity.js~Entity.html#instance-member-chainIndexList",
-    "src/structure/entity.js~Entity#chainIndexList",
-    "member"
-  ],
-  [
     "src/structure/entity.js~entity#constructor",
     "class/src/structure/entity.js~Entity.html#instance-constructor-constructor",
     "src/structure/entity.js~Entity#constructor",
     "method"
-  ],
-  [
-    "src/structure/entity.js~entity#description",
-    "class/src/structure/entity.js~Entity.html#instance-member-description",
-    "src/structure/entity.js~Entity#description",
-    "member"
-  ],
-  [
-    "src/structure/entity.js~entity#eachchain",
-    "class/src/structure/entity.js~Entity.html#instance-method-eachChain",
-    "src/structure/entity.js~Entity#eachChain",
-    "method"
-  ],
-  [
-    "src/structure/entity.js~entity#entitytype",
-    "class/src/structure/entity.js~Entity.html#instance-member-entityType",
-    "src/structure/entity.js~Entity#entityType",
-    "member"
-  ],
-  [
-    "src/structure/entity.js~entity#getentitytype",
-    "class/src/structure/entity.js~Entity.html#instance-method-getEntityType",
-    "src/structure/entity.js~Entity#getEntityType",
-    "method"
-  ],
-  [
-    "src/structure/entity.js~entity#index",
-    "class/src/structure/entity.js~Entity.html#instance-member-index",
-    "src/structure/entity.js~Entity#index",
-    "member"
-  ],
-  [
-    "src/structure/entity.js~entity#ismacrolide",
-    "class/src/structure/entity.js~Entity.html#instance-method-isMacrolide",
-    "src/structure/entity.js~Entity#isMacrolide",
-    "method"
-  ],
-  [
-    "src/structure/entity.js~entity#isnonpolymer",
-    "class/src/structure/entity.js~Entity.html#instance-method-isNonPolymer",
-    "src/structure/entity.js~Entity#isNonPolymer",
-    "method"
-  ],
-  [
-    "src/structure/entity.js~entity#ispolymer",
-    "class/src/structure/entity.js~Entity.html#instance-method-isPolymer",
-    "src/structure/entity.js~Entity#isPolymer",
-    "method"
-  ],
-  [
-    "src/structure/entity.js~entity#iswater",
-    "class/src/structure/entity.js~Entity.html#instance-method-isWater",
-    "src/structure/entity.js~Entity#isWater",
-    "method"
-  ],
-  [
-    "src/structure/entity.js~entity#structure",
-    "class/src/structure/entity.js~Entity.html#instance-member-structure",
-    "src/structure/entity.js~Entity#structure",
-    "member"
-  ],
-  [
-    "src/structure/entity.js~entity#type",
-    "class/src/structure/entity.js~Entity.html#instance-get-type",
-    "src/structure/entity.js~Entity#type",
-    "member"
   ],
   [
     "src/structure/structure-builder.js",
@@ -17904,165 +5760,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/structure/structure-view.js~structureview#_ap",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-_ap",
-    "src/structure/structure-view.js~StructureView#_ap",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#_bp",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-_bp",
-    "src/structure/structure-view.js~StructureView#_bp",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#_cp",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-_cp",
-    "src/structure/structure-view.js~StructureView#_cp",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#_rp",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-_rp",
-    "src/structure/structure-view.js~StructureView#_rp",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#atomcount",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-atomCount",
-    "src/structure/structure-view.js~StructureView#atomCount",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#atommap",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-atomMap",
-    "src/structure/structure-view.js~StructureView#atomMap",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#atomset",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-atomSet",
-    "src/structure/structure-view.js~StructureView#atomSet",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#atomsetcache",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-atomSetCache",
-    "src/structure/structure-view.js~StructureView#atomSetCache",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#atomsetdict",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-atomSetDict",
-    "src/structure/structure-view.js~StructureView#atomSetDict",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#atomstore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-atomStore",
-    "src/structure/structure-view.js~StructureView#atomStore",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#backbonebondstore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-backboneBondStore",
-    "src/structure/structure-view.js~StructureView#backboneBondStore",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#biomoldict",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-biomolDict",
-    "src/structure/structure-view.js~StructureView#biomolDict",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#bondcount",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-bondCount",
-    "src/structure/structure-view.js~StructureView#bondCount",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#bondhash",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-bondHash",
-    "src/structure/structure-view.js~StructureView#bondHash",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#bondset",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-bondSet",
-    "src/structure/structure-view.js~StructureView#bondSet",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#bondstore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-bondStore",
-    "src/structure/structure-view.js~StructureView#bondStore",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#boundingbox",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-boundingBox",
-    "src/structure/structure-view.js~StructureView#boundingBox",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#boxes",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-boxes",
-    "src/structure/structure-view.js~StructureView#boxes",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#center",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-center",
-    "src/structure/structure-view.js~StructureView#center",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#chainstore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-chainStore",
-    "src/structure/structure-view.js~StructureView#chainStore",
-    "member"
-  ],
-  [
     "src/structure/structure-view.js~structureview#constructor",
     "class/src/structure/structure-view.js~StructureView.html#instance-constructor-constructor",
     "src/structure/structure-view.js~StructureView#constructor",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#dispose",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-dispose",
-    "src/structure/structure-view.js~StructureView#dispose",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#eachatom",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-eachAtom",
-    "src/structure/structure-view.js~StructureView#eachAtom",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#eachbond",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-eachBond",
-    "src/structure/structure-view.js~StructureView#eachBond",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#eachchain",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-eachChain",
-    "src/structure/structure-view.js~StructureView#eachChain",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#eachmodel",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-eachModel",
-    "src/structure/structure-view.js~StructureView#eachModel",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#eachresidue",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-eachResidue",
-    "src/structure/structure-view.js~StructureView#eachResidue",
     "method"
   ],
   [
@@ -18072,148 +5772,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/structure/structure-view.js~structureview#entitylist",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-entityList",
-    "src/structure/structure-view.js~StructureView#entityList",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#frames",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-frames",
-    "src/structure/structure-view.js~StructureView#frames",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#getatomindices",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-getAtomIndices",
-    "src/structure/structure-view.js~StructureView#getAtomIndices",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#getatomset",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-getAtomSet",
-    "src/structure/structure-view.js~StructureView#getAtomSet",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#getselection",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-getSelection",
-    "src/structure/structure-view.js~StructureView#getSelection",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#getstructure",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-getStructure",
-    "src/structure/structure-view.js~StructureView#getStructure",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#id",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-id",
-    "src/structure/structure-view.js~StructureView#id",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#init",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-init",
-    "src/structure/structure-view.js~StructureView#init",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#modelstore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-modelStore",
-    "src/structure/structure-view.js~StructureView#modelStore",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#name",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-name",
-    "src/structure/structure-view.js~StructureView#name",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#path",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-path",
-    "src/structure/structure-view.js~StructureView#path",
-    "member"
-  ],
-  [
     "src/structure/structure-view.js~structureview#refresh",
     "class/src/structure/structure-view.js~StructureView.html#instance-method-refresh",
     "src/structure/structure-view.js~StructureView#refresh",
     "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#refreshposition",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-refreshPosition",
-    "src/structure/structure-view.js~StructureView#refreshPosition",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#residuemap",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-residueMap",
-    "src/structure/structure-view.js~StructureView#residueMap",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#residuestore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-residueStore",
-    "src/structure/structure-view.js~StructureView#residueStore",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#rungbondstore",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-rungBondStore",
-    "src/structure/structure-view.js~StructureView#rungBondStore",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#selection",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-selection",
-    "src/structure/structure-view.js~StructureView#selection",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#setselection",
-    "class/src/structure/structure-view.js~StructureView.html#instance-method-setSelection",
-    "src/structure/structure-view.js~StructureView#setSelection",
-    "method"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#spatialhash",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-spatialHash",
-    "src/structure/structure-view.js~StructureView#spatialHash",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#structure",
-    "class/src/structure/structure-view.js~StructureView.html#instance-member-structure",
-    "src/structure/structure-view.js~StructureView#structure",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#title",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-title",
-    "src/structure/structure-view.js~StructureView#title",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#type",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-type",
-    "src/structure/structure-view.js~StructureView#type",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#unitcell",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-unitcell",
-    "src/structure/structure-view.js~StructureView#unitcell",
-    "member"
-  ],
-  [
-    "src/structure/structure-view.js~structureview#validation",
-    "class/src/structure/structure-view.js~StructureView.html#instance-get-validation",
-    "src/structure/structure-view.js~StructureView#validation",
-    "member"
   ],
   [
     "src/structure/structure.js",
@@ -18222,87 +5784,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/structure/structure.js~structure#_ap",
-    "class/src/structure/structure.js~Structure.html#instance-member-_ap",
-    "src/structure/structure.js~Structure#_ap",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#_bp",
-    "class/src/structure/structure.js~Structure.html#instance-member-_bp",
-    "src/structure/structure.js~Structure#_bp",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#_cp",
-    "class/src/structure/structure.js~Structure.html#instance-member-_cp",
-    "src/structure/structure.js~Structure#_cp",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#_rp",
-    "class/src/structure/structure.js~Structure.html#instance-member-_rp",
-    "src/structure/structure.js~Structure#_rp",
-    "member"
-  ],
-  [
     "src/structure/structure.js~structure#atomcenter",
     "class/src/structure/structure.js~Structure.html#instance-method-atomCenter",
     "src/structure/structure.js~Structure#atomCenter",
     "method"
   ],
   [
-    "src/structure/structure.js~structure#atomcount",
-    "class/src/structure/structure.js~Structure.html#instance-member-atomCount",
-    "src/structure/structure.js~Structure#atomCount",
-    "member"
-  ],
-  [
     "src/structure/structure.js~structure#atommap",
     "class/src/structure/structure.js~Structure.html#instance-member-atomMap",
     "src/structure/structure.js~Structure#atomMap",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#atomset",
-    "class/src/structure/structure.js~Structure.html#instance-member-atomSet",
-    "src/structure/structure.js~Structure#atomSet",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#atomsetcache",
-    "class/src/structure/structure.js~Structure.html#instance-member-atomSetCache",
-    "src/structure/structure.js~Structure#atomSetCache",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#atomsetdict",
-    "class/src/structure/structure.js~Structure.html#instance-member-atomSetDict",
-    "src/structure/structure.js~Structure#atomSetDict",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#atomstore",
-    "class/src/structure/structure.js~Structure.html#instance-member-atomStore",
-    "src/structure/structure.js~Structure#atomStore",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#backbonebondstore",
-    "class/src/structure/structure.js~Structure.html#instance-member-backboneBondStore",
-    "src/structure/structure.js~Structure#backboneBondStore",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#biomoldict",
-    "class/src/structure/structure.js~Structure.html#instance-member-biomolDict",
-    "src/structure/structure.js~Structure#biomolDict",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#bondcount",
-    "class/src/structure/structure.js~Structure.html#instance-member-bondCount",
-    "src/structure/structure.js~Structure#bondCount",
     "member"
   ],
   [
@@ -18312,39 +5802,15 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/structure/structure.js~structure#bondset",
-    "class/src/structure/structure.js~Structure.html#instance-member-bondSet",
-    "src/structure/structure.js~Structure#bondSet",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#bondstore",
-    "class/src/structure/structure.js~Structure.html#instance-member-bondStore",
-    "src/structure/structure.js~Structure#bondStore",
-    "member"
-  ],
-  [
     "src/structure/structure.js~structure#boundingbox",
     "class/src/structure/structure.js~Structure.html#instance-member-boundingBox",
     "src/structure/structure.js~Structure#boundingBox",
     "member"
   ],
   [
-    "src/structure/structure.js~structure#boxes",
-    "class/src/structure/structure.js~Structure.html#instance-member-boxes",
-    "src/structure/structure.js~Structure#boxes",
-    "member"
-  ],
-  [
     "src/structure/structure.js~structure#center",
     "class/src/structure/structure.js~Structure.html#instance-member-center",
     "src/structure/structure.js~Structure#center",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#chainstore",
-    "class/src/structure/structure.js~Structure.html#instance-member-chainStore",
-    "src/structure/structure.js~Structure#chainStore",
     "member"
   ],
   [
@@ -18420,42 +5886,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/structure/structure.js~structure#finalizeatoms",
-    "class/src/structure/structure.js~Structure.html#instance-method-finalizeAtoms",
-    "src/structure/structure.js~Structure#finalizeAtoms",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#finalizebonds",
-    "class/src/structure/structure.js~Structure.html#instance-method-finalizeBonds",
-    "src/structure/structure.js~Structure#finalizeBonds",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#frames",
-    "class/src/structure/structure.js~Structure.html#instance-member-frames",
-    "src/structure/structure.js~Structure#frames",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#getatomdata",
-    "class/src/structure/structure.js~Structure.html#instance-method-getAtomData",
-    "src/structure/structure.js~Structure#getAtomData",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getatomindices",
-    "class/src/structure/structure.js~Structure.html#instance-method-getAtomIndices",
-    "src/structure/structure.js~Structure#getAtomIndices",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getatomproxy",
-    "class/src/structure/structure.js~Structure.html#instance-method-getAtomProxy",
-    "src/structure/structure.js~Structure#getAtomProxy",
-    "method"
-  ],
-  [
     "src/structure/structure.js~structure#getatomset",
     "class/src/structure/structure.js~Structure.html#instance-method-getAtomSet",
     "src/structure/structure.js~Structure#getAtomSet",
@@ -18486,51 +5916,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/structure/structure.js~structure#getbackboneatomdata",
-    "class/src/structure/structure.js~Structure.html#instance-method-getBackboneAtomData",
-    "src/structure/structure.js~Structure#getBackboneAtomData",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getbackbonebonddata",
-    "class/src/structure/structure.js~Structure.html#instance-method-getBackboneBondData",
-    "src/structure/structure.js~Structure#getBackboneBondData",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getbackbonebondset",
-    "class/src/structure/structure.js~Structure.html#instance-method-getBackboneBondSet",
-    "src/structure/structure.js~Structure#getBackboneBondSet",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getbonddata",
-    "class/src/structure/structure.js~Structure.html#instance-method-getBondData",
-    "src/structure/structure.js~Structure#getBondData",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getbondproxy",
-    "class/src/structure/structure.js~Structure.html#instance-method-getBondProxy",
-    "src/structure/structure.js~Structure#getBondProxy",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getbondset",
-    "class/src/structure/structure.js~Structure.html#instance-method-getBondSet",
-    "src/structure/structure.js~Structure#getBondSet",
-    "method"
-  ],
-  [
     "src/structure/structure.js~structure#getboundingbox",
     "class/src/structure/structure.js~Structure.html#instance-method-getBoundingBox",
     "src/structure/structure.js~Structure#getBoundingBox",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getchainproxy",
-    "class/src/structure/structure.js~Structure.html#instance-method-getChainProxy",
-    "src/structure/structure.js~Structure#getChainProxy",
     "method"
   ],
   [
@@ -18540,57 +5928,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/structure/structure.js~structure#getmodelproxy",
-    "class/src/structure/structure.js~Structure.html#instance-method-getModelProxy",
-    "src/structure/structure.js~Structure#getModelProxy",
-    "method"
-  ],
-  [
     "src/structure/structure.js~structure#getprincipalaxes",
     "class/src/structure/structure.js~Structure.html#instance-method-getPrincipalAxes",
     "src/structure/structure.js~Structure#getPrincipalAxes",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getresidueproxy",
-    "class/src/structure/structure.js~Structure.html#instance-method-getResidueProxy",
-    "src/structure/structure.js~Structure#getResidueProxy",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getrungatomdata",
-    "class/src/structure/structure.js~Structure.html#instance-method-getRungAtomData",
-    "src/structure/structure.js~Structure#getRungAtomData",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getrungbonddata",
-    "class/src/structure/structure.js~Structure.html#instance-method-getRungBondData",
-    "src/structure/structure.js~Structure#getRungBondData",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getrungbondset",
-    "class/src/structure/structure.js~Structure.html#instance-method-getRungBondSet",
-    "src/structure/structure.js~Structure#getRungBondSet",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getselection",
-    "class/src/structure/structure.js~Structure.html#instance-method-getSelection",
-    "src/structure/structure.js~Structure#getSelection",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getsequence",
-    "class/src/structure/structure.js~Structure.html#instance-method-getSequence",
-    "src/structure/structure.js~Structure#getSequence",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#getstructure",
-    "class/src/structure/structure.js~Structure.html#instance-method-getStructure",
-    "src/structure/structure.js~Structure#getStructure",
     "method"
   ],
   [
@@ -18600,57 +5940,9 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/structure/structure.js~structure#id",
-    "class/src/structure/structure.js~Structure.html#instance-member-id",
-    "src/structure/structure.js~Structure#id",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#init",
-    "class/src/structure/structure.js~Structure.html#instance-method-init",
-    "src/structure/structure.js~Structure#init",
-    "method"
-  ],
-  [
-    "src/structure/structure.js~structure#modelstore",
-    "class/src/structure/structure.js~Structure.html#instance-member-modelStore",
-    "src/structure/structure.js~Structure#modelStore",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#name",
-    "class/src/structure/structure.js~Structure.html#instance-member-name",
-    "src/structure/structure.js~Structure#name",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#path",
-    "class/src/structure/structure.js~Structure.html#instance-member-path",
-    "src/structure/structure.js~Structure#path",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#refreshposition",
-    "class/src/structure/structure.js~Structure.html#instance-method-refreshPosition",
-    "src/structure/structure.js~Structure#refreshPosition",
-    "method"
-  ],
-  [
     "src/structure/structure.js~structure#residuemap",
     "class/src/structure/structure.js~Structure.html#instance-member-residueMap",
     "src/structure/structure.js~Structure#residueMap",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#residuestore",
-    "class/src/structure/structure.js~Structure.html#instance-member-residueStore",
-    "src/structure/structure.js~Structure#residueStore",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#rungbondstore",
-    "class/src/structure/structure.js~Structure.html#instance-member-rungBondStore",
-    "src/structure/structure.js~Structure#rungBondStore",
     "member"
   ],
   [
@@ -18666,28 +5958,10 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/structure/structure.js~structure#title",
-    "class/src/structure/structure.js~Structure.html#instance-member-title",
-    "src/structure/structure.js~Structure#title",
-    "member"
-  ],
-  [
-    "src/structure/structure.js~structure#type",
-    "class/src/structure/structure.js~Structure.html#instance-get-type",
-    "src/structure/structure.js~Structure#type",
-    "member"
-  ],
-  [
     "src/structure/structure.js~structure#unitcell",
     "class/src/structure/structure.js~Structure.html#instance-member-unitcell",
     "src/structure/structure.js~Structure#unitcell",
     "member"
-  ],
-  [
-    "src/structure/structure.js~structure#updateposition",
-    "class/src/structure/structure.js~Structure.html#instance-method-updatePosition",
-    "src/structure/structure.js~Structure#updatePosition",
-    "method"
   ],
   [
     "src/structure/structure.js~structure#validation",
@@ -18714,90 +5988,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/structure/validation.js~validation#atomdict",
-    "class/src/structure/validation.js~Validation.html#instance-member-atomDict",
-    "src/structure/validation.js~Validation#atomDict",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#clasharray",
-    "class/src/structure/validation.js~Validation.html#instance-member-clashArray",
-    "src/structure/validation.js~Validation#clashArray",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#clashdict",
-    "class/src/structure/validation.js~Validation.html#instance-member-clashDict",
-    "src/structure/validation.js~Validation#clashDict",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#clashsele",
-    "class/src/structure/validation.js~Validation.html#instance-member-clashSele",
-    "src/structure/validation.js~Validation#clashSele",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#constructor",
-    "class/src/structure/validation.js~Validation.html#instance-constructor-constructor",
-    "src/structure/validation.js~Validation#constructor",
-    "method"
-  ],
-  [
-    "src/structure/validation.js~validation#fromxml",
-    "class/src/structure/validation.js~Validation.html#instance-method-fromXml",
-    "src/structure/validation.js~Validation#fromXml",
-    "method"
-  ],
-  [
-    "src/structure/validation.js~validation#geoatomdict",
-    "class/src/structure/validation.js~Validation.html#instance-member-geoAtomDict",
-    "src/structure/validation.js~Validation#geoAtomDict",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#geodict",
-    "class/src/structure/validation.js~Validation.html#instance-member-geoDict",
-    "src/structure/validation.js~Validation#geoDict",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#getclashdata",
-    "class/src/structure/validation.js~Validation.html#instance-method-getClashData",
-    "src/structure/validation.js~Validation#getClashData",
-    "method"
-  ],
-  [
-    "src/structure/validation.js~validation#name",
-    "class/src/structure/validation.js~Validation.html#instance-member-name",
-    "src/structure/validation.js~Validation#name",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#path",
-    "class/src/structure/validation.js~Validation.html#instance-member-path",
-    "src/structure/validation.js~Validation#path",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#rsccdict",
-    "class/src/structure/validation.js~Validation.html#instance-member-rsccDict",
-    "src/structure/validation.js~Validation#rsccDict",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#rsrzdict",
-    "class/src/structure/validation.js~Validation.html#instance-member-rsrzDict",
-    "src/structure/validation.js~Validation#rsrzDict",
-    "member"
-  ],
-  [
-    "src/structure/validation.js~validation#type",
-    "class/src/structure/validation.js~Validation.html#instance-get-type",
-    "src/structure/validation.js~Validation#type",
-    "member"
-  ],
-  [
     "src/surface/av-surface.js",
     "file/src/surface/av-surface.js.html",
     "src/surface/av-surface.js",
@@ -18816,132 +6006,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/surface/filtered-volume.js~filteredvolume#_atomindexbuffer",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-_atomindexBuffer",
-    "src/surface/filtered-volume.js~FilteredVolume#_atomindexBuffer",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#_databuffer",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-_dataBuffer",
-    "src/surface/filtered-volume.js~FilteredVolume#_dataBuffer",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#_filterhash",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-_filterHash",
-    "src/surface/filtered-volume.js~FilteredVolume#_filterHash",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#_getfilterhash",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-method-_getFilterHash",
-    "src/surface/filtered-volume.js~FilteredVolume#_getFilterHash",
-    "method"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#_positionbuffer",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-_positionBuffer",
-    "src/surface/filtered-volume.js~FilteredVolume#_positionBuffer",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#atomindex",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-atomindex",
-    "src/surface/filtered-volume.js~FilteredVolume#atomindex",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#boundingbox",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-boundingBox",
-    "src/surface/filtered-volume.js~FilteredVolume#boundingBox",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#center",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-center",
-    "src/surface/filtered-volume.js~FilteredVolume#center",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#constructor",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-constructor-constructor",
-    "src/surface/filtered-volume.js~FilteredVolume#constructor",
-    "method"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#data",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-data",
-    "src/surface/filtered-volume.js~FilteredVolume#data",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#header",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-header",
-    "src/surface/filtered-volume.js~FilteredVolume#header",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#inversematrix",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-inverseMatrix",
-    "src/surface/filtered-volume.js~FilteredVolume#inverseMatrix",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#matrix",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-matrix",
-    "src/surface/filtered-volume.js~FilteredVolume#matrix",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#max",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-max",
-    "src/surface/filtered-volume.js~FilteredVolume#max",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#mean",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-mean",
-    "src/surface/filtered-volume.js~FilteredVolume#mean",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#min",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-min",
-    "src/surface/filtered-volume.js~FilteredVolume#min",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#normalmatrix",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-normalMatrix",
-    "src/surface/filtered-volume.js~FilteredVolume#normalMatrix",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#position",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-position",
-    "src/surface/filtered-volume.js~FilteredVolume#position",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#rms",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-get-rms",
-    "src/surface/filtered-volume.js~FilteredVolume#rms",
-    "member"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#setfilter",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-method-setFilter",
-    "src/surface/filtered-volume.js~FilteredVolume#setFilter",
-    "method"
-  ],
-  [
-    "src/surface/filtered-volume.js~filteredvolume#volume",
-    "class/src/surface/filtered-volume.js~FilteredVolume.html#instance-member-volume",
-    "src/surface/filtered-volume.js~FilteredVolume#volume",
-    "member"
-  ],
-  [
     "src/surface/marching-cubes.js",
     "file/src/surface/marching-cubes.js.html",
     "src/surface/marching-cubes.js",
@@ -18952,24 +6016,6 @@ window.esdocSearchIndex = [
     "file/src/surface/molecular-surface.js.html",
     "src/surface/molecular-surface.js",
     "file"
-  ],
-  [
-    "src/surface/molecular-surface.js~molecularsurface#_getatomdata",
-    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-method-_getAtomData",
-    "src/surface/molecular-surface.js~MolecularSurface#_getAtomData",
-    "method"
-  ],
-  [
-    "src/surface/molecular-surface.js~molecularsurface#_makesurface",
-    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-method-_makeSurface",
-    "src/surface/molecular-surface.js~MolecularSurface#_makeSurface",
-    "method"
-  ],
-  [
-    "src/surface/molecular-surface.js~molecularsurface#constructor",
-    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-constructor-constructor",
-    "src/surface/molecular-surface.js~MolecularSurface#constructor",
-    "method"
   ],
   [
     "src/surface/molecular-surface.js~molecularsurface#dispose",
@@ -18988,18 +6034,6 @@ window.esdocSearchIndex = [
     "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-method-getSurfaceWorker",
     "src/surface/molecular-surface.js~MolecularSurface#getSurfaceWorker",
     "method"
-  ],
-  [
-    "src/surface/molecular-surface.js~molecularsurface#structure",
-    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-member-structure",
-    "src/surface/molecular-surface.js~MolecularSurface#structure",
-    "member"
-  ],
-  [
-    "src/surface/molecular-surface.js~molecularsurface#worker",
-    "class/src/surface/molecular-surface.js~MolecularSurface.html#instance-member-worker",
-    "src/surface/molecular-surface.js~MolecularSurface#worker",
-    "member"
   ],
   [
     "src/surface/molecular-surface.js~molecularsurfaceparameters",
@@ -19026,18 +6060,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/surface/surface.js~surface#boundingbox",
-    "class/src/surface/surface.js~Surface.html#instance-member-boundingBox",
-    "src/surface/surface.js~Surface#boundingBox",
-    "member"
-  ],
-  [
-    "src/surface/surface.js~surface#center",
-    "class/src/surface/surface.js~Surface.html#instance-member-center",
-    "src/surface/surface.js~Surface#center",
-    "member"
-  ],
-  [
     "src/surface/surface.js~surface#color",
     "class/src/surface/surface.js~Surface.html#instance-member-color",
     "src/surface/surface.js~Surface#color",
@@ -19050,99 +6072,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/surface/surface.js~surface#contour",
-    "class/src/surface/surface.js~Surface.html#instance-member-contour",
-    "src/surface/surface.js~Surface#contour",
-    "member"
-  ],
-  [
-    "src/surface/surface.js~surface#dispose",
-    "class/src/surface/surface.js~Surface.html#instance-method-dispose",
-    "src/surface/surface.js~Surface#dispose",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#fromgeometry",
-    "class/src/surface/surface.js~Surface.html#instance-method-fromGeometry",
-    "src/surface/surface.js~Surface#fromGeometry",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getatomindex",
-    "class/src/surface/surface.js~Surface.html#instance-method-getAtomindex",
-    "src/surface/surface.js~Surface#getAtomindex",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getcolor",
-    "class/src/surface/surface.js~Surface.html#instance-method-getColor",
-    "src/surface/surface.js~Surface#getColor",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getfilteredindex",
-    "class/src/surface/surface.js~Surface.html#instance-method-getFilteredIndex",
-    "src/surface/surface.js~Surface#getFilteredIndex",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getindex",
-    "class/src/surface/surface.js~Surface.html#instance-method-getIndex",
-    "src/surface/surface.js~Surface#getIndex",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getnormal",
-    "class/src/surface/surface.js~Surface.html#instance-method-getNormal",
-    "src/surface/surface.js~Surface#getNormal",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getpicking",
-    "class/src/surface/surface.js~Surface.html#instance-method-getPicking",
-    "src/surface/surface.js~Surface#getPicking",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getposition",
-    "class/src/surface/surface.js~Surface.html#instance-method-getPosition",
-    "src/surface/surface.js~Surface#getPosition",
-    "method"
-  ],
-  [
-    "src/surface/surface.js~surface#getsize",
-    "class/src/surface/surface.js~Surface.html#instance-method-getSize",
-    "src/surface/surface.js~Surface#getSize",
-    "method"
-  ],
-  [
     "src/surface/surface.js~surface#index",
     "class/src/surface/surface.js~Surface.html#instance-member-index",
     "src/surface/surface.js~Surface#index",
     "member"
   ],
   [
-    "src/surface/surface.js~surface#info",
-    "class/src/surface/surface.js~Surface.html#instance-member-info",
-    "src/surface/surface.js~Surface#info",
-    "member"
-  ],
-  [
-    "src/surface/surface.js~surface#name",
-    "class/src/surface/surface.js~Surface.html#instance-member-name",
-    "src/surface/surface.js~Surface#name",
-    "member"
-  ],
-  [
     "src/surface/surface.js~surface#normal",
     "class/src/surface/surface.js~Surface.html#instance-member-normal",
     "src/surface/surface.js~Surface#normal",
-    "member"
-  ],
-  [
-    "src/surface/surface.js~surface#path",
-    "class/src/surface/surface.js~Surface.html#instance-member-path",
-    "src/surface/surface.js~Surface#path",
     "member"
   ],
   [
@@ -19158,88 +6096,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/surface/surface.js~surface#size",
-    "class/src/surface/surface.js~Surface.html#instance-member-size",
-    "src/surface/surface.js~Surface#size",
-    "member"
-  ],
-  [
-    "src/surface/surface.js~surface#type",
-    "class/src/surface/surface.js~Surface.html#instance-get-type",
-    "src/surface/surface.js~Surface#type",
-    "member"
-  ],
-  [
     "src/surface/volume-slice.js",
     "file/src/surface/volume-slice.js.html",
     "src/surface/volume-slice.js",
     "file"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#constructor",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-constructor-constructor",
-    "src/surface/volume-slice.js~VolumeSlice#constructor",
-    "method"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#dimension",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-dimension",
-    "src/surface/volume-slice.js~VolumeSlice#dimension",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#getdata",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-method-getData",
-    "src/surface/volume-slice.js~VolumeSlice#getData",
-    "method"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#getpositionfromcoordinate",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-method-getPositionFromCoordinate",
-    "src/surface/volume-slice.js~VolumeSlice#getPositionFromCoordinate",
-    "method"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#normalize",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-normalize",
-    "src/surface/volume-slice.js~VolumeSlice#normalize",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#position",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-position",
-    "src/surface/volume-slice.js~VolumeSlice#position",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#positiontype",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-positionType",
-    "src/surface/volume-slice.js~VolumeSlice#positionType",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#thresholdmax",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-thresholdMax",
-    "src/surface/volume-slice.js~VolumeSlice#thresholdMax",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#thresholdmin",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-thresholdMin",
-    "src/surface/volume-slice.js~VolumeSlice#thresholdMin",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#thresholdtype",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-thresholdType",
-    "src/surface/volume-slice.js~VolumeSlice#thresholdType",
-    "member"
-  ],
-  [
-    "src/surface/volume-slice.js~volumeslice#volume",
-    "class/src/surface/volume-slice.js~VolumeSlice.html#instance-member-volume",
-    "src/surface/volume-slice.js~VolumeSlice#volume",
-    "member"
   ],
   [
     "src/surface/volume.js",
@@ -19248,238 +6108,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/surface/volume.js~volume#__box",
-    "class/src/surface/volume.js~Volume.html#instance-member-__box",
-    "src/surface/volume.js~Volume#__box",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#_getbox",
-    "class/src/surface/volume.js~Volume.html#instance-method-_getBox",
-    "src/surface/volume.js~Volume#_getBox",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#_makesurface",
-    "class/src/surface/volume.js~Volume.html#instance-method-_makeSurface",
-    "src/surface/volume.js~Volume#_makeSurface",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#_max",
-    "class/src/surface/volume.js~Volume.html#instance-member-_max",
-    "src/surface/volume.js~Volume#_max",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#_mean",
-    "class/src/surface/volume.js~Volume.html#instance-member-_mean",
-    "src/surface/volume.js~Volume#_mean",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#_min",
-    "class/src/surface/volume.js~Volume.html#instance-member-_min",
-    "src/surface/volume.js~Volume#_min",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#_position",
-    "class/src/surface/volume.js~Volume.html#instance-member-_position",
-    "src/surface/volume.js~Volume#_position",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#_rms",
-    "class/src/surface/volume.js~Volume.html#instance-member-_rms",
-    "src/surface/volume.js~Volume#_rms",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#_sum",
-    "class/src/surface/volume.js~Volume.html#instance-member-_sum",
-    "src/surface/volume.js~Volume#_sum",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#atomindex",
-    "class/src/surface/volume.js~Volume.html#instance-member-atomindex",
-    "src/surface/volume.js~Volume#atomindex",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#boundingbox",
-    "class/src/surface/volume.js~Volume.html#instance-member-boundingBox",
-    "src/surface/volume.js~Volume#boundingBox",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#center",
-    "class/src/surface/volume.js~Volume.html#instance-member-center",
-    "src/surface/volume.js~Volume#center",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#clone",
-    "class/src/surface/volume.js~Volume.html#instance-method-clone",
-    "src/surface/volume.js~Volume#clone",
-    "method"
-  ],
-  [
     "src/surface/volume.js~volume#constructor",
     "class/src/surface/volume.js~Volume.html#instance-constructor-constructor",
     "src/surface/volume.js~Volume#constructor",
     "method"
-  ],
-  [
-    "src/surface/volume.js~volume#data",
-    "class/src/surface/volume.js~Volume.html#instance-member-data",
-    "src/surface/volume.js~Volume#data",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#dispose",
-    "class/src/surface/volume.js~Volume.html#instance-method-dispose",
-    "src/surface/volume.js~Volume#dispose",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getbox",
-    "class/src/surface/volume.js~Volume.html#instance-method-getBox",
-    "src/surface/volume.js~Volume#getBox",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getdataatomindex",
-    "class/src/surface/volume.js~Volume.html#instance-method-getDataAtomindex",
-    "src/surface/volume.js~Volume#getDataAtomindex",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getdatacolor",
-    "class/src/surface/volume.js~Volume.html#instance-method-getDataColor",
-    "src/surface/volume.js~Volume#getDataColor",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getdatapicking",
-    "class/src/surface/volume.js~Volume.html#instance-method-getDataPicking",
-    "src/surface/volume.js~Volume#getDataPicking",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getdataposition",
-    "class/src/surface/volume.js~Volume.html#instance-method-getDataPosition",
-    "src/surface/volume.js~Volume#getDataPosition",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getdatasize",
-    "class/src/surface/volume.js~Volume.html#instance-method-getDataSize",
-    "src/surface/volume.js~Volume#getDataSize",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getsigmaforvalue",
-    "class/src/surface/volume.js~Volume.html#instance-method-getSigmaForValue",
-    "src/surface/volume.js~Volume#getSigmaForValue",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getsurface",
-    "class/src/surface/volume.js~Volume.html#instance-method-getSurface",
-    "src/surface/volume.js~Volume#getSurface",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getsurfaceworker",
-    "class/src/surface/volume.js~Volume.html#instance-method-getSurfaceWorker",
-    "src/surface/volume.js~Volume#getSurfaceWorker",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#getvalueforsigma",
-    "class/src/surface/volume.js~Volume.html#instance-method-getValueForSigma",
-    "src/surface/volume.js~Volume#getValueForSigma",
-    "method"
-  ],
-  [
-    "src/surface/volume.js~volume#inversematrix",
-    "class/src/surface/volume.js~Volume.html#instance-member-inverseMatrix",
-    "src/surface/volume.js~Volume#inverseMatrix",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#matrix",
-    "class/src/surface/volume.js~Volume.html#instance-member-matrix",
-    "src/surface/volume.js~Volume#matrix",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#max",
-    "class/src/surface/volume.js~Volume.html#instance-get-max",
-    "src/surface/volume.js~Volume#max",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#mean",
-    "class/src/surface/volume.js~Volume.html#instance-get-mean",
-    "src/surface/volume.js~Volume#mean",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#min",
-    "class/src/surface/volume.js~Volume.html#instance-get-min",
-    "src/surface/volume.js~Volume#min",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#name",
-    "class/src/surface/volume.js~Volume.html#instance-member-name",
-    "src/surface/volume.js~Volume#name",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#normalmatrix",
-    "class/src/surface/volume.js~Volume.html#instance-member-normalMatrix",
-    "src/surface/volume.js~Volume#normalMatrix",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#nx",
-    "class/src/surface/volume.js~Volume.html#instance-member-nx",
-    "src/surface/volume.js~Volume#nx",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#ny",
-    "class/src/surface/volume.js~Volume.html#instance-member-ny",
-    "src/surface/volume.js~Volume#ny",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#nz",
-    "class/src/surface/volume.js~Volume.html#instance-member-nz",
-    "src/surface/volume.js~Volume#nz",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#path",
-    "class/src/surface/volume.js~Volume.html#instance-member-path",
-    "src/surface/volume.js~Volume#path",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#position",
-    "class/src/surface/volume.js~Volume.html#instance-get-position",
-    "src/surface/volume.js~Volume#position",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#rms",
-    "class/src/surface/volume.js~Volume.html#instance-get-rms",
-    "src/surface/volume.js~Volume#rms",
-    "member"
   ],
   [
     "src/surface/volume.js~volume#setatomindex",
@@ -19506,40 +6138,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/surface/volume.js~volume#sum",
-    "class/src/surface/volume.js~Volume.html#instance-get-sum",
-    "src/surface/volume.js~Volume#sum",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#type",
-    "class/src/surface/volume.js~Volume.html#instance-get-type",
-    "src/surface/volume.js~Volume#type",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#volsurf",
-    "class/src/surface/volume.js~Volume.html#instance-member-volsurf",
-    "src/surface/volume.js~Volume#volsurf",
-    "member"
-  ],
-  [
-    "src/surface/volume.js~volume#workerpool",
-    "class/src/surface/volume.js~Volume.html#instance-member-workerPool",
-    "src/surface/volume.js~Volume#workerPool",
-    "member"
-  ],
-  [
     "src/symmetry/assembly.js",
     "file/src/symmetry/assembly.js.html",
     "src/symmetry/assembly.js",
     "file"
-  ],
-  [
-    "src/symmetry/assembly.js~assembly#_getcount",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-method-_getCount",
-    "src/symmetry/assembly.js~Assembly#_getCount",
-    "method"
   ],
   [
     "src/symmetry/assembly.js~assembly#addpart",
@@ -19560,18 +6162,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/symmetry/assembly.js~assembly#getboundingbox",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-method-getBoundingBox",
-    "src/symmetry/assembly.js~Assembly#getBoundingBox",
-    "method"
-  ],
-  [
-    "src/symmetry/assembly.js~assembly#getcenter",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-method-getCenter",
-    "src/symmetry/assembly.js~Assembly#getCenter",
-    "method"
-  ],
-  [
     "src/symmetry/assembly.js~assembly#getinstancecount",
     "class/src/symmetry/assembly.js~Assembly.html#instance-method-getInstanceCount",
     "src/symmetry/assembly.js~Assembly#getInstanceCount",
@@ -19584,34 +6174,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/symmetry/assembly.js~assembly#getselection",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-method-getSelection",
-    "src/symmetry/assembly.js~Assembly#getSelection",
-    "method"
-  ],
-  [
     "src/symmetry/assembly.js~assembly#isidentity",
     "class/src/symmetry/assembly.js~Assembly.html#instance-method-isIdentity",
     "src/symmetry/assembly.js~Assembly#isIdentity",
     "method"
-  ],
-  [
-    "src/symmetry/assembly.js~assembly#name",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-member-name",
-    "src/symmetry/assembly.js~Assembly#name",
-    "member"
-  ],
-  [
-    "src/symmetry/assembly.js~assembly#partlist",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-member-partList",
-    "src/symmetry/assembly.js~Assembly#partList",
-    "member"
-  ],
-  [
-    "src/symmetry/assembly.js~assembly#type",
-    "class/src/symmetry/assembly.js~Assembly.html#instance-get-type",
-    "src/symmetry/assembly.js~Assembly#type",
-    "member"
   ],
   [
     "src/symmetry/symmetry-constants.js",
@@ -19686,24 +6252,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/symmetry/unitcell.js~unitcell#getcenter",
-    "class/src/symmetry/unitcell.js~Unitcell.html#instance-method-getCenter",
-    "src/symmetry/unitcell.js~Unitcell#getCenter",
-    "method"
-  ],
-  [
-    "src/symmetry/unitcell.js~unitcell#getdata",
-    "class/src/symmetry/unitcell.js~Unitcell.html#instance-method-getData",
-    "src/symmetry/unitcell.js~Unitcell#getData",
-    "method"
-  ],
-  [
-    "src/symmetry/unitcell.js~unitcell#getposition",
-    "class/src/symmetry/unitcell.js~Unitcell.html#instance-method-getPosition",
-    "src/symmetry/unitcell.js~Unitcell#getPosition",
-    "method"
-  ],
-  [
     "src/symmetry/unitcell.js~unitcell#spacegroup",
     "class/src/symmetry/unitcell.js~Unitcell.html#instance-member-spacegroup",
     "src/symmetry/unitcell.js~Unitcell#spacegroup",
@@ -19722,130 +6270,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/trajectory/frames-trajectory.js~framestrajectory#_loadframe",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-method-_loadFrame",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#_loadFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#_loadframecount",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-method-_loadFrameCount",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#_loadFrameCount",
-    "method"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#_makeatomindices",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-method-_makeAtomIndices",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#_makeAtomIndices",
-    "method"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#atomindices",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-member-atomIndices",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#atomIndices",
-    "member"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#boxes",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-member-boxes",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#boxes",
-    "member"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#constructor",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-constructor-constructor",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#constructor",
-    "method"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#frames",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-member-frames",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#frames",
-    "member"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#getpath",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-method-getPath",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#getPath",
-    "method"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#name",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-member-name",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#name",
-    "member"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#path",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-member-path",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#path",
-    "member"
-  ],
-  [
-    "src/trajectory/frames-trajectory.js~framestrajectory#type",
-    "class/src/trajectory/frames-trajectory.js~FramesTrajectory.html#instance-get-type",
-    "src/trajectory/frames-trajectory.js~FramesTrajectory#type",
-    "member"
-  ],
-  [
     "src/trajectory/frames.js",
     "file/src/trajectory/frames.js.html",
     "src/trajectory/frames.js",
     "file"
-  ],
-  [
-    "src/trajectory/frames.js~frames#boxes",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-boxes",
-    "src/trajectory/frames.js~Frames#boxes",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#constructor",
-    "class/src/trajectory/frames.js~Frames.html#instance-constructor-constructor",
-    "src/trajectory/frames.js~Frames#constructor",
-    "method"
-  ],
-  [
-    "src/trajectory/frames.js~frames#coordinates",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-coordinates",
-    "src/trajectory/frames.js~Frames#coordinates",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#deltatime",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-deltaTime",
-    "src/trajectory/frames.js~Frames#deltaTime",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#name",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-name",
-    "src/trajectory/frames.js~Frames#name",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#path",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-path",
-    "src/trajectory/frames.js~Frames#path",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#timeoffset",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-timeOffset",
-    "src/trajectory/frames.js~Frames#timeOffset",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#times",
-    "class/src/trajectory/frames.js~Frames.html#instance-member-times",
-    "src/trajectory/frames.js~Frames#times",
-    "member"
-  ],
-  [
-    "src/trajectory/frames.js~frames#type",
-    "class/src/trajectory/frames.js~Frames.html#instance-get-type",
-    "src/trajectory/frames.js~Frames#type",
-    "member"
   ],
   [
     "src/trajectory/remote-trajectory.js",
@@ -19854,94 +6282,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#_loadframe",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-method-_loadFrame",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#_loadFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#_loadframecount",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-method-_loadFrameCount",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#_loadFrameCount",
-    "method"
-  ],
-  [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#_makeatomindices",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-method-_makeAtomIndices",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#_makeAtomIndices",
-    "method"
-  ],
-  [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#atomindices",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-member-atomIndices",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#atomIndices",
-    "member"
-  ],
-  [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#constructor",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-constructor-constructor",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#constructor",
-    "method"
-  ],
-  [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#getpath",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-method-getPath",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#getPath",
-    "method"
-  ],
-  [
-    "src/trajectory/remote-trajectory.js~remotetrajectory#type",
-    "class/src/trajectory/remote-trajectory.js~RemoteTrajectory.html#instance-get-type",
-    "src/trajectory/remote-trajectory.js~RemoteTrajectory#type",
-    "member"
-  ],
-  [
     "src/trajectory/structure-trajectory.js",
     "file/src/trajectory/structure-trajectory.js.html",
     "src/trajectory/structure-trajectory.js",
     "file"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#_loadframe",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-method-_loadFrame",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#_loadFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#_loadframecount",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-method-_loadFrameCount",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#_loadFrameCount",
-    "method"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#_makeatomindices",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-method-_makeAtomIndices",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#_makeAtomIndices",
-    "method"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#atomindices",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-member-atomIndices",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#atomIndices",
-    "member"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#constructor",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-constructor-constructor",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#constructor",
-    "method"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#getpath",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-method-getPath",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#getPath",
-    "method"
-  ],
-  [
-    "src/trajectory/structure-trajectory.js~structuretrajectory#type",
-    "class/src/trajectory/structure-trajectory.js~StructureTrajectory.html#instance-get-type",
-    "src/trajectory/structure-trajectory.js~StructureTrajectory#type",
-    "member"
   ],
   [
     "src/trajectory/trajectory-player.js",
@@ -19950,100 +6294,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_animate",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-_animate",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_animate",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_currentframe",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-_currentFrame",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_currentFrame",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_currentstep",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-_currentStep",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_currentStep",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_currenttime",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-_currentTime",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_currentTime",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_direction",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-_direction",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_direction",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_next",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-_next",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_next",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_nextinterpolated",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-_nextInterpolated",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_nextInterpolated",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_previoustime",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-_previousTime",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_previousTime",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#_run",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-_run",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#_run",
-    "member"
-  ],
-  [
     "src/trajectory/trajectory-player.js~trajectoryplayer#constructor",
     "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-constructor-constructor",
     "src/trajectory/trajectory-player.js~TrajectoryPlayer#constructor",
     "method"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#direction",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-direction",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#direction",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#end",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-end",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#end",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#interpolatestep",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-interpolateStep",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#interpolateStep",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#interpolatetype",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-interpolateType",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#interpolateType",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#isrunning",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-get-isRunning",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#isRunning",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#mode",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-mode",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#mode",
-    "member"
   ],
   [
     "src/trajectory/trajectory-player.js~trajectoryplayer#pause",
@@ -20064,46 +6318,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#signals",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-signals",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#signals",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#start",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-start",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#start",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#step",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-step",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#step",
-    "member"
-  ],
-  [
     "src/trajectory/trajectory-player.js~trajectoryplayer#stop",
     "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-stop",
     "src/trajectory/trajectory-player.js~TrajectoryPlayer#stop",
     "method"
   ],
   [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#timeout",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-timeout",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#timeout",
-    "member"
-  ],
-  [
     "src/trajectory/trajectory-player.js~trajectoryplayer#toggle",
     "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-method-toggle",
     "src/trajectory/trajectory-player.js~TrajectoryPlayer#toggle",
     "method"
-  ],
-  [
-    "src/trajectory/trajectory-player.js~trajectoryplayer#traj",
-    "class/src/trajectory/trajectory-player.js~TrajectoryPlayer.html#instance-member-traj",
-    "src/trajectory/trajectory-player.js~TrajectoryPlayer#traj",
-    "member"
   ],
   [
     "src/trajectory/trajectory-player.js~trajectoryplayerparameters",
@@ -20124,339 +6348,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/trajectory/trajectory.js~trajectory#_currentframe",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-_currentFrame",
-    "src/trajectory/trajectory.js~Trajectory#_currentFrame",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_disposed",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-_disposed",
-    "src/trajectory/trajectory.js~Trajectory#_disposed",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_dosuperpose",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_doSuperpose",
-    "src/trajectory/trajectory.js~Trajectory#_doSuperpose",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_framecount",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-_frameCount",
-    "src/trajectory/trajectory.js~Trajectory#_frameCount",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_getindices",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_getIndices",
-    "src/trajectory/trajectory.js~Trajectory#_getIndices",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_init",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_init",
-    "src/trajectory/trajectory.js~Trajectory#_init",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_interpolate",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_interpolate",
-    "src/trajectory/trajectory.js~Trajectory#_interpolate",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_loadframe",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_loadFrame",
-    "src/trajectory/trajectory.js~Trajectory#_loadFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_makeatomindices",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_makeAtomIndices",
-    "src/trajectory/trajectory.js~Trajectory#_makeAtomIndices",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_makesuperposecoords",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_makeSuperposeCoords",
-    "src/trajectory/trajectory.js~Trajectory#_makeSuperposeCoords",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_process",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_process",
-    "src/trajectory/trajectory.js~Trajectory#_process",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_resetcache",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_resetCache",
-    "src/trajectory/trajectory.js~Trajectory#_resetCache",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_saveinitialcoords",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_saveInitialCoords",
-    "src/trajectory/trajectory.js~Trajectory#_saveInitialCoords",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_savestructurecoords",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_saveStructureCoords",
-    "src/trajectory/trajectory.js~Trajectory#_saveStructureCoords",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_setframecount",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_setFrameCount",
-    "src/trajectory/trajectory.js~Trajectory#_setFrameCount",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#_updatestructure",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-_updateStructure",
-    "src/trajectory/trajectory.js~Trajectory#_updateStructure",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#atomcount",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-atomCount",
-    "src/trajectory/trajectory.js~Trajectory#atomCount",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#backboneindices",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-backboneIndices",
-    "src/trajectory/trajectory.js~Trajectory#backboneIndices",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#boxcache",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-boxCache",
-    "src/trajectory/trajectory.js~Trajectory#boxCache",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#centerpbc",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-centerPbc",
-    "src/trajectory/trajectory.js~Trajectory#centerPbc",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#constructor",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-constructor-constructor",
-    "src/trajectory/trajectory.js~Trajectory#constructor",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#coords1",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-coords1",
-    "src/trajectory/trajectory.js~Trajectory#coords1",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#coords2",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-coords2",
-    "src/trajectory/trajectory.js~Trajectory#coords2",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#currentframe",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-get-currentFrame",
-    "src/trajectory/trajectory.js~Trajectory#currentFrame",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#deltatime",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-deltaTime",
-    "src/trajectory/trajectory.js~Trajectory#deltaTime",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#dispose",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-dispose",
-    "src/trajectory/trajectory.js~Trajectory#dispose",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#framecache",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-frameCache",
-    "src/trajectory/trajectory.js~Trajectory#frameCache",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#framecachesize",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-frameCacheSize",
-    "src/trajectory/trajectory.js~Trajectory#frameCacheSize",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#framecount",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-get-frameCount",
-    "src/trajectory/trajectory.js~Trajectory#frameCount",
-    "member"
-  ],
-  [
     "src/trajectory/trajectory.js~trajectory#getframetime",
     "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-getFrameTime",
     "src/trajectory/trajectory.js~Trajectory#getFrameTime",
     "method"
   ],
   [
-    "src/trajectory/trajectory.js~trajectory#getpath",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-getPath",
-    "src/trajectory/trajectory.js~Trajectory#getPath",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#hasframe",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-hasFrame",
-    "src/trajectory/trajectory.js~Trajectory#hasFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#inprogress",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-inProgress",
-    "src/trajectory/trajectory.js~Trajectory#inProgress",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#initialcoords",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-initialCoords",
-    "src/trajectory/trajectory.js~Trajectory#initialCoords",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#loadframe",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-loadFrame",
-    "src/trajectory/trajectory.js~Trajectory#loadFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#loadqueue",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-loadQueue",
-    "src/trajectory/trajectory.js~Trajectory#loadQueue",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#name",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-name",
-    "src/trajectory/trajectory.js~Trajectory#name",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#pathcache",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-pathCache",
-    "src/trajectory/trajectory.js~Trajectory#pathCache",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#player",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-player",
-    "src/trajectory/trajectory.js~Trajectory#player",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#removepbc",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-removePbc",
-    "src/trajectory/trajectory.js~Trajectory#removePbc",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#selection",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-selection",
-    "src/trajectory/trajectory.js~Trajectory#selection",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#selectionindices",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-selectionIndices",
-    "src/trajectory/trajectory.js~Trajectory#selectionIndices",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#setframe",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setFrame",
-    "src/trajectory/trajectory.js~Trajectory#setFrame",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#setframeinterpolated",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setFrameInterpolated",
-    "src/trajectory/trajectory.js~Trajectory#setFrameInterpolated",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#setparameters",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setParameters",
-    "src/trajectory/trajectory.js~Trajectory#setParameters",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#setplayer",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setPlayer",
-    "src/trajectory/trajectory.js~Trajectory#setPlayer",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#setselection",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setSelection",
-    "src/trajectory/trajectory.js~Trajectory#setSelection",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#setstructure",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-method-setStructure",
-    "src/trajectory/trajectory.js~Trajectory#setStructure",
-    "method"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#signals",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-signals",
-    "src/trajectory/trajectory.js~Trajectory#signals",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#structure",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-structure",
-    "src/trajectory/trajectory.js~Trajectory#structure",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#structurecoords",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-structureCoords",
-    "src/trajectory/trajectory.js~Trajectory#structureCoords",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#superpose",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-superpose",
-    "src/trajectory/trajectory.js~Trajectory#superpose",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#timeoffset",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-timeOffset",
-    "src/trajectory/trajectory.js~Trajectory#timeOffset",
-    "member"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectory#trajpath",
-    "class/src/trajectory/trajectory.js~Trajectory.html#instance-member-trajPath",
-    "src/trajectory/trajectory.js~Trajectory#trajPath",
-    "member"
-  ],
-  [
     "src/trajectory/trajectory.js~trajectoryparameters",
     "typedef/index.html#static-typedef-TrajectoryParameters",
     "src/trajectory/trajectory.js~TrajectoryParameters",
-    "typedef"
-  ],
-  [
-    "src/trajectory/trajectory.js~trajectorysignals",
-    "typedef/index.html#static-typedef-TrajectorySignals",
-    "src/trajectory/trajectory.js~TrajectorySignals",
     "typedef"
   ],
   [
@@ -20476,24 +6376,6 @@ window.esdocSearchIndex = [
     "file/src/utils/bitarray.js.html",
     "src/utils/bitarray.js",
     "file"
-  ],
-  [
-    "src/utils/bitarray.js~bitarray#_assignrange",
-    "class/src/utils/bitarray.js~BitArray.html#instance-method-_assignRange",
-    "src/utils/bitarray.js~BitArray#_assignRange",
-    "method"
-  ],
-  [
-    "src/utils/bitarray.js~bitarray#_israngevalue",
-    "class/src/utils/bitarray.js~BitArray.html#instance-method-_isRangeValue",
-    "src/utils/bitarray.js~BitArray#_isRangeValue",
-    "method"
-  ],
-  [
-    "src/utils/bitarray.js~bitarray#_words",
-    "class/src/utils/bitarray.js~BitArray.html#instance-member-_words",
-    "src/utils/bitarray.js~BitArray#_words",
-    "member"
   ],
   [
     "src/utils/bitarray.js~bitarray#clear",
@@ -20628,12 +6510,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/utils/bitarray.js~bitarray#length",
-    "class/src/utils/bitarray.js~BitArray.html#instance-member-length",
-    "src/utils/bitarray.js~BitArray#length",
-    "member"
-  ],
-  [
     "src/utils/bitarray.js~bitarray#makeintersection",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-makeIntersection",
     "src/utils/bitarray.js~BitArray#makeIntersection",
@@ -20670,18 +6546,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/utils/bitarray.js~bitarray#toselestring",
-    "class/src/utils/bitarray.js~BitArray.html#instance-method-toSeleString",
-    "src/utils/bitarray.js~BitArray#toSeleString",
-    "method"
-  ],
-  [
-    "src/utils/bitarray.js~bitarray#tostring",
-    "class/src/utils/bitarray.js~BitArray.html#instance-method-toString",
-    "src/utils/bitarray.js~BitArray#toString",
-    "method"
-  ],
-  [
     "src/utils/bitarray.js~bitarray#union",
     "class/src/utils/bitarray.js~BitArray.html#instance-method-union",
     "src/utils/bitarray.js~BitArray#union",
@@ -20706,12 +6570,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/utils/counter.js~counter#constructor",
-    "class/src/utils/counter.js~Counter.html#instance-constructor-constructor",
-    "src/utils/counter.js~Counter#constructor",
-    "method"
-  ],
-  [
     "src/utils/counter.js~counter#count",
     "class/src/utils/counter.js~Counter.html#instance-member-count",
     "src/utils/counter.js~Counter#count",
@@ -20721,12 +6579,6 @@ window.esdocSearchIndex = [
     "src/utils/counter.js~counter#decrement",
     "class/src/utils/counter.js~Counter.html#instance-method-decrement",
     "src/utils/counter.js~Counter#decrement",
-    "method"
-  ],
-  [
-    "src/utils/counter.js~counter#dispose",
-    "class/src/utils/counter.js~Counter.html#instance-method-dispose",
-    "src/utils/counter.js~Counter#dispose",
     "method"
   ],
   [
@@ -20748,12 +6600,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/utils/counter.js~counter#signals",
-    "class/src/utils/counter.js~Counter.html#instance-member-signals",
-    "src/utils/counter.js~Counter#signals",
-    "member"
-  ],
-  [
     "src/utils/counter.js~counter#unlisten",
     "class/src/utils/counter.js~Counter.html#instance-method-unlisten",
     "src/utils/counter.js~Counter#unlisten",
@@ -20772,63 +6618,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/io-buffer.js~iobuffer#_data",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-_data",
-    "src/utils/io-buffer.js~IOBuffer#_data",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#_lastwrittenbyte",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-_lastWrittenByte",
-    "src/utils/io-buffer.js~IOBuffer#_lastWrittenByte",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#_mark",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-_mark",
-    "src/utils/io-buffer.js~IOBuffer#_mark",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#_marks",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-_marks",
-    "src/utils/io-buffer.js~IOBuffer#_marks",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#_updatelastwrittenbyte",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-_updateLastWrittenByte",
-    "src/utils/io-buffer.js~IOBuffer#_updateLastWrittenByte",
-    "method"
-  ],
-  [
     "src/utils/io-buffer.js~iobuffer#available",
     "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-available",
     "src/utils/io-buffer.js~IOBuffer#available",
-    "method"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#buffer",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-buffer",
-    "src/utils/io-buffer.js~IOBuffer#buffer",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#bytelength",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-byteLength",
-    "src/utils/io-buffer.js~IOBuffer#byteLength",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#byteoffset",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-byteOffset",
-    "src/utils/io-buffer.js~IOBuffer#byteOffset",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#constructor",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-constructor-constructor",
-    "src/utils/io-buffer.js~IOBuffer#constructor",
     "method"
   ],
   [
@@ -20856,28 +6648,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/utils/io-buffer.js~iobuffer#length",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-length",
-    "src/utils/io-buffer.js~IOBuffer#length",
-    "member"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#littleendian",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-littleEndian",
-    "src/utils/io-buffer.js~IOBuffer#littleEndian",
-    "member"
-  ],
-  [
     "src/utils/io-buffer.js~iobuffer#mark",
     "class/src/utils/io-buffer.js~IOBuffer.html#instance-method-mark",
     "src/utils/io-buffer.js~IOBuffer#mark",
     "method"
-  ],
-  [
-    "src/utils/io-buffer.js~iobuffer#offset",
-    "class/src/utils/io-buffer.js~IOBuffer.html#instance-member-offset",
-    "src/utils/io-buffer.js~IOBuffer#offset",
-    "member"
   ],
   [
     "src/utils/io-buffer.js~iobuffer#popmark",
@@ -21108,12 +6882,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/netcdf-reader.js~netcdfreader#buffer",
-    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-member-buffer",
-    "src/utils/netcdf-reader.js~NetcdfReader#buffer",
-    "member"
-  ],
-  [
     "src/utils/netcdf-reader.js~netcdfreader#constructor",
     "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-constructor-constructor",
     "src/utils/netcdf-reader.js~NetcdfReader#constructor",
@@ -21142,12 +6910,6 @@ window.esdocSearchIndex = [
     "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-method-hasDataVariable",
     "src/utils/netcdf-reader.js~NetcdfReader#hasDataVariable",
     "method"
-  ],
-  [
-    "src/utils/netcdf-reader.js~netcdfreader#header",
-    "class/src/utils/netcdf-reader.js~NetcdfReader.html#instance-member-header",
-    "src/utils/netcdf-reader.js~NetcdfReader#header",
-    "member"
   ],
   [
     "src/utils/netcdf-reader.js~netcdfreader#recorddimension",
@@ -21180,276 +6942,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/picker.js~arrowpicker#primitive",
-    "class/src/utils/picker.js~ArrowPicker.html#instance-get-primitive",
-    "src/utils/picker.js~ArrowPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~atompicker#_getposition",
-    "class/src/utils/picker.js~AtomPicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~AtomPicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~atompicker#constructor",
-    "class/src/utils/picker.js~AtomPicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~AtomPicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~atompicker#data",
-    "class/src/utils/picker.js~AtomPicker.html#instance-get-data",
-    "src/utils/picker.js~AtomPicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~atompicker#getobject",
-    "class/src/utils/picker.js~AtomPicker.html#instance-method-getObject",
-    "src/utils/picker.js~AtomPicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~atompicker#structure",
-    "class/src/utils/picker.js~AtomPicker.html#instance-member-structure",
-    "src/utils/picker.js~AtomPicker#structure",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~atompicker#type",
-    "class/src/utils/picker.js~AtomPicker.html#instance-get-type",
-    "src/utils/picker.js~AtomPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~axespicker#_getposition",
-    "class/src/utils/picker.js~AxesPicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~AxesPicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~axespicker#axes",
-    "class/src/utils/picker.js~AxesPicker.html#instance-member-axes",
-    "src/utils/picker.js~AxesPicker#axes",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~axespicker#constructor",
-    "class/src/utils/picker.js~AxesPicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~AxesPicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~axespicker#data",
-    "class/src/utils/picker.js~AxesPicker.html#instance-get-data",
-    "src/utils/picker.js~AxesPicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~axespicker#getobject",
-    "class/src/utils/picker.js~AxesPicker.html#instance-method-getObject",
-    "src/utils/picker.js~AxesPicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~axespicker#type",
-    "class/src/utils/picker.js~AxesPicker.html#instance-get-type",
-    "src/utils/picker.js~AxesPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#_getposition",
-    "class/src/utils/picker.js~BondPicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~BondPicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#bondstore",
-    "class/src/utils/picker.js~BondPicker.html#instance-member-bondStore",
-    "src/utils/picker.js~BondPicker#bondStore",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#constructor",
-    "class/src/utils/picker.js~BondPicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~BondPicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#data",
-    "class/src/utils/picker.js~BondPicker.html#instance-get-data",
-    "src/utils/picker.js~BondPicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#getobject",
-    "class/src/utils/picker.js~BondPicker.html#instance-method-getObject",
-    "src/utils/picker.js~BondPicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#structure",
-    "class/src/utils/picker.js~BondPicker.html#instance-member-structure",
-    "src/utils/picker.js~BondPicker#structure",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~bondpicker#type",
-    "class/src/utils/picker.js~BondPicker.html#instance-get-type",
-    "src/utils/picker.js~BondPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~boxpicker#primitive",
-    "class/src/utils/picker.js~BoxPicker.html#instance-get-primitive",
-    "src/utils/picker.js~BoxPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#_getatomproxyfromsele",
-    "class/src/utils/picker.js~ClashPicker.html#instance-method-_getAtomProxyFromSele",
-    "src/utils/picker.js~ClashPicker#_getAtomProxyFromSele",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#_getposition",
-    "class/src/utils/picker.js~ClashPicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~ClashPicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#constructor",
-    "class/src/utils/picker.js~ClashPicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~ClashPicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#data",
-    "class/src/utils/picker.js~ClashPicker.html#instance-get-data",
-    "src/utils/picker.js~ClashPicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#getobject",
-    "class/src/utils/picker.js~ClashPicker.html#instance-method-getObject",
-    "src/utils/picker.js~ClashPicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#structure",
-    "class/src/utils/picker.js~ClashPicker.html#instance-member-structure",
-    "src/utils/picker.js~ClashPicker#structure",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#type",
-    "class/src/utils/picker.js~ClashPicker.html#instance-get-type",
-    "src/utils/picker.js~ClashPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~clashpicker#validation",
-    "class/src/utils/picker.js~ClashPicker.html#instance-member-validation",
-    "src/utils/picker.js~ClashPicker#validation",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~conepicker#primitive",
-    "class/src/utils/picker.js~ConePicker.html#instance-get-primitive",
-    "src/utils/picker.js~ConePicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~contactpicker#type",
-    "class/src/utils/picker.js~ContactPicker.html#instance-get-type",
-    "src/utils/picker.js~ContactPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~cylinderpicker#primitive",
-    "class/src/utils/picker.js~CylinderPicker.html#instance-get-primitive",
-    "src/utils/picker.js~CylinderPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~distancepicker#type",
-    "class/src/utils/picker.js~DistancePicker.html#instance-get-type",
-    "src/utils/picker.js~DistancePicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~ellipsoidpicker#primitive",
-    "class/src/utils/picker.js~EllipsoidPicker.html#instance-get-primitive",
-    "src/utils/picker.js~EllipsoidPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~ignorepicker#type",
-    "class/src/utils/picker.js~IgnorePicker.html#instance-get-type",
-    "src/utils/picker.js~IgnorePicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~meshpicker#__position",
-    "class/src/utils/picker.js~MeshPicker.html#instance-member-__position",
-    "src/utils/picker.js~MeshPicker#__position",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~meshpicker#_getposition",
-    "class/src/utils/picker.js~MeshPicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~MeshPicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~meshpicker#constructor",
-    "class/src/utils/picker.js~MeshPicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~MeshPicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~meshpicker#getobject",
-    "class/src/utils/picker.js~MeshPicker.html#instance-method-getObject",
-    "src/utils/picker.js~MeshPicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~meshpicker#mesh",
-    "class/src/utils/picker.js~MeshPicker.html#instance-member-mesh",
-    "src/utils/picker.js~MeshPicker#mesh",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~meshpicker#type",
-    "class/src/utils/picker.js~MeshPicker.html#instance-get-type",
-    "src/utils/picker.js~MeshPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~octahedronpicker#primitive",
-    "class/src/utils/picker.js~OctahedronPicker.html#instance-get-primitive",
-    "src/utils/picker.js~OctahedronPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~picker#_applytransformations",
-    "class/src/utils/picker.js~Picker.html#instance-method-_applyTransformations",
-    "src/utils/picker.js~Picker#_applyTransformations",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~picker#_getposition",
-    "class/src/utils/picker.js~Picker.html#instance-method-_getPosition",
-    "src/utils/picker.js~Picker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~picker#array",
-    "class/src/utils/picker.js~Picker.html#instance-member-array",
-    "src/utils/picker.js~Picker#array",
-    "member"
-  ],
-  [
     "src/utils/picker.js~picker#constructor",
     "class/src/utils/picker.js~Picker.html#instance-constructor-constructor",
     "src/utils/picker.js~Picker#constructor",
@@ -21474,190 +6966,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/utils/picker.js~shapepicker#_getposition",
-    "class/src/utils/picker.js~ShapePicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~ShapePicker#_getPosition",
-    "method"
-  ],
-  [
     "src/utils/picker.js~shapepicker#constructor",
     "class/src/utils/picker.js~ShapePicker.html#instance-constructor-constructor",
     "src/utils/picker.js~ShapePicker#constructor",
     "method"
-  ],
-  [
-    "src/utils/picker.js~shapepicker#data",
-    "class/src/utils/picker.js~ShapePicker.html#instance-get-data",
-    "src/utils/picker.js~ShapePicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~shapepicker#getobject",
-    "class/src/utils/picker.js~ShapePicker.html#instance-method-getObject",
-    "src/utils/picker.js~ShapePicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~shapepicker#primitive",
-    "class/src/utils/picker.js~ShapePicker.html#instance-get-primitive",
-    "src/utils/picker.js~ShapePicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~shapepicker#shape",
-    "class/src/utils/picker.js~ShapePicker.html#instance-member-shape",
-    "src/utils/picker.js~ShapePicker#shape",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~shapepicker#type",
-    "class/src/utils/picker.js~ShapePicker.html#instance-get-type",
-    "src/utils/picker.js~ShapePicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~slicepicker#type",
-    "class/src/utils/picker.js~SlicePicker.html#instance-get-type",
-    "src/utils/picker.js~SlicePicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~spherepicker#primitive",
-    "class/src/utils/picker.js~SpherePicker.html#instance-get-primitive",
-    "src/utils/picker.js~SpherePicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~surfacepicker#_getposition",
-    "class/src/utils/picker.js~SurfacePicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~SurfacePicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~surfacepicker#constructor",
-    "class/src/utils/picker.js~SurfacePicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~SurfacePicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~surfacepicker#data",
-    "class/src/utils/picker.js~SurfacePicker.html#instance-get-data",
-    "src/utils/picker.js~SurfacePicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~surfacepicker#getobject",
-    "class/src/utils/picker.js~SurfacePicker.html#instance-method-getObject",
-    "src/utils/picker.js~SurfacePicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~surfacepicker#surface",
-    "class/src/utils/picker.js~SurfacePicker.html#instance-member-surface",
-    "src/utils/picker.js~SurfacePicker#surface",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~surfacepicker#type",
-    "class/src/utils/picker.js~SurfacePicker.html#instance-get-type",
-    "src/utils/picker.js~SurfacePicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~tetrahedronpicker#primitive",
-    "class/src/utils/picker.js~TetrahedronPicker.html#instance-get-primitive",
-    "src/utils/picker.js~TetrahedronPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~toruspicker#primitive",
-    "class/src/utils/picker.js~TorusPicker.html#instance-get-primitive",
-    "src/utils/picker.js~TorusPicker#primitive",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#_getposition",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~UnitcellPicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#constructor",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~UnitcellPicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#data",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-get-data",
-    "src/utils/picker.js~UnitcellPicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#getobject",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-method-getObject",
-    "src/utils/picker.js~UnitcellPicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#structure",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-member-structure",
-    "src/utils/picker.js~UnitcellPicker#structure",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#type",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-get-type",
-    "src/utils/picker.js~UnitcellPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~unitcellpicker#unitcell",
-    "class/src/utils/picker.js~UnitcellPicker.html#instance-member-unitcell",
-    "src/utils/picker.js~UnitcellPicker#unitcell",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~unknownpicker#type",
-    "class/src/utils/picker.js~UnknownPicker.html#instance-get-type",
-    "src/utils/picker.js~UnknownPicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~volumepicker#_getposition",
-    "class/src/utils/picker.js~VolumePicker.html#instance-method-_getPosition",
-    "src/utils/picker.js~VolumePicker#_getPosition",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~volumepicker#constructor",
-    "class/src/utils/picker.js~VolumePicker.html#instance-constructor-constructor",
-    "src/utils/picker.js~VolumePicker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~volumepicker#data",
-    "class/src/utils/picker.js~VolumePicker.html#instance-get-data",
-    "src/utils/picker.js~VolumePicker#data",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~volumepicker#getobject",
-    "class/src/utils/picker.js~VolumePicker.html#instance-method-getObject",
-    "src/utils/picker.js~VolumePicker#getObject",
-    "method"
-  ],
-  [
-    "src/utils/picker.js~volumepicker#type",
-    "class/src/utils/picker.js~VolumePicker.html#instance-get-type",
-    "src/utils/picker.js~VolumePicker#type",
-    "member"
-  ],
-  [
-    "src/utils/picker.js~volumepicker#volume",
-    "class/src/utils/picker.js~VolumePicker.html#instance-member-volume",
-    "src/utils/picker.js~VolumePicker#volume",
-    "member"
   ],
   [
     "src/utils/queue.js",
@@ -21678,42 +6990,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/registry.js~registry#_dict",
-    "class/src/utils/registry.js~Registry.html#instance-member-_dict",
-    "src/utils/registry.js~Registry#_dict",
-    "member"
-  ],
-  [
-    "src/utils/registry.js~registry#add",
-    "class/src/utils/registry.js~Registry.html#instance-method-add",
-    "src/utils/registry.js~Registry#add",
-    "method"
-  ],
-  [
-    "src/utils/registry.js~registry#constructor",
-    "class/src/utils/registry.js~Registry.html#instance-constructor-constructor",
-    "src/utils/registry.js~Registry#constructor",
-    "method"
-  ],
-  [
-    "src/utils/registry.js~registry#get",
-    "class/src/utils/registry.js~Registry.html#instance-method-get",
-    "src/utils/registry.js~Registry#get",
-    "method"
-  ],
-  [
-    "src/utils/registry.js~registry#name",
-    "class/src/utils/registry.js~Registry.html#instance-member-name",
-    "src/utils/registry.js~Registry#name",
-    "member"
-  ],
-  [
-    "src/utils/registry.js~registry#names",
-    "class/src/utils/registry.js~Registry.html#instance-get-names",
-    "src/utils/registry.js~Registry#names",
-    "member"
-  ],
-  [
     "src/version.js",
     "file/src/version.js.html",
     "src/version.js",
@@ -21724,30 +7000,6 @@ window.esdocSearchIndex = [
     "file/src/viewer/geometry-group.js.html",
     "src/viewer/geometry-group.js",
     "file"
-  ],
-  [
-    "src/viewer/geometry-group.js~geometrygroup#boundingbox",
-    "class/src/viewer/geometry-group.js~GeometryGroup.html#instance-member-boundingBox",
-    "src/viewer/geometry-group.js~GeometryGroup#boundingBox",
-    "member"
-  ],
-  [
-    "src/viewer/geometry-group.js~geometrygroup#computeboundingbox",
-    "class/src/viewer/geometry-group.js~GeometryGroup.html#instance-method-computeBoundingBox",
-    "src/viewer/geometry-group.js~GeometryGroup#computeBoundingBox",
-    "method"
-  ],
-  [
-    "src/viewer/geometry-group.js~geometrygroup#constructor",
-    "class/src/viewer/geometry-group.js~GeometryGroup.html#instance-constructor-constructor",
-    "src/viewer/geometry-group.js~GeometryGroup#constructor",
-    "method"
-  ],
-  [
-    "src/viewer/geometry-group.js~geometrygroup#geometrylist",
-    "class/src/viewer/geometry-group.js~GeometryGroup.html#instance-member-geometryList",
-    "src/viewer/geometry-group.js~GeometryGroup#geometryList",
-    "member"
   ],
   [
     "src/viewer/stats.js",
@@ -21798,48 +7050,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/worker/worker-registry.js~workerregistry#_blobdict",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-member-_blobDict",
-    "src/worker/worker-registry.js~WorkerRegistry#_blobDict",
-    "member"
-  ],
-  [
-    "src/worker/worker-registry.js~workerregistry#_depsdict",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-member-_depsDict",
-    "src/worker/worker-registry.js~WorkerRegistry#_depsDict",
-    "member"
-  ],
-  [
-    "src/worker/worker-registry.js~workerregistry#_funcdict",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-member-_funcDict",
-    "src/worker/worker-registry.js~WorkerRegistry#_funcDict",
-    "member"
-  ],
-  [
-    "src/worker/worker-registry.js~workerregistry#activeworkercount",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-member-activeWorkerCount",
-    "src/worker/worker-registry.js~WorkerRegistry#activeWorkerCount",
-    "member"
-  ],
-  [
-    "src/worker/worker-registry.js~workerregistry#add",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-method-add",
-    "src/worker/worker-registry.js~WorkerRegistry#add",
-    "method"
-  ],
-  [
-    "src/worker/worker-registry.js~workerregistry#constructor",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-constructor-constructor",
-    "src/worker/worker-registry.js~WorkerRegistry#constructor",
-    "method"
-  ],
-  [
-    "src/worker/worker-registry.js~workerregistry#get",
-    "class/src/worker/worker-registry.js~WorkerRegistry.html#instance-method-get",
-    "src/worker/worker-registry.js~WorkerRegistry#get",
-    "method"
-  ],
-  [
     "src/worker/worker-utils.js",
     "file/src/worker/worker-utils.js.html",
     "src/worker/worker-utils.js",
@@ -21858,52 +7068,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/writer/pdb-writer.js~pdbwriter#_records",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-member-_records",
-    "src/writer/pdb-writer.js~PdbWriter#_records",
-    "member"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#_writeatoms",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-method-_writeAtoms",
-    "src/writer/pdb-writer.js~PdbWriter#_writeAtoms",
-    "method"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#_writerecords",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-method-_writeRecords",
-    "src/writer/pdb-writer.js~PdbWriter#_writeRecords",
-    "method"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#_writeremarks",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-method-_writeRemarks",
-    "src/writer/pdb-writer.js~PdbWriter#_writeRemarks",
-    "method"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#_writetitle",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-method-_writeTitle",
-    "src/writer/pdb-writer.js~PdbWriter#_writeTitle",
-    "method"
-  ],
-  [
     "src/writer/pdb-writer.js~pdbwriter#constructor",
     "class/src/writer/pdb-writer.js~PdbWriter.html#instance-constructor-constructor",
     "src/writer/pdb-writer.js~PdbWriter#constructor",
     "method"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#defaultext",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-get-defaultExt",
-    "src/writer/pdb-writer.js~PdbWriter#defaultExt",
-    "member"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#defaultname",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-get-defaultName",
-    "src/writer/pdb-writer.js~PdbWriter#defaultName",
-    "member"
   ],
   [
     "src/writer/pdb-writer.js~pdbwriter#getdata",
@@ -21912,172 +7080,10 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/writer/pdb-writer.js~pdbwriter#getstring",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-method-getString",
-    "src/writer/pdb-writer.js~PdbWriter#getString",
-    "method"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#mimetype",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-get-mimeType",
-    "src/writer/pdb-writer.js~PdbWriter#mimeType",
-    "member"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#remarks",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-member-remarks",
-    "src/writer/pdb-writer.js~PdbWriter#remarks",
-    "member"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#renumberserial",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-member-renumberSerial",
-    "src/writer/pdb-writer.js~PdbWriter#renumberSerial",
-    "member"
-  ],
-  [
-    "src/writer/pdb-writer.js~pdbwriter#structure",
-    "class/src/writer/pdb-writer.js~PdbWriter.html#instance-member-structure",
-    "src/writer/pdb-writer.js~PdbWriter#structure",
-    "member"
-  ],
-  [
-    "src/writer/sdf-writer.js",
-    "file/src/writer/sdf-writer.js.html",
-    "src/writer/sdf-writer.js",
-    "file"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#_records",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-member-_records",
-    "src/writer/sdf-writer.js~SdfWriter#_records",
-    "member"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#_writectab",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-_writeCTab",
-    "src/writer/sdf-writer.js~SdfWriter#_writeCTab",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#_writefooter",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-_writeFooter",
-    "src/writer/sdf-writer.js~SdfWriter#_writeFooter",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#_writeheader",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-_writeHeader",
-    "src/writer/sdf-writer.js~SdfWriter#_writeHeader",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#_writerecords",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-_writeRecords",
-    "src/writer/sdf-writer.js~SdfWriter#_writeRecords",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#chargelines",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-get-chargeLines",
-    "src/writer/sdf-writer.js~SdfWriter#chargeLines",
-    "member"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#constructor",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-constructor-constructor",
-    "src/writer/sdf-writer.js~SdfWriter#constructor",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#countsstring",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-get-countsString",
-    "src/writer/sdf-writer.js~SdfWriter#countsString",
-    "member"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#formatatom",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-formatAtom",
-    "src/writer/sdf-writer.js~SdfWriter#formatAtom",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#formatbond",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-formatBond",
-    "src/writer/sdf-writer.js~SdfWriter#formatBond",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#getdata",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-method-getData",
-    "src/writer/sdf-writer.js~SdfWriter#getData",
-    "method"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#idstring",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-get-idString",
-    "src/writer/sdf-writer.js~SdfWriter#idString",
-    "member"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#structure",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-member-structure",
-    "src/writer/sdf-writer.js~SdfWriter#structure",
-    "member"
-  ],
-  [
-    "src/writer/sdf-writer.js~sdfwriter#titlestring",
-    "class/src/writer/sdf-writer.js~SdfWriter.html#instance-get-titleString",
-    "src/writer/sdf-writer.js~SdfWriter#titleString",
-    "member"
-  ],
-  [
     "src/writer/stl-writer.js",
     "file/src/writer/stl-writer.js.html",
     "src/writer/stl-writer.js",
     "file"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#_records",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-member-_records",
-    "src/writer/stl-writer.js~StlWriter#_records",
-    "member"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#constructor",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-constructor-constructor",
-    "src/writer/stl-writer.js~StlWriter#constructor",
-    "method"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#defaultext",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-get-defaultExt",
-    "src/writer/stl-writer.js~StlWriter#defaultExt",
-    "member"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#defaultname",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-get-defaultName",
-    "src/writer/stl-writer.js~StlWriter#defaultName",
-    "member"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#getdata",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-method-getData",
-    "src/writer/stl-writer.js~StlWriter#getData",
-    "method"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#mimetype",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-get-mimeType",
-    "src/writer/stl-writer.js~StlWriter#mimeType",
-    "member"
-  ],
-  [
-    "src/writer/stl-writer.js~stlwriter#surface",
-    "class/src/writer/stl-writer.js~StlWriter.html#instance-member-surface",
-    "src/writer/stl-writer.js~StlWriter#surface",
-    "member"
   ],
   [
     "src/writer/writer.js",
