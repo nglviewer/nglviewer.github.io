@@ -278,71 +278,71 @@
     "filePath": "src/store/residue-type.js",
     "lines": [
       {
-        "lineNumber": 372,
-        "line": "    /**"
-      },
-      {
-        "lineNumber": 373,
-        "line": "     * Calculates ring atoms within a residue"
-      },
-      {
-        "lineNumber": 374,
-        "line": "     * Adaptation of RDKit's fastFindRings method by G. Landrum:"
-      },
-      {
         "lineNumber": 375,
-        "line": "     * https://github.com/rdkit/rdkit/blob/master/Code/GraphMol/FindRings.cpp"
+        "line": "  /**"
       },
       {
         "lineNumber": 376,
-        "line": "     *"
+        "line": "   * Calculates ring atoms within a residue"
       },
       {
         "lineNumber": 377,
-        "line": "     * @param {ResidueProxy} r   - The residue for which we are to find rings"
+        "line": "   * Adaptation of RDKit's fastFindRings method by G. Landrum:"
       },
       {
         "lineNumber": 378,
-        "line": "     * @return {Object} ringData - contains ringFlags (1/0) and rings"
+        "line": "   * https://github.com/rdkit/rdkit/blob/master/Code/GraphMol/FindRings.cpp"
       },
       {
         "lineNumber": 379,
-        "line": "     *                             (nested array)"
+        "line": "   *"
       },
       {
         "lineNumber": 380,
-        "line": "     *"
+        "line": "   * @param {ResidueProxy} r   - The residue for which we are to find rings"
       },
       {
         "lineNumber": 381,
-        "line": "     * Note this method finds all ring atoms, but in cases of fused or"
+        "line": "   * @return {Object} ringData - contains ringFlags (1/0) and rings"
       },
       {
         "lineNumber": 382,
-        "line": "     * connected rings will not detect all rings."
+        "line": "   *                             (nested array)"
       },
       {
         "lineNumber": 383,
-        "line": "     * The resulting rings object will provide 'a ring' for each ring atom"
+        "line": "   *"
       },
       {
         "lineNumber": 384,
-        "line": "     * but which ring depends on atom order and connectivity"
+        "line": "   * Note this method finds all ring atoms, but in cases of fused or"
       },
       {
         "lineNumber": 385,
-        "line": "     *"
+        "line": "   * connected rings will not detect all rings."
       },
       {
         "lineNumber": 386,
-        "line": "     * @return {undefined}"
+        "line": "   * The resulting rings object will provide 'a ring' for each ring atom"
       },
       {
         "lineNumber": 387,
-        "line": "     */"
+        "line": "   * but which ring depends on atom order and connectivity"
       },
       {
         "lineNumber": 388,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 389,
+        "line": "   * @return {undefined}"
+      },
+      {
+        "lineNumber": 390,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 391,
         "line": "  calculateRings () {"
       }
     ],
