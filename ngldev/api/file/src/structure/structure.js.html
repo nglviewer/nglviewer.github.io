@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -631,7 +631,7 @@ import Signal from &apos;../../lib/signals.es6.js&apos;
 import { Debug, Log, ColormakerRegistry } from &apos;../globals.js&apos;
 import { defaults } from &apos;../utils.js&apos;
 import { AtomPicker, BondPicker } from &apos;../utils/picker.js&apos;
-import { copyWithin } from &apos;../math/array-utils.js&apos;
+import { copyWithin, arrayMin, arrayMax } from &apos;../math/array-utils.js&apos;
 import BitArray from &apos;../utils/bitarray.js&apos;
 import RadiusFactory from &apos;../utils/radius-factory.js&apos;
 import { Matrix } from &apos;../math/matrix-utils.js&apos;
@@ -1569,6 +1569,15 @@ class Structure {
     } else {
       return this.center.clone()
     }
+  }
+
+  hasCoords () {
+    var atomStore = this.atomStore
+    return (
+      arrayMin(atomStore.x) !== 0 || arrayMax(atomStore.x) !== 0 ||
+      arrayMin(atomStore.y) !== 0 || arrayMax(atomStore.y) !== 0 ||
+      arrayMin(atomStore.z) !== 0 || arrayMax(atomStore.z) !== 0
+    )
   }
 
   getSequence (selection) {

@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -713,7 +713,7 @@ class MolecularSurfaceRepresentation extends StructureRepresentation {
 
     this.__infoList = []
 
-        // TODO find a more direct way
+    // TODO find a more direct way
     this.structure.signals.refreshed.add(function () {
       this.__forceNewMolsurf = true
     }, this)
@@ -829,11 +829,11 @@ class MolecularSurfaceRepresentation extends StructureRepresentation {
 
     if (surface.contour) {
       const contourBuffer = new ContourBuffer(
-                surfaceData,
-                this.getBufferParams({
-                  wireframe: false
-                })
-            )
+        surfaceData,
+        this.getBufferParams({
+          wireframe: false
+        })
+      )
 
       bufferList.push(contourBuffer)
     } else {
@@ -841,13 +841,13 @@ class MolecularSurfaceRepresentation extends StructureRepresentation {
       surfaceData.picking = surface.getPicking(sview.getStructure())
 
       const surfaceBuffer = new SurfaceBuffer(
-                surfaceData,
-                this.getBufferParams({
-                  background: this.background,
-                  opaqueBack: this.opaqueBack,
-                  dullInterior: false
-                })
-            )
+        surfaceData,
+        this.getBufferParams({
+          background: this.background,
+          opaqueBack: this.opaqueBack,
+          dullInterior: false
+        })
+      )
 
       const doubleSidedBuffer = new DoubleSidedBuffer(surfaceBuffer)
 
@@ -888,11 +888,11 @@ class MolecularSurfaceRepresentation extends StructureRepresentation {
       what.color = true
     }
 
-        // forbid setting wireframe to true when contour is true
+    // forbid setting wireframe to true when contour is true
     if (params &amp;&amp; params.wireframe &amp;&amp; (
-                params.contour || (params.contour === undefined &amp;&amp; this.contour)
-            )
-        ) {
+          params.contour || (params.contour === undefined &amp;&amp; this.contour)
+        )
+    ) {
       params.wireframe = false
     }
 

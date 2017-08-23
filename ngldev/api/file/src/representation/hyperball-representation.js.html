@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -675,25 +675,25 @@ class HyperballRepresentation extends LicoriceRepresentation {
 
   createData (sview) {
     var sphereBuffer = new SphereBuffer(
-            sview.getAtomData(this.getAtomParams()),
-            this.getBufferParams({
-              sphereDetail: this.sphereDetail,
-              disableImpostor: this.disableImpostor,
-              dullInterior: true
-            })
-        )
+      sview.getAtomData(this.getAtomParams()),
+      this.getBufferParams({
+        sphereDetail: this.sphereDetail,
+        disableImpostor: this.disableImpostor,
+        dullInterior: true
+      })
+    )
 
     this.__center = new Float32Array(sview.bondCount * 3)
 
     var stickBuffer = new HyperballStickBuffer(
-            sview.getBondData(this.getBondParams()),
-            this.getBufferParams({
-              shrink: this.shrink,
-              radialSegments: this.radialSegments,
-              disableImpostor: this.disableImpostor,
-              dullInterior: true
-            })
-        )
+      sview.getBondData(this.getBondParams()),
+      this.getBufferParams({
+        shrink: this.shrink,
+        radialSegments: this.radialSegments,
+        disableImpostor: this.disableImpostor,
+        dullInterior: true
+      })
+    )
 
     return {
       bufferList: [ sphereBuffer, stickBuffer ]

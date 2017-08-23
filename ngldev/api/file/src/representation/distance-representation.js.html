@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -664,22 +664,22 @@ import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
  * Distance representation
  */
 class DistanceRepresentation extends StructureRepresentation {
-    /**
-     * Create Distance representation object
-     * @example
-     * stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
-     *     o.addRepresentation( &quot;cartoon&quot; );
-     *     // either give selections (uses first selected atom) ...
-     *     var atomPair = [ [ &quot;1.CA&quot;, &quot;4.CA&quot; ], [ &quot;7.CA&quot;, &quot;13.CA&quot; ] ];
-     *     // or atom indices
-     *     var atomPair = [ [ 8, 28 ], [ 173, 121 ] ];
-     *     o.addRepresentation( &quot;distance&quot;, { atomPair: atomPair } );
-     *     stage.autoView();
-     * } );
-     * @param {Structure} structure - the structure to be represented
-     * @param {Viewer} viewer - a viewer object
-     * @param {DistanceRepresentationParameters} params - distance representation parameters
-     */
+  /**
+   * Create Distance representation object
+   * @example
+   * stage.loadFile( &quot;rcsb://1crn&quot; ).then( function( o ){
+   *     o.addRepresentation( &quot;cartoon&quot; );
+   *     // either give selections (uses first selected atom) ...
+   *     var atomPair = [ [ &quot;1.CA&quot;, &quot;4.CA&quot; ], [ &quot;7.CA&quot;, &quot;13.CA&quot; ] ];
+   *     // or atom indices
+   *     var atomPair = [ [ 8, 28 ], [ 173, 121 ] ];
+   *     o.addRepresentation( &quot;distance&quot;, { atomPair: atomPair } );
+   *     stage.autoView();
+   * } );
+   * @param {Structure} structure - the structure to be represented
+   * @param {Viewer} viewer - a viewer object
+   * @param {DistanceRepresentationParameters} params - distance representation parameters
+   */
   constructor (structure, viewer, params) {
     super(structure, viewer, params)
 
@@ -814,10 +814,10 @@ class DistanceRepresentation extends StructureRepresentation {
     var bondData = sview.getBondData(this.getBondParams(what, params))
     if (bondData.picking) {
       bondData.picking = new DistancePicker(
-                bondData.picking.array,
-                bondData.picking.structure,
-                params.bondStore
-            )
+        bondData.picking.array,
+        bondData.picking.structure,
+        params.bondStore
+      )
     }
     return bondData
   }
@@ -839,16 +839,16 @@ class DistanceRepresentation extends StructureRepresentation {
         color: uniformArray3(n, c.r, c.g, c.b),
         text: distanceData.text
       },
-            this.getBufferParams({
-              fontFamily: this.fontFamily,
-              fontStyle: this.fontStyle,
-              fontWeight: this.fontWeight,
-              sdf: this.sdf,
-              zOffset: this.labelZOffset,
-              opacity: 1.0,
-              visible: this.labelVisible
-            })
-        )
+      this.getBufferParams({
+        fontFamily: this.fontFamily,
+        fontStyle: this.fontStyle,
+        fontWeight: this.fontWeight,
+        sdf: this.sdf,
+        zOffset: this.labelZOffset,
+        opacity: 1.0,
+        visible: this.labelVisible
+      })
+    )
 
     var bondParams = {
       bondSet: distanceData.bondSet,
@@ -858,14 +858,14 @@ class DistanceRepresentation extends StructureRepresentation {
     var bondData = this.getBondData(this.structureView, undefined, bondParams)
 
     this.cylinderBuffer = new CylinderBuffer(
-            bondData,
-            this.getBufferParams({
-              openEnded: false,
-              radialSegments: this.radialSegments,
-              disableImpostor: this.disableImpostor,
-              dullInterior: true
-            })
-        )
+      bondData,
+      this.getBufferParams({
+        openEnded: false,
+        radialSegments: this.radialSegments,
+        disableImpostor: this.disableImpostor,
+        dullInterior: true
+      })
+    )
 
     this.dataList.push({
       sview: this.structureView,
@@ -922,8 +922,8 @@ class DistanceRepresentation extends StructureRepresentation {
 
     if (this.textBuffer) {
       this.textBuffer.setVisibility(
-                this.labelVisible &amp;&amp; this.visible
-            )
+        this.labelVisible &amp;&amp; this.visible
+      )
     }
 
     if (!noRenderRequest) this.viewer.requestRender()

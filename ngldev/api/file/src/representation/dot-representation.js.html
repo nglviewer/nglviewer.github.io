@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -823,26 +823,26 @@ class DotRepresentation extends Representation {
 
     if (this.dotType === &apos;sphere&apos;) {
       this.dotBuffer = new SphereBuffer(
-                dotData,
-                this.getBufferParams({
-                  sphereDetail: this.sphereDetail,
-                  disableImpostor: this.disableImpostor,
-                  dullInterior: false
-                })
-            )
+        dotData,
+        this.getBufferParams({
+          sphereDetail: this.sphereDetail,
+          disableImpostor: this.disableImpostor,
+          dullInterior: false
+        })
+      )
     } else {
       this.dotBuffer = new PointBuffer(
-                dotData,
-                this.getBufferParams({
-                  pointSize: this.pointSize,
-                  sizeAttenuation: this.sizeAttenuation,
-                  sortParticles: this.sortParticles,
-                  useTexture: this.useTexture,
-                  alphaTest: this.alphaTest,
-                  forceTransparent: this.forceTransparent,
-                  edgeBleach: this.edgeBleach
-                })
-            )
+        dotData,
+        this.getBufferParams({
+          pointSize: this.pointSize,
+          sizeAttenuation: this.sizeAttenuation,
+          sortParticles: this.sortParticles,
+          useTexture: this.useTexture,
+          alphaTest: this.alphaTest,
+          forceTransparent: this.forceTransparent,
+          edgeBleach: this.edgeBleach
+        })
+      )
     }
 
     this.bufferList.push(this.dotBuffer)
@@ -858,24 +858,24 @@ class DotRepresentation extends Representation {
     if (what.color) {
       if (this.volume) {
         dotData.color = this.volume.getDataColor(
-                    this.getColorParams()
-                )
+          this.getColorParams()
+        )
       } else {
         dotData.color = this.surface.getColor(
-                    this.getColorParams()
-                )
+          this.getColorParams()
+        )
       }
     }
 
     if (this.dotType === &apos;sphere&apos; &amp;&amp; (what.radius || what.scale)) {
       if (this.volume) {
         dotData.radius = this.volume.getDataSize(
-                    this.radius, this.scale
-                )
+          this.radius, this.scale
+        )
       } else {
         dotData.radius = this.surface.getSize(
-                    this.radius, this.scale
-                )
+          this.radius, this.scale
+        )
       }
     }
 
@@ -886,26 +886,26 @@ class DotRepresentation extends Representation {
     what = what || {}
 
     if (params &amp;&amp; params.thresholdType !== undefined &amp;&amp;
-            this.volume instanceof Volume
-        ) {
+        this.volume instanceof Volume
+    ) {
       if (this.thresholdType === &apos;value&apos; &amp;&amp;
-                params.thresholdType === &apos;sigma&apos;
-            ) {
+          params.thresholdType === &apos;sigma&apos;
+      ) {
         this.thresholdMin = this.volume.getSigmaForValue(
-                    this.thresholdMin
-                )
+          this.thresholdMin
+        )
         this.thresholdMax = this.volume.getSigmaForValue(
-                    this.thresholdMax
-                )
+          this.thresholdMax
+        )
       } else if (this.thresholdType === &apos;sigma&apos; &amp;&amp;
-                params.thresholdType === &apos;value&apos;
-            ) {
+                 params.thresholdType === &apos;value&apos;
+      ) {
         this.thresholdMin = this.volume.getValueForSigma(
-                    this.thresholdMin
-                )
+          this.thresholdMin
+        )
         this.thresholdMax = this.volume.getValueForSigma(
-                    this.thresholdMax
-                )
+          this.thresholdMax
+        )
       }
 
       this.thresholdType = params.thresholdType
@@ -919,8 +919,8 @@ class DotRepresentation extends Representation {
       }
       what.radius = true
       if (this.dotType === &apos;sphere&apos; &amp;&amp;
-                (!ExtensionFragDepth || this.disableImpostor)
-            ) {
+          (!ExtensionFragDepth || this.disableImpostor)
+      ) {
         rebuild = true
       }
     }
@@ -928,8 +928,8 @@ class DotRepresentation extends Representation {
     if (params &amp;&amp; params.radius !== undefined) {
       what.radius = true
       if (this.dotType === &apos;sphere&apos; &amp;&amp;
-                (!ExtensionFragDepth || this.disableImpostor)
-            ) {
+          (!ExtensionFragDepth || this.disableImpostor)
+      ) {
         rebuild = true
       }
     }
@@ -937,8 +937,8 @@ class DotRepresentation extends Representation {
     if (params &amp;&amp; params.scale !== undefined) {
       what.scale = true
       if (this.dotType === &apos;sphere&apos; &amp;&amp;
-                (!ExtensionFragDepth || this.disableImpostor)
-            ) {
+          (!ExtensionFragDepth || this.disableImpostor)
+      ) {
         rebuild = true
       }
     }

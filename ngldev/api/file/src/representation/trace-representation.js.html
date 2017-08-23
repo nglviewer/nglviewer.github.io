@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -706,11 +706,11 @@ class TraceRepresentation extends StructureRepresentation {
       var subCol = spline.getSubdividedColor(this.getColorParams())
 
       bufferList.push(
-                new TraceBuffer(
-                    Object.assign({}, subPos, subCol),
-                    this.getBufferParams()
-                )
-            )
+        new TraceBuffer(
+          Object.assign({}, subPos, subCol),
+          this.getBufferParams()
+        )
+      )
     }, sview.getSelection())
 
     return {

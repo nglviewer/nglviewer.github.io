@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -629,7 +629,7 @@ import Signal from &apos;../../lib/signals.es6.js&apos;
 
 import { Log } from &apos;../globals.js&apos;
 import { defaults } from &apos;../utils.js&apos;
-import { circularMean, arrayMin, arrayMax } from &apos;../math/array-utils.js&apos;
+import { circularMean } from &apos;../math/array-utils.js&apos;
 import { lerp, spline } from &apos;../math/math-utils.js&apos;
 import Selection from &apos;../selection/selection.js&apos;
 import Superposition from &apos;../align/superposition.js&apos;
@@ -673,6 +673,7 @@ function removePbc (x, box) {
 
   for (i = 3; i &lt; n; i += 3) {
     for (j = 0; j &lt; 3; ++j) {
+      x[ i + j ] -= box[ j * 3 + j ] * Math.round(x[ i + j ] / box[ j * 3 + j ])
       dist = x[ i + j ] - x[ i - 3 + j ]
 
       if (Math.abs(dist) &gt; 0.9 * box[ j * 3 + j ]) {
@@ -845,7 +846,7 @@ class Trajectory {
   }
 
   _saveInitialCoords () {
-    if (arrayMin(this.structureCoords) !== 0 || arrayMax(this.structureCoords) !== 0) {
+    if (this.structure.hasCoords()) {
       this.initialCoords = new Float32Array(this.structureCoords)
       this._makeSuperposeCoords()
     } else if (this.frameCache[0]) {

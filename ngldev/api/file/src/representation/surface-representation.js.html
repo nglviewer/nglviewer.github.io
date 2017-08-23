@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-19</span>
+<header><span>NGL@0.10.5-20</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -880,20 +880,20 @@ class SurfaceRepresentation extends Representation {
     })
   }
 
-    /**
-     * Set representation parameters
-     * @alias SurfaceRepresentation#setParameters
-     * @param {SurfaceRepresentationParameters} params - surface parameter object
-     * @param {Object} [what] - buffer data attributes to be updated,
-     *                        note that this needs to be implemented in the
-     *                        derived classes. Generally it allows more
-     *                        fine-grained control over updating than
-     *                        forcing a rebuild.
-     * @param {Boolean} what.position - update position data
-     * @param {Boolean} what.color - update color data
-     * @param {Boolean} [rebuild] - whether or not to rebuild the representation
-     * @return {SurfaceRepresentation} this object
-     */
+  /**
+   * Set representation parameters
+   * @alias SurfaceRepresentation#setParameters
+   * @param {SurfaceRepresentationParameters} params - surface parameter object
+   * @param {Object} [what] - buffer data attributes to be updated,
+   *                        note that this needs to be implemented in the
+   *                        derived classes. Generally it allows more
+   *                        fine-grained control over updating than
+   *                        forcing a rebuild.
+   * @param {Boolean} what.position - update position data
+   * @param {Boolean} what.color - update color data
+   * @param {Boolean} [rebuild] - whether or not to rebuild the representation
+   * @return {SurfaceRepresentation} this object
+   */
   setParameters (params, what, rebuild) {
     if (params &amp;&amp; params.isolevelType !== undefined &amp;&amp;
       this.volume
@@ -916,7 +916,7 @@ class SurfaceRepresentation extends Representation {
       delete params.boxCenter
     }
 
-        // Forbid wireframe &amp;&amp; contour as in molsurface
+    // Forbid wireframe &amp;&amp; contour as in molsurface
     if (params &amp;&amp; params.wireframe &amp;&amp; (
       params.contour || (params.contour === undefined &amp;&amp; this.contour)
     )) {
