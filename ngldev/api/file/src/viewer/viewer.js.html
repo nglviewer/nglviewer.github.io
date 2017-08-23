@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-20</span>
+<header><span>NGL@0.10.5-21</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -929,6 +929,12 @@ function Viewer (idOrElement) {
     )
     pickingTarget.texture.generateMipmaps = false
 
+    // workaround to reset the gl state after using testTextureSupport
+    // fixes some bug where nothing is rendered to the canvas
+    // when animations are started on page load
+    renderer.clearTarget(pickingTarget)
+    renderer.setRenderTarget(null)
+
     // ssaa textures
 
     sampleTarget = new WebGLRenderTarget(
@@ -1473,7 +1479,7 @@ function Viewer (idOrElement) {
 
   function requestRender () {
     if (renderPending) {
-      // Log.info( &quot;there is still a &apos;render&apos; call pending&quot; );
+      // Log.info(&quot;there is still a &apos;render&apos; call pending&quot;)
       return
     }
 
@@ -1665,11 +1671,11 @@ function Viewer (idOrElement) {
 
   function render (picking) {
     if (rendering) {
-      Log.warn(&quot;tried to call &apos;render&apos; from within &apos;render&apos;&quot;)
+      Log.warn(&quot;&apos;tried to call &apos;render&apos; from within &apos;render&apos;&quot;)
       return
     }
 
-    // Log.time( &quot;Viewer.render&quot; );
+    // Log.time(&apos;Viewer.render&apos;)
 
     rendering = true
 
@@ -1693,8 +1699,8 @@ function Viewer (idOrElement) {
     rendering = false
     renderPending = false
 
-    // Log.timeEnd( &quot;Viewer.render&quot; );
-    // Log.log( info.memory, info.render );
+    // Log.timeEnd(&apos;Viewer.render&apos;)
+    // Log.log(info.memory, info.render)
   }
 
   function clear () {
