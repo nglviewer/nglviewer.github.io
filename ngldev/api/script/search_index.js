@@ -2238,6 +2238,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "ngl/src/buffer/wideline-buffer.js~widelinebuffer",
+    "class/src/buffer/wideline-buffer.js~WideLineBuffer.html",
+    "<span>WideLineBuffer</span> <span class=\"search-result-import-path\">ngl/src/buffer/wideline-buffer.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/worker/worker.js~worker",
     "function/index.html#static-function-Worker",
     "<span>Worker</span> <span class=\"search-result-import-path\">ngl/src/worker/worker.js</span>",
@@ -4518,12 +4524,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/buffer/buffer.js~buffer#linewidth",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-linewidth",
-    "src/buffer/buffer.js~Buffer#linewidth",
-    "member"
-  ],
-  [
     "src/buffer/buffer.js~buffer#makematerial",
     "class/src/buffer/buffer.js~Buffer.html#instance-method-makeMaterial",
     "src/buffer/buffer.js~Buffer#makeMaterial",
@@ -4743,12 +4743,6 @@ window.esdocSearchIndex = [
     "src/buffer/buffer.js~buffer#wireframeindexversion",
     "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeIndexVersion",
     "src/buffer/buffer.js~Buffer#wireframeIndexVersion",
-    "member"
-  ],
-  [
-    "src/buffer/buffer.js~buffer#wireframelinewidth",
-    "class/src/buffer/buffer.js~Buffer.html#instance-member-wireframeLinewidth",
-    "src/buffer/buffer.js~Buffer#wireframeLinewidth",
     "member"
   ],
   [
@@ -5071,13 +5065,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/buffer/doublesided-buffer.js~doublesidedbuffer#matrix",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-set-matrix",
+    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-get-matrix",
     "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#matrix",
     "member"
   ],
   [
     "src/buffer/doublesided-buffer.js~doublesidedbuffer#matrix",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-get-matrix",
+    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-set-matrix",
     "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#matrix",
     "member"
   ],
@@ -6217,13 +6211,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/buffer/text-buffer.js~textbuffer#wireframe",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-wireframe",
+    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-set-wireframe",
     "src/buffer/text-buffer.js~TextBuffer#wireframe",
     "member"
   ],
   [
     "src/buffer/text-buffer.js~textbuffer#wireframe",
-    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-set-wireframe",
+    "class/src/buffer/text-buffer.js~TextBuffer.html#instance-get-wireframe",
     "src/buffer/text-buffer.js~TextBuffer#wireframe",
     "member"
   ],
@@ -6441,6 +6435,42 @@ window.esdocSearchIndex = [
     "src/buffer/vector-buffer.js~vectorbuffer#vertexshader",
     "class/src/buffer/vector-buffer.js~VectorBuffer.html#instance-get-vertexShader",
     "src/buffer/vector-buffer.js~VectorBuffer#vertexShader",
+    "member"
+  ],
+  [
+    "src/buffer/wideline-buffer.js",
+    "file/src/buffer/wideline-buffer.js.html",
+    "src/buffer/wideline-buffer.js",
+    "file"
+  ],
+  [
+    "src/buffer/wideline-buffer.js~widelinebuffer#constructor",
+    "class/src/buffer/wideline-buffer.js~WideLineBuffer.html#instance-constructor-constructor",
+    "src/buffer/wideline-buffer.js~WideLineBuffer#constructor",
+    "method"
+  ],
+  [
+    "src/buffer/wideline-buffer.js~widelinebuffer#fragmentshader",
+    "class/src/buffer/wideline-buffer.js~WideLineBuffer.html#instance-get-fragmentShader",
+    "src/buffer/wideline-buffer.js~WideLineBuffer#fragmentShader",
+    "member"
+  ],
+  [
+    "src/buffer/wideline-buffer.js~widelinebuffer#linewidth",
+    "class/src/buffer/wideline-buffer.js~WideLineBuffer.html#instance-member-linewidth",
+    "src/buffer/wideline-buffer.js~WideLineBuffer#linewidth",
+    "member"
+  ],
+  [
+    "src/buffer/wideline-buffer.js~widelinebuffer#parameters",
+    "class/src/buffer/wideline-buffer.js~WideLineBuffer.html#instance-get-parameters",
+    "src/buffer/wideline-buffer.js~WideLineBuffer#parameters",
+    "member"
+  ],
+  [
+    "src/buffer/wideline-buffer.js~widelinebuffer#vertexshader",
+    "class/src/buffer/wideline-buffer.js~WideLineBuffer.html#instance-get-vertexShader",
+    "src/buffer/wideline-buffer.js~WideLineBuffer#vertexShader",
     "member"
   ],
   [
@@ -11791,13 +11821,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#occupancy",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-occupancy",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-occupancy",
     "src/proxy/atom-proxy.js~AtomProxy#occupancy",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#occupancy",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-occupancy",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-occupancy",
     "src/proxy/atom-proxy.js~AtomProxy#occupancy",
     "member"
   ],
@@ -11911,13 +11941,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
     "src/proxy/atom-proxy.js~AtomProxy#serial",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
     "src/proxy/atom-proxy.js~AtomProxy#serial",
     "member"
   ],
@@ -11947,25 +11977,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#x",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-x",
-    "src/proxy/atom-proxy.js~AtomProxy#x",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#x",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-x",
     "src/proxy/atom-proxy.js~AtomProxy#x",
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#y",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-y",
-    "src/proxy/atom-proxy.js~AtomProxy#y",
+    "src/proxy/atom-proxy.js~atomproxy#x",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-x",
+    "src/proxy/atom-proxy.js~AtomProxy#x",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#y",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-y",
+    "src/proxy/atom-proxy.js~AtomProxy#y",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#y",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-y",
     "src/proxy/atom-proxy.js~AtomProxy#y",
     "member"
   ],
@@ -12031,13 +12061,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/bond-proxy.js~bondproxy#atomindex1",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atomIndex1",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-atomIndex1",
     "src/proxy/bond-proxy.js~BondProxy#atomIndex1",
     "member"
   ],
   [
     "src/proxy/bond-proxy.js~bondproxy#atomindex1",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-atomIndex1",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atomIndex1",
     "src/proxy/bond-proxy.js~BondProxy#atomIndex1",
     "member"
   ],
@@ -12163,13 +12193,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#chainname",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainname",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-chainname",
     "src/proxy/chain-proxy.js~ChainProxy#chainname",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#chainname",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-chainname",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainname",
     "src/proxy/chain-proxy.js~ChainProxy#chainname",
     "member"
   ],
@@ -12217,13 +12247,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#entityindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-entityIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-entityIndex",
     "src/proxy/chain-proxy.js~ChainProxy#entityIndex",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#entityindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-entityIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-entityIndex",
     "src/proxy/chain-proxy.js~ChainProxy#entityIndex",
     "member"
   ],
@@ -12241,13 +12271,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
     "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
     "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
     "member"
   ],
@@ -12259,13 +12289,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#residuecount",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-residueCount",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueCount",
     "src/proxy/chain-proxy.js~ChainProxy#residueCount",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#residuecount",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueCount",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-residueCount",
     "src/proxy/chain-proxy.js~ChainProxy#residueCount",
     "member"
   ],
@@ -12277,13 +12307,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#residueoffset",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-residueOffset",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueOffset",
     "src/proxy/chain-proxy.js~ChainProxy#residueOffset",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#residueoffset",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-residueOffset",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-residueOffset",
     "src/proxy/chain-proxy.js~ChainProxy#residueOffset",
     "member"
   ],
@@ -12349,13 +12379,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/model-proxy.js~modelproxy#chainoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainOffset",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainOffset",
     "src/proxy/model-proxy.js~ModelProxy#chainOffset",
     "member"
   ],
   [
     "src/proxy/model-proxy.js~modelproxy#chainoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainOffset",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainOffset",
     "src/proxy/model-proxy.js~ModelProxy#chainOffset",
     "member"
   ],
@@ -12631,13 +12661,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomcount",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomCount",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomCount",
     "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomcount",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomCount",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomCount",
     "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
     "member"
   ],
@@ -12997,13 +13027,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#resno",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resno",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-resno",
     "src/proxy/residue-proxy.js~ResidueProxy#resno",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#resno",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-resno",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resno",
     "src/proxy/residue-proxy.js~ResidueProxy#resno",
     "member"
   ],
@@ -13015,13 +13045,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#sstruc",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-sstruc",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-sstruc",
     "src/proxy/residue-proxy.js~ResidueProxy#sstruc",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#sstruc",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-sstruc",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-sstruc",
     "src/proxy/residue-proxy.js~ResidueProxy#sstruc",
     "member"
   ],
@@ -13245,6 +13275,12 @@ window.esdocSearchIndex = [
     "src/representation/ballandstick-representation.js~ballandstickrepresentation#lineonly",
     "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-lineOnly",
     "src/representation/ballandstick-representation.js~BallAndStickRepresentation#lineOnly",
+    "member"
+  ],
+  [
+    "src/representation/ballandstick-representation.js~ballandstickrepresentation#linewidth",
+    "class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html#instance-member-linewidth",
+    "src/representation/ballandstick-representation.js~BallAndStickRepresentation#linewidth",
     "member"
   ],
   [
@@ -14154,6 +14190,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/representation/line-representation.js~linerepresentation#_crossdata",
+    "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-_crossData",
+    "src/representation/line-representation.js~LineRepresentation#_crossData",
+    "method"
+  ],
+  [
     "src/representation/line-representation.js~linerepresentation#bondspacing",
     "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-bondSpacing",
     "src/representation/line-representation.js~LineRepresentation#bondSpacing",
@@ -14172,6 +14214,18 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/representation/line-representation.js~linerepresentation#crosssize",
+    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-crossSize",
+    "src/representation/line-representation.js~LineRepresentation#crossSize",
+    "member"
+  ],
+  [
+    "src/representation/line-representation.js~linerepresentation#crosses",
+    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-crosses",
+    "src/representation/line-representation.js~LineRepresentation#crosses",
+    "member"
+  ],
+  [
     "src/representation/line-representation.js~linerepresentation#getbondparams",
     "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-getBondParams",
     "src/representation/line-representation.js~LineRepresentation#getBondParams",
@@ -14182,6 +14236,18 @@ window.esdocSearchIndex = [
     "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-init",
     "src/representation/line-representation.js~LineRepresentation#init",
     "method"
+  ],
+  [
+    "src/representation/line-representation.js~linerepresentation#lines",
+    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-lines",
+    "src/representation/line-representation.js~LineRepresentation#lines",
+    "member"
+  ],
+  [
+    "src/representation/line-representation.js~linerepresentation#linewidth",
+    "class/src/representation/line-representation.js~LineRepresentation.html#instance-member-linewidth",
+    "src/representation/line-representation.js~LineRepresentation#linewidth",
+    "member"
   ],
   [
     "src/representation/line-representation.js~linerepresentation#multiplebond",
@@ -14655,12 +14721,6 @@ window.esdocSearchIndex = [
     "src/representation/representation.js~representation#lazyprops",
     "class/src/representation/representation.js~Representation.html#instance-member-lazyProps",
     "src/representation/representation.js~Representation#lazyProps",
-    "member"
-  ],
-  [
-    "src/representation/representation.js~representation#linewidth",
-    "class/src/representation/representation.js~Representation.html#instance-member-linewidth",
-    "src/representation/representation.js~Representation#linewidth",
     "member"
   ],
   [

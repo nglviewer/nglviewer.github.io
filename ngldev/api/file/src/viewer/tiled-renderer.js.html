@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-21</span>
+<header><span>NGL@0.10.5-22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -138,6 +138,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/trace-buffer.js~TraceBuffer.html">TraceBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html">TubeMeshBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/vector-buffer.js~VectorBuffer.html">VectorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/wideline-buffer.js~WideLineBuffer.html">WideLineBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/geometry-buffer.js~GeometryBuffer.html">GeometryBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/mapped-buffer.js~MappedBuffer.html">MappedBuffer</a></span></span></li>
@@ -626,24 +627,24 @@
  */
 
 function TiledRenderer (renderer, camera, viewer, params) {
-  var p = params || {}
+  const p = params || {}
 
-  var factor = p.factor !== undefined ? p.factor : 2
-  var antialias = p.antialias !== undefined ? p.antialias : false
+  let factor = p.factor !== undefined ? p.factor : 2
+  const antialias = p.antialias !== undefined ? p.antialias : false
 
-  var onProgress = p.onProgress
-  var onFinish = p.onFinish
+  const onProgress = p.onProgress
+  const onFinish = p.onFinish
 
-    //
+  //
 
   if (antialias) factor *= 2
-  var n = factor * factor
+  const n = factor * factor
 
-    // canvas
+  // canvas
 
-  var canvas = document.createElement(&apos;canvas&apos;)
-  var width = viewer.width
-  var height = viewer.height
+  const canvas = document.createElement(&apos;canvas&apos;)
+  const width = viewer.width
+  const height = viewer.height
 
   if (antialias) {
     canvas.width = width * factor / 2
@@ -653,45 +654,45 @@ function TiledRenderer (renderer, camera, viewer, params) {
     canvas.height = height * factor
   }
 
-  var ctx = canvas.getContext(&apos;2d&apos;)
+  const ctx = canvas.getContext(&apos;2d&apos;)
 
-  var viewerSampleLevel = viewer.sampleLevel
+  const viewerSampleLevel = viewer.sampleLevel
   viewer.setSampling(-1)
 
   function renderTile (i) {
-    var x = i % factor
-    var y = Math.floor(i / factor)
+    const x = i % factor
+    const y = Math.floor(i / factor)
 
-    var offsetX = x * width
-    var offsetY = y * height
+    const offsetX = x * width
+    const offsetY = y * height
 
     viewer.camera.setViewOffset(
-            width * factor,
-            height * factor,
-            offsetX,
-            offsetY,
-            width,
-            height
-        )
+      width * factor,
+      height * factor,
+      offsetX,
+      offsetY,
+      width,
+      height
+    )
 
     viewer.render()
 
     if (antialias) {
       ctx.drawImage(
-                renderer.domElement,
-                Math.floor(offsetX / 2),
-                Math.floor(offsetY / 2),
-                Math.ceil(width / 2),
-                Math.ceil(height / 2)
-            )
+        renderer.domElement,
+        Math.floor(offsetX / 2),
+        Math.floor(offsetY / 2),
+        Math.ceil(width / 2),
+        Math.ceil(height / 2)
+      )
     } else {
       ctx.drawImage(
-                renderer.domElement,
-                Math.floor(offsetX),
-                Math.floor(offsetY),
-                Math.ceil(width),
-                Math.ceil(height)
-            )
+        renderer.domElement,
+        Math.floor(offsetX),
+        Math.floor(offsetY),
+        Math.ceil(width),
+        Math.ceil(height)
+      )
     }
 
     if (typeof onProgress === &apos;function&apos;) {
@@ -709,7 +710,7 @@ function TiledRenderer (renderer, camera, viewer, params) {
   }
 
   function render () {
-    for (var i = 0; i &lt;= n; ++i) {
+    for (let i = 0; i &lt;= n; ++i) {
       if (i === n) {
         finalize()
       } else {
@@ -719,7 +720,7 @@ function TiledRenderer (renderer, camera, viewer, params) {
   }
 
   function renderAsync () {
-    var count = 0
+    let count = 0
 
     function fn () {
       if (count === n) {
@@ -730,12 +731,12 @@ function TiledRenderer (renderer, camera, viewer, params) {
       count += 1
     }
 
-    for (var i = 0; i &lt;= n; ++i) {
-      setTimeout(fn, 0, i)
+    for (let i = 0; i &lt;= n; ++i) {
+      setTimeout(fn, 0)
     }
   }
 
-    // API
+  // API
 
   this.render = render
   this.renderAsync = renderAsync
@@ -751,7 +752,7 @@ export default TiledRenderer
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.1)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

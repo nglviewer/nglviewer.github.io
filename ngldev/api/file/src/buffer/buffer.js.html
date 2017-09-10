@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@0.10.5-21</span>
+<header><span>NGL@0.10.5-22</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -138,6 +138,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/trace-buffer.js~TraceBuffer.html">TraceBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/tubemesh-buffer.js~TubeMeshBuffer.html">TubeMeshBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/vector-buffer.js~VectorBuffer.html">VectorBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/buffer/wideline-buffer.js~WideLineBuffer.html">WideLineBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/buffer.js~Buffer.html">Buffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/geometry-buffer.js~GeometryBuffer.html">GeometryBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/buffer/mapped-buffer.js~MappedBuffer.html">MappedBuffer</a></span></span></li>
@@ -650,9 +651,7 @@ import { getShader } from &apos;../shader/shader-utils.js&apos;
  * @property {Integer} clipNear - position of camera near/front clipping plane
  *                                in percent of scene bounding box
  * @property {Boolean} flatShaded - render flat shaded
- * @property {Integer} linewidth - width of lines (when applicable)
  * @property {Boolean} wireframe - render as wireframe
- * @property {Integer} wireframeLinewidth - width of wireframe lines
  * @property {Float} roughness - how rough the material is, between 0 and 1
  * @property {Float} metalness - how metallic the material is, between 0 and 1
  * @property {Color} diffuse - diffuse color for lighting
@@ -688,14 +687,14 @@ function setObjectMatrix (object, matrix) {
  * @interface
  */
 class Buffer {
-    /**
-     * @param {Object} data - attribute object
-     * @param {Float32Array} data.position - positions
-     * @param {Float32Array} data.color - colors
-     * @param {Float32Array} data.index - triangle indices
-     * @param {Picker} [data.picking] - picking ids
-     * @param {BufferParameters} params - parameters object
-     */
+  /**
+   * @param {Object} data - attribute object
+   * @param {Float32Array} data.position - positions
+   * @param {Float32Array} data.color - colors
+   * @param {Float32Array} data.index - triangle indices
+   * @param {Picker} [data.picking] - picking ids
+   * @param {BufferParameters} params - parameters object
+   */
   constructor (data, params) {
     const d = data || {}
     const p = params || {}
@@ -710,9 +709,7 @@ class Buffer {
     this.clipCenter = defaults(p.clipCenter, new Vector3())
     this.flatShaded = defaults(p.flatShaded, false)
     this.background = defaults(p.background, false)
-    this.linewidth = defaults(p.linewidth, 1)
     this.wireframe = defaults(p.wireframe, false)
-    this.wireframeLinewidth = defaults(p.wireframeLinewidth, 1)
     this.roughness = defaults(p.roughness, 0.4)
     this.metalness = defaults(p.metalness, 0.0)
     this.diffuse = defaults(p.diffuse, 0xffffff)
@@ -756,10 +753,10 @@ class Buffer {
     this.wireframeGroup = new Group()
     this.pickingGroup = new Group()
 
-        // requires Group objects to be present
+    // requires Group objects to be present
     this.matrix = defaults(p.matrix, new Matrix4())
 
-        //
+    //
 
     const position = d.position || d.position1
     this._positionDataSize = position ? position.length / 3 : 0
@@ -790,7 +787,6 @@ class Buffer {
       clipCenter: { uniform: true },
       flatShaded: { updateShader: true },
       background: { updateShader: true },
-      linewidth: { property: true },
       wireframe: { updateVisibility: true },
       roughness: { uniform: true },
       metalness: { uniform: true },
@@ -824,14 +820,14 @@ class Buffer {
 
   get dynamic () { return true }
 
-    /**
-     * @abstract
-     */
+  /**
+   * @abstract
+   */
   get vertexShader () {}
 
-    /**
-     * @abstract
-     */
+  /**
+   * @abstract
+   */
   get fragmentShader () {}
 
   setMatrix (m) {
@@ -859,8 +855,7 @@ class Buffer {
       depthWrite: this.depthWrite,
       lights: true,
       fog: true,
-      side: side,
-      linewidth: this.linewidth
+      side: side
     })
     m.vertexColors = VertexColors
     m.extensions.derivatives = this.flatShaded
@@ -876,8 +871,7 @@ class Buffer {
       depthWrite: this.depthWrite,
       lights: false,
       fog: true,
-      side: side,
-      linewidth: this.linewidth
+      side: side
     })
     wm.vertexColors = VertexColors
     wm.clipNear = this.clipNear
@@ -892,7 +886,6 @@ class Buffer {
       lights: false,
       fog: false,
       side: side,
-      linewidth: this.linewidth,
       blending: NoBlending
     })
     pm.vertexColors = VertexColors
@@ -903,7 +896,7 @@ class Buffer {
     this.wireframeMaterial = wm
     this.pickingMaterial = pm
 
-        // also sets vertexShader/fragmentShader
+    // also sets vertexShader/fragmentShader
     this.updateShader()
   }
 
@@ -1030,9 +1023,8 @@ class Buffer {
 
     if (this.wireframeIndex.length &gt; this.wireframeGeometry.index.array.length) {
       this.wireframeGeometry.setIndex(
-                new BufferAttribute(this.wireframeIndex, 1)
-                    .setDynamic(this.dynamic)
-            )
+        new BufferAttribute(this.wireframeIndex, 1).setDynamic(this.dynamic)
+      )
     } else {
       const index = this.wireframeGeometry.getIndex()
       index.set(this.wireframeIndex)
@@ -1093,8 +1085,8 @@ class Buffer {
     if (!this.wireframeGeometry) this.makeWireframeGeometry()
 
     mesh = new LineSegments(
-            this.wireframeGeometry, this.wireframeMaterial
-        )
+      this.wireframeGeometry, this.wireframeMaterial
+    )
 
     mesh.frustumCulled = false
     mesh.renderOrder = this.getRenderOrder()
@@ -1161,12 +1153,12 @@ class Buffer {
 
   addUniforms (uniforms) {
     this.uniforms = UniformsUtils.merge(
-            [ this.uniforms, uniforms ]
-        )
+      [ this.uniforms, uniforms ]
+    )
 
     this.pickingUniforms = UniformsUtils.merge(
-            [ this.pickingUniforms, uniforms ]
-        )
+      [ this.pickingUniforms, uniforms ]
+    )
   }
 
   addAttributes (attributes) {
@@ -1186,10 +1178,9 @@ class Buffer {
       }
 
       this.geometry.addAttribute(
-                name,
-                new BufferAttribute(buf, itemSize[ a.type ])
-                    .setDynamic(this.dynamic)
-            )
+        name,
+        new BufferAttribute(buf, itemSize[ a.type ]).setDynamic(this.dynamic)
+      )
     }
   }
 
@@ -1223,11 +1214,11 @@ class Buffer {
     pm.needsUpdate = true
   }
 
-    /**
-     * Set buffer parameters
-     * @param {BufferParameters} params - buffer parameters object
-     * @return {undefined}
-     */
+  /**
+   * Set buffer parameters
+   * @param {BufferParameters} params - buffer parameters object
+   * @return {undefined}
+   */
   setParameters (params) {
     if (!params) return
 
@@ -1290,16 +1281,15 @@ class Buffer {
     if (doVisibilityUpdate) this.setVisibility(this.visible)
   }
 
+  /**
+   * Sets buffer attributes
+   * @param {Object} data - An object where the keys are the attribute names
+   *      and the values are the attribute data.
+   * @example
+   * var buffer = new Buffer();
+   * buffer.setAttributes({ attrName: attrData });
+   */
   setAttributes (data) {
-        /**
-         * Sets buffer attributes
-         * @param {Object} data - An object where the keys are the attribute names
-         *      and the values are the attribute data.
-         * @example
-         * var buffer = new Buffer();
-         * buffer.setAttributes({ attrName: attrData });
-         */
-
     const geometry = this.geometry
     const attributes = geometry.attributes
 
@@ -1315,9 +1305,8 @@ class Buffer {
 
         if (length &gt; index.array.length) {
           geometry.setIndex(
-                        new BufferAttribute(array, 1)
-                            .setDynamic(this.dynamic)
-                    )
+            new BufferAttribute(array, 1).setDynamic(this.dynamic)
+          )
         } else {
           index.set(array)
           index.needsUpdate = length &gt; 0
@@ -1332,10 +1321,10 @@ class Buffer {
 
         if (length &gt; attribute.array.length) {
           geometry.addAttribute(
-                        name,
-                        new BufferAttribute(array, attribute.itemSize)
-                            .setDynamic(this.dynamic)
-                    )
+            name,
+            new BufferAttribute(array, attribute.itemSize)
+              .setDynamic(this.dynamic)
+          )
         } else {
           attributes[ name ].set(array)
           attributes[ name ].needsUpdate = length &gt; 0
@@ -1423,11 +1412,11 @@ class Buffer {
     pm.needsUpdate = true
   }
 
-    /**
-     * Set buffer visibility
-     * @param {Boolean} value - visibility value
-     * @return {undefined}
-     */
+  /**
+   * Set buffer visibility
+   * @param {Boolean} value - visibility value
+   * @return {undefined}
+   */
   setVisibility (value) {
     this.visible = value
 
@@ -1446,10 +1435,10 @@ class Buffer {
     }
   }
 
-    /**
-     * Free buffer resources
-     * @return {undefined}
-     */
+  /**
+   * Free buffer resources
+   * @return {undefined}
+   */
   dispose () {
     if (this.material) this.material.dispose()
     if (this.wireframeMaterial) this.wireframeMaterial.dispose()
@@ -1466,7 +1455,7 @@ export default Buffer
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.1)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
