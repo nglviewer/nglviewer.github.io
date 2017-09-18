@@ -98,6 +98,19 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="trajectoryplayer.html#_currentframe" class="tsd-kind-icon">_current<wbr>Frame</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="trajectoryplayer.html#_currentstep" class="tsd-kind-icon">_current<wbr>Step</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="trajectoryplayer.html#_currenttime" class="tsd-kind-icon">_current<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="trajectoryplayer.html#_direction" class="tsd-kind-icon">_direction</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="trajectoryplayer.html#_previoustime" class="tsd-kind-icon">_previous<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="trajectoryplayer.html#_run" class="tsd-kind-icon">_run</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="trajectoryplayer.html#parameters" class="tsd-kind-icon">parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="trajectoryplayer.html#traj" class="tsd-kind-icon">traj</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="trajectoryplayer.html#isrunning" class="tsd-kind-icon">is<wbr>Running</a></li>
@@ -116,6 +129,12 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="trajectoryplayer.html#toggle" class="tsd-kind-icon">toggle</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="trajectoryplayer.html#signals" class="tsd-kind-icon">signals</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
@@ -125,13 +144,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Trajectory<wbr>Player<span class="tsd-signature-symbol">(</span>traj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="trajectoryplayer.html" class="tsd-signature-type">TrajectoryPlayer</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Trajectory<wbr>Player<span class="tsd-signature-symbol">(</span>traj<span class="tsd-signature-symbol">: </span><a href="trajectory.html" class="tsd-signature-type">Trajectory</a>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#trajectoryplayerparameters" class="tsd-signature-type">TrajectoryPlayerParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="trajectoryplayer.html" class="tsd-signature-type">TrajectoryPlayer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L31">src/trajectory/trajectory-player.js:31</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L53">src/trajectory/trajectory-player.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -142,7 +161,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>traj: <span class="tsd-signature-type">any</span></h5>
+									<h5>traj: <a href="trajectory.html" class="tsd-signature-type">Trajectory</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>the trajectory</p>
@@ -150,14 +169,95 @@
 									</div>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-									</ul>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#trajectoryplayerparameters" class="tsd-signature-type">TrajectoryPlayerParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="trajectoryplayer.html" class="tsd-signature-type">TrajectoryPlayer</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_currentframe" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _current<wbr>Frame</h3>
+					<div class="tsd-signature tsd-kind-icon">_current<wbr>Frame<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L52">src/trajectory/trajectory-player.ts:52</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_currentstep" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _current<wbr>Step</h3>
+					<div class="tsd-signature tsd-kind-icon">_current<wbr>Step<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L51">src/trajectory/trajectory-player.ts:51</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_currenttime" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _current<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">_current<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L50">src/trajectory/trajectory-player.ts:50</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_direction" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _direction</h3>
+					<div class="tsd-signature tsd-kind-icon">_direction<span class="tsd-signature-symbol">:</span> <a href="../globals.html#trajectoryplayerdirection" class="tsd-signature-type">TrajectoryPlayerDirection</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L53">src/trajectory/trajectory-player.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_previoustime" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _previous<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">_previous<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L49">src/trajectory/trajectory-player.ts:49</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_run" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _run</h3>
+					<div class="tsd-signature tsd-kind-icon">_run<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L48">src/trajectory/trajectory-player.ts:48</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="parameters" class="tsd-anchor"></a>
+					<h3>parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">parameters<span class="tsd-signature-symbol">:</span> <a href="../globals.html#trajectoryplayerparameters" class="tsd-signature-type">TrajectoryPlayerParameters</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L45">src/trajectory/trajectory-player.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="traj" class="tsd-anchor"></a>
+					<h3>traj</h3>
+					<div class="tsd-signature tsd-kind-icon">traj<span class="tsd-signature-symbol">:</span> <a href="trajectory.html" class="tsd-signature-type">Trajectory</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L46">src/trajectory/trajectory-player.ts:46</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -172,7 +272,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L77">src/trajectory/trajectory-player.js:77</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L84">src/trajectory/trajectory-player.ts:84</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -192,7 +292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L103">src/trajectory/trajectory-player.js:103</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L98">src/trajectory/trajectory-player.ts:98</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -203,16 +303,16 @@
 					<a name="_next" class="tsd-anchor"></a>
 					<h3>_next</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">_next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L144">src/trajectory/trajectory-player.js:144</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L140">src/trajectory/trajectory-player.ts:140</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -220,16 +320,16 @@
 					<a name="_nextinterpolated" class="tsd-anchor"></a>
 					<h3>_next<wbr>Interpolated</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_next<wbr>Interpolated<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">_next<wbr>Interpolated<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L194">src/trajectory/trajectory-player.js:194</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L191">src/trajectory/trajectory-player.ts:191</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -237,13 +337,13 @@
 					<a name="pause" class="tsd-anchor"></a>
 					<h3>pause</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L258">src/trajectory/trajectory-player.js:258</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L257">src/trajectory/trajectory-player.ts:257</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -251,7 +351,7 @@
 									<p>pause the animation</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -259,13 +359,13 @@
 					<a name="play" class="tsd-anchor"></a>
 					<h3>play</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L227">src/trajectory/trajectory-player.js:227</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L225">src/trajectory/trajectory-player.ts:225</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -273,7 +373,7 @@
 									<p>start the animation</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -281,13 +381,13 @@
 					<a name="setparameters" class="tsd-anchor"></a>
 					<h3>set<wbr>Parameters</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Parameters<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Parameters<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#trajectoryplayerparameters" class="tsd-signature-type">TrajectoryPlayerParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L83">src/trajectory/trajectory-player.js:83</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L90">src/trajectory/trajectory-player.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -298,9 +398,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>params: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-									</ul>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#trajectoryplayerparameters" class="tsd-signature-type">TrajectoryPlayerParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -311,13 +409,13 @@
 					<a name="stop" class="tsd-anchor"></a>
 					<h3>stop</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L267">src/trajectory/trajectory-player.js:267</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L266">src/trajectory/trajectory-player.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -325,7 +423,7 @@
 									<p>stop the animation (pause and go to start-frame)</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -333,13 +431,13 @@
 					<a name="toggle" class="tsd-anchor"></a>
 					<h3>toggle</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">toggle<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">toggle<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/trajectory/trajectory-player.js#L215">src/trajectory/trajectory-player.js:215</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L213">src/trajectory/trajectory-player.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -347,9 +445,42 @@
 									<p>toggle between playing and pausing the animation</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="signals" class="tsd-anchor"></a>
+					<h3>signals</h3>
+					<div class="tsd-signature tsd-kind-icon">signals<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L40">src/trajectory/trajectory-player.ts:40</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="signals.haltedrunning" class="tsd-anchor"></a>
+						<h3>halted<wbr>Running</h3>
+						<div class="tsd-signature tsd-kind-icon">halted<wbr>Running<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L42">src/trajectory/trajectory-player.ts:42</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="signals.startedrunning" class="tsd-anchor"></a>
+						<h3>started<wbr>Running</h3>
+						<div class="tsd-signature tsd-kind-icon">started<wbr>Running<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory-player.ts#L41">src/trajectory/trajectory-player.ts:41</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -370,6 +501,30 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="trajectoryplayer.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="trajectoryplayer.html#_currentframe" class="tsd-kind-icon">_current<wbr>Frame</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="trajectoryplayer.html#_currentstep" class="tsd-kind-icon">_current<wbr>Step</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="trajectoryplayer.html#_currenttime" class="tsd-kind-icon">_current<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="trajectoryplayer.html#_direction" class="tsd-kind-icon">_direction</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="trajectoryplayer.html#_previoustime" class="tsd-kind-icon">_previous<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="trajectoryplayer.html#_run" class="tsd-kind-icon">_run</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="trajectoryplayer.html#parameters" class="tsd-kind-icon">parameters</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="trajectoryplayer.html#traj" class="tsd-kind-icon">traj</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="trajectoryplayer.html#isrunning" class="tsd-kind-icon">is<wbr>Running</a>
@@ -397,6 +552,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="trajectoryplayer.html#toggle" class="tsd-kind-icon">toggle</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="trajectoryplayer.html#signals" class="tsd-kind-icon">signals</a>
 							</li>
 						</ul>
 					</li>

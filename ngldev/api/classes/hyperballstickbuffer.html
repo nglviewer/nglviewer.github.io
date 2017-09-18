@@ -78,14 +78,14 @@
 						<dd><p>{Buffer}</p>
 						</dd>
 						<dt>example</dt>
-						<dd><p>var hyperballStickBuffer = new HyperballStickBuffer( {
-								position1: new Float32Array( [ 0, 0, 0 ] ),
-								position2: new Float32Array( [ 2, 2, 2 ] ),
-								color: new Float32Array( [ 1, 0, 0 ] ),
-								color2: new Float32Array( [ 0, 1, 0 ] ),
-								radius1: new Float32Array( [ 1 ] ),
-								radius2: new Float32Array( [ 2 ] )
-							} );</p>
+						<dd><p>var hyperballStickBuffer = new HyperballStickBuffer({
+								position1: new Float32Array([ 0, 0, 0 ]),
+								position2: new Float32Array([ 2, 2, 2 ]),
+								color: new Float32Array([ 1, 0, 0 ]),
+								color2: new Float32Array([ 0, 1, 0 ]),
+								radius: new Float32Array([ 1 ]),
+								radius2: new Float32Array([ 2 ])
+							});</p>
 						</dd>
 					</dl>
 				</div>
@@ -117,13 +117,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Hyperball<wbr>Stick<wbr>Buffer<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="hyperballstickbuffer.html" class="tsd-signature-type">HyperballStickBuffer</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Hyperball<wbr>Stick<wbr>Buffer<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="../interfaces/hyperballstickbufferdata.html" class="tsd-signature-type">HyperballStickBufferData</a>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hyperballstickbufferparameters" class="tsd-signature-type">HyperballStickBufferParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="hyperballstickbuffer.html" class="tsd-signature-type">HyperballStickBuffer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/buffer/hyperballstick-buffer.js#L28">src/buffer/hyperballstick-buffer.js:28</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/hyperballstick-buffer.ts#L42">src/buffer/hyperballstick-buffer.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -131,7 +131,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">any</span></h5>
+									<h5>data: <a href="../interfaces/hyperballstickbufferdata.html" class="tsd-signature-type">HyperballStickBufferData</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>attribute object</p>
@@ -139,7 +139,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#hyperballstickbufferparameters" class="tsd-signature-type">HyperballStickBufferParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>parameter object</p>

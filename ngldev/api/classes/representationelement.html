@@ -77,7 +77,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RepresentationElement</span>
+						<a href="element.html" class="tsd-signature-type">Element</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">RepresentationElement</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -88,29 +93,42 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="representationelement.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="representationelement.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="representationelement.html#parameters" class="tsd-kind-icon">parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="representationelement.html#repr" class="tsd-kind-icon">repr</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="representationelement.html#signals" class="tsd-kind-icon">signals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="representationelement.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite"><a href="representationelement.html#defaultparameters" class="tsd-kind-icon">default<wbr>Parameters</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="representationelement.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="representationelement.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="representationelement.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#_disposerepresentation" class="tsd-kind-icon">_dispose<wbr>Representation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#build" class="tsd-kind-icon">build</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#dispose" class="tsd-kind-icon">dispose</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#disposerepresentation" class="tsd-kind-icon">dispose<wbr>Representation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="representationelement.html#dispose" class="tsd-kind-icon">dispose</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#getparameters" class="tsd-kind-icon">get<wbr>Parameters</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#gettype" class="tsd-kind-icon">get<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#getvisibility" class="tsd-kind-icon">get<wbr>Visibility</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#setcolor" class="tsd-kind-icon">set<wbr>Color</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="representationelement.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#setparameters" class="tsd-kind-icon">set<wbr>Parameters</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#setrepresentation" class="tsd-kind-icon">set<wbr>Representation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#setselection" class="tsd-kind-icon">set<wbr>Selection</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="representationelement.html#setstatus" class="tsd-kind-icon">set<wbr>Status</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#setvisibility" class="tsd-kind-icon">set<wbr>Visibility</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#togglevisibility" class="tsd-kind-icon">toggle<wbr>Visibility</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="representationelement.html#update" class="tsd-kind-icon">update</a></li>
@@ -122,17 +140,18 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Representation<wbr>Element<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, repr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Representation<wbr>Element<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><a href="stage.html" class="tsd-signature-type">Stage</a>, repr<span class="tsd-signature-symbol">: </span><a href="representation.html" class="tsd-signature-type">Representation</a>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#representationelementparameters" class="tsd-signature-type">RepresentationElementParameters</a><span class="tsd-signature-symbol">&gt;</span>, parent<span class="tsd-signature-symbol">: </span><a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="element.html">Element</a>.<a href="element.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L25">src/component/representation-element.js:25</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L33">src/component/representation-element.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -143,7 +162,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>stage: <span class="tsd-signature-type">any</span></h5>
+									<h5>stage: <a href="stage.html" class="tsd-signature-type">Stage</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>stage object the component belongs to</p>
@@ -151,7 +170,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>repr: <span class="tsd-signature-type">any</span></h5>
+									<h5>repr: <a href="representation.html" class="tsd-signature-type">Representation</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>representation object to wrap</p>
@@ -159,10 +178,10 @@
 									</div>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#representationelementparameters" class="tsd-signature-type">RepresentationElementParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 								<li>
-									<h5>parent: <span class="tsd-signature-type">any</span></h5>
+									<h5>parent: <a href="component.html" class="tsd-signature-type">Component</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
@@ -171,7 +190,92 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="parameters" class="tsd-anchor"></a>
+					<h3>parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">parameters<span class="tsd-signature-symbol">:</span> <a href="../globals.html#representationelementparameters" class="tsd-signature-type">RepresentationElementParameters</a></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="element.html">Element</a>.<a href="element.html#parameters">parameters</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L30">src/component/representation-element.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="repr" class="tsd-anchor"></a>
+					<h3>repr</h3>
+					<div class="tsd-signature tsd-kind-icon">repr<span class="tsd-signature-symbol">:</span> <a href="representation.html" class="tsd-signature-type">Representation</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L33">src/component/representation-element.ts:33</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="signals" class="tsd-anchor"></a>
+					<h3>signals</h3>
+					<div class="tsd-signature tsd-kind-icon">signals<span class="tsd-signature-symbol">:</span> <a href="../interfaces/representationelementsignals.html" class="tsd-signature-type">RepresentationElementSignals</a></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="element.html">Element</a>.<a href="element.html#signals">signals</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L29">src/component/representation-element.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="uuid" class="tsd-anchor"></a>
+					<h3>uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="element.html">Element</a>.<a href="element.html#uuid">uuid</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/element.ts#L38">src/component/element.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+					<a name="defaultparameters" class="tsd-anchor"></a>
+					<h3>default<wbr>Parameters</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> defaultParameters<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="element.html">Element</a>.<a href="element.html#defaultparameters">defaultParameters</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L31">src/component/representation-element.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<span class="tsd-signature-type">object</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="element.html">Element</a>.<a href="element.html#name">name</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/element.ts#L51">src/component/element.ts:51</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
@@ -182,7 +286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L61">src/component/representation-element.js:61</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L59">src/component/representation-element.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -199,9 +303,43 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3>visible</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> visible<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L53">src/component/representation-element.ts:53</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_disposerepresentation" class="tsd-anchor"></a>
+					<h3>_dispose<wbr>Representation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">_dispose<wbr>Representation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L73">src/component/representation-element.ts:73</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="build" class="tsd-anchor"></a>
 					<h3>build</h3>
@@ -212,7 +350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L138">src/component/representation-element.js:138</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L136">src/component/representation-element.ts:136</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -225,34 +363,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="dispose" class="tsd-anchor"></a>
 					<h3>dispose</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="element.html">Element</a>.<a href="element.html#dispose">dispose</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L82">src/component/representation-element.js:82</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="disposerepresentation" class="tsd-anchor"></a>
-					<h3>dispose<wbr>Representation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">dispose<wbr>Representation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L75">src/component/representation-element.js:75</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L80">src/component/representation-element.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -263,13 +385,13 @@
 					<a name="getparameters" class="tsd-anchor"></a>
 					<h3>get<wbr>Parameters</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Parameters<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Parameters<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L173">src/component/representation-element.js:173</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L175">src/component/representation-element.ts:175</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -277,8 +399,19 @@
 									<p>Get representation parameters</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
 							<p>parameter object</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>lazy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>quality<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>visible<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -286,16 +419,16 @@
 					<a name="gettype" class="tsd-anchor"></a>
 					<h3>get<wbr>Type</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L63">src/component/representation-element.js:63</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L61">src/component/representation-element.ts:61</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -303,16 +436,16 @@
 					<a name="getvisibility" class="tsd-anchor"></a>
 					<h3>get<wbr>Visibility</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Visibility<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Visibility<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L104">src/component/representation-element.js:104</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L102">src/component/representation-element.ts:102</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -320,13 +453,13 @@
 					<a name="setcolor" class="tsd-anchor"></a>
 					<h3>set<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Color<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Color<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L182">src/component/representation-element.js:182</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L184">src/component/representation-element.ts:184</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -337,34 +470,35 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>value: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Color</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>color value</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 							<p>this object</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="setname" class="tsd-anchor"></a>
 					<h3>set<wbr>Name</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Name<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Name<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="element.html">Element</a>.<a href="element.html#setname">setName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L188">src/component/representation-element.js:188</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/element.ts#L60">src/component/element.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -375,13 +509,13 @@
 					<a name="setparameters" class="tsd-anchor"></a>
 					<h3>set<wbr>Parameters</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Parameters<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Parameters<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L160">src/component/representation-element.js:160</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L162">src/component/representation-element.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -398,7 +532,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 							<p>this object</p>
 						</li>
 					</ul>
@@ -407,19 +541,19 @@
 					<a name="setrepresentation" class="tsd-anchor"></a>
 					<h3>set<wbr>Representation</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Representation<span class="tsd-signature-symbol">(</span>repr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Representation<span class="tsd-signature-symbol">(</span>repr<span class="tsd-signature-symbol">: </span><a href="representation.html" class="tsd-signature-type">Representation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L67">src/component/representation-element.js:67</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L65">src/component/representation-element.ts:65</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>repr: <span class="tsd-signature-type">any</span></h5>
+									<h5>repr: <a href="representation.html" class="tsd-signature-type">Representation</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -430,13 +564,13 @@
 					<a name="setselection" class="tsd-anchor"></a>
 					<h3>set<wbr>Selection</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Selection<span class="tsd-signature-symbol">(</span>string<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Selection<span class="tsd-signature-symbol">(</span>string<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L149">src/component/representation-element.js:149</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L147">src/component/representation-element.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,8 +587,32 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setstatus" class="tsd-anchor"></a>
+					<h3>set<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Status<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="element.html">Element</a>.<a href="element.html#setstatus">setStatus</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/element.ts#L53">src/component/element.ts:53</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -462,13 +620,13 @@
 					<a name="setvisibility" class="tsd-anchor"></a>
 					<h3>set<wbr>Visibility</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Visibility<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Visibility<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L96">src/component/representation-element.js:96</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L94">src/component/representation-element.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -485,7 +643,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 							<p>this object</p>
 						</li>
 					</ul>
@@ -494,13 +652,13 @@
 					<a name="togglevisibility" class="tsd-anchor"></a>
 					<h3>toggle<wbr>Visibility</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Visibility<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Visibility<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L116">src/component/representation-element.js:116</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L114">src/component/representation-element.ts:114</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -508,7 +666,7 @@
 									<p>Toggle visibility of the component, takes parent visibility into account</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 							<p>this object</p>
 						</li>
 					</ul>
@@ -517,13 +675,13 @@
 					<a name="update" class="tsd-anchor"></a>
 					<h3>update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>what<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>what<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L132">src/component/representation-element.js:132</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L130">src/component/representation-element.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -540,7 +698,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 							<p>this object</p>
 						</li>
 					</ul>
@@ -555,7 +713,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/representation-element.js#L120">src/component/representation-element.js:120</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/representation-element.ts#L118">src/component/representation-element.ts:118</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -579,20 +737,41 @@
 					<li class="current tsd-kind-class">
 						<a href="representationelement.html" class="tsd-kind-icon">Representation<wbr>Element</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="representationelement.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="representationelement.html#parameters" class="tsd-kind-icon">parameters</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="representationelement.html#repr" class="tsd-kind-icon">repr</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="representationelement.html#signals" class="tsd-kind-icon">signals</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="representationelement.html#uuid" class="tsd-kind-icon">uuid</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+								<a href="representationelement.html#defaultparameters" class="tsd-kind-icon">default<wbr>Parameters</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="representationelement.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="representationelement.html#type" class="tsd-kind-icon">type</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="representationelement.html#visible" class="tsd-kind-icon">visible</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="representationelement.html#_disposerepresentation" class="tsd-kind-icon">_dispose<wbr>Representation</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="representationelement.html#build" class="tsd-kind-icon">build</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="representationelement.html#dispose" class="tsd-kind-icon">dispose</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="representationelement.html#disposerepresentation" class="tsd-kind-icon">dispose<wbr>Representation</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="representationelement.html#getparameters" class="tsd-kind-icon">get<wbr>Parameters</a>
@@ -606,7 +785,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="representationelement.html#setcolor" class="tsd-kind-icon">set<wbr>Color</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="representationelement.html#setname" class="tsd-kind-icon">set<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -617,6 +796,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="representationelement.html#setselection" class="tsd-kind-icon">set<wbr>Selection</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="representationelement.html#setstatus" class="tsd-kind-icon">set<wbr>Status</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="representationelement.html#setvisibility" class="tsd-kind-icon">set<wbr>Visibility</a>

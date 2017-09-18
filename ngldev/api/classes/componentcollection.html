@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="collection.html" class="tsd-signature-type">Collection</a>
+						<a href="collection.html" class="tsd-signature-type">Collection</a><span class="tsd-signature-symbol">&lt;</span><a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ComponentCollection</span>
@@ -89,16 +89,26 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#list" class="tsd-kind-icon">list</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#first" class="tsd-kind-icon">first</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#_invoke" class="tsd-kind-icon">_invoke</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#_remove" class="tsd-kind-icon">_remove</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="componentcollection.html#addrepresentation" class="tsd-kind-icon">add<wbr>Representation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="componentcollection.html#autoview" class="tsd-kind-icon">auto<wbr>View</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#dispose" class="tsd-kind-icon">dispose</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#setselection" class="tsd-kind-icon">set<wbr>Selection</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#setvisibility" class="tsd-kind-icon">set<wbr>Visibility</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="componentcollection.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,20 +120,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Component<wbr>Collection<span class="tsd-signature-symbol">(</span>list<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="componentcollection.html" class="tsd-signature-type">ComponentCollection</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Component<wbr>Collection<span class="tsd-signature-symbol">(</span>list<span class="tsd-signature-symbol">?: </span><a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="componentcollection.html" class="tsd-signature-type">ComponentCollection</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/collection.js#L7">src/component/collection.js:7</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/collection.ts#L11">src/component/collection.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>list: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> list: <a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="componentcollection.html" class="tsd-signature-type">ComponentCollection</a></h4>
@@ -131,53 +141,64 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="_invoke" class="tsd-anchor"></a>
-					<h3>_invoke</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">_invoke<span class="tsd-signature-symbol">(</span>methodName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, methodArgs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#list">list</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/collection.ts#L11">src/component/collection.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="first" class="tsd-anchor"></a>
+					<h3>first</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> first<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#_invoke">_invoke</a></p>
+								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#first">first</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/collection.js#L30">src/component/collection.js:30</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/collection.ts#L31">src/component/collection.ts:31</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>methodName: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>methodArgs: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">T</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="_remove" class="tsd-anchor"></a>
 					<h3>_remove</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">_remove<span class="tsd-signature-symbol">(</span>elm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">_remove<span class="tsd-signature-symbol">(</span>elm<span class="tsd-signature-symbol">: </span><a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#_remove">_remove</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/collection.js#L22">src/component/collection.js:22</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/collection.ts#L23">src/component/collection.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>elm: <span class="tsd-signature-type">any</span></h5>
+									<h5>elm: <a href="component.html" class="tsd-signature-type">Component</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -188,19 +209,19 @@
 					<a name="addrepresentation" class="tsd-anchor"></a>
 					<h3>add<wbr>Representation</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Representation<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Representation<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/component-collection.js#L10">src/component/component-collection.js:10</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component-collection.ts#L11">src/component/component-collection.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-type">any</span></h5>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
 									<h5>params: <span class="tsd-signature-type">any</span></h5>
@@ -214,19 +235,19 @@
 					<a name="autoview" class="tsd-anchor"></a>
 					<h3>auto<wbr>View</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">auto<wbr>View<span class="tsd-signature-symbol">(</span>duration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">auto<wbr>View<span class="tsd-signature-symbol">(</span>duration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/component-collection.js#L14">src/component/component-collection.js:14</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component-collection.ts#L15">src/component/component-collection.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>duration: <span class="tsd-signature-type">any</span></h5>
+									<h5>duration: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -244,7 +265,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#dispose">dispose</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/collection.js#L53">src/component/collection.js:53</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/collection.ts#L41">src/component/collection.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -252,47 +273,41 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="setselection" class="tsd-anchor"></a>
-					<h3>set<wbr>Selection</h3>
+					<a name="foreach" class="tsd-anchor"></a>
+					<h3>for<wbr>Each</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Selection<span class="tsd-signature-symbol">(</span>string<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#setselection">setSelection</a></p>
+								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#foreach">forEach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/collection.js#L49">src/component/collection.js:49</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/collection.ts#L35">src/component/collection.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>string: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="setvisibility" class="tsd-anchor"></a>
-					<h3>set<wbr>Visibility</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Visibility<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection.html">Collection</a>.<a href="collection.html#setvisibility">setVisibility</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/component/collection.js#L45">src/component/collection.js:45</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>fn: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><a href="component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>x: <a href="component.html" class="tsd-signature-type">Component</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -319,8 +334,11 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 								<a href="componentcollection.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="componentcollection.html#_invoke" class="tsd-kind-icon">_invoke</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="componentcollection.html#list" class="tsd-kind-icon">list</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="componentcollection.html#first" class="tsd-kind-icon">first</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="componentcollection.html#_remove" class="tsd-kind-icon">_remove</a>
@@ -335,10 +353,7 @@
 								<a href="componentcollection.html#dispose" class="tsd-kind-icon">dispose</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="componentcollection.html#setselection" class="tsd-kind-icon">set<wbr>Selection</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="componentcollection.html#setvisibility" class="tsd-kind-icon">set<wbr>Visibility</a>
+								<a href="componentcollection.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
 							</li>
 						</ul>
 					</li>

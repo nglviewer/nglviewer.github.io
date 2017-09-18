@@ -96,11 +96,13 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="volumecolormaker.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecolormaker.html#atomproxy" class="tsd-kind-icon">atom<wbr>Proxy</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecolormaker.html#parameters" class="tsd-kind-icon">parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="volumecolormaker.html#valuescale" class="tsd-kind-icon">value<wbr>Scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="volumecolormaker.html#vec" class="tsd-kind-icon">vec</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -127,20 +129,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Volume<wbr>Colormaker<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="volumecolormaker.html" class="tsd-signature-type">VolumeColormaker</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Volume<wbr>Colormaker<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../globals.html#volumecolormakerparams" class="tsd-signature-type">VolumeColormakerParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="volumecolormaker.html" class="tsd-signature-type">VolumeColormaker</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/volume-colormaker.js#L16">src/color/volume-colormaker.js:16</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/volume-colormaker.ts#L18">src/color/volume-colormaker.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5>params: <a href="../globals.html#volumecolormakerparams" class="tsd-signature-type">VolumeColormakerParams</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="volumecolormaker.html" class="tsd-signature-type">VolumeColormaker</a></h4>
@@ -148,7 +150,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="atomproxy" class="tsd-anchor"></a>
@@ -157,7 +159,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#atomproxy">atomProxy</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L38">src/color/colormaker.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L43">src/color/colormaker.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,7 +170,27 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#parameters">parameters</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L37">src/color/colormaker.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L42">src/color/colormaker.ts:42</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="valuescale" class="tsd-anchor"></a>
+					<h3>value<wbr>Scale</h3>
+					<div class="tsd-signature tsd-kind-icon">value<wbr>Scale<span class="tsd-signature-symbol">:</span> <a href="../globals.html#colormakerscale" class="tsd-signature-type">ColormakerScale</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/volume-colormaker.ts#L17">src/color/volume-colormaker.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vec" class="tsd-anchor"></a>
+					<h3>vec</h3>
+					<div class="tsd-signature tsd-kind-icon">vec<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> =&nbsp;new Vector3()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/volume-colormaker.ts#L18">src/color/volume-colormaker.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -186,7 +208,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#atomcolor">atomColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L93">src/color/colormaker.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L91">src/color/colormaker.ts:91</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -210,7 +232,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#atomcolortoarray">atomColorToArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L102">src/color/colormaker.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L100">src/color/colormaker.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -274,7 +296,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#bondcolor">bondColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L114">src/color/colormaker.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L112">src/color/colormaker.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,7 +335,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#bondcolortoarray">bondColorToArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L131">src/color/colormaker.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L129">src/color/colormaker.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -383,7 +405,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#colortoarray">colorToArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L85">src/color/colormaker.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L83">src/color/colormaker.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -440,20 +462,20 @@
 					<a name="getscale" class="tsd-anchor"></a>
 					<h3>get<wbr>Scale</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Scale<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scaleparameters.html" class="tsd-signature-type">ScaleParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Scale</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Scale<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#scaleparameters" class="tsd-signature-type">ScaleParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Scale</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#getscale">getScale</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L58">src/color/colormaker.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L57">src/color/colormaker.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scaleparameters.html" class="tsd-signature-type">ScaleParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#scaleparameters" class="tsd-signature-type">ScaleParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Scale</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -464,14 +486,14 @@
 					<a name="positioncolor" class="tsd-anchor"></a>
 					<h3>position<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">position<wbr>Color<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">position<wbr>Color<span class="tsd-signature-symbol">(</span>coords<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#positioncolor">positionColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/volume-colormaker.js#L91">src/color/volume-colormaker.js:91</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/volume-colormaker.ts#L30">src/color/volume-colormaker.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -479,7 +501,16 @@
 									<p>return the color for coordinates in space</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>coords: <span class="tsd-signature-type">Vector3</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>xyz coordinates</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<p>hex coords color</p>
 						</li>
 					</ul>
@@ -495,7 +526,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#positioncolortoarray">positionColorToArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L161">src/color/colormaker.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L159">src/color/colormaker.ts:159</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -559,7 +590,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#volumecolor">volumeColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L137">src/color/colormaker.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L135">src/color/colormaker.ts:135</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -583,7 +614,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="colormaker.html">Colormaker</a>.<a href="colormaker.html#volumecolortoarray">volumeColorToArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/556bd87/src/color/colormaker.ts#L146">src/color/colormaker.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/color/colormaker.ts#L144">src/color/colormaker.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -661,6 +692,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="volumecolormaker.html#parameters" class="tsd-kind-icon">parameters</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="volumecolormaker.html#valuescale" class="tsd-kind-icon">value<wbr>Scale</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="volumecolormaker.html#vec" class="tsd-kind-icon">vec</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="volumecolormaker.html#atomcolor" class="tsd-kind-icon">atom<wbr>Color</a>
