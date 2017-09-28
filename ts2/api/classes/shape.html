@@ -1,0 +1,1236 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shape | ngl</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">ngl</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="shape.html">Shape</a>
+				</li>
+			</ul>
+			<h1>Class Shape</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Class for building custom shapes.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p>var shape = new NGL.Shape(&#39;shape&#39;, { disableImpostor: true });
+								shape.addSphere([ 0, 0, 9 ], [ 1, 0, 0 ], 1.5 );
+								shape.addEllipsoid([ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ]);
+								shape.addCylinder([ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5);
+								shape.addCone([ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5);
+								shape.addArrow([ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0);
+								shape.addBox([ 0, 3, 0 ], [ 1, 0, 1 ], 2, [ 0, 1, 1 ], [ 1, 0, 1 ]);
+								var shapeComp = stage.addComponentFromObject(shape);
+							geoComp.addRepresentation(&#39;buffer&#39;);</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Shape</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="shape.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#_center" class="tsd-kind-icon">_center</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#_primitivedata" class="tsd-kind-icon">_primitive<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#boundingbox" class="tsd-kind-icon">bounding<wbr>Box</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#bufferlist" class="tsd-kind-icon">buffer<wbr>List</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#meshcount" class="tsd-kind-icon">mesh<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shape.html#parameters" class="tsd-kind-icon">parameters</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="shape.html#center" class="tsd-kind-icon">center</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="shape.html#type" class="tsd-kind-icon">type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addarrow" class="tsd-kind-icon">add<wbr>Arrow</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addbox" class="tsd-kind-icon">add<wbr>Box</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addbuffer" class="tsd-kind-icon">add<wbr>Buffer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addcone" class="tsd-kind-icon">add<wbr>Cone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addcylinder" class="tsd-kind-icon">add<wbr>Cylinder</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addellipsoid" class="tsd-kind-icon">add<wbr>Ellipsoid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addlabel" class="tsd-kind-icon">add<wbr>Label</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addmesh" class="tsd-kind-icon">add<wbr>Mesh</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addoctahedron" class="tsd-kind-icon">add<wbr>Octahedron</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addsphere" class="tsd-kind-icon">add<wbr>Sphere</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addtetrahedron" class="tsd-kind-icon">add<wbr>Tetrahedron</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addtext" class="tsd-kind-icon">add<wbr>Text</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#addtorus" class="tsd-kind-icon">add<wbr>Torus</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shape.html#getbufferlist" class="tsd-kind-icon">get<wbr>Buffer<wbr>List</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Shape<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#shapeparameters" class="tsd-signature-type">ShapeParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="shape.html" class="tsd-signature-type">Shape</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L61">src/geometry/shape.ts:61</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;shape&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>name</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#shapeparameters" class="tsd-signature-type">ShapeParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>parameter object</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="shape.html" class="tsd-signature-type">Shape</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_center" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _center</h3>
+					<div class="tsd-signature tsd-kind-icon">_center<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L60">src/geometry/shape.ts:60</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_primitivedata" class="tsd-anchor"></a>
+					<h3>_primitive<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">_primitive<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L61">src/geometry/shape.ts:61</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="boundingbox" class="tsd-anchor"></a>
+					<h3>bounding<wbr>Box</h3>
+					<div class="tsd-signature tsd-kind-icon">bounding<wbr>Box<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Box3</span><span class="tsd-signature-symbol"> =&nbsp;new Box3()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L56">src/geometry/shape.ts:56</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="bufferlist" class="tsd-anchor"></a>
+					<h3>buffer<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">buffer<wbr>List<span class="tsd-signature-symbol">:</span> <a href="buffer.html" class="tsd-signature-type">Buffer</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L57">src/geometry/shape.ts:57</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="meshcount" class="tsd-anchor"></a>
+					<h3>mesh<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">mesh<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L58">src/geometry/shape.ts:58</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L53">src/geometry/shape.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="parameters" class="tsd-anchor"></a>
+					<h3>parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">parameters<span class="tsd-signature-symbol">:</span> <a href="../globals.html#shapeparameters" class="tsd-signature-type">ShapeParameters</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L54">src/geometry/shape.ts:54</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="center" class="tsd-anchor"></a>
+					<h3>center</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> center<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L372">src/geometry/shape.ts:372</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector3</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L379">src/geometry/shape.ts:379</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addarrow" class="tsd-anchor"></a>
+					<h3>add<wbr>Arrow</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Arrow<span class="tsd-signature-symbol">(</span>position1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, position2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L253">src/geometry/shape.ts:253</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add an arrow</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addArrow([ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position1: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>from position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>position2: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>to position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>radius value</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addbox" class="tsd-anchor"></a>
+					<h3>add<wbr>Box</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Box<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, heightAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, depthAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L273">src/geometry/shape.ts:273</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a box</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addBox([ 0, 3, 0 ], [ 1, 0, 1 ], 2, [ 0, 1, 1 ], [ 1, 0, 1 ]);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>size value</p>
+									</div>
+								</li>
+								<li>
+									<h5>heightAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>height axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>depthAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>depth axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addbuffer" class="tsd-anchor"></a>
+					<h3>add<wbr>Buffer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Buffer<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><a href="buffer.html" class="tsd-signature-type">Buffer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L91">src/geometry/shape.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a buffer</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buffer: <a href="buffer.html" class="tsd-signature-type">Buffer</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>buffer object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addcone" class="tsd-anchor"></a>
+					<h3>add<wbr>Cone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Cone<span class="tsd-signature-symbol">(</span>position1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, position2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L234">src/geometry/shape.ts:234</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a cone</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addCone([ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position1: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>from position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>position2: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>to position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>radius value</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addcylinder" class="tsd-anchor"></a>
+					<h3>add<wbr>Cylinder</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Cylinder<span class="tsd-signature-symbol">(</span>position1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, position2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L215">src/geometry/shape.ts:215</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a cylinder</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addCylinder([ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position1: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>from position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>position2: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>to position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>radius value</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addellipsoid" class="tsd-anchor"></a>
+					<h3>add<wbr>Ellipsoid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Ellipsoid<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, majorAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, minorAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L176">src/geometry/shape.ts:176</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add an ellipsoid</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addEllipsoid([ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ]);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>radius value</p>
+									</div>
+								</li>
+								<li>
+									<h5>majorAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>major axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>minorAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>minor axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addlabel" class="tsd-anchor"></a>
+					<h3>add<wbr>Label</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Label<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L341">src/geometry/shape.ts:341</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Deprecated, use <code>.addText</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addmesh" class="tsd-anchor"></a>
+					<h3>add<wbr>Mesh</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Mesh<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Uint32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint16Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L118">src/geometry/shape.ts:118</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a mesh</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addMesh(
+											[ 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1 ],
+											[ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 ]
+										);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>positions</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>colors</p>
+									</div>
+								</li>
+								<li>
+									<h5>index: <span class="tsd-signature-type">Uint32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint16Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>normal: <span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> name: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addoctahedron" class="tsd-anchor"></a>
+					<h3>add<wbr>Octahedron</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Octahedron<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, heightAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, depthAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L293">src/geometry/shape.ts:293</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add an octahedron</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addOctahedron([ 0, 3, 0 ], [ 1, 0, 1 ], 2, [ 0, 1, 1 ], [ 1, 0, 1 ]);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>size value</p>
+									</div>
+								</li>
+								<li>
+									<h5>heightAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>height axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>depthAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>depth axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addsphere" class="tsd-anchor"></a>
+					<h3>add<wbr>Sphere</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Sphere<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L156">src/geometry/shape.ts:156</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a sphere</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addSphere([ 0, 0, 9 ], [ 1, 0, 0 ], 1.5);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>radius value</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addtetrahedron" class="tsd-anchor"></a>
+					<h3>add<wbr>Tetrahedron</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Tetrahedron<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, heightAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, depthAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L313">src/geometry/shape.ts:313</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a tetrahedron</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addTetrahedron([ 0, 3, 0 ], [ 1, 0, 1 ], 2, [ 0, 1, 1 ], [ 1, 0, 1 ]);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>size value</p>
+									</div>
+								</li>
+								<li>
+									<h5>heightAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>height axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>depthAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>depth axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addtext" class="tsd-anchor"></a>
+					<h3>add<wbr>Text</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Text<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L331">src/geometry/shape.ts:331</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add text</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addText([ 10, -2, 4 ], [ 0.2, 0.5, 0.8 ], 0.5, &quot;Hello&quot;);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>from position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>size value</p>
+									</div>
+								</li>
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>text value</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addtorus" class="tsd-anchor"></a>
+					<h3>add<wbr>Torus</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Torus<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, majorAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, minorAxis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L196">src/geometry/shape.ts:196</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a torus</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>shape.addTorus([ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ]);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>position vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>color: <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>color object or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>radius: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>radius value</p>
+									</div>
+								</li>
+								<li>
+									<h5>majorAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>major axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>minorAxis: <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>minor axis vector or array</p>
+									</div>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<p>this object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L358">src/geometry/shape.ts:358</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbufferlist" class="tsd-anchor"></a>
+					<h3>get<wbr>Buffer<wbr>List</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Buffer<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="buffer.html" class="tsd-signature-type">Buffer</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/shape.ts#L346">src/geometry/shape.ts:346</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="buffer.html" class="tsd-signature-type">Buffer</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="shape.html" class="tsd-kind-icon">Shape</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="shape.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#_center" class="tsd-kind-icon">_center</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#_primitivedata" class="tsd-kind-icon">_primitive<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#boundingbox" class="tsd-kind-icon">bounding<wbr>Box</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#bufferlist" class="tsd-kind-icon">buffer<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#meshcount" class="tsd-kind-icon">mesh<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shape.html#parameters" class="tsd-kind-icon">parameters</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="shape.html#center" class="tsd-kind-icon">center</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="shape.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addarrow" class="tsd-kind-icon">add<wbr>Arrow</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addbox" class="tsd-kind-icon">add<wbr>Box</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addbuffer" class="tsd-kind-icon">add<wbr>Buffer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addcone" class="tsd-kind-icon">add<wbr>Cone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addcylinder" class="tsd-kind-icon">add<wbr>Cylinder</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addellipsoid" class="tsd-kind-icon">add<wbr>Ellipsoid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addlabel" class="tsd-kind-icon">add<wbr>Label</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addmesh" class="tsd-kind-icon">add<wbr>Mesh</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addoctahedron" class="tsd-kind-icon">add<wbr>Octahedron</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addsphere" class="tsd-kind-icon">add<wbr>Sphere</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addtetrahedron" class="tsd-kind-icon">add<wbr>Tetrahedron</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addtext" class="tsd-kind-icon">add<wbr>Text</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#addtorus" class="tsd-kind-icon">add<wbr>Torus</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shape.html#getbufferlist" class="tsd-kind-icon">get<wbr>Buffer<wbr>List</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

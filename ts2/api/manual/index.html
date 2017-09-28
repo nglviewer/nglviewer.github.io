@@ -1,0 +1,1182 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | NGL Viewer</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+
+<header><span>NGL@1.0.0-beta.1</span>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a href="./../gallery/index.html">Gallery</a><a style="position:relative; top:3px;" href="https://github.com/arose/ngl"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/coloring.html"><a href="manual/coloring.html" data-ice="link">Coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/coloring.html"><a href="manual/coloring.html#representations" data-ice="link">Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/coloring.html"><a href="manual/coloring.html#available-schemes" data-ice="link">Available schemes</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/coloring.html"><a href="manual/coloring.html#selection-based-coloring" data-ice="link">Selection-based coloring</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/coloring.html"><a href="manual/coloring.html#custom-coloring" data-ice="link">Custom coloring</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/custom-geometries.html"><a href="manual/custom-geometries.html" data-ice="link">Custom geometries</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/custom-geometries.html"><a href="manual/custom-geometries.html#shape" data-ice="link">Shape</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/custom-geometries.html"><a href="manual/custom-geometries.html#buffer" data-ice="link">Buffer</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/embedding.html"><a href="manual/embedding.html" data-ice="link">Embedding</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/embedding.html"><a href="manual/embedding.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/embedding.html"><a href="manual/embedding.html#concept" data-ice="link">Concept</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/embedding.html"><a href="manual/embedding.html#element" data-ice="link">Element</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/embedding.html"><a href="manual/embedding.html#cdn" data-ice="link">CDN</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/file-formats.html"><a href="manual/file-formats.html" data-ice="link">File Formats</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#structures" data-ice="link">Structures</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#mmcif" data-ice="link">mmCIF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#pdb-pqr" data-ice="link">PDB/PQR</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#gro" data-ice="link">GRO</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#sdf" data-ice="link">SDF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#mol2" data-ice="link">MOL2</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#mmtf" data-ice="link">MMTF</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#topologies" data-ice="link">Topologies</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#prmtop" data-ice="link">PRMTOP</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#psf" data-ice="link">PSF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#top" data-ice="link">TOP</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#trajectories" data-ice="link">Trajectories</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#dcd" data-ice="link">DCD</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#trr" data-ice="link">TRR</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#nctraj" data-ice="link">NCTRAJ</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#xtc" data-ice="link">XTC</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#densities" data-ice="link">Densities</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#mrc-map-ccp4" data-ice="link">MRC/MAP/CCP4</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#cube" data-ice="link">CUBE</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#dsn6-brix" data-ice="link">DSN6/BRIX</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#dx-dxbin" data-ice="link">DX/DXBIN</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#xplor-cns" data-ice="link">XPLOR/CNS</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#surfaces" data-ice="link">Surfaces</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#obj" data-ice="link">OBJ</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#ply" data-ice="link">PLY</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#annotation" data-ice="link">Annotation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#wwpdb-validation-report" data-ice="link">wwPDB Validation Report</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/file-formats.html"><a href="manual/file-formats.html#general" data-ice="link">General</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#json" data-ice="link">JSON</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#csv" data-ice="link">CSV</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#msgpack" data-ice="link">MSGPACK</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#netcdf" data-ice="link">NETCDF</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#txt" data-ice="link">TXT</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/file-formats.html"><a href="manual/file-formats.html#xml" data-ice="link">XML</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html" data-ice="link">Interaction controls</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#camera" data-ice="link">Camera</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#viewer" data-ice="link">Viewer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#animation" data-ice="link">Animation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#automatic-view" data-ice="link">Automatic view</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#principal-axes" data-ice="link">Principal axes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#spin" data-ice="link">Spin</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#picking" data-ice="link">Picking</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#clicked" data-ice="link">Clicked</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#hovered" data-ice="link">Hovered</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#mouse" data-ice="link">Mouse</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#controls" data-ice="link">Controls</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#observer" data-ice="link">Observer</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#keyboard" data-ice="link">Keyboard</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#controls" data-ice="link">Controls</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/interaction-controls.html"><a href="manual/interaction-controls.html#component" data-ice="link">Component</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html" data-ice="link">Molecular Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#axes" data-ice="link">axes</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#backbone" data-ice="link">backbone</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#ball-stick" data-ice="link">ball+stick</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#base" data-ice="link">base</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#cartoon" data-ice="link">cartoon</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#contact" data-ice="link">contact</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#distance" data-ice="link">distance</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#helixorient" data-ice="link">helixorient</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#hyperball" data-ice="link">hyperball</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#label" data-ice="link">label</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#licorice" data-ice="link">licorice</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#line" data-ice="link">line</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#point" data-ice="link">point</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#ribbon" data-ice="link">ribbon</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#rocket" data-ice="link">rocket</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#rope" data-ice="link">rope</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#spacefill" data-ice="link">spacefill</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#surface" data-ice="link">surface</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#trace" data-ice="link">trace</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#tube" data-ice="link">tube</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#unitcell" data-ice="link">unitcell</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/molecular-representations.html"><a href="manual/molecular-representations.html#validation" data-ice="link">validation</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/scripting.html"><a href="manual/scripting.html" data-ice="link">Scripting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/scripting.html"><a href="manual/scripting.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/scripting.html"><a href="manual/scripting.html#variables" data-ice="link">Variables</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/selection-language.html"><a href="manual/selection-language.html" data-ice="link">Selection Language</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/selection-language.html"><a href="manual/selection-language.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/selection-language.html"><a href="manual/selection-language.html#language" data-ice="link">Language</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/selection-language.html"><a href="manual/selection-language.html#keywords" data-ice="link">Keywords</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/selection-language.html"><a href="manual/selection-language.html#expressions" data-ice="link">Expressions</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/selection-language.html"><a href="manual/selection-language.html#atomindex" data-ice="link">Atomindex</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/selection-language.html"><a href="manual/selection-language.html#logical-operators--in-order-of-binding-strength-" data-ice="link">Logical operators (in order of binding strength)</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/structure-data.html"><a href="manual/structure-data.html" data-ice="link">Structure data</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/structure-data.html"><a href="manual/structure-data.html#proxies" data-ice="link">Proxies</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/structure-data.html"><a href="manual/structure-data.html#iterators" data-ice="link">Iterators</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/volume-representations.html"><a href="manual/volume-representations.html" data-ice="link">Volume Representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/volume-representations.html"><a href="manual/volume-representations.html#surface" data-ice="link">Surface</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/volume-representations.html"><a href="manual/volume-representations.html#dot" data-ice="link">Dot</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/volume-representations.html"><a href="manual/volume-representations.html#slice" data-ice="link">Slice</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/snippets.html"><a href="manual/snippets.html" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/snippets.html"><a href="manual/snippets.html#implementing-custom-default-representations" data-ice="link">Implementing custom default representations</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/snippets.html"><a href="manual/snippets.html#distance-based-selection" data-ice="link">Distance-based selection</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html" data-ice="link">Change Log</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-9-3---head--unreleased--a-" data-ice="link">Unreleased</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-9-2---v0-9-3--v0-9-3--a----2016-10-14" data-ice="link">v0.9.3 - 2016-10-14</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-9-1---v0-9-2--v0-9-2--a----2016-10-06" data-ice="link">v0.9.2 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-9-0---v0-9-1--v0-9-1--a----2016-10-06" data-ice="link">v0.9.1 - 2016-10-06</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-8---v0-9-0--v0-9-0--a----2016-10-05" data-ice="link">v0.9.0 - 2016-10-05</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-7-1a---v0-8--v0-8--a----2016-07-22" data-ice="link">v0.8 - 2016-07-22</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-7-1---v0-7-1a--v0-7-1a--a----2016-06-02" data-ice="link">v0.7.1a - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-7---v0-7-1--v0-7-1--a----2016-06-02" data-ice="link">v0.7.1 - 2016-06-02</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-6---v0-7--v0-7--a----2016-05-08" data-ice="link">v0.7 - 2016-05-08</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-arose-ngl-compare-v0-5---v0-6--v0-6--a----2015-10-12" data-ice="link">v0.6 - 2015-10-12</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#v0-5---2015-30-04" data-ice="link">v0.5 - 2015-30-04</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><p>NGL is an on-line viewer for proteins and other molecular structures. It is intended for users of the web application including a graphical interface and for developers who want to use NGL in their own projects.</p>
+<h2 id="users">Users</h2><p>NGL provides a web application with an efficient graphical user interface (GUI) for performing common visualization tasks. A comprehensive set of molecular representations is available to create complex molecular views. Based on the WebGL technology, NGL requires only a modern web-browser.</p>
+<h2 id="developers">Developers</h2><p>The NGL viewer can be <a href="./manual/usage/embedding.html">embedded</a> within other web-pages and controlled via a JavaScript API.</p>
+</div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Coloring</h1><h2>Representations</h2><pre><code><code class="source-code prettyprint">stage.loadFile(&quot;rcsb://1crn&quot;).then(function (o) {
+  o.addRepresentation(&quot;ball+stick&quot;, {colorScheme: &quot;bfactor&quot;});
+  o.autoView();
+});</code>
+</code></pre><h2>Available schemes</h2><ul>
+<li><a href="./manual/../class/src/color/atomindex-colormaker.js~AtomindexColormaker.html">atomindex</a></li>
+<li><a href="./manual/../class/src/color/bfactor-colormaker.js~BfactorColormaker.html">bfactor</a></li>
+<li><a href="./manual/../class/src/color/chainid-colormaker.js~ChainidColormaker.html">chainid</a></li>
+<li><a href="./manual/../class/src/color/chainindex-colormaker.js~ChainindexColormaker.html">chainindex</a></li>
+<li><a href="./manual/../class/src/color/chainname-colormaker.js~ChainnameColormaker.html">chainname</a></li>
+<li><a href="./manual/../class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">densityfit</a></li>
+<li><a href="./manual/../class/src/color/electrostatic-colormaker.js~ElectrostaticColormaker.html">electrostatic</a></li>
+<li><a href="./manual/../class/src/color/element-colormaker.js~ElementColormaker.html">element</a></li>
+<li><a href="./manual/../class/src/color/entityindex-colormaker.js~EntityindexColormaker.html">entityindex</a></li>
+<li><a href="./manual/../class/src/color/entitytype-colormaker.js~EntitytypeColormaker.html">entitytype</a></li>
+<li><a href="./manual/../class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html">geoquality</a></li>
+<li><a href="./manual/../class/src/color/hydrophobicity-colormaker.js~HydrophobicityColormaker.html">hydrophobicity</a></li>
+<li><a href="./manual/../class/src/color/modelindex-colormaker.js~ModelindexColormaker.html">modelindex</a></li>
+<li><a href="./manual/../class/src/color/moleculetype-colormaker.js~MoleculetypeColormaker.html">moleculetype</a></li>
+<li><a href="./manual/../class/src/color/occupancy-colormaker.js~OccupancyColormaker.html">occupancy</a></li>
+<li><a href="./manual/../class/src/color/random-colormaker.js~RandomColormaker.html">random</a></li>
+<li><a href="./manual/../class/src/color/residueindex-colormaker.js~ResidueindexColormaker.html">residueindex</a></li>
+<li><a href="./manual/../class/src/color/resname-colormaker.js~ResnameColormaker.html">resname</a></li>
+<li><a href="./manual/../class/src/color/sstruc-colormaker.js~SstrucColormaker.html">sstruc</a></li>
+<li><a href="./manual/../class/src/color/uniform-colormaker.js~UniformColormaker.html">uniform</a></li>
+<li><a href="./manual/../class/src/color/value-colormaker.js~ValueColormaker.html">value</a></li>
+<li><a href="./manual/../class/src/color/volume-colormaker.js~VolumeColormaker.html">volume</a></li>
+</ul><h2>Selection-based coloring</h2><p>Create and a selection-based coloring scheme. Supply a list with pairs
+of colorname and selection for coloring by selections. Use the last
+entry as a default (catch all) coloring definition.</p><pre><code><code class="source-code prettyprint">var schemeId = NGL.ColormakerRegistry.addSelectionScheme([
+  [&quot;red&quot;, &quot;64-74 or 134-154 or 222-254 or 310-310 or 322-326&quot;],
+  [&quot;green&quot;, &quot;311-322&quot;],
+  [&quot;yellow&quot;, &quot;40-63 or 75-95 or 112-133 or 155-173 or 202-221 or 255-277 or 289-309&quot;],
+  [&quot;blue&quot;, &quot;1-39 or 96-112 or 174-201 or 278-288&quot;],
+  [&quot;white&quot;, &quot;*&quot;]
+], &quot;Transmembrane 3dqb&quot;);
+
+stage.loadFile(&quot;rcsb://3dqb.pdb&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;, {color: schemeId });  // pass schemeId here
+  o.autoView();
+});</code>
+</code></pre><h2>Custom coloring</h2><p>Create a class with a <code>atomColor</code> method that returns a hex color:</p><pre><code><code class="source-code prettyprint">var schemeId = NGL.ColormakerRegistry.addScheme(function (params) {
+  this.atomColor = function (atom) {
+    if (atom.serial &lt; 1000) {
+      return 0x0000FF;  // blue
+    } else if (atom.serial &gt; 2000) {
+      return 0xFF0000;  // red
+    } else {
+      return 0x00FF00;  // green
+    }
+  };
+});
+
+stage.loadFile(&quot;rcsb://3dqb.pdb&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;, {color: schemeId});  // pass schemeId  here
+  o.autoView();
+});</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/coloring.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Custom geometries</h1><h2>Shape</h2><p>Convenience API</p><ul>
+<li><a href="./manual/../class/src/geometry/shape.js~Shape.html">Shape</a> class</li>
+<li><a href="./manual/../class/src/component/shape-component.js~ShapeComponent.html">ShapeComponent</a> class</li>
+</ul><p>Render a variety of geometry primitives using a Shape object:</p><pre><code><code class="source-code prettyprint">var shape = new NGL.Shape( &quot;shape&quot; );
+shape.addMesh(
+    [ 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1 ],
+    [ 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 ],
+    undefined, undefined, &quot;My mesh&quot;
+);
+shape.addSphere( [ 0, 0, 9 ], [ 1, 0, 0 ], 1.5 );
+shape.addSphere( [ 12, 5, 15 ], [ 1, 0.5, 0 ], 1 );
+shape.addEllipsoid( [ 6, 0, 0 ], [ 1, 0, 0 ], 1.5, [ 3, 0, 0 ], [ 0, 2, 0 ] );
+shape.addCylinder( [ 0, 2, 7 ], [ 0, 0, 9 ], [ 1, 1, 0 ], 0.5 );
+shape.addCone( [ 0, 2, 7 ], [ 0, 3, 3 ], [ 1, 1, 0 ], 1.5 );
+shape.addArrow( [ 1, 2, 7 ], [ 30, 3, 3 ], [ 1, 0, 1 ], 1.0 );
+shape.addArrow( [ 2, 2, 7 ], [ 30, -3, -3 ], [ 1, 0.5, 1 ], 1.0 );
+shape.addLabel( [ 15, -4, 4 ], [ 0.2, 0.5, 0.8 ], 2.5, &quot;Hello&quot; );
+
+var shapeComp = stage.addComponentFromObject( shape );
+shapeComp.addRepresentation( &quot;buffer&quot; );
+shapeComp.autoView();</code>
+</code></pre><h2>Buffer</h2><p>Low level approach, more scalable</p><ul>
+<li><a href="./manual/../class/src/representation/buffer-representation.js~BufferRepresentation.html">Buffer</a> class</li>
+<li><a href="./manual/../class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a> class</li>
+</ul><p>Render two spheres (sscales to many more) a SphereBuffer object:</p><pre><code><code class="source-code prettyprint">var shape = new NGL.Shape( &quot;shape&quot; );
+var sphereBuffer = new NGL.SphereBuffer( {
+    position: new Float32Array( [ 0, 0, 0, 4, 0, 0 ] ),
+    color: new Float32Array( [ 1, 0, 0, 1, 1, 0 ] ),
+    radius: new Float32Array( [ 1, 1.2 ] )
+} );
+shape.addBuffer( sphereBuffer );
+var shapeComp = stage.addComponentFromObject( shape );
+shapeComp.addRepresentation( &quot;buffer&quot; );
+shapeComp.autoView();</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/custom-geometries.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Embedding</h1><p>For embedding the viewer into other websites a single JavaScript file is available <code>ngl.js</code>. See below for CDNs to provide this file.</p><h2>Example</h2><p>The following code creates a viewer and loads the structure of PDB entry <em>1CRN</em> from the <a href="http://www.rcsb.org/">RCSB PDB</a>. The result can be seen and edited online <a href="https://codepen.io/pen?template=JNLMXb">here</a>. For more information on how to control the viewer see the API reference, starting with the <a href="./manual/../class/src/stage/stage.js~Stage.html">Stage</a> class.</p><pre><code><code class="source-code prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src=&quot;path/to/ngl.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
+      var stage = new NGL.Stage(&quot;viewport&quot;);
+      stage.loadFile(&quot;rcsb://1crn&quot;, {defaultRepresentation: true});
+    });
+  &lt;/script&gt;
+  &lt;div id=&quot;viewport&quot; style=&quot;width:400px; height:300px;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</code></pre><h2>Concept</h2><p>The main object in NGL is the <a href="./manual/../class/src/stage/stage.js~Stage.html"><code>stage</code></a>. By using the <code>stage.loadFile</code> method, <a href="./manual/../class/src/component/component.js~Component.html"><code>component</code></a> objects, containing structur or volume data, can be added to the <code>stage</code>. Finally <a href="./manual/../class/src/representation/representation.js~Representation.html"><code>representation</code></a> objects, like &quot;cartoon&quot; or &quot;surface&quot;, are added to the <code>component</code> for showing the data.</p><pre><code><code class="source-code prettyprint">// create a `stage` object
+var stage = new NGL.Stage(&quot;viewport&quot;);
+// load a PDB structure and consume the returned `Promise`
+stage.loadFile(&quot;rcsb://1CRN&quot;).then(function (component) {
+  // add a &quot;cartoon&quot; representation to the structure component
+  component.addRepresentation(&quot;cartoon&quot;);
+  // provide a &quot;good&quot; view of the structure
+  component.autoView();
+});</code>
+</code></pre><h2>Element</h2><p>If the size of your DOM element (here &quot;viewport&quot;) is not know upon calling the <code>Stage</code> constructor make sure that you call <code>stage.handleResize()</code> when the size is known or has changed.</p><h2>CDN</h2><p>Instead of hosting the <code>ngl.js</code> file yourself you can point to the <a href="https://unpkg.com/">Unpkg</a> or <a href="https://rawgit.com/">RawGit</a> CDN.</p><p>Latest stable/untagged version released on NPM:</p><ul>
+<li><a href="https://unpkg.com/ngl">https://unpkg.com/ngl</a></li>
+</ul><p>Latest development version released on NPM:</p><ul>
+<li><a href="https://unpkg.com/ngl@next">https://unpkg.com/ngl@next</a></li>
+</ul><p>Specific Version</p><ul>
+<li><a href="https://unpkg.com/ngl@0.10.4-1">https://unpkg.com/ngl@0.10.4-1</a>  // v0.10.4-1 from Unpkg</li>
+<li><a href="https://cdn.rawgit.com/arose/ngl/v0.10.4-1/dist/ngl.js">https://cdn.rawgit.com/arose/ngl/v0.10.4-1/dist/ngl.js</a>  // v0.10.4-1 from RawGit</li>
+</ul></div>
+        <a data-ice="link" href="manual/embedding.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>File Formats</h1><p>The following file formats are supported. Files can be compressed with gzip. Format detection is based on the file extension.</p><h2>Structures</h2><p>Structure data is saved into <a href="./manual/../class/src/structure/structure.js~Structure.html">Structure</a> instances.</p><p>Loading flags (in the GUI available from the <em>File</em> menu):</p><ul>
+<li><em>asTrajectory</em>: load the topology from first model and add the coordinates from it and the remaining models as trajectory frames. Note that this assumes that all models share the same topology.</li>
+<li><em>firstModelOnly</em>: load only the first model.</li>
+<li><em>cAlphaOnly</em>: load only C-alpha atoms.</li>
+</ul><p>Atom data added to all structures:</p><ul>
+<li><em>index</em>: running atom index that is unique within the structure</li>
+<li><em>modelindex</em>: running model index that is unique within the structure</li>
+<li><em>globalindex</em>: globally unique running atom index</li>
+</ul><h3>mmCIF</h3><p>Extension: <strong>.mmcif</strong>, <strong>.cif</strong>, <strong>.mcif</strong></p><p>Specification: <a href="http://mmcif.wwpdb.org/">http://mmcif.wwpdb.org/</a></p><p>Supported features:</p><ul>
+<li>Title: read from &quot;_struct.title&quot; item</li>
+<li>Box coordinates: read from &quot;_cell&quot; item</li>
+<li>Space group: read from &quot;_symmetry.space_group_name_H-M&quot; item</li>
+<li>Secondary structure: read from &quot;_struct_conf&quot; and &quot;_struct_sheet_range&quot; items</li>
+<li>Assemblies<ul>
+<li>Biological assemblies: read from &quot;_pdbx_struct_oper_list&quot; and &quot;_pdbx_struct_assembly_gen&quot; items</li>
+<li>Non-crystallographic symmetry: read from &quot;_struct_ncs_oper&quot; item</li>
+<li>Crystallographic symmetry: determined from space group</li>
+</ul>
+</li>
+<li>Atom data: read from the &quot;_atom_site&quot; items<ul>
+<li><em>resname</em>: read from &quot;label_comp_id&quot; field</li>
+<li><em>x</em>, <em>y</em>, <em>z</em>: read from &quot;Cartn_x&quot;, &quot;Cartn_y&quot;, &quot;Cartn_z&quot; fields</li>
+<li><em>resno</em>: read from &quot;auth_seq_id&quot; field</li>
+<li><em>serial</em>: read from &quot;id&quot; field</li>
+<li><em>atomname</em>: read from &quot;label_atom_id&quot; field</li>
+<li><em>chainname</em>: read from &quot;auth_asym_id&quot; field</li>
+<li><em>element</em>: read from &quot;type_symbol&quot; field or deduced from <em>atomname</em> if not available</li>
+<li><em>vdw</em>: deduced from <em>element</em></li>
+<li><em>covalent</em>: deduced from <em>element</em></li>
+<li><em>bfactor</em>: read from &quot;B_iso_or_equiv&quot; field</li>
+<li><em>altloc</em>: read from &quot;label_alt_id&quot; field</li>
+<li><em>inscode</em>: read from &quot;pdbx_PDB_ins_code&quot; field</li>
+<li><em>hetero</em>: determined from &quot;group_PDB&quot; field, which is &quot;ATOM&quot; or &quot;HETATM&quot;</li>
+<li><em>occupancy</em>: read from &quot;occupancy&quot; field</li>
+</ul>
+</li>
+<li>Connectivity: read from the &quot;_struct_conn&quot; item, which generally contains data on hetero atom connectivity. Entries with &quot;_conn_type_id&quot; equal to &quot;hydrog&quot; are currently ignored. Connectivity for non-hetero atoms is calculated during post-processing.</li>
+<li>The cif dictionary is added to the <code>structure.extraData</code> property, with key <code>cif</code>, excluding &quot;_atom_site&quot; items</li>
+</ul><h3>PDB/PQR</h3><p>Extension: <strong>.pdb</strong>, <strong>.ent</strong>, <strong>.pqr</strong></p><p>Specification: <a href="http://www.wwpdb.org/documentation/file-format.php">http://www.wwpdb.org/documentation/file-format.php</a></p><p>Supported features:</p><ul>
+<li>Title: read from &quot;TITLE&quot; record</li>
+<li>Box coordinates: read from &quot;CRYST1&quot; record</li>
+<li>Space group: read from &quot;CRYST1&quot; record</li>
+<li>Secondary structure: read from &quot;HELIX&quot; and &quot;SHEET&quot; records</li>
+<li>Assemblies<ul>
+<li>Biological assemblies: read from &quot;REMARK 350&quot; record</li>
+<li>Non-crystallographic symmetry: read from &quot;MTRIX&quot; record</li>
+<li>Crystallographic symmetry: determined from space group</li>
+</ul>
+</li>
+<li>Atom data: read from the &quot;ATOM&quot; and &quot;HETATM&quot; records<ul>
+<li><em>resname</em>: read from &quot;resName&quot; field</li>
+<li><em>x</em>, <em>y</em>, <em>z</em>: read from &quot;x&quot;, &quot;y&quot;, &quot;z&quot; fields</li>
+<li><em>resno</em>: read from &quot;resSeq&quot; field</li>
+<li><em>serial</em>: read from &quot;serial&quot; field</li>
+<li><em>atomname</em>: read from &quot;name&quot; field</li>
+<li><em>chainname</em>: read from &quot;chainID&quot; field</li>
+<li><em>element</em>: read from &quot;element&quot; field or deduced from <em>atomname</em> if not available</li>
+<li><em>vdw</em>: deduced from <em>element</em></li>
+<li><em>covalent</em>: deduced from <em>element</em></li>
+<li><em>bfactor</em>: read from &quot;tempFactor&quot; field</li>
+<li><em>altloc</em>: read from &quot;altLoc&quot; field</li>
+<li><em>inscode</em>: read from &quot;insCode&quot; field</li>
+<li><em>hetero</em>: determined from record type, which is &quot;ATOM&quot; or &quot;HETATM&quot;</li>
+<li><em>occupancy</em>: read from &quot;occupancy&quot; field</li>
+</ul>
+</li>
+<li>Connectivity: read from the &quot;CONNECT&quot; record, which generally contains data on hetero atom connectivity. Connectivity for non-hetero atoms is calculated during post-processing.</li>
+</ul><h3>GRO</h3><p>Extension: <strong>.gro</strong></p><p>Specification: <a href="http://manual.gromacs.org/current/online/gro.html">http://manual.gromacs.org/current/online/gro.html</a></p><p>Supported features:</p><ul>
+<li>Title: read from &quot;title string&quot; field</li>
+<li>Box coordinates: read from &quot;box vectors&quot; field</li>
+<li>Secondary structure: not available in the format, automatically calculated during post-processing</li>
+<li>Atom data:<ul>
+<li><em>resname</em>: read from &quot;residue name&quot; field</li>
+<li><em>x</em>, <em>y</em>, <em>z</em>: read from &quot;position&quot; fields</li>
+<li><em>resno</em>: read from &quot;residue number&quot; field</li>
+<li><em>serial</em>: read from &quot;atom number&quot; field</li>
+<li><em>atomname</em>: read from &quot;atom name&quot; field</li>
+<li><em>chainname</em>: not available, automatically assigned during post-processing</li>
+<li><em>element</em>: deduced from <em>atomname</em></li>
+<li><em>vdw</em>: deduced from <em>element</em></li>
+<li><em>covalent</em>: deduced from <em>element</em></li>
+<li><em>altloc</em>: not available, left empty</li>
+<li><em>inscode</em>: not available, left empty</li>
+</ul>
+</li>
+<li>Connectivity: not available in the format, automatically calculated during post-processing</li>
+</ul><p>TODO:</p><ul>
+<li>Read velocity data from <em>GRO</em> files that includes it (and create a new <em>Representation</em> to display it).</li>
+</ul><h3>SDF</h3><p>Extension: <strong>.sdf</strong>, <strong>.sd</strong></p><p>Specification: <a href="http://download.accelrys.com/freeware/ctfile-formats/">http://download.accelrys.com/freeware/ctfile-formats/</a></p><p>Supported features:</p><ul>
+<li>Title: read from the second line of the header block</li>
+<li>Box coordinates: not available in the format</li>
+<li>Secondary structure: not available in the format, automatically calculated during post-processing</li>
+<li>Atom data:<ul>
+<li><em>resname</em>: not available, set as &quot;HET&quot;</li>
+<li><em>x</em>, <em>y</em>, <em>z</em>: read from &quot;position&quot; fields</li>
+<li><em>resno</em>: read from &quot;residue number&quot; field</li>
+<li><em>serial</em>: not available, set from running index</li>
+<li><em>atomname</em>: not available set as &quot;element + index&quot;</li>
+<li><em>chainname</em>: not available, automatically assigned during post-processing</li>
+<li><em>element</em>: read from &quot;element&quot; field</li>
+<li><em>vdw</em>: deduced from <em>element</em></li>
+<li><em>covalent</em>: deduced from <em>element</em></li>
+<li><em>altloc</em>: not available, left empty</li>
+<li><em>inscode</em>: not available, left empty</li>
+</ul>
+</li>
+<li>Connectivity: read from bond block, includes bond order</li>
+<li>Associated data items are added to the <code>structure.extraData</code> property with key <code>sdf</code></li>
+</ul><h3>MOL2</h3><p>Extension: <strong>.mol2</strong></p><p>Specification: <a href="http://www.tripos.com/data/support/mol2.pdf">http://www.tripos.com/data/support/mol2.pdf</a></p><p>Supported features:</p><ul>
+<li>Title: read from the first line of the molecule record</li>
+<li>Box coordinates: not available in the format</li>
+<li>Secondary structure: not available in the format, automatically calculated during post-processing</li>
+<li>Atom data:<ul>
+<li><em>resname</em>: read from &quot;residue name&quot; field</li>
+<li><em>x</em>, <em>y</em>, <em>z</em>: read from &quot;coordinate&quot; fields</li>
+<li><em>resno</em>: read from &quot;residue number&quot; field</li>
+<li><em>serial</em>: read from &quot;atom number&quot; field</li>
+<li><em>atomname</em>: read from &quot;atom name&quot; field</li>
+<li><em>chainname</em>: not available, automatically assigned during post-processing</li>
+<li><em>element</em>: read from &quot;atom type&quot; field</li>
+<li><em>vdw</em>: deduced from <em>element</em></li>
+<li><em>covalent</em>: deduced from <em>element</em></li>
+<li><em>altloc</em>: not available, left empty</li>
+<li><em>inscode</em>: not available, left empty</li>
+<li><em>bfactor</em>: read from the &quot;partial charge&quot; field (i.e. not a bfactor)</li>
+</ul>
+</li>
+<li>Connectivity: read from bond record, includes bond order</li>
+</ul><h3>MMTF</h3><p>Extension: <strong>.mmtf</strong></p><p>Specification: <a href="https://github.com/rcsb/mmtf">https://github.com/rcsb/mmtf</a></p><p>Supported features:</p><ul>
+<li>Title: read from &quot;title&quot;</li>
+<li>Box coordinates: read from &quot;unitCell&quot; field</li>
+<li>Secondary structure: read from &quot;secStructList&quot; field</li>
+<li>Atom data:<ul>
+<li><em>resname</em>: read from &quot;groupTypeList[].groupName&quot; field</li>
+<li><em>x</em>, <em>y</em>, <em>z</em>: read from &quot;x/y/zCoordList&quot; fields</li>
+<li><em>resno</em>: read from &quot;groupIdList&quot; field</li>
+<li><em>serial</em>: read from &quot;atomIdList&quot; field</li>
+<li><em>atomname</em>: read from &quot;groupTypeList[].atomNameList&quot; field</li>
+<li><em>chainname</em>: read from &quot;chainNameList&quot; field</li>
+<li><em>element</em>: read from &quot;groupTypeList[].elementList&quot; field</li>
+<li><em>vdw</em>: deduced from <em>element</em></li>
+<li><em>covalent</em>: deduced from <em>element</em></li>
+<li><em>altloc</em>: read from &quot;altLocList&quot; field</li>
+<li><em>inscode</em>: read from &quot;insCodeList&quot; field</li>
+<li><em>bfactor</em>: read from &quot;bFactorList&quot; field</li>
+<li><em>occupancy</em>: read from &quot;occupancyList&quot; field</li>
+</ul>
+</li>
+<li>Connectivity: read from &quot;bondAtomList&quot;, &quot;bondOrderList&quot; fields and their &quot;groupTypeList[]&quot; counterparts</li>
+</ul><h2>Topologies</h2><p>Topology are different from structure files as they not contain coordinate data.</p><h3>PRMTOP</h3><p>Topology format used by Amber.</p><p>Extensions: <strong>.prmtop</strong>, <strong>.parm7</strong></p><h3>PSF</h3><p>Topology format used by Charmm.</p><p>Extension: <strong>.psf</strong></p><h3>TOP</h3><p>Topology format used by Gromacs.</p><p>Extension: <strong>.top</strong></p><h2>Trajectories</h2><p>Structure files in <em>mmCIF</em>, <em>PDB</em>, <em>GRO</em>, <em>SDF</em>, <em>MOL2</em> or <em>MMTF</em> format can also be loaded as trajectories by setting the <em>asTrajectory</em> flag. Trajectory files in <em>DCD</em>, <em>NCTRAJ</em>, <em>TRR</em> or <em>XTC</em> format are added to a <em>Structure</em>.</p><h3>DCD</h3><p>Uncompressed, binary trajectory format used by Charmm.</p><p>Extension: <strong>.dcd</strong></p><h3>TRR</h3><p>Uncompressed, binary trajectory format used by Gromacs.</p><p>Extension: <strong>.trr</strong></p><h3>NCTRAJ</h3><p>Uncompressed, binary trajectory format used by Amber.</p><p>Extensions: <strong>.nctraj</strong>, <strong>.ncdf</strong>, <strong>.nc</strong></p><h3>XTC</h3><p>Compressed, binary trajectory format used by Gromacs.</p><p>Extension: <strong>.xtc</strong></p><h2>Densities</h2><p>Density data is saved into <a href="./manual/../class/src/volume/volume.js~Volume.html">Volume</a> instances.</p><h3>MRC/MAP/CCP4</h3><p>Extensions: <strong>.mrc</strong>, <strong>.map</strong>, <strong>.ccp4</strong></p><p>Specification: <a href="http://www.ccp4.ac.uk/html/maplib.html">http://www.ccp4.ac.uk/html/maplib.html</a>, <a href="http://ami.scripps.edu/software/mrctools/mrc_specification.php">http://ami.scripps.edu/software/mrctools/mrc_specification.php</a></p><p>Supported features:</p><ul>
+<li>Header data</li>
+<li>Density data</li>
+</ul><h3>CUBE</h3><p>Extensions: <strong>.cube</strong>, <strong>.cub</strong></p><p>Specification: <a href="http://paulbourke.net/dataformats/cube/">http://paulbourke.net/dataformats/cube/</a></p><p>Supported features:</p><ul>
+<li>Header data</li>
+<li>Density data</li>
+</ul><p>TODO:</p><ul>
+<li>Read structure embedded in the header.</li>
+</ul><h3>DSN6/BRIX</h3><p>Extensions: <strong>.dsn6</strong>, <strong>.brix</strong></p><p>Supported features:</p><ul>
+<li>Header data</li>
+<li>Density data</li>
+</ul><h3>DX/DXBIN</h3><p>Extensions: <strong>.dx</strong>, <strong>.dxbin</strong></p><p>Specification: <a href="http://www.poissonboltzmann.org/docs/file-format-info/">http://www.poissonboltzmann.org/docs/file-format-info/</a></p><p>Supported features:</p><ul>
+<li>Header data</li>
+<li>Density data</li>
+</ul><h3>XPLOR/CNS</h3><p>Extensions: <strong>.xplor</strong>, <strong>.cns</strong></p><p>Supported features:</p><ul>
+<li>Header data</li>
+<li>Density data</li>
+</ul><h2>Surfaces</h2><p>The surface geometry is saved into <a href="./manual/../class/src/surface/surface.js~Surface.html">Surface</a> instances.</p><h3>OBJ</h3><p>Extension: <strong>.obj</strong></p><p>The <a href="http://pymol.org/">PyMOL</a> molecular visualization system can export surfaces in the <em>OBJ</em> format.</p><h3>PLY</h3><p>Extension: <strong>.ply</strong></p><p>The <a href="http://zhanglab.ccmb.med.umich.edu/EDTSurf/">EDTsurf</a> program outputs surfaces in the <em>PLY</em> format.</p><h2>Annotation</h2><h3>wwPDB Validation Report</h3><p>Extension: <strong>.xml</strong></p><p>Load PDB entry <em>3PQR</em> and its validation report. Add the validation object to the structure object. Then show clashes and color by geometry quality using the <a href="./manual/../class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a> to show the clash data. There are two validation dta-based colorschemes available: <a href="./manual/../class/src/color/densityfit-colormaker.js~DensityfitColormaker.html">densityfit</a> and <a href="./manual/../class/src/color/geoquality-colormaker.js~GeoqualityColormaker.html">geoquality</a>.</p><pre><code><code class="source-code prettyprint">Promise.all( [
+    stage.loadFile( &quot;rcsb://3PQR&quot; ),
+    NGL.autoLoad( &quot;http://ftp.wwpdb.org/pub/pdb/validation_reports/pq/3pqr/3pqr_validation.xml.gz&quot;, { ext: &quot;validation&quot; } )
+] ).then( function( ol ){
+    ol[ 0 ].structure.validation = ol[ 1 ];
+    ol[ 0 ].addRepresentation( &quot;cartoon&quot;, { color: &quot;geoquality&quot; } );
+    ol[ 0 ].addRepresentation( &quot;validation&quot; );
+    ol[ 0 ].addRepresentation( &quot;ball+stick&quot;, {
+        sele: ol[ 1 ].clashSele,
+        color: &quot;geoquality&quot;
+    } );
+    ol[ 0 ].addRepresentation( &quot;licorice&quot;, {
+        sele: &quot;hetero&quot;,
+        color: &quot;geoquality&quot;
+    } );
+    stage.autoView();
+} );</code>
+</code></pre><h2>General</h2><h3>JSON</h3><p>Extension: <strong>.json</strong></p><h3>CSV</h3><p>Extension: <strong>.csv</strong></p><h3>MSGPACK</h3><p>Extension: <strong>.msgpack</strong></p><h3>NETCDF</h3><p>Extension: <strong>.netcdf</strong></p><h3>TXT</h3><p>Extensions: <strong>.txt</strong>, <strong>.text</strong></p><h3>XML</h3><p>Extension: <strong>.xml</strong></p></div>
+        <a data-ice="link" href="manual/file-formats.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Interaction controls</h1><h2>Camera</h2><h3>Viewer</h3><p>The translation, zoom and rotation of the scene can be set via the <a href="./manual/../class/src/controls/viewer-controls.js~ViewerControls.html">ViewerControls</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-viewerControls">Stage.viewerControls</a>.</p><p>Getting and setting the orientation for the whole scene:</p><pre><code><code class="source-code prettyprint">var orientationMatrix = stage.viewerControls.getOrientation();
+stage.viewerControls.orient(orientationMatrix);</code>
+</code></pre><h3>Animation</h3><p>The scene can be smoothly rotated, moved and zoomed via the <a href="./manual/../class/src/controls/animation-controls.js~AnimationControls.html">AnimationControls</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-animationControls">Stage.animationControls</a>.</p><h3>Automatic view</h3><p>For the whole stage (see <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-method-autoView">Stage.autoView</a>):</p><pre><code><code class="source-code prettyprint">stage.loadFile(&quot;rcsb://3pqr&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;);
+  stage.autoView();  // focus on all representations in all components
+});</code>
+</code></pre><p>For individual components (see <a href="./manual/../class/src/component/component.js~Component.html#instance-method-autoView">Component.autoView</a>):</p><pre><code><code class="source-code prettyprint">stage.loadFile(&quot;rcsb://3pqr&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;);
+  var duration = 1000;  // optional duration for animation, defaults to zero
+  o.autoView(duration);  // focus on the whole structure
+});</code>
+</code></pre><p>For structure components using a <a href="./manual/./usage/selection-language.html">selection string</a> (see <a href="./manual/../class/src/component/structure-component.js~StructureComponent.html#instance-method-autoView">StructureComponent.autoView</a>):</p><pre><code><code class="source-code prettyprint">stage.loadFile(&quot;rcsb://3pqr&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;);
+  o.autoView(&quot;RET&quot;);  // focus on retinal
+});</code>
+</code></pre><h3>Principal axes</h3><p>Animate structure to align with principal axes:</p><pre><code><code class="source-code prettyprint">stage.loadFile(&quot;rcsb://3pqr&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;);
+  var pa = o.structure.getPrincipalAxes();
+  stage.animationControls.rotate(pa.getRotationQuaternion(), 1500);
+});</code>
+</code></pre><h3>Spin</h3><p>Spin the whole scene around the y-axis (see <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-method-setSpin">Stage.setSpin</a>):</p><pre><code><code class="source-code prettyprint">stage.setSpin(true);</code>
+</code></pre><h2>Picking</h2><p>Whenever the user clicks or hovers over the viewer canvas the appropriate <a href="./manual/../typedef/index.html#static-typedef-StageSignals">StageSignal</a> is dispatched from <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-signals">Stage.signals</a>. Any function added to those those signals is then called with a <a href="./manual/../class/src/controls/picking-proxy.js~PickingProxy.html">PickingProxy</a> instance that provides access to what was picked.</p><p>Note that the <a href="./manual/../class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a> class (see <a href="#controls">below</a>) provides more convenient means to bind picking events to custom actions.</p><h3>Clicked</h3><pre><code><code class="source-code prettyprint">stage.signals.clicked.add(function (pickingProxy) {...});</code>
+</code></pre><h3>Hovered</h3><p>Basis usage:</p><pre><code><code class="source-code prettyprint">stage.signals.hovered.add(function (pickingProxy) {...});</code>
+</code></pre><p>Example for showing a tooltip when hovering over atoms or bonds:</p><pre><code><code class="source-code prettyprint">// create tooltip element and add to the viewer canvas
+var tooltip = document.createElement(&quot;div&quot;);
+Object.assign(tooltip.style, {
+  display: &quot;none&quot;,
+  position: &quot;absolute&quot;,
+  zIndex: 10,
+  pointerEvents: &quot;none&quot;,
+  backgroundColor: &quot;rgba(0, 0, 0, 0.6)&quot;,
+  color: &quot;lightgrey&quot;,
+  padding: &quot;0.5em&quot;,
+  fontFamily: &quot;sans-serif&quot;
+});
+stage.viewer.container.appendChild(tooltip);
+
+// load a structure file
+stage.loadFile( &quot;rcsb://1blu&quot;, { defaultRepresentation: true } );
+
+// listen to `hovered` signal to move tooltip around and change its text
+stage.signals.hovered.add(function (pickingProxy) {
+  if (pickingProxy &amp;&amp; (pickingProxy.atom || pickingProxy.bond)){
+    var atom = pickingProxy.atom || pickingProxy.closestBondAtom;
+    var cp = pickingProxy.canvasPosition;
+    tooltip.innerText = &quot;ATOM: &quot; + atom.qualifiedName();
+    tooltip.style.bottom = cp.y + 3 + &quot;px&quot;;
+    tooltip.style.left = cp.x + 3 + &quot;px&quot;;
+    tooltip.style.display = &quot;block&quot;;
+  }else{
+    tooltip.style.display = &quot;none&quot;;
+  }
+});</code>
+</code></pre><h2>Mouse</h2><h3>Controls</h3><p>For convenience, there is a <a href="./manual/../class/src/controls/mouse-controls.js~MouseControls.html">MouseControls</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-mouseControls">Stage.mouseControls</a> and can be used to bind actions (any user-defined function or predefined methods from the <a href="./manual/../class/src/controls/mouse-actions.js~MouseActions.html">MouseActions</a> class) to mouse events with keyboard modifiers.</p><pre><code><code class="source-code prettyprint">stage.mouseControls.add(&quot;drag-left+right&quot;, NGL.MouseActions.zoomDrag);</code>
+</code></pre><p>The default controls are as follows:</p><ul>
+<li><code>scroll</code> zoom scene</li>
+<li><code>scroll-ctrl</code> move near clipping plane</li>
+<li><code>scroll-shift</code> move near clipping plane and far fog</li>
+<li><code>scroll-alt</code> change isolevel of isosurfaces</li>
+<li><code>drag-right</code> pan/translate scene</li>
+<li><code>drag-left</code> rotate scene</li>
+<li><code>drag-middle</code> zoom scene</li>
+<li><code>drag-shift-right</code> zoom scene</li>
+<li><code>drag-left+right</code> zoom scene</li>
+<li><code>drag-ctrl-right</code> pan/translate hovered component</li>
+<li><code>drag-ctrl-left</code> rotate hovered component</li>
+<li><code>clickPick-middle</code> auto view picked component element</li>
+<li><code>hoverPick</code> show tooltip for hovered component element</li>
+</ul><h3>Observer</h3><p>For low-level control, there is a <a href="./manual/../class/src/stage/mouse-observer.js~MouseObserver.html">MouseObserver</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-mouseObserver">Stage.mouseObserver</a> and dispatches <a href="./manual/../typedef/index.html#static-typedef-MouseSignals">MouseSignals</a> originating from the viewer canvas.</p><pre><code><code class="source-code prettyprint">stage.mouseObserver.signals.scroll.add(function (delta) {...});</code>
+</code></pre><h2>Keyboard</h2><h3>Controls</h3><p>For convenience, there is a <a href="./manual/../class/src/controls/key-controls.js~KeyControls.html">KeyControls</a> class which is available as a property of the stage: <a href="./manual/../class/src/stage/stage.js~Stage.html#instance-member-keyControls">Stage.keyControls</a> and can be used to bind actions (any user-defined function or predefined methods from the <a href="./manual/../class/src/controls/key-actions.js~KeyActions.html">KeyActions</a> class) to key events.</p><pre><code><code class="source-code prettyprint">stage.keyControls.add(&quot;r&quot;, NGL.KeyActions.autoView);</code>
+</code></pre><p>The default controls are as follows:</p><ul>
+<li><code>i</code> toggle stage spinning</li>
+<li><code>k</code> toggle stage rocking</li>
+<li><code>p</code> pause all stage animations</li>
+<li><code>r</code> reset stage auto view</li>
+</ul><h2>Component</h2><p>Each <a href="./manual/../class/src/component/component.js~Component.html">Component</a> (wrapping a <code>Structure</code>, <code>Surface</code>, <code>Volume</code> or <code>Shape</code> object) can be moved independently from the camera using the <code>.setPosition</code>, <code>.setRotation</code>, <code>.setScale</code> methods.</p><pre><code><code class="source-code prettyprint">// Load a protein
+stage.loadFile(&quot;rcsb://1crn&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;);
+  stage.autoView();
+});
+
+// Load the same protein and move it
+stage.loadFile(&quot;rcsb://1crn&quot;).then(function (o) {
+  o.setPosition([20, 0, 0]);
+  o.setRotation([ 2, 0, 0 ]);
+  o.setScale(0.5);
+  o.addRepresentation(&quot;cartoon&quot;, {color: &quot;orange&quot;});
+  stage.autoView();
+});</code>
+</code></pre><p>In addition, a transformation matrix can be set with <code>.setTransform</code> which is applied before the set position, rotation and scale. Such a matrix can be supplied by external superposition tools to align two structures.</p><pre><code><code class="source-code prettyprint">Promise.all([
+
+  stage.loadFile(&quot;rcsb://1u19&quot;),
+  stage.loadFile(&quot;rcsb://3pqr&quot;)
+
+]).then(function(ol) {
+
+  ol[0].addRepresentation(&quot;cartoon&quot;, {color: &quot;skyblue&quot;, sele: &quot;:A&quot;});
+  ol[1].addRepresentation(&quot;cartoon&quot;, {color: &quot;tomato&quot;});
+
+  var m = new NGL.Matrix4().fromArray([
+    -0.674, 0.131, -0.727, -7.528,
+    0.283, 0.955, -0.090, -30.266,
+    0.682, -0.267, -0.681, 24.816,
+    0, 0, 0, 1
+  ]).transpose();
+
+  ol[0].setTransform(m);
+
+  stage.autoView();
+
+});</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/interaction-controls.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Molecular Representations</h1><p>Each loaded structure can be displayed using a variety of representations that can be combined to create complex molecular views. Multiple representation types are supported, including space-filling spheres for atoms (spacefill), cylinders and spheres for bonds and atoms (ball+stick), simple lines for bonds (line), secondary structure abstraction (cartoon), backbone atom trace (backbone). The appearance of the representations can be fine-tuned by parameters, for example, to change the quality. Most representations have a color and a radius parameter that can use data from the underlying structure. For instance, a representation can be colored uniformly or according to the element, residue or secondary structure type of the atoms from which the representation is derived. The size of representation objects, for example sphere and cylinder radii in a ball+stick representation, can be set similarly.</p><p>Common parameters are described in the {@link StructureRepresentationParameters} type definition.</p><h2>axes</h2><ul>
+<li><a href="./manual/../class/src/representation/axes-representation.js~AxesRepresentation.html">axes</a></li>
+</ul><h2>backbone</h2><ul>
+<li><a href="./manual/../class/src/representation/backbone-representation.js~BackboneRepresentation.html">backbone</a></li>
+</ul><p>Cylinders connect successive residues of unbroken chains by their main backbone atoms, which are <strong>.CA</strong> atoms in case of proteins and <strong>C4&apos;</strong>/<strong>C3&apos;</strong> atoms for RNA/DNA, respectively. The main backbone atoms are displayed as spheres.</p><ul>
+<li><em>aspectRatio</em>: ...</li>
+<li><em>radiusSegments</em>: ...</li>
+<li><em>sphereDetail</em>: ...</li>
+</ul><h2>ball+stick</h2><ul>
+<li><a href="./manual/../class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">ball+stick</a></li>
+</ul><p>Atoms are displayed as spheres (balls) and bonds as cylinders (sticks).</p><ul>
+<li><em>aspectRatio</em>: A number between 1.0 and 10.0, defining how much bigger the sphere radius is compared to the cylinder radius.</li>
+<li><em>radiusSegments</em>: An integer between 3 and 25, defining the number of segments used to create a cylinder. Only has an effect when ray-casting of geometric primitives is unavailable or switched of via the <em>impostor</em> preference.</li>
+<li><em>sphereDetail</em>: See <em>spacefill</em> representation</li>
+</ul><h2>base</h2><ul>
+<li><a href="./manual/../class/src/representation/base-representation.js~BaseRepresentation.html">base</a></li>
+</ul><p>Simplified display of RNA/DNA nucleotides, best used in conjunction with a <a href="#cartoon">cartoon</a> representation. Here, a stick is drawn connecting the sugar backbone with a nitrogen in the base (<strong>.N1</strong> in case of adenine or guanine, <strong>.N3</strong> in case of thymine or cytosine).</p><ul>
+<li><em>aspectRatio</em>: ...</li>
+<li><em>radiusSegments</em>: ...</li>
+<li><em>sphereDetail</em>: ...</li>
+</ul><h2>cartoon</h2><ul>
+<li><a href="./manual/../class/src/representation/cartoon-representation.js~CartoonRepresentation.html">cartoon</a></li>
+</ul><p>The main backbone atoms (see <a href="#backbone">backbone</a>) of successive residues in unbroken chains are connected by a smooth trace. The trace is expanded perpendicular to its tangent with an elliptical cross-section. The major axis points from <strong>.CA</strong> in the direction of the <strong>.O</strong> in case of proteins and from the <strong>C1&apos;</strong>/<strong>C3&apos;</strong> to <strong>C2&apos;</strong>/<strong>O4&apos;</strong> for RNA/DNA, respectively.</p><ul>
+<li><em>aspectRatio</em>: ...</li>
+<li><em>subdiv</em>: ...</li>
+<li><em>radialSegments</em>: ...</li>
+<li><em>tension</em>: ...</li>
+<li><em>capped</em>: ...</li>
+<li><em>wireframe</em>: ...</li>
+<li><em>arrows</em>: ... (in development)</li>
+</ul><h2>contact</h2><ul>
+<li><a href="./manual/../class/src/representation/contact-representation.js~ContactRepresentation.html">contact</a></li>
+</ul><p><em>CAUTION</em> This feature is only for preview. It is still under development and has not been thoroughly tested. Bugs and other surprises are likely.</p><p>Works currently only for proteins. The angle criterion has currently little meaning.</p><p>Displays cylinders between supposedly contacting atoms.</p><ul>
+<li><em>contactType</em><ul>
+<li><em>polar</em>: ...</li>
+<li><em>polar backbone</em>: ...</li>
+</ul>
+</li>
+<li><em>maxDistance</em>: ...</li>
+<li><em>maxAngle</em>: ...</li>
+</ul><h2>distance</h2><ul>
+<li><a href="./manual/../class/src/representation/distance-representation.js~DistanceRepresentation.html">distance</a></li>
+</ul><p>Displays the distance between pairs of atoms.</p><h2>helixorient</h2><ul>
+<li><a href="./manual/../class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">helixorient</a></li>
+</ul><p>Displays various helix-related values...</p><h2>hyperball</h2><ul>
+<li><a href="./manual/../class/src/representation/hyperball-representation.js~HyperballRepresentation.html">hyperball</a></li>
+</ul><p>A derivate of the <a href="#ball+stick">ball+stick</a> representation (pioneered by <a href="http://sourceforge.net/projects/hyperballs/">HyperBalls project</a>) in which atoms are smoothly connected by an elliptic hyperboloid.</p><h2>label</h2><ul>
+<li><a href="./manual/../class/src/representation/label-representation.js~LabelRepresentation.html">label</a></li>
+</ul><p>Displays a label near the corresponding atom.</p><ul>
+<li><em>labelType</em>: atom name, residue name, residue name + no or residue no</li>
+<li><em>font</em>: ...</li>
+<li><em>antialias</em>: ...</li>
+</ul><h2>licorice</h2><ul>
+<li><a href="./manual/../class/src/representation/licorice-representation.js~LicoriceRepresentation.html">licorice</a></li>
+</ul><p>A variant of the <a href="#ball+stick">ball+stick</a> representation where balls and sticks have the same radius, that is the <em>aspectRatio</em> parameter is fixed to 1.0.</p><h2>line</h2><ul>
+<li><a href="./manual/../class/src/representation/line-representation.js~LineRepresentation.html">line</a></li>
+</ul><p>Bonds are displayed by a flat, unshaded line.</p><h2>point</h2><ul>
+<li><a href="./manual/../class/src/representation/point-representation.js~PointRepresentation.html">point</a></li>
+</ul><p>Atoms are displayed by textured points.</p><h2>ribbon</h2><ul>
+<li><a href="./manual/../class/src/representation/ribbon-representation.js~RibbonRepresentation.html">ribbon</a></li>
+</ul><p>A thin ribbon is displayed along the main backbone trace.</p><h2>rocket</h2><ul>
+<li><a href="./manual/../class/src/representation/rocket-representation.js~RocketRepresentation.html">rocket</a></li>
+</ul><h2>rope</h2><ul>
+<li><a href="./manual/../class/src/representation/rope-representation.js~RopeRepresentation.html">rope</a></li>
+</ul><p>A rope-like protein fold abstraction well suited for coarse-grained structures. In this representation a tube follows the center points of local axes as defined by <a href="#helixorient">helixorient</a>. The result is similar to what is shown by the <a href="http://sbcb.bioch.ox.ac.uk/Bendix/">Bendix tool</a>.</p><ul>
+<li><em>subdiv</em>: ...</li>
+<li><em>radialSegments</em>: ...</li>
+<li><em>tension</em>: ...</li>
+<li><em>capped</em>: ...</li>
+<li><em>wireframe</em>: ...</li>
+<li><em>smooth</em>: ...</li>
+</ul><h2>spacefill</h2><ul>
+<li><a href="./manual/../class/src/representation/spacefill-representation.js~SpacefillRepresentation.html">spacefill</a></li>
+</ul><p>Atoms are displayed as a set of space-filling spheres.</p><ul>
+<li><em>sphereDetail</em>: An integer between 0 and 3, where 0 means low and 3 very high geometric detail. Only has an effect when ray-casting of geometric primitives is unavailable or switched of via the <em>impostor</em> preference.</li>
+</ul><h2>surface</h2><ul>
+<li><a href="./manual/../class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">surface</a></li>
+</ul><p>Displays the molecular surface and its variants.</p><ul>
+<li><em>surfaceType</em><ul>
+<li><em>vws</em>: van der Waals surface</li>
+<li><em>sas</em>: solvent accessible surface</li>
+<li><em>ms</em>: molecular surface</li>
+<li><em>ses</em>: solvent excluded surface</li>
+<li><em>av</em>: high quality molecular surface</li>
+</ul>
+</li>
+<li><em>probeRadius</em>:</li>
+<li><em>scaleFactor</em>: (just for debugging)</li>
+</ul><h2>trace</h2><ul>
+<li><a href="./manual/../class/src/representation/trace-representation.js~TraceRepresentation.html">trace</a></li>
+</ul><p>A flat, unshaded line is displayed along the main backbone trace.</p><h2>tube</h2><ul>
+<li><a href="./manual/../class/src/representation/tube-representation.js~TubeRepresentation.html">tube</a></li>
+</ul><p>Essentially like <a href="#cartoon">cartoon</a> but with the <em>aspectRatio</em> fixed at a value of 1.0.</p><h2>unitcell</h2><ul>
+<li><a href="./manual/../class/src/representation/unitcell-representation.js~UnitcellRepresentation.html">unitcell</a></li>
+</ul><p>Draws the corners and edges of a crystallographic unitcell.</p><h2>validation</h2><ul>
+<li><a href="./manual/../class/src/representation/validation-representation.js~ValidationRepresentation.html">validation</a></li>
+</ul><p>Draws clashes given in a wwPDB validation report.</p></div>
+        <a data-ice="link" href="manual/molecular-representations.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Scripting</h1><p>Scripts are written in JavaScript and can be loaded as files that have the extension <strong>.ngl</strong> or <strong>.js</strong>.</p><h2>Example</h2><p>Load the structure of PDB entry <em>1CRN</em> from <a href="http://www.rcsb.org/">RCSB</a>, add a cartoon representation and center the view on the structure.</p><pre><code><code class="source-code prettyprint">stage.loadFile(&quot;rcsb://1CRN&quot;).then(function (o) {
+  o.addRepresentation(&quot;cartoon&quot;);
+  o.autoView();
+});</code>
+</code></pre><p>Here, <code>o</code> is a <code>StructureComponent</code> instance.</p><h2>Variables</h2><p>The following variables are available in a scripting context.</p><pre><code><code class="source-code prettyprint">stage  // the stage object
+__name__  // the name of the script file
+__path__  // the full path of the script file
+__dir__  // the directory to the script file</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/scripting.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Selection Language</h1><p>Selections (or &apos;Sele&apos; for short) strings can be input at various places in the user interface or when scripting. They are used to limit which atoms/residues are shown in a [molecular representation]{@tutorial molecular-representations} or what atoms are loaded from a trajectory.</p><h2>Example</h2><p>Select the side-chain and C-alpha atoms plus the backbone nitrogen in case of proline. <code>not backbone or .CA or (PRO and .N)</code> This selection is useful to display the sidechains together with a backbone trace. Hence there is also the keyword <em>sidechainAttached</em> for it.</p><h2>Language</h2><h3>Keywords</h3><ul>
+<li><em>all</em>, <strong>*</strong></li>
+<li><em>sidechain</em></li>
+<li><em>sidechainAttached</em> (<code>not backbone or .CA or (PRO and .N)</code>)</li>
+<li><em>backbone</em></li>
+<li><em>protein</em></li>
+<li><em>nucleic</em></li>
+<li><em>rna</em></li>
+<li><em>dna</em></li>
+<li><em>hetero</em></li>
+<li><em>ligand</em> (<code>( not polymer or hetero ) and not ( water or ion )</code>)</li>
+<li><em>ion</em></li>
+<li><em>saccharide</em>/<em>sugar</em></li>
+<li><em>polymer</em></li>
+<li><em>water</em></li>
+<li><em>hydrogen</em></li>
+<li><em>helix</em></li>
+<li><em>sheet</em></li>
+<li><em>turn</em> (<code>not helix and not sheet</code>)</li>
+<li><em>small</em> (<code>Gly or Ala or Ser</code>)</li>
+<li><em>nucleophilic</em> (<code>Ser or Thr or Cys</code>)</li>
+<li><em>hydrophobic</em> (<code>Ala or Val or Leu or Ile or Met or Pro or Phe or Trp</code>)</li>
+<li><em>aromatic</em> (<code>Phe or Tyr or Trp or His</code>)</li>
+<li><em>amid</em> (<code>Asn or Gln</code>)</li>
+<li><em>acidic</em> (<code>Asp or Glu</code>)</li>
+<li><em>basic</em> (<code>His or Lys or Arg</code>)</li>
+<li><em>charged</em> (<code>Asp or Glu or His or Lys or Arg</code>)</li>
+<li><em>polar</em> (<code>Asp or Cys or Gly or Glu or His or Lys or Arg or Asn or Gln or Ser or Thr or Tyr</code>)</li>
+<li><em>nonpolar</em> (<code>Ala or Ile or Leu or Met or Phe or Pro or Val or Trp</code>)</li>
+<li><em>cyclic</em> (<code>His or Phe or Pro or Trp or Tyr</code>)</li>
+<li><em>aliphatic</em> (<code>Ala or Gly or Ile or Leu or Val</code>)</li>
+<li><em>bonded</em> (all atoms with at least one bond)</li>
+<li><em>ring</em> (all atoms within rings)</li>
+</ul><h3>Expressions</h3><ul>
+<li>residue number: <em>1</em>, <em>2</em>, <em>100</em></li>
+<li>residue number range: <em>3-40</em> (Note that around the dash <strong>-</strong> no spaces are allowed)</li>
+<li>chain name: <strong>:A</strong></li>
+<li>atom name: <strong>.CA</strong>, <strong>.C</strong>, <strong>.N</strong>, ...</li>
+<li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
+<li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
+<li>numeric residue name: <em>[032]</em>, <em>[1AB]</em>, ...</li>
+<li>list of residue names: <em>[ALA,GLU,MET]</em>, <em>[ARG,LYS]</em>, ...</li>
+<li>element name: <strong>_H</strong>, <strong>_C</strong>, <strong>_O</strong>, ...</li>
+<li>alternate location: <strong>%A</strong>, <strong>%B</strong>, ... or <strong>%</strong> for non-alternate location atoms</li>
+<li>insertion code: <strong>^A</strong>, <strong>^B</strong>, ... or <strong>^</strong> for residues with no insertion code</li>
+</ul><p>Some of these expressions can be combined (in this order) - residue numer (range), insertion code, chain name, atom name, alternate location, model - like this</p><pre><code><code class="source-code prettyprint">// select C-alpha atoms of residue 10 with insertion code A
+// from chain F in model 0 at alternate location C
+10^A:F.CA%C/0</code>
+</code></pre><p>which is the same as</p><pre><code><code class="source-code prettyprint">10 and ^A and :F and .CA and %C and /0</code>
+</code></pre><p>Single expressions may be left out as long as the order (see above) is kept, for example:</p><pre><code><code class="source-code prettyprint">:A/0 # select chain A from model 0</code>
+</code></pre><h3>Atomindex</h3><p>A list of atom indices can be given as a comma seperated list (no spaces in between) prefixed with the <code>@</code> character.</p><pre><code><code class="source-code prettyprint">@0,1,4,5,11,23,42</code>
+</code></pre><h3>Logical operators (in order of binding strength)</h3><ul>
+<li><em>NOT</em></li>
+<li><em>AND</em></li>
+<li><em>OR</em></li>
+</ul><p>Additionally, parentheses <em>()</em> can be used for grouping: <code>:A and ( 1 or 10 or 100 ) # select residues 1, 10 and 100 from chain A</code></p></div>
+        <a data-ice="link" href="manual/selection-language.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Structure data</h1><p>Molecular data is stored in objects of the <a href="./manual/../class/src/structure/structure.js~Structure.html">Structure</a> class. Structure objects provide the common model/chain/residue/atom hierarchy.</p><h2>Proxies</h2><p>The data in each level of the hierarchy can be efficiently and conveniently accessed through proxy objects.</p><pre><code><code class="source-code prettyprint">// Get an AtomProxy object for atom with index 10
+stage.loadFile(&quot;rcsb://1crn&quot;).then(function(component) {
+  var atomProxy = component.structure.getAtomProxy(10)
+  console.log(atomProxy.qualifiedName())
+});</code>
+</code></pre><h2>Iterators</h2><p>For each level of the hierarchy an iterator is available.</p><pre><code><code class="source-code prettyprint">// Calculate B-factor statistics
+stage.loadFile(&quot;rcsb://1crn&quot;).then(function(component) {
+  var bfactorSum = 0
+  var bfactorMin = +Infinity
+  var bfactorMax = -Infinity
+  component.structure.eachAtom(function(atom) {
+    bfactorSum += atom.bfactor;
+    if (bfactorMin &gt; atom.bfactor) bfactorMin = atom.bfactor
+    if (bfactorMax &lt; atom.bfactor) bfactorMax = atom.bfactor
+  });
+  var bfactorAvg = bfactorSum / component.structure.atomCount
+  console.log(bfactorSum, bfactorMin, bfactorMax, bfactorAvg)
+});</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/structure-data.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Volume Representations</h1><p>For volumetric data and (when applicable) for surface data</p><h2>Surface</h2><p>Show triangulation of volume data at a given isolevel or direct display of a surface mesh.</p><ul>
+<li><a href="./manual/../class/src/representation/surface-representation.js~SurfaceRepresentation.html">surface</a></li>
+</ul><h2>Dot</h2><p>Render each cell of a volume (optionally filtered given threshold values) as a dot or show the vertices of a surface mesh.</p><ul>
+<li><a href="./manual/../class/src/representation/dot-representation.js~DotRepresentation.html">dot</a></li>
+</ul><h2>Slice</h2><p>Render a slice of a volume colored by the value of each cell closest to each point on the slice.</p><ul>
+<li><a href="./manual/../class/src/representation/slice-representation.js~SliceRepresentation.html">slice</a></li>
+</ul></div>
+        <a data-ice="link" href="manual/volume-representations.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Usage</h1><p>A collection of NGL snippets</p><h2>Implementing custom default representations</h2><p>Start by creating a function that adds the wanted representations to a component. See also {@ StructureComponent.addRepresentation}.</p><pre><code><code class="source-code prettyprint">function defaultStructureRepresentation( component ){
+    // bail out if the component does not contain a structure
+    if( component.type !== &quot;structure&quot; ) return;
+    // add three representations
+    component.addRepresentation( &quot;cartoon&quot;, {
+        aspectRatio: 3.0,
+        scale: 1.5
+    } );
+    component.addRepresentation( &quot;licorice&quot;, {
+        sele: &quot;hetero and not ( water or ion )&quot;,
+        multipleBond: true
+    } );
+    component.addRepresentation( &quot;spacefill&quot;, {
+        sele: &quot;water or ion&quot;,
+        scale: 0.5
+    } );
+}</code>
+</code></pre><p>Pass that function as a callback whenever you load a structure file via {@link Stage#loadFile}.</p><pre><code><code class="source-code prettyprint">stage.loadFile( &quot;rcsb://1crn&quot; ).then( defaultStructureRepresentation );
+stage.loadFile( &quot;rcsb://4hhb&quot; ).then( defaultStructureRepresentation );</code>
+</code></pre><p>Note that the same strategy works for surface and volume files loaded into a {@link SurfaceComponent}.</p><h2>Distance-based selection</h2><p>Get a selection of atoms that are within a certain distance of another selection.</p><pre><code><code class="source-code prettyprint">stage.loadFile( &quot;rcsb://3pqr&quot; ).then( function( o ){
+    // get all atoms within 5 Angstrom of retinal
+    var selection = new NGL.Selection( &quot;RET&quot; );
+    var radius = 5;
+    var atomSet = o.structure.getAtomSetWithinSelection( selection, radius );
+    // expand selection to complete groups
+    var atomSet2 = o.structure.getAtomSetWithinGroup( atomSet );
+    o.addRepresentation( &quot;licorice&quot;, { sele: atomSet2.toSeleString() } );
+    o.addRepresentation( &quot;cartoon&quot; );
+    o.autoView();
+} );</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/snippets.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Change Log</h1><p>All notable changes to this project will be documented in this file, following the suggestions of <a href="http://keepachangelog.com/">Keep a CHANGELOG</a>. This project adheres to <a href="http://semver.org/">Semantic Versioning</a>.</p><h2><a href="https://github.com/arose/ngl/compare/v0.9.3...HEAD">Unreleased</a></h2><h3>Added</h3><ul>
+<li>contour option for volume surfaces (electron density maps)</li>
+<li>buble, for transpiling some ES2015 features (e.g. classes, arrow functions, ...)</li>
+<li>volume slice representation including interpolation support</li>
+<li>xplor/cns volume file parser</li>
+<li><code>colorVolume</code> parameter for surface representation of volume data</li>
+<li><code>voxelSize</code> parameter for volume file parser</li>
+<li>support for non orthogonal cell in cube file parser</li>
+<li>dsn6/brix volume file parser</li>
+<li>psf topology/structure file parser</li>
+<li>wwPDB validation report xml parser, representation and colorschemes</li>
+<li>support for picking Shape objects, Volume slices, Contact bonds</li>
+<li>scroll mouse behavior to change far/near clipping and fog</li>
+<li>label primitive for Shape class</li>
+<li>support for reversing color schemes with <code>colorReverse</code> parameter</li>
+<li>independent component movement via <code>.setPosition</code>, <code>.setRotation</code>, <code>.setScale</code>, <code>.setTransform</code></li>
+<li><code>bonded</code> and <code>ring</code> selection language keywords</li>
+<li>resname list to selection language, <code>[ALA,GLU]</code></li>
+</ul><h3>Changed</h3><ul>
+<li>renamed <code>volume</code> parameter in molecular surface representation to <code>colorVolume</code></li>
+<li>renamed colormaker classes from colorMaker to colormaker, i.e. removed camel case</li>
+<li>renamed ColormakerRegistry.getTypes to .getSchemes</li>
+<li>colormaker subclasses now auto-register with ColormakerRegistry</li>
+<li>refactored buffer classes to use a data object as input</li>
+<li>refactored picking to be more general</li>
+<li>replaced PickingData with PickingProxy</li>
+<li>updated three.js to r85</li>
+<li>updated chroma.js to 1.3.3</li>
+<li>replaced utils/bitset with utils/bitarray</li>
+<li>tweaked aminoacid keywords in selection language to follow rasmol/jmol, vmd</li>
+</ul><h3>Removed</h3><ul>
+<li>stage/component.centerView method, use .autoView instead</li>
+<li>GidPool, picking handled by Picker objects</li>
+<li>deprecated use of <code>#</code> for element selection, use <code>_</code> instead</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.2...v0.9.3">v0.9.3</a> - 2016-10-14</h2><h3>Changed</h3><ul>
+<li>increased light distance from camera, to fix unlit rendering</li>
+<li>remove double quotes from atomnames in chemComp cif parser</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.1...v0.9.2">v0.9.2</a> - 2016-10-06</h2><h3>Changed</h3><ul>
+<li>fix, moved polyfills back inside the bundle</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.9.0...v0.9.1">v0.9.1</a> - 2016-10-06</h2><h3>Changed</h3><ul>
+<li>removed (wrongly added) ngl2.js from dist folder</li>
+<li>fixed chemComp cif parser not passing chainid</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.8...v0.9.0">v0.9.0</a> - 2016-10-05</h2><h3>Added</h3><ul>
+<li>lazy representation parameter that only builds &amp; updates the representation when visible</li>
+<li>chainname based color scheme</li>
+<li>BondHash class to quickly get atoms connected to an atom</li>
+<li>SpatialHash class to quickly get neighboring atoms/points</li>
+<li>XmlParser parameter to use the browser&apos;s DOMParser</li>
+<li>attachment (top, middle, bottom; left, center, right) for LabelRepresentation/TextBuffer</li>
+<li>border color and width for LabelRepresentation/TextBuffer</li>
+<li>colored background rectangle for LabelRepresentation/TextBuffer</li>
+<li>&quot;offset&quot; style rendering of double/triple bonds (@fredludlow)</li>
+<li>PubchemDatasource to load cid as sdf, pubchem://16490</li>
+<li>basic entity support (type, description, chain mapping; mmcif, mmtf)</li>
+<li>entitytype, moleculetype, chainid, polymer color schemes</li>
+<li>ShaderRegistry, DecompressorRegistry</li>
+<li>box display for &quot;axes&quot; representation</li>
+</ul><h3>Changed</h3><ul>
+<li>ResidueindexColorMaker colorscale domain on a per chain basis</li>
+<li>ChainindexColorMaker colorscale domain on a per model basis</li>
+<li>Fixed, initial parameters for a Buffer not taken into account</li>
+<li>ignore bonds that are defined multiple times in PDB parser</li>
+<li>updated mmtf lib to v1.0</li>
+<li>use npm as the build system</li>
+<li>complete list of ion and saccharide group names</li>
+</ul><h3>Removed</h3><ul>
+<li>gulp as the build system</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.7.1a...v0.8">v0.8</a> - 2016-07-22</h2><h3>Added</h3><ul>
+<li>gulp build scripts</li>
+<li>mmtf v0.2 support</li>
+<li>support for rendering double/triple bonds, enable via <code>multipleBond</code> Representation parameter (@fredludlow, @arose)</li>
+<li>stage.clicked signal (renamed from .onPicking)</li>
+<li>stage.hovered signal</li>
+<li>parsing of &quot;chem comp&quot; cif files</li>
+<li>experimental &quot;axes&quot; representation showing the principal axes of an atom selection</li>
+<li>added cone, arrow &amp; ellipsoid buffers</li>
+<li>added Shape class as a simple way to add custom shapes to the scene</li>
+</ul><h3>Changed</h3><ul>
+<li>reorganized everything to use es6 modules</li>
+<li>read bondOrder from &apos;pdbx_value_order&apos; in mmcif files</li>
+<li>interpret &apos;CONECT 1529 1528 1528&apos; as double bond in pdb files</li>
+<li><code>side</code> Buffer/Representation parameter changed: THREE.FrontSide =&gt; &quot;front&quot;, THREE.BackSide =&gt; &quot;back&quot;, THREE.DoubleSide =&gt; &quot;double&quot;</li>
+<li>support for negative resno values in selections: &quot;-5:A&quot;, &quot;-12--8&quot;, &quot;-12-0&quot;</li>
+<li>use chemical component type (available in mmtf) for determining molecule type</li>
+<li><code>.get/setOrientation</code> return/argument changed</li>
+<li>enable SDF font as the default TextBuffer class only on Chrome</li>
+<li>support for building using three-jsnext</li>
+<li>renamed <code>radiusSegments</code> parameter to <code>radialSegments</code></li>
+<li>WebWorkers (for building surfaces) no longer need to load the main script file</li>
+<li><code>NGL.GET</code> renamed to <code>NGL.getQuery</code></li>
+</ul><h3>Removed</h3><ul>
+<li>python-based build scripts</li>
+<li>closure-compiler</li>
+<li>stage.signals.onPicking (renamed to .clicked)</li>
+<li>stage.signals.atom/bond/volume/nothingPicked, use .clicked instead</li>
+<li><code>NGL.mainScriptFilePath</code> no longer needed</li>
+<li><code>NGL.useWorker</code>, use &quot;useWorker&quot; representation parameter</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.7.1...v0.7.1a">v0.7.1a</a> - 2016-06-02</h2><h3>Changed</h3><ul>
+<li>fixed version in builds</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.7...v0.7.1">v0.7.1</a> - 2016-06-02</h2><h3>Added</h3><ul>
+<li>orthographic camera mode</li>
+<li><code>backgroundColor</code> parameter for <code>Stage</code></li>
+<li>x/y/z offset parameters for labels (TextBuffer)</li>
+<li><code>OX1</code> atoms are recognized as part of the protein backbone</li>
+<li><code>stage.makeImage</code> now increments the task counter</li>
+<li>added <code>.isIdentity</code> method to test if an <code>Assembly</code> is an identity transformation over all chains</li>
+<li>embedded-dev build target (@sbliven)</li>
+<li>support for responseType = &quot;json&quot; to efficiently load json data</li>
+</ul><h3>Changed</h3><ul>
+<li>there is no longer a fake unitcell created when no space group information is available</li>
+<li>the query string is removed from urls before the determining file info (e.g. name, extension)</li>
+<li>fixed labelText param not working in LabelRepresentation</li>
+<li>enable SDF font as the default only on Chrome (fixes labels not shown on some OS/Browser)</li>
+<li>ignore &apos;given&apos; ncs operators</li>
+<li>ensure that resname is upper case</li>
+</ul><h3>Removed</h3><ul>
+<li><code>stage.setTheme</code> removed (use new <code>backgroundColor</code> parameter), themes now part of GUI code</li>
+<li><code>NGL.Preferences</code> is now part of the GUI code and removed from <code>NGL.Stage</code>. Setting <code>overwritePreferences: true</code> when instantiating an <code>NGL.Stage</code> object is not necessary anymore.</li>
+<li>removed .requestVisibility method and signal (too GUI specific, if needed, should be handled there)</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.6...v0.7">v0.7</a> - 2016-05-08</h2><h3>Added</h3><ul>
+<li>Store and Proxy classes for memory efficiency</li>
+<li>MMTF, DXBIN, DCD files format parsers</li>
+<li>&apos;unitcell&apos; representation</li>
+<li>stage.makeImage (returns Promise)</li>
+<li>take NCS operations into account when creating unitcell &amp; supercell assemblies</li>
+<li>added multi sample antialias rendering</li>
+<li>added support for spinning around an axis</li>
+<li>use bitsets for storing selections of atoms</li>
+<li>Assembly and AssemblyPart classes</li>
+<li>stage.toggleFullscreen method</li>
+<li>read occupancy data when available (mmCIF, pdb, mmtf)</li>
+<li>occupancy color scheme</li>
+<li>alternate location support in selections, e.g. %B</li>
+<li>read insertion codes when available (mmCIF, pdb, mmtf)</li>
+<li>insertion code support in selections, e.g. ^A</li>
+<li>numeric residue name support in selections, e.g. [032]</li>
+<li>Queue class to handle async tasks</li>
+</ul><h3>Changed</h3><ul>
+<li>fixed transformation matrix in mrc/ccp4 parser</li>
+<li>optimized near clipping</li>
+<li>Fiber class remanamed to Polymer</li>
+<li>more consistent fog</li>
+<li>use workers more sparsely due to the large overhead of creating them</li>
+<li>create font SDF on demand, remove asset dependency</li>
+<li>integrated three.js lighting into custom shaders</li>
+<li>MIGRATION: chainname read from <code>auth_asym_id</code> instead of from <code>label_asym_id</code> field</li>
+<li>DOC: clarified apache configuration for deployment</li>
+<li>FIX: cif parser, ignore non-displayable bonds between symmetry mates</li>
+<li>FIX: cif parser, struct_conn bonds not added for multiple altloc atoms</li>
+<li>LIB: updated signals.js</li>
+<li>LIB: updated promise.js</li>
+<li>LIB: updated three.js</li>
+<li>LIB: updated pako.js to pako_inflate.js (no deflation support needed)</li>
+<li>CODE: support loading of Blob objects in addition to File objects</li>
+<li>CODE: tweaked DistanceRepresentation visibility params</li>
+</ul><h3>Removed</h3><ul>
+<li>zip, lzma, bzip2 decompression</li>
+<li>removed async.js</li>
+<li>mdsrv related code and documentation</li>
+<li>stage.exportImage (makes image and triggers download), use stage.makeImage</li>
+</ul><h2><a href="https://github.com/arose/ngl/compare/v0.5...v0.6">v0.6</a> - 2015-10-12</h2><h3>Added</h3><ul>
+<li>MIGRATION: <code>Stage.loadFile</code> signature changed, now returns a <code>Promise</code> and does not accept callbacks</li>
+<li>MIGRATION: moved trajectory server into its own repository: <a href="https://github.com/arose/mdsrv/">MDSrv</a></li>
+<li>ADD: Support for MOL2 and SDF files</li>
+<li>ADD: Support for DX files</li>
+<li>ADD: Support for PQR files</li>
+<li>ADD: <code>ExampleRegistry</code> singleton</li>
+<li>ADD: <code>PluginRegistry</code> singleton</li>
+<li>ADD: <code>Datasource</code> class to use instead of hard-coded paths</li>
+<li>ADD: <code>GidPool</code></li>
+<li>ADD: simple xml parser</li>
+<li>ADD: APBS plugin to load PQR and DX file, simple GUI</li>
+<li>ADD: bond and surface picking</li>
+<li>ADD: User-defined color schemes (API)</li>
+<li>GUI: <code>VirtualList</code> and <code>VirtualTable</code></li>
+<li>GUI: re-sizable sidebar (contents still need to be made responsive)</li>
+<li>WIP: scripting API</li>
+</ul><h3>Changed</h3><ul>
+<li>EXAMPLES: general fixes and enhancements</li>
+<li>DOC: moved installation and development information into the README</li>
+<li>GUI/DOC: Higher color contrast for GUI and documentation pages</li>
+<li>CODE: qunit updated</li>
+<li>CODE: moved logical units of code into their own files</li>
+<li>CODE: speeded up secondary structure assignment from PDB/mmCIF files; fixed bugs leading to wrong assignment</li>
+<li>CODE: element color scheme now uses colorValue parameter to color carbon elements</li>
+<li>CODE: script and assets paths are now configurable</li>
+<li>CODE: more forgiving pdb parsing wrt to model records</li>
+<li>CODE: helper function for re-ordering atoms</li>
+<li>CODE: enhancements to handling Web Workers (<code>WorkerPool</code>, lazy Worker creation)</li>
+<li>CODE: enhancements to volume triangulation (limit to given box, skip empty parts)</li>
+<li>CODE: all <code>*Buffer</code> classes now inherit from <code>Buffer</code> and share common code</li>
+<li>CODE: BufferAttributes can be re-used or grown</li>
+<li>CODE: moved Buffer-specific code out of Representation class</li>
+<li>CODE: molecular surface enhancements (color by atom, filter by atom)</li>
+<li>CODE: nicer clipping of meshes and impostors (unlit interior to make them appear solid)</li>
+<li>CODE: optimized kdtree building</li>
+<li>CODE: clearer atomnames handling for fiber creation</li>
+<li>CODE: Color handling code refactored exposing more parameters</li>
+<li>CODE: Basic support for async creation of representations (so far used for molecular surfaces and volume triangulation)</li>
+<li>CODE: chunked data loading and parsing via streamer class</li>
+<li>CODE: faster autobonding of large residues (e.g. hydrated lipids)</li>
+<li>CODE: WebWorker support while using development and build files</li>
+<li>CODE: WebWorker used for decompression, parsing and surface generation</li>
+<li>FIX: Issue #7</li>
+<li>FIX: residues at the end of fibers may not require all backbone atoms</li>
+<li>FIX: standard compatible atom names when writing pdb files</li>
+<li>FIX: origin coordinates not used/read from mrc header</li>
+</ul><h3>Removed</h3><ul>
+<li>DEL: removed FragFit plugins</li>
+</ul><h2>v0.5 - 2015-30-04</h2><h3>Added</h3><ul>
+<li>Initial release</li>
+</ul></div>
+        <a data-ice="link" href="manual/CHANGELOG.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69549173-1', 'auto');
+    ga('send', 'pageview');
+</script></body></html>
