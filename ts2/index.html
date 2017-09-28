@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NGL @ arose.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="subresource" href="css/light.css" />
+    <link rel="subresource" href="css/dark.css" />
+</head>
+
+<body>
+    <!-- NGL -->
+    <script src="js/ngl.js"></script>
+
+    <!-- UI -->
+    <script src="js/lib/signals.min.js"></script>
+    <script src="js/lib/tether.min.js"></script>
+    <script src="js/lib/colorpicker.min.js"></script>
+    <script src="js/ui/ui.js"></script>
+    <script src="js/ui/ui.extra.js"></script>
+    <script src="js/ui/ui.ngl.js"></script>
+    <script src="js/gui.js"></script>
+
+    <script>
+        NGL.cssDirectory = "css/";
+        NGL.documentationUrl = "api/index.html";
+        NGL.examplesListUrl = "scripts/list.json";
+        NGL.examplesScriptUrl = "scripts/";
+
+        // Datasources
+        NGL.DatasourceRegistry.add("data", new NGL.StaticDatasource( "data/" ));
+
+        var stage;
+        document.addEventListener( "DOMContentLoaded", function(){
+            stage = new NGL.Stage();
+            NGL.StageWidget( stage );
+            var load = NGL.getQuery( "load" );
+            if( load ) stage.loadFile( load, { defaultRepresentation: true } );
+            var script = NGL.getQuery( "script" );
+            if( script ) stage.loadFile( "scripts/" + script + ".js" );
+        } );
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-69549173-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
