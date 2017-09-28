@@ -42,7 +42,7 @@ stage.signals.hovered.add(function (pickingProxy) {
   }
 })
 
-// stage.loadFile('data://3SN6.cif').then(function (o) {
+stage.loadFile('data://3SN6.cif').then(function (o) {
 // stage.loadFile('data://4UJD.cif.gz').then(function (o) {
 // stage.loadFile('data://3l5q.pdb').then(function (o) {
 // stage.loadFile('data://1blu.pdb').then(function (o) {
@@ -52,7 +52,7 @@ stage.signals.hovered.add(function (pickingProxy) {
 // stage.loadFile('rcsb://3EQA').then(function (o) {  // cation pi
 // stage.loadFile('rcsb://1u19').then(function (o) {
 // stage.loadFile('rcsb://3pqr').then(function (o) {
-stage.loadFile('rcsb://1d66').then(function (o) {  // dna
+// stage.loadFile('rcsb://1d66').then(function (o) {  // dna
 // stage.loadFile('rcsb://1crn').then(function (o) {
 // stage.loadFile('rcsb://1blu').then(function (o) {  // iron sulfur cluster
 // stage.loadFile('rcsb://1us0', { sele: '% or %A' }).then(function (o) {  // halogen bond
