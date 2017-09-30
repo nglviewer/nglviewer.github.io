@@ -22,14 +22,18 @@ stage.signals.hovered.add(function (pickingProxy) {
     if (pickingProxy.atom || pickingProxy.bond) {
       var atom = pickingProxy.atom || pickingProxy.closestBondAtom
       var vm = atom.structure.data['@valenceModel']
-      tooltip.innerHTML = `${pickingProxy.getLabel()}<br/>
-      <hr/>
-      Atom: ${atom.qualifiedName()}<br/>
-      ideal valence: ${vm.idealValence[atom.index]}<br/>
-      ideal geometry: ${vm.idealGeometry[atom.index]}<br/>
-      implicit charge: ${vm.implicitCharge[atom.index]}<br/>
-      formal charge: ${atom.formalCharge === null ? '?' : atom.formalCharge}<br/>
-      `
+      if (vm) {
+        tooltip.innerHTML = `${pickingProxy.getLabel()}<br/>
+        <hr/>
+        Atom: ${atom.qualifiedName()}<br/>
+        ideal valence: ${vm.idealValence[atom.index]}<br/>
+        ideal geometry: ${vm.idealGeometry[atom.index]}<br/>
+        implicit charge: ${vm.implicitCharge[atom.index]}<br/>
+        formal charge: ${atom.formalCharge === null ? '?' : atom.formalCharge}<br/>
+        `
+      } else {
+        tooltip.innerHTML = `${pickingProxy.getLabel()}`
+      }
     } else {
       tooltip.innerHTML = `${pickingProxy.getLabel()}`
     }
