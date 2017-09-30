@@ -31,16 +31,16 @@
         NGL.examplesScriptUrl = "scripts/";
 
         // Datasources
-        NGL.DatasourceRegistry.add("data", new NGL.StaticDatasource( "data/" ));
+        NGL.DatasourceRegistry.add("data", new NGL.StaticDatasource("data/"));
 
         var stage;
-        document.addEventListener( "DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function (){
             stage = new NGL.Stage();
-            NGL.StageWidget( stage );
-            var load = NGL.getQuery( "load" );
-            if( load ) stage.loadFile( load, { defaultRepresentation: true } );
-            var script = NGL.getQuery( "script" );
-            if( script ) stage.loadScript( "scripts/" + script + ".js" );
+            NGL.StageWidget(stage);
+            var load = NGL.getQuery("load");
+            if(load) stage.loadFile(load, { defaultRepresentation: true });
+            var script = NGL.getQuery("script");
+            if(script) stage.loadScript("scripts/" + script + ".js");
         } );
     </script>
 
