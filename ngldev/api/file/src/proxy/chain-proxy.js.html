@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@1.0.0-beta.1</span>
+<header><span>NGL@1.0.0-beta.2</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -78,6 +78,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RepresentationRegistry">RepresentationRegistry</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ScriptExtensions">ScriptExtensions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ShaderRegistry">ShaderRegistry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SupportsPassiveEventHandler">SupportsPassiveEventHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SupportsReadPixelsFloat">SupportsReadPixelsFloat</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WebglErrorMessage">WebglErrorMessage</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WorkerRegistry">WorkerRegistry</a></span></span></li>
@@ -892,7 +893,7 @@ class ChainProxy {
     }
 
     if (rNextIndex - rStartIndex &gt; 1) {
-      if (this.structure.getResidueProxy(rStartIndex).backboneStartType) {
+      if (this.structure.getResidueProxy(rStartIndex).backboneEndType) {
         // console.log(&quot;FOO3&quot;,rStartIndex, rNextIndex)
         callback(new Polymer(structure, rStartIndex, rNextIndex))
       }
