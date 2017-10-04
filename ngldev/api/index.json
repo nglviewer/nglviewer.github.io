@@ -23962,7 +23962,7 @@
     "__docId__": 1324,
     "kind": "file",
     "name": "src/datasource/mdsrv-datasource.js",
-    "content": "/**\n * @file MDsrv Datasource\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\nimport { getFileInfo } from '../utils.js'\nimport { autoLoad } from '../loader/loader-utils.js'\nimport Datasource from './datasource.js'\n\nclass MdsrvDatasource extends Datasource {\n  constructor (baseUrl) {\n    super()\n    this.baseUrl = baseUrl || ''\n  }\n\n  getListing (path) {\n    path = path || ''\n    let url = this.baseUrl + 'dir/' + path\n    if (url[url.length - 1] !== '/') url += '/'\n    return autoLoad(url, {\n      ext: 'json'\n    }).then(function (jsonData) {\n      return {\n        path: path,\n        data: jsonData.data\n      }\n    })\n  }\n\n  getUrl (src) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'file/' + info.path\n  }\n\n  getCountUrl (src) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'traj/numframes/' + info.path\n  }\n\n  getFrameUrl (src, frameIndex) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'traj/frame/' + frameIndex + '/' + info.path\n  }\n\n  getFrameParams (src, atomIndices) {\n    return 'atomIndices=' + atomIndices.join(';')\n  }\n\n  getPathUrl (src, atomIndex) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'traj/path/' + atomIndex + '/' + info.path\n  }\n}\n\nexport default MdsrvDatasource\n",
+    "content": "/**\n * @file MDsrv Datasource\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\nimport { getFileInfo } from '../utils.js'\nimport { autoLoad } from '../loader/loader-utils.js'\nimport Datasource from './datasource.js'\n\nclass MdsrvDatasource extends Datasource {\n  constructor (baseUrl) {\n    super()\n    this.baseUrl = baseUrl || ''\n  }\n\n  getListing (path) {\n    path = path || ''\n    let url = this.baseUrl + 'dir/' + path\n    if (url[url.length - 1] !== '/') url += '/'\n    return autoLoad(url, {\n      ext: 'json'\n    }).then(function (jsonData) {\n      return {\n        path: path,\n        data: jsonData.data\n      }\n    })\n  }\n\n  getUrl (src) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'file/' + info.path + info.query\n  }\n\n  getCountUrl (src) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'traj/numframes/' + info.path + info.query\n  }\n\n  getFrameUrl (src, frameIndex) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'traj/frame/' + frameIndex + '/' + info.path + info.query\n  }\n\n  getFrameParams (src, atomIndices) {\n    return 'atomIndices=' + atomIndices.join(';')\n  }\n\n  getPathUrl (src, atomIndex) {\n    const info = getFileInfo(src)\n    return this.baseUrl + 'traj/path/' + atomIndex + '/' + info.path + info.query\n  }\n}\n\nexport default MdsrvDatasource\n",
     "static": true,
     "longname": "/Users/alex/dev/repos/ngl/src/datasource/mdsrv-datasource.js",
     "access": "public",
@@ -71226,7 +71226,7 @@
     "__docId__": 4156,
     "kind": "file",
     "name": "src/utils.js",
-    "content": "/**\n * @file Utils\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\nimport { Vector2, Vector3, Matrix4, Quaternion } from '../lib/three.es6.js'\n\nimport { DecompressorRegistry } from './globals.js'\n\nfunction getQuery (id) {\n  if (typeof window === 'undefined') return undefined\n\n  var a = new RegExp(`${id}=([^&#=]*)`)\n  var m = a.exec(window.location.search)\n\n  if (m) {\n    return decodeURIComponent(m[1])\n  } else {\n    return undefined\n  }\n}\n\nfunction boolean (value) {\n  if (!value) {\n    return false\n  }\n\n  if (typeof value === 'string') {\n    return /^1|true|t|yes|y$/i.test(value)\n  }\n\n  return true\n}\n\nfunction defaults (value, defaultValue) {\n  return value !== undefined ? value : defaultValue\n}\n\nfunction pick (object) {\n  var properties = [].slice.call(arguments, 1)\n  return properties.reduce((a, e) => {\n    a[ e ] = object[ e ]\n    return a\n  }, {})\n}\n\nfunction flatten (array, ret) {\n  ret = defaults(ret, [])\n  for (let i = 0; i < array.length; i++) {\n    if (Array.isArray(array[i])) {\n      flatten(array[i], ret)\n    } else {\n      ret.push(array[i])\n    }\n  }\n  return ret\n}\n\nfunction getProtocol () {\n  var protocol = window.location.protocol\n  return protocol.match(/http(s)?:/gi) === null ? 'http:' : protocol\n}\n\nfunction getBrowser () {\n  if (typeof window === 'undefined') return false\n\n  var ua = window.navigator.userAgent\n\n  if (/Opera|OPR/.test(ua)) {\n    return 'Opera'\n  } else if (/Chrome/i.test(ua)) {\n    return 'Chrome'\n  } else if (/Firefox/i.test(ua)) {\n    return 'Firefox'\n  } else if (/Mobile(\\/.*)? Safari/i.test(ua)) {\n    return 'Mobile Safari'\n  } else if (/MSIE/i.test(ua)) {\n    return 'Internet Explorer'\n  } else if (/Safari/i.test(ua)) {\n    return 'Safari'\n  }\n\n  return false\n}\n\nfunction getAbsolutePath (relativePath) {\n  var loc = window.location\n  var pn = loc.pathname\n  var basePath = pn.substring(0, pn.lastIndexOf('/') + 1)\n\n  return loc.origin + basePath + relativePath\n}\n\nfunction deepCopy (src) {\n  if (typeof src !== 'object') {\n    return src\n  }\n\n  var dst = Array.isArray(src) ? [] : {}\n\n  for (var key in src) {\n    dst[ key ] = deepCopy(src[ key ])\n  }\n\n  return dst\n}\n\nfunction download (data, downloadName) {\n  // using ideas from https://github.com/eligrey/FileSaver.js/blob/master/FileSaver.js\n\n  if (!data) return\n\n  downloadName = downloadName || 'download'\n\n  var isSafari = getBrowser() === 'Safari'\n  var isChromeIos = /CriOS\\/[\\d]+/.test(window.navigator.userAgent)\n\n  var a = document.createElement('a')\n\n  function openUrl (url) {\n    var opened = window.open(url, '_blank')\n    if (!opened) {\n      window.location.href = url\n    }\n  }\n\n  function open (str) {\n    openUrl(isChromeIos ? str : str.replace(/^data:[^;]*;/, 'data:attachment/file;'))\n  }\n\n  if (typeof navigator !== 'undefined' && navigator.msSaveOrOpenBlob) {\n    // native saveAs in IE 10+\n    navigator.msSaveOrOpenBlob(data, downloadName)\n  } else if ((isSafari || isChromeIos) && window.FileReader) {\n    if (data instanceof window.Blob) {\n      // no downloading of blob urls in Safari\n      var reader = new window.FileReader()\n      reader.onloadend = function () {\n        open(reader.result)\n      }\n      reader.readAsDataURL(data)\n    } else {\n      open(data)\n    }\n  } else {\n    if (data instanceof window.Blob) {\n      data = window.URL.createObjectURL(data)\n    }\n\n    if ('download' in a) {\n      // download link available\n      a.style.display = 'hidden'\n      document.body.appendChild(a)\n      a.href = data\n      a.download = downloadName\n      a.target = '_blank'\n      a.click()\n      document.body.removeChild(a)\n    } else {\n      openUrl(data)\n    }\n\n    if (data instanceof window.Blob) {\n      window.URL.revokeObjectURL(data)\n    }\n  }\n}\n\nfunction submit (url, data, callback, onerror) {\n  if (data instanceof window.FormData) {\n    var xhr = new window.XMLHttpRequest()\n    xhr.open('POST', url)\n\n    xhr.addEventListener('load', function () {\n      if (xhr.status === 200 || xhr.status === 304) {\n        callback(xhr.response)\n      } else {\n        if (typeof onerror === 'function') {\n          onerror(xhr.status)\n        }\n      }\n    }, false)\n\n    xhr.send(data)\n  } else {\n    throw new Error('submit: data must be a FormData instance.')\n  }\n}\n\nfunction open (callback, extensionList) {\n  extensionList = extensionList || [ '*' ]\n\n  var fileInput = document.createElement('input')\n  fileInput.type = 'file'\n  fileInput.multiple = true\n  fileInput.style.display = 'hidden'\n  document.body.appendChild(fileInput)\n  fileInput.accept = '.' + extensionList.join(',.')\n  fileInput.addEventListener('change', function (e) {\n    callback(e.target.files)\n  }, false)\n\n  fileInput.click()\n}\n\nfunction getFileInfo (file) {\n  var compressedExtList = DecompressorRegistry.names\n\n  var path, compressed, protocol\n\n  if ((typeof window !== 'undefined' && file instanceof window.File) ||\n      (typeof window !== 'undefined' && file instanceof window.Blob)\n  ) {\n    path = file.name || ''\n  } else {\n    path = file\n  }\n  var queryIndex = path.lastIndexOf('?')\n  path = path.substring(0, queryIndex === -1 ? path.length : queryIndex)\n\n  var name = path.replace(/^.*[\\\\/]/, '')\n  var base = name.substring(0, name.lastIndexOf('.'))\n\n  var nameSplit = name.split('.')\n  var ext = nameSplit.length > 1 ? nameSplit.pop().toLowerCase() : ''\n\n  var protocolMatch = path.match(/^(.+):\\/\\/(.+)$/)\n  if (protocolMatch) {\n    protocol = protocolMatch[ 1 ].toLowerCase()\n    path = protocolMatch[ 2 ]\n  }\n\n  var dir = path.substring(0, path.lastIndexOf('/') + 1)\n\n  if (compressedExtList.includes(ext)) {\n    compressed = ext\n    var n = path.length - ext.length - 1\n    ext = path.substr(0, n).split('.').pop().toLowerCase()\n    var m = base.length - ext.length - 1\n    base = base.substr(0, m)\n  } else {\n    compressed = false\n  }\n\n  return {\n    'path': path,\n    'name': name,\n    'ext': ext,\n    'base': base,\n    'dir': dir,\n    'compressed': compressed,\n    'protocol': protocol,\n    'src': file\n  }\n}\n\nfunction throttle (func, wait, options) {\n  // from http://underscorejs.org/docs/underscore.html\n\n  var context, args, result\n  var timeout = null\n  var previous = 0\n\n  if (!options) options = {}\n\n  var later = function () {\n    previous = options.leading === false ? 0 : Date.now()\n    timeout = null\n    result = func.apply(context, args)\n    if (!timeout) context = args = null\n  }\n\n  return function throttle () {\n    var now = Date.now()\n    if (!previous && options.leading === false) previous = now\n    var remaining = wait - (now - previous)\n    context = this\n    args = arguments\n    if (remaining <= 0 || remaining > wait) {\n      if (timeout) {\n        clearTimeout(timeout)\n        timeout = null\n      }\n      previous = now\n      result = func.apply(context, args)\n      if (!timeout) context = args = null\n    } else if (!timeout && options.trailing !== false) {\n      timeout = setTimeout(later, remaining)\n    }\n\n    return result\n  }\n}\n\nfunction lexicographicCompare (elm1, elm2) {\n  if (elm1 < elm2) return -1\n  if (elm1 > elm2) return 1\n  return 0\n}\n\n/**\n * Does a binary search to get the index of an element in the input array\n * @function\n * @example\n * var array = [ 1, 2, 3, 4, 5, 6 ];\n * var element = 4;\n * binarySearchIndexOf( array, element );  // returns 3\n *\n * @param {Array} array - sorted array\n * @param {Anything} element - element to search for in the array\n * @param {Function} [compareFunction] - compare function\n * @return {Number} the index of the element or -1 if not in the array\n */\nfunction binarySearchIndexOf (array, element, compareFunction = lexicographicCompare) {\n  let low = 0\n  let high = array.length - 1\n  while (low <= high) {\n    const mid = (low + high) >> 1\n    const cmp = compareFunction(element, array[ mid ])\n    if (cmp > 0) {\n      low = mid + 1\n    } else if (cmp < 0) {\n      high = mid - 1\n    } else {\n      return mid\n    }\n  }\n  return -low - 1\n}\n\nfunction binarySearchForLeftRange (array, leftRange) {\n  let high = array.length - 1\n  if (array[ high ] < leftRange) return -1\n  let low = 0\n  while (low <= high) {\n    const mid = (low + high) >> 1\n    if (array[ mid ] >= leftRange) {\n      high = mid - 1\n    } else {\n      low = mid + 1\n    }\n  }\n  return high + 1\n}\n\nfunction binarySearchForRightRange (array, rightRange) {\n  if (array[ 0 ] > rightRange) return -1\n  let low = 0\n  let high = array.length - 1\n  while (low <= high) {\n    const mid = (low + high) >> 1\n    if (array[ mid ] > rightRange) {\n      high = mid - 1\n    } else {\n      low = mid + 1\n    }\n  }\n  return low - 1\n}\n\nfunction rangeInSortedArray (array, min, max) {\n  const indexLeft = binarySearchForLeftRange(array, min)\n  const indexRight = binarySearchForRightRange(array, max)\n  if (indexLeft === -1 || indexRight === -1 || indexLeft > indexRight) {\n    return 0\n  } else {\n    return indexRight - indexLeft + 1\n  }\n}\n\nfunction dataURItoImage (dataURI) {\n  if (typeof importScripts !== 'function') {\n    var img = document.createElement('img')\n    img.src = dataURI\n    return img\n  }\n}\n\nfunction uniqueArray (array) {\n  return array.sort().filter(function (value, index, sorted) {\n    return (index === 0) || (value !== sorted[ index - 1 ])\n  })\n}\n\n// String/arraybuffer conversion\n\nfunction uint8ToString (u8a) {\n  var chunkSize = 0x7000\n\n  if (u8a.length > chunkSize) {\n    var c = []\n\n    for (var i = 0; i < u8a.length; i += chunkSize) {\n      c.push(String.fromCharCode.apply(\n        null, u8a.subarray(i, i + chunkSize)\n      ))\n    }\n\n    return c.join('')\n  } else {\n    return String.fromCharCode.apply(null, u8a)\n  }\n}\n\nfunction uint8ToLines (u8a, chunkSize, newline) {\n  chunkSize = chunkSize !== undefined ? chunkSize : 1024 * 1024 * 10\n  newline = newline !== undefined ? newline : '\\n'\n\n  var partialLine = ''\n  var lines = []\n\n  for (var i = 0; i < u8a.length; i += chunkSize) {\n    var str = uint8ToString(u8a.subarray(i, i + chunkSize))\n    var idx = str.lastIndexOf(newline)\n\n    if (idx === -1) {\n      partialLine += str\n    } else {\n      var str2 = partialLine + str.substr(0, idx)\n      lines = lines.concat(str2.split(newline))\n\n      if (idx === str.length - newline.length) {\n        partialLine = ''\n      } else {\n        partialLine = str.substr(idx + newline.length)\n      }\n    }\n  }\n\n  if (partialLine !== '') {\n    lines.push(partialLine)\n  }\n\n  return lines\n}\n\nfunction getTypedArray (arrayType, arraySize) {\n  switch (arrayType) {\n    case 'int8':\n      return new Int8Array(arraySize)\n    case 'int16':\n      return new Int16Array(arraySize)\n    case 'int32':\n      return new Int32Array(arraySize)\n    case 'uint8':\n      return new Uint8Array(arraySize)\n    case 'uint16':\n      return new Uint16Array(arraySize)\n    case 'uint32':\n      return new Uint32Array(arraySize)\n    case 'float32':\n      return new Float32Array(arraySize)\n    default:\n      throw new Error('arrayType unknown: ' + arrayType)\n  }\n}\n\nfunction getUintArray (sizeOrArray, maxUnit) {\n  const TypedArray = maxUnit > 65535 ? Uint32Array : Uint16Array\n  return new TypedArray(sizeOrArray)\n}\n\nfunction ensureArray (value) {\n  return Array.isArray(value) ? value : [value]\n}\n\nfunction ensureBuffer (a) {\n  return (a.buffer && a.buffer instanceof ArrayBuffer) ? a.buffer : a\n}\n\nfunction _ensureClassFromArg (arg, constructor) {\n  return arg instanceof constructor ? arg : new constructor(arg)\n}\n\nfunction _ensureClassFromArray (array, constructor) {\n  if (array === undefined) {\n    array = new constructor()\n  } else if (Array.isArray(array)) {\n    array = new constructor().fromArray(array)\n  }\n  return array\n}\n\nfunction ensureVector2 (v) {\n  return _ensureClassFromArray(v, Vector2)\n}\n\nfunction ensureVector3 (v) {\n  return _ensureClassFromArray(v, Vector3)\n}\n\nfunction ensureMatrix4 (m) {\n  return _ensureClassFromArray(m, Matrix4)\n}\n\nfunction ensureQuaternion (q) {\n  return _ensureClassFromArray(q, Quaternion)\n}\n\nfunction ensureFloat32Array (a) {\n  return _ensureClassFromArg(a, Float32Array)\n}\n\nexport {\n  getQuery,\n  boolean,\n  defaults,\n  pick,\n  flatten,\n  getProtocol,\n  getBrowser,\n  getAbsolutePath,\n  deepCopy,\n  download,\n  submit,\n  open,\n  getFileInfo,\n  throttle,\n  binarySearchIndexOf,\n  rangeInSortedArray,\n  dataURItoImage,\n  uniqueArray,\n  uint8ToString,\n  uint8ToLines,\n  getTypedArray,\n  getUintArray,\n  ensureArray,\n  ensureBuffer,\n  ensureVector2,\n  ensureVector3,\n  ensureMatrix4,\n  ensureQuaternion,\n  ensureFloat32Array\n}\n",
+    "content": "/**\n * @file Utils\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\nimport { Vector2, Vector3, Matrix4, Quaternion } from '../lib/three.es6.js'\n\nimport { DecompressorRegistry } from './globals.js'\n\nfunction getQuery (id) {\n  if (typeof window === 'undefined') return undefined\n\n  var a = new RegExp(`${id}=([^&#=]*)`)\n  var m = a.exec(window.location.search)\n\n  if (m) {\n    return decodeURIComponent(m[1])\n  } else {\n    return undefined\n  }\n}\n\nfunction boolean (value) {\n  if (!value) {\n    return false\n  }\n\n  if (typeof value === 'string') {\n    return /^1|true|t|yes|y$/i.test(value)\n  }\n\n  return true\n}\n\nfunction defaults (value, defaultValue) {\n  return value !== undefined ? value : defaultValue\n}\n\nfunction pick (object) {\n  var properties = [].slice.call(arguments, 1)\n  return properties.reduce((a, e) => {\n    a[ e ] = object[ e ]\n    return a\n  }, {})\n}\n\nfunction flatten (array, ret) {\n  ret = defaults(ret, [])\n  for (let i = 0; i < array.length; i++) {\n    if (Array.isArray(array[i])) {\n      flatten(array[i], ret)\n    } else {\n      ret.push(array[i])\n    }\n  }\n  return ret\n}\n\nfunction getProtocol () {\n  var protocol = window.location.protocol\n  return protocol.match(/http(s)?:/gi) === null ? 'http:' : protocol\n}\n\nfunction getBrowser () {\n  if (typeof window === 'undefined') return false\n\n  var ua = window.navigator.userAgent\n\n  if (/Opera|OPR/.test(ua)) {\n    return 'Opera'\n  } else if (/Chrome/i.test(ua)) {\n    return 'Chrome'\n  } else if (/Firefox/i.test(ua)) {\n    return 'Firefox'\n  } else if (/Mobile(\\/.*)? Safari/i.test(ua)) {\n    return 'Mobile Safari'\n  } else if (/MSIE/i.test(ua)) {\n    return 'Internet Explorer'\n  } else if (/Safari/i.test(ua)) {\n    return 'Safari'\n  }\n\n  return false\n}\n\nfunction getAbsolutePath (relativePath) {\n  var loc = window.location\n  var pn = loc.pathname\n  var basePath = pn.substring(0, pn.lastIndexOf('/') + 1)\n\n  return loc.origin + basePath + relativePath\n}\n\nfunction deepCopy (src) {\n  if (typeof src !== 'object') {\n    return src\n  }\n\n  var dst = Array.isArray(src) ? [] : {}\n\n  for (var key in src) {\n    dst[ key ] = deepCopy(src[ key ])\n  }\n\n  return dst\n}\n\nfunction download (data, downloadName) {\n  // using ideas from https://github.com/eligrey/FileSaver.js/blob/master/FileSaver.js\n\n  if (!data) return\n\n  downloadName = downloadName || 'download'\n\n  var isSafari = getBrowser() === 'Safari'\n  var isChromeIos = /CriOS\\/[\\d]+/.test(window.navigator.userAgent)\n\n  var a = document.createElement('a')\n\n  function openUrl (url) {\n    var opened = window.open(url, '_blank')\n    if (!opened) {\n      window.location.href = url\n    }\n  }\n\n  function open (str) {\n    openUrl(isChromeIos ? str : str.replace(/^data:[^;]*;/, 'data:attachment/file;'))\n  }\n\n  if (typeof navigator !== 'undefined' && navigator.msSaveOrOpenBlob) {\n    // native saveAs in IE 10+\n    navigator.msSaveOrOpenBlob(data, downloadName)\n  } else if ((isSafari || isChromeIos) && window.FileReader) {\n    if (data instanceof window.Blob) {\n      // no downloading of blob urls in Safari\n      var reader = new window.FileReader()\n      reader.onloadend = function () {\n        open(reader.result)\n      }\n      reader.readAsDataURL(data)\n    } else {\n      open(data)\n    }\n  } else {\n    if (data instanceof window.Blob) {\n      data = window.URL.createObjectURL(data)\n    }\n\n    if ('download' in a) {\n      // download link available\n      a.style.display = 'hidden'\n      document.body.appendChild(a)\n      a.href = data\n      a.download = downloadName\n      a.target = '_blank'\n      a.click()\n      document.body.removeChild(a)\n    } else {\n      openUrl(data)\n    }\n\n    if (data instanceof window.Blob) {\n      window.URL.revokeObjectURL(data)\n    }\n  }\n}\n\nfunction submit (url, data, callback, onerror) {\n  if (data instanceof window.FormData) {\n    var xhr = new window.XMLHttpRequest()\n    xhr.open('POST', url)\n\n    xhr.addEventListener('load', function () {\n      if (xhr.status === 200 || xhr.status === 304) {\n        callback(xhr.response)\n      } else {\n        if (typeof onerror === 'function') {\n          onerror(xhr.status)\n        }\n      }\n    }, false)\n\n    xhr.send(data)\n  } else {\n    throw new Error('submit: data must be a FormData instance.')\n  }\n}\n\nfunction open (callback, extensionList) {\n  extensionList = extensionList || [ '*' ]\n\n  var fileInput = document.createElement('input')\n  fileInput.type = 'file'\n  fileInput.multiple = true\n  fileInput.style.display = 'hidden'\n  document.body.appendChild(fileInput)\n  fileInput.accept = '.' + extensionList.join(',.')\n  fileInput.addEventListener('change', function (e) {\n    callback(e.target.files)\n  }, false)\n\n  fileInput.click()\n}\n\nfunction getFileInfo (file) {\n  var compressedExtList = DecompressorRegistry.names\n\n  var path, compressed, protocol\n\n  if ((typeof window !== 'undefined' && file instanceof window.File) ||\n      (typeof window !== 'undefined' && file instanceof window.Blob)\n  ) {\n    path = file.name || ''\n  } else {\n    path = file\n  }\n  var queryIndex = path.lastIndexOf('?')\n  var query = queryIndex !== -1 ? path.substring(queryIndex) : ''\n  path = path.substring(0, queryIndex === -1 ? path.length : queryIndex)\n\n  var name = path.replace(/^.*[\\\\/]/, '')\n  var base = name.substring(0, name.lastIndexOf('.'))\n\n  var nameSplit = name.split('.')\n  var ext = nameSplit.length > 1 ? nameSplit.pop().toLowerCase() : ''\n\n  var protocolMatch = path.match(/^(.+):\\/\\/(.+)$/)\n  if (protocolMatch) {\n    protocol = protocolMatch[ 1 ].toLowerCase()\n    path = protocolMatch[ 2 ]\n  }\n\n  var dir = path.substring(0, path.lastIndexOf('/') + 1)\n\n  if (compressedExtList.includes(ext)) {\n    compressed = ext\n    var n = path.length - ext.length - 1\n    ext = path.substr(0, n).split('.').pop().toLowerCase()\n    var m = base.length - ext.length - 1\n    base = base.substr(0, m)\n  } else {\n    compressed = false\n  }\n\n  return {\n    'path': path,\n    'name': name,\n    'ext': ext,\n    'base': base,\n    'dir': dir,\n    'compressed': compressed,\n    'protocol': protocol,\n    'src': file,\n    'query': query\n  }\n}\n\nfunction throttle (func, wait, options) {\n  // from http://underscorejs.org/docs/underscore.html\n\n  var context, args, result\n  var timeout = null\n  var previous = 0\n\n  if (!options) options = {}\n\n  var later = function () {\n    previous = options.leading === false ? 0 : Date.now()\n    timeout = null\n    result = func.apply(context, args)\n    if (!timeout) context = args = null\n  }\n\n  return function throttle () {\n    var now = Date.now()\n    if (!previous && options.leading === false) previous = now\n    var remaining = wait - (now - previous)\n    context = this\n    args = arguments\n    if (remaining <= 0 || remaining > wait) {\n      if (timeout) {\n        clearTimeout(timeout)\n        timeout = null\n      }\n      previous = now\n      result = func.apply(context, args)\n      if (!timeout) context = args = null\n    } else if (!timeout && options.trailing !== false) {\n      timeout = setTimeout(later, remaining)\n    }\n\n    return result\n  }\n}\n\nfunction lexicographicCompare (elm1, elm2) {\n  if (elm1 < elm2) return -1\n  if (elm1 > elm2) return 1\n  return 0\n}\n\n/**\n * Does a binary search to get the index of an element in the input array\n * @function\n * @example\n * var array = [ 1, 2, 3, 4, 5, 6 ];\n * var element = 4;\n * binarySearchIndexOf( array, element );  // returns 3\n *\n * @param {Array} array - sorted array\n * @param {Anything} element - element to search for in the array\n * @param {Function} [compareFunction] - compare function\n * @return {Number} the index of the element or -1 if not in the array\n */\nfunction binarySearchIndexOf (array, element, compareFunction = lexicographicCompare) {\n  let low = 0\n  let high = array.length - 1\n  while (low <= high) {\n    const mid = (low + high) >> 1\n    const cmp = compareFunction(element, array[ mid ])\n    if (cmp > 0) {\n      low = mid + 1\n    } else if (cmp < 0) {\n      high = mid - 1\n    } else {\n      return mid\n    }\n  }\n  return -low - 1\n}\n\nfunction binarySearchForLeftRange (array, leftRange) {\n  let high = array.length - 1\n  if (array[ high ] < leftRange) return -1\n  let low = 0\n  while (low <= high) {\n    const mid = (low + high) >> 1\n    if (array[ mid ] >= leftRange) {\n      high = mid - 1\n    } else {\n      low = mid + 1\n    }\n  }\n  return high + 1\n}\n\nfunction binarySearchForRightRange (array, rightRange) {\n  if (array[ 0 ] > rightRange) return -1\n  let low = 0\n  let high = array.length - 1\n  while (low <= high) {\n    const mid = (low + high) >> 1\n    if (array[ mid ] > rightRange) {\n      high = mid - 1\n    } else {\n      low = mid + 1\n    }\n  }\n  return low - 1\n}\n\nfunction rangeInSortedArray (array, min, max) {\n  const indexLeft = binarySearchForLeftRange(array, min)\n  const indexRight = binarySearchForRightRange(array, max)\n  if (indexLeft === -1 || indexRight === -1 || indexLeft > indexRight) {\n    return 0\n  } else {\n    return indexRight - indexLeft + 1\n  }\n}\n\nfunction dataURItoImage (dataURI) {\n  if (typeof importScripts !== 'function') {\n    var img = document.createElement('img')\n    img.src = dataURI\n    return img\n  }\n}\n\nfunction uniqueArray (array) {\n  return array.sort().filter(function (value, index, sorted) {\n    return (index === 0) || (value !== sorted[ index - 1 ])\n  })\n}\n\n// String/arraybuffer conversion\n\nfunction uint8ToString (u8a) {\n  var chunkSize = 0x7000\n\n  if (u8a.length > chunkSize) {\n    var c = []\n\n    for (var i = 0; i < u8a.length; i += chunkSize) {\n      c.push(String.fromCharCode.apply(\n        null, u8a.subarray(i, i + chunkSize)\n      ))\n    }\n\n    return c.join('')\n  } else {\n    return String.fromCharCode.apply(null, u8a)\n  }\n}\n\nfunction uint8ToLines (u8a, chunkSize, newline) {\n  chunkSize = chunkSize !== undefined ? chunkSize : 1024 * 1024 * 10\n  newline = newline !== undefined ? newline : '\\n'\n\n  var partialLine = ''\n  var lines = []\n\n  for (var i = 0; i < u8a.length; i += chunkSize) {\n    var str = uint8ToString(u8a.subarray(i, i + chunkSize))\n    var idx = str.lastIndexOf(newline)\n\n    if (idx === -1) {\n      partialLine += str\n    } else {\n      var str2 = partialLine + str.substr(0, idx)\n      lines = lines.concat(str2.split(newline))\n\n      if (idx === str.length - newline.length) {\n        partialLine = ''\n      } else {\n        partialLine = str.substr(idx + newline.length)\n      }\n    }\n  }\n\n  if (partialLine !== '') {\n    lines.push(partialLine)\n  }\n\n  return lines\n}\n\nfunction getTypedArray (arrayType, arraySize) {\n  switch (arrayType) {\n    case 'int8':\n      return new Int8Array(arraySize)\n    case 'int16':\n      return new Int16Array(arraySize)\n    case 'int32':\n      return new Int32Array(arraySize)\n    case 'uint8':\n      return new Uint8Array(arraySize)\n    case 'uint16':\n      return new Uint16Array(arraySize)\n    case 'uint32':\n      return new Uint32Array(arraySize)\n    case 'float32':\n      return new Float32Array(arraySize)\n    default:\n      throw new Error('arrayType unknown: ' + arrayType)\n  }\n}\n\nfunction getUintArray (sizeOrArray, maxUnit) {\n  const TypedArray = maxUnit > 65535 ? Uint32Array : Uint16Array\n  return new TypedArray(sizeOrArray)\n}\n\nfunction ensureArray (value) {\n  return Array.isArray(value) ? value : [value]\n}\n\nfunction ensureBuffer (a) {\n  return (a.buffer && a.buffer instanceof ArrayBuffer) ? a.buffer : a\n}\n\nfunction _ensureClassFromArg (arg, constructor) {\n  return arg instanceof constructor ? arg : new constructor(arg)\n}\n\nfunction _ensureClassFromArray (array, constructor) {\n  if (array === undefined) {\n    array = new constructor()\n  } else if (Array.isArray(array)) {\n    array = new constructor().fromArray(array)\n  }\n  return array\n}\n\nfunction ensureVector2 (v) {\n  return _ensureClassFromArray(v, Vector2)\n}\n\nfunction ensureVector3 (v) {\n  return _ensureClassFromArray(v, Vector3)\n}\n\nfunction ensureMatrix4 (m) {\n  return _ensureClassFromArray(m, Matrix4)\n}\n\nfunction ensureQuaternion (q) {\n  return _ensureClassFromArray(q, Quaternion)\n}\n\nfunction ensureFloat32Array (a) {\n  return _ensureClassFromArg(a, Float32Array)\n}\n\nexport {\n  getQuery,\n  boolean,\n  defaults,\n  pick,\n  flatten,\n  getProtocol,\n  getBrowser,\n  getAbsolutePath,\n  deepCopy,\n  download,\n  submit,\n  open,\n  getFileInfo,\n  throttle,\n  binarySearchIndexOf,\n  rangeInSortedArray,\n  dataURItoImage,\n  uniqueArray,\n  uint8ToString,\n  uint8ToLines,\n  getTypedArray,\n  getUintArray,\n  ensureArray,\n  ensureBuffer,\n  ensureVector2,\n  ensureVector3,\n  ensureMatrix4,\n  ensureQuaternion,\n  ensureFloat32Array\n}\n",
     "static": true,
     "longname": "/Users/alex/dev/repos/ngl/src/utils.js",
     "access": "public",
@@ -71247,7 +71247,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 296,
+    "lineNumber": 298,
     "undocument": true,
     "ignore": true
   },
@@ -71265,7 +71265,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 332,
+    "lineNumber": 334,
     "undocument": true,
     "ignore": true
   },
@@ -71283,7 +71283,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 347,
+    "lineNumber": 349,
     "undocument": true,
     "ignore": true
   },
@@ -71301,7 +71301,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 472,
+    "lineNumber": 474,
     "undocument": true,
     "ignore": true
   },
@@ -71319,7 +71319,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 476,
+    "lineNumber": 478,
     "undocument": true,
     "ignore": true
   },
@@ -71558,7 +71558,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{throttle}",
     "description": null,
-    "lineNumber": 258,
+    "lineNumber": 260,
     "undocument": true
   },
   {
@@ -71578,7 +71578,7 @@
     "examples": [
       "var array = [ 1, 2, 3, 4, 5, 6 ];\nvar element = 4;\nbinarySearchIndexOf( array, element );  // returns 3"
     ],
-    "lineNumber": 315,
+    "lineNumber": 317,
     "unknown": [
       {
         "tagName": "@function",
@@ -71640,7 +71640,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{rangeInSortedArray}",
     "description": null,
-    "lineNumber": 362,
+    "lineNumber": 364,
     "undocument": true
   },
   {
@@ -71657,7 +71657,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{dataURItoImage}",
     "description": null,
-    "lineNumber": 372,
+    "lineNumber": 374,
     "undocument": true
   },
   {
@@ -71674,7 +71674,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{uniqueArray}",
     "description": null,
-    "lineNumber": 380,
+    "lineNumber": 382,
     "undocument": true
   },
   {
@@ -71691,7 +71691,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{uint8ToString}",
     "description": null,
-    "lineNumber": 388,
+    "lineNumber": 390,
     "undocument": true
   },
   {
@@ -71708,7 +71708,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{uint8ToLines}",
     "description": null,
-    "lineNumber": 406,
+    "lineNumber": 408,
     "undocument": true
   },
   {
@@ -71725,7 +71725,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{getTypedArray}",
     "description": null,
-    "lineNumber": 438,
+    "lineNumber": 440,
     "undocument": true
   },
   {
@@ -71742,7 +71742,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{getUintArray}",
     "description": null,
-    "lineNumber": 459,
+    "lineNumber": 461,
     "undocument": true
   },
   {
@@ -71759,7 +71759,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureArray}",
     "description": null,
-    "lineNumber": 464,
+    "lineNumber": 466,
     "undocument": true
   },
   {
@@ -71776,7 +71776,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureBuffer}",
     "description": null,
-    "lineNumber": 468,
+    "lineNumber": 470,
     "undocument": true
   },
   {
@@ -71793,7 +71793,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureVector2}",
     "description": null,
-    "lineNumber": 485,
+    "lineNumber": 487,
     "undocument": true
   },
   {
@@ -71810,7 +71810,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureVector3}",
     "description": null,
-    "lineNumber": 489,
+    "lineNumber": 491,
     "undocument": true
   },
   {
@@ -71827,7 +71827,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureMatrix4}",
     "description": null,
-    "lineNumber": 493,
+    "lineNumber": 495,
     "undocument": true
   },
   {
@@ -71844,7 +71844,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureQuaternion}",
     "description": null,
-    "lineNumber": 497,
+    "lineNumber": 499,
     "undocument": true
   },
   {
@@ -71861,7 +71861,7 @@
     "importPath": "ngl/src/utils.js",
     "importStyle": "{ensureFloat32Array}",
     "description": null,
-    "lineNumber": 501,
+    "lineNumber": 503,
     "undocument": true
   },
   {
@@ -73608,7 +73608,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"ngl\",\n  \"version\": \"1.0.0-beta.2\",\n  \"description\": \"Scalable molecular graphics for the web\",\n  \"main\": \"dist/ngl.js\",\n  \"module\": \"dist/ngl.esm.js\",\n  \"scripts\": {\n    \"lint\": \"npm run-script lint-src && npm run-script lint-test && npm run-script lint-script\",\n    \"lint-src\": \"standard \\\"src/**/*.js\\\"\",\n    \"lint-test\": \"standard --env mocha \\\"test/**/*.js\\\"\",\n    \"lint-script\": \"standard --global stage --global NGL \\\"examples/scripts/**/*.js\\\"\",\n    \"prebuild\": \"npm run-script lint\",\n    \"build\": \"rollup -c\",\n    \"postbuild\": \"node ./scripts/makeScriptsList.js\",\n    \"pretest\": \"npm run build\",\n    \"test\": \"mocha\",\n    \"preversion\": \"npm test\",\n    \"version\": \"npm run-script build-min && git add -A dist\",\n    \"postversion\": \"git push && git push --tags\",\n    \"prepublish\": \"npm test\",\n    \"devpublish\": \"npm publish --tag next\",\n    \"doc\": \"esdoc\",\n    \"watch\": \"rollup -c -w\",\n    \"deploy\": \"./scripts/deploy.sh prerelease\",\n    \"gallery\": \"./scripts/gallery.sh\",\n    \"prerelease\": \"./scripts/release.sh prerelease\",\n    \"build-min\": \"rollup -c && uglifyjs build/js/ngl.dev.js -cm > dist/ngl.js && cp build/js/ngl.esm.js dist/ngl.esm.js\"\n  },\n  \"homepage\": \"https://github.com/arose/ngl#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/arose/ngl.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/arose/ngl/issues\"\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"author\": \"Alexander Rose <alexander.rose@weirdbyte.de>\",\n  \"contributors\": [],\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"molecular graphics\",\n    \"molecular structure\",\n    \"chemical structure\",\n    \"science\"\n  ],\n  \"devDependencies\": {\n    \"babel-plugin-array-includes\": \"^2.0.3\",\n    \"babel-plugin-external-helpers\": \"^6.22.0\",\n    \"babel-preset-es2015\": \"^6.13.2\",\n    \"babel-register\": \"^6.26.0\",\n    \"babelrc-rollup\": \"^3.0.0\",\n    \"chai\": \"^4.1.1\",\n    \"cheerio\": \"^1.0.0-rc.1\",\n    \"esdoc\": \"^1.0.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"mocha\": \"^3.5.0\",\n    \"rollup\": \"^0.50.0\",\n    \"rollup-plugin-babel\": \"^3.0.2\",\n    \"rollup-plugin-buble\": \"^0.15.0\",\n    \"rollup-plugin-commonjs\": \"^8.2.0\",\n    \"rollup-plugin-json\": \"^2.3.0\",\n    \"rollup-plugin-node-resolve\": \"^3.0.0\",\n    \"rollup-watch\": \"^4.3.1\",\n    \"slimerjs\": \"^0.10.3\",\n    \"standard\": \"^10.0.3\",\n    \"uglify-js\": \"^3.1.1\"\n  },\n  \"dependencies\": {}\n}\n",
+    "content": "{\n  \"name\": \"ngl\",\n  \"version\": \"1.0.0-beta.3\",\n  \"description\": \"Scalable molecular graphics for the web\",\n  \"main\": \"dist/ngl.js\",\n  \"module\": \"dist/ngl.esm.js\",\n  \"scripts\": {\n    \"lint\": \"npm run-script lint-src && npm run-script lint-test && npm run-script lint-script\",\n    \"lint-src\": \"standard \\\"src/**/*.js\\\"\",\n    \"lint-test\": \"standard --env mocha \\\"test/**/*.js\\\"\",\n    \"lint-script\": \"standard --global stage --global NGL \\\"examples/scripts/**/*.js\\\"\",\n    \"prebuild\": \"npm run-script lint\",\n    \"build\": \"rollup -c\",\n    \"postbuild\": \"node ./scripts/makeScriptsList.js\",\n    \"pretest\": \"npm run build\",\n    \"test\": \"mocha\",\n    \"preversion\": \"npm test\",\n    \"version\": \"npm run-script build-min && git add -A dist\",\n    \"postversion\": \"git push && git push --tags\",\n    \"prepublish\": \"npm test\",\n    \"devpublish\": \"npm publish --tag next\",\n    \"doc\": \"esdoc\",\n    \"watch\": \"rollup -c -w\",\n    \"deploy\": \"./scripts/deploy.sh prerelease\",\n    \"gallery\": \"./scripts/gallery.sh\",\n    \"prerelease\": \"./scripts/release.sh prerelease\",\n    \"build-min\": \"rollup -c && uglifyjs build/js/ngl.dev.js -cm > dist/ngl.js && cp build/js/ngl.esm.js dist/ngl.esm.js\"\n  },\n  \"homepage\": \"https://github.com/arose/ngl#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/arose/ngl.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/arose/ngl/issues\"\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"author\": \"Alexander Rose <alexander.rose@weirdbyte.de>\",\n  \"contributors\": [],\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"molecular graphics\",\n    \"molecular structure\",\n    \"chemical structure\",\n    \"science\"\n  ],\n  \"devDependencies\": {\n    \"babel-plugin-array-includes\": \"^2.0.3\",\n    \"babel-plugin-external-helpers\": \"^6.22.0\",\n    \"babel-preset-es2015\": \"^6.13.2\",\n    \"babel-register\": \"^6.26.0\",\n    \"babelrc-rollup\": \"^3.0.0\",\n    \"chai\": \"^4.1.1\",\n    \"cheerio\": \"^1.0.0-rc.1\",\n    \"esdoc\": \"^1.0.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"mocha\": \"^3.5.0\",\n    \"rollup\": \"^0.50.0\",\n    \"rollup-plugin-babel\": \"^3.0.2\",\n    \"rollup-plugin-buble\": \"^0.15.0\",\n    \"rollup-plugin-commonjs\": \"^8.2.0\",\n    \"rollup-plugin-json\": \"^2.3.0\",\n    \"rollup-plugin-node-resolve\": \"^3.0.0\",\n    \"rollup-watch\": \"^4.3.1\",\n    \"slimerjs\": \"^0.10.3\",\n    \"standard\": \"^10.0.3\",\n    \"uglify-js\": \"^3.1.1\"\n  },\n  \"dependencies\": {}\n}\n",
     "longname": "/Users/alex/dev/repos/ngl/package.json",
     "name": "package.json",
     "static": true,
