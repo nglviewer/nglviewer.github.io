@@ -1872,6 +1872,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/globals.js~supportspassiveeventhandler",
+    "variable/index.html#static-variable-SupportsPassiveEventHandler",
+    "<span>SupportsPassiveEventHandler</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
+    "variable"
+  ],
+  [
     "ngl/src/globals.js~supportsreadpixelsfloat",
     "variable/index.html#static-variable-SupportsReadPixelsFloat",
     "<span>SupportsReadPixelsFloat</span> <span class=\"search-result-import-path\">ngl/src/globals.js</span>",
@@ -4207,13 +4213,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/buffer/arrow-buffer.js~arrowbuffer#matrix",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-set-matrix",
+    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-get-matrix",
     "src/buffer/arrow-buffer.js~ArrowBuffer#matrix",
     "member"
   ],
   [
     "src/buffer/arrow-buffer.js~arrowbuffer#matrix",
-    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-get-matrix",
+    "class/src/buffer/arrow-buffer.js~ArrowBuffer.html#instance-set-matrix",
     "src/buffer/arrow-buffer.js~ArrowBuffer#matrix",
     "member"
   ],
@@ -4549,13 +4555,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/buffer/buffer.js~buffer#matrix",
-    "class/src/buffer/buffer.js~Buffer.html#instance-set-matrix",
+    "class/src/buffer/buffer.js~Buffer.html#instance-get-matrix",
     "src/buffer/buffer.js~Buffer#matrix",
     "member"
   ],
   [
     "src/buffer/buffer.js~buffer#matrix",
-    "class/src/buffer/buffer.js~Buffer.html#instance-get-matrix",
+    "class/src/buffer/buffer.js~Buffer.html#instance-set-matrix",
     "src/buffer/buffer.js~Buffer#matrix",
     "member"
   ],
@@ -5065,13 +5071,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/buffer/doublesided-buffer.js~doublesidedbuffer#matrix",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-get-matrix",
+    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-set-matrix",
     "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#matrix",
     "member"
   ],
   [
     "src/buffer/doublesided-buffer.js~doublesidedbuffer#matrix",
-    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-set-matrix",
+    "class/src/buffer/doublesided-buffer.js~DoubleSidedBuffer.html#instance-get-matrix",
     "src/buffer/doublesided-buffer.js~DoubleSidedBuffer#matrix",
     "member"
   ],
@@ -11533,13 +11539,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#altloc",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-altloc",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-altloc",
     "src/proxy/atom-proxy.js~AtomProxy#altloc",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#altloc",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-altloc",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-altloc",
     "src/proxy/atom-proxy.js~AtomProxy#altloc",
     "member"
   ],
@@ -11569,13 +11575,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#bfactor",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-bfactor",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bfactor",
     "src/proxy/atom-proxy.js~AtomProxy#bfactor",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#bfactor",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bfactor",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-bfactor",
     "src/proxy/atom-proxy.js~AtomProxy#bfactor",
     "member"
   ],
@@ -11833,13 +11839,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#partialcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-partialCharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-partialCharge",
     "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#partialcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-partialCharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-partialCharge",
     "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
   ],
@@ -11941,13 +11947,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
     "src/proxy/atom-proxy.js~AtomProxy#serial",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
     "src/proxy/atom-proxy.js~AtomProxy#serial",
     "member"
   ],
@@ -11977,20 +11983,14 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#x",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-x",
-    "src/proxy/atom-proxy.js~AtomProxy#x",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#x",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-x",
     "src/proxy/atom-proxy.js~AtomProxy#x",
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#y",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-y",
-    "src/proxy/atom-proxy.js~AtomProxy#y",
+    "src/proxy/atom-proxy.js~atomproxy#x",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-x",
+    "src/proxy/atom-proxy.js~AtomProxy#x",
     "member"
   ],
   [
@@ -12000,14 +12000,20 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#z",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-z",
-    "src/proxy/atom-proxy.js~AtomProxy#z",
+    "src/proxy/atom-proxy.js~atomproxy#y",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-y",
+    "src/proxy/atom-proxy.js~AtomProxy#y",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#z",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-z",
+    "src/proxy/atom-proxy.js~AtomProxy#z",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#z",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-z",
     "src/proxy/atom-proxy.js~AtomProxy#z",
     "member"
   ],
@@ -12085,13 +12091,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/bond-proxy.js~bondproxy#bondorder",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-bondOrder",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-bondOrder",
     "src/proxy/bond-proxy.js~BondProxy#bondOrder",
     "member"
   ],
   [
     "src/proxy/bond-proxy.js~bondproxy#bondorder",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-bondOrder",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-bondOrder",
     "src/proxy/bond-proxy.js~BondProxy#bondOrder",
     "member"
   ],
@@ -12181,13 +12187,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#chainid",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-chainid",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainid",
     "src/proxy/chain-proxy.js~ChainProxy#chainid",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#chainid",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-chainid",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-chainid",
     "src/proxy/chain-proxy.js~ChainProxy#chainid",
     "member"
   ],
@@ -12271,13 +12277,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
     "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
     "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
     "member"
   ],
@@ -12379,13 +12385,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/model-proxy.js~modelproxy#chainoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainOffset",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainOffset",
     "src/proxy/model-proxy.js~ModelProxy#chainOffset",
     "member"
   ],
   [
     "src/proxy/model-proxy.js~modelproxy#chainoffset",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainOffset",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainOffset",
     "src/proxy/model-proxy.js~ModelProxy#chainOffset",
     "member"
   ],
@@ -12685,13 +12691,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomoffset",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomOffset",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomOffset",
     "src/proxy/residue-proxy.js~ResidueProxy#atomOffset",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomoffset",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomOffset",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomOffset",
     "src/proxy/residue-proxy.js~ResidueProxy#atomOffset",
     "member"
   ],
@@ -12739,13 +12745,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#chainindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-chainIndex",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainIndex",
     "src/proxy/residue-proxy.js~ResidueProxy#chainIndex",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#chainindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainIndex",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-chainIndex",
     "src/proxy/residue-proxy.js~ResidueProxy#chainIndex",
     "member"
   ],
@@ -12895,13 +12901,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#inscode",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-inscode",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-inscode",
     "src/proxy/residue-proxy.js~ResidueProxy#inscode",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#inscode",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-inscode",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-inscode",
     "src/proxy/residue-proxy.js~ResidueProxy#inscode",
     "member"
   ],
