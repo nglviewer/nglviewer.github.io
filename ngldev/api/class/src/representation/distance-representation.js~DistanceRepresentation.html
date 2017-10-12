@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@1.0.0-beta.3</span>
+<header><span>NGL@1.0.0-beta.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -379,13 +379,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/model-proxy.js~ModelProxy.html">ModelProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/polymer.js~Polymer.html">Polymer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html">ResidueProxy</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#representation">representation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/axes-representation.js~AxesRepresentation.html">AxesRepresentation</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#representation">representation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/angle-representation.js~AngleRepresentation.html">AngleRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/axes-representation.js~AxesRepresentation.html">AxesRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/backbone-representation.js~BackboneRepresentation.html">BackboneRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dihedral-representation.js~DihedralRepresentation.html">DihedralRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
@@ -393,6 +395,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html">MeasurementRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
@@ -408,11 +411,16 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calcArcPoint">calcArcPoint</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parseNestedAtoms">parseNestedAtoms</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-makeRepresentation">makeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AngleRepresentationParameters">AngleRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DihedralRepresentationParameters">DihedralRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MeasurementRepresentationParameters">MeasurementRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
@@ -621,13 +629,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import DistanceRepresentation from &apos;<span><a href="file/src/representation/distance-representation.js.html#lineNumber45">ngl/src/representation/distance-representation.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import DistanceRepresentation from &apos;<span><a href="file/src/representation/distance-representation.js.html#lineNumber42">ngl/src/representation/distance-representation.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/representation/distance-representation.js.html#lineNumber45">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/representation/distance-representation.js.html#lineNumber42">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -637,7 +645,7 @@
 
   
   
-  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span> &#x2192; <span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span> &#x2192; DistanceRepresentation</div></div>
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span> &#x2192; <span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span> &#x2192; <span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html">MeasurementRepresentation</a></span> &#x2192; DistanceRepresentation</div></div>
   
   
   
@@ -772,146 +780,6 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontFamily">fontFamily</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontStyle">fontStyle</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontWeight">fontWeight</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelColor">labelColor</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelSize">labelSize</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
           <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelUnit">labelUnit</a></span></span>
         </p>
       </div>
@@ -940,91 +808,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelVisible">labelVisible</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelZOffset">labelZOffset</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
           <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-parameters">parameters</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-sdf">sdf</a></span></span>
         </p>
       </div>
       <div>
@@ -1200,90 +984,6 @@
           
           
           <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-init">init</a></span></span><span class="code" data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-setParameters">setParameters</a></span></span><span class="code" data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-setVisibility">setVisibility</a></span></span><span class="code" data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-update">update</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -3532,6 +3232,741 @@ the representation, including surface calculations.</p>
   </tr>
 </tbody>
 </table>
+
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html">MeasurementRepresentation</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelAttachment">labelAttachment</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackground">labelBackground</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackgroundColor">labelBackgroundColor</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackgroundMargin">labelBackgroundMargin</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackgroundOpacity">labelBackgroundOpacity</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBorder">labelBorder</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBorderColor">labelBorderColor</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBorderWidth">labelBorderWidth</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelColor">labelColor</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelFontFamily">labelFontFamily</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelFontStyle">labelFontStyle</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelFontWeight">labelFontWeight</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelSize">labelSize</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelVisible">labelVisible</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelXOffset">labelXOffset</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelYOffset">labelYOffset</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelZOffset">labelZOffset</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelsdf">labelsdf</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-n">n</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-parameters">parameters</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-getLabelBufferParams">getLabelBufferParams</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-init">init</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-setParameters">setParameters</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-setVisibility">setVisibility</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-update">update</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-updateData">updateData</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
 </div>
 
 
@@ -3550,7 +3985,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber62">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber59">source</a></span></span>
     </span>
   </h3>
 
@@ -3560,7 +3995,7 @@ the representation, including surface calculations.</p>
   <div data-ice="description"><p>Create Distance representation object</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html#instance-constructor-constructor">StructureRepresentation#constructor</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-constructor-constructor">MeasurementRepresentation#constructor</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -3643,7 +4078,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber113">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber87">source</a></span></span>
     </span>
   </h3>
 
@@ -3686,222 +4121,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber239">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-fontFamily">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">fontFamily</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber104">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-fontStyle">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">fontStyle</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber105">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-fontWeight">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">fontWeight</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber106">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-labelColor">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">labelColor</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber109">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-labelSize">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">labelSize</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber108">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber205">source</a></span></span>
     </span>
   </h3>
 
@@ -3944,93 +4164,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber112">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-labelVisible">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">labelVisible</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber110">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-labelZOffset">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">labelZOffset</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber111">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber86">source</a></span></span>
     </span>
   </h3>
 
@@ -4073,7 +4207,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber67">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber64">source</a></span></span>
     </span>
   </h3>
 
@@ -4082,50 +4216,7 @@ the representation, including surface calculations.</p>
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html#instance-member-parameters">StructureRepresentation#parameters</a></span></div>
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-sdf">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">sdf</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber107">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-parameters">MeasurementRepresentation#parameters</a></span></div>
 
   <div data-ice="properties">
 </div>
@@ -4159,7 +4250,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber214">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber188">source</a></span></span>
     </span>
   </h3>
 
@@ -4202,7 +4293,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber65">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber62">source</a></span></span>
     </span>
   </h3>
 
@@ -4248,7 +4339,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber204">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber178">source</a></span></span>
     </span>
   </h3>
 
@@ -4291,7 +4382,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber192">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber166">source</a></span></span>
     </span>
   </h3>
 
@@ -4334,7 +4425,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber118">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber92">source</a></span></span>
     </span>
   </h3>
 
@@ -4377,7 +4468,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber100">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber82">source</a></span></span>
     </span>
   </h3>
 
@@ -4386,138 +4477,7 @@ the representation, including surface calculations.</p>
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-init">StructureRepresentation#init</a></span></div>
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-setParameters">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">setParameters</span><span class="code" data-ice="signature">()</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber313">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Set representation parameters</p>
-</div>
-
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-setParameters">StructureRepresentation#setParameters</a></span></div>
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-setVisibility">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">setVisibility</span><span class="code" data-ice="signature">()</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber299">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Set the visibility of the representation</p>
-</div>
-
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/representation.js~Representation.html#instance-method-setVisibility">Representation#setVisibility</a></span></div>
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-update">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">update</span><span class="code" data-ice="signature">()</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber258">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-update">StructureRepresentation#update</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-init">MeasurementRepresentation#init</a></span></div>
 
   <div data-ice="properties">
 </div>
@@ -4551,7 +4511,7 @@ the representation, including surface calculations.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber266">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/representation/distance-representation.js.html#lineNumber224">source</a></span></span>
     </span>
   </h3>
 
@@ -4560,7 +4520,7 @@ the representation, including surface calculations.</p>
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html#instance-method-updateData">StructureRepresentation#updateData</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-updateData">MeasurementRepresentation#updateData</a></span></div>
 
   <div data-ice="properties">
 </div>
@@ -4586,7 +4546,7 @@ the representation, including surface calculations.</p>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

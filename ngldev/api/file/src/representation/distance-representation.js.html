@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@1.0.0-beta.3</span>
+<header><span>NGL@1.0.0-beta.4</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -379,13 +379,15 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/model-proxy.js~ModelProxy.html">ModelProxy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/polymer.js~Polymer.html">Polymer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/proxy/residue-proxy.js~ResidueProxy.html">ResidueProxy</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#representation">representation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/axes-representation.js~AxesRepresentation.html">AxesRepresentation</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#representation">representation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/angle-representation.js~AngleRepresentation.html">AngleRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/axes-representation.js~AxesRepresentation.html">AxesRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/backbone-representation.js~BackboneRepresentation.html">BackboneRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ballandstick-representation.js~BallAndStickRepresentation.html">BallAndStickRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/base-representation.js~BaseRepresentation.html">BaseRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/buffer-representation.js~BufferRepresentation.html">BufferRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/cartoon-representation.js~CartoonRepresentation.html">CartoonRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/contact-representation.js~ContactRepresentation.html">ContactRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dihedral-representation.js~DihedralRepresentation.html">DihedralRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/distance-representation.js~DistanceRepresentation.html">DistanceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/dot-representation.js~DotRepresentation.html">DotRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/helixorient-representation.js~HelixorientRepresentation.html">HelixorientRepresentation</a></span></span></li>
@@ -393,6 +395,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/label-representation.js~LabelRepresentation.html">LabelRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/licorice-representation.js~LicoriceRepresentation.html">LicoriceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/line-representation.js~LineRepresentation.html">LineRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/measurement-representation.js~MeasurementRepresentation.html">MeasurementRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/molecularsurface-representation.js~MolecularSurfaceRepresentation.html">MolecularSurfaceRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/point-representation.js~PointRepresentation.html">PointRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/ribbon-representation.js~RibbonRepresentation.html">RibbonRepresentation</a></span></span></li>
@@ -408,11 +411,16 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/representation/validation-representation.js~ValidationRepresentation.html">ValidationRepresentation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/representation.js~Representation.html">Representation</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/representation/structure-representation.js~StructureRepresentation.html">StructureRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-calcArcPoint">calcArcPoint</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parseNestedAtoms">parseNestedAtoms</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-makeRepresentation">makeRepresentation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AngleRepresentationParameters">AngleRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BallAndStickRepresentationParameters">BallAndStickRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DihedralRepresentationParameters">DihedralRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DistanceRepresentationParameters">DistanceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-DotRepresentationParameters">DotRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LabelRepresentationParameters">LabelRepresentationParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MeasurementRepresentationParameters">MeasurementRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-RepresentationParameters">RepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SliceRepresentationParameters">SliceRepresentationParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StructureRepresentationParameters">StructureRepresentationParameters</a></span></span></li>
@@ -629,12 +637,12 @@
 
 import { Color } from &apos;../../lib/three.es6.js&apos;
 
-import { Browser, RepresentationRegistry } from &apos;../globals.js&apos;
+import { RepresentationRegistry } from &apos;../globals.js&apos;
 import { defaults } from &apos;../utils.js&apos;
 import { DistancePicker } from &apos;../utils/picker.js&apos;
 import { uniformArray, uniformArray3 } from &apos;../math/array-utils.js&apos;
 import BitArray from &apos;../utils/bitarray.js&apos;
-import StructureRepresentation from &apos;./structure-representation.js&apos;
+import MeasurementRepresentation from &apos;./measurement-representation.js&apos;
 import Selection from &apos;../selection/selection.js&apos;
 import BondStore from &apos;../store/bond-store.js&apos;
 import TextBuffer from &apos;../buffer/text-buffer.js&apos;
@@ -645,11 +653,8 @@ import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
  * @typedef {Object} DistanceRepresentationParameters - distance representation parameters
  * @mixes RepresentationParameters
  * @mixes StructureRepresentationParameters
+ * @mixes MeasurementRepresentationParameters
  *
- * @property {Float} labelSize - size of the distance label
- * @property {Color} labelColor - color of the distance label
- * @property {Boolean} labelVisible - visibility of the distance label
- * @property {Float} labelZOffset - offset in z-direction (i.e. in camera direction)
  * @property {String} labelUnit - distance unit (e.g. &quot;angstrom&quot; or &quot;nm&quot;). If set, a distance
  *                                symbol is appended to the label (i.e. &apos;nm&apos; or &apos;\u00C5&apos;). In case of &apos;nm&apos;, the
  *                                distance value is computed in nanometers instead of Angstroms.
@@ -665,7 +670,7 @@ import CylinderBuffer from &apos;../buffer/cylinder-buffer.js&apos;
 /**
  * Distance representation
  */
-class DistanceRepresentation extends StructureRepresentation {
+class DistanceRepresentation extends MeasurementRepresentation {
   /**
    * Create Distance representation object
    * @example
@@ -689,18 +694,6 @@ class DistanceRepresentation extends StructureRepresentation {
 
     this.parameters = Object.assign({
 
-      labelSize: {
-        type: &apos;number&apos;, precision: 3, max: 10.0, min: 0.001
-      },
-      labelColor: {
-        type: &apos;color&apos;
-      },
-      labelVisible: {
-        type: &apos;boolean&apos;
-      },
-      labelZOffset: {
-        type: &apos;number&apos;, precision: 1, max: 20, min: -20, buffer: &apos;zOffset&apos;
-      },
       labelUnit: {
         type: &apos;select&apos;,
         rebuild: true,
@@ -712,10 +705,7 @@ class DistanceRepresentation extends StructureRepresentation {
       radialSegments: true,
       disableImpostor: true
 
-    }, this.parameters, {
-      flatShaded: null,
-      assembly: null
-    })
+    }, this.parameters)
 
     this.init(params)
   }
@@ -724,14 +714,6 @@ class DistanceRepresentation extends StructureRepresentation {
     var p = params || {}
     p.radius = defaults(p.radius, 0.15)
 
-    this.fontFamily = defaults(p.fontFamily, &apos;sans-serif&apos;)
-    this.fontStyle = defaults(p.fontStyle, &apos;normal&apos;)
-    this.fontWeight = defaults(p.fontWeight, &apos;bold&apos;)
-    this.sdf = defaults(p.sdf, Browser !== &apos;Firefox&apos;)  // FIXME
-    this.labelSize = defaults(p.labelSize, 2.0)
-    this.labelColor = defaults(p.labelColor, 0xFFFFFF)
-    this.labelVisible = defaults(p.labelVisible, true)
-    this.labelZOffset = defaults(p.labelZOffset, 0.5)
     this.labelUnit = defaults(p.labelUnit, &apos;&apos;)
     this.atomPair = defaults(p.atomPair, [])
 
@@ -841,15 +823,7 @@ class DistanceRepresentation extends StructureRepresentation {
         color: uniformArray3(n, c.r, c.g, c.b),
         text: distanceData.text
       },
-      this.getBufferParams({
-        fontFamily: this.fontFamily,
-        fontStyle: this.fontStyle,
-        fontWeight: this.fontWeight,
-        sdf: this.sdf,
-        zOffset: this.labelZOffset,
-        opacity: 1.0,
-        visible: this.labelVisible
-      })
+      this.getLabelBufferParams()
     )
 
     var bondParams = {
@@ -876,14 +850,6 @@ class DistanceRepresentation extends StructureRepresentation {
       position: distanceData.position,
       bufferList: [ this.textBuffer, this.cylinderBuffer ]
     })
-  }
-
-  update (what) {
-    if (what.position) {
-      this.build()
-    } else {
-      super.update(what)
-    }
   }
 
   updateData (what, data) {
@@ -918,41 +884,6 @@ class DistanceRepresentation extends StructureRepresentation {
     this.textBuffer.setAttributes(textData)
     this.cylinderBuffer.setAttributes(cylinderData)
   }
-
-  setVisibility (value, noRenderRequest) {
-    super.setVisibility(value, true)
-
-    if (this.textBuffer) {
-      this.textBuffer.setVisibility(
-        this.labelVisible &amp;&amp; this.visible
-      )
-    }
-
-    if (!noRenderRequest) this.viewer.requestRender()
-
-    return this
-  }
-
-  setParameters (params) {
-    var rebuild = false
-    var what = {}
-
-    if (params &amp;&amp; params.labelSize) {
-      what.labelSize = true
-    }
-
-    if (params &amp;&amp; (params.labelColor || params.labelColor === 0x000000)) {
-      what.labelColor = true
-    }
-
-    super.setParameters(params, what, rebuild)
-
-    if (params &amp;&amp; params.labelVisible !== undefined) {
-      this.setVisibility(this.visible)
-    }
-
-    return this
-  }
 }
 
 RepresentationRegistry.add(&apos;distance&apos;, DistanceRepresentation)
@@ -963,7 +894,7 @@ export default DistanceRepresentation
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
