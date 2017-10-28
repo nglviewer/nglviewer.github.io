@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "ngl/src/representation/angle-representation.js~anglerepresentation",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html",
+    "<span>AngleRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/angle-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/animation/animation.js~animation",
     "class/src/animation/animation.js~Animation.html",
     "<span>Animation</span> <span class=\"search-result-import-path\">ngl/src/animation/animation.js</span>",
@@ -618,6 +624,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ngl/src/representation/dihedral-representation.js~dihedralrepresentation",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html",
+    "<span>DihedralRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/dihedral-representation.js</span>",
+    "class"
+  ],
+  [
     "ngl/src/utils/picker.js~distancepicker",
     "class/src/utils/picker.js~DistancePicker.html",
     "<span>DistancePicker</span> <span class=\"search-result-import-path\">ngl/src/utils/picker.js</span>",
@@ -1035,6 +1047,12 @@ window.esdocSearchIndex = [
     "ngl/src/datasource/mdsrv-datasource.js~mdsrvdatasource",
     "class/src/datasource/mdsrv-datasource.js~MdsrvDatasource.html",
     "<span>MdsrvDatasource</span> <span class=\"search-result-import-path\">ngl/src/datasource/mdsrv-datasource.js</span>",
+    "class"
+  ],
+  [
+    "ngl/src/representation/measurement-representation.js~measurementrepresentation",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html",
+    "<span>MeasurementRepresentation</span> <span class=\"search-result-import-path\">ngl/src/representation/measurement-representation.js</span>",
     "class"
   ],
   [
@@ -2412,6 +2430,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "ngl/src/representation/measurement-representation.js~calcarcpoint",
+    "function/index.html#static-function-calcArcPoint",
+    "<span>calcArcPoint</span> <span class=\"search-result-import-path\">ngl/src/representation/measurement-representation.js</span>",
+    "function"
+  ],
+  [
     "ngl/src/structure/structure-utils.js~calculatebonds",
     "function/index.html#static-function-calculateBonds",
     "<span>calculateBonds</span> <span class=\"search-result-import-path\">ngl/src/structure/structure-utils.js</span>",
@@ -2883,6 +2907,12 @@ window.esdocSearchIndex = [
     "ngl/src/utils.js~open",
     "function/index.html#static-function-open",
     "<span>open</span> <span class=\"search-result-import-path\">ngl/src/utils.js</span>",
+    "function"
+  ],
+  [
+    "ngl/src/representation/measurement-representation.js~parsenestedatoms",
+    "function/index.html#static-function-parseNestedAtoms",
+    "<span>parseNestedAtoms</span> <span class=\"search-result-import-path\">ngl/src/representation/measurement-representation.js</span>",
     "function"
   ],
   [
@@ -11575,13 +11605,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#bfactor",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bfactor",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-bfactor",
     "src/proxy/atom-proxy.js~AtomProxy#bfactor",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#bfactor",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-bfactor",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-bfactor",
     "src/proxy/atom-proxy.js~AtomProxy#bfactor",
     "member"
   ],
@@ -11677,13 +11707,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#formalcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-formalCharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-formalCharge",
     "src/proxy/atom-proxy.js~AtomProxy#formalCharge",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#formalcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-formalCharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-formalCharge",
     "src/proxy/atom-proxy.js~AtomProxy#formalCharge",
     "member"
   ],
@@ -11839,13 +11869,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#partialcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-partialCharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-partialCharge",
     "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#partialcharge",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-partialCharge",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-partialCharge",
     "src/proxy/atom-proxy.js~AtomProxy#partialCharge",
     "member"
   ],
@@ -11905,13 +11935,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#residueindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-residueIndex",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residueIndex",
     "src/proxy/atom-proxy.js~AtomProxy#residueIndex",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#residueindex",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-residueIndex",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-residueIndex",
     "src/proxy/atom-proxy.js~AtomProxy#residueIndex",
     "member"
   ],
@@ -11947,13 +11977,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
     "src/proxy/atom-proxy.js~AtomProxy#serial",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#serial",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-serial",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-serial",
     "src/proxy/atom-proxy.js~AtomProxy#serial",
     "member"
   ],
@@ -11995,25 +12025,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#y",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-y",
-    "src/proxy/atom-proxy.js~AtomProxy#y",
-    "member"
-  ],
-  [
-    "src/proxy/atom-proxy.js~atomproxy#y",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-y",
     "src/proxy/atom-proxy.js~AtomProxy#y",
     "member"
   ],
   [
-    "src/proxy/atom-proxy.js~atomproxy#z",
-    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-z",
-    "src/proxy/atom-proxy.js~AtomProxy#z",
+    "src/proxy/atom-proxy.js~atomproxy#y",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-y",
+    "src/proxy/atom-proxy.js~AtomProxy#y",
     "member"
   ],
   [
     "src/proxy/atom-proxy.js~atomproxy#z",
     "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-set-z",
+    "src/proxy/atom-proxy.js~AtomProxy#z",
+    "member"
+  ],
+  [
+    "src/proxy/atom-proxy.js~atomproxy#z",
+    "class/src/proxy/atom-proxy.js~AtomProxy.html#instance-get-z",
     "src/proxy/atom-proxy.js~AtomProxy#z",
     "member"
   ],
@@ -12067,13 +12097,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/bond-proxy.js~bondproxy#atomindex1",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-atomIndex1",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atomIndex1",
     "src/proxy/bond-proxy.js~BondProxy#atomIndex1",
     "member"
   ],
   [
     "src/proxy/bond-proxy.js~bondproxy#atomindex1",
-    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-get-atomIndex1",
+    "class/src/proxy/bond-proxy.js~BondProxy.html#instance-set-atomIndex1",
     "src/proxy/bond-proxy.js~BondProxy#atomIndex1",
     "member"
   ],
@@ -12253,13 +12283,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#entityindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-entityIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-entityIndex",
     "src/proxy/chain-proxy.js~ChainProxy#entityIndex",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#entityindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-entityIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-entityIndex",
     "src/proxy/chain-proxy.js~ChainProxy#entityIndex",
     "member"
   ],
@@ -12277,13 +12307,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
     "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
     "member"
   ],
   [
     "src/proxy/chain-proxy.js~chainproxy#modelindex",
-    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-get-modelIndex",
+    "class/src/proxy/chain-proxy.js~ChainProxy.html#instance-set-modelIndex",
     "src/proxy/chain-proxy.js~ChainProxy#modelIndex",
     "member"
   ],
@@ -12367,13 +12397,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/model-proxy.js~modelproxy#chaincount",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainCount",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainCount",
     "src/proxy/model-proxy.js~ModelProxy#chainCount",
     "member"
   ],
   [
     "src/proxy/model-proxy.js~modelproxy#chaincount",
-    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-set-chainCount",
+    "class/src/proxy/model-proxy.js~ModelProxy.html#instance-get-chainCount",
     "src/proxy/model-proxy.js~ModelProxy#chainCount",
     "member"
   ],
@@ -12667,13 +12697,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomcount",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomCount",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomCount",
     "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#atomcount",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-atomCount",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-atomCount",
     "src/proxy/residue-proxy.js~ResidueProxy#atomCount",
     "member"
   ],
@@ -12745,13 +12775,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#chainindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainIndex",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-chainIndex",
     "src/proxy/residue-proxy.js~ResidueProxy#chainIndex",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#chainindex",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-chainIndex",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-chainIndex",
     "src/proxy/residue-proxy.js~ResidueProxy#chainIndex",
     "member"
   ],
@@ -12901,13 +12931,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#inscode",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-inscode",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-inscode",
     "src/proxy/residue-proxy.js~ResidueProxy#inscode",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#inscode",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-inscode",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-inscode",
     "src/proxy/residue-proxy.js~ResidueProxy#inscode",
     "member"
   ],
@@ -13033,13 +13063,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#resno",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-resno",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resno",
     "src/proxy/residue-proxy.js~ResidueProxy#resno",
     "member"
   ],
   [
     "src/proxy/residue-proxy.js~residueproxy#resno",
-    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-resno",
+    "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-set-resno",
     "src/proxy/residue-proxy.js~ResidueProxy#resno",
     "member"
   ],
@@ -13078,6 +13108,144 @@ window.esdocSearchIndex = [
     "class/src/proxy/residue-proxy.js~ResidueProxy.html#instance-get-traceAtomIndex",
     "src/proxy/residue-proxy.js~ResidueProxy#traceAtomIndex",
     "member"
+  ],
+  [
+    "src/representation/angle-representation.js",
+    "file/src/representation/angle-representation.js.html",
+    "src/representation/angle-representation.js",
+    "file"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#arcbuffer",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-arcBuffer",
+    "src/representation/angle-representation.js~AngleRepresentation#arcBuffer",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#arclength",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-arcLength",
+    "src/representation/angle-representation.js~AngleRepresentation#arcLength",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#arcvisible",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-arcVisible",
+    "src/representation/angle-representation.js~AngleRepresentation#arcVisible",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#atomtriple",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-atomTriple",
+    "src/representation/angle-representation.js~AngleRepresentation#atomTriple",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#constructor",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-constructor-constructor",
+    "src/representation/angle-representation.js~AngleRepresentation#constructor",
+    "method"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#create",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-method-create",
+    "src/representation/angle-representation.js~AngleRepresentation#create",
+    "method"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#init",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-method-init",
+    "src/representation/angle-representation.js~AngleRepresentation#init",
+    "method"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#lineopacity",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-lineOpacity",
+    "src/representation/angle-representation.js~AngleRepresentation#lineOpacity",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#linewidth",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-linewidth",
+    "src/representation/angle-representation.js~AngleRepresentation#linewidth",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#parameters",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-parameters",
+    "src/representation/angle-representation.js~AngleRepresentation#parameters",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#sectordoublesidedbuffer",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-sectorDoubleSidedBuffer",
+    "src/representation/angle-representation.js~AngleRepresentation#sectorDoubleSidedBuffer",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#sectorlength",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-sectorLength",
+    "src/representation/angle-representation.js~AngleRepresentation#sectorLength",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#sectormeshbuffer",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-sectorMeshBuffer",
+    "src/representation/angle-representation.js~AngleRepresentation#sectorMeshBuffer",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#sectorvisible",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-sectorVisible",
+    "src/representation/angle-representation.js~AngleRepresentation#sectorVisible",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#setparameters",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-method-setParameters",
+    "src/representation/angle-representation.js~AngleRepresentation#setParameters",
+    "method"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#setvisibility",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-method-setVisibility",
+    "src/representation/angle-representation.js~AngleRepresentation#setVisibility",
+    "method"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#textbuffer",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-textBuffer",
+    "src/representation/angle-representation.js~AngleRepresentation#textBuffer",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#type",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-type",
+    "src/representation/angle-representation.js~AngleRepresentation#type",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#updatedata",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-method-updateData",
+    "src/representation/angle-representation.js~AngleRepresentation#updateData",
+    "method"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#vectorbuffer",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-vectorBuffer",
+    "src/representation/angle-representation.js~AngleRepresentation#vectorBuffer",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentation#vectorvisible",
+    "class/src/representation/angle-representation.js~AngleRepresentation.html#instance-member-vectorVisible",
+    "src/representation/angle-representation.js~AngleRepresentation#vectorVisible",
+    "member"
+  ],
+  [
+    "src/representation/angle-representation.js~anglerepresentationparameters",
+    "typedef/index.html#static-typedef-AngleRepresentationParameters",
+    "src/representation/angle-representation.js~AngleRepresentationParameters",
+    "typedef"
   ],
   [
     "src/representation/axes-representation.js",
@@ -13596,6 +13764,156 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/representation/dihedral-representation.js",
+    "file/src/representation/dihedral-representation.js.html",
+    "src/representation/dihedral-representation.js",
+    "file"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#atomquad",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-atomQuad",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#atomQuad",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#constructor",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-constructor-constructor",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#constructor",
+    "method"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#create",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-method-create",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#create",
+    "method"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#init",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-method-init",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#init",
+    "method"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#linebuffer",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-lineBuffer",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#lineBuffer",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#linelength",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-lineLength",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#lineLength",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#lineopacity",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-lineOpacity",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#lineOpacity",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#linevisible",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-lineVisible",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#lineVisible",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#linewidth",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-linewidth",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#linewidth",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#parameters",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-parameters",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#parameters",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#planedoublesidedbuffer",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-planeDoubleSidedBuffer",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#planeDoubleSidedBuffer",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#planelength",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-planeLength",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#planeLength",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#planemeshbuffer",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-planeMeshBuffer",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#planeMeshBuffer",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#planevisible",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-planeVisible",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#planeVisible",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#sectordoublesidedbuffer",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-sectorDoubleSidedBuffer",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#sectorDoubleSidedBuffer",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#sectorlength",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-sectorLength",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#sectorLength",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#sectormeshbuffer",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-sectorMeshBuffer",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#sectorMeshBuffer",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#sectorvisible",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-sectorVisible",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#sectorVisible",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#setparameters",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-method-setParameters",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#setParameters",
+    "method"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#setvisibility",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-method-setVisibility",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#setVisibility",
+    "method"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#textbuffer",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-textBuffer",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#textBuffer",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#type",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-member-type",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#type",
+    "member"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentation#updatedata",
+    "class/src/representation/dihedral-representation.js~DihedralRepresentation.html#instance-method-updateData",
+    "src/representation/dihedral-representation.js~DihedralRepresentation#updateData",
+    "method"
+  ],
+  [
+    "src/representation/dihedral-representation.js~dihedralrepresentationparameters",
+    "typedef/index.html#static-typedef-DihedralRepresentationParameters",
+    "src/representation/dihedral-representation.js~DihedralRepresentationParameters",
+    "typedef"
+  ],
+  [
     "src/representation/distance-representation.js",
     "file/src/representation/distance-representation.js.html",
     "src/representation/distance-representation.js",
@@ -13626,24 +13944,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/representation/distance-representation.js~distancerepresentation#fontfamily",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontFamily",
-    "src/representation/distance-representation.js~DistanceRepresentation#fontFamily",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#fontstyle",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontStyle",
-    "src/representation/distance-representation.js~DistanceRepresentation#fontStyle",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#fontweight",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-fontWeight",
-    "src/representation/distance-representation.js~DistanceRepresentation#fontWeight",
-    "member"
-  ],
-  [
     "src/representation/distance-representation.js~distancerepresentation#getbonddata",
     "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-getBondData",
     "src/representation/distance-representation.js~DistanceRepresentation#getBondData",
@@ -13662,33 +13962,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/representation/distance-representation.js~distancerepresentation#labelcolor",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelColor",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelColor",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelsize",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelSize",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelSize",
-    "member"
-  ],
-  [
     "src/representation/distance-representation.js~distancerepresentation#labelunit",
     "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelUnit",
     "src/representation/distance-representation.js~DistanceRepresentation#labelUnit",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelvisible",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelVisible",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelVisible",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#labelzoffset",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-labelZOffset",
-    "src/representation/distance-representation.js~DistanceRepresentation#labelZOffset",
     "member"
   ],
   [
@@ -13696,24 +13972,6 @@ window.esdocSearchIndex = [
     "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-parameters",
     "src/representation/distance-representation.js~DistanceRepresentation#parameters",
     "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#sdf",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-sdf",
-    "src/representation/distance-representation.js~DistanceRepresentation#sdf",
-    "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#setparameters",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-setParameters",
-    "src/representation/distance-representation.js~DistanceRepresentation#setParameters",
-    "method"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#setvisibility",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-setVisibility",
-    "src/representation/distance-representation.js~DistanceRepresentation#setVisibility",
-    "method"
   ],
   [
     "src/representation/distance-representation.js~distancerepresentation#textbuffer",
@@ -13726,12 +13984,6 @@ window.esdocSearchIndex = [
     "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-member-type",
     "src/representation/distance-representation.js~DistanceRepresentation#type",
     "member"
-  ],
-  [
-    "src/representation/distance-representation.js~distancerepresentation#update",
-    "class/src/representation/distance-representation.js~DistanceRepresentation.html#instance-method-update",
-    "src/representation/distance-representation.js~DistanceRepresentation#update",
-    "method"
   ],
   [
     "src/representation/distance-representation.js~distancerepresentation#updatedata",
@@ -14284,6 +14536,180 @@ window.esdocSearchIndex = [
     "class/src/representation/line-representation.js~LineRepresentation.html#instance-method-updateData",
     "src/representation/line-representation.js~LineRepresentation#updateData",
     "method"
+  ],
+  [
+    "src/representation/measurement-representation.js",
+    "file/src/representation/measurement-representation.js.html",
+    "src/representation/measurement-representation.js",
+    "file"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#constructor",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-constructor-constructor",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#constructor",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#getlabelbufferparams",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-getLabelBufferParams",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#getLabelBufferParams",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#init",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-init",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#init",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelattachment",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelAttachment",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelAttachment",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelbackground",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackground",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBackground",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelbackgroundcolor",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackgroundColor",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBackgroundColor",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelbackgroundmargin",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackgroundMargin",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBackgroundMargin",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelbackgroundopacity",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBackgroundOpacity",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBackgroundOpacity",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelborder",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBorder",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBorder",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelbordercolor",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBorderColor",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBorderColor",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelborderwidth",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelBorderWidth",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelBorderWidth",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelcolor",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelColor",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelColor",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelfontfamily",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelFontFamily",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelFontFamily",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelfontstyle",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelFontStyle",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelFontStyle",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelfontweight",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelFontWeight",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelFontWeight",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelsize",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelSize",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelSize",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelvisible",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelVisible",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelVisible",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelxoffset",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelXOffset",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelXOffset",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelyoffset",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelYOffset",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelYOffset",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelzoffset",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelZOffset",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelZOffset",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#labelsdf",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-labelsdf",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#labelsdf",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#n",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-n",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#n",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#parameters",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-member-parameters",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#parameters",
+    "member"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#setparameters",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-setParameters",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#setParameters",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#setvisibility",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-setVisibility",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#setVisibility",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#update",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-update",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#update",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentation#updatedata",
+    "class/src/representation/measurement-representation.js~MeasurementRepresentation.html#instance-method-updateData",
+    "src/representation/measurement-representation.js~MeasurementRepresentation#updateData",
+    "method"
+  ],
+  [
+    "src/representation/measurement-representation.js~measurementrepresentationparameters",
+    "typedef/index.html#static-typedef-MeasurementRepresentationParameters",
+    "src/representation/measurement-representation.js~MeasurementRepresentationParameters",
+    "typedef"
   ],
   [
     "src/representation/molecularsurface-representation.js",
