@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@1.0.0-beta.4</span>
+<header><span>NGL@1.0.0-beta.5</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -640,7 +640,9 @@ import {
   Box3, Vector3, Matrix4, Color,
   WebGLRenderer, WebGLRenderTarget,
   NearestFilter, LinearFilter, AdditiveBlending,
-  RGBAFormat, FloatType, HalfFloatType, UnsignedByteType,
+  RGBAFormat, FloatType,
+  // HalfFloatType,
+  UnsignedByteType,
   ShaderMaterial,
   PlaneGeometry,
   Scene, Mesh, Group,
@@ -796,7 +798,7 @@ function Viewer (idOrElement) {
   let rotationGroup, translationGroup, modelGroup, pickingGroup, backgroundGroup, helperGroup
   initScene()
 
-  let renderer, supportsHalfFloat
+  let renderer  // , supportsHalfFloat
   let pickingTarget, sampleTarget, holdTarget
   let compositeUniforms, compositeMaterial, compositeCamera, compositeScene
   if (initRenderer() === false) {
@@ -923,10 +925,10 @@ function Viewer (idOrElement) {
     // picking texture
 
     renderer.extensions.get(&apos;OES_texture_float&apos;)
-    supportsHalfFloat = (
-      renderer.extensions.get(&apos;OES_texture_half_float&apos;) &amp;&amp;
-      testTextureSupport(gl, 0x8D61)
-    )
+    // supportsHalfFloat = (
+    //   renderer.extensions.get(&apos;OES_texture_half_float&apos;) &amp;&amp;
+    //   testTextureSupport(gl, 0x8D61)
+    // )
     renderer.extensions.get(&apos;WEBGL_color_buffer_float&apos;)
 
     pickingTarget = new WebGLRenderTarget(
@@ -964,9 +966,11 @@ function Viewer (idOrElement) {
         minFilter: NearestFilter,
         magFilter: NearestFilter,
         format: RGBAFormat,
-        type: supportsHalfFloat ? HalfFloatType : (
-          SupportsReadPixelsFloat ? FloatType : UnsignedByteType
-        )
+        type: UnsignedByteType
+        // using HalfFloatType or FloatType does not work on some Chrome 61 installations
+        // type: supportsHalfFloat ? HalfFloatType : (
+        //   SupportsReadPixelsFloat ? FloatType : UnsignedByteType
+        // )
       }
     )
 
