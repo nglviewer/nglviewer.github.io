@@ -47,8 +47,8 @@ function loadStructure (input) {
       linewidth: 3
     })
     o.addRepresentation('contact', {
-      weakHydrogenBond: false,
-      saltBridge: false
+      weakHydrogenBond: true,
+      saltBridge: true
     })
     stage.setFocus(95)
   })
