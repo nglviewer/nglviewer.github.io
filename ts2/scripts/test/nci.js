@@ -195,7 +195,7 @@ var nciTests = JSON.parse(`
     "pdbid": "2vts",
     "sele1": "LZC and 1299:A.C21",
     "sele2": "GLU and 81:A.O",
-    "type": "weak-hbond",
+    "type": "weak-hydrogen-bond",
     "info": "common in kinase ligands"
   },
   {
@@ -209,21 +209,21 @@ var nciTests = JSON.parse(`
     "pdbid": "5pbf",
     "sele1": "[8HJ] and 2003:A.N1",
     "sele2": "ASN and 1944:A.OD1",
-    "type": "hbond",
+    "type": "hydrogen-bond",
     "info": "standard bromodomain fragment, acceptor"
   },
   {
     "pdbid": "5pbf",
     "sele1": "[8HJ] and 2003:A.O1",
     "sele2": "(ASN and 1944:A.ND2) or (HOH and 2115:A.O)",
-    "type": "hbond",
+    "type": "hydrogen-bond",
     "info": "standard bromodomain fragment, donor 1"
   },
   {
     "pdbid": "5pbf",
     "sele1": "[8HJ] and 2003:A.O2",
     "sele2": "HOH and 2217:A.O",
-    "type": "hbond",
+    "type": "hydrogen-bond",
     "info": "standard bromodomain fragment, donor 2"
   },
   {
@@ -267,6 +267,20 @@ var nciTests = JSON.parse(`
     "sele2": "G and 36:A and (.C4 or .C5 or .N7 or .C8 or .N9)",
     "type": "cation-pi",
     "info": "ligand sulfonium, guanidine ring"
+  },
+  {
+    "pdbid": "4x21",
+    "sele1": "[3WH] and 501:A.I17",
+    "sele2": "MET and 146:A.SD",
+    "type": "halogen-bond",
+    "info": "ligand iodine, methionine sulfur"
+  },
+  {
+    "pdbid": "4lau",
+    "sele1": "W8X and 402:A.BR7",
+    "sele2": "THR and 113:A.OG1",
+    "type": "halogen-bond",
+    "info": "ligand bromine, threonine oxygen"
   }
 ]
 `)
