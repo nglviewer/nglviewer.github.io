@@ -281,6 +281,13 @@ var nciTests = JSON.parse(`
     "sele2": "THR and 113:A.OG1",
     "type": "halogen-bond",
     "info": "ligand bromine, threonine oxygen"
+  },
+  {
+    "pdbid": "4x0x",
+    "sele1": "CYS and 45:B.SG",
+    "sele2": "(LEU and 39:B.O) or (ARG and 116:B and (.NH1 or .NH2))",
+    "type": "hydrogen-bond",
+    "info": "cystein donor/acceptor"
   }
 ]
 `)
