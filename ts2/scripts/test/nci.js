@@ -24,7 +24,26 @@ function createSelect (options, properties, style) {
   return select
 }
 
-function loadStructure (input) {
+function loadStructure (pdbid) {
+  stage.removeAllComponents()
+  return stage.loadFile('rcsb://' + pdbid).then(function (o) {
+    o.addRepresentation('ribbon')
+    o.addRepresentation('licorice', {
+      multipleBond: 'symmetric'
+    })
+    o.addRepresentation('contact', {
+      weakHydrogenBond: true,
+      waterHydrogenBond: true,
+      backboneHydrogenBond: true,
+      hydrophobic: true,
+      saltBridge: true
+    })
+    stage.setFocus(0)
+    stage.autoView()
+  })
+}
+
+function loadExample (input) {
   stage.removeAllComponents()
   return stage.loadFile('rcsb://' + input.pdbid).then(function (o) {
     var sele = '(' + input.sele1 + ') or (' + input.sele2 + ')'
@@ -48,6 +67,9 @@ function loadStructure (input) {
     })
     o.addRepresentation('contact', {
       weakHydrogenBond: true,
+      waterHydrogenBond: true,
+      backboneHydrogenBond: true,
+      hydrophobic: true,
       saltBridge: true
     })
     stage.setFocus(95)
@@ -123,8 +145,33 @@ function setTestOptions () {
   })
 }
 
+var loadPdbidText = createElement('span', {
+  innerText: 'load pdb id'
+}, { top: '14px', left: '12px', color: 'grey' })
+addElement(loadPdbidText)
+
+var loadPdbidInput = createElement('input', {
+  type: 'text',
+  title: 'press enter to load pdbid',
+  onkeypress: function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault()
+      testSelect.value = ''
+      testInfo.innerText = ''
+      loadStructure(e.target.value)
+    }
+  }
+}, { top: '34px', left: '12px', width: '120px' })
+addElement(loadPdbidInput)
+
+var testText = createElement('span', {
+  innerText: 'load example'
+}, { top: '70px', left: '12px', color: 'grey' })
+addElement(testText)
+
 var testSelect = createSelect([], {
   onchange: function (e) {
+    loadPdbidInput.value = ''
     var input = nciTests[ e.target.value ]
     testInfo.innerHTML = '' +
       input.type + '<br/>' +
@@ -132,14 +179,14 @@ var testSelect = createSelect([], {
       (input.desc ? (input.desc + '<br/>') : '') +
       input.sele1 + '<br/>' +
       input.sele2 + ''
-    loadStructure(input)
+    loadExample(input)
   }
-}, { top: '14px', left: '12px' })
+}, { top: '90px', left: '12px' })
 addElement(testSelect)
 
 var testInfo = createElement('div', {
   innerText: ''
-}, { top: '34px', left: '12px', color: 'grey' })
+}, { top: '110px', left: '12px', color: 'grey' })
 addElement(testInfo)
 
 var nciTests = JSON.parse(`
