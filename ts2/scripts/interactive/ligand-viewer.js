@@ -63,9 +63,13 @@ function loadStructure (input) {
   cartoonCheckbox.checked = false
   backboneCheckbox.checked = true
   hydrophobicCheckbox.checked = false
+  weakHydrogenBondCheckbox.checked = false
+  waterHydrogenBondCheckbox.checked = true
+  backboneHydrogenBondCheckbox.checked = true
   return stage.loadFile(input).then(function (o) {
     struc = o
     setLigandOptions()
+    setResidueOptions()
     o.autoView()
     cartoonRepr = o.addRepresentation('cartoon', {
       visible: false
@@ -82,7 +86,7 @@ function loadStructure (input) {
     neighborRepr = o.addRepresentation('ball+stick', {
       sele: 'none',
       aspectRatio: 1.1,
-      colorValue: 'white',
+      colorValue: 'lightgrey',
       multipleBond: 'symmetric'
     })
     ligandRepr = o.addRepresentation('ball+stick', {
@@ -94,7 +98,10 @@ function loadStructure (input) {
     })
     contactRepr = o.addRepresentation('contact', {
       sele: 'none',
-      radiusSize: 0.07
+      radiusSize: 0.07,
+      weakHydrogenBond: false,
+      waterHydrogenBond: false,
+      backboneHydrogenBond: true
     })
     pocketRepr = o.addRepresentation('surface', {
       sele: 'none',
@@ -140,6 +147,24 @@ function setLigandOptions () {
   })
 }
 
+function setResidueOptions () {
+  residueSelect.innerHTML = ''
+  var options = [['', 'select residue']]
+  struc.structure.eachResidue(function (rp) {
+    var sele = ''
+    if (rp.resno !== undefined) sele += rp.resno
+    if (rp.inscode) sele += '^' + rp.inscode
+    if (rp.chain) sele += ':' + rp.chainname
+    var name = (rp.resname ? '[' + rp.resname + ']' : '') + sele
+    options.push([sele, name])
+  }, new NGL.Selection('polymer'))
+  options.forEach(function (d) {
+    residueSelect.add(createElement('option', {
+      value: d[0], text: d[1]
+    }))
+  })
+}
+
 var loadStructureButton = createFileButton('load structure', {
   accept: '.pdb,.cif,.ent,.gz,.mol2',
   onchange: function (e) {
@@ -152,7 +177,7 @@ addElement(loadStructureButton)
 
 var loadPdbidText = createElement('span', {
   innerText: 'load pdb id'
-}, { top: '40px', left: '12px', color: 'lightgrey' })
+}, { top: '40px', left: '12px', color: 'grey' })
 addElement(loadPdbidText)
 
 var loadPdbidInput = createElement('input', {
@@ -197,7 +222,8 @@ function showLigand (sele) {
   var withinSele = s.getAtomSetWithinSelection(new NGL.Selection(sele), 5)
   var withinGroup = s.getAtomSetWithinGroup(withinSele)
   var expandedSele = withinGroup.toSeleString()
-  neighborSele = '(' + expandedSele + ') and not (' + sele + ')'
+  // neighborSele = '(' + expandedSele + ') and not (' + sele + ')'
+  neighborSele = expandedSele
 
   var sview = s.getView(new NGL.Selection(sele))
   pocketRadius = Math.max(sview.boundingBox.getSize().length() / 2, 2) + 5
@@ -230,6 +256,7 @@ function showLigand (sele) {
 
 var ligandSelect = createSelect([], {
   onchange: function (e) {
+    residueSelect.value = ''
     var sele = e.target.value
     if (!sele) {
       showFull()
@@ -240,12 +267,25 @@ var ligandSelect = createSelect([], {
 }, { top: '134px', left: '12px' })
 addElement(ligandSelect)
 
+var residueSelect = createSelect([], {
+  onchange: function (e) {
+    ligandSelect.value = ''
+    var sele = e.target.value
+    if (!sele) {
+      showFull()
+    } else {
+      showLigand(sele)
+    }
+  }
+}, { top: '154px', left: '12px' })
+addElement(residueSelect)
+
 addElement(createElement('span', {
   innerText: 'pocket near clipping'
-}, { top: '164px', left: '12px', color: 'lightgrey' }))
+}, { top: '184px', left: '12px', color: 'grey' }))
 var clipNearRange = createElement('input', {
   type: 'range', value: 0, min: 0, max: 10000, step: 1
-}, { top: '180px', left: '12px' })
+}, { top: '200px', left: '12px' })
 clipNearRange.oninput = function (e) {
   var sceneRadius = stage.viewer.boundingBox.getSize().length() / 2
 
@@ -261,10 +301,10 @@ addElement(clipNearRange)
 
 addElement(createElement('span', {
   innerText: 'pocket radius clipping'
-}, { top: '210px', left: '12px', color: 'lightgrey' }))
+}, { top: '230px', left: '12px', color: 'grey' }))
 var clipRadiusRange = createElement('input', {
   type: 'range', value: 100, min: 1, max: 100, step: 1
-}, { top: '226px', left: '12px' })
+}, { top: '246px', left: '12px' })
 clipRadiusRange.oninput = function (e) {
   pocketRadiusClipFactor = parseFloat(e.target.value) / 100
   pocketRepr.setParameters({ clipRadius: pocketRadius * pocketRadiusClipFactor })
@@ -273,10 +313,10 @@ addElement(clipRadiusRange)
 
 addElement(createElement('span', {
   innerText: 'pocket opacity'
-}, { top: '256px', left: '12px', color: 'lightgrey' }))
+}, { top: '276px', left: '12px', color: 'grey' }))
 var pocketOpacityRange = createElement('input', {
   type: 'range', value: 90, min: 0, max: 100, step: 1
-}, { top: '272px', left: '12px' })
+}, { top: '292px', left: '12px' })
 pocketOpacityRange.oninput = function (e) {
   var v = parseFloat(e.target.value)
   pocketRepr.setVisibility(v > 0)
@@ -292,11 +332,11 @@ var cartoonCheckbox = createElement('input', {
   onchange: function (e) {
     cartoonRepr.setVisibility(e.target.checked)
   }
-}, { top: '302px', left: '12px' })
+}, { top: '322px', left: '12px' })
 addElement(cartoonCheckbox)
 addElement(createElement('span', {
   innerText: 'cartoon'
-}, { top: '302px', left: '32px', color: 'lightgrey' }))
+}, { top: '322px', left: '32px', color: 'grey' }))
 
 var backboneCheckbox = createElement('input', {
   type: 'checkbox',
@@ -304,11 +344,11 @@ var backboneCheckbox = createElement('input', {
   onchange: function (e) {
     backboneRepr.setVisibility(e.target.checked)
   }
-}, { top: '322px', left: '12px' })
+}, { top: '342px', left: '12px' })
 addElement(backboneCheckbox)
 addElement(createElement('span', {
   innerText: 'backbone'
-}, { top: '322px', left: '32px', color: 'lightgrey' }))
+}, { top: '342px', left: '32px', color: 'grey' }))
 
 var sidechainAttachedCheckbox = createElement('input', {
   type: 'checkbox',
@@ -319,11 +359,11 @@ var sidechainAttachedCheckbox = createElement('input', {
       sidechainAttached ? '(' + neighborSele + ') and (sidechainAttached or not polymer)' : neighborSele
     )
   }
-}, { top: '342px', left: '12px' })
+}, { top: '362px', left: '12px' })
 addElement(sidechainAttachedCheckbox)
 addElement(createElement('span', {
   innerText: 'sidechainAttached'
-}, { top: '342px', left: '32px', color: 'lightgrey' }))
+}, { top: '362px', left: '32px', color: 'grey' }))
 
 var labelCheckbox = createElement('input', {
   type: 'checkbox',
@@ -331,11 +371,11 @@ var labelCheckbox = createElement('input', {
   onchange: function (e) {
     labelRepr.setVisibility(e.target.checked)
   }
-}, { top: '362px', left: '12px' })
+}, { top: '382px', left: '12px' })
 addElement(labelCheckbox)
 addElement(createElement('span', {
   innerText: 'label'
-}, { top: '362px', left: '32px', color: 'lightgrey' }))
+}, { top: '382px', left: '32px', color: 'grey' }))
 
 var hydrophobicCheckbox = createElement('input', {
   type: 'checkbox',
@@ -343,11 +383,47 @@ var hydrophobicCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ hydrophobic: e.target.checked })
   }
-}, { top: '382px', left: '12px' })
+}, { top: '402px', left: '12px' })
 addElement(hydrophobicCheckbox)
 addElement(createElement('span', {
   innerText: 'hydrophobic'
-}, { top: '382px', left: '32px', color: 'lightgrey' }))
+}, { top: '402px', left: '32px', color: 'grey' }))
+
+var weakHydrogenBondCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: false,
+  onchange: function (e) {
+    contactRepr.setParameters({ weakHydrogenBond: e.target.checked })
+  }
+}, { top: '422px', left: '12px' })
+addElement(weakHydrogenBondCheckbox)
+addElement(createElement('span', {
+  innerText: 'weak hbond'
+}, { top: '422px', left: '32px', color: 'grey' }))
+
+var waterHydrogenBondCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: false,
+  onchange: function (e) {
+    contactRepr.setParameters({ waterHydrogenBond: e.target.checked })
+  }
+}, { top: '442px', left: '12px' })
+addElement(waterHydrogenBondCheckbox)
+addElement(createElement('span', {
+  innerText: 'water-water hbond'
+}, { top: '442px', left: '32px', color: 'grey' }))
+
+var backboneHydrogenBondCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: false,
+  onchange: function (e) {
+    contactRepr.setParameters({ backboneHydrogenBond: e.target.checked })
+  }
+}, { top: '462px', left: '12px' })
+addElement(backboneHydrogenBondCheckbox)
+addElement(createElement('span', {
+  innerText: 'backbone-backbone hbond'
+}, { top: '462px', left: '32px', color: 'grey' }))
 
 loadStructure('rcsb://4cup').then(function () {
   showLigand('ZYB')
