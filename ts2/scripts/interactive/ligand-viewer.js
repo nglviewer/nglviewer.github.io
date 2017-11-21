@@ -41,6 +41,78 @@ function createFileButton (label, properties, style) {
   return button
 }
 
+var topPosition = 12
+
+function getTopPosition (increment) {
+  if (increment) topPosition += increment
+  return topPosition + 'px'
+}
+
+// create tooltip element and add to document body
+var tooltip = document.createElement('div')
+Object.assign(tooltip.style, {
+  display: 'none',
+  position: 'fixed',
+  zIndex: 10,
+  pointerEvents: 'none',
+  backgroundColor: 'rgba( 0, 0, 0, 0.6 )',
+  color: 'lightgrey',
+  padding: '8px',
+  fontFamily: 'sans-serif'
+})
+document.body.appendChild(tooltip)
+
+// remove default hoverPick mouse action
+stage.mouseControls.remove('hoverPick')
+
+// listen to `hovered` signal to move tooltip around and change its text
+stage.signals.hovered.add(function (pickingProxy) {
+  if (pickingProxy) {
+    if (pickingProxy.atom || pickingProxy.bond) {
+      var atom = pickingProxy.atom || pickingProxy.closestBondAtom
+      var vm = atom.structure.data['@valenceModel']
+      if (vm && vm.idealValence) {
+        tooltip.innerHTML = `${pickingProxy.getLabel()}<br/>
+        <hr/>
+        Atom: ${atom.qualifiedName()}<br/>
+        ideal valence: ${vm.idealValence[atom.index]}<br/>
+        ideal geometry: ${vm.idealGeometry[atom.index]}<br/>
+        implicit charge: ${vm.implicitCharge[atom.index]}<br/>
+        formal charge: ${atom.formalCharge === null ? '?' : atom.formalCharge}<br/>
+        aromatic: ${atom.aromatic ? 'true' : 'false'}<br/>
+        `
+      } else if (vm && vm.charge) {
+        tooltip.innerHTML = `${pickingProxy.getLabel()}<br/>
+        <hr/>
+        Atom: ${atom.qualifiedName()}<br/>
+        vm charge: ${vm.charge[atom.index]}<br/>
+        vm implicitH: ${vm.implicitH[atom.index]}<br/>
+        vm totalH: ${vm.totalH[atom.index]}<br/>
+        vm geom: ${vm.idealGeometry[atom.index]}</br>
+        formal charge: ${atom.formalCharge === null ? '?' : atom.formalCharge}<br/>
+        aromatic: ${atom.aromatic ? 'true' : 'false'}<br/>
+        `
+      } else {
+        tooltip.innerHTML = `${pickingProxy.getLabel()}`
+      }
+    } else {
+      tooltip.innerHTML = `${pickingProxy.getLabel()}`
+    }
+    var mp = pickingProxy.mouse.position
+    tooltip.style.bottom = window.innerHeight - mp.y + 3 + 'px'
+    tooltip.style.left = mp.x + 3 + 'px'
+    tooltip.style.display = 'block'
+  } else {
+    tooltip.style.display = 'none'
+  }
+})
+
+stage.signals.clicked.add(function (pickingProxy) {
+  if (pickingProxy && (pickingProxy.atom || pickingProxy.bond)) {
+    console.log(pickingProxy.atom || pickingProxy.closestBondAtom)
+  }
+})
+
 var ligandSele = '( not polymer or not ( protein or nucleic ) ) and not ( water or ACE or NH2 )'
 
 var pocketRadius = 0
@@ -75,6 +147,7 @@ function loadStructure (input) {
   return stage.loadFile(input).then(function (o) {
     struc = o
     setLigandOptions()
+    setChainOptions()
     setResidueOptions()
     o.autoView()
     cartoonRepr = o.addRepresentation('cartoon', {
@@ -144,6 +217,7 @@ function setLigandOptions () {
     if (rp.inscode) sele += '^' + rp.inscode
     if (rp.chain) sele += ':' + rp.chainname
     var name = (rp.resname ? '[' + rp.resname + ']' : '') + sele
+    if (rp.entity.description) name += ' (' + rp.entity.description + ')'
     options.push([sele, name])
   }, new NGL.Selection(ligandSele))
   options.forEach(function (d) {
@@ -153,17 +227,34 @@ function setLigandOptions () {
   })
 }
 
-function setResidueOptions () {
+function setChainOptions () {
+  chainSelect.innerHTML = ''
+  var options = [['', 'select chain']]
+  struc.structure.eachChain(function (cp) {
+    var name = cp.chainname
+    if (cp.entity.description) name += ' (' + cp.entity.description + ')'
+    options.push([cp.chainname, name])
+  }, new NGL.Selection('polymer'))
+  options.forEach(function (d) {
+    chainSelect.add(createElement('option', {
+      value: d[0], text: d[1]
+    }))
+  })
+}
+
+function setResidueOptions (chain) {
   residueSelect.innerHTML = ''
   var options = [['', 'select residue']]
-  struc.structure.eachResidue(function (rp) {
-    var sele = ''
-    if (rp.resno !== undefined) sele += rp.resno
-    if (rp.inscode) sele += '^' + rp.inscode
-    if (rp.chain) sele += ':' + rp.chainname
-    var name = (rp.resname ? '[' + rp.resname + ']' : '') + sele
-    options.push([sele, name])
-  }, new NGL.Selection('polymer'))
+  if (chain) {
+    struc.structure.eachResidue(function (rp) {
+      var sele = ''
+      if (rp.resno !== undefined) sele += rp.resno
+      if (rp.inscode) sele += '^' + rp.inscode
+      if (rp.chain) sele += ':' + rp.chainname
+      var name = (rp.resname ? '[' + rp.resname + ']' : '') + sele
+      options.push([sele, name])
+    }, new NGL.Selection('polymer and :' + chain))
+  }
   options.forEach(function (d) {
     residueSelect.add(createElement('option', {
       value: d[0], text: d[1]
@@ -178,12 +269,12 @@ var loadStructureButton = createFileButton('load structure', {
       loadStructure(e.target.files[ 0 ])
     }
   }
-}, { top: '12px', left: '12px' })
+}, { top: getTopPosition(), left: '12px' })
 addElement(loadStructureButton)
 
 var loadPdbidText = createElement('span', {
   innerText: 'load pdb id'
-}, { top: '40px', left: '12px', color: 'grey' })
+}, { top: getTopPosition(20), left: '12px', color: 'grey' })
 addElement(loadPdbidText)
 
 var loadPdbidInput = createElement('input', {
@@ -195,7 +286,7 @@ var loadPdbidInput = createElement('input', {
       loadStructure('rcsb://' + e.target.value)
     }
   }
-}, { top: '60px', left: '12px', width: '120px' })
+}, { top: getTopPosition(20), left: '12px', width: '120px' })
 addElement(loadPdbidInput)
 
 function showFull () {
@@ -219,7 +310,7 @@ var fullButton = createElement('input', {
   value: 'full structure',
   type: 'button',
   onclick: showFull
-}, { top: '104px', left: '12px' })
+}, { top: getTopPosition(30), left: '12px' })
 addElement(fullButton)
 
 function showLigand (sele) {
@@ -270,8 +361,17 @@ var ligandSelect = createSelect([], {
       showLigand(sele)
     }
   }
-}, { top: '134px', left: '12px' })
+}, { top: getTopPosition(30), left: '12px', width: '130px' })
 addElement(ligandSelect)
+
+var chainSelect = createSelect([], {
+  onchange: function (e) {
+    ligandSelect.value = ''
+    residueSelect.value = ''
+    setResidueOptions(e.target.value)
+  }
+}, { top: getTopPosition(20), left: '12px', width: '130px' })
+addElement(chainSelect)
 
 var residueSelect = createSelect([], {
   onchange: function (e) {
@@ -283,15 +383,15 @@ var residueSelect = createSelect([], {
       showLigand(sele)
     }
   }
-}, { top: '154px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px', width: '130px' })
 addElement(residueSelect)
 
 addElement(createElement('span', {
   innerText: 'pocket near clipping'
-}, { top: '184px', left: '12px', color: 'grey' }))
+}, { top: getTopPosition(30), left: '12px', color: 'grey' }))
 var clipNearRange = createElement('input', {
   type: 'range', value: 0, min: 0, max: 10000, step: 1
-}, { top: '200px', left: '12px' })
+}, { top: getTopPosition(16), left: '12px' })
 clipNearRange.oninput = function (e) {
   var sceneRadius = stage.viewer.boundingBox.getSize().length() / 2
 
@@ -307,10 +407,10 @@ addElement(clipNearRange)
 
 addElement(createElement('span', {
   innerText: 'pocket radius clipping'
-}, { top: '230px', left: '12px', color: 'grey' }))
+}, { top: getTopPosition(20), left: '12px', color: 'grey' }))
 var clipRadiusRange = createElement('input', {
   type: 'range', value: 100, min: 1, max: 100, step: 1
-}, { top: '246px', left: '12px' })
+}, { top: getTopPosition(16), left: '12px' })
 clipRadiusRange.oninput = function (e) {
   pocketRadiusClipFactor = parseFloat(e.target.value) / 100
   pocketRepr.setParameters({ clipRadius: pocketRadius * pocketRadiusClipFactor })
@@ -319,10 +419,10 @@ addElement(clipRadiusRange)
 
 addElement(createElement('span', {
   innerText: 'pocket opacity'
-}, { top: '276px', left: '12px', color: 'grey' }))
+}, { top: getTopPosition(20), left: '12px', color: 'grey' }))
 var pocketOpacityRange = createElement('input', {
   type: 'range', value: 90, min: 0, max: 100, step: 1
-}, { top: '292px', left: '12px' })
+}, { top: getTopPosition(16), left: '12px' })
 pocketOpacityRange.oninput = function (e) {
   var v = parseFloat(e.target.value)
   pocketRepr.setVisibility(v > 0)
@@ -338,11 +438,11 @@ var cartoonCheckbox = createElement('input', {
   onchange: function (e) {
     cartoonRepr.setVisibility(e.target.checked)
   }
-}, { top: '322px', left: '12px' })
+}, { top: getTopPosition(30), left: '12px' })
 addElement(cartoonCheckbox)
 addElement(createElement('span', {
   innerText: 'cartoon'
-}, { top: '322px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var backboneCheckbox = createElement('input', {
   type: 'checkbox',
@@ -350,11 +450,11 @@ var backboneCheckbox = createElement('input', {
   onchange: function (e) {
     backboneRepr.setVisibility(e.target.checked)
   }
-}, { top: '342px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(backboneCheckbox)
 addElement(createElement('span', {
   innerText: 'backbone'
-}, { top: '342px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var sidechainAttachedCheckbox = createElement('input', {
   type: 'checkbox',
@@ -365,11 +465,11 @@ var sidechainAttachedCheckbox = createElement('input', {
       sidechainAttached ? '(' + neighborSele + ') and (sidechainAttached or not polymer)' : neighborSele
     )
   }
-}, { top: '362px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(sidechainAttachedCheckbox)
 addElement(createElement('span', {
   innerText: 'sidechainAttached'
-}, { top: '362px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var labelCheckbox = createElement('input', {
   type: 'checkbox',
@@ -377,11 +477,11 @@ var labelCheckbox = createElement('input', {
   onchange: function (e) {
     labelRepr.setVisibility(e.target.checked)
   }
-}, { top: '382px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(labelCheckbox)
 addElement(createElement('span', {
   innerText: 'label'
-}, { top: '382px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var hydrophobicCheckbox = createElement('input', {
   type: 'checkbox',
@@ -389,11 +489,11 @@ var hydrophobicCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ hydrophobic: e.target.checked })
   }
-}, { top: '402px', left: '12px' })
+}, { top: getTopPosition(30), left: '12px' })
 addElement(hydrophobicCheckbox)
 addElement(createElement('span', {
   innerText: 'hydrophobic'
-}, { top: '402px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var hydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -401,11 +501,11 @@ var hydrogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ hydrogenBond: e.target.checked })
   }
-}, { top: '422px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(hydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'hbond'
-}, { top: '422px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var weakHydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -413,11 +513,11 @@ var weakHydrogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ weakHydrogenBond: e.target.checked })
   }
-}, { top: '442px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(weakHydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'weak hbond'
-}, { top: '442px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var waterHydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -425,11 +525,11 @@ var waterHydrogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ waterHydrogenBond: e.target.checked })
   }
-}, { top: '462px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(waterHydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'water-water hbond'
-}, { top: '462px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var backboneHydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -437,11 +537,11 @@ var backboneHydrogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ backboneHydrogenBond: e.target.checked })
   }
-}, { top: '482px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(backboneHydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'backbone-backbone hbond'
-}, { top: '482px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var halogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -449,11 +549,11 @@ var halogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ halogenBond: e.target.checked })
   }
-}, { top: '502px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(halogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'halogen bond'
-}, { top: '502px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var metalInteractionCheckbox = createElement('input', {
   type: 'checkbox',
@@ -461,11 +561,11 @@ var metalInteractionCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ metalComplex: e.target.checked })
   }
-}, { top: '522px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(metalInteractionCheckbox)
 addElement(createElement('span', {
   innerText: 'metal interaction'
-}, { top: '522px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var saltBridgeCheckbox = createElement('input', {
   type: 'checkbox',
@@ -473,11 +573,11 @@ var saltBridgeCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ saltBridge: e.target.checked })
   }
-}, { top: '542px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(saltBridgeCheckbox)
 addElement(createElement('span', {
   innerText: 'salt bridge'
-}, { top: '542px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var cationPiCheckbox = createElement('input', {
   type: 'checkbox',
@@ -485,11 +585,11 @@ var cationPiCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ cationPi: e.target.checked })
   }
-}, { top: '562px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(cationPiCheckbox)
 addElement(createElement('span', {
   innerText: 'cation-pi'
-}, { top: '562px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 var piStackingCheckbox = createElement('input', {
   type: 'checkbox',
@@ -497,11 +597,11 @@ var piStackingCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ piStacking: e.target.checked })
   }
-}, { top: '582px', left: '12px' })
+}, { top: getTopPosition(20), left: '12px' })
 addElement(piStackingCheckbox)
 addElement(createElement('span', {
   innerText: 'pi-stacking'
-}, { top: '582px', left: '32px', color: 'grey' }))
+}, { top: getTopPosition(), left: '32px', color: 'grey' }))
 
 loadStructure('rcsb://4cup').then(function () {
   showLigand('ZYB')
