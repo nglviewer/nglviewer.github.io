@@ -63,9 +63,15 @@ function loadStructure (input) {
   cartoonCheckbox.checked = false
   backboneCheckbox.checked = true
   hydrophobicCheckbox.checked = false
+  hydrogenBondCheckbox.checked = true
   weakHydrogenBondCheckbox.checked = false
   waterHydrogenBondCheckbox.checked = true
   backboneHydrogenBondCheckbox.checked = true
+  halogenBondCheckbox.checked = true
+  metalInteractionCheckbox.checked = true
+  saltBridgeCheckbox.checked = true
+  cationPiCheckbox.checked = true
+  piStackingCheckbox.checked = true
   return stage.loadFile(input).then(function (o) {
     struc = o
     setLigandOptions()
@@ -389,17 +395,29 @@ addElement(createElement('span', {
   innerText: 'hydrophobic'
 }, { top: '402px', left: '32px', color: 'grey' }))
 
+var hydrogenBondCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: false,
+  onchange: function (e) {
+    contactRepr.setParameters({ hydrogenBond: e.target.checked })
+  }
+}, { top: '422px', left: '12px' })
+addElement(hydrogenBondCheckbox)
+addElement(createElement('span', {
+  innerText: 'hbond'
+}, { top: '422px', left: '32px', color: 'grey' }))
+
 var weakHydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
   checked: false,
   onchange: function (e) {
     contactRepr.setParameters({ weakHydrogenBond: e.target.checked })
   }
-}, { top: '422px', left: '12px' })
+}, { top: '442px', left: '12px' })
 addElement(weakHydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'weak hbond'
-}, { top: '422px', left: '32px', color: 'grey' }))
+}, { top: '442px', left: '32px', color: 'grey' }))
 
 var waterHydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -407,11 +425,11 @@ var waterHydrogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ waterHydrogenBond: e.target.checked })
   }
-}, { top: '442px', left: '12px' })
+}, { top: '462px', left: '12px' })
 addElement(waterHydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'water-water hbond'
-}, { top: '442px', left: '32px', color: 'grey' }))
+}, { top: '462px', left: '32px', color: 'grey' }))
 
 var backboneHydrogenBondCheckbox = createElement('input', {
   type: 'checkbox',
@@ -419,11 +437,71 @@ var backboneHydrogenBondCheckbox = createElement('input', {
   onchange: function (e) {
     contactRepr.setParameters({ backboneHydrogenBond: e.target.checked })
   }
-}, { top: '462px', left: '12px' })
+}, { top: '482px', left: '12px' })
 addElement(backboneHydrogenBondCheckbox)
 addElement(createElement('span', {
   innerText: 'backbone-backbone hbond'
-}, { top: '462px', left: '32px', color: 'grey' }))
+}, { top: '482px', left: '32px', color: 'grey' }))
+
+var halogenBondCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: true,
+  onchange: function (e) {
+    contactRepr.setParameters({ halogenBond: e.target.checked })
+  }
+}, { top: '502px', left: '12px' })
+addElement(halogenBondCheckbox)
+addElement(createElement('span', {
+  innerText: 'halogen bond'
+}, { top: '502px', left: '32px', color: 'grey' }))
+
+var metalInteractionCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: true,
+  onchange: function (e) {
+    contactRepr.setParameters({ metalComplex: e.target.checked })
+  }
+}, { top: '522px', left: '12px' })
+addElement(metalInteractionCheckbox)
+addElement(createElement('span', {
+  innerText: 'metal interaction'
+}, { top: '522px', left: '32px', color: 'grey' }))
+
+var saltBridgeCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: true,
+  onchange: function (e) {
+    contactRepr.setParameters({ saltBridge: e.target.checked })
+  }
+}, { top: '542px', left: '12px' })
+addElement(saltBridgeCheckbox)
+addElement(createElement('span', {
+  innerText: 'salt bridge'
+}, { top: '542px', left: '32px', color: 'grey' }))
+
+var cationPiCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: true,
+  onchange: function (e) {
+    contactRepr.setParameters({ cationPi: e.target.checked })
+  }
+}, { top: '562px', left: '12px' })
+addElement(cationPiCheckbox)
+addElement(createElement('span', {
+  innerText: 'cation-pi'
+}, { top: '562px', left: '32px', color: 'grey' }))
+
+var piStackingCheckbox = createElement('input', {
+  type: 'checkbox',
+  checked: true,
+  onchange: function (e) {
+    contactRepr.setParameters({ piStacking: e.target.checked })
+  }
+}, { top: '582px', left: '12px' })
+addElement(piStackingCheckbox)
+addElement(createElement('span', {
+  innerText: 'pi-stacking'
+}, { top: '582px', left: '32px', color: 'grey' }))
 
 loadStructure('rcsb://4cup').then(function () {
   showLigand('ZYB')
