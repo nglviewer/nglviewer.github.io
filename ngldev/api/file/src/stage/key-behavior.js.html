@@ -9,7 +9,7 @@
 <meta name="description" content="WebGL molecular graphics"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="NGL Viewer"><meta property="twitter:description" content="WebGL molecular graphics"></head>
 <body class="layout-container" data-ice="rootContainer">
 
-<header><span>NGL@1.0.0-beta.6</span>
+<header><span>NGL@1.0.0-beta.7</span>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
@@ -651,8 +651,6 @@ class KeyBehavior {
     // ensure the domElement is focusable
     this.domElement.setAttribute(&apos;tabIndex&apos;, &apos;-1&apos;)
     this.domElement.style.outline = &apos;none&apos;
-    this.domElement.autofocus = true
-    this.domElement.focus()
 
     this._focusDomElement = this._focusDomElement.bind(this)
     this._onKeydown = this._onKeydown.bind(this)
