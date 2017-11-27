@@ -50635,7 +50635,7 @@
     "__docId__": 2914,
     "kind": "file",
     "name": "src/stage/key-behavior.js",
-    "content": "/**\n * @file Key Behavior\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\nimport { SupportsPassiveEventHandler } from '../globals.js'\n\nconst passive = SupportsPassiveEventHandler ? { passive: true } : false\n\nclass KeyBehavior {\n    /**\n     * @param {Stage} stage - the stage object\n     */\n  constructor (stage) {\n    this.stage = stage\n    this.controls = stage.keyControls\n    this.domElement = stage.viewer.renderer.domElement\n\n    // ensure the domElement is focusable\n    this.domElement.setAttribute('tabIndex', '-1')\n    this.domElement.style.outline = 'none'\n    this.domElement.autofocus = true\n    this.domElement.focus()\n\n    this._focusDomElement = this._focusDomElement.bind(this)\n    this._onKeydown = this._onKeydown.bind(this)\n    this._onKeyup = this._onKeyup.bind(this)\n    this._onKeypress = this._onKeypress.bind(this)\n\n    this.domElement.addEventListener('mousedown', this._focusDomElement)\n    this.domElement.addEventListener('touchstart', this._focusDomElement, passive)\n    this.domElement.addEventListener('keydown', this._onKeydown)\n    this.domElement.addEventListener('keyup', this._onKeyup)\n    this.domElement.addEventListener('keypress', this._onKeypress)\n  }\n\n  /**\n   * handle key down\n   * @param  {Event} event - key event\n   * @return {undefined}\n   */\n  _onKeydown (/* event */) {\n    // console.log( \"down\", event.keyCode, String.fromCharCode( event.keyCode ) );\n  }\n\n  /**\n   * handle key up\n   * @param  {Event} event - key event\n   * @return {undefined}\n   */\n  _onKeyup (/* event */) {\n    // console.log( \"up\", event.keyCode, String.fromCharCode( event.keyCode ) );\n  }\n\n  /**\n   * handle key press\n   * @param  {Event} event - key event\n   * @return {undefined}\n   */\n  _onKeypress (event) {\n    // console.log( \"press\", event.keyCode, String.fromCharCode( event.keyCode ) );\n    this.controls.run(event.keyCode)\n  }\n\n  _focusDomElement () {\n    this.domElement.focus()\n  }\n\n  dispose () {\n    this.domElement.removeEventListener('mousedown', this._focusDomElement)\n    this.domElement.removeEventListener('touchstart', this._focusDomElement, passive)\n    this.domElement.removeEventListener('keydown', this._onKeypress)\n    this.domElement.removeEventListener('keyup', this._onKeypress)\n    this.domElement.removeEventListener('keypress', this._onKeypress)\n  }\n}\n\nexport default KeyBehavior\n",
+    "content": "/**\n * @file Key Behavior\n * @author Alexander Rose <alexander.rose@weirdbyte.de>\n * @private\n */\n\nimport { SupportsPassiveEventHandler } from '../globals.js'\n\nconst passive = SupportsPassiveEventHandler ? { passive: true } : false\n\nclass KeyBehavior {\n    /**\n     * @param {Stage} stage - the stage object\n     */\n  constructor (stage) {\n    this.stage = stage\n    this.controls = stage.keyControls\n    this.domElement = stage.viewer.renderer.domElement\n\n    // ensure the domElement is focusable\n    this.domElement.setAttribute('tabIndex', '-1')\n    this.domElement.style.outline = 'none'\n\n    this._focusDomElement = this._focusDomElement.bind(this)\n    this._onKeydown = this._onKeydown.bind(this)\n    this._onKeyup = this._onKeyup.bind(this)\n    this._onKeypress = this._onKeypress.bind(this)\n\n    this.domElement.addEventListener('mousedown', this._focusDomElement)\n    this.domElement.addEventListener('touchstart', this._focusDomElement, passive)\n    this.domElement.addEventListener('keydown', this._onKeydown)\n    this.domElement.addEventListener('keyup', this._onKeyup)\n    this.domElement.addEventListener('keypress', this._onKeypress)\n  }\n\n  /**\n   * handle key down\n   * @param  {Event} event - key event\n   * @return {undefined}\n   */\n  _onKeydown (/* event */) {\n    // console.log( \"down\", event.keyCode, String.fromCharCode( event.keyCode ) );\n  }\n\n  /**\n   * handle key up\n   * @param  {Event} event - key event\n   * @return {undefined}\n   */\n  _onKeyup (/* event */) {\n    // console.log( \"up\", event.keyCode, String.fromCharCode( event.keyCode ) );\n  }\n\n  /**\n   * handle key press\n   * @param  {Event} event - key event\n   * @return {undefined}\n   */\n  _onKeypress (event) {\n    // console.log( \"press\", event.keyCode, String.fromCharCode( event.keyCode ) );\n    this.controls.run(event.keyCode)\n  }\n\n  _focusDomElement () {\n    this.domElement.focus()\n  }\n\n  dispose () {\n    this.domElement.removeEventListener('mousedown', this._focusDomElement)\n    this.domElement.removeEventListener('touchstart', this._focusDomElement, passive)\n    this.domElement.removeEventListener('keydown', this._onKeypress)\n    this.domElement.removeEventListener('keyup', this._onKeypress)\n    this.domElement.removeEventListener('keypress', this._onKeypress)\n  }\n}\n\nexport default KeyBehavior\n",
     "static": true,
     "longname": "/Users/alex/dev/repos/ngl/src/stage/key-behavior.js",
     "access": "public",
@@ -50746,7 +50746,7 @@
     "longname": "src/stage/key-behavior.js~KeyBehavior#_onKeydown",
     "access": "private",
     "description": "handle key down",
-    "lineNumber": 43,
+    "lineNumber": 41,
     "params": [
       {
         "nullable": null,
@@ -50779,7 +50779,7 @@
     "longname": "src/stage/key-behavior.js~KeyBehavior#_onKeyup",
     "access": "private",
     "description": "handle key up",
-    "lineNumber": 52,
+    "lineNumber": 50,
     "params": [
       {
         "nullable": null,
@@ -50812,7 +50812,7 @@
     "longname": "src/stage/key-behavior.js~KeyBehavior#_onKeypress",
     "access": "private",
     "description": "handle key press",
-    "lineNumber": 61,
+    "lineNumber": 59,
     "params": [
       {
         "nullable": null,
@@ -50845,7 +50845,7 @@
     "longname": "src/stage/key-behavior.js~KeyBehavior#_focusDomElement",
     "access": "private",
     "description": null,
-    "lineNumber": 66,
+    "lineNumber": 64,
     "undocument": true
   },
   {
@@ -50859,7 +50859,7 @@
     "longname": "src/stage/key-behavior.js~KeyBehavior#dispose",
     "access": "public",
     "description": null,
-    "lineNumber": 70,
+    "lineNumber": 68,
     "undocument": true
   },
   {
@@ -74902,7 +74902,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"ngl\",\n  \"version\": \"1.0.0-beta.6\",\n  \"description\": \"Scalable molecular graphics for the web\",\n  \"main\": \"dist/ngl.js\",\n  \"module\": \"dist/ngl.esm.js\",\n  \"scripts\": {\n    \"lint\": \"npm run-script lint-src && npm run-script lint-test && npm run-script lint-script\",\n    \"lint-src\": \"standard \\\"src/**/*.js\\\"\",\n    \"lint-test\": \"standard --env mocha \\\"test/**/*.js\\\"\",\n    \"lint-script\": \"standard --global stage --global NGL \\\"examples/scripts/**/*.js\\\"\",\n    \"prebuild\": \"npm run-script lint\",\n    \"build\": \"rollup -c\",\n    \"postbuild\": \"node ./scripts/makeScriptsList.js\",\n    \"pretest\": \"npm run build\",\n    \"test\": \"mocha\",\n    \"preversion\": \"npm test\",\n    \"version\": \"npm run-script build-min && git add -A dist\",\n    \"postversion\": \"git push && git push --tags\",\n    \"prepublish\": \"npm test\",\n    \"devpublish\": \"npm publish --tag next\",\n    \"doc\": \"esdoc\",\n    \"watch\": \"rollup -c -w\",\n    \"deploy\": \"./scripts/deploy.sh prerelease\",\n    \"gallery\": \"./scripts/gallery.sh\",\n    \"prerelease\": \"./scripts/release.sh prerelease\",\n    \"build-min\": \"rollup -c && uglifyjs build/js/ngl.dev.js -cm > dist/ngl.js && cp build/js/ngl.esm.js dist/ngl.esm.js\"\n  },\n  \"homepage\": \"https://github.com/arose/ngl#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/arose/ngl.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/arose/ngl/issues\"\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"author\": \"Alexander Rose <alexander.rose@weirdbyte.de>\",\n  \"contributors\": [],\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"molecular graphics\",\n    \"molecular structure\",\n    \"chemical structure\",\n    \"science\"\n  ],\n  \"devDependencies\": {\n    \"babel-plugin-array-includes\": \"^2.0.3\",\n    \"babel-plugin-external-helpers\": \"^6.22.0\",\n    \"babel-preset-es2015\": \"^6.13.2\",\n    \"babel-register\": \"^6.26.0\",\n    \"babelrc-rollup\": \"^3.0.0\",\n    \"chai\": \"^4.1.1\",\n    \"cheerio\": \"^1.0.0-rc.1\",\n    \"esdoc\": \"^1.0.3\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"mocha\": \"^4.0.1\",\n    \"rollup\": \"^0.50.0\",\n    \"rollup-plugin-babel\": \"^3.0.2\",\n    \"rollup-plugin-buble\": \"^0.16.0\",\n    \"rollup-plugin-commonjs\": \"^8.2.0\",\n    \"rollup-plugin-json\": \"^2.3.0\",\n    \"rollup-plugin-node-resolve\": \"^3.0.0\",\n    \"rollup-watch\": \"^4.3.1\",\n    \"slimerjs\": \"^0.10.3\",\n    \"standard\": \"^10.0.3\",\n    \"uglify-js\": \"^3.1.1\"\n  },\n  \"dependencies\": {}\n}\n",
+    "content": "{\n  \"name\": \"ngl\",\n  \"version\": \"1.0.0-beta.7\",\n  \"description\": \"Scalable molecular graphics for the web\",\n  \"main\": \"dist/ngl.js\",\n  \"module\": \"dist/ngl.esm.js\",\n  \"scripts\": {\n    \"lint\": \"npm run-script lint-src && npm run-script lint-test && npm run-script lint-script\",\n    \"lint-src\": \"standard \\\"src/**/*.js\\\"\",\n    \"lint-test\": \"standard --env mocha \\\"test/**/*.js\\\"\",\n    \"lint-script\": \"standard --global stage --global NGL \\\"examples/scripts/**/*.js\\\"\",\n    \"prebuild\": \"npm run-script lint\",\n    \"build\": \"rollup -c\",\n    \"postbuild\": \"node ./scripts/makeScriptsList.js\",\n    \"pretest\": \"npm run build\",\n    \"test\": \"mocha\",\n    \"preversion\": \"npm test\",\n    \"version\": \"npm run-script build-min && git add -A dist\",\n    \"postversion\": \"git push && git push --tags\",\n    \"prepublish\": \"npm test\",\n    \"devpublish\": \"npm publish --tag next\",\n    \"doc\": \"esdoc\",\n    \"watch\": \"rollup -c -w\",\n    \"deploy\": \"./scripts/deploy.sh prerelease\",\n    \"gallery\": \"./scripts/gallery.sh\",\n    \"prerelease\": \"./scripts/release.sh prerelease\",\n    \"build-min\": \"rollup -c && uglifyjs build/js/ngl.dev.js -cm > dist/ngl.js && cp build/js/ngl.esm.js dist/ngl.esm.js\"\n  },\n  \"homepage\": \"https://github.com/arose/ngl#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/arose/ngl.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/arose/ngl/issues\"\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"author\": \"Alexander Rose <alexander.rose@weirdbyte.de>\",\n  \"contributors\": [],\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"molecular graphics\",\n    \"molecular structure\",\n    \"chemical structure\",\n    \"science\"\n  ],\n  \"devDependencies\": {\n    \"babel-plugin-array-includes\": \"^2.0.3\",\n    \"babel-plugin-external-helpers\": \"^6.22.0\",\n    \"babel-preset-es2015\": \"^6.13.2\",\n    \"babel-register\": \"^6.26.0\",\n    \"babelrc-rollup\": \"^3.0.0\",\n    \"chai\": \"^4.1.1\",\n    \"cheerio\": \"^1.0.0-rc.1\",\n    \"esdoc\": \"^1.0.3\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"mocha\": \"^4.0.1\",\n    \"rollup\": \"^0.50.0\",\n    \"rollup-plugin-babel\": \"^3.0.2\",\n    \"rollup-plugin-buble\": \"^0.16.0\",\n    \"rollup-plugin-commonjs\": \"^8.2.0\",\n    \"rollup-plugin-json\": \"^2.3.0\",\n    \"rollup-plugin-node-resolve\": \"^3.0.0\",\n    \"rollup-watch\": \"^4.3.1\",\n    \"slimerjs\": \"^0.10.3\",\n    \"standard\": \"^10.0.3\",\n    \"uglify-js\": \"^3.1.1\"\n  },\n  \"dependencies\": {}\n}\n",
     "longname": "/Users/alex/dev/repos/ngl/package.json",
     "name": "package.json",
     "static": true,
