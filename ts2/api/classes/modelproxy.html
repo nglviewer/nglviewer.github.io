@@ -92,6 +92,16 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="modelproxy.html#chainstore" class="tsd-kind-icon">chain<wbr>Store</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="modelproxy.html#index" class="tsd-kind-icon">index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="modelproxy.html#modelstore" class="tsd-kind-icon">model<wbr>Store</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="modelproxy.html#residuestore" class="tsd-kind-icon">residue<wbr>Store</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="modelproxy.html#structure" class="tsd-kind-icon">structure</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="modelproxy.html#atomcount" class="tsd-kind-icon">atom<wbr>Count</a></li>
@@ -126,13 +136,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Model<wbr>Proxy<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modelproxy.html" class="tsd-signature-type">ModelProxy</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Model<wbr>Proxy<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a>, index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="modelproxy.html" class="tsd-signature-type">ModelProxy</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L10">src/proxy/model-proxy.js:10</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L27">src/proxy/model-proxy.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -140,7 +150,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>the structure</p>
@@ -148,7 +158,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>index: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>the index</p>
@@ -159,6 +169,64 @@
 							<h4 class="tsd-returns-title">Returns <a href="modelproxy.html" class="tsd-signature-type">ModelProxy</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="chainstore" class="tsd-anchor"></a>
+					<h3>chain<wbr>Store</h3>
+					<div class="tsd-signature tsd-kind-icon">chain<wbr>Store<span class="tsd-signature-symbol">:</span> <a href="chainstore.html" class="tsd-signature-type">ChainStore</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L26">src/proxy/model-proxy.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="index" class="tsd-anchor"></a>
+					<h3>index</h3>
+					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L23">src/proxy/model-proxy.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="modelstore" class="tsd-anchor"></a>
+					<h3>model<wbr>Store</h3>
+					<div class="tsd-signature tsd-kind-icon">model<wbr>Store<span class="tsd-signature-symbol">:</span> <a href="modelstore.html" class="tsd-signature-type">ModelStore</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L25">src/proxy/model-proxy.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="residuestore" class="tsd-anchor"></a>
+					<h3>residue<wbr>Store</h3>
+					<div class="tsd-signature tsd-kind-icon">residue<wbr>Store<span class="tsd-signature-symbol">:</span> <a href="residuestore.html" class="tsd-signature-type">ResidueStore</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L27">src/proxy/model-proxy.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="structure" class="tsd-anchor"></a>
+					<h3>structure</h3>
+					<div class="tsd-signature tsd-kind-icon">structure<span class="tsd-signature-symbol">:</span> <a href="structure.html" class="tsd-signature-type">Structure</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L33">src/proxy/model-proxy.ts:33</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the structure</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -173,7 +241,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L91">src/proxy/model-proxy.js:91</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L93">src/proxy/model-proxy.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -200,7 +268,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L68">src/proxy/model-proxy.js:68</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L70">src/proxy/model-proxy.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -211,16 +279,16 @@
 					<a name="atomoffset" class="tsd-anchor"></a>
 					<h3>atom<wbr>Offset</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> atomOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> atomOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L55">src/proxy/model-proxy.js:55</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L57">src/proxy/model-proxy.ts:57</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -228,28 +296,28 @@
 					<a name="chaincount" class="tsd-anchor"></a>
 					<h3>chain<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> chainCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chainCount<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> chainCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chainCount<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L45">src/proxy/model-proxy.js:45</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L47">src/proxy/model-proxy.ts:47</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L48">src/proxy/model-proxy.js:48</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L50">src/proxy/model-proxy.ts:50</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -266,7 +334,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L59">src/proxy/model-proxy.js:59</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L61">src/proxy/model-proxy.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -277,28 +345,28 @@
 					<a name="chainoffset" class="tsd-anchor"></a>
 					<h3>chain<wbr>Offset</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> chainOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chainOffset<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> chainOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> chainOffset<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L38">src/proxy/model-proxy.js:38</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L40">src/proxy/model-proxy.ts:40</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L41">src/proxy/model-proxy.js:41</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L43">src/proxy/model-proxy.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -315,7 +383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L79">src/proxy/model-proxy.js:79</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L81">src/proxy/model-proxy.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,7 +410,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L62">src/proxy/model-proxy.js:62</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L64">src/proxy/model-proxy.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -353,16 +421,16 @@
 					<a name="residueoffset" class="tsd-anchor"></a>
 					<h3>residue<wbr>Offset</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> residueOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> residueOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L52">src/proxy/model-proxy.js:52</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L54">src/proxy/model-proxy.ts:54</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -379,7 +447,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L194">src/proxy/model-proxy.js:194</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L195">src/proxy/model-proxy.ts:195</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -396,13 +464,13 @@
 					<a name="eachatom" class="tsd-anchor"></a>
 					<h3>each<wbr>Atom</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">each<wbr>Atom<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, selection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Selection</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">each<wbr>Atom<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, selection<span class="tsd-signature-symbol">?: </span><a href="selection.html" class="tsd-signature-type">Selection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L107">src/proxy/model-proxy.js:107</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L109">src/proxy/model-proxy.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -413,16 +481,34 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">any</span></h5>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the callback</p>
 									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>ap<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>ap: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<h5>selection: <span class="tsd-signature-type">Selection</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> selection: <a href="selection.html" class="tsd-signature-type">Selection</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -430,13 +516,13 @@
 					<a name="eachchain" class="tsd-anchor"></a>
 					<h3>each<wbr>Chain</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">each<wbr>Chain<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, selection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Selection</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">each<wbr>Chain<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, selection<span class="tsd-signature-symbol">?: </span><a href="selection.html" class="tsd-signature-type">Selection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L153">src/proxy/model-proxy.js:153</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L155">src/proxy/model-proxy.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -447,16 +533,34 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">any</span></h5>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the callback</p>
 									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>cp<span class="tsd-signature-symbol">: </span><a href="chainproxy.html" class="tsd-signature-type">ChainProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>cp: <a href="chainproxy.html" class="tsd-signature-type">ChainProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<h5>selection: <span class="tsd-signature-type">Selection</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> selection: <a href="selection.html" class="tsd-signature-type">Selection</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -464,13 +568,13 @@
 					<a name="eachpolymer" class="tsd-anchor"></a>
 					<h3>each<wbr>Polymer</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">each<wbr>Polymer<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, selection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Selection</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">each<wbr>Polymer<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, selection<span class="tsd-signature-symbol">?: </span><a href="selection.html" class="tsd-signature-type">Selection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L131">src/proxy/model-proxy.js:131</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L133">src/proxy/model-proxy.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -481,16 +585,34 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">any</span></h5>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the callback</p>
 									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="polymer.html" class="tsd-signature-type">Polymer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>p: <a href="polymer.html" class="tsd-signature-type">Polymer</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<h5>selection: <span class="tsd-signature-type">Selection</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> selection: <a href="selection.html" class="tsd-signature-type">Selection</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -498,13 +620,13 @@
 					<a name="eachresidue" class="tsd-anchor"></a>
 					<h3>each<wbr>Residue</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">each<wbr>Residue<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, selection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Selection</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">each<wbr>Residue<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, selection<span class="tsd-signature-symbol">?: </span><a href="selection.html" class="tsd-signature-type">Selection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L119">src/proxy/model-proxy.js:119</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L121">src/proxy/model-proxy.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -515,16 +637,34 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">any</span></h5>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the callback</p>
 									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>rp<span class="tsd-signature-symbol">: </span><a href="residueproxy.html" class="tsd-signature-type">ResidueProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>rp: <a href="residueproxy.html" class="tsd-signature-type">ResidueProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<h5>selection: <span class="tsd-signature-type">Selection</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> selection: <a href="selection.html" class="tsd-signature-type">Selection</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -538,7 +678,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L185">src/proxy/model-proxy.js:185</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L186">src/proxy/model-proxy.ts:186</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -555,16 +695,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/proxy/model-proxy.js#L198">src/proxy/model-proxy.js:198</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/proxy/model-proxy.ts#L199">src/proxy/model-proxy.ts:199</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter">
-									<h5>chain<wbr>Count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+									<h5>chain<wbr>Count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li class="tsd-parameter">
-									<h5>chain<wbr>Offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+									<h5>chain<wbr>Offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li class="tsd-parameter">
 									<h5>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
@@ -592,6 +732,21 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="modelproxy.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="modelproxy.html#chainstore" class="tsd-kind-icon">chain<wbr>Store</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="modelproxy.html#index" class="tsd-kind-icon">index</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="modelproxy.html#modelstore" class="tsd-kind-icon">model<wbr>Store</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="modelproxy.html#residuestore" class="tsd-kind-icon">residue<wbr>Store</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="modelproxy.html#structure" class="tsd-kind-icon">structure</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="modelproxy.html#atomcount" class="tsd-kind-icon">atom<wbr>Count</a>

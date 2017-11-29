@@ -105,20 +105,23 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="volumecomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#annotationlist" class="tsd-kind-icon">annotation<wbr>List</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#controls" class="tsd-kind-icon">controls</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#matrix" class="tsd-kind-icon">matrix</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#object" class="tsd-kind-icon">object</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#parameters" class="tsd-kind-icon">parameters</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#position" class="tsd-kind-icon">position</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#quaternion" class="tsd-kind-icon">quaternion</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#reprlist" class="tsd-kind-icon">repr<wbr>List</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#scale" class="tsd-kind-icon">scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#stage" class="tsd-kind-icon">stage</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#transform" class="tsd-kind-icon">transform</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#uuid" class="tsd-kind-icon">uuid</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="volumecomponent.html#viewer" class="tsd-kind-icon">viewer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="volumecomponent.html#volume" class="tsd-kind-icon">volume</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -178,14 +181,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Volume<wbr>Component<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><a href="stage.html" class="tsd-signature-type">Stage</a>, volume<span class="tsd-signature-symbol">: </span><a href="volume.html" class="tsd-signature-type">Volume</a>, params<span class="tsd-signature-symbol">: </span><a href="../globals.html#componentparameters" class="tsd-signature-type">ComponentParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="volumecomponent.html" class="tsd-signature-type">VolumeComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Volume<wbr>Component<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><a href="stage.html" class="tsd-signature-type">Stage</a>, volume<span class="tsd-signature-symbol">: </span><a href="volume.html" class="tsd-signature-type">Volume</a>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#componentparameters" class="tsd-signature-type">ComponentParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="volumecomponent.html" class="tsd-signature-type">VolumeComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="component.html">Component</a>.<a href="component.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/volume-component.ts#L24">src/component/volume-component.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L24">src/component/volume-component.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -209,7 +212,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>params: <a href="../globals.html#componentparameters" class="tsd-signature-type">ComponentParameters</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#componentparameters" class="tsd-signature-type">ComponentParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>component parameters</p>
@@ -222,7 +225,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="annotationlist" class="tsd-anchor"></a>
@@ -231,7 +234,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#annotationlist">annotationList</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L65">src/component/component.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L65">src/component/component.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -242,7 +245,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#controls">controls</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L73">src/component/component.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L73">src/component/component.ts:73</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -253,7 +256,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#matrix">matrix</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L67">src/component/component.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L67">src/component/component.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="object" class="tsd-anchor"></a>
+					<h3>object</h3>
+					<div class="tsd-signature tsd-kind-icon">object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#object">object</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L79">src/component/component.ts:79</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -264,7 +278,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#parameters">parameters</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L58">src/component/component.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L58">src/component/component.ts:58</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -275,7 +289,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#position">position</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L68">src/component/component.ts:68</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L68">src/component/component.ts:68</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -286,7 +300,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#quaternion">quaternion</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L69">src/component/component.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L69">src/component/component.ts:69</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -297,7 +311,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#reprlist">reprList</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L64">src/component/component.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L64">src/component/component.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -308,9 +322,25 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#scale">scale</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L70">src/component/component.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L70">src/component/component.ts:70</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="stage" class="tsd-anchor"></a>
+					<h3>stage</h3>
+					<div class="tsd-signature tsd-kind-icon">stage<span class="tsd-signature-symbol">:</span> <a href="stage.html" class="tsd-signature-type">Stage</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#stage">stage</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L79">src/component/component.ts:79</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>stage object the component belongs to</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="transform" class="tsd-anchor"></a>
@@ -319,7 +349,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#transform">transform</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L71">src/component/component.ts:71</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L71">src/component/component.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -330,7 +360,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#uuid">uuid</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L61">src/component/component.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L61">src/component/component.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -341,9 +371,24 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#viewer">viewer</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L62">src/component/component.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L62">src/component/component.ts:62</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="volume" class="tsd-anchor"></a>
+					<h3>volume</h3>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <a href="volume.html" class="tsd-signature-type">Volume</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L30">src/component/volume-component.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>volume object to wrap</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -359,7 +404,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#defaultparameters">defaultParameters</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L59">src/component/component.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L59">src/component/component.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -388,7 +433,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#name">name</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L88">src/component/component.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L89">src/component/component.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -406,7 +451,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#status">status</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L89">src/component/component.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L90">src/component/component.ts:90</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -424,7 +469,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="component.html">Component</a>.<a href="component.html#type">type</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/volume-component.ts#L38">src/component/volume-component.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L38">src/component/volume-component.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -452,7 +497,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#visible">visible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L90">src/component/component.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L91">src/component/component.ts:91</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -466,14 +511,14 @@
 					<a name="_addrepresentation" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _add<wbr>Representation</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_add<wbr>Representation<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">_add<wbr>Representation<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, hidden<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#_addrepresentation">_addRepresentation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L254">src/component/component.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L255">src/component/component.ts:255</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -498,6 +543,9 @@
 								<li>
 									<h5>params: <span class="tsd-signature-type">any</span></h5>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> hidden: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="representationelement.html" class="tsd-signature-type">RepresentationElement</a></h4>
 							<p>the created representation wrapped into
@@ -516,7 +564,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#addannotation">addAnnotation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L208">src/component/component.ts:208</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L209">src/component/component.ts:209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -558,7 +606,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#addbufferrepresentation">addBufferRepresentation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L275">src/component/component.ts:275</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L277">src/component/component.ts:277</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -585,7 +633,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="component.html">Component</a>.<a href="component.html#addrepresentation">addRepresentation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/volume-component.ts#L43">src/component/volume-component.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L43">src/component/volume-component.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -622,7 +670,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#autoview">autoView</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L396">src/component/component.ts:396</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L398">src/component/component.ts:398</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -651,7 +699,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="component.html">Component</a>.<a href="component.html#dispose">dispose</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/volume-component.ts#L55">src/component/volume-component.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L55">src/component/volume-component.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -669,7 +717,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#eachannotation">eachAnnotation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L220">src/component/component.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L221">src/component/component.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -719,7 +767,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#eachrepresentation">eachRepresentation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L288">src/component/component.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L290">src/component/component.ts:290</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -769,7 +817,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#getbox">getBox</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L362">src/component/component.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L364">src/component/component.ts:364</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -796,7 +844,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="component.html">Component</a>.<a href="component.html#getboxuntransformed">getBoxUntransformed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/volume-component.ts#L47">src/component/volume-component.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L47">src/component/volume-component.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Box3</span></h4>
@@ -814,7 +862,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#getcenter">getCenter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L370">src/component/component.ts:370</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L372">src/component/component.ts:372</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -841,7 +889,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="component.html">Component</a>.<a href="component.html#getcenteruntransformed">getCenterUntransformed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/volume-component.ts#L51">src/component/volume-component.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/volume-component.ts#L51">src/component/volume-component.ts:51</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector3</span></h4>
@@ -859,7 +907,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#getzoom">getZoom</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L375">src/component/component.ts:375</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L377">src/component/component.ts:377</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -883,7 +931,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#hasrepresentation">hasRepresentation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L279">src/component/component.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L281">src/component/component.ts:281</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -907,7 +955,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#removeallannotations">removeAllAnnotations</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L241">src/component/component.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L242">src/component/component.ts:242</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -930,7 +978,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#removeallrepresentations">removeAllRepresentations</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L315">src/component/component.ts:315</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L317">src/component/component.ts:317</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -953,7 +1001,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#removeannotation">removeAnnotation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L229">src/component/component.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L230">src/component/component.ts:230</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -985,7 +1033,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#removerepresentation">removeRepresentation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L297">src/component/component.ts:297</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L299">src/component/component.ts:299</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1017,7 +1065,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#setname">setName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L352">src/component/component.ts:352</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L354">src/component/component.ts:354</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1041,7 +1089,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#setposition">setPosition</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L102">src/component/component.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L103">src/component/component.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1080,7 +1128,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#setrotation">setRotation</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L123">src/component/component.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L124">src/component/component.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1119,7 +1167,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#setscale">setScale</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L151">src/component/component.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L152">src/component/component.ts:152</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1158,7 +1206,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#setstatus">setStatus</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L345">src/component/component.ts:345</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L347">src/component/component.ts:347</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1182,7 +1230,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#settransform">setTransform</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L168">src/component/component.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L169">src/component/component.ts:169</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1221,7 +1269,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#setvisibility">setVisibility</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L334">src/component/component.ts:334</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L336">src/component/component.ts:336</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1254,7 +1302,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#updatematrix">updateMatrix</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L175">src/component/component.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L176">src/component/component.ts:176</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1272,7 +1320,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#updaterepresentations">updateRepresentations</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L306">src/component/component.ts:306</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L308">src/component/component.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1295,7 +1343,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="component.html">Component</a>.<a href="component.html#signals">signals</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L48">src/component/component.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L48">src/component/component.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1306,70 +1354,70 @@
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.disposed" class="tsd-anchor"></a>
 						<h3>disposed</h3>
-						<div class="tsd-signature tsd-kind-icon">disposed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">disposed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L55">src/component/component.ts:55</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L55">src/component/component.ts:55</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.matrixchanged" class="tsd-anchor"></a>
 						<h3>matrix<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">matrix<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">matrix<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L52">src/component/component.ts:52</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L52">src/component/component.ts:52</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.namechanged" class="tsd-anchor"></a>
 						<h3>name<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">name<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">name<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L54">src/component/component.ts:54</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L54">src/component/component.ts:54</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.representationadded" class="tsd-anchor"></a>
 						<h3>representation<wbr>Added</h3>
-						<div class="tsd-signature tsd-kind-icon">representation<wbr>Added<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">representation<wbr>Added<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L49">src/component/component.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L49">src/component/component.ts:49</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.representationremoved" class="tsd-anchor"></a>
 						<h3>representation<wbr>Removed</h3>
-						<div class="tsd-signature tsd-kind-icon">representation<wbr>Removed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">representation<wbr>Removed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L50">src/component/component.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L50">src/component/component.ts:50</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.statuschanged" class="tsd-anchor"></a>
 						<h3>status<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">status<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">status<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L53">src/component/component.ts:53</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L53">src/component/component.ts:53</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.visibilitychanged" class="tsd-anchor"></a>
 						<h3>visibility<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">visibility<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">visibility<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/component/component.ts#L51">src/component/component.ts:51</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/a1ce1c7/src/component/component.ts#L51">src/component/component.ts:51</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1404,6 +1452,9 @@
 								<a href="volumecomponent.html#matrix" class="tsd-kind-icon">matrix</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="volumecomponent.html#object" class="tsd-kind-icon">object</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="volumecomponent.html#parameters" class="tsd-kind-icon">parameters</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -1419,6 +1470,9 @@
 								<a href="volumecomponent.html#scale" class="tsd-kind-icon">scale</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="volumecomponent.html#stage" class="tsd-kind-icon">stage</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="volumecomponent.html#transform" class="tsd-kind-icon">transform</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -1426,6 +1480,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="volumecomponent.html#viewer" class="tsd-kind-icon">viewer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="volumecomponent.html#volume" class="tsd-kind-icon">volume</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="volumecomponent.html#defaultparameters" class="tsd-kind-icon">default<wbr>Parameters</a>
