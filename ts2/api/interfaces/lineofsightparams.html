@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TrajectoryParameters | ngl</title>
+	<title>LineOfSightParams | ngl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,42 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="trajectoryparameters.html">TrajectoryParameters</a>
+					<a href="lineofsightparams.html">LineOfSightParams</a>
 				</li>
 			</ul>
-			<h1>Interface TrajectoryParameters</h1>
+			<h1>Interface LineOfSightParams</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>example</dt>
-						<dd><p>trajectory.signals.frameChanged.add( function(i){ ... } );</p>
-						</dd>
-						<dt>typedef</dt>
-						<dd><p>{Object} TrajectorySignals</p>
-						</dd>
-						<dt>property</dt>
-						<dd><p>{Signal<Integer>} countChanged - when the frame count is changed</p>
-						</dd>
-						<dt>property</dt>
-						<dd><p>{Signal<Integer>} frameChanged - when the set frame is changed</p>
-						</dd>
-						<dt>property</dt>
-						<dd><p>{Signal<TrajectoryPlayer>} playerChanged - when the player is changed</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TrajectoryParameters</span>
+						<span class="target">LineOfSightParams</span>
 					</li>
 				</ul>
 			</section>
@@ -102,13 +81,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#centerpbc" class="tsd-kind-icon">center<wbr>Pbc</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#deltatime" class="tsd-kind-icon">delta<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#removepbc" class="tsd-kind-icon">remove<wbr>Pbc</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#removeperiodicity" class="tsd-kind-icon">remove<wbr>Periodicity</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#sele" class="tsd-kind-icon">sele</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#superpose" class="tsd-kind-icon">superpose</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trajectoryparameters.html#timeoffset" class="tsd-kind-icon">time<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lineofsightparams.html#lineofsightdistfactor" class="tsd-kind-icon">line<wbr>OfSight<wbr>Dist<wbr>Factor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lineofsightparams.html#mastermodelindex" class="tsd-kind-icon">master<wbr>Model<wbr>Index</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,72 +91,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="centerpbc" class="tsd-anchor"></a>
-					<h3>center<wbr>Pbc</h3>
-					<div class="tsd-signature tsd-kind-icon">center<wbr>Pbc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="lineofsightdistfactor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> line<wbr>OfSight<wbr>Dist<wbr>Factor</h3>
+					<div class="tsd-signature tsd-kind-icon">line<wbr>OfSight<wbr>Dist<wbr>Factor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L168">src/trajectory/trajectory.ts:168</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/chemistry/interactions/refine-contacts.ts#L15">src/chemistry/interactions/refine-contacts.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="deltatime" class="tsd-anchor"></a>
-					<h3>delta<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">delta<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="mastermodelindex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> master<wbr>Model<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">master<wbr>Model<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L165">src/trajectory/trajectory.ts:165</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="removepbc" class="tsd-anchor"></a>
-					<h3>remove<wbr>Pbc</h3>
-					<div class="tsd-signature tsd-kind-icon">remove<wbr>Pbc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L169">src/trajectory/trajectory.ts:169</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="removeperiodicity" class="tsd-anchor"></a>
-					<h3>remove<wbr>Periodicity</h3>
-					<div class="tsd-signature tsd-kind-icon">remove<wbr>Periodicity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L170">src/trajectory/trajectory.ts:170</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sele" class="tsd-anchor"></a>
-					<h3>sele</h3>
-					<div class="tsd-signature tsd-kind-icon">sele<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L167">src/trajectory/trajectory.ts:167</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="superpose" class="tsd-anchor"></a>
-					<h3>superpose</h3>
-					<div class="tsd-signature tsd-kind-icon">superpose<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L171">src/trajectory/trajectory.ts:171</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="timeoffset" class="tsd-anchor"></a>
-					<h3>time<wbr>Offset</h3>
-					<div class="tsd-signature tsd-kind-icon">time<wbr>Offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/trajectory/trajectory.ts#L166">src/trajectory/trajectory.ts:166</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/852a2e7/src/chemistry/interactions/refine-contacts.ts#L16">src/chemistry/interactions/refine-contacts.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -201,28 +125,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="trajectoryparameters.html" class="tsd-kind-icon">Trajectory<wbr>Parameters</a>
+						<a href="lineofsightparams.html" class="tsd-kind-icon">Line<wbr>OfSight<wbr>Params</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#centerpbc" class="tsd-kind-icon">center<wbr>Pbc</a>
+								<a href="lineofsightparams.html#lineofsightdistfactor" class="tsd-kind-icon">line<wbr>OfSight<wbr>Dist<wbr>Factor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#deltatime" class="tsd-kind-icon">delta<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#removepbc" class="tsd-kind-icon">remove<wbr>Pbc</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#removeperiodicity" class="tsd-kind-icon">remove<wbr>Periodicity</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#sele" class="tsd-kind-icon">sele</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#superpose" class="tsd-kind-icon">superpose</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trajectoryparameters.html#timeoffset" class="tsd-kind-icon">time<wbr>Offset</a>
+								<a href="lineofsightparams.html#mastermodelindex" class="tsd-kind-icon">master<wbr>Model<wbr>Index</a>
 							</li>
 						</ul>
 					</li>
