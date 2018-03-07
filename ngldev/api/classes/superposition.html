@@ -85,6 +85,23 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#a" class="tsd-kind-icon">A</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#r" class="tsd-kind-icon">R</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#u" class="tsd-kind-icon">U</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#v" class="tsd-kind-icon">V</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#vh" class="tsd-kind-icon">VH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#w" class="tsd-kind-icon">W</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="superposition.html#c" class="tsd-kind-icon">c</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#coords1t" class="tsd-kind-icon">coords1t</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#coords2t" class="tsd-kind-icon">coords2t</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#mean1" class="tsd-kind-icon">mean1</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="superposition.html#mean2" class="tsd-kind-icon">mean2</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="superposition.html#tmp" class="tsd-kind-icon">tmp</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="superposition.html#_superpose" class="tsd-kind-icon">_superpose</a></li>
@@ -101,22 +118,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Superposition<span class="tsd-signature-symbol">(</span>atoms1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, atoms2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="superposition.html" class="tsd-signature-type">Superposition</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Superposition<span class="tsd-signature-symbol">(</span>atoms1<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span>, atoms2<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="superposition.html" class="tsd-signature-type">Superposition</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/align/superposition.js#L13">src/align/superposition.js:13</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L29">src/align/superposition.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>atoms1: <span class="tsd-signature-type">any</span></h5>
+									<h5>atoms1: <a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
 								</li>
 								<li>
-									<h5>atoms2: <span class="tsd-signature-type">any</span></h5>
+									<h5>atoms2: <a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="superposition.html" class="tsd-signature-type">Superposition</a></h4>
@@ -125,27 +142,150 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="a" class="tsd-anchor"></a>
+					<h3>A</h3>
+					<div class="tsd-signature tsd-kind-icon">A<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L21">src/align/superposition.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="r" class="tsd-anchor"></a>
+					<h3>R</h3>
+					<div class="tsd-signature tsd-kind-icon">R<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L26">src/align/superposition.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="u" class="tsd-anchor"></a>
+					<h3>U</h3>
+					<div class="tsd-signature tsd-kind-icon">U<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L23">src/align/superposition.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="v" class="tsd-anchor"></a>
+					<h3>V</h3>
+					<div class="tsd-signature tsd-kind-icon">V<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L24">src/align/superposition.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vh" class="tsd-anchor"></a>
+					<h3>VH</h3>
+					<div class="tsd-signature tsd-kind-icon">VH<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L25">src/align/superposition.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="w" class="tsd-anchor"></a>
+					<h3>W</h3>
+					<div class="tsd-signature tsd-kind-icon">W<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(1, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L22">src/align/superposition.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="c" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> c</h3>
+					<div class="tsd-signature tsd-kind-icon">c<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L29">src/align/superposition.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="coords1t" class="tsd-anchor"></a>
+					<h3>coords1t</h3>
+					<div class="tsd-signature tsd-kind-icon">coords1t<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L15">src/align/superposition.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="coords2t" class="tsd-anchor"></a>
+					<h3>coords2t</h3>
+					<div class="tsd-signature tsd-kind-icon">coords2t<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L16">src/align/superposition.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mean1" class="tsd-anchor"></a>
+					<h3>mean1</h3>
+					<div class="tsd-signature tsd-kind-icon">mean1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L18">src/align/superposition.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mean2" class="tsd-anchor"></a>
+					<h3>mean2</h3>
+					<div class="tsd-signature tsd-kind-icon">mean2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L19">src/align/superposition.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="tmp" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> tmp</h3>
+					<div class="tsd-signature tsd-kind-icon">tmp<span class="tsd-signature-symbol">:</span> <a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> =&nbsp;new Matrix(3, 3)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L28">src/align/superposition.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="_superpose" class="tsd-anchor"></a>
 					<h3>_superpose</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_superpose<span class="tsd-signature-symbol">(</span>coords1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, coords2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">_superpose<span class="tsd-signature-symbol">(</span>coords1<span class="tsd-signature-symbol">: </span><a href="matrix.html" class="tsd-signature-type">Matrix</a>, coords2<span class="tsd-signature-symbol">: </span><a href="matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/align/superposition.js#L51">src/align/superposition.js:51</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L72">src/align/superposition.ts:72</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>coords1: <span class="tsd-signature-type">any</span></h5>
+									<h5>coords1: <a href="matrix.html" class="tsd-signature-type">Matrix</a></h5>
 								</li>
 								<li>
-									<h5>coords2: <span class="tsd-signature-type">any</span></h5>
+									<h5>coords2: <a href="matrix.html" class="tsd-signature-type">Matrix</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -156,22 +296,25 @@
 					<a name="prepcoords" class="tsd-anchor"></a>
 					<h3>prep<wbr>Coords</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">prep<wbr>Coords<span class="tsd-signature-symbol">(</span>atoms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, coords<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">prep<wbr>Coords<span class="tsd-signature-symbol">(</span>atoms<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span>, coords<span class="tsd-signature-symbol">: </span><a href="matrix.html" class="tsd-signature-type">Matrix</a>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/align/superposition.js#L76">src/align/superposition.js:76</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L97">src/align/superposition.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>atoms: <span class="tsd-signature-type">any</span></h5>
+									<h5>atoms: <a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
 								</li>
 								<li>
-									<h5>coords: <span class="tsd-signature-type">any</span></h5>
+									<h5>coords: <a href="matrix.html" class="tsd-signature-type">Matrix</a></h5>
+								</li>
+								<li>
+									<h5>n: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -182,19 +325,19 @@
 					<a name="transform" class="tsd-anchor"></a>
 					<h3>transform</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">transform<span class="tsd-signature-symbol">(</span>atoms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">transform<span class="tsd-signature-symbol">(</span>atoms<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/align/superposition.js#L95">src/align/superposition.js:95</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/align/superposition.ts#L119">src/align/superposition.ts:119</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>atoms: <span class="tsd-signature-type">any</span></h5>
+									<h5>atoms: <a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -220,6 +363,42 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="superposition.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#a" class="tsd-kind-icon">A</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#r" class="tsd-kind-icon">R</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#u" class="tsd-kind-icon">U</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#v" class="tsd-kind-icon">V</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#vh" class="tsd-kind-icon">VH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#w" class="tsd-kind-icon">W</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="superposition.html#c" class="tsd-kind-icon">c</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#coords1t" class="tsd-kind-icon">coords1t</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#coords2t" class="tsd-kind-icon">coords2t</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#mean1" class="tsd-kind-icon">mean1</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="superposition.html#mean2" class="tsd-kind-icon">mean2</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="superposition.html#tmp" class="tsd-kind-icon">tmp</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="superposition.html#_superpose" class="tsd-kind-icon">_superpose</a>

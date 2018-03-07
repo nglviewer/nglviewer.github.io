@@ -85,6 +85,14 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="residuemap.html#dict" class="tsd-kind-icon">dict</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="residuemap.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="residuemap.html#structure" class="tsd-kind-icon">structure</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="residuemap.html#add" class="tsd-kind-icon">add</a></li>
@@ -100,19 +108,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Residue<wbr>Map<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="residuemap.html" class="tsd-signature-type">ResidueMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Residue<wbr>Map<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="residuemap.html" class="tsd-signature-type">ResidueMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/store/residue-map.js#L18">src/store/residue-map.js:18</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/residue-map.ts#L22">src/store/residue-map.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="residuemap.html" class="tsd-signature-type">ResidueMap</a></h4>
@@ -121,39 +129,80 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dict" class="tsd-anchor"></a>
+					<h3>dict</h3>
+					<div class="tsd-signature tsd-kind-icon">dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/residue-map.ts#L21">src/store/residue-map.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="residuetype.html" class="tsd-signature-type">ResidueType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/residue-map.ts#L22">src/store/residue-map.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="structure" class="tsd-anchor"></a>
+					<h3>structure</h3>
+					<div class="tsd-signature tsd-kind-icon">structure<span class="tsd-signature-symbol">:</span> <a href="structure.html" class="tsd-signature-type">Structure</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/residue-map.ts#L24">src/store/residue-map.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>resname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, atomTypeIdList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, hetero<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, chemCompType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, bonds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>resname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, atomTypeIdList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, hetero<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, chemCompType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, bonds<span class="tsd-signature-symbol">?: </span><a href="../interfaces/residuebonds.html" class="tsd-signature-type">ResidueBonds</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/store/residue-map.js#L26">src/store/residue-map.js:26</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/residue-map.ts#L26">src/store/residue-map.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>resname: <span class="tsd-signature-type">any</span></h5>
+									<h5>resname: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>atomTypeIdList: <span class="tsd-signature-type">any</span></h5>
+									<h5>atomTypeIdList: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5>hetero: <span class="tsd-signature-type">any</span></h5>
+									<h5>hetero: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 								<li>
-									<h5>chemCompType: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> chemCompType: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></h5>
 								</li>
 								<li>
-									<h5>bonds: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> bonds: <a href="../interfaces/residuebonds.html" class="tsd-signature-type">ResidueBonds</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -161,22 +210,22 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">never</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="residuetype.html" class="tsd-signature-type">ResidueType</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/store/residue-map.js#L41">src/store/residue-map.js:41</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/residue-map.ts#L41">src/store/residue-map.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>id: <span class="tsd-signature-type">any</span></h5>
+									<h5>id: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">never</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="residuetype.html" class="tsd-signature-type">ResidueType</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -199,6 +248,15 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="residuemap.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="residuemap.html#dict" class="tsd-kind-icon">dict</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="residuemap.html#list" class="tsd-kind-icon">list</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="residuemap.html#structure" class="tsd-kind-icon">structure</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="residuemap.html#add" class="tsd-kind-icon">add</a>

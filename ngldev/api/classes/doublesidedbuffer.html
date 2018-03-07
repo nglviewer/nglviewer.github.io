@@ -108,9 +108,29 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#backbuffer" class="tsd-kind-icon">back<wbr>Buffer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#backmeshes" class="tsd-kind-icon">back<wbr>Meshes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#buffer" class="tsd-kind-icon">buffer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#frontbuffer" class="tsd-kind-icon">front<wbr>Buffer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#frontmeshes" class="tsd-kind-icon">front<wbr>Meshes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#geometry" class="tsd-kind-icon">geometry</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#group" class="tsd-kind-icon">group</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#picking" class="tsd-kind-icon">picking</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#pickinggroup" class="tsd-kind-icon">picking<wbr>Group</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#side" class="tsd-kind-icon">side</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#visible" class="tsd-kind-icon">visible</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#wireframe" class="tsd-kind-icon">wireframe</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="doublesidedbuffer.html#wireframegroup" class="tsd-kind-icon">wireframe<wbr>Group</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="doublesidedbuffer.html#matrix" class="tsd-kind-icon">matrix</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="doublesidedbuffer.html#parameters" class="tsd-kind-icon">parameters</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="doublesidedbuffer.html#pickable" class="tsd-kind-icon">pickable</a></li>
 							</ul>
 						</section>
@@ -119,10 +139,12 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#dispose" class="tsd-kind-icon">dispose</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#getmesh" class="tsd-kind-icon">get<wbr>Mesh</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#getparameters" class="tsd-kind-icon">get<wbr>Parameters</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#getpickingmesh" class="tsd-kind-icon">get<wbr>Picking<wbr>Mesh</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#getwireframemesh" class="tsd-kind-icon">get<wbr>Wireframe<wbr>Mesh</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#setattributes" class="tsd-kind-icon">set<wbr>Attributes</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#setparameters" class="tsd-kind-icon">set<wbr>Parameters</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="doublesidedbuffer.html#setvisibility" class="tsd-kind-icon">set<wbr>Visibility</a></li>
 							</ul>
 						</section>
 					</div>
@@ -140,7 +162,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L29">src/buffer/doublesided-buffer.js:29</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L48">src/buffer/doublesided-buffer.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -165,6 +187,149 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="backbuffer" class="tsd-anchor"></a>
+					<h3>back<wbr>Buffer</h3>
+					<div class="tsd-signature tsd-kind-icon">back<wbr>Buffer<span class="tsd-signature-symbol">:</span> <a href="buffer.html" class="tsd-signature-type">Buffer</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L48">src/buffer/doublesided-buffer.ts:48</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="backmeshes" class="tsd-anchor"></a>
+					<h3>back<wbr>Meshes</h3>
+					<div class="tsd-signature tsd-kind-icon">back<wbr>Meshes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">LineSegments</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Mesh</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L44">src/buffer/doublesided-buffer.ts:44</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="buffer" class="tsd-anchor"></a>
+					<h3>buffer</h3>
+					<div class="tsd-signature tsd-kind-icon">buffer<span class="tsd-signature-symbol">:</span> <a href="buffer.html" class="tsd-signature-type">Buffer</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L46">src/buffer/doublesided-buffer.ts:46</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="frontbuffer" class="tsd-anchor"></a>
+					<h3>front<wbr>Buffer</h3>
+					<div class="tsd-signature tsd-kind-icon">front<wbr>Buffer<span class="tsd-signature-symbol">:</span> <a href="buffer.html" class="tsd-signature-type">Buffer</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L47">src/buffer/doublesided-buffer.ts:47</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="frontmeshes" class="tsd-anchor"></a>
+					<h3>front<wbr>Meshes</h3>
+					<div class="tsd-signature tsd-kind-icon">front<wbr>Meshes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">LineSegments</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Mesh</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L43">src/buffer/doublesided-buffer.ts:43</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="geometry" class="tsd-anchor"></a>
+					<h3>geometry</h3>
+					<div class="tsd-signature tsd-kind-icon">geometry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BufferGeometry</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L35">src/buffer/doublesided-buffer.ts:35</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="group" class="tsd-anchor"></a>
+					<h3>group</h3>
+					<div class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Group</span><span class="tsd-signature-symbol"> =&nbsp;new Group()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L39">src/buffer/doublesided-buffer.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="picking" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> picking</h3>
+					<div class="tsd-signature tsd-kind-icon">picking<span class="tsd-signature-symbol">:</span> <a href="primitive.html#picker" class="tsd-signature-type">Picker</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L37">src/buffer/doublesided-buffer.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pickinggroup" class="tsd-anchor"></a>
+					<h3>picking<wbr>Group</h3>
+					<div class="tsd-signature tsd-kind-icon">picking<wbr>Group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Group</span><span class="tsd-signature-symbol"> =&nbsp;new Group()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L41">src/buffer/doublesided-buffer.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="side" class="tsd-anchor"></a>
+					<h3>side</h3>
+					<div class="tsd-signature tsd-kind-icon">side<span class="tsd-signature-symbol">:</span> <a href="../globals.html#bufferside" class="tsd-signature-type">BufferSide</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L32">src/buffer/doublesided-buffer.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L31">src/buffer/doublesided-buffer.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3>visible</h3>
+					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L33">src/buffer/doublesided-buffer.ts:33</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="wireframe" class="tsd-anchor"></a>
+					<h3>wireframe</h3>
+					<div class="tsd-signature tsd-kind-icon">wireframe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L34">src/buffer/doublesided-buffer.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="wireframegroup" class="tsd-anchor"></a>
+					<h3>wireframe<wbr>Group</h3>
+					<div class="tsd-signature tsd-kind-icon">wireframe<wbr>Group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Group</span><span class="tsd-signature-symbol"> =&nbsp;new Group()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L40">src/buffer/doublesided-buffer.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
 					<a name="matrix" class="tsd-anchor"></a>
@@ -177,7 +342,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L87">src/buffer/doublesided-buffer.js:87</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L98">src/buffer/doublesided-buffer.ts:98</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Matrix4</span></h4>
@@ -185,7 +350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L84">src/buffer/doublesided-buffer.js:84</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L95">src/buffer/doublesided-buffer.ts:95</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -199,6 +364,88 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="parameters" class="tsd-anchor"></a>
+					<h3>parameters</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> parameters<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L106">src/buffer/doublesided-buffer.ts:106</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>clip<wbr>Center<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>clip<wbr>Near<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>clip<wbr>Radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>depth<wbr>Write<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>diffuse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>diffuse<wbr>Interior<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>disable<wbr>Picking<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>flat<wbr>Shaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>force<wbr>Transparent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>interior<wbr>Color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>interior<wbr>Darkening<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>matrix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Matrix4</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>metalness<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>opacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>opaque<wbr>Back<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>roughness<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>side<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"double"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"front"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"back"</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>sort<wbr>Particles<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>use<wbr>Interior<wbr>Color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>wireframe<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="pickable" class="tsd-anchor"></a>
 					<h3>pickable</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
@@ -208,7 +455,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L91">src/buffer/doublesided-buffer.js:91</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L102">src/buffer/doublesided-buffer.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -228,7 +475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L161">src/buffer/doublesided-buffer.js:161</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L200">src/buffer/doublesided-buffer.ts:200</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -239,22 +486,104 @@
 					<a name="getmesh" class="tsd-anchor"></a>
 					<h3>get<wbr>Mesh</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Mesh<span class="tsd-signature-symbol">(</span>picking<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Mesh<span class="tsd-signature-symbol">(</span>picking<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L95">src/buffer/doublesided-buffer.js:95</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L116">src/buffer/doublesided-buffer.ts:116</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>picking: <span class="tsd-signature-type">any</span></h5>
+									<h5>picking: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getparameters" class="tsd-anchor"></a>
+					<h3>get<wbr>Parameters</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Parameters<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L110">src/buffer/doublesided-buffer.ts:110</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>clip<wbr>Center<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>clip<wbr>Near<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>clip<wbr>Radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>depth<wbr>Write<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>diffuse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>diffuse<wbr>Interior<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>disable<wbr>Picking<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>flat<wbr>Shaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>force<wbr>Transparent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>interior<wbr>Color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>interior<wbr>Darkening<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>matrix<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Matrix4</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>metalness<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>opacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>opaque<wbr>Back<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>roughness<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>side<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"double"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"front"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"back"</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>sort<wbr>Particles<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>use<wbr>Interior<wbr>Color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>wireframe<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -268,7 +597,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L118">src/buffer/doublesided-buffer.js:118</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L139">src/buffer/doublesided-buffer.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -285,7 +614,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L114">src/buffer/doublesided-buffer.js:114</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L135">src/buffer/doublesided-buffer.ts:135</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">LineSegments</span></h4>
@@ -302,7 +631,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L122">src/buffer/doublesided-buffer.js:122</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L143">src/buffer/doublesided-buffer.ts:143</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -325,13 +654,36 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/buffer/doublesided-buffer.js#L126">src/buffer/doublesided-buffer.js:126</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L147">src/buffer/doublesided-buffer.ts:147</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setvisibility" class="tsd-anchor"></a>
+					<h3>set<wbr>Visibility</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Visibility<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/buffer/doublesided-buffer.ts#L182">src/buffer/doublesided-buffer.ts:182</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -358,8 +710,53 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="doublesidedbuffer.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#backbuffer" class="tsd-kind-icon">back<wbr>Buffer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#backmeshes" class="tsd-kind-icon">back<wbr>Meshes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#buffer" class="tsd-kind-icon">buffer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#frontbuffer" class="tsd-kind-icon">front<wbr>Buffer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#frontmeshes" class="tsd-kind-icon">front<wbr>Meshes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#geometry" class="tsd-kind-icon">geometry</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#group" class="tsd-kind-icon">group</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#picking" class="tsd-kind-icon">picking</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#pickinggroup" class="tsd-kind-icon">picking<wbr>Group</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#side" class="tsd-kind-icon">side</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#visible" class="tsd-kind-icon">visible</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#wireframe" class="tsd-kind-icon">wireframe</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#wireframegroup" class="tsd-kind-icon">wireframe<wbr>Group</a>
+							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="doublesidedbuffer.html#matrix" class="tsd-kind-icon">matrix</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#parameters" class="tsd-kind-icon">parameters</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="doublesidedbuffer.html#pickable" class="tsd-kind-icon">pickable</a>
@@ -369,6 +766,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="doublesidedbuffer.html#getmesh" class="tsd-kind-icon">get<wbr>Mesh</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#getparameters" class="tsd-kind-icon">get<wbr>Parameters</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="doublesidedbuffer.html#getpickingmesh" class="tsd-kind-icon">get<wbr>Picking<wbr>Mesh</a>
@@ -381,6 +781,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="doublesidedbuffer.html#setparameters" class="tsd-kind-icon">set<wbr>Parameters</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="doublesidedbuffer.html#setvisibility" class="tsd-kind-icon">set<wbr>Visibility</a>
 							</li>
 						</ul>
 					</li>

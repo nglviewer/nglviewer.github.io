@@ -92,6 +92,13 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="assembly.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="assembly.html#partlist" class="tsd-kind-icon">part<wbr>List</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="assembly.html#type" class="tsd-kind-icon">type</a></li>
@@ -100,7 +107,6 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="assembly.html#_getcount" class="tsd-kind-icon">_get<wbr>Count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="assembly.html#addpart" class="tsd-kind-icon">add<wbr>Part</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="assembly.html#getatomcount" class="tsd-kind-icon">get<wbr>Atom<wbr>Count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="assembly.html#getboundingbox" class="tsd-kind-icon">get<wbr>Bounding<wbr>Box</a></li>
@@ -120,13 +126,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Assembly<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="assembly.html" class="tsd-signature-type">Assembly</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Assembly<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="assembly.html" class="tsd-signature-type">Assembly</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L23">src/symmetry/assembly.js:23</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L25">src/symmetry/assembly.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -134,7 +140,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>assembly name</p>
@@ -145,6 +151,34 @@
 							<h4 class="tsd-returns-title">Returns <a href="assembly.html" class="tsd-signature-type">Assembly</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L30">src/symmetry/assembly.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>assembly name</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="partlist" class="tsd-anchor"></a>
+					<h3>part<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">part<wbr>List<span class="tsd-signature-symbol">:</span> <a href="assemblypart.html" class="tsd-signature-type">AssemblyPart</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L25">src/symmetry/assembly.ts:25</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -159,7 +193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L32">src/symmetry/assembly.js:32</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L32">src/symmetry/assembly.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -170,42 +204,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_getcount" class="tsd-anchor"></a>
-					<h3>_get<wbr>Count</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_get<wbr>Count<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, methodName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L53">src/symmetry/assembly.js:53</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>methodName: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="addpart" class="tsd-anchor"></a>
 					<h3>add<wbr>Part</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Part<span class="tsd-signature-symbol">(</span>matrixList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Matrix4</span><span class="tsd-signature-symbol">[]</span>, chainList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="assemblypart.html" class="tsd-signature-type">AssemblyPart</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Part<span class="tsd-signature-symbol">(</span>matrixList<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Matrix4</span><span class="tsd-signature-symbol">[]</span>, chainList<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="assemblypart.html" class="tsd-signature-type">AssemblyPart</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L47">src/symmetry/assembly.js:47</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L47">src/symmetry/assembly.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -225,13 +233,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>matrixList: <span class="tsd-signature-type">Matrix4</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> matrixList: <span class="tsd-signature-type">Matrix4</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>array of 4x4 transformation matrices</p>
 									</div>
 								</li>
 								<li>
-									<h5>chainList: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> chainList: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>array of chain names</p>
 									</div>
@@ -246,13 +254,13 @@
 					<a name="getatomcount" class="tsd-anchor"></a>
 					<h3>get<wbr>Atom<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Atom<wbr>Count<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Atom<wbr>Count<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L68">src/symmetry/assembly.js:68</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L58">src/symmetry/assembly.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -263,13 +271,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the given structure</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<p>number of atoms in the assembly</p>
 						</li>
 					</ul>
@@ -278,19 +286,19 @@
 					<a name="getboundingbox" class="tsd-anchor"></a>
 					<h3>get<wbr>Bounding<wbr>Box</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Bounding<wbr>Box<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Box3</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Bounding<wbr>Box<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Box3</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L120">src/symmetry/assembly.js:120</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L114">src/symmetry/assembly.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Box3</span></h4>
@@ -301,19 +309,19 @@
 					<a name="getcenter" class="tsd-anchor"></a>
 					<h3>get<wbr>Center</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Center<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Center<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L132">src/symmetry/assembly.js:132</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L126">src/symmetry/assembly.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector3</span></h4>
@@ -324,13 +332,13 @@
 					<a name="getinstancecount" class="tsd-anchor"></a>
 					<h3>get<wbr>Instance<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Instance<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Instance<wbr>Count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L86">src/symmetry/assembly.js:86</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L80">src/symmetry/assembly.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -339,7 +347,7 @@
 									the number of transformations performed by the assembly</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<p>number of instances</p>
 						</li>
 					</ul>
@@ -348,13 +356,13 @@
 					<a name="getresiduecount" class="tsd-anchor"></a>
 					<h3>get<wbr>Residue<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Residue<wbr>Count<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Residue<wbr>Count<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L77">src/symmetry/assembly.js:77</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L69">src/symmetry/assembly.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -365,13 +373,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the given structure</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<p>number of residues in the assembly</p>
 						</li>
 					</ul>
@@ -386,7 +394,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L136">src/symmetry/assembly.js:136</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L130">src/symmetry/assembly.ts:130</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="selection.html" class="tsd-signature-type">Selection</a></h4>
@@ -397,13 +405,13 @@
 					<a name="isidentity" class="tsd-anchor"></a>
 					<h3>is<wbr>Identity</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Identity<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Identity<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/symmetry/assembly.js#L101">src/symmetry/assembly.js:101</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/symmetry/assembly.ts#L95">src/symmetry/assembly.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -414,7 +422,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the given structure</p>
 									</div>
@@ -445,11 +453,14 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="assembly.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="assembly.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="assembly.html#partlist" class="tsd-kind-icon">part<wbr>List</a>
+							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="assembly.html#type" class="tsd-kind-icon">type</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="assembly.html#_getcount" class="tsd-kind-icon">_get<wbr>Count</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="assembly.html#addpart" class="tsd-kind-icon">add<wbr>Part</a>

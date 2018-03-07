@@ -106,6 +106,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="spatialhash.html#eachwithin" class="tsd-kind-icon">each<wbr>Within</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="spatialhash.html#within" class="tsd-kind-icon">within</a></li>
 							</ul>
 						</section>
@@ -118,22 +119,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Spatial<wbr>Hash<span class="tsd-signature-symbol">(</span>atomStore<span class="tsd-signature-symbol">: </span><a href="atomstore.html" class="tsd-signature-type">AtomStore</a>, boundingBox<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Box3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="spatialhash.html" class="tsd-signature-type">SpatialHash</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Spatial<wbr>Hash<span class="tsd-signature-symbol">(</span>positions<span class="tsd-signature-symbol">: </span><a href="../globals.html#positions" class="tsd-signature-type">Positions</a>, boundingBox<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Box3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="spatialhash.html" class="tsd-signature-type">SpatialHash</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L28">src/geometry/spatial-hash.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L47">src/geometry/spatial-hash.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>atomStore: <a href="atomstore.html" class="tsd-signature-type">AtomStore</a></h5>
+									<h5>positions: <a href="../globals.html#positions" class="tsd-signature-type">Positions</a></h5>
 								</li>
 								<li>
-									<h5>boundingBox: <span class="tsd-signature-type">Box3</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> boundingBox: <span class="tsd-signature-type">Box3</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="spatialhash.html" class="tsd-signature-type">SpatialHash</a></h4>
@@ -149,7 +150,7 @@
 					<div class="tsd-signature tsd-kind-icon">boundX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L17">src/geometry/spatial-hash.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L36">src/geometry/spatial-hash.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -159,7 +160,7 @@
 					<div class="tsd-signature tsd-kind-icon">boundY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L18">src/geometry/spatial-hash.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L37">src/geometry/spatial-hash.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -169,7 +170,7 @@
 					<div class="tsd-signature tsd-kind-icon">boundZ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L19">src/geometry/spatial-hash.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L38">src/geometry/spatial-hash.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -179,7 +180,7 @@
 					<div class="tsd-signature tsd-kind-icon">bucket<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Int32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L24">src/geometry/spatial-hash.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L43">src/geometry/spatial-hash.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -189,7 +190,7 @@
 					<div class="tsd-signature tsd-kind-icon">bucket<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint16Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L22">src/geometry/spatial-hash.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L41">src/geometry/spatial-hash.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -199,7 +200,7 @@
 					<div class="tsd-signature tsd-kind-icon">bucket<wbr>Offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L23">src/geometry/spatial-hash.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L42">src/geometry/spatial-hash.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -209,7 +210,7 @@
 					<div class="tsd-signature tsd-kind-icon">exp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;3</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L11">src/geometry/spatial-hash.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L30">src/geometry/spatial-hash.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -219,7 +220,7 @@
 					<div class="tsd-signature tsd-kind-icon">grid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L21">src/geometry/spatial-hash.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L40">src/geometry/spatial-hash.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -229,7 +230,7 @@
 					<div class="tsd-signature tsd-kind-icon">minX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L13">src/geometry/spatial-hash.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L32">src/geometry/spatial-hash.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -239,7 +240,7 @@
 					<div class="tsd-signature tsd-kind-icon">minY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L14">src/geometry/spatial-hash.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L33">src/geometry/spatial-hash.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -249,43 +250,99 @@
 					<div class="tsd-signature tsd-kind-icon">minZ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L15">src/geometry/spatial-hash.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L34">src/geometry/spatial-hash.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="xarray" class="tsd-anchor"></a>
 					<h3>x<wbr>Array</h3>
-					<div class="tsd-signature tsd-kind-icon">x<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<div class="tsd-signature tsd-kind-icon">x<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L26">src/geometry/spatial-hash.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L45">src/geometry/spatial-hash.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="yarray" class="tsd-anchor"></a>
 					<h3>y<wbr>Array</h3>
-					<div class="tsd-signature tsd-kind-icon">y<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<div class="tsd-signature tsd-kind-icon">y<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L27">src/geometry/spatial-hash.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L46">src/geometry/spatial-hash.ts:46</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="zarray" class="tsd-anchor"></a>
 					<h3>z<wbr>Array</h3>
-					<div class="tsd-signature tsd-kind-icon">z<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<div class="tsd-signature tsd-kind-icon">z<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L28">src/geometry/spatial-hash.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L47">src/geometry/spatial-hash.ts:47</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="eachwithin" class="tsd-anchor"></a>
+					<h3>each<wbr>Within</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">each<wbr>Within<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L123">src/geometry/spatial-hash.ts:123</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>y: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>z: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>r: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>atomIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dSq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>atomIndex: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>dSq: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="within" class="tsd-anchor"></a>
 					<h3>within</h3>
@@ -296,7 +353,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/geometry/spatial-hash.ts#L96">src/geometry/spatial-hash.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/spatial-hash.ts#L115">src/geometry/spatial-hash.ts:115</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -379,6 +436,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="spatialhash.html#zarray" class="tsd-kind-icon">z<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="spatialhash.html#eachwithin" class="tsd-kind-icon">each<wbr>Within</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="spatialhash.html#within" class="tsd-kind-icon">within</a>

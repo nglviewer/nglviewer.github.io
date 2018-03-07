@@ -85,6 +85,14 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="atommap.html#dict" class="tsd-kind-icon">dict</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="atommap.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="atommap.html#structure" class="tsd-kind-icon">structure</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="atommap.html#add" class="tsd-kind-icon">add</a></li>
@@ -100,19 +108,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Atom<wbr>Map<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="atommap.html" class="tsd-signature-type">AtomMap</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Atom<wbr>Map<span class="tsd-signature-symbol">(</span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="atommap.html" class="tsd-signature-type">AtomMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/store/atom-map.js#L14">src/store/atom-map.js:14</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/atom-map.ts#L17">src/store/atom-map.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="atommap.html" class="tsd-signature-type">AtomMap</a></h4>
@@ -121,30 +129,71 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dict" class="tsd-anchor"></a>
+					<h3>dict</h3>
+					<div class="tsd-signature tsd-kind-icon">dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/atom-map.ts#L16">src/store/atom-map.ts:16</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<div class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">:</span> <a href="atomtype.html" class="tsd-signature-type">AtomType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/atom-map.ts#L17">src/store/atom-map.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="structure" class="tsd-anchor"></a>
+					<h3>structure</h3>
+					<div class="tsd-signature tsd-kind-icon">structure<span class="tsd-signature-symbol">:</span> <a href="structure.html" class="tsd-signature-type">Structure</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/atom-map.ts#L19">src/store/atom-map.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>atomname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>atomname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, element<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/store/atom-map.js#L22">src/store/atom-map.js:22</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/atom-map.ts#L23">src/store/atom-map.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>atomname: <span class="tsd-signature-type">any</span></h5>
+									<h5>atomname: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>element: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> element: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -152,22 +201,22 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">never</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="atomtype.html" class="tsd-signature-type">AtomType</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/store/atom-map.js#L40">src/store/atom-map.js:40</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/store/atom-map.ts#L41">src/store/atom-map.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>id: <span class="tsd-signature-type">any</span></h5>
+									<h5>id: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">never</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="atomtype.html" class="tsd-signature-type">AtomType</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -190,6 +239,15 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="atommap.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="atommap.html#dict" class="tsd-kind-icon">dict</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="atommap.html#list" class="tsd-kind-icon">list</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="atommap.html#structure" class="tsd-kind-icon">structure</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="atommap.html#add" class="tsd-kind-icon">add</a>

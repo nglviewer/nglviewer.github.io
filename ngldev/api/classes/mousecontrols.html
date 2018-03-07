@@ -92,6 +92,15 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mousecontrols.html#actionlist" class="tsd-kind-icon">action<wbr>List</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mousecontrols.html#disabled" class="tsd-kind-icon">disabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mousecontrols.html#mouse" class="tsd-kind-icon">mouse</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mousecontrols.html#stage" class="tsd-kind-icon">stage</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mousecontrols.html#add" class="tsd-kind-icon">add</a></li>
@@ -110,13 +119,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Mouse<wbr>Controls<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mousecontrols.html" class="tsd-signature-type">MouseControls</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Mouse<wbr>Controls<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><a href="stage.html" class="tsd-signature-type">Stage</a>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/mousecontrolsparams.html" class="tsd-signature-type">MouseControlsParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mousecontrols.html" class="tsd-signature-type">MouseControls</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/mouse-controls.js#L72">src/controls/mouse-controls.js:72</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L92">src/controls/mouse-controls.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -124,7 +133,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>stage: <span class="tsd-signature-type">any</span></h5>
+									<h5>stage: <a href="stage.html" class="tsd-signature-type">Stage</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>the stage object</p>
@@ -132,7 +141,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../interfaces/mousecontrolsparams.html" class="tsd-signature-type">MouseControlsParams</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="mousecontrols.html" class="tsd-signature-type">MouseControls</a></h4>
@@ -141,18 +150,66 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="actionlist" class="tsd-anchor"></a>
+					<h3>action<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">action<wbr>List<span class="tsd-signature-symbol">:</span> <a href="../interfaces/mouseaction.html" class="tsd-signature-type">MouseAction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L89">src/controls/mouse-controls.ts:89</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="disabled" class="tsd-anchor"></a>
+					<h3>disabled</h3>
+					<div class="tsd-signature tsd-kind-icon">disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L92">src/controls/mouse-controls.ts:92</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mouse" class="tsd-anchor"></a>
+					<h3>mouse</h3>
+					<div class="tsd-signature tsd-kind-icon">mouse<span class="tsd-signature-symbol">:</span> <a href="mouseobserver.html" class="tsd-signature-type">MouseObserver</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L90">src/controls/mouse-controls.ts:90</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="stage" class="tsd-anchor"></a>
+					<h3>stage</h3>
+					<div class="tsd-signature tsd-kind-icon">stage<span class="tsd-signature-symbol">:</span> <a href="stage.html" class="tsd-signature-type">Stage</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L100">src/controls/mouse-controls.ts:100</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the stage object</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>triggerStr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>triggerStr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mouseactioncallback" class="tsd-signature-type">MouseActionCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/mouse-controls.js#L130">src/controls/mouse-controls.js:130</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L141">src/controls/mouse-controls.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -186,13 +243,13 @@
 									</div>
 								</li>
 								<li>
-									<h5>callback: <span class="tsd-signature-type">any</span></h5>
+									<h5>callback: <a href="../globals.html#mouseactioncallback" class="tsd-signature-type">MouseActionCallback</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the callback function for the action</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -200,13 +257,13 @@
 					<a name="clear" class="tsd-anchor"></a>
 					<h3>clear</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/mouse-controls.js#L192">src/controls/mouse-controls.js:192</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L203">src/controls/mouse-controls.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -214,7 +271,7 @@
 									<p>Remove all mouse actions</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -222,13 +279,13 @@
 					<a name="preset" class="tsd-anchor"></a>
 					<h3>preset</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">preset<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">preset<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><a href="../globals.html#mousecontrolpreset" class="tsd-signature-type">MouseControlPreset</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/mouse-controls.js#L180">src/controls/mouse-controls.js:180</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L191">src/controls/mouse-controls.ts:191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -239,13 +296,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<h5>name: <a href="../globals.html#mousecontrolpreset" class="tsd-signature-type">MouseControlPreset</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>one of &quot;default&quot;, &quot;pymol&quot;, &quot;coot&quot;</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -253,13 +310,13 @@
 					<a name="remove" class="tsd-anchor"></a>
 					<h3>remove</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>triggerStr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>triggerStr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mouseactioncallback" class="tsd-signature-type">MouseActionCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/mouse-controls.js#L159">src/controls/mouse-controls.js:159</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L170">src/controls/mouse-controls.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -294,10 +351,10 @@
 									</div>
 								</li>
 								<li>
-									<h5>callback: <span class="tsd-signature-type">Function</span></h5>
+									<h5>callback: <a href="../globals.html#mouseactioncallback" class="tsd-signature-type">MouseActionCallback</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -305,19 +362,19 @@
 					<a name="run" class="tsd-anchor"></a>
 					<h3>run</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../globals.html#mouseactiontype" class="tsd-signature-type">MouseActionType</a>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/mouse-controls.js#L95">src/controls/mouse-controls.js:95</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/mouse-controls.ts#L106">src/controls/mouse-controls.ts:106</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">any</span></h5>
+									<h5>type: <a href="../globals.html#mouseactiontype" class="tsd-signature-type">MouseActionType</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
@@ -346,6 +403,18 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="mousecontrols.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mousecontrols.html#actionlist" class="tsd-kind-icon">action<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mousecontrols.html#disabled" class="tsd-kind-icon">disabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mousecontrols.html#mouse" class="tsd-kind-icon">mouse</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mousecontrols.html#stage" class="tsd-kind-icon">stage</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mousecontrols.html#add" class="tsd-kind-icon">add</a>

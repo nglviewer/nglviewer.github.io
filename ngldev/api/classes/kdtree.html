@@ -1,0 +1,585 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Kdtree | ngl</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">ngl</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="kdtree.html">Kdtree</a>
+				</li>
+			</ul>
+			<h1>Class Kdtree</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Kdtree</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd></dd>
+						<dt>author</dt>
+						<dd><p>Alexander Rose <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#97;&#x6c;&#101;&#120;&#x61;&#110;&#x64;&#x65;&#114;&#46;&#114;&#111;&#115;&#x65;&#64;&#119;&#101;&#105;&#114;&#x64;&#98;&#121;&#116;&#101;&#46;&#100;&#101;">&#97;&#x6c;&#101;&#120;&#x61;&#110;&#x64;&#x65;&#114;&#46;&#114;&#111;&#115;&#x65;&#64;&#119;&#101;&#105;&#114;&#x64;&#98;&#121;&#116;&#101;&#46;&#100;&#101;</a>, 2016</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Roman Bolzern <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#114;&#x6f;&#109;&#97;&#110;&#46;&#98;&#111;&#108;&#122;&#x65;&#x72;&#110;&#64;&#x66;&#104;&#x6e;&#x77;&#x2e;&#x63;&#104;">&#114;&#x6f;&#109;&#97;&#110;&#46;&#98;&#111;&#108;&#122;&#x65;&#x72;&#110;&#64;&#x66;&#104;&#x6e;&#x77;&#x2e;&#x63;&#104;</a>, 2013</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>I4DS <a href="http://www.fhnw.ch/i4ds">http://www.fhnw.ch/i4ds</a>, 2013</p>
+						</dd>
+						<dt>license</dt>
+						<dd><p>MIT License <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></p>
+						</dd>
+						<dt>description</dt>
+						<dd><p>k-d Tree for typed arrays of 3d points (e.g. for Float32Array), in-place
+							provides fast nearest neighbour search</p>
+							<p>Based on <a href="https://github.com/ubilabs/kd-tree-javascript">https://github.com/ubilabs/kd-tree-javascript</a> by Ubilabs</p>
+							<p>Further information (including mathematical properties)
+								<a href="http://en.wikipedia.org/wiki/Binary_tree">http://en.wikipedia.org/wiki/Binary_tree</a>
+							<a href="http://en.wikipedia.org/wiki/K-d_tree">http://en.wikipedia.org/wiki/K-d_tree</a></p>
+						</dd>
+						<dt>example</dt>
+						<dd><p>points: [x, y, z, x, y, z, x, y, z, ...]
+								metric: function(a, b){
+								return Math.pow(a[0]-b[0], 2) + Math.pow(a[1]-b[1], 2) + Math.pow(a[2]-b[2], 2);
+							}</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>points</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>metric</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Kdtree</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="kdtree.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#atomindices" class="tsd-kind-icon">atom<wbr>Indices</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#currentnode" class="tsd-kind-icon">current<wbr>Node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#indices" class="tsd-kind-icon">indices</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#kdtree-1" class="tsd-kind-icon">kdtree</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#maxdepth" class="tsd-kind-icon">max<wbr>Depth</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#metric" class="tsd-kind-icon">metric</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#nodes" class="tsd-kind-icon">nodes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#points" class="tsd-kind-icon">points</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="kdtree.html#rootindex" class="tsd-kind-icon">root<wbr>Index</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="kdtree.html#buildtree" class="tsd-kind-icon">build<wbr>Tree</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="kdtree.html#getnodedepth" class="tsd-kind-icon">get<wbr>Node<wbr>Depth</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="kdtree.html#nearest" class="tsd-kind-icon">nearest</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="kdtree.html#verify" class="tsd-kind-icon">verify</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Kdtree<span class="tsd-signature-symbol">(</span>points<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, metric<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="kdtree.html" class="tsd-signature-type">Kdtree</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L42">src/utils/kdtree.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>points: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>metric: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a>, b<span class="tsd-signature-symbol">: </span><a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a></h5>
+														</li>
+														<li>
+															<h5>b: <a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="kdtree.html" class="tsd-signature-type">Kdtree</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="atomindices" class="tsd-anchor"></a>
+					<h3>atom<wbr>Indices</h3>
+					<div class="tsd-signature tsd-kind-icon">atom<wbr>Indices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/kdtree.ts#L30">src/geometry/kdtree.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentnode" class="tsd-anchor"></a>
+					<h3>current<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L42">src/utils/kdtree.ts:42</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="indices" class="tsd-anchor"></a>
+					<h3>indices</h3>
+					<div class="tsd-signature tsd-kind-icon">indices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L37">src/utils/kdtree.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="kdtree-1" class="tsd-anchor"></a>
+					<h3>kdtree</h3>
+					<div class="tsd-signature tsd-kind-icon">kdtree<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">_Kdtree</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/kdtree.ts#L31">src/geometry/kdtree.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="maxdepth" class="tsd-anchor"></a>
+					<h3>max<wbr>Depth</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Depth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L41">src/utils/kdtree.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="metric" class="tsd-anchor"></a>
+					<h3>metric</h3>
+					<div class="tsd-signature tsd-kind-icon">metric<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L44">src/utils/kdtree.ts:44</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a>, b<span class="tsd-signature-symbol">: </span><a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>a: <a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a></h5>
+											</li>
+											<li>
+												<h5>b: <a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="nodes" class="tsd-anchor"></a>
+					<h3>nodes</h3>
+					<div class="tsd-signature tsd-kind-icon">nodes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Int32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L38">src/utils/kdtree.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="points" class="tsd-anchor"></a>
+					<h3>points</h3>
+					<div class="tsd-signature tsd-kind-icon">points<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L44">src/utils/kdtree.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/geometry/kdtree.ts#L29">src/geometry/kdtree.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rootindex" class="tsd-anchor"></a>
+					<h3>root<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">root<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L39">src/utils/kdtree.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="buildtree" class="tsd-anchor"></a>
+					<h3>build<wbr>Tree</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Tree<span class="tsd-signature-symbol">(</span>depth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, arrBegin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, arrEnd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L56">src/utils/kdtree.ts:56</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>depth: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>parent: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>arrBegin: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>arrEnd: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnodedepth" class="tsd-anchor"></a>
+					<h3>get<wbr>Node<wbr>Depth</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Node<wbr>Depth<span class="tsd-signature-symbol">(</span>nodeIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L128">src/utils/kdtree.ts:128</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nodeIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="nearest" class="tsd-anchor"></a>
+					<h3>nearest</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">nearest<span class="tsd-signature-symbol">(</span>point<span class="tsd-signature-symbol">: </span><a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a>, maxNodes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, maxDistance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L143">src/utils/kdtree.ts:143</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>find nearest points</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>point: <a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>array of size 3</p>
+									</div>
+								</li>
+								<li>
+									<h5>maxNodes: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>max amount of nodes to return</p>
+									</div>
+								</li>
+								<li>
+									<h5>maxDistance: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>maximum distance of point to result nodes</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>array of point, distance pairs</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="verify" class="tsd-anchor"></a>
+					<h3>verify</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">verify<span class="tsd-signature-symbol">(</span>nodeIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, depth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/utils/kdtree.ts#L237">src/utils/kdtree.ts:237</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nodeIndex: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> depth: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="kdtree.html" class="tsd-kind-icon">Kdtree</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="kdtree.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#atomindices" class="tsd-kind-icon">atom<wbr>Indices</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#currentnode" class="tsd-kind-icon">current<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#indices" class="tsd-kind-icon">indices</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#kdtree-1" class="tsd-kind-icon">kdtree</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#maxdepth" class="tsd-kind-icon">max<wbr>Depth</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#metric" class="tsd-kind-icon">metric</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#nodes" class="tsd-kind-icon">nodes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#points" class="tsd-kind-icon">points</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="kdtree.html#rootindex" class="tsd-kind-icon">root<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="kdtree.html#buildtree" class="tsd-kind-icon">build<wbr>Tree</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="kdtree.html#getnodedepth" class="tsd-kind-icon">get<wbr>Node<wbr>Depth</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="kdtree.html#nearest" class="tsd-kind-icon">nearest</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="kdtree.html#verify" class="tsd-kind-icon">verify</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

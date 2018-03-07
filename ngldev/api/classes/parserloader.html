@@ -95,16 +95,17 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="parserloader.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="parserloader.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="parserloader.html#parameters" class="tsd-kind-icon">parameters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="parserloader.html#parserparams" class="tsd-kind-icon">parser<wbr>Params</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="parserloader.html#streamer" class="tsd-kind-icon">streamer</a></li>
 							</ul>
 						</section>
@@ -117,44 +118,29 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Parser<wbr>Loader<span class="tsd-signature-symbol">(</span>src<span class="tsd-signature-symbol">: </span><a href="../globals.html#loaderinput" class="tsd-signature-type">LoaderInput</a>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/loaderparameters.html" class="tsd-signature-type">LoaderParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="parserloader.html" class="tsd-signature-type">ParserLoader</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Parser<wbr>Loader<span class="tsd-signature-symbol">(</span>src<span class="tsd-signature-symbol">: </span><a href="../globals.html#loaderinput" class="tsd-signature-type">LoaderInput</a>, params<span class="tsd-signature-symbol">?: </span><a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/loaderparameters.html" class="tsd-signature-type">LoaderParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/parserparams.html" class="tsd-signature-type">ParserParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="parserloader.html" class="tsd-signature-type">ParserLoader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="loader.html">Loader</a>.<a href="loader.html#constructor">constructor</a></p>
+								<p>Overrides <a href="loader.html">Loader</a>.<a href="loader.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/loader/loader.ts#L28">src/loader/loader.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/loader/parser-loader.ts#L25">src/loader/parser-loader.ts:25</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Construct a loader object</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>src: <a href="../globals.html#loaderinput" class="tsd-signature-type">LoaderInput</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>data source, string is interpreted as an URL</p>
-										</div>
-									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/loaderparameters.html" class="tsd-signature-type">LoaderParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>parameters object</p>
-										</div>
-									</div>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../globals.html#partial" class="tsd-signature-type">Partial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/loaderparameters.html" class="tsd-signature-type">LoaderParameters</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/parserparams.html" class="tsd-signature-type">ParserParams</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="parserloader.html" class="tsd-signature-type">ParserLoader</a></h4>
@@ -162,7 +148,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="parameters" class="tsd-anchor"></a>
@@ -171,7 +157,17 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="loader.html">Loader</a>.<a href="loader.html#parameters">parameters</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/loader/loader.ts#L27">src/loader/loader.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/loader/loader.ts#L27">src/loader/loader.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="parserparams" class="tsd-anchor"></a>
+					<h3>parser<wbr>Params</h3>
+					<div class="tsd-signature tsd-kind-icon">parser<wbr>Params<span class="tsd-signature-symbol">:</span> <a href="../interfaces/parserparams.html" class="tsd-signature-type">ParserParams</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/loader/parser-loader.ts#L25">src/loader/parser-loader.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -182,7 +178,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="loader.html">Loader</a>.<a href="loader.html#streamer">streamer</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/loader/loader.ts#L28">src/loader/loader.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/loader/loader.ts#L28">src/loader/loader.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -200,7 +196,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="loader.html">Loader</a>.<a href="loader.html#load">load</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/loader/parser-loader.ts#L20">src/loader/parser-loader.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/loader/parser-loader.ts#L44">src/loader/parser-loader.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -231,11 +227,14 @@
 					<li class="current tsd-kind-class">
 						<a href="parserloader.html" class="tsd-kind-icon">Parser<wbr>Loader</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="parserloader.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="parserloader.html#parameters" class="tsd-kind-icon">parameters</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="parserloader.html#parserparams" class="tsd-kind-icon">parser<wbr>Params</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="parserloader.html#streamer" class="tsd-kind-icon">streamer</a>

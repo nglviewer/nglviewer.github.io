@@ -92,6 +92,14 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="keycontrols.html#actionlist" class="tsd-kind-icon">action<wbr>List</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="keycontrols.html#disabled" class="tsd-kind-icon">disabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="keycontrols.html#stage" class="tsd-kind-icon">stage</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="keycontrols.html#add" class="tsd-kind-icon">add</a></li>
@@ -110,13 +118,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Key<wbr>Controls<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="keycontrols.html" class="tsd-signature-type">KeyControls</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Key<wbr>Controls<span class="tsd-signature-symbol">(</span>stage<span class="tsd-signature-symbol">: </span><a href="stage.html" class="tsd-signature-type">Stage</a>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/keycontrolsparams.html" class="tsd-signature-type">KeyControlsParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="keycontrols.html" class="tsd-signature-type">KeyControls</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/key-controls.js#L12">src/controls/key-controls.js:12</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L27">src/controls/key-controls.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -124,7 +132,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>stage: <span class="tsd-signature-type">any</span></h5>
+									<h5>stage: <a href="stage.html" class="tsd-signature-type">Stage</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>the stage object</p>
@@ -132,7 +140,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../interfaces/keycontrolsparams.html" class="tsd-signature-type">KeyControlsParams</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="keycontrols.html" class="tsd-signature-type">KeyControls</a></h4>
@@ -141,18 +149,56 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="actionlist" class="tsd-anchor"></a>
+					<h3>action<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">action<wbr>List<span class="tsd-signature-symbol">:</span> <a href="../interfaces/keyaction.html" class="tsd-signature-type">KeyAction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L25">src/controls/key-controls.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="disabled" class="tsd-anchor"></a>
+					<h3>disabled</h3>
+					<div class="tsd-signature tsd-kind-icon">disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L27">src/controls/key-controls.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="stage" class="tsd-anchor"></a>
+					<h3>stage</h3>
+					<div class="tsd-signature tsd-kind-icon">stage<span class="tsd-signature-symbol">:</span> <a href="stage.html" class="tsd-signature-type">Stage</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L35">src/controls/key-controls.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the stage object</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>char<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>char<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#keyactioncallback" class="tsd-signature-type">KeyActionCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/key-controls.js#L57">src/controls/key-controls.js:57</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L63">src/controls/key-controls.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -171,19 +217,19 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>char: <span class="tsd-signature-type">any</span></h5>
+									<h5>char: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the key/character</p>
 									</div>
 								</li>
 								<li>
-									<h5>callback: <span class="tsd-signature-type">Function</span></h5>
+									<h5>callback: <a href="../globals.html#keyactioncallback" class="tsd-signature-type">KeyActionCallback</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the callback function for the action</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -191,13 +237,13 @@
 					<a name="clear" class="tsd-anchor"></a>
 					<h3>clear</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/key-controls.js#L109">src/controls/key-controls.js:109</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L115">src/controls/key-controls.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,7 +251,7 @@
 									<p>Remove all key actions</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -213,13 +259,13 @@
 					<a name="preset" class="tsd-anchor"></a>
 					<h3>preset</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">preset<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">preset<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><a href="../globals.html#keycontrolpreset" class="tsd-signature-type">KeyControlPreset</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/key-controls.js#L97">src/controls/key-controls.js:97</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L103">src/controls/key-controls.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -230,13 +276,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<h5>name: <a href="../globals.html#keycontrolpreset" class="tsd-signature-type">KeyControlPreset</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>one of &quot;default&quot;</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -244,13 +290,13 @@
 					<a name="remove" class="tsd-anchor"></a>
 					<h3>remove</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>char<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>char<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#keyactioncallback" class="tsd-signature-type">KeyActionCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/key-controls.js#L79">src/controls/key-controls.js:79</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L85">src/controls/key-controls.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -272,16 +318,16 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>char: <span class="tsd-signature-type">any</span></h5>
+									<h5>char: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the key/character</p>
 									</div>
 								</li>
 								<li>
-									<h5>callback: <span class="tsd-signature-type">Function</span></h5>
+									<h5>callback: <a href="../globals.html#keyactioncallback" class="tsd-signature-type">KeyActionCallback</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -289,19 +335,19 @@
 					<a name="run" class="tsd-anchor"></a>
 					<h3>run</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>keyCode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>keyCode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/key-controls.js#L34">src/controls/key-controls.js:34</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/key-controls.ts#L40">src/controls/key-controls.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>keyCode: <span class="tsd-signature-type">any</span></h5>
+									<h5>keyCode: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -327,6 +373,15 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="keycontrols.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="keycontrols.html#actionlist" class="tsd-kind-icon">action<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="keycontrols.html#disabled" class="tsd-kind-icon">disabled</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="keycontrols.html#stage" class="tsd-kind-icon">stage</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="keycontrols.html#add" class="tsd-kind-icon">add</a>

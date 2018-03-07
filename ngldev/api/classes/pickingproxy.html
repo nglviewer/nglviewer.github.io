@@ -92,6 +92,17 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickingproxy.html#controls" class="tsd-kind-icon">controls</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickingproxy.html#instance" class="tsd-kind-icon">instance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickingproxy.html#mouse" class="tsd-kind-icon">mouse</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickingproxy.html#picker" class="tsd-kind-icon">picker</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickingproxy.html#pid" class="tsd-kind-icon">pid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickingproxy.html#stage" class="tsd-kind-icon">stage</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#altkey" class="tsd-kind-icon">alt<wbr>Key</a></li>
@@ -102,6 +113,7 @@
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#box" class="tsd-kind-icon">box</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#canvasposition" class="tsd-kind-icon">canvas<wbr>Position</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#clash" class="tsd-kind-icon">clash</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#closeatom" class="tsd-kind-icon">close<wbr>Atom</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#closestbondatom" class="tsd-kind-icon">closest<wbr>Bond<wbr>Atom</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#component" class="tsd-kind-icon">component</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#cone" class="tsd-kind-icon">cone</a></li>
@@ -114,6 +126,7 @@
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#metakey" class="tsd-kind-icon">meta<wbr>Key</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#object" class="tsd-kind-icon">object</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#octahedron" class="tsd-kind-icon">octahedron</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#point" class="tsd-kind-icon">point</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#position" class="tsd-kind-icon">position</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#shiftkey" class="tsd-kind-icon">shift<wbr>Key</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#slice" class="tsd-kind-icon">slice</a></li>
@@ -125,6 +138,7 @@
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#unitcell" class="tsd-kind-icon">unitcell</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#unknown" class="tsd-kind-icon">unknown</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#volume" class="tsd-kind-icon">volume</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="pickingproxy.html#wideline" class="tsd-kind-icon">wideline</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -143,13 +157,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Picking<wbr>Proxy<span class="tsd-signature-symbol">(</span>pickingData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, stage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pickingproxy.html" class="tsd-signature-type">PickingProxy</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Picking<wbr>Proxy<span class="tsd-signature-symbol">(</span>pickingData<span class="tsd-signature-symbol">: </span><a href="../interfaces/pickingdata.html" class="tsd-signature-type">PickingData</a>, stage<span class="tsd-signature-symbol">: </span><a href="stage.html" class="tsd-signature-type">Stage</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pickingproxy.html" class="tsd-signature-type">PickingProxy</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L25">src/controls/picking-proxy.js:25</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L64">src/controls/picking-proxy.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -160,17 +174,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pickingData: <span class="tsd-signature-type">object</span></h5>
+									<h5>pickingData: <a href="../interfaces/pickingdata.html" class="tsd-signature-type">PickingData</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>picking data</p>
 										</div>
 									</div>
-									<ul class="tsd-parameters">
-									</ul>
 								</li>
 								<li>
-									<h5>stage: <span class="tsd-signature-type">any</span></h5>
+									<h5>stage: <a href="stage.html" class="tsd-signature-type">Stage</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>stage object</p>
@@ -184,18 +196,86 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="controls" class="tsd-anchor"></a>
+					<h3>controls</h3>
+					<div class="tsd-signature tsd-kind-icon">controls<span class="tsd-signature-symbol">:</span> <a href="viewercontrols.html" class="tsd-signature-type">ViewerControls</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L63">src/controls/picking-proxy.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="instance" class="tsd-anchor"></a>
+					<h3>instance</h3>
+					<div class="tsd-signature tsd-kind-icon">instance<span class="tsd-signature-symbol">:</span> <a href="../interfaces/instancedata.html" class="tsd-signature-type">InstanceData</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L62">src/controls/picking-proxy.ts:62</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mouse" class="tsd-anchor"></a>
+					<h3>mouse</h3>
+					<div class="tsd-signature tsd-kind-icon">mouse<span class="tsd-signature-symbol">:</span> <a href="mouseobserver.html" class="tsd-signature-type">MouseObserver</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L64">src/controls/picking-proxy.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="picker" class="tsd-anchor"></a>
+					<h3>picker</h3>
+					<div class="tsd-signature tsd-kind-icon">picker<span class="tsd-signature-symbol">:</span> <a href="picker.html" class="tsd-signature-type">Picker</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L61">src/controls/picking-proxy.ts:61</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pid" class="tsd-anchor"></a>
+					<h3>pid</h3>
+					<div class="tsd-signature tsd-kind-icon">pid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L60">src/controls/picking-proxy.ts:60</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="stage" class="tsd-anchor"></a>
+					<h3>stage</h3>
+					<div class="tsd-signature tsd-kind-icon">stage<span class="tsd-signature-symbol">:</span> <a href="stage.html" class="tsd-signature-type">Stage</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L71">src/controls/picking-proxy.ts:71</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>stage object</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="altkey" class="tsd-anchor"></a>
 					<h3>alt<wbr>Key</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> altKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> altKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L64">src/controls/picking-proxy.js:64</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L104">src/controls/picking-proxy.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -208,7 +288,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -216,13 +296,13 @@
 					<a name="arrow" class="tsd-anchor"></a>
 					<h3>arrow</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> arrow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> arrow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L131">src/controls/picking-proxy.js:131</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L201">src/controls/picking-proxy.ts:201</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -232,7 +312,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -240,13 +320,13 @@
 					<a name="atom" class="tsd-anchor"></a>
 					<h3>atom</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> atom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> atom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L135">src/controls/picking-proxy.js:135</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L205">src/controls/picking-proxy.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,7 +336,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -270,7 +350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L139">src/controls/picking-proxy.js:139</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L209">src/controls/picking-proxy.ts:209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -288,13 +368,13 @@
 					<a name="bond" class="tsd-anchor"></a>
 					<h3>bond</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> bond<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> bond<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="bondproxy.html" class="tsd-signature-type">BondProxy</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L143">src/controls/picking-proxy.js:143</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L213">src/controls/picking-proxy.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -304,7 +384,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="bondproxy.html" class="tsd-signature-type">BondProxy</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -312,13 +392,13 @@
 					<a name="box" class="tsd-anchor"></a>
 					<h3>box</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> box<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> box<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L147">src/controls/picking-proxy.js:147</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L217">src/controls/picking-proxy.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -328,7 +408,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -336,13 +416,13 @@
 					<a name="canvasposition" class="tsd-anchor"></a>
 					<h3>canvas<wbr>Position</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> canvasPosition<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> canvasPosition<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector2</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L85">src/controls/picking-proxy.js:85</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L125">src/controls/picking-proxy.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +435,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector2</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -363,13 +443,13 @@
 					<a name="clash" class="tsd-anchor"></a>
 					<h3>clash</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> clash<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> clash<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L155">src/controls/picking-proxy.js:155</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L225">src/controls/picking-proxy.ts:225</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -379,7 +459,50 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>clash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>sele1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>sele2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="closeatom" class="tsd-anchor"></a>
+					<h3>close<wbr>Atom</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> closeAtom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L172">src/controls/picking-proxy.ts:172</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Close-by atom</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>type</dt>
+									<dd><p>{AtomProxy}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -387,13 +510,13 @@
 					<a name="closestbondatom" class="tsd-anchor"></a>
 					<h3>closest<wbr>Bond<wbr>Atom</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> closestBondAtom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> closestBondAtom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L115">src/controls/picking-proxy.js:115</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L155">src/controls/picking-proxy.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -406,7 +529,10 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -414,13 +540,13 @@
 					<a name="component" class="tsd-anchor"></a>
 					<h3>component</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> component<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="component.html" class="tsd-signature-type">Component</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L91">src/controls/picking-proxy.js:91</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L131">src/controls/picking-proxy.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -433,7 +559,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="component.html" class="tsd-signature-type">Component</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -441,13 +567,13 @@
 					<a name="cone" class="tsd-anchor"></a>
 					<h3>cone</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L151">src/controls/picking-proxy.js:151</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L221">src/controls/picking-proxy.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -457,7 +583,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -465,13 +591,13 @@
 					<a name="contact" class="tsd-anchor"></a>
 					<h3>contact</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> contact<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> contact<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L159">src/controls/picking-proxy.js:159</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L229">src/controls/picking-proxy.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -481,7 +607,18 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>atom1<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>atom2<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -489,13 +626,13 @@
 					<a name="ctrlkey" class="tsd-anchor"></a>
 					<h3>ctrl<wbr>Key</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ctrlKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ctrlKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L69">src/controls/picking-proxy.js:69</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L109">src/controls/picking-proxy.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -508,7 +645,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -516,13 +653,13 @@
 					<a name="cylinder" class="tsd-anchor"></a>
 					<h3>cylinder</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cylinder<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> cylinder<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L163">src/controls/picking-proxy.js:163</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L233">src/controls/picking-proxy.ts:233</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -532,7 +669,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -540,13 +677,13 @@
 					<a name="distance" class="tsd-anchor"></a>
 					<h3>distance</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> distance<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> distance<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="bondproxy.html" class="tsd-signature-type">BondProxy</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L167">src/controls/picking-proxy.js:167</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L237">src/controls/picking-proxy.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -556,7 +693,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="bondproxy.html" class="tsd-signature-type">BondProxy</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -564,13 +701,13 @@
 					<a name="ellipsoid" class="tsd-anchor"></a>
 					<h3>ellipsoid</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ellipsoid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ellipsoid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L171">src/controls/picking-proxy.js:171</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L241">src/controls/picking-proxy.ts:241</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -580,7 +717,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -588,13 +725,13 @@
 					<a name="mesh" class="tsd-anchor"></a>
 					<h3>mesh</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mesh<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mesh<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L179">src/controls/picking-proxy.js:179</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L253">src/controls/picking-proxy.ts:253</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -604,7 +741,18 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>serial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>shape<span class="tsd-signature-symbol">: </span><a href="shape.html" class="tsd-signature-type">Shape</a></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -612,13 +760,13 @@
 					<a name="metakey" class="tsd-anchor"></a>
 					<h3>meta<wbr>Key</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> metaKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> metaKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L74">src/controls/picking-proxy.js:74</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L114">src/controls/picking-proxy.ts:114</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -631,7 +779,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -645,7 +793,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L99">src/controls/picking-proxy.js:99</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L139">src/controls/picking-proxy.ts:139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -666,13 +814,13 @@
 					<a name="octahedron" class="tsd-anchor"></a>
 					<h3>octahedron</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> octahedron<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> octahedron<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L175">src/controls/picking-proxy.js:175</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L245">src/controls/picking-proxy.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -682,7 +830,31 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="point" class="tsd-anchor"></a>
+					<h3>point</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> point<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L249">src/controls/picking-proxy.ts:249</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>type</dt>
+									<dd><p>{Object}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -690,13 +862,13 @@
 					<a name="position" class="tsd-anchor"></a>
 					<h3>position</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> position<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> position<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L107">src/controls/picking-proxy.js:107</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L147">src/controls/picking-proxy.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -709,7 +881,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector3</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -717,13 +889,13 @@
 					<a name="shiftkey" class="tsd-anchor"></a>
 					<h3>shift<wbr>Key</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> shiftKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> shiftKey<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L79">src/controls/picking-proxy.js:79</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L119">src/controls/picking-proxy.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -736,7 +908,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -744,13 +916,13 @@
 					<a name="slice" class="tsd-anchor"></a>
 					<h3>slice</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> slice<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> slice<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L183">src/controls/picking-proxy.js:183</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L257">src/controls/picking-proxy.ts:257</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -760,7 +932,15 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>volume<span class="tsd-signature-symbol">: </span><a href="volume.html" class="tsd-signature-type">Volume</a></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -768,13 +948,13 @@
 					<a name="sphere" class="tsd-anchor"></a>
 					<h3>sphere</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sphere<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sphere<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L187">src/controls/picking-proxy.js:187</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L261">src/controls/picking-proxy.ts:261</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -784,7 +964,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -792,13 +972,13 @@
 					<a name="surface" class="tsd-anchor"></a>
 					<h3>surface</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> surface<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> surface<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L199">src/controls/picking-proxy.js:199</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L273">src/controls/picking-proxy.ts:273</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -808,7 +988,15 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>surface<span class="tsd-signature-symbol">: </span><a href="surface.html" class="tsd-signature-type">Surface</a></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -816,13 +1004,13 @@
 					<a name="tetrahedron" class="tsd-anchor"></a>
 					<h3>tetrahedron</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> tetrahedron<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> tetrahedron<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L191">src/controls/picking-proxy.js:191</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L265">src/controls/picking-proxy.ts:265</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -832,7 +1020,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -840,13 +1028,13 @@
 					<a name="torus" class="tsd-anchor"></a>
 					<h3>torus</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> torus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> torus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L195">src/controls/picking-proxy.js:195</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L269">src/controls/picking-proxy.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -856,7 +1044,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -864,13 +1052,13 @@
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L58">src/controls/picking-proxy.js:58</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L98">src/controls/picking-proxy.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -883,7 +1071,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -891,13 +1079,13 @@
 					<a name="unitcell" class="tsd-anchor"></a>
 					<h3>unitcell</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> unitcell<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> unitcell<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L203">src/controls/picking-proxy.js:203</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L277">src/controls/picking-proxy.ts:277</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -907,7 +1095,15 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>unitcell<span class="tsd-signature-symbol">: </span><a href="unitcell.html" class="tsd-signature-type">Unitcell</a></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -921,7 +1117,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L207">src/controls/picking-proxy.js:207</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L281">src/controls/picking-proxy.ts:281</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -939,13 +1135,13 @@
 					<a name="volume" class="tsd-anchor"></a>
 					<h3>volume</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> volume<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> volume<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L211">src/controls/picking-proxy.js:211</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L285">src/controls/picking-proxy.ts:285</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -955,7 +1151,39 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>volume<span class="tsd-signature-symbol">: </span><a href="volume.html" class="tsd-signature-type">Volume</a></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="wideline" class="tsd-anchor"></a>
+					<h3>wideline</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> wideline<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L289">src/controls/picking-proxy.ts:289</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>type</dt>
+									<dd><p>{Object}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/shapeprimitive.html" class="tsd-signature-type">ShapePrimitive</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -966,19 +1194,19 @@
 					<a name="_objectiftype" class="tsd-anchor"></a>
 					<h3>_object<wbr>IfType</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_object<wbr>IfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">_object<wbr>IfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L213">src/controls/picking-proxy.js:213</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L291">src/controls/picking-proxy.ts:291</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">any</span></h5>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -995,7 +1223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/controls/picking-proxy.js#L217">src/controls/picking-proxy.js:217</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/controls/picking-proxy.ts#L295">src/controls/picking-proxy.ts:295</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1022,6 +1250,24 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="pickingproxy.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickingproxy.html#controls" class="tsd-kind-icon">controls</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickingproxy.html#instance" class="tsd-kind-icon">instance</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickingproxy.html#mouse" class="tsd-kind-icon">mouse</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickingproxy.html#picker" class="tsd-kind-icon">picker</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickingproxy.html#pid" class="tsd-kind-icon">pid</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickingproxy.html#stage" class="tsd-kind-icon">stage</a>
+							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="pickingproxy.html#altkey" class="tsd-kind-icon">alt<wbr>Key</a>
 							</li>
@@ -1045,6 +1291,9 @@
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="pickingproxy.html#clash" class="tsd-kind-icon">clash</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="pickingproxy.html#closeatom" class="tsd-kind-icon">close<wbr>Atom</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="pickingproxy.html#closestbondatom" class="tsd-kind-icon">closest<wbr>Bond<wbr>Atom</a>
@@ -1083,6 +1332,9 @@
 								<a href="pickingproxy.html#octahedron" class="tsd-kind-icon">octahedron</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="pickingproxy.html#point" class="tsd-kind-icon">point</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="pickingproxy.html#position" class="tsd-kind-icon">position</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
@@ -1114,6 +1366,9 @@
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="pickingproxy.html#volume" class="tsd-kind-icon">volume</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="pickingproxy.html#wideline" class="tsd-kind-icon">wideline</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="pickingproxy.html#_objectiftype" class="tsd-kind-icon">_object<wbr>IfType</a>

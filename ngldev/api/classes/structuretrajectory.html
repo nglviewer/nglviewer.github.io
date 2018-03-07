@@ -96,10 +96,11 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="structuretrajectory.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="structuretrajectory.html#atomcount" class="tsd-kind-icon">atom<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="structuretrajectory.html#atomindices" class="tsd-kind-icon">atom<wbr>Indices</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="structuretrajectory.html#backboneindices" class="tsd-kind-icon">backbone<wbr>Indices</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="structuretrajectory.html#boxcache" class="tsd-kind-icon">box<wbr>Cache</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="structuretrajectory.html#centerpbc" class="tsd-kind-icon">center<wbr>Pbc</a></li>
@@ -179,26 +180,26 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Structure<wbr>Trajectory<span class="tsd-signature-symbol">(</span>trajPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, structure<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="structuretrajectory.html" class="tsd-signature-type">StructureTrajectory</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Structure<wbr>Trajectory<span class="tsd-signature-symbol">(</span>trajPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/trajectoryparameters.html" class="tsd-signature-type">TrajectoryParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="structuretrajectory.html" class="tsd-signature-type">StructureTrajectory</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/structure-trajectory.js#L12">src/trajectory/structure-trajectory.js:12</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/structure-trajectory.ts#L14">src/trajectory/structure-trajectory.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>trajPath: <span class="tsd-signature-type">any</span></h5>
+									<h5>trajPath: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>structure: <span class="tsd-signature-type">any</span></h5>
+									<h5>structure: <a href="structure.html" class="tsd-signature-type">Structure</a></h5>
 								</li>
 								<li>
-									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<h5>params: <a href="../interfaces/trajectoryparameters.html" class="tsd-signature-type">TrajectoryParameters</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="structuretrajectory.html" class="tsd-signature-type">StructureTrajectory</a></h4>
@@ -206,7 +207,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="atomcount" class="tsd-anchor"></a>
@@ -215,7 +216,17 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#atomcount">atomCount</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L217">src/trajectory/trajectory.ts:217</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L217">src/trajectory/trajectory.ts:217</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="atomindices" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> atom<wbr>Indices</h3>
+					<div class="tsd-signature tsd-kind-icon">atom<wbr>Indices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/structure-trajectory.ts#L14">src/trajectory/structure-trajectory.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -226,7 +237,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#backboneindices">backboneIndices</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L206">src/trajectory/trajectory.ts:206</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L206">src/trajectory/trajectory.ts:206</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -237,14 +248,14 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#boxcache">boxCache</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L213">src/trajectory/trajectory.ts:213</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L213">src/trajectory/trajectory.ts:213</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -256,7 +267,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#centerpbc">centerPbc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L194">src/trajectory/trajectory.ts:194</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L194">src/trajectory/trajectory.ts:194</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -267,7 +278,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#coords1">coords1</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L208">src/trajectory/trajectory.ts:208</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L208">src/trajectory/trajectory.ts:208</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -278,7 +289,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#coords2">coords2</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L209">src/trajectory/trajectory.ts:209</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L209">src/trajectory/trajectory.ts:209</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -289,7 +300,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#deltatime">deltaTime</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L191">src/trajectory/trajectory.ts:191</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L191">src/trajectory/trajectory.ts:191</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -300,7 +311,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#frame">frame</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L200">src/trajectory/trajectory.ts:200</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L200">src/trajectory/trajectory.ts:200</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -311,7 +322,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#framecache">frameCache</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L211">src/trajectory/trajectory.ts:211</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L211">src/trajectory/trajectory.ts:211</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -330,7 +341,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#framecachesize">frameCacheSize</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L215">src/trajectory/trajectory.ts:215</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L215">src/trajectory/trajectory.ts:215</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -341,7 +352,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#inprogress">inProgress</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L218">src/trajectory/trajectory.ts:218</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L218">src/trajectory/trajectory.ts:218</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -352,7 +363,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#initialcoords">initialCoords</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L203">src/trajectory/trajectory.ts:203</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L203">src/trajectory/trajectory.ts:203</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -363,7 +374,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#loadqueue">loadQueue</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L212">src/trajectory/trajectory.ts:212</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L212">src/trajectory/trajectory.ts:212</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -382,7 +393,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#name">name</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L199">src/trajectory/trajectory.ts:199</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L199">src/trajectory/trajectory.ts:199</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -393,7 +404,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#pathcache">pathCache</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L214">src/trajectory/trajectory.ts:214</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L214">src/trajectory/trajectory.ts:214</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -409,7 +420,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#player">player</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L222">src/trajectory/trajectory.ts:222</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L222">src/trajectory/trajectory.ts:222</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -420,7 +431,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#removepbc">removePbc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L195">src/trajectory/trajectory.ts:195</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L195">src/trajectory/trajectory.ts:195</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -431,7 +442,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#removeperiodicity">removePeriodicity</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L196">src/trajectory/trajectory.ts:196</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L196">src/trajectory/trajectory.ts:196</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -442,7 +453,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#sele">sele</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L193">src/trajectory/trajectory.ts:193</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L193">src/trajectory/trajectory.ts:193</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -453,7 +464,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#selection">selection</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L220">src/trajectory/trajectory.ts:220</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L220">src/trajectory/trajectory.ts:220</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -464,7 +475,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#selectionindices">selectionIndices</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L205">src/trajectory/trajectory.ts:205</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L205">src/trajectory/trajectory.ts:205</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -475,7 +486,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#structure">structure</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L221">src/trajectory/trajectory.ts:221</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L221">src/trajectory/trajectory.ts:221</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -486,7 +497,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#structurecoords">structureCoords</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L204">src/trajectory/trajectory.ts:204</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L204">src/trajectory/trajectory.ts:204</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -497,7 +508,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#superpose">superpose</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L197">src/trajectory/trajectory.ts:197</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L197">src/trajectory/trajectory.ts:197</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -508,7 +519,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#timeoffset">timeOffset</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L192">src/trajectory/trajectory.ts:192</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L192">src/trajectory/trajectory.ts:192</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -519,7 +530,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#trajpath">trajPath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L201">src/trajectory/trajectory.ts:201</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L201">src/trajectory/trajectory.ts:201</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -537,7 +548,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#currentframe">currentFrame</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L266">src/trajectory/trajectory.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L266">src/trajectory/trajectory.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -560,7 +571,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#framecount">frameCount</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L259">src/trajectory/trajectory.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L259">src/trajectory/trajectory.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -582,7 +593,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/structure-trajectory.js#L18">src/trajectory/structure-trajectory.js:18</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/structure-trajectory.ts#L21">src/trajectory/structure-trajectory.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -596,20 +607,20 @@
 					<a name="_dosuperpose" class="tsd-anchor"></a>
 					<h3>_do<wbr>Superpose</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">_do<wbr>Superpose<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">_do<wbr>Superpose<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_dosuperpose">_doSuperpose</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L541">src/trajectory/trajectory.ts:541</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L541">src/trajectory/trajectory.ts:541</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>x: <a href="../globals.html#numberarray" class="tsd-signature-type">NumberArray</a></h5>
+									<h5>x: <span class="tsd-signature-type">Float32Array</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -627,7 +638,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_getindices">_getIndices</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L316">src/trajectory/trajectory.ts:316</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L316">src/trajectory/trajectory.ts:316</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -651,7 +662,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_init">_init</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L270">src/trajectory/trajectory.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L270">src/trajectory/trajectory.ts:270</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -675,7 +686,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_interpolate">_interpolate</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L432">src/trajectory/trajectory.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L432">src/trajectory/trajectory.ts:432</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -707,23 +718,23 @@
 					<a name="_loadframe" class="tsd-anchor"></a>
 					<h3>_load<wbr>Frame</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">_load<wbr>Frame<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">_load<wbr>Frame<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_loadframe">_loadFrame</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/structure-trajectory.js#L28">src/trajectory/structure-trajectory.js:28</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/structure-trajectory.ts#L31">src/trajectory/structure-trajectory.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>i: <span class="tsd-signature-type">any</span></h5>
+									<h5>i: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>callback: <span class="tsd-signature-type">any</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">Function</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -741,7 +752,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_loadframecount">_loadFrameCount</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/structure-trajectory.js#L61">src/trajectory/structure-trajectory.js:61</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/structure-trajectory.ts#L64">src/trajectory/structure-trajectory.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -759,7 +770,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_makeatomindices">_makeAtomIndices</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/structure-trajectory.js#L20">src/trajectory/structure-trajectory.js:20</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/structure-trajectory.ts#L23">src/trajectory/structure-trajectory.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -777,7 +788,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_makesuperposecoords">_makeSuperposeCoords</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L331">src/trajectory/trajectory.ts:331</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L331">src/trajectory/trajectory.ts:331</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -788,14 +799,14 @@
 					<a name="_process" class="tsd-anchor"></a>
 					<h3>_process</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">_process<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, box<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, coords<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, frameCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">_process<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, box<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span>, coords<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, frameCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_process">_process</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L560">src/trajectory/trajectory.ts:560</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L560">src/trajectory/trajectory.ts:560</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -804,7 +815,7 @@
 									<h5>i: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>box: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>box: <span class="tsd-signature-type">ArrayLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>coords: <span class="tsd-signature-type">Float32Array</span></h5>
@@ -828,7 +839,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_resetcache">_resetCache</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L353">src/trajectory/trajectory.ts:353</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L353">src/trajectory/trajectory.ts:353</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -846,7 +857,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_saveinitialcoords">_saveInitialCoords</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L294">src/trajectory/trajectory.ts:294</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L294">src/trajectory/trajectory.ts:294</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -864,7 +875,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_savestructurecoords">_saveStructureCoords</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L306">src/trajectory/trajectory.ts:306</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L306">src/trajectory/trajectory.ts:306</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -882,7 +893,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_setframecount">_setFrameCount</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L589">src/trajectory/trajectory.ts:589</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L589">src/trajectory/trajectory.ts:589</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -906,7 +917,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#_updatestructure">_updateStructure</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L517">src/trajectory/trajectory.ts:517</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L517">src/trajectory/trajectory.ts:517</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -930,7 +941,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#dispose">dispose</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L600">src/trajectory/trajectory.ts:600</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L600">src/trajectory/trajectory.ts:600</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -953,7 +964,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#getframetime">getFrameTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L620">src/trajectory/trajectory.ts:620</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L620">src/trajectory/trajectory.ts:620</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -986,7 +997,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#hasframe">hasFrame</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L399">src/trajectory/trajectory.ts:399</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L399">src/trajectory/trajectory.ts:399</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1019,7 +1030,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#loadframe">loadFrame</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L486">src/trajectory/trajectory.ts:486</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L486">src/trajectory/trajectory.ts:486</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1057,7 +1068,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#setframe">setFrame</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L412">src/trajectory/trajectory.ts:412</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L412">src/trajectory/trajectory.ts:412</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1092,7 +1103,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#setframeinterpolated">setFrameInterpolated</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L457">src/trajectory/trajectory.ts:457</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L457">src/trajectory/trajectory.ts:457</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1160,7 +1171,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#setparameters">setParameters</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L362">src/trajectory/trajectory.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L362">src/trajectory/trajectory.ts:362</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1184,7 +1195,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#setplayer">setPlayer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L610">src/trajectory/trajectory.ts:610</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L610">src/trajectory/trajectory.ts:610</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1216,7 +1227,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#setselection">setSelection</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L311">src/trajectory/trajectory.ts:311</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L311">src/trajectory/trajectory.ts:311</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1240,7 +1251,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#setstructure">setStructure</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L278">src/trajectory/trajectory.ts:278</a></li>
+									<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L278">src/trajectory/trajectory.ts:278</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1263,36 +1274,36 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="trajectory.html">Trajectory</a>.<a href="trajectory.html#signals">signals</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L185">src/trajectory/trajectory.ts:185</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L185">src/trajectory/trajectory.ts:185</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.countchanged" class="tsd-anchor"></a>
 						<h3>count<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">count<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">count<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L186">src/trajectory/trajectory.ts:186</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L186">src/trajectory/trajectory.ts:186</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.framechanged" class="tsd-anchor"></a>
 						<h3>frame<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">frame<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">frame<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L187">src/trajectory/trajectory.ts:187</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L187">src/trajectory/trajectory.ts:187</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="signals.playerchanged" class="tsd-anchor"></a>
 						<h3>player<wbr>Changed</h3>
-						<div class="tsd-signature tsd-kind-icon">player<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
+						<div class="tsd-signature tsd-kind-icon">player<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Signal()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/arose/ngl/blob/504e5b5/src/trajectory/trajectory.ts#L188">src/trajectory/trajectory.ts:188</a></li>
+								<li>Defined in <a href="https://github.com/arose/ngl/blob/8acee698/src/trajectory/trajectory.ts#L188">src/trajectory/trajectory.ts:188</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1319,6 +1330,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="structuretrajectory.html#atomcount" class="tsd-kind-icon">atom<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="structuretrajectory.html#atomindices" class="tsd-kind-icon">atom<wbr>Indices</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="structuretrajectory.html#backboneindices" class="tsd-kind-icon">backbone<wbr>Indices</a>
