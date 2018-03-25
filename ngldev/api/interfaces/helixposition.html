@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BoxBufferData | ngl</title>
+	<title>HelixPosition | ngl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="boxbufferdata.html">BoxBufferData</a>
+					<a href="helixposition.html">HelixPosition</a>
 				</li>
 			</ul>
-			<h1>Interface BoxBufferData</h1>
+			<h1>Interface HelixPosition</h1>
 		</div>
 	</div>
 </header>
@@ -70,12 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="bufferdata.html" class="tsd-signature-type">BufferData</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">BoxBufferData</span>
-							</li>
-						</ul>
+						<span class="target">HelixPosition</span>
 					</li>
 				</ul>
 			</section>
@@ -86,16 +81,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#color" class="tsd-kind-icon">color</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="boxbufferdata.html#depthaxis" class="tsd-kind-icon">depth<wbr>Axis</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="boxbufferdata.html#heightaxis" class="tsd-kind-icon">height<wbr>Axis</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#normal" class="tsd-kind-icon">normal</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#picking" class="tsd-kind-icon">picking</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#position" class="tsd-kind-icon">position</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#position1" class="tsd-kind-icon">position1</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="boxbufferdata.html#primitiveid" class="tsd-kind-icon">primitive<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="boxbufferdata.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#axis" class="tsd-kind-icon">axis</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#bending" class="tsd-kind-icon">bending</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#center" class="tsd-kind-icon">center</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#radius" class="tsd-kind-icon">radius</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#resdir" class="tsd-kind-icon">resdir</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#rise" class="tsd-kind-icon">rise</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixposition.html#twist" class="tsd-kind-icon">twist</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,110 +95,73 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="color" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> color</h3>
-					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="axis" class="tsd-anchor"></a>
+					<h3>axis</h3>
+					<div class="tsd-signature tsd-kind-icon">axis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#color">color</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L106">src/buffer/buffer.ts:106</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L26">src/geometry/helixorient.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="depthaxis" class="tsd-anchor"></a>
-					<h3>depth<wbr>Axis</h3>
-					<div class="tsd-signature tsd-kind-icon">depth<wbr>Axis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<a name="bending" class="tsd-anchor"></a>
+					<h3>bending</h3>
+					<div class="tsd-signature tsd-kind-icon">bending<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/box-buffer.ts#L20">src/buffer/box-buffer.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L27">src/geometry/helixorient.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="heightaxis" class="tsd-anchor"></a>
-					<h3>height<wbr>Axis</h3>
-					<div class="tsd-signature tsd-kind-icon">height<wbr>Axis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<a name="center" class="tsd-anchor"></a>
+					<h3>center</h3>
+					<div class="tsd-signature tsd-kind-icon">center<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/box-buffer.ts#L19">src/buffer/box-buffer.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="index" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> index</h3>
-					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint16Array</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#index">index</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L107">src/buffer/buffer.ts:107</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="normal" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> normal</h3>
-					<div class="tsd-signature tsd-kind-icon">normal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#normal">normal</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L108">src/buffer/buffer.ts:108</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="picking" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> picking</h3>
-					<div class="tsd-signature tsd-kind-icon">picking<span class="tsd-signature-symbol">:</span> <a href="../classes/primitive.html#picker" class="tsd-signature-type">Picker</a></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#picking">picking</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L110">src/buffer/buffer.ts:110</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="position" class="tsd-anchor"></a>
-					<h3>position</h3>
-					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#position">position</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L104">src/buffer/buffer.ts:104</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="position1" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> position1</h3>
-					<div class="tsd-signature tsd-kind-icon">position1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#position1">position1</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L105">src/buffer/buffer.ts:105</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="primitiveid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> primitive<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">primitive<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="bufferdata.html">BufferData</a>.<a href="bufferdata.html#primitiveid">primitiveId</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/buffer.ts#L111">src/buffer/buffer.ts:111</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L25">src/geometry/helixorient.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="size" class="tsd-anchor"></a>
-					<h3>size</h3>
-					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<a name="radius" class="tsd-anchor"></a>
+					<h3>radius</h3>
+					<div class="tsd-signature tsd-kind-icon">radius<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/buffer/box-buffer.ts#L21">src/buffer/box-buffer.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L28">src/geometry/helixorient.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="resdir" class="tsd-anchor"></a>
+					<h3>resdir</h3>
+					<div class="tsd-signature tsd-kind-icon">resdir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L31">src/geometry/helixorient.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="rise" class="tsd-anchor"></a>
+					<h3>rise</h3>
+					<div class="tsd-signature tsd-kind-icon">rise<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L29">src/geometry/helixorient.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="twist" class="tsd-anchor"></a>
+					<h3>twist</h3>
+					<div class="tsd-signature tsd-kind-icon">twist<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32Array</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L30">src/geometry/helixorient.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -225,37 +180,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="boxbufferdata.html" class="tsd-kind-icon">Box<wbr>Buffer<wbr>Data</a>
+						<a href="helixposition.html" class="tsd-kind-icon">Helix<wbr>Position</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#color" class="tsd-kind-icon">color</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="helixposition.html#axis" class="tsd-kind-icon">axis</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="boxbufferdata.html#depthaxis" class="tsd-kind-icon">depth<wbr>Axis</a>
+								<a href="helixposition.html#bending" class="tsd-kind-icon">bending</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="boxbufferdata.html#heightaxis" class="tsd-kind-icon">height<wbr>Axis</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#index" class="tsd-kind-icon">index</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#normal" class="tsd-kind-icon">normal</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#picking" class="tsd-kind-icon">picking</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#position" class="tsd-kind-icon">position</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#position1" class="tsd-kind-icon">position1</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="boxbufferdata.html#primitiveid" class="tsd-kind-icon">primitive<wbr>Id</a>
+								<a href="helixposition.html#center" class="tsd-kind-icon">center</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="boxbufferdata.html#size" class="tsd-kind-icon">size</a>
+								<a href="helixposition.html#radius" class="tsd-kind-icon">radius</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="helixposition.html#resdir" class="tsd-kind-icon">resdir</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="helixposition.html#rise" class="tsd-kind-icon">rise</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="helixposition.html#twist" class="tsd-kind-icon">twist</a>
 							</li>
 						</ul>
 					</li>

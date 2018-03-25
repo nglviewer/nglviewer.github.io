@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ScriptSignals | ngl</title>
+	<title>HelixIterator | ngl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="scriptsignals.html">ScriptSignals</a>
+					<a href="helixiterator.html">HelixIterator</a>
 				</li>
 			</ul>
-			<h1>Interface ScriptSignals</h1>
+			<h1>Interface HelixIterator</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ScriptSignals</span>
+						<span class="target">HelixIterator</span>
 					</li>
 				</ul>
 			</section>
@@ -81,9 +81,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scriptsignals.html#elementadded" class="tsd-kind-icon">element<wbr>Added</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scriptsignals.html#elementremoved" class="tsd-kind-icon">element<wbr>Removed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scriptsignals.html#namechanged" class="tsd-kind-icon">name<wbr>Changed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixiterator.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixiterator.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixiterator.html#reset" class="tsd-kind-icon">reset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="helixiterator.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,32 +93,93 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="elementadded" class="tsd-anchor"></a>
-					<h3>element<wbr>Added</h3>
-					<div class="tsd-signature tsd-kind-icon">element<wbr>Added<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<div class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/script.ts#L13">src/script.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L20">src/geometry/helixorient.ts:20</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>idx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>idx: <span class="tsd-signature-type">number</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector3</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="elementremoved" class="tsd-anchor"></a>
-					<h3>element<wbr>Removed</h3>
-					<div class="tsd-signature tsd-kind-icon">element<wbr>Removed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
+					<a name="next" class="tsd-anchor"></a>
+					<h3>next</h3>
+					<div class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/script.ts#L14">src/script.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L19">src/geometry/helixorient.ts:19</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector3</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="namechanged" class="tsd-anchor"></a>
-					<h3>name<wbr>Changed</h3>
-					<div class="tsd-signature tsd-kind-icon">name<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
+					<a name="reset" class="tsd-anchor"></a>
+					<h3>reset</h3>
+					<div class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/script.ts#L15">src/script.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L21">src/geometry/helixorient.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/arose/ngl/blob/634c8fad/src/geometry/helixorient.ts#L18">src/geometry/helixorient.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,16 +198,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="scriptsignals.html" class="tsd-kind-icon">Script<wbr>Signals</a>
+						<a href="helixiterator.html" class="tsd-kind-icon">Helix<wbr>Iterator</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scriptsignals.html#elementadded" class="tsd-kind-icon">element<wbr>Added</a>
+								<a href="helixiterator.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scriptsignals.html#elementremoved" class="tsd-kind-icon">element<wbr>Removed</a>
+								<a href="helixiterator.html#next" class="tsd-kind-icon">next</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scriptsignals.html#namechanged" class="tsd-kind-icon">name<wbr>Changed</a>
+								<a href="helixiterator.html#reset" class="tsd-kind-icon">reset</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="helixiterator.html#size" class="tsd-kind-icon">size</a>
 							</li>
 						</ul>
 					</li>
