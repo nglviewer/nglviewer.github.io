@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Classes</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-NGL.html">NGL</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Assembly.html">Assembly</a></li><li><a href="AtomProxy.html">AtomProxy</a></li><li><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></li><li><a href="BinaryHeap.html">BinaryHeap</a></li><li><a href="Blob.html">Blob</a></li><li><a href="BondProxy.html">BondProxy</a></li><li><a href="Buffer.html">Buffer</a></li><li><a href="BufferRepresentation.html">BufferRepresentation</a></li><li><a href="ChainProxy.html">ChainProxy</a></li><li><a href="Color.html">Color</a></li><li><a href="Component.html">Component</a></li><li><a href="ConeBuffer.html">ConeBuffer</a></li><li><a href="Counter.html">Counter</a></li><li><a href="CylinderBuffer.html">CylinderBuffer</a></li><li><a href="DistanceRepresentation.html">DistanceRepresentation</a></li><li><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></li><li><a href="File.html">File</a></li><li><a href="Geometry.html">Geometry</a></li><li><a href="GeometryComponent.html">GeometryComponent</a></li><li><a href="Kdtree.html">Kdtree</a></li><li><a href="LabelRepresentation.html">LabelRepresentation</a></li><li><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></li><li><a href="LineRepresentation.html">LineRepresentation</a></li><li><a href="Matrix3.html">Matrix3</a></li><li><a href="Matrix4.html">Matrix4</a></li><li><a href="ModelProxy.html">ModelProxy</a></li><li><a href="Polymer.html">Polymer</a></li><li><a href="Promise.html">Promise</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Representation.html">Representation</a></li><li><a href="ResidueProxy.html">ResidueProxy</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="Selection.html">Selection</a></li><li><a href="Signal.html">Signal</a></li><li><a href="SphereBuffer.html">SphereBuffer</a></li><li><a href="Stage.html">Stage</a></li><li><a href="Structure.html">Structure</a></li><li><a href="StructureComponent.html">StructureComponent</a></li><li><a href="StructureRepresentation.html">StructureRepresentation</a></li><li><a href="StructureView.html">StructureView</a></li><li><a href="Surface.html">Surface</a></li><li><a href="SurfaceComponent.html">SurfaceComponent</a></li><li><a href="TextBuffer.html">TextBuffer</a></li><li><a href="TypedFastBitSet.html">TypedFastBitSet</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Viewer.html">Viewer</a></li><li><a href="Volume.html">Volume</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Component.html#event:representationAdded">Component#event:representationAdded</a></li><li><a href="Counter.html#event:countChanged">Counter#event:countChanged</a></li><li><a href="GeometryComponent.html#event:representationAdded">GeometryComponent#event:representationAdded</a></li><li><a href="ScriptComponent.html#event:representationAdded">ScriptComponent#event:representationAdded</a></li><li><a href="Stage.html#event:clicked">Stage#event:clicked</a></li><li><a href="Stage.html#event:componentAdded">Stage#event:componentAdded</a></li><li><a href="Stage.html#event:componentRemoved">Stage#event:componentRemoved</a></li><li><a href="Stage.html#event:fullscreenChanged">Stage#event:fullscreenChanged</a></li><li><a href="Stage.html#event:hovered">Stage#event:hovered</a></li><li><a href="Stage.html#event:parametersChanged">Stage#event:parametersChanged</a></li><li><a href="Structure.html#event:refreshed">Structure#event:refreshed</a></li><li><a href="StructureComponent.html#event:defaultAssemblyChanged">StructureComponent#event:defaultAssemblyChanged</a></li><li><a href="StructureComponent.html#event:representationAdded">StructureComponent#event:representationAdded</a></li><li><a href="SurfaceComponent.html#event:representationAdded">SurfaceComponent#event:representationAdded</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-embedding.html">Embedding</a></li><li><a href="tutorial-file-formats.html">File Formats</a></li><li><a href="tutorial-molecular-representations.html">Molecular Representations</a></li><li><a href="tutorial-scripting.html">Scripting</a></li><li><a href="tutorial-selection-language.html">Selection Language</a></li><li><a href="tutorial-snippets.html">Snippets</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#autoLoad">autoLoad</a></li><li><a href="global.html#lineLineIntersect">lineLineIntersect</a></li><li><a href="global.html#quicksortIP">quicksortIP</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Classes</h1>
+<section>
+
+<header>
+    
+        <h2>
+        
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="Assembly.html">Assembly</a></dt>
+            <dd></dd>
+        
+            <dt><a href="AtomProxy.html">AtomProxy</a></dt>
+            <dd></dd>
+        
+            <dt><a href="BallAndStickRepresentation.html">BallAndStickRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="BinaryHeap.html">BinaryHeap</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Blob.html">Blob</a></dt>
+            <dd></dd>
+        
+            <dt><a href="BondProxy.html">BondProxy</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Buffer.html">Buffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="BufferRepresentation.html">BufferRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ChainProxy.html">ChainProxy</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Color.html">Color</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Component.html">Component</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ConeBuffer.html">ConeBuffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Counter.html">Counter</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CylinderBuffer.html">CylinderBuffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="DistanceRepresentation.html">DistanceRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="EllipsoidBuffer.html">EllipsoidBuffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="File.html">File</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Geometry.html">Geometry</a></dt>
+            <dd></dd>
+        
+            <dt><a href="GeometryComponent.html">GeometryComponent</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Kdtree.html">Kdtree</a></dt>
+            <dd></dd>
+        
+            <dt><a href="LabelRepresentation.html">LabelRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="LicoriceRepresentation.html">LicoriceRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="LineRepresentation.html">LineRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Matrix3.html">Matrix3</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Matrix4.html">Matrix4</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ModelProxy.html">ModelProxy</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Polymer.html">Polymer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Promise.html">Promise</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Quaternion.html">Quaternion</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Representation.html">Representation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ResidueProxy.html">ResidueProxy</a></dt>
+            <dd></dd>
+        
+            <dt><a href="ScriptComponent.html">ScriptComponent</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Selection.html">Selection</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Signal.html">Signal</a></dt>
+            <dd></dd>
+        
+            <dt><a href="SphereBuffer.html">SphereBuffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Stage.html">Stage</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Structure.html">Structure</a></dt>
+            <dd></dd>
+        
+            <dt><a href="StructureComponent.html">StructureComponent</a></dt>
+            <dd></dd>
+        
+            <dt><a href="StructureRepresentation.html">StructureRepresentation</a></dt>
+            <dd></dd>
+        
+            <dt><a href="StructureView.html">StructureView</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Surface.html">Surface</a></dt>
+            <dd></dd>
+        
+            <dt><a href="SurfaceComponent.html">SurfaceComponent</a></dt>
+            <dd></dd>
+        
+            <dt><a href="TextBuffer.html">TextBuffer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="TypedFastBitSet.html">TypedFastBitSet</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Vector3.html">Vector3</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Viewer.html">Viewer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Volume.html">Volume</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:representationAdded">representationAdded</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a representation is added
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">RepresentationComponent</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:countChanged">countChanged</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when the `count` changes
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">Integer</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">counter.signals.countChanged( function( delta ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:representationAdded">representationAdded</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a representation is added
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">RepresentationComponent</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:representationAdded">Component#event:representationAdded</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:representationAdded">representationAdded</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a representation is added
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">RepresentationComponent</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:representationAdded">Component#event:representationAdded</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:clicked">clicked</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched upon clicking in the viewer canvas
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="global.html#PickingData">PickingData</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">stage.signals.clicked( function( pickingData ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:componentAdded">componentAdded</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a component is added to the stage
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="Component.html">Component</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">stage.signals.componentAdded( function( component ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:componentRemoved">componentRemoved</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a component is removed from the stage
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="Component.html">Component</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">stage.signals.componentRemoved( function( component ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:fullscreenChanged">fullscreenChanged</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when the fullscreen is entered or left
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">Boolean</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">stage.signals.fullscreenChanged( function( isFullscreen ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:hovered">hovered</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched upon hovering over the viewer canvas
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="global.html#PickingData">PickingData</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">stage.signals.hovered( function( pickingData ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:parametersChanged">parametersChanged</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when stage parameters change <a href="Signal.html">Signal</a>
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="global.html#StageParameters">StageParameters</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">stage.signals.parametersChanged( function( stageParameters ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:refreshed">refreshed</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when Structure.refresh() is called
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">structure.signals.refreshed( function(){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:defaultAssemblyChanged">defaultAssemblyChanged</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when the default assembly is changed
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">String</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">structureComponent.signals.defaultAssemblyChanged( function( value ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:representationAdded">representationAdded</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a representation is added
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">RepresentationComponent</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:representationAdded">Component#event:representationAdded</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:representationAdded">representationAdded</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <a href="Signal.html">Signal</a>, dispatched when a representation is added
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">RepresentationComponent</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Component.html#event:representationAdded">Component#event:representationAdded</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">component.signals.representationAdded( function( representationComponent ){ ... } );</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	
+		on July 11th 2016, 8:51:58 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
+
+</body>
+</html>
