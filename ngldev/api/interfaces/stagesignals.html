@@ -72,9 +72,6 @@
 						<p>Stage parameter object.</p>
 					</div>
 					<dl class="tsd-comment-tags">
-						<dt>typedef</dt>
-						<dd><p>{Object} StageParameters - stage parameters</p>
-						</dd>
 						<dt>property</dt>
 						<dd><p>{Color} backgroundColor - background color</p>
 						</dd>
@@ -95,22 +92,28 @@
 						<dd><p>{Float} panSpeed - camera-controls pan speed, between 0 and 10</p>
 						</dd>
 						<dt>property</dt>
-						<dd><p>{Integer} clipNear - position of camera near/front clipping plane
+						<dd><p>{Float} clipNear - position of camera near/front clipping plane
 							in percent of scene bounding box</p>
 						</dd>
 						<dt>property</dt>
-						<dd><p>{Integer} clipFar - position of camera far/back clipping plane
+						<dd><p>{Float} clipFar - position of camera far/back clipping plane
 							in percent of scene bounding box</p>
 						</dd>
 						<dt>property</dt>
 						<dd><p>{Float} clipDist - camera clipping distance in Angstrom</p>
 						</dd>
 						<dt>property</dt>
-						<dd><p>{Integer} fogNear - position of the start of the fog effect
+						<dd><p>{String} clipMode - how to interpret clipNear/Far and fogNear/Far values: &quot;scene&quot; for scene-relative, &quot;camera&quot; for camera-relative</p>
+						</dd>
+						<dt>property</dt>
+						<dd><p>{String} clipScale - &quot;relative&quot; or &quot;absolute&quot;: interpret clipNear/Far and fogNear/Far as percentage of bounding box or absolute Angstroms (ignored when clipMode==camera)</p>
+						</dd>
+						<dt>property</dt>
+						<dd><p>{Float} fogNear - position of the start of the fog effect
 							in percent of scene bounding box</p>
 						</dd>
 						<dt>property</dt>
-						<dd><p>{Integer} fogFar - position where the fog is in full effect
+						<dd><p>{Float} fogFar - position where the fog is in full effect
 							in percent of scene bounding box</p>
 						</dd>
 						<dt>property</dt>
@@ -152,79 +155,79 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="stagesignals.html#clicked" class="tsd-kind-icon">clicked</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="stagesignals.html#componentadded" class="tsd-kind-icon">component<wbr>Added</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="stagesignals.html#componentremoved" class="tsd-kind-icon">component<wbr>Removed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="stagesignals.html#fullscreenchanged" class="tsd-kind-icon">fullscreen<wbr>Changed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="stagesignals.html#hovered" class="tsd-kind-icon">hovered</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="stagesignals.html#parameterschanged" class="tsd-kind-icon">parameters<wbr>Changed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stagesignals.html#clicked" class="tsd-kind-icon">clicked</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stagesignals.html#componentadded" class="tsd-kind-icon">component<wbr>Added</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stagesignals.html#componentremoved" class="tsd-kind-icon">component<wbr>Removed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stagesignals.html#fullscreenchanged" class="tsd-kind-icon">fullscreen<wbr>Changed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stagesignals.html#hovered" class="tsd-kind-icon">hovered</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="stagesignals.html#parameterschanged" class="tsd-kind-icon">parameters<wbr>Changed</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="clicked" class="tsd-anchor"></a>
 					<h3>clicked</h3>
 					<div class="tsd-signature tsd-kind-icon">clicked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/stage/stage.ts#L112">src/stage/stage.ts:112</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/stage/stage.ts#L114">src/stage/stage.ts:114</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="componentadded" class="tsd-anchor"></a>
 					<h3>component<wbr>Added</h3>
 					<div class="tsd-signature tsd-kind-icon">component<wbr>Added<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/stage/stage.ts#L110">src/stage/stage.ts:110</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/stage/stage.ts#L112">src/stage/stage.ts:112</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="componentremoved" class="tsd-anchor"></a>
 					<h3>component<wbr>Removed</h3>
 					<div class="tsd-signature tsd-kind-icon">component<wbr>Removed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/stage/stage.ts#L111">src/stage/stage.ts:111</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/stage/stage.ts#L113">src/stage/stage.ts:113</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="fullscreenchanged" class="tsd-anchor"></a>
 					<h3>fullscreen<wbr>Changed</h3>
 					<div class="tsd-signature tsd-kind-icon">fullscreen<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/stage/stage.ts#L109">src/stage/stage.ts:109</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/stage/stage.ts#L111">src/stage/stage.ts:111</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="hovered" class="tsd-anchor"></a>
 					<h3>hovered</h3>
 					<div class="tsd-signature tsd-kind-icon">hovered<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/stage/stage.ts#L113">src/stage/stage.ts:113</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/stage/stage.ts#L115">src/stage/stage.ts:115</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="parameterschanged" class="tsd-anchor"></a>
 					<h3>parameters<wbr>Changed</h3>
 					<div class="tsd-signature tsd-kind-icon">parameters<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/stage/stage.ts#L108">src/stage/stage.ts:108</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/stage/stage.ts#L110">src/stage/stage.ts:110</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -242,25 +245,25 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-not-exported">
+					<li class="current tsd-kind-interface">
 						<a href="stagesignals.html" class="tsd-kind-icon">Stage<wbr>Signals</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="stagesignals.html#clicked" class="tsd-kind-icon">clicked</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="stagesignals.html#componentadded" class="tsd-kind-icon">component<wbr>Added</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="stagesignals.html#componentremoved" class="tsd-kind-icon">component<wbr>Removed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="stagesignals.html#fullscreenchanged" class="tsd-kind-icon">fullscreen<wbr>Changed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="stagesignals.html#hovered" class="tsd-kind-icon">hovered</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="stagesignals.html#parameterschanged" class="tsd-kind-icon">parameters<wbr>Changed</a>
 							</li>
 						</ul>
@@ -284,6 +287,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -332,7 +336,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

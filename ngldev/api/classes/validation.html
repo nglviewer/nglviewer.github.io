@@ -94,6 +94,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#geoatomdict" class="tsd-kind-icon">geo<wbr>Atom<wbr>Dict</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#geodict" class="tsd-kind-icon">geo<wbr>Dict</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#rcidict" class="tsd-kind-icon">rci<wbr>Dict</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#rsccdict" class="tsd-kind-icon">rscc<wbr>Dict</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="validation.html#rsrzdict" class="tsd-kind-icon">rsrz<wbr>Dict</a></li>
 							</ul>
@@ -120,13 +122,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Validation<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, readonlypath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validation.html" class="tsd-signature-type">Validation</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Validation<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validation.html" class="tsd-signature-type">Validation</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L110">src/structure/validation.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L135">src/structure/validation.ts:135</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -135,7 +137,7 @@
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>readonlypath: <span class="tsd-signature-type">string</span></h5>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="validation.html" class="tsd-signature-type">Validation</a></h4>
@@ -148,10 +150,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="atomdict" class="tsd-anchor"></a>
 					<h3>atom<wbr>Dict</h3>
-					<div class="tsd-signature tsd-kind-icon">atom<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">atom<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L109">src/structure/validation.ts:109</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L134">src/structure/validation.ts:134</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -166,27 +168,27 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="clasharray" class="tsd-anchor"></a>
 					<h3>clash<wbr>Array</h3>
-					<div class="tsd-signature tsd-kind-icon">clash<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">clash<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L106">src/structure/validation.ts:106</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L131">src/structure/validation.ts:131</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="clashdict" class="tsd-anchor"></a>
 					<h3>clash<wbr>Dict</h3>
-					<div class="tsd-signature tsd-kind-icon">clash<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">clash<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L105">src/structure/validation.ts:105</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L130">src/structure/validation.ts:130</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></h5>
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-symbol">{}</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter-index-signature">
 										<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
@@ -199,27 +201,27 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="clashsele" class="tsd-anchor"></a>
 					<h3>clash<wbr>Sele</h3>
-					<div class="tsd-signature tsd-kind-icon">clash<wbr>Sele<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;NONE&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">clash<wbr>Sele<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;NONE&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L110">src/structure/validation.ts:110</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L135">src/structure/validation.ts:135</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="geoatomdict" class="tsd-anchor"></a>
 					<h3>geo<wbr>Atom<wbr>Dict</h3>
-					<div class="tsd-signature tsd-kind-icon">geo<wbr>Atom<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">geo<wbr>Atom<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L108">src/structure/validation.ts:108</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L133">src/structure/validation.ts:133</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></h5>
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-symbol">{}</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter-index-signature">
 										<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span></h5>
@@ -232,10 +234,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="geodict" class="tsd-anchor"></a>
 					<h3>geo<wbr>Dict</h3>
-					<div class="tsd-signature tsd-kind-icon">geo<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">geo<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L107">src/structure/validation.ts:107</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L132">src/structure/validation.ts:132</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -253,17 +255,60 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L112">src/structure/validation.ts:112</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L137">src/structure/validation.ts:137</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="rsccdict" class="tsd-anchor"></a>
-					<h3>rscc<wbr>Dict</h3>
-					<div class="tsd-signature tsd-kind-icon">rscc<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="path" class="tsd-anchor"></a>
+					<h3>path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L104">src/structure/validation.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L137">src/structure/validation.ts:137</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rcidict" class="tsd-anchor"></a>
+					<h3>rci<wbr>Dict</h3>
+					<div class="tsd-signature tsd-kind-icon">rci<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L129">src/structure/validation.ts:129</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Random Coil Index (RCI) - evaluates the proximity of residue structural
+								and dynamic properties to the properties of flexible random coil regions
+							from NMR chemical shifts.</p>
+						</div>
+						<p>Mark V. Berjanskii and David S. Wishart (2005)
+							A Simple Method To Predict Protein Flexibility Using Secondary Chemical Shifts
+							J. Am. Chem. Soc., 2005, 127 (43), pp 14970–14971
+						<a href="http://pubs.acs.org/doi/abs/10.1021/ja054842f">http://pubs.acs.org/doi/abs/10.1021/ja054842f</a></p>
+						<p>Mark V. Berjanskii and David S. Wishart (2008)
+							Application of the random coil index to studying protein flexibility.
+							J Biomol NMR. 2008 Jan;40(1):31-48. Epub 2007 Nov 6.
+						<a href="http://www.springerlink.com/content/2966482w10306126/">http://www.springerlink.com/content/2966482w10306126/</a></p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="rsccdict" class="tsd-anchor"></a>
+					<h3>rscc<wbr>Dict</h3>
+					<div class="tsd-signature tsd-kind-icon">rscc<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L113">src/structure/validation.ts:113</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -278,10 +323,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="rsrzdict" class="tsd-anchor"></a>
 					<h3>rsrz<wbr>Dict</h3>
-					<div class="tsd-signature tsd-kind-icon">rsrz<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">rsrz<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L103">src/structure/validation.ts:103</a></li>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L112">src/structure/validation.ts:112</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -306,7 +351,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L114">src/structure/validation.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L139">src/structure/validation.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -326,7 +371,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L116">src/structure/validation.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L141">src/structure/validation.ts:141</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -343,19 +388,19 @@
 					<a name="getclashdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Clash<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Clash<wbr>Data<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Clash<wbr>Data<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">; </span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>color2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>picking<span class="tsd-signature-symbol">: </span><a href="clashpicker.html" class="tsd-signature-type">ClashPicker</a><span class="tsd-signature-symbol">; </span>position1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>position2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/arose/ngl/blob/2d84a993/src/structure/validation.ts#L231">src/structure/validation.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/structure/validation.ts#L270">src/structure/validation.ts:270</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>params: <span class="tsd-signature-type">object</span></h5>
+									<h5>params: <span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">; </span>structure<span class="tsd-signature-symbol">: </span><a href="structure.html" class="tsd-signature-type">Structure</a><span class="tsd-signature-symbol"> }</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Color</span></h5>
@@ -366,7 +411,7 @@
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>color2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>picking<span class="tsd-signature-symbol">: </span><a href="clashpicker.html" class="tsd-signature-type">ClashPicker</a><span class="tsd-signature-symbol">; </span>position1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>position2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">; </span>radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> }</span></h4>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter">
 									<h5>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span></h5>
@@ -432,6 +477,12 @@
 								<a href="validation.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="validation.html#path" class="tsd-kind-icon">path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="validation.html#rcidict" class="tsd-kind-icon">rci<wbr>Dict</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="validation.html#rsccdict" class="tsd-kind-icon">rscc<wbr>Dict</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -467,6 +518,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -515,7 +567,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

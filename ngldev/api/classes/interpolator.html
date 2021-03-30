@@ -1,0 +1,1233 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Interpolator | ngl</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">ngl</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="interpolator.html">Interpolator</a>
+				</li>
+			</ul>
+			<h1>Class Interpolator</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Interpolator</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="interpolator.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#delta" class="tsd-kind-icon">delta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#dt" class="tsd-kind-icon">dt</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#m" class="tsd-kind-icon">m</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#m2" class="tsd-kind-icon">m2</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#tension" class="tsd-kind-icon">tension</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#vbin" class="tsd-kind-icon">v<wbr>Bin</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#vdir" class="tsd-kind-icon">v<wbr>Dir</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#vnorm" class="tsd-kind-icon">v<wbr>Norm</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#vtan" class="tsd-kind-icon">v<wbr>Tan</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#vec1" class="tsd-kind-icon">vec1</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="interpolator.html#vec2" class="tsd-kind-icon">vec2</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#getcolor" class="tsd-kind-icon">get<wbr>Color</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#getnormal" class="tsd-kind-icon">get<wbr>Normal</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#getnormaldir" class="tsd-kind-icon">get<wbr>Normal<wbr>Dir</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#getpicking" class="tsd-kind-icon">get<wbr>Picking</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#getposition" class="tsd-kind-icon">get<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#getsize" class="tsd-kind-icon">get<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="interpolator.html#gettangent" class="tsd-kind-icon">get<wbr>Tangent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatecolor" class="tsd-kind-icon">interpolate<wbr>Color</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatenormal" class="tsd-kind-icon">interpolate<wbr>Normal</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatenormaldir" class="tsd-kind-icon">interpolate<wbr>Normal<wbr>Dir</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatepicking" class="tsd-kind-icon">interpolate<wbr>Picking</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolateposition" class="tsd-kind-icon">interpolate<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatesize" class="tsd-kind-icon">interpolate<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatetangent" class="tsd-kind-icon">interpolate<wbr>Tangent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatetoarr" class="tsd-kind-icon">interpolate<wbr>ToArr</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#interpolatetovec" class="tsd-kind-icon">interpolate<wbr>ToVec</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="interpolator.html#vectorsubdivide" class="tsd-kind-icon">vector<wbr>Subdivide</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Interpolator<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, tension<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interpolator.html" class="tsd-signature-type">Interpolator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L31">src/geometry/spline.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>m: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>tension: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interpolator.html" class="tsd-signature-type">Interpolator</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="delta" class="tsd-anchor"></a>
+					<h3>delta</h3>
+					<div class="tsd-signature tsd-kind-icon">delta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L24">src/geometry/spline.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dt" class="tsd-anchor"></a>
+					<h3>dt</h3>
+					<div class="tsd-signature tsd-kind-icon">dt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L23">src/geometry/spline.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="m" class="tsd-anchor"></a>
+					<h3>m</h3>
+					<div class="tsd-signature tsd-kind-icon">m<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L21">src/geometry/spline.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="m2" class="tsd-anchor"></a>
+					<h3>m2</h3>
+					<div class="tsd-signature tsd-kind-icon">m2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L31">src/geometry/spline.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tension" class="tsd-anchor"></a>
+					<h3>tension</h3>
+					<div class="tsd-signature tsd-kind-icon">tension<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L22">src/geometry/spline.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vbin" class="tsd-anchor"></a>
+					<h3>v<wbr>Bin</h3>
+					<div class="tsd-signature tsd-kind-icon">v<wbr>Bin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L30">src/geometry/spline.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vdir" class="tsd-anchor"></a>
+					<h3>v<wbr>Dir</h3>
+					<div class="tsd-signature tsd-kind-icon">v<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L27">src/geometry/spline.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vnorm" class="tsd-anchor"></a>
+					<h3>v<wbr>Norm</h3>
+					<div class="tsd-signature tsd-kind-icon">v<wbr>Norm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L29">src/geometry/spline.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vtan" class="tsd-anchor"></a>
+					<h3>v<wbr>Tan</h3>
+					<div class="tsd-signature tsd-kind-icon">v<wbr>Tan<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L28">src/geometry/spline.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vec1" class="tsd-anchor"></a>
+					<h3>vec1</h3>
+					<div class="tsd-signature tsd-kind-icon">vec1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L25">src/geometry/spline.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vec2" class="tsd-anchor"></a>
+					<h3>vec2</h3>
+					<div class="tsd-signature tsd-kind-icon">vec2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L26">src/geometry/spline.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcolor" class="tsd-anchor"></a>
+					<h3>get<wbr>Color</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Color<span class="tsd-signature-symbol">(</span>iterator<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, colFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L297">src/geometry/spline.ts:297</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterator: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>colFn: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>arg: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>col: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnormal" class="tsd-anchor"></a>
+					<h3>get<wbr>Normal</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Normal<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, tan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, norm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, bin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L170">src/geometry/spline.ts:170</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>tan: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>norm: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>bin: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnormaldir" class="tsd-anchor"></a>
+					<h3>get<wbr>Normal<wbr>Dir</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Normal<wbr>Dir<span class="tsd-signature-symbol">(</span>iterDir1<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, iterDir2<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, tan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, norm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, bin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, shift<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L187">src/geometry/spline.ts:187</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterDir1: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>iterDir2: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>tan: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>norm: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>bin: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>shift: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getpicking" class="tsd-anchor"></a>
+					<h3>get<wbr>Picking</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Picking<span class="tsd-signature-symbol">(</span>iterator<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, pickFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span>, pick<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L336">src/geometry/spline.ts:336</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterator: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>pickFn: <span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>item: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>pick: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getposition" class="tsd-anchor"></a>
+					<h3>get<wbr>Position</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Position<span class="tsd-signature-symbol">(</span>iterator<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L118">src/geometry/spline.ts:118</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterator: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>array: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getsize" class="tsd-anchor"></a>
+					<h3>get<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Size<span class="tsd-signature-symbol">(</span>iterator<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, sizeFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L373">src/geometry/spline.ts:373</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterator: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>sizeFn: <span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>item: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettangent" class="tsd-anchor"></a>
+					<h3>get<wbr>Tangent</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Tangent<span class="tsd-signature-symbol">(</span>iterator<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L130">src/geometry/spline.ts:130</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterator: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>array: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatecolor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Color</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Color<span class="tsd-signature-symbol">(</span>item1<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>, item2<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>, colFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, col<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L285">src/geometry/spline.ts:285</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item1: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li>
+									<h5>item2: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li>
+									<h5>colFn: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>arg: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>col: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatenormal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Normal</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Normal<span class="tsd-signature-symbol">(</span>vDir<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, tan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, norm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, bin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L158">src/geometry/spline.ts:158</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vDir: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>tan: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>norm: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>bin: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatenormaldir" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Normal<wbr>Dir</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Normal<wbr>Dir<span class="tsd-signature-symbol">(</span>u0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, u1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, u2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, u3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, tan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, norm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, bin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, shift<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L139">src/geometry/spline.ts:139</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>u0: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>u1: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>u2: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>u3: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v0: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v1: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v2: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v3: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>tan: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>norm: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>bin: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>shift: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatepicking" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Picking</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Picking<span class="tsd-signature-symbol">(</span>item1<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>, item2<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>, pickFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span>, pick<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L326">src/geometry/spline.ts:326</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item1: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li>
+									<h5>item2: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li>
+									<h5>pickFn: <span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>item: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>pick: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolateposition" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Position</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Position<span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L62">src/geometry/spline.ts:62</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v0: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v1: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v2: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v3: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>pos: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatesize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Size<span class="tsd-signature-symbol">(</span>item1<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>, item2<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a>, sizeFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L363">src/geometry/spline.ts:363</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item1: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li>
+									<h5>item2: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+								</li>
+								<li>
+									<h5>sizeFn: <span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>item: <a href="atomproxy.html" class="tsd-signature-type">AtomProxy</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>size: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatetangent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>Tangent</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>Tangent<span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, tan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L70">src/geometry/spline.ts:70</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v0: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v1: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v2: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v3: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>tan: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatetoarr" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>ToArr</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>ToArr<span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L50">src/geometry/spline.ts:50</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v0: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v1: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v2: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v3: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>t: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>arr: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="interpolatetovec" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> interpolate<wbr>ToVec</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">interpolate<wbr>ToVec<span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, vec<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L56">src/geometry/spline.ts:56</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v0: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v1: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v2: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>v3: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+								<li>
+									<h5>t: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>vec: <span class="tsd-signature-type">Vector3</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="vectorsubdivide" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> vector<wbr>Subdivide</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">vector<wbr>Subdivide<span class="tsd-signature-symbol">(</span>interpolationFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, iterator<span class="tsd-signature-symbol">: </span><a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, isCyclic<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/nglviewer/ngl/blob/e6eaeec/src/geometry/spline.ts#L88">src/geometry/spline.ts:88</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>interpolationFn: <span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>v0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, v3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Float32Array</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>v0: <span class="tsd-signature-type">Vector3</span></h5>
+														</li>
+														<li>
+															<h5>v1: <span class="tsd-signature-type">Vector3</span></h5>
+														</li>
+														<li>
+															<h5>v2: <span class="tsd-signature-type">Vector3</span></h5>
+														</li>
+														<li>
+															<h5>v3: <span class="tsd-signature-type">Vector3</span></h5>
+														</li>
+														<li>
+															<h5>array: <span class="tsd-signature-type">Float32Array</span></h5>
+														</li>
+														<li>
+															<h5>offset: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>iterator: <a href="../interfaces/atomiterator.html" class="tsd-signature-type">AtomIterator</a></h5>
+								</li>
+								<li>
+									<h5>array: <span class="tsd-signature-type">Float32Array</span></h5>
+								</li>
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>isCyclic: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="interpolator.html" class="tsd-kind-icon">Interpolator</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="interpolator.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#delta" class="tsd-kind-icon">delta</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#dt" class="tsd-kind-icon">dt</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#m" class="tsd-kind-icon">m</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#m2" class="tsd-kind-icon">m2</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#tension" class="tsd-kind-icon">tension</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#vbin" class="tsd-kind-icon">v<wbr>Bin</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#vdir" class="tsd-kind-icon">v<wbr>Dir</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#vnorm" class="tsd-kind-icon">v<wbr>Norm</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#vtan" class="tsd-kind-icon">v<wbr>Tan</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#vec1" class="tsd-kind-icon">vec1</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="interpolator.html#vec2" class="tsd-kind-icon">vec2</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#getcolor" class="tsd-kind-icon">get<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#getnormal" class="tsd-kind-icon">get<wbr>Normal</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#getnormaldir" class="tsd-kind-icon">get<wbr>Normal<wbr>Dir</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#getpicking" class="tsd-kind-icon">get<wbr>Picking</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#getposition" class="tsd-kind-icon">get<wbr>Position</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#getsize" class="tsd-kind-icon">get<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="interpolator.html#gettangent" class="tsd-kind-icon">get<wbr>Tangent</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatecolor" class="tsd-kind-icon">interpolate<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatenormal" class="tsd-kind-icon">interpolate<wbr>Normal</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatenormaldir" class="tsd-kind-icon">interpolate<wbr>Normal<wbr>Dir</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatepicking" class="tsd-kind-icon">interpolate<wbr>Picking</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolateposition" class="tsd-kind-icon">interpolate<wbr>Position</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatesize" class="tsd-kind-icon">interpolate<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatetangent" class="tsd-kind-icon">interpolate<wbr>Tangent</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatetoarr" class="tsd-kind-icon">interpolate<wbr>ToArr</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#interpolatetovec" class="tsd-kind-icon">interpolate<wbr>ToVec</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="interpolator.html#vectorsubdivide" class="tsd-kind-icon">vector<wbr>Subdivide</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
